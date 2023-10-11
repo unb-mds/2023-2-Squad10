@@ -41,3 +41,31 @@ function verificarNumero() {
     }
 }
 
+// Função que faz a busca na tabela
+
+function verificarNumero() {
+    // Obtenha os valores digitados nos campos de entrada
+    var data = document.getElementById("data").value.trim();
+    var edicao = document.getElementById("edicao").value.trim();
+
+    // Selecione a tabela
+    var tabela = document.getElementById("tabelaResultados").getElementsByTagName('tbody')[0];
+    var linhas = tabela.getElementsByTagName('tr');
+
+    // Loop através das linhas da tabela
+    for (var i = 0; i < linhas.length; i++) {
+        var colunas = linhas[i].getElementsByTagName('td');
+        var numeroEdicao = colunas[0].textContent;
+        var dataEdicao = colunas[1].textContent;
+
+        // Verifique se a linha corresponde aos critérios de busca
+        if (numeroEdicao === edicao || dataEdicao === data) {
+            linhas[i].style.display = '';
+        } else {
+            linhas[i].style.display = 'none';
+        }
+    }
+}
+
+
+
