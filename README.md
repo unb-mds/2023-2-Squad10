@@ -24,11 +24,19 @@ O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Mé
 | ------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
 | <img src="https://avatars.githubusercontent.com/u/119907827?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/87997616?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/90454615?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/124631520?v=4" width="100"/> |
 
+| [Guilherme Coelho](https://github.com/Guilermanoo)            | [Jésus Gabriel](https://github.com/xgabrielcv)              | [Sunamita Vitória](https://github.com/Sunamit)                |    
+| ------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- | 
+| <img src="https://avatars.githubusercontent.com/u/98980548?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/101183266?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/109704535?v=4" width="100"/> | 
+
+
 <div align="center">
   <h2>Documentação </h2>
 </div> 
 
 A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
 
-## Licença ©
+<div align="center">
+  <h2>Licença © </h2>
+</div> 
+
 Este software está sob licença:
