@@ -1,35 +1,36 @@
+#Importa elementos do Selenium
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from time import sleep
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.remote.webelement import WebElement
+
+#Importa o diretorio time para uso da função sleep
+from time import sleep
 import numpy as np
+
+#Importa o diretorio daytime para manipulação das datas
 from datetime import date
 from typing import List
 
 class Raspador(): 
-    def corrige_texto(text, option):
-        if option==1:
-            posicao_texto= text.find("e")
-            texto1 = text[posicao_texto+2:-1]
-            text_f= int(texto1)
-            return text_f
-        if option==2:
-            posicao_link_inicio= text.find("http:")
-            posicao_link_fim = text.find(".pdf")+4
-            link_f= text[posicao_link_inicio:posicao_link_fim]
-            return link_f
-        
+    
+    # Função para executar a raspagem    
     def inserir_info(municipio, data, data2):
         
         driver = webdriver.Chrome()
         driver.maximize_window()
         pdfs=[]
-    
+        
+        # Inicializa o domíno do site
         driver.get("http://www.diarioficialdosmunicipios.org/consulta/ConPublicacaoGeral/ConPublicacaoGeral.php")
       
+        # Localiza cada botão para adição de busca e insere as informações repassadas
         entrada_entidade= Select(driver.find_element(By.ID, 'SC_nomeentidade'))
         entrada_entidade.select_by_value('Prefeitura##@@Prefeitura')
         entrada_municipio= Select(driver.find_element(By.ID, 'SC_nomemunicipio'))
@@ -47,22 +48,25 @@ class Raspador():
         entrada_mes2.send_keys(data2.month)
         entrada_ano2= driver.find_element(By.ID, 'SC_data_input_2_ano')
         entrada_ano2.send_keys(data2.year)
-      
+        
+        # Após inserção pesquisa para atualizar a tabela com as informações
         botao_pesquisa= driver.find_element(By.XPATH,'//*[@id="sc_b_pesq_bot"]').click()
         sleep(2)
-      
+        #Troca para o frame em que a tabela está localizada
         driver.switch_to.frame('nmsc_iframe_ConPublicacaoGeral')
-      
+        # Pega o tamanho total da tabela e insere para exibi-la completamente
         grid_size= driver.find_element(By.XPATH, '//*[@id="quant_linhas_f0_bot"]')
         grid_size.clear()
         linha_table = driver.find_element(By.XPATH, '//*[@id="sc_grid_toobar_bot"]/table/tbody/tr/td[2]/span')
         numero_linhas_texto = linha_table.text
+        # Pega o tamanho da linha
         numero_linha = Raspador.corrige_texto(numero_linhas_texto, 1)
         grid_size.send_keys(numero_linha)
         sleep(2)
         pesquisa_table= driver.find_element(By.ID, 'qtlin_bot')
         pesquisa_table.click()
         sleep(20)
+        # Coleta por linha as informações de somente categorias de licitações
         for t_linha in range(1, (numero_linha+1)):
             try:
                 linha_pdf=0
@@ -74,13 +78,24 @@ class Raspador():
                     linha_pdf= linha_pdf+1
             except:
                 break
-    
+        #Printa no terminal o tamanho e os links e retorna a lista de pdfs
         print(*pdfs, sep = ", ") 
         print("Foram achados "+str(len(pdfs))+" pdfs sobre licitacao nesta data")
+        return pdfs
+    # Função para correção de strings e urls 
+    def corrige_texto(text, option):
+        if option==1:
+            posicao_texto= text.find("e")
+            texto1 = text[posicao_texto+2:-1]
+            text_f= int(texto1)
+            return text_f
+        if option==2:
+            posicao_link_inicio= text.find("http:")
+            posicao_link_fim = text.find(".pdf")+4
+            link_f= text[posicao_link_inicio:posicao_link_fim]
+            return link_f  
       
-      
-      
-#TESTE
+# Caso teste para apresentação
     
 municipio="Alagoinha do Pi"      
 data= date(2023,1,10)
