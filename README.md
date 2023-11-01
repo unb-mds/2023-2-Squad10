@@ -17,11 +17,26 @@
 O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Métodos de Desenvolvimento de Software**, a qual tem como objetivo auxiliar os alunos da Universidade de Brasília a extrairem dados de licitações do site do governo do Piaui e exibir em graficos de maneira fácil e intuitiva.
 
 <div align="center">
+  <h2>👩🏾‍💻 Funcionalidades </h2>
+</div> 
+
+Este projeto oferece as seguintes funcionalidades:
+
+• Coleta de Diários Oficiais: O sistema efetua a captação e acesso aos diários oficiais de todos os municípios do Amazonas.
+
+• Extração de Informações de Licitações: Realiza a extração de dados relacionados a licitações presentes nos municípios do Amazonas.
+
+• Análise de Dados: O projeto processa os dados extraídos, os organiza de maneira individual para cada município durante a análise e gera gráficos que evidenciam as tendências.
+
+• Interface de Usuário: Inclui uma interface de usuário que possibilita encontrar de forma transparente as informações das licitações realizadas pelos municípios.
+
+<div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
 </div> 
   Certifique-se de ter as seguintes dependências globais instaladas antes de prosseguir:
 
   	python -v: 3.11
+    Apache Tika V: 2.9.1
 
 <div align="center">
   <h2>👨‍💻 Contribuidores </h2>
