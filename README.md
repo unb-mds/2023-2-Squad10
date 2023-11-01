@@ -22,9 +22,9 @@ O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Mé
 
 Este projeto oferece as seguintes funcionalidades:
 
-• Coleta de Diários Oficiais: O sistema efetua a captação e acesso aos diários oficiais de todos os municípios do Amazonas.
+• Coleta de Diários Oficiais: O sistema efetua a captação e acesso aos diários oficiais de todos os municípios do Piauí.
 
-• Extração de Informações de Licitações: Realiza a extração de dados relacionados a licitações presentes nos municípios do Amazonas.
+• Extração de Informações de Licitações: Realiza a extração de dados relacionados a licitações presentes nos municípios do Piauí.
 
 • Análise de Dados: O projeto processa os dados extraídos, os organiza de maneira individual para cada município durante a análise e gera gráficos que evidenciam as tendências.
 
