@@ -19,10 +19,9 @@ O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Mé
 <div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
 </div> 
-<a><p>-Python</p>
-<p>-JavaScript</p> <p>-Docker</p>
+  Certifique-se de ter as seguintes dependências globais instaladas antes de prosseguir:
 
-</a>
+  	python -v: 3.11
 
 <div align="center">
   <h2>👨‍💻 Contribuidores </h2>
