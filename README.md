@@ -1,3 +1,4 @@
+:w
 <div align="center">
   <h3> 2023-2-Squad10 </h3>
 </div>
@@ -14,11 +15,15 @@
   <h2>🕊 Objetivo </h2>
 </div> 
 
+abraco de urso
+
 O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Métodos de Desenvolvimento de Software**, a qual tem como objetivo auxiliar os alunos da Universidade de Brasília a extrairem dados de licitações do site do governo do Piaui e exibir em graficos de maneira fácil e intuitiva.
 
 <div align="center">
   <h2>👩🏾‍💻 Funcionalidades </h2>
 </div> 
+
+abraço de urso
 
 Este projeto oferece as seguintes funcionalidades:
 
