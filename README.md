@@ -14,7 +14,7 @@
   <h2>🕊 Objetivo </h2>
 </div> 
 
-O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Métodos de Desenvolvimento de Software**, a qual tem como objetivo auxiliar os alunos da Universidade de Brasília a extrairem dados de licitações do site do governo do Piaui e exibir em graficos de maneira fácil e intuitiva.
+O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
 
 <div align="center">
   <h2>👩🏾‍💻 Funcionalidades </h2>
