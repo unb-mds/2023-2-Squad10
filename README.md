@@ -20,6 +20,8 @@ O Diario Oficial do Piaui UnB é um projeto em desenvolvimento da matéria **Mé
   <h2>👩🏾‍💻 Funcionalidades </h2>
 </div> 
 
+abraço de urso
+
 Este projeto oferece as seguintes funcionalidades:
 
 • Coleta de Diários Oficiais: O sistema efetua a captação e acesso aos diários oficiais de todos os municípios do Piauí.
