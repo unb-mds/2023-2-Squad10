@@ -1,8 +1,4 @@
 <div align="center">
-  <h3> 2023-2-Squad10 </h3>
-</div>
-
-<div align="center">
   <h2>Bem vindo ao nosso repositório! </h2>
 </div> 
 
@@ -11,7 +7,7 @@
 </div> 
 
 <div align="center">
-  <h2>🕊 Objetivo </h2>
+  <h2>🕊 Objetivos </h2>
 </div> 
 
 O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
