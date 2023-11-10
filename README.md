@@ -42,18 +42,55 @@ Este projeto oferece as seguintes funcionalidades:
 
 Abra http://localhost:5500 com seu navegador para ver o resultado.
 
-<div align="center">
-  <h2>👨‍💻 Contribuidores </h2>
-</div> 
-
-| [Carlos Henrique](https://github.com/Carlos42511)            | [Samuel Alves](https://github.com/samuelalvess)              | [Filipe](https://github.com/Filipe-002)                | [Leonardo Fachinello](https://github.com/LeoFacB)              |
-| ------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
-| <img src="https://avatars.githubusercontent.com/u/119907827?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/87997616?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/90454615?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/124631520?v=4" width="100"/> |
-
-| [Guilherme Coelho](https://github.com/Guilermanoo)            | [Jésus Gabriel](https://github.com/xgabrielcv)              | [Sunamita Vitória](https://github.com/Sunamit)                |    
-| ------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- | 
-| <img src="https://avatars.githubusercontent.com/u/98980548?v=4" width="100"/> | <img src="https://avatars.githubusercontent.com/u/101183266?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/109704535?v=4" width="100"/> | 
-
+<h2 id="equipe">Equipe</h2>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 25px;">
+              <div style="display: flex; align-items: end; justify-content: center; gap: 50px;">
+                <div style="text-align: center;">
+                  Carlos Henrique
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/119907827?v=4" alt="Foto Carlos" width="130px"
+                    height="50%" style="border-radius:50%" />
+                </div>
+                <div style="text-align: center;">
+                  Samuel Alves
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/87997616?v=4" alt="Foto Samuel" width="130px"
+                    height="50%" style="border-radius:50%" />
+                </div>
+                <div style="text-align: center;">
+                  Filipe Carvalho
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/90454615?v=4" alt="Foto Filipe Carvalho"
+                    width="130px" height="50%" style="border-radius:50%" />
+                </div>
+              </div>
+              <div style="display: flex; align-items: end; justify-content: center; gap: 50px;">
+                <div style="text-align: center;">
+                  Leonardo
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/124631520?v=4" alt="Foto Leonardo" width="130px"
+                    height="50%" style="border-radius:50%" />
+                </div>
+                <div style="text-align: center;">
+                  Guilherme Coelho
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/98980548?v=4" alt="Foto Guilherme Coelho"
+                    width="130px" height="50%" style="border-radius:50%" />
+                </div>
+                <div style="text-align: center;">
+                  Jésus Gabriel
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/101183266?v=4" alt="Foto Gabriel" width="130px"
+                    height="50%" style="border-radius:50%" />
+                </div>
+                <div style="text-align: center;">
+                  Sunamita Vitória
+                  <br />
+                  <img src="https://avatars.githubusercontent.com/u/109704535?v=4" alt="Foto Sunamita Vitória"
+                    width="130px" height="50%" style="border-radius:50%" />
+                </div>
+              </div>
+            </div>
 
 <div align="center">
   <h2>Documentação </h2>
@@ -61,8 +98,7 @@ Abra http://localhost:5500 com seu navegador para ver o resultado.
 
 A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
 
-<div align="center">
-  <h2>Licença © </h2>
-</div> 
+<blockquote>
+   <p>Este software está sob licença:</p>
+</blockquote>
 
-Este software está sob licença:
