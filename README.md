@@ -29,12 +29,18 @@ Este projeto oferece as seguintes funcionalidades:
 <div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
 </div> 
+  Para instalar o Apache Tika, execute o seguinte comando em seu terminal:
   Certifique-se de ter as seguintes dependências globais instaladas antes de prosseguir:
+  
 
     git clone https://github.com/unb-mds/2023-2-Squad10.git
     
   	python -v: 3.11
     Apache Tika V: 2.9.1
+    
+  Para instalar o Apache Tika, execute o seguinte comando em seu terminal:
+  
+    pip install tika
 
 Abra http://localhost:5500 com seu navegador para ver o resultado.
 
