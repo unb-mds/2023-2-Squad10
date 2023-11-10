@@ -54,9 +54,11 @@ Abra http://localhost:5500 com seu navegador para ver o resultado.
 
 <div align="center">
   <h2>Documentação </h2>
-</div> 
+</div>
 
+<div align="center"> 
 A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
+</div>
 
 <blockquote>
    <p>Este software está sob licença:</p>
