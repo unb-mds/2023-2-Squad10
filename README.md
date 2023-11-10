@@ -49,7 +49,11 @@ Abra http://localhost:5500 com seu navegador para ver o resultado.
 <div align="center"> 
  <img src="https://avatars.githubusercontent.com/u/119907827?v=4" width="100"/>
  <img src="https://avatars.githubusercontent.com/u/87997616?v=4" width="100" />
-
+ <img src="https://avatars.githubusercontent.com/u/90454615?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/124631520?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/98980548?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/101183266?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/109704535?v=4" width="100"/>
 </div>
 
 <div align="center">
