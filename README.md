@@ -18,9 +18,9 @@ O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado
 
 Este projeto oferece as seguintes funcionalidades:
 
-• Coleta de Diários Oficiais: O sistema efetua a captação e acesso aos diários oficiais de todos os municípios do Piauí.
+• Coleta de Diários Oficiais: O sistema realiza a coleta e acesso aos Diários Oficiais de todos os municípios do Piauí de forma eficiente e automatizada.
 
-• Extração de Informações de Licitações: Realiza a extração de dados relacionados a licitações presentes nos municípios do Piauí.
+• Extração de Informações de Licitações: Efetua a extração precisa de dados relacionados a licitações em todos os municípios do Piauí, garantindo a integridade das informações.
 
 • Análise de Dados: O projeto processa os dados extraídos, os organiza de maneira individual para cada município durante a análise e gera gráficos que evidenciam as tendências.
 
