@@ -22,7 +22,7 @@ Este projeto oferece as seguintes funcionalidades:
 
 • Extração de Informações de Licitações: Efetua a extração precisa de dados relacionados a licitações em todos os municípios do Piauí, garantindo a integridade das informações.
 
-• Análise de Dados: O projeto processa os dados extraídos, os organiza de maneira individual para cada município durante a análise e gera gráficos que evidenciam as tendências.
+• Análise de Dados: O projeto processa os dados extraídos, organizando-os individualmente para cada município durante a análise. Além disso, gera gráficos que destacam tendências e insights valiosos.
 
 • Interface de Usuário: Inclui uma interface de usuário que possibilita encontrar de forma transparente as informações das licitações realizadas pelos municípios.
 
