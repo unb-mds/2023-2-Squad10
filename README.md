@@ -24,7 +24,7 @@ Este projeto oferece as seguintes funcionalidades:
 
 • Análise de Dados: O projeto processa os dados extraídos, organizando-os individualmente para cada município durante a análise. Além disso, gera gráficos que destacam tendências e insights valiosos.
 
-• Interface de Usuário: Inclui uma interface de usuário que possibilita encontrar de forma transparente as informações das licitações realizadas pelos municípios.
+• Interface de Usuário Intuitiva: Inclui uma interface de usuário amigável que permite aos usuários encontrar de maneira transparente as informações das licitações realizadas pelos municípios do Piauí, tornando a pesquisa e análise mais acessíveis.
 
 <div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
