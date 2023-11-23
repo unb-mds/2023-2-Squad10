@@ -10,7 +10,7 @@
   <h2>🕊 Conversor de PDF </h2>
 </div> 
 
-# Este projeto é um script Python para baixar arquivos PDF de diários oficiais de prefeituras do Piauí.
+• Este projeto é um script Python para baixar arquivos PDF de diários oficiais de prefeituras do Piauí.
 
 <div align="center">
   <h2>👩🏾‍💻 Requisitos </h2>
