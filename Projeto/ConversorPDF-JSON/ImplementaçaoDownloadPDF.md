@@ -38,8 +38,11 @@
 </div> 
 
  • Você pode personalizar o script conforme necessário, como ajustar as datas diretamente no script ou modificar a formatação dos nomes dos arquivos.
+ 
  • Este script usa Selenium para interagir com a página da web. Certifique-se de ter o ChromeDriver adequado instalado e configurado.
+ 
  • Considere configurar um ambiente virtual Python para isolar as dependências do projeto.
+ 
  • Lembre-se de seguir essas instruções e adaptar o código conforme necessário para atender às suas necessidades específicas. Certifique-se de ter o ChromeDriver instalado e configurado corretamente,       pois o script depende do Selenium para interagir com a página da web.
     
 <div align="center">
