@@ -44,6 +44,8 @@
  • Considere configurar um ambiente virtual Python para isolar as dependências do projeto.
  
  • Lembre-se de seguir essas instruções e adaptar o código conforme necessário para atender às suas necessidades específicas. Certifique-se de ter o ChromeDriver instalado e configurado corretamente,       pois o script depende do Selenium para interagir com a página da web.
+
+ 
     
 <blockquote>
    <p>Este software está sob licença:</p>
