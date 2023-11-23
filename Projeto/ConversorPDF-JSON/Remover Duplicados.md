@@ -17,10 +17,8 @@
 </div> 
 
       git clone https://github.com/unb-mds/2023-2-Squad10.git   
-      python -m pip install virtualenv
-      python -m virtualenv venv
-      venv\Scripts\activate
-      source venv/bin/activate
+      
+      pip install virtualenv
       pip install -r requirements.txt
 
 <div align="center">
