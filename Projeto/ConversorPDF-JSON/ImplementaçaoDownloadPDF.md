@@ -45,21 +45,6 @@
  
  • Lembre-se de seguir essas instruções e adaptar o código conforme necessário para atender às suas necessidades específicas. Certifique-se de ter o ChromeDriver instalado e configurado corretamente,       pois o script depende do Selenium para interagir com a página da web.
     
-<div align="center">
-  <h2>Documentação </h2>
-</div>
-<<<<<<< HEAD
-
-A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
-=======
-
-A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
-
-<blockquote>
-   <p>Este software está sob licença:</p>
-</blockquote>
->>>>>>> fdf64acbbc93fa51582236eca530214202c49a38
-
 <blockquote>
    <p>Este software está sob licença:</p>
 </blockquote>
