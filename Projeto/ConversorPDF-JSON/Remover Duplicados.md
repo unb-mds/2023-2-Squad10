@@ -26,9 +26,10 @@
 </div> 
 
          python Remove Duplicados.py
-
-     • Após a execução bem-sucedida, verifique o arquivo de saída especificado ('saida.json') para garantir que as duplicatas foram removidas corretamente.
-     • Lembre-se de ajustar caminhos e nomes de arquivos conforme necessário com base na sua estrutura de diretórios específica.
+         
+ • Após a execução bem-sucedida, verifique o arquivo de saída especificado ('saida.json') para garantir que as duplicatas foram removidas corretamente.
+ 
+ • Lembre-se de ajustar caminhos e nomes de arquivos conforme necessário com base na sua estrutura de diretórios específica.
  
     
 <blockquote>
