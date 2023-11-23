@@ -24,7 +24,7 @@ class ExtratorDeDados:
             "Alegrete do Piauí",
             "Alto Longá",
             "Altos",
-            "Alvorada do Gurgueia",
+            "Alvorada do Gurguéia",
             "Amarante",
             "Angical do Piauí",
             "Anísio de Abreu",

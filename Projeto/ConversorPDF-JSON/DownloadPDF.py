@@ -60,6 +60,6 @@ def download_pdf(pdf_url, date):
     print(f"Download concluído para a data: {date}")
 
 # Exemplo de uso
-data_inicial = datetime.strptime("23/11/2023", "%d/%m/%Y")  # Substitua pela data desejada
-data_final = datetime.strptime("01/11/2023", "%d/%m/%Y")  # Substitua pela data desejada
+data_inicial = datetime.strptime("31/03/2023", "%d/%m/%Y")  # Substitua pela data desejada
+data_final = datetime.strptime("01/01/2023", "%d/%m/%Y")  # Substitua pela data desejada
 download_pdfs(data_inicial, data_final)
