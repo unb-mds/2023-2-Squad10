@@ -27,6 +27,7 @@
          python ConversorPDF TXT.py
 
   • Certifique-se de que a estrutura de diretórios está conforme o esperado
+  
   • Certifique-se de ter os arquivos PDF na pasta especificada ('C:/Users/Carlin/2023-2-Squad10/Projeto/ConversorPDF-JSON/downloads').
 
 <div align="center">
