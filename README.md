@@ -62,7 +62,7 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
   	
   
 <div align="center">
-  <h2> </h2>
+  <h2>⚙️ Configurações do projeto </h2>
 </div>
 
 
