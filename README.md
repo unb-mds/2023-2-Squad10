@@ -45,7 +45,7 @@ Este projeto oferece as seguintes funcionalidades:
     pip install PyMuPDF
 
 <div align="center">
-  <h2>Outros Requisitos: </h2>
+  <h2> 📋Outros Requisitos: </h2>
 </div>
 
 • Google Chrome:
