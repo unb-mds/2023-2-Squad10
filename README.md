@@ -13,7 +13,7 @@
 </div> 
 
 <div align="center">
-  <h2>🕊 Objetivos </h2>
+  <h2>🎯 Objetivos </h2>
 </div> 
 
 • O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
@@ -60,7 +60,7 @@ pip install beautifulsoup4
 pip install requests
 ```
 
-### 3. 👩‍💻 Clonar o Repositório
+### 3. ⌨️ Clonar o Repositório
 Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
 ```
 git clone https://github.com/unb-mds/2023-2-Squad10.git
@@ -80,7 +80,7 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 4. Abra http://localhost:5500 com seu navegador para ver o resultado.
 
 <div align="center">
-  <h2>👨‍💻 Contribuidores </h2>
+  <h2>👩‍💻 Contribuidores </h2>
 </div> 
 
 <div align="center"> 
