@@ -1,5 +1,4 @@
-# ✔️ SQUAD10
-<a name="readme-top"></a>
+
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
@@ -33,16 +32,16 @@ Este projeto oferece as seguintes funcionalidades:
 • Interface de Usuário Intuitiva: Inclui uma interface de usuário amigável que permite aos usuários encontrar de maneira transparente as informações das licitações realizadas pelos municípios do Piauí, tornando a pesquisa e análise mais acessíveis.
 
 <div align="center">
-  <h2>🕊 Como executar o projeto </h2>
+  <h2>🤞 Como executar o projeto </h2>
 </div> 
 
-### 1. 📈 Pré-requisitos
+### 1. 🔑 Pré-requisitos
 Esses são os nossos pré-requisitos,eles garantem uma base sólida para colaboração, ajudando a evitar erros e facilitando a contribuição:
 - [Python3](https://www.python.org/downloads/)
 - [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=JJTC&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJMg9rrK6120NVHWXKNS773PEP1Du65dqiZWcktY_KxHpRkV4SV03XBoCri8QAvD_BwE&gclsrc=aw.ds)
 - [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
-### 2. 📚 Instalação das bibliotecas do Python
+### 2. 📑 Instalação das bibliotecas do Python
 Aqui estão as bibliotecas do Python usadas que são conjuntos de recursos pré-desenvolvidos que simplificam o desenvolvimento de aplicativos, economizando tempo e esforço:
 ```
 pip install selenium
@@ -60,7 +59,7 @@ pip install beautifulsoup4
 pip install requests
 ```
 
-### 3. ⌨️ Clonar o Repositório
+### 3. 📍 Clonar o Repositório
 Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
 ```
 git clone https://github.com/unb-mds/2023-2-Squad10.git
