@@ -10,7 +10,7 @@
   <h2>🕊 Objetivos </h2>
 </div> 
 
-O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
+• O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
 
 <div align="center">
   <h2>👩🏾‍💻 Funcionalidades </h2>
@@ -29,18 +29,36 @@ Este projeto oferece as seguintes funcionalidades:
 <div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
 </div> 
-  Para instalar o Apache Tika, execute o seguinte comando em seu terminal:
-  Certifique-se de ter as seguintes dependências globais instaladas antes de prosseguir:
+  Para clonar nosso repositorio ultilize :
   
-
+ 
     git clone https://github.com/unb-mds/2023-2-Squad10.git
     
-  	python -v: 3.11
-    Apache Tika V: 2.9.1
+  	
     
-  Para instalar o Apache Tika, execute o seguinte comando em seu terminal:
+  Para instalar as bibliotecas necessárias para o projeto, execute os seguintes comandos:
   
     pip install tika
+    pip install selenium
+    pip install beautifulsoup4
+    pip install requests
+    pip install PyMuPDF
+
+<div align="center">
+  <h2>Outros Requisitos: </h2>
+</div>
+
+• Google Chrome:
+
+Certifique-se de ter o navegador Google Chrome instalado. O script foi desenvolvido para funcionar com o Chrome, 
+se necessário. baixe o chrome [AQUI](https://www.google.pt/intl/pt-PT/chrome/?brand=CHBD&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJAzL_QMrJHy1ce17iOBprqZ9HhgeUaPtjNRAljbHUmHqhvITdcIdjRoC68IQAvD_BwE&gclsrc=aw.ds).
+
+• ChromeDriver:
+
+Baixe o ChromeDriver da página oficial de downloads. Certifique-se de baixar a versão compatível com a versão do Google Chrome instalada no seu sistema. baixe clicando [AQUI](https://sites.google.com/chromium.org/driver/).
+
+Configuração: Coloque o executável do ChromeDriver no mesmo diretório do arquivo de download pdf    
+
 
 Abra http://localhost:5500 com seu navegador para ver o resultado.
 
