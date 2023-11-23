@@ -29,14 +29,19 @@ Este projeto oferece as seguintes funcionalidades:
 <div align="center">
   <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
 </div> 
-  Para clonar nosso repositorio ultilize :
+
+• Python 3.12: 
+
+É necessario para rodar o projeto baixe [aqui](https://www.python.org/downloads/).
+
+  • Para clonar nosso repositorio ultilize :
   
  
     git clone https://github.com/unb-mds/2023-2-Squad10.git
     
   	
     
-  Para instalar as bibliotecas necessárias para o projeto, execute os seguintes comandos:
+  • Para instalar as bibliotecas necessárias para o projeto, execute os seguintes comandos:
   
     pip install tika
     pip install selenium
