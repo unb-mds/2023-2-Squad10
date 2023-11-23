@@ -7,7 +7,7 @@
 </div> 
 
 <div align="center">
-  <h2>🕊 Conversor de TXT / JSON </h2>
+  <h2>🕊 Conversor de PDF / TXT </h2>
 </div> 
 
 • Para executar o código fornecido, você precisará seguir as instruções abaixo !
