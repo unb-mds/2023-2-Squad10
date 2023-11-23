@@ -2,6 +2,8 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
+![](https://komarev.com/ghpvc/?username=unb-mds&repo=2023-2-Squad10&color=blueviolet&style=flat&label=Views)
+
 
 <div align="center">
   <h2>Bem vindo ao nosso repositório! </h2>
@@ -126,6 +128,14 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 
 
 ### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
+
+
+
+
+
+
+
+
 
 
 ## ©️ Licença 
