@@ -1,4 +1,4 @@
-
+<img align="right" alt="Coding" width="400" src= 'https://dl.openseauserdata.com/cache/originImage/files/527a9783c28c70962773a73db797ea4d.gif'>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
