@@ -93,7 +93,7 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 </div>
 
 <div align="center">
-  <h2>📄Documentação </h2>
+  <h2>📄 Documentação </h2>
 </div>
 
 • A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
