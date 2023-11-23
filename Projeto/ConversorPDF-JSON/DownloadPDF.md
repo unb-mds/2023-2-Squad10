@@ -27,7 +27,7 @@
   <h2>👩🏾‍💻 Execute o script </h2>
 </div> 
 
-         python conversoratualizado.py
+         python DownloadPDF.py
 
       O script solicitará as datas iniciais e finais para baixar os PDFs correspondentes. 
       Certifique-se de ter uma conexão com a internet ativa. Os arquivos PDF serão baixados no diretório 'downloads',       
@@ -38,25 +38,15 @@
 </div> 
 
  • Você pode personalizar o script conforme necessário, como ajustar as datas diretamente no script ou modificar a formatação dos nomes dos arquivos.
+ 
  • Este script usa Selenium para interagir com a página da web. Certifique-se de ter o ChromeDriver adequado instalado e configurado.
+ 
  • Considere configurar um ambiente virtual Python para isolar as dependências do projeto.
+ 
  • Lembre-se de seguir essas instruções e adaptar o código conforme necessário para atender às suas necessidades específicas. Certifique-se de ter o ChromeDriver instalado e configurado corretamente,       pois o script depende do Selenium para interagir com a página da web.
+
+ 
     
-<div align="center">
-  <h2>Documentação </h2>
-</div>
-<<<<<<< HEAD
-
-A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
-=======
-
-A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2023-2-Squad10/).
-
-<blockquote>
-   <p>Este software está sob licença:</p>
-</blockquote>
->>>>>>> fdf64acbbc93fa51582236eca530214202c49a38
-
 <blockquote>
    <p>Este software está sob licença:</p>
 </blockquote>
