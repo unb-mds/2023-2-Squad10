@@ -1,3 +1,9 @@
+# ✔️ SQUAD10
+<a name="readme-top"></a>
+
+![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
+
 <div align="center">
   <h2>Bem vindo ao nosso repositório! </h2>
 </div> 
