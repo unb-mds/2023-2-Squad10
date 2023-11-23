@@ -27,45 +27,45 @@ Este projeto oferece as seguintes funcionalidades:
 • Interface de Usuário Intuitiva: Inclui uma interface de usuário amigável que permite aos usuários encontrar de maneira transparente as informações das licitações realizadas pelos municípios do Piauí, tornando a pesquisa e análise mais acessíveis.
 
 <div align="center">
-  <h2>🕊 Linguagens e Tecnologias utilizadas </h2>
+  <h2>🕊 Como executar o projeto </h2>
 </div> 
 
-• Python 3.12: 
+### 1. 📈 Pré-requisitos
+Esses são os nossos pré-requisitos,eles garantem uma base sólida para colaboração, ajudando a evitar erros e facilitando a contribuição:
+- [Python3](https://www.python.org/downloads/)
+- [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=JJTC&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJMg9rrK6120NVHWXKNS773PEP1Du65dqiZWcktY_KxHpRkV4SV03XBoCri8QAvD_BwE&gclsrc=aw.ds)
+- [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
-É necessario para rodar o projeto baixe [aqui](https://www.python.org/downloads/).
+### 2. 📚 Instalação das bibliotecas do Python
+Aqui estão as bibliotecas do Python usadas que são conjuntos de recursos pré-desenvolvidos que simplificam o desenvolvimento de aplicativos, economizando tempo e esforço:
+```
+pip install selenium
+```
+```
+pip install tika
+```
+```
+pip install PyPDF2
+```
+```
+pip install beautifulsoup4
+```
+```
+pip install requests
+```
 
-  • Para clonar nosso repositorio ultilize :
-  
- 
-    git clone https://github.com/unb-mds/2023-2-Squad10.git
-    
+### 3. 👩‍💻 Clonar o Repositório
+Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
+```
+git clone https://github.com/unb-mds/2023-2-Squad10.git
+```
   	
-    
-  • Para instalar as bibliotecas necessárias para o projeto, execute os seguintes comandos:
   
-    pip install tika
-    pip install selenium
-    pip install beautifulsoup4
-    pip install requests
-    pip install PyMuPDF
-
 <div align="center">
-  <h2> 📋Outros Requisitos: </h2>
+  <h2> </h2>
 </div>
 
-• Google Chrome:
 
-Certifique-se de ter o navegador Google Chrome instalado. O script foi desenvolvido para funcionar com o Chrome, 
-se necessário. baixe o chrome [AQUI](https://www.google.pt/intl/pt-PT/chrome/?brand=CHBD&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJAzL_QMrJHy1ce17iOBprqZ9HhgeUaPtjNRAljbHUmHqhvITdcIdjRoC68IQAvD_BwE&gclsrc=aw.ds).
-
-• ChromeDriver:
-
-Baixe o ChromeDriver da página oficial de downloads. Certifique-se de baixar a versão compatível com a versão do Google Chrome instalada no seu sistema. baixe clicando [AQUI](https://sites.google.com/chromium.org/driver/).
-
-Configuração: Coloque o executável do ChromeDriver no mesmo diretório do arquivo de download pdf    
-
-
-Abra http://localhost:5500 com seu navegador para ver o resultado.
 
 <div align="center">
   <h2>👨‍💻 Contribuidores </h2>
