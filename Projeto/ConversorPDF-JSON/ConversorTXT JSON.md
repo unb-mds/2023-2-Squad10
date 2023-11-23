@@ -28,6 +28,7 @@
          python ConversorTXT JSON.py
 
   • Certifique-se de que a estrutura de diretórios está conforme o esperado
+  
   • Pasta para os arquivos PDF ('C:/Users/Carlin/2023-2-Squad10/Projeto/ConversorPDF-JSON/downloads')
 
 <div align="center">
