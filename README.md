@@ -100,11 +100,11 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
   <h2>⚙️ Configurações do projeto </h2>
 </div>
 
-• Certifique-se de ter o navegador Google Chrome instalado. O script foi desenvolvido para funcionar com o Chrome
+• Certifique-se de ter o navegador Google Chrome instalado. O script foi desenvolvido para funcionar com o Chrome.
   
 • Baixe o ChromeDriver da página oficial de downloads. Certifique-se de baixar a versão compatível com a versão do Google Chrome instalada no seu sistema.
 
-• Coloque o executável do ChromeDriver no mesmo diretório do arquivo de download pdf
+• Coloque o executável do ChromeDriver no mesmo diretório do arquivo de download pdf.
 
 • Abra http://localhost:5500 com seu navegador para ver o resultado.
 
