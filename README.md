@@ -30,7 +30,7 @@ ASS: xGabrielCv
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
-![](https://komarev.com/ghpvc/?username=unb-mds&repo=2023-2-Squad10&color=blueviolet&style=flat&label=Views)
+![GitHub views](https://komarev.com/ghpvc/?username=unb-mds&repo=2023-2-Squad10&color=blueviolet&style=for-the-badge&label=Views)
 
 
 <div align="center">
