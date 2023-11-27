@@ -88,6 +88,9 @@ pip install beautifulsoup4
 ```
 pip install requests
 ```
+```
+pip install virtualenv 
+```
 
 ### 3. 📍 Clonar o Repositório
 Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
