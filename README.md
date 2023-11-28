@@ -26,27 +26,32 @@ ASS: xGabrielCv
 
 -->
 
-<img align="right" alt="Coding" width="400" src= 'https://dl.openseauserdata.com/cache/originImage/files/527a9783c28c70962773a73db797ea4d.gif'>
+<!-- Adiciona uma imagem à direita com uma largura de 400 pixels -->
+<img align="right" alt="Coding" width="400" src='https://dl.openseauserdata.com/cache/originImage/files/527a9783c28c70962773a73db797ea4d.gif'>
 
+<!-- Adiciona distintivos (shields) do GitHub -->
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
 ![GitHub views](https://komarev.com/ghpvc/?username=unb-mds&repo=2023-2-Squad10&color=blueviolet&style=for-the-badge&label=Views)
 
-
+<!-- Título centralizado -->
 <div align="center">
-  <h2>Bem vindo ao nosso repositório! </h2>
+  <h2>Bem-vindo ao nosso repositório! </h2>
 </div> 
 
+<!-- Título centralizado -->
 <div align="center">
   <h2>Diario Oficial do Piaui UnB </h2>
 </div> 
 
+<!-- Título centralizado -->
 <div align="center">
   <h2>🎯 Objetivos </h2>
 </div> 
 
 • O Diário Oficial do Piauí UnB é um projeto em constante evolução, vinculado à disciplina "Métodos de Desenvolvimento de Software". Seu propósito fundamental é facilitar a extração de dados de licitações do site do governo do Piauí, transformando essas informações em gráficos de forma acessível e intuitiva para os alunos da Universidade de Brasília.
 
+<!-- Título centralizado -->
 <div align="center">
   <h2>👩🏾‍💻 Funcionalidades </h2>
 </div> 
@@ -61,16 +66,18 @@ Este projeto oferece as seguintes funcionalidades:
 
 • Interface de Usuário Intuitiva: Inclui uma interface de usuário amigável que permite aos usuários encontrar de maneira transparente as informações das licitações realizadas pelos municípios do Piauí, tornando a pesquisa e análise mais acessíveis.
 
+<!-- Título centralizado -->
 <div align="center">
   <h2>🤞 Como executar o projeto </h2>
 </div> 
 
 ### 1. 🔑 Pré-requisitos
-Esses são os nossos pré-requisitos,eles garantem uma base sólida para colaboração, ajudando a evitar erros e facilitando a contribuição:
+Esses são os nossos pré-requisitos, eles garantem uma base sólida para colaboração, ajudando a evitar erros e facilitando a contribuição:
 - [Python3](https://www.python.org/downloads/)
 - [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=JJTC&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJMg9rrK6120NVHWXKNS773PEP1Du65dqiZWcktY_KxHpRkV4SV03XBoCri8QAvD_BwE&gclsrc=aw.ds)
 - [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
+<!-- Adiciona a lista de bibliotecas para copiar -->
 ### 2. 📑 Instalação das bibliotecas do Python
 Aqui estão as bibliotecas do Python usadas que são conjuntos de recursos pré-desenvolvidos que simplificam o desenvolvimento de aplicativos, economizando tempo e esforço:
 ```
@@ -91,7 +98,7 @@ pip install requests
 ```
 pip install virtualenv 
 ```
-
+<!-- Adiciona a funçao de copiar o link do repositorio -->
 ### 3. 📍 Clonar o Repositório
 Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
 ```
@@ -114,7 +121,7 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 <div align="center">
   <h2>👩‍💻 Contribuidores </h2>
 </div> 
-
+<!-- Foto dos participantes do grupo -->
 <div align="center"> 
  <img src="https://avatars.githubusercontent.com/u/119907827?v=4" width="100"/>
  <img src="https://avatars.githubusercontent.com/u/87997616?v=4" width="100" />
@@ -134,7 +141,7 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 
 
 
-
+<!-- Icons das ferramentas e linguagens ultilizadas -->
 <p align="left">
     <a href="https://www.python.org" target="_blank" rel="noreferrer">
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="30" height="30"/>
@@ -158,17 +165,8 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 
 
 
-
+<!-- Criador e licença -->
 ### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
-
-
-
-
-
-
-
-
-
 
 ## ©️ Licença 
 
