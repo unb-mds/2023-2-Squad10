@@ -1,0 +1,1524 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+LEI 117 - ALTERAÇÃO PPA QUADRÊNIO 2022-2025 E ANEXOS
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Planos
+<br/><br/>
+<strong>PPA - PLANO PLURIANUAL</strong>
+<br/><br/>
+2022 - 2025
+</td>
+<td class="text-center">
+<strong>ID: </strong>7775FCAF88934
+<br/><br/>
+<a class="fileDoc" data-file-hash="7775FCAF88934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-117-alteracao-ppa-quadrenio-2022-2025-e-anexos-sigefredo-pacheco-82812">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Sigefredo_Pacheco_Planos_lei_117_alteracao_ppa_quadrenio_2022_2025_e_anexos_aebca61b-f5cf-4257-84ff-479fe7a44622.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado Preliminar - Edital 02.2023 - Demais Áreas da Cultura - LPG - Acauã
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Resultado dos aprovados e sua classificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C04E1B85BBC94
+<br/><br/>
+<a class="fileDoc" data-file-hash="C04E1B85BBC94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-preliminar-edital-02-2023-demais-areas-da-cultura-lpg-acaua-acaua-82804">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Acaua_Resultado_dos_aprovados_e_sua_classificacao_resultado_preliminar_edital_02_2023_demais_areas_da_cultura__c43f120f-6b49-4604-9ff7-f1c8cc0116ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado Preliminar - Edital 01.2023 - Audiovisual - Acauã
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Resultado dos aprovados e sua classificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB1668FDFBDE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB1668FDFBDE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-preliminar-edital-01-2023-audiovisual-acaua-acaua-82803">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Acaua_Resultado_dos_aprovados_e_sua_classificacao_resultado_preliminar_edital_01_2023_audiovisual_acaua_29eaa9b5-8182-4e95-b2a8-36e364510ba0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do contrato da Dispensa 026/2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5BA7D501244A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5BA7D501244A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-da-dispensa-026-2023-bocaina-82830">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Bocaina_Aviso_do_extrato_de_contrato_extrato_do_contrato_da_dispensa_026_2023_c0e32767-a22f-42a5-9dc7-fb81ebf799ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>26DD61DF4FC84
+<br/><br/>
+<a class="fileDoc" data-file-hash="26DD61DF4FC84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88800/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_ed100c65-5c34-418b-af31-dfc372a5d597.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>12E16AD5C0054
+<br/><br/>
+<a class="fileDoc" data-file-hash="12E16AD5C0054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88801/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_00ab0683-7eb8-40a8-ac8a-d3a132430dd0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15D5A81F7ADE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="15D5A81F7ADE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88802/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_660ccb2d-2c88-4ffa-8cbf-4bf3dea3bfe6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4594CA225FC84
+<br/><br/>
+<a class="fileDoc" data-file-hash="4594CA225FC84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88803/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_9dec5f8c-ec5f-47fc-8877-2905205f1b54.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E78DBE0C1F7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E78DBE0C1F7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88804/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_0b5e9a97-dfe8-41d9-b0e0-f01c5f8de37d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7621194F60B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7621194F60B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88805/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_155f4292-915a-4e3f-b787-72f750302c7a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02254D7D29BF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="02254D7D29BF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88806/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2f903f5c-1e33-44f0-b710-a4b3a3360a0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A695B4D350564
+<br/><br/>
+<a class="fileDoc" data-file-hash="A695B4D350564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88807/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_ecf0e031-b523-472d-baf4-29876a29457f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA27BBE8180B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA27BBE8180B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88808/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_40778076-94a1-41ff-9584-fcc466ea147e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 Bimestre /
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>91FE90708EFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="91FE90708EFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88809/rreo-5-bimestre-itaueira-82726">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_48c1b561-3e48-4bed-8500-ba1581bb8870.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+LEI Nº 716
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>70753DE855EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="70753DE855EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-716-angical-do-piaui-82794">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Angical_do_Piaui_Leis_lei_n_716_05907b67-1766-419e-b70f-bcd87dfb2fe2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Adjudicação do Contrato Administrativo nº 102.023, PE nº 013-2023- Materiais elétricos
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>278D23DE3D144
+<br/><br/>
+<a class="fileDoc" data-file-hash="278D23DE3D144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-do-contrato-administrativo-n-102-023-pe-n-013-2023-materiais-eletricos-barra-d-alcantara-82797">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Barra_DAlcantara_Aviso_da_Adjudicacao_adjudicacao_do_contrato_administrativo_n_102_023_pe_n_013_2023_materiais_b5fd163e-0ad9-4e50-a079-0018b038e79d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do contrato da Tomada de Preços 002/2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B955C0550C4B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B955C0550C4B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-da-tomada-de-precos-002-2023-bocaina-82789">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Bocaina_Aviso_do_extrato_de_contrato_extrato_do_contrato_da_tomada_de_precos_002_2023_1624af7d-4493-413c-bd77-9bd807101b6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+ATA DA TRIGESIMA PRIMEIRA SESSÃO ORDINÁRIA DE 2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pajeú do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3F56CFB4F994
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3F56CFB4F994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-trigesima-primeira-sessao-ordinaria-de-2023-pajeu-do-piaui-82785">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Camara_Pajeu_do_Piaui_Atas_ata_da_trigesima_primeira_sessao_ordinaria_de_2023_a31d2071-2654-49a6-a31c-8aa4c3473db1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado julgamento CC 002-2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7C73D44B21C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7C73D44B21C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-julgamento-cc-002-2023-buriti-dos-montes-82767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Buriti_dos_Montes_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_resultado_julgamento_cc_002_2023_84a4e534-1363-46cb-afa2-80cfca83bdfe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Ratificação da Dispensa 026/2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F540AE2159454
+<br/><br/>
+<a class="fileDoc" data-file-hash="F540AE2159454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-da-dispensa-026-2023-bocaina-82831">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Bocaina_Aviso_de_Ratificacao_termo_de_ratificacao_da_dispensa_026_2023_499294ac-2b7f-4d25-a955-8e971b73a38b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+LIBERAÇÃO-ADESÃO-PICOS-PE 001-2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF9C9516C42C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF9C9516C42C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/liberacao-adesao-picos-pe-001-2023-itaueira-82795">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Outros_atos_administrativos_liberacao_adesao_picos_pe_001_2023_59bd7441-91eb-4340-a0ea-485a3cac8d3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 04
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>06FF6A7689894
+<br/><br/>
+<a class="fileDoc" data-file-hash="06FF6A7689894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-04-itaueira-82734">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Portarias_portaria_04_3a4a0bf2-4ff6-4273-acab-895f7873a145.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 32 , DE 02 DE OUTUBRO DE 2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>89ECFA46148E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="89ECFA46148E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-32-de-02-de-outubro-de-2023-agricolandia-82763">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Agricolandia_Decretos_decreto_n_32_de_02_de_outubro_de_2023_16f88c86-a0e8-4a2d-8839-40f76d359048.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução nº 03-2023 do CMDCA
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9EAE57EA59CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9EAE57EA59CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-03-2023-do-cmdca-buriti-dos-lopes-82814">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Buriti_dos_Lopes_Resolucoes_resolucao_n_03_2023_do_cmdca_60262a2b-8b54-427e-89aa-00c5606dae26.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Lei 287
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>A93D13F3AD3A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A93D13F3AD3A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-287-lagoa-do-barro-do-piaui-82777">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Lagoa_do_Barro_do_Piaui_Leis_lei_287_44438a32-939a-4b3a-8215-776f3164a6ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+RESPOSTA AO RECURSO ADMINISTRATIVO NATIELLY SOARES
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>79EC14AB34CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="79EC14AB34CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resposta-ao-recurso-administrativo-natielly-soares-buriti-dos-montes-82838">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Buriti_dos_Montes_Atos_resposta_ao_recurso_administrativo_natielly_soares_06938405-57f1-400f-9035-a86426749aa0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO Nº 01.1411-2023- DL 023-2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F3A6F94E2314
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F3A6F94E2314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-01-1411-2023-dl-023-2023-nazaria-82727">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Nazaria_Extrato_extrato_contrato_n_01_1411_2023_dl_023_2023_15474c19-f60d-4d88-9633-0393beb02600.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 1° TERMO ADITIVO PREGÃO ELETRONICO N°06/2023
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>01C9A94292D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="01C9A94292D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-1-termo-aditivo-pregao-eletronico-n-06-2023-curral-novo-do-piaui-82760">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Curral_Novo_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_1_termo_aditivo_pregao_eletronico_n_06_2023_5b98f1ac-8ea0-44e0-8658-ca2c819d2120.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Inexigibilidade nº 010-2023 - atração musical - Extrato de contrato e ratificação
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>40DE10D42CA94
+<br/><br/>
+<a class="fileDoc" data-file-hash="40DE10D42CA94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/inexigibilidade-n-010-2023-atracao-musical-extrato-de-contrato-e-ratificacao-sigefredo-pacheco-82779">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Sigefredo_Pacheco_Aviso_do_extrato_de_contrato_inexigibilidade_n_010_2023_atracao_musical_extrato_de_contrato__077e194f-92c6-4154-bef7-5a493b551635.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Inexigibilidade nº 008-2023 - FUNDEB - Extrato de contrato e ratificação
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5CEB51467FCB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5CEB51467FCB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/inexigibilidade-n-008-2023-fundeb-extrato-de-contrato-e-ratificacao-sigefredo-pacheco-82776">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Sigefredo_Pacheco_Aviso_do_extrato_de_contrato_inexigibilidade_n_008_2023_fundeb_extrato_de_contrato_e_ratific_846dabdc-3985-4d97-abbb-60d067c506fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+retificação contrato 15
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>5951A28B7EDB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5951A28B7EDB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-contrato-15-monsenhor-gil-82758">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Camara_Monsenhor_Gil_Errata_retificacao_contrato_15_d1c1b729-ad59-437b-8774-8e82be33d4da.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+portaria
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B497E550129D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B497E550129D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-itaueira-82731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Itaueira_Portarias_portaria_a5782570-a57b-4603-a837-2a4218f80ec7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=890&amp;q[flag_doc_diario_true]=1">
+610
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 376
+</td>
+<td class="text-center">
+27-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>610ADADD8BF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="610ADADD8BF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-376-lagoa-do-barro-do-piaui-82782">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/24/DOP_EDICAO__27-11-2023_ED_610_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_376_9b56d1d2-0039-48ae-ac2f-9f384c0a6849.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

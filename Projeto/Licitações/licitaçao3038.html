@@ -1,0 +1,1211 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>684D48C3948A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="684D48C3948A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11842/balanco-orcamentario-paes-landim-11160">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_66deec70-c506-4b63-8d0e-8b6f64d82c19.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9199BB5FA1E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9199BB5FA1E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11845/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_55a1cd38-c850-4f4f-81f5-c43c75d072ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>73705BFB3EB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="73705BFB3EB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11846/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_7d294f01-ac2a-4286-a9b5-63ff106b5d35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9640A94DE8B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9640A94DE8B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11847/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_0394c9ad-5893-44ea-967a-6b81699ae7a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D8F2FD31C4B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D8F2FD31C4B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11848/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_a8bc4df7-0a74-4e5e-9199-33a6a12f67fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>998C7E6081844
+<br/><br/>
+<a class="fileDoc" data-file-hash="998C7E6081844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11849/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_865ae6ab-ee2f-414a-8266-ed00e657c574.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>901760EE9A354
+<br/><br/>
+<a class="fileDoc" data-file-hash="901760EE9A354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11850/relatorio-de-gestao-fiscal-dom-expedito-lopes-11163">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorio_de_gestao_fiscal_71a77200-08dc-47b4-bcf0-66d9bc888ea5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+PM_PL_Demonstrativo da Receita Corrente Líquida /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>171DFAD2E8C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="171DFAD2E8C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11873/pm_pl_demonstrativo-da-receita-corrente-liquida-paes-landim-11174">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_pm_pl_demonstrativo_da_receita_corrente_liquida_34b88817-bb4f-4177-bda0-c5ab52971c8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+resolução cmas nº 04/2022
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D282FB996504
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D282FB996504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmas-n-04-2022-sao-jose-do-piaui-11178">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Sao_Jose_do_Piaui_Resolucoes_resolucao_cmas_n_04_2022_4f389e1a-981e-4366-ac01-6127ba905ecd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO PRIMEIRO TERMO ADITIVO AO CONTRATO Nº 022/2021
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>69EF2C3AE91D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="69EF2C3AE91D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-primeiro-termo-aditivo-ao-contrato-n-022-2021-santa-rosa-do-piaui-11181">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Santa_Rosa_do_Piaui_Contratos_e_seus_aditivos_extrato_do_primeiro_termo_aditivo_ao_contrato_n_022_2021_97495638-b539-4e60-86b9-f1386eda9000.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 013-2022
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BEF53B06FA4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BEF53B06FA4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-013-2022-conceicao-do-caninde-11179">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Conceicao_do_Caninde_Portarias_portaria_013_2022_e15e0051-111b-4a4b-8cf0-1965115ab6b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PREGÃO 010-2022
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A081AB79BB1A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A081AB79BB1A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pregao-010-2022-conceicao-do-caninde-11184">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Conceicao_do_Caninde_Aviso_de_licitacao_aviso_pregao_010_2022_a5763d92-a972-4ec0-b7e2-0fd53ce63800.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+Ratificação INEX 001/2022
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF6B04A0199C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF6B04A0199C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inex-001-2022-oeiras-11193">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Oeiras_Aviso_de_Ratificacao_ratificacao_inex_001_2022_b1daca2f-74c5-42a6-a018-046f96bed4e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO INEX 001.2022
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1A4CBA5CA744
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1A4CBA5CA744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-inex-001-2022-oeiras-11197">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Oeiras_Extrato_extrato_contrato_inex_001_2022_71198160-5339-43df-815e-d44ca3929f05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO DA SEC. MUNICIPAL DE SAÚDE
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>783EB60DCB934
+<br/><br/>
+<a class="fileDoc" data-file-hash="783EB60DCB934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-saude-barreiras-do-piaui-11187">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_saude_c67f48e5-1acc-4fc3-a333-df7b9dd2396b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO DA SEC. MUNICIPAL DE SAÚDE
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>962E6E254D504
+<br/><br/>
+<a class="fileDoc" data-file-hash="962E6E254D504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-saude-barreiras-do-piaui-11189">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_saude_196f903e-4316-4c8c-9581-84f7910833c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO DA SEC. MUNICIPAL DE SAÚDE
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B6993DBA2574
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B6993DBA2574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-saude-barreiras-do-piaui-11190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_saude_a4ef7fb4-37fb-4469-bcc6-2bcc69926aaa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Outros
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4839C068006A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4839C068006A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11906/lrf-rgf-altos-11207">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Altos_Outros_lrf_rgf_4b845a81-cca6-4bd1-8f71-d80ff8fc661a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Outros
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>550C3FCFE22C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="550C3FCFE22C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11907/lrf-rgf-altos-11207">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Altos_Outros_lrf_rgf_3c7df961-728d-47ad-8a7e-48f839a8cae0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Outros
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E50B01C2046F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E50B01C2046F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11908/lrf-rgf-altos-11207">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Altos_Outros_lrf_rgf_eb602be4-0ab8-4960-b9ec-9068c84a9029.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+NONO APOST. CONTRATO Nº 014-2021-SUTRAN
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>C5CDD9B9E8674
+<br/><br/>
+<a class="fileDoc" data-file-hash="C5CDD9B9E8674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nono-apost-contrato-n-014-2021-sutran-floriano-11206">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Floriano_Outros_nono_apost_contrato_n_014_2021_sutran_af2d4ccb-951f-4311-a835-4da5bd35c855.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+NONO APOST. CONTRATO Nº 025-2021-SAÚDE
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>66461D8DE93F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="66461D8DE93F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nono-apost-contrato-n-025-2021-saude-floriano-11210">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Floriano_Outros_nono_apost_contrato_n_025_2021_saude_b55d4081-a59b-4ce7-be91-e36086189664.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 024/2022 - TESTE SELETIVO
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE99E39838664
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE99E39838664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-024-2022-teste-seletivo-wall-ferraz-11192">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_024_2022_teste_seletivo_842c429c-1ca8-4a75-bcbc-1f51cd0c5593.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+ATO SEM EFEITO - PUBLICAÇÃO RATIFICAÇÃO
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E96C976A09494
+<br/><br/>
+<a class="fileDoc" data-file-hash="E96C976A09494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-sem-efeito-publicacao-ratificacao-floriano-11200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Floriano_Outros_atos_administrativos_ato_sem_efeito_publicacao_ratificacao_4fb9e8ef-d6f1-4545-aa28-2b1a82371fe9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=276&amp;q[flag_doc_diario_true]=1">
+195
+</a>
+-
+2022
+</td>
+<td class="">
+NONO APOST. CONTRATO Nº 016-2021-OUVIDORIA
+</td>
+<td class="text-center">
+23-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>132F2BCB56AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="132F2BCB56AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nono-apost-contrato-n-016-2021-ouvidoria-floriano-11203">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/22/DOP_EDICAO__23-3-2022_ED_195_Prefeitura_Floriano_Outros_nono_apost_contrato_n_016_2021_ouvidoria_8e946e59-b00a-48b5-bbb5-d6ceffd2c693.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1202 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa nº 010-2022 - Extrato de contrato Jose Willas
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>59BEC02D8C854
+<br/><br/>
+<a class="fileDoc" data-file-hash="59BEC02D8C854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-010-2022-extrato-de-contrato-jose-willas-sigefredo-pacheco-10360">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_010_2022_extrato_de_contrato_jose_willas_c365319c-401b-4f53-9dce-d9dd14a350a5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO SIMPLIFICADO - CONSOLIDADO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F9BF09D22264
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F9BF09D22264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10972/demonstrativo-simplificado-consolidado-conceicao-do-caninde-10323">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_de_gestao_fiscal_demonstrativo_simplificado_consolidado_4f9513e9-7959-4d3e-93dc-e5c743796d43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+RESTOS A PAGAR POR PODER E ORGAO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>98B8F49886854
+<br/><br/>
+<a class="fileDoc" data-file-hash="98B8F49886854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10958/restos-a-pagar-por-poder-e-orgao-conceicao-do-caninde-10309">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_restos_a_pagar_por_poder_e_orgao_f1b9cdf6-ce16-4ace-b4b1-b2fd172f048c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 178-2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2AE1D525CCE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2AE1D525CCE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-178-2022-buriti-dos-lopes-10345">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_178_2022_a39e59be-27c2-419b-9d71-231e35c30cc0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 181-2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F157059A37954
+<br/><br/>
+<a class="fileDoc" data-file-hash="F157059A37954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-181-2022-buriti-dos-lopes-10349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_181_2022_6563d873-93d3-458e-81da-2147c8d22a90.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 185-2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>18B3F68CFDA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="18B3F68CFDA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-185-2022-buriti-dos-lopes-10353">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_185_2022_d6d1e3e8-746e-4225-b1c2-d1f52872a3b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+DL 013
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>314044B110B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="314044B110B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dl-013-buriti-dos-lopes-10327">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Extrato_dl_013_8f5fa91d-1bb4-4d1b-be99-abe438b727e4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+GARANTIAS E CONTRA-GARANTIAS DE VALORES /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C621E8D69F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C621E8D69F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10967/garantias-e-contra-garantias-de-valores-conceicao-do-caninde-10318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_de_gestao_fiscal_garantias_e_contra_garantias_de_valores_4c876568-2b82-4eb3-a6fa-3b4e7eabf436.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução Emenda ao Regimento Interno
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>2CB7093A7E064
+<br/><br/>
+<a class="fileDoc" data-file-hash="2CB7093A7E064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-emenda-ao-regimento-interno-pimenteiras-10364">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Camara_Pimenteiras_Resolucoes_resolucao_emenda_ao_regimento_interno_e8190195-3ac4-4773-af71-f257a55685d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DA DISPENSA 033/2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C3BA234C2E24
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C3BA234C2E24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-da-dispensa-033-2022-campinas-do-piaui-10366">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Campinas_do_Piaui_Aviso_da_Dispensa_aviso_da_dispensa_033_2022_0de46165-0bbe-4ec4-9533-5f2d2f76a0d9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Apostilamento 005-A
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDE87F7C200D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDE87F7C200D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/apostilamento-005-a-itaueira-10368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Itaueira_Extrato_apostilamento_005_a_ab28747c-9908-412b-b9fc-2b8e6dc1d7ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+RESULTADO NOMINAL E PRIMARIO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>567F6F2ED0764
+<br/><br/>
+<a class="fileDoc" data-file-hash="567F6F2ED0764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10957/resultado-nominal-e-primario-conceicao-do-caninde-10308">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_resultado_nominal_e_primario_5001ce23-6d75-4547-b968-5208300297ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNCAO E SUBFUNCAO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EEF7A734F0394
+<br/><br/>
+<a class="fileDoc" data-file-hash="EEF7A734F0394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10955/despesa-por-funcao-e-subfuncao-conceicao-do-caninde-10306">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_aeb64634-548d-440c-8e6a-0f60805f1642.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+BALANCO ORCAMENTARIO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>008D3133CFAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="008D3133CFAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10954/balanco-orcamentario-conceicao-do-caninde-10305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_7abf4c99-b72c-452b-b335-f2933ca67e70.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso Licitação Pregão Eletrônico 06/2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4891E361F6F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="4891E361F6F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-licitacao-pregao-eletronico-06-2022-sao-raimundo-nonato-10335">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Camara_Sao_Raimundo_Nonato_Aviso_de_licitacao_aviso_licitacao_pregao_eletronico_06_2022_562926c4-cee0-424a-a2e6-4ac4dd8a8063.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL - EXECUTIVO /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1C5338806964
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1C5338806964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10965/despesa-com-pessoal-executivo-conceicao-do-caninde-10316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_de_gestao_fiscal_despesa_com_pessoal_executivo_dae1fa06-ae28-4b4d-a809-e34370ff76a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Adesao 001 Picos x Bl
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5FEAEA0C781B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5FEAEA0C781B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adesao-001-picos-x-bl-buriti-dos-lopes-10328">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Extrato_adesao_001_picos_x_bl_905eb2b7-30d8-4ff6-a400-fe08bef27051.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+RECEITAS DE ALIENACAO DE ATIVOS /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F6268507B9F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F6268507B9F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10961/receitas-de-alienacao-de-ativos-conceicao-do-caninde-10312">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_receitas_de_alienacao_de_ativos_2c8f2797-28c7-4761-8e74-214fe127352d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+DIVIDA CONSOLIDADA LIQUIDA /
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>59BBD3BC56A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="59BBD3BC56A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10973/divida-consolidada-liquida-conceicao-do-caninde-10324">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Conceicao_do_Caninde_Relatorios_de_gestao_fiscal_divida_consolidada_liquida_b96b4f94-7ede-4b16-b4a1-7c0ef550df79.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+EDITAL 01/2022 - CMDCA
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>96FF396EA6814
+<br/><br/>
+<a class="fileDoc" data-file-hash="96FF396EA6814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-01-2022-cmdca-sao-jose-do-piaui-10373">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Sao_Jose_do_Piaui_Ato_Convocatorio_edital_01_2022_cmdca_ee13276e-4f17-4f2e-ac32-0f11eea5e370.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+PL 04-2022 - Criação da brigada civil de combate a incêndio de Nazaré Piauí -Avulso
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>74C129C912D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="74C129C912D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pl-04-2022-criacao-da-brigada-civil-de-combate-a-incendio-de-nazare-piaui-avulso-nazare-do-piaui-10385">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Camara_Nazare_do_Piaui_Projeto_de_lei_pl_04_2022_criacao_da_brigada_civil_de_combate_a_incendio_de_nazare_piaui_avulso_208e0e8b-0894-4b19-96f4-26fb0f84c6e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 016-2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7501A103E73F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7501A103E73F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-016-2022-sao-jose-do-piaui-10395">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Sao_Jose_do_Piaui_Portarias_portaria_n_016_2022_0ed9f9f7-acba-46ad-8575-35cd1a4c20a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 186-2022
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E45A7A756F3E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E45A7A756F3E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-186-2022-buriti-dos-lopes-10354">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_186_2022_ea1d56f4-4d15-4394-86ad-bbb141059c8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+PL 03-2022 - Estabelece infrações e sanções a atividades lesivas ao meio ambiente -Avulso
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>86613D38F6A94
+<br/><br/>
+<a class="fileDoc" data-file-hash="86613D38F6A94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pl-03-2022-estabelece-infracoes-e-sancoes-a-atividades-lesivas-ao-meio-ambiente-avulso-nazare-do-piaui-10384">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Camara_Nazare_do_Piaui_Projeto_de_lei_pl_03_2022_estabelece_infracoes_e_sancoes_a_atividades_lesivas_ao_meio_ambiente_avulso_3c733e1c-6bfb-4889-8af4-b21630c0ccd0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=268&amp;q[flag_doc_diario_true]=1">
+189
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa nº 011-2022 - Extrato poços Walclides
+</td>
+<td class="text-center">
+15-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCD181C2DC064
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCD181C2DC064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-011-2022-extrato-pocos-walclides-sigefredo-pacheco-10361">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/14/DOP_EDICAO__15-3-2022_ED_189_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_011_2022_extrato_pocos_walclides_a066a45a-6bd6-4e8f-b779-7e042db40efc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

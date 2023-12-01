@@ -1,0 +1,1163 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 035
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C46268B8F1F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C46268B8F1F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-035-lagoa-do-barro-do-piaui-46673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_035_b1c467f3-b645-4cd4-9531-251b25b97eb3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 102-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>23CF2CB04B204
+<br/><br/>
+<a class="fileDoc" data-file-hash="23CF2CB04B204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-102-2023-buriti-dos-lopes-46676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_102_2023_34f9978e-b91f-42ac-9519-d2368a543770.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 031
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>66371311DD7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="66371311DD7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-031-lagoa-do-barro-do-piaui-46661">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_031_2a5edfbc-5d5e-44a4-9bfe-137fafaa0a56.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria sead 027
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D307D8A8534F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D307D8A8534F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-027-lagoa-do-barro-do-piaui-46652">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_027_94fcf2e9-c745-48f8-afe4-2f562c0528d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 025
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>972D4B0637784
+<br/><br/>
+<a class="fileDoc" data-file-hash="972D4B0637784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-025-lagoa-do-barro-do-piaui-46646">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_025_3fc4eec1-eae6-4394-8926-143fff75c2cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF CONSOLIDADO 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB320C4FF7754
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB320C4FF7754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49979/rgf-consolidado-2-semestre-2022-rio-grande-do-piaui-46757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_de_gestao_fiscal_rgf_consolidado_2_semestre_2022_0d315201-5c59-46a4-89f6-1b143baa7259.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF CONSOLIDADO 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>41E31683D7214
+<br/><br/>
+<a class="fileDoc" data-file-hash="41E31683D7214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49980/rgf-consolidado-2-semestre-2022-rio-grande-do-piaui-46757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_de_gestao_fiscal_rgf_consolidado_2_semestre_2022_8cd0dd6f-d2db-41f2-8376-45803c2595b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF CONSOLIDADO 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F895475734D14
+<br/><br/>
+<a class="fileDoc" data-file-hash="F895475734D14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49981/rgf-consolidado-2-semestre-2022-rio-grande-do-piaui-46757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_de_gestao_fiscal_rgf_consolidado_2_semestre_2022_a573e328-1e83-47e4-ad51-ed5960ab56dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO-HOMOLOGAÇÃO DISPENSA Nº 012-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>822EAD45B9F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="822EAD45B9F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-homologacao-dispensa-n-012-2023-currais-46637">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Currais_Aviso_da_Homologacao_termo_de_ratificacao_homologacao_dispensa_n_012_2023_1eaf8de8-cb15-4fa3-915b-cfb3d5f212af.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 144-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>300393B089974
+<br/><br/>
+<a class="fileDoc" data-file-hash="300393B089974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-144-2023-buriti-dos-lopes-46744">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_144_2023_3245fe0b-a231-4e0e-afde-d01659d7cc98.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 142-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>88B1D4560F1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="88B1D4560F1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-142-2023-buriti-dos-lopes-46741">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_142_2023_33852ebe-33de-47fb-9eb6-a24800054f7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 140-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3DAA9F548BAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3DAA9F548BAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-140-2023-buriti-dos-lopes-46735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_140_2023_0d8d6986-b23d-4c66-8329-290bb119f561.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+PE005.2023 - EXTRATO DO CONTRATO Nº 136.2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A98B74049904
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A98B74049904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe005-2023-extrato-do-contrato-n-136-2023-sao-jose-do-divino-46764">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Sao_Jose_do_Divino_Aviso_do_extrato_de_contrato_pe005_2023_extrato_do_contrato_n_136_2023_95262ca7-3da7-4aef-ac5f-03df4d6bf0a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 129-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>031CB3AF14954
+<br/><br/>
+<a class="fileDoc" data-file-hash="031CB3AF14954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-129-2023-buriti-dos-lopes-46719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_129_2023_f789c8c0-b145-4f76-9abd-36cbc6e2c339.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 128-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB502B104D264
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB502B104D264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-128-2023-buriti-dos-lopes-46717">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_128_2023_20dca221-2aa7-4ea0-8e31-00c47c785805.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 124-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E591E24E60734
+<br/><br/>
+<a class="fileDoc" data-file-hash="E591E24E60734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-124-2023-buriti-dos-lopes-46708">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_124_2023_a6f6763c-f252-406e-96fb-b2d639cccbe6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 123-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>59D3507075E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="59D3507075E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-123-2023-buriti-dos-lopes-46707">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_123_2023_0d5f82fe-55b3-41f5-b69b-e01e8c011721.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Hélio
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>30DCA1A8BEE24
+<br/><br/>
+<a class="fileDoc" data-file-hash="30DCA1A8BEE24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-helio-demerval-lobao-46762">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Demerval_Lobao_Portarias_portaria_helio_44b96f89-9d61-4bb7-baf7-28f993ce84ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 122-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>79BED073A1474
+<br/><br/>
+<a class="fileDoc" data-file-hash="79BED073A1474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-122-2023-buriti-dos-lopes-46705">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_122_2023_7a82ee7e-4104-4fca-b11e-c1944f4f59e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 119-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E583C787AE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E583C787AE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-119-2023-buriti-dos-lopes-46699">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_119_2023_a4fb609f-4c20-4ac8-90d6-9e6fcf94ab6d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 115-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C5CB01F6E2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C5CB01F6E2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-115-2023-buriti-dos-lopes-46693">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_115_2023_01061472-9ccc-4e25-964f-b5c401dba274.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 112-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E6159A743704
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E6159A743704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-112-2023-buriti-dos-lopes-46690">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_112_2023_c8fd0428-a9f1-4887-9db2-4c087dddaa2c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+extrato tp
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F7541AD23E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F7541AD23E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-tp-isaias-coelho-46656">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Isaias_Coelho_Extrato_extrato_tp_3614c9ba-caf6-49fc-961a-274e2443bf8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 106-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0BFF1D433B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0BFF1D433B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-106-2023-buriti-dos-lopes-46683">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_106_2023_08f2264c-27df-40b4-9700-44ea83cbc1be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 105-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5501D4776334
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5501D4776334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-105-2023-buriti-dos-lopes-46679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_105_2023_6d90c2b5-1491-42cd-8867-add55cd04f0f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1454 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F743E4F1F9DC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F743E4F1F9DC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2948/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_618ea23f-354b-40ae-9cff-8b6b2b7489fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42851C896D914
+<br/><br/>
+<a class="fileDoc" data-file-hash="42851C896D914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2949/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_77d66b97-cb56-441b-9f0c-7e58304ab267.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>52E2DC543FD44
+<br/><br/>
+<a class="fileDoc" data-file-hash="52E2DC543FD44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2950/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_76825d64-13bd-4721-a334-4daa0d6de473.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C3F881D05004
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C3F881D05004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2951/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_9243a45a-b17e-4627-973c-f8d1e1af793e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49E2574186AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="49E2574186AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2952/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_535c6800-a4f6-4ffa-9e57-f12bf35a6303.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 2o QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6167465018C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6167465018C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2953/demonstrativos-lrf-rgf-2o-quadr-2020-passagem-franca-do-piaui-2731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_2o_quadr_2020_ffad0067-bbfb-4f6b-894c-cd965d78bf94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9A879F03CE694
+<br/><br/>
+<a class="fileDoc" data-file-hash="9A879F03CE694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2954/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_d3ee60d8-5ef4-4a07-85a3-102c7641b923.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5EA32493402C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5EA32493402C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2955/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_22ef22bf-8627-4699-a3f9-71b3e9eda89d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A7A8FEDDF36B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A7A8FEDDF36B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2956/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_b37a6737-e064-4271-ac78-76318a88a05f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB1650B7331C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB1650B7331C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2957/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_3a1a8c58-3105-439d-a364-5f817e4dd758.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5BA350085684
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5BA350085684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2958/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_b6344a30-ae11-418f-9ca3-25939a8f8fc0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVOS LRF-RGF 3 QUADR 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>197C0372A7D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="197C0372A7D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2959/demonstrativos-lrf-rgf-3-quadr-2020-passagem-franca-do-piaui-2732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_demonstrativos_lrf_rgf_3_quadr_2020_23aa381a-e9ff-4002-bed8-140ce2df208c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F822348E18864
+<br/><br/>
+<a class="fileDoc" data-file-hash="F822348E18864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2960/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_a2368bd7-8d92-49bc-9746-23d785aed657.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4ABA1077A92F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4ABA1077A92F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2961/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_d807cc9b-db34-4b3d-a711-04357e888de2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB3E9DB59D444
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB3E9DB59D444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2962/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_90636d94-d046-4a45-812d-7db12a24dbf4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B67B15D6B08E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B67B15D6B08E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2963/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_1e76874a-fd0b-423f-9095-b368f2d6c1ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8856009CE5FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8856009CE5FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2964/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_d3e9b312-d6ff-4a53-b408-7ee928cacdae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>307EF866AC154
+<br/><br/>
+<a class="fileDoc" data-file-hash="307EF866AC154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2965/relatorios-de-gestao-fiscal-itaueira-2733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_17cf53a7-7d05-4fd4-8842-6a14e5018a3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+Decreto 039
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4386624E94954
+<br/><br/>
+<a class="fileDoc" data-file-hash="4386624E94954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-039-colonia-do-piaui-2734">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Colonia_do_Piaui_Decretos_decreto_039_6efc0e0b-97e8-48fd-a4bc-c9f3b5d6e5ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D22AC9BF485C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D22AC9BF485C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2967/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_ab6d4ce0-85e9-48a1-ab88-003a813bb52f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2CD5C65932304
+<br/><br/>
+<a class="fileDoc" data-file-hash="2CD5C65932304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2968/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_8adc306c-af4c-4540-b930-e4dbcfb7e0ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2094079D3DDD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2094079D3DDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2969/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_af61c65b-339f-413c-bf27-4be6339b985a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CC0972AEC8664
+<br/><br/>
+<a class="fileDoc" data-file-hash="CC0972AEC8664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2970/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_5519b039-f3f6-41e1-8031-cdef96180864.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3799E838B98A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3799E838B98A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2971/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_8ad8935d-cfdd-4905-a818-5f6230ffd6c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>48AF46CCF9E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="48AF46CCF9E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2972/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_9b35d7e3-4ea2-4c52-aa74-9154294b58a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIOS DE GESTÃO FISCAL 2020 /
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E9A1EF8FD6B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="E9A1EF8FD6B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2973/relatorios-de-gestao-fiscal-2020-itaueira-2735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_2020_df67fed0-1318-4e60-955f-daa9f0dad10b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0BB6C76210194
+<br/><br/>
+<a class="fileDoc" data-file-hash="0BB6C76210194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-itaueira-2736">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Extrato_extrato_f0370932-5ac3-4f9a-896b-1a623d996c66.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F4CE751A7064
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F4CE751A7064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-itaueira-2737">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Extrato_extrato_2ff4f635-a8be-4c9b-8945-4d4ed3f1f1af.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=151&amp;q[flag_doc_diario_true]=1">
+106
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato
+</td>
+<td class="text-center">
+18-11-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>01DA30EB9A664
+<br/><br/>
+<a class="fileDoc" data-file-hash="01DA30EB9A664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-itaueira-2738">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/11/17/DOP_EDICAO_106_Prefeitura_Itaueira_Extrato_extrato_dafe05a5-4042-4e47-a242-1850226b43eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

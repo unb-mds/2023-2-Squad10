@@ -1,0 +1,1301 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE JULGAMENTO DE HABILITAÇÃO TP 04-2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A4446E6DF824
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A4446E6DF824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-julgamento-de-habilitacao-tp-04-2022-nazaria-28698">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Nazaria_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_aviso_de_julgamento_de_habilitacao_tp_04_2022_8cf44110-cf12-440b-852c-33186a8692b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE098F5F77434
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE098F5F77434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30861/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_14b3aad0-45e2-424b-8729-5622f634975a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>57EA9BF35E5E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="57EA9BF35E5E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30862/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_c685342e-03af-4ebb-b1a6-a70ec7e7f458.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8EDA0F5F0B504
+<br/><br/>
+<a class="fileDoc" data-file-hash="8EDA0F5F0B504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30863/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_3a002358-46ea-4893-8558-59eb6461a50b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F8049ACB9C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F8049ACB9C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30864/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_0075742d-6044-43ae-8d0f-d05f2747d178.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE60C46E9F234
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE60C46E9F234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30865/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_e681216a-9ba3-4165-a445-84cd5c3c86e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F981DE37BCC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F981DE37BCC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30866/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_d66c1ec0-4f26-4df7-b044-910ce82055c1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E627CE74AC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E627CE74AC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30867/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_33516eb9-2667-4ca4-a5ab-40366c41a738.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>75325CCA7FC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="75325CCA7FC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30868/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_2134550e-1d3e-4aca-bc6f-fb9ac5f144be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCF71980919D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCF71980919D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30869/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_79537954-ee0b-4422-aa26-f1a341b3790e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>717E8F0A3E9E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="717E8F0A3E9E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30870/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_b8721978-f8a9-4959-98e4-0af50a634b55.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C6FA346F3F554
+<br/><br/>
+<a class="fileDoc" data-file-hash="C6FA346F3F554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30871/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_f00a36af-a8df-4210-a55a-ccd6e1643fe3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3094E551BB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3094E551BB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30872/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_ea7d026c-bd03-4b86-8a6f-eb91a394f719.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 4º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>966AFB0378AE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="966AFB0378AE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30873/rreo-4-bimestre-2022-sigefredo-pacheco-28713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2022_de9ee11f-4993-4e1e-b294-e6cf6c0ffb0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO-CONTROLE DE LIBERAÇÃO ADESÃO INTERNA Nº 43-2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>365917B7E0464
+<br/><br/>
+<a class="fileDoc" data-file-hash="365917B7E0464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-controle-de-liberacao-adesao-interna-n-43-2022-floriano-28728">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Floriano_Outros_extrato_controle_de_liberacao_adesao_interna_n_43_2022_459f44ca-10fa-4904-8d2c-226db2741ce0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria nº 037/2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>983F26C6A8944
+<br/><br/>
+<a class="fileDoc" data-file-hash="983F26C6A8944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-037-2022-lagoinha-do-piaui-28723">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Lagoinha_do_Piaui_Portarias_portaria_n_037_2022_5ccc2dee-d38a-4779-a36b-44711015d1c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 031 - NOMEAÇÃO GABRIEL GOMES - ATENÇÃO BÁSICA
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3CD68E9D17E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3CD68E9D17E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-031-nomeacao-gabriel-gomes-atencao-basica-sigefredo-pacheco-28718">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Portarias_portaria_n_031_nomeacao_gabriel_gomes_atencao_basica_aa9c0275-13f5-48d6-8ffd-c11ec18c8833.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto nº 122, de 30.09.2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F1FEDF697864
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F1FEDF697864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-122-de-30-09-2022-floriano-28711">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Floriano_Decretos_decreto_n_122_de_30_09_2022_fc28d434-2b08-4f7e-a2b4-bf1eee634cee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 188 EXONERAÇÃO SECRETÁRIA DE SAÚDE
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>627AD0594DC34
+<br/><br/>
+<a class="fileDoc" data-file-hash="627AD0594DC34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-188-exoneracao-secretaria-de-saude-buriti-dos-montes-28719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Buriti_dos_Montes_Portarias_portaria_n_188_exoneracao_secretaria_de_saude_565cdcd6-3485-40e5-b2d2-6b5aff7572c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 46
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>914DF7D175A04
+<br/><br/>
+<a class="fileDoc" data-file-hash="914DF7D175A04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-46-nazaria-28701">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Nazaria_Decretos_decreto_n_46_4da7124b-7012-4d5e-8e74-25bcbbf2e269.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>72A0A21B6B914
+<br/><br/>
+<a class="fileDoc" data-file-hash="72A0A21B6B914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30874/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_02e78dc2-29ee-4215-bbdc-5ae9dea768eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>69A25B093CE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="69A25B093CE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30875/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_8b7b4292-f029-4684-853e-ca385240e09a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCF3E5DDF1F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCF3E5DDF1F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30876/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_c7c6f7d8-19bd-471d-b874-ecc32ad318fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>77A651570F7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="77A651570F7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30877/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_3d432fa8-3b9b-44d1-b582-05a93211d867.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04129D1AE26E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="04129D1AE26E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30878/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_87ed6a71-91e8-412b-8ba1-89a2407f4723.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RGF - 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EA420E6CC414
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EA420E6CC414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30879/rgf-2-quadrimestre-2022-sigefredo-pacheco-28714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_6d24bdab-6ad4-43de-acda-ae38008c9c6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

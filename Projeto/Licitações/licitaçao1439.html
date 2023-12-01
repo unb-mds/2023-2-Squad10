@@ -1,0 +1,1183 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+6.1. Demonstrativo da Receita Corrente Líquida /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DDF7DB1C199D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DDF7DB1C199D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53014/6-1-demonstrativo-da-receita-corrente-liquida-paes-landim-49384">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_6_1_demonstrativo_da_receita_corrente_liquida_4714a321-f866-476f-90fb-41f12f9dcdef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria SME N 08-2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA02D97E54524
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA02D97E54524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sme-n-08-2023-coivaras-49369">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Coivaras_Portarias_portaria_sme_n_08_2023_475729b1-50dc-4831-8789-ee4d3edcf522.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+1.2. Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar - Consolidado /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FE674640B254
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FE674640B254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53025/1-2-demonstrativo-da-disponibilidade-de-caixa-e-dos-restos-a-pagar-consolidado-paes-landim-49395">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_1_2_demonstrativo_da_disponibilidade_de_caixa_e_dos_restos_a_pagar_conso_ca75cf70-f372-4dc0-8662-0cc45224307f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+6.5. Demonstrativo dos Resultados Primário e Nominal /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>74F3050B5A104
+<br/><br/>
+<a class="fileDoc" data-file-hash="74F3050B5A104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53020/6-5-demonstrativo-dos-resultados-primario-e-nominal-paes-landim-49390">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_6_5_demonstrativo_dos_resultados_primario_e_nominal_887ac420-98bc-4bd7-8c09-b75cb4f4d1f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIAS 008
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Fartura do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E621246E60224
+<br/><br/>
+<a class="fileDoc" data-file-hash="E621246E60224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-008-fartura-do-piaui-49380">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Fartura_do_Piaui_Portarias_portarias_008_d4f463d9-23f6-412b-b826-ffa574d17f4e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 007
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Fartura do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>236E96B81BCB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="236E96B81BCB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-007-fartura-do-piaui-49379">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Fartura_do_Piaui_Portarias_portaria_007_3d24f278-614f-4573-a6f0-1d2545c9d64b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE LICITAÇÃO - INEXIGIBILIDADE - SERVÇOS CONTÁBEIS
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso da Inexigibilidade
+</td>
+<td class="text-center">
+<strong>ID: </strong>816C19F98A174
+<br/><br/>
+<a class="fileDoc" data-file-hash="816C19F98A174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-licitacao-inexigibilidade-servcos-contabeis-bocaina-49354">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Bocaina_Aviso_da_Inexigibilidade_extrato_de_licitacao_inexigibilidade_servcos_contabeis_14685961-db2f-4ff0-9404-2910f10e7d9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+5.2. Demonstrativo da Execução das Despesas por Função e Subfunção /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED17B3E3E0DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED17B3E3E0DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53013/5-2-demonstrativo-da-execucao-das-despesas-por-funcao-e-subfuncao-paes-landim-49383">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_5_2_demonstrativo_da_execucao_das_despesas_por_funcao__675d2daf-3d7d-47d0-b1e8-47843b8133cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+3.2. Demonstrativo da Receita de Alienação de Ativos e Aplicação dos Recursos /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3542DD73E3C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="3542DD73E3C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53008/3-2-demonstrativo-da-receita-de-alienacao-de-ativos-e-aplicacao-dos-recursos-paes-landim-49378">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_3_2_demonstrativo_da_receita_de_alienacao_de_ativos_e__3b7cabbc-706e-459d-ab1b-2f6598a741ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+CESTA BASICA
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7504ACECC33F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7504ACECC33F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cesta-basica-buriti-dos-lopes-49353">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_cesta_basica_7d44eb71-44b8-4fe3-b841-b9a381d88d46.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Convite Audiência Pública - 3º Quadrimestre 2022
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D1E208EAFC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D1E208EAFC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convite-audiencia-publica-3-quadrimestre-2022-sigefredo-pacheco-49352">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Sigefredo_Pacheco_Outros_atos_administrativos_convite_audiencia_publica_3_quadrimestre_2022_2255c920-998f-4236-81b4-8a8e603bc6c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+RETIFICAÇÃO - EXTRATO DE LICITAÇÃO - INEXIGIBILIDADE - SERVÇOS ADVOCATÍCIOS
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso da Inexigibilidade
+</td>
+<td class="text-center">
+<strong>ID: </strong>1026B2842DC84
+<br/><br/>
+<a class="fileDoc" data-file-hash="1026B2842DC84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-extrato-de-licitacao-inexigibilidade-servcos-advocaticios-bocaina-49349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Bocaina_Aviso_da_Inexigibilidade_retificacao_extrato_de_licitacao_inexigibilidade_servcos_advocaticios_b3d1d65d-a692-4ece-a7d6-29f7a94c21b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria SME 04 - 2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>554B9C1BC4A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="554B9C1BC4A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sme-04-2023-coivaras-49360">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Coivaras_Portarias_portaria_sme_04_2023_649d3a53-f5f3-4ebe-b584-9a827a9970fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA SME 03-2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>65915BB7C4774
+<br/><br/>
+<a class="fileDoc" data-file-hash="65915BB7C4774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sme-03-2023-coivaras-49359">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Coivaras_Portarias_portaria_sme_03_2023_f2de5d3a-3fc9-41cf-b9c6-110a49906a8b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA SME 02/2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A5D7F7C499544
+<br/><br/>
+<a class="fileDoc" data-file-hash="A5D7F7C499544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sme-02-2023-coivaras-49358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Coivaras_Portarias_portaria_sme_02_2023_9245d536-e17a-46aa-ba36-9a9ec58055d9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+6.4. Demonstrativo dos Restos a Pagar por Poder e Órgão /
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E125288E70F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="E125288E70F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53019/6-4-demonstrativo-dos-restos-a-pagar-por-poder-e-orgao-paes-landim-49389">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Paes_Landim_Relatorios_resumidos_da_execucao_orcamentaria_6_4_demonstrativo_dos_restos_a_pagar_por_poder_e_orgao_214baf48-ba44-4fb2-82df-274e93314ba9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato n° 030/2023 - Inexigibilidade n° 009/2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>02AC909B31A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="02AC909B31A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-030-2023-inexigibilidade-n-009-2023-altos-49361">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Altos_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_030_2023_inexigibilidade_n_009_2023_649824fa-dcb7-44c9-a341-56bfb6b4dc5d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+DESPACHO PE 009-23
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Despachos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C3562E30B584
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C3562E30B584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-pe-009-23-tanque-do-piaui-49345">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Tanque_do_Piaui_Despachos_despacho_pe_009_23_ea0e1494-16f1-4d3b-a849-e82aa60cacd9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 154-2023 - CLAUDIO TOMAZ DA COSTA JUNIOR
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D14D0756378F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D14D0756378F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-154-2023-claudio-tomaz-da-costa-junior-luis-correia-49355">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Luis_Correia_Portarias_portaria_154_2023_claudio_tomaz_da_costa_junior_1b2723ca-19a5-400c-b702-d588851820a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+DISPENSA ELETRÔNICA Nº 005-2023 AVISO
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB2FC8B7236D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB2FC8B7236D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-eletronica-n-005-2023-aviso-dom-expedito-lopes-49397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Dom_Expedito_Lopes_Aviso_da_Dispensa_dispensa_eletro_nica_n_005_2023_aviso_a64f3dea-b610-4e78-b6de-8ab3a20331eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato n° 005/2023 - Dispensa n° 002/2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE695B147AE04
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE695B147AE04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-005-2023-dispensa-n-002-2023-barreiras-do-piaui-49347">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Barreiras_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_005_2023_dispensa_n_002_2023_25272a3f-e082-4cc7-a936-0de1b7fe0dca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Homologação 01
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>37267DEC2C394
+<br/><br/>
+<a class="fileDoc" data-file-hash="37267DEC2C394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-01-floriano-49376">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Floriano_Errata_homologacao_01_83afd18a-6e9b-4329-931b-0d23556bddf3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Errata ao extrato de aditivo de prazo
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BD259FCD97A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BD259FCD97A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-ao-extrato-de-aditivo-de-prazo-monsenhor-gil-49366">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Monsenhor_Gil_Outros_errata_ao_extrato_de_aditivo_de_prazo_f2fdcc46-c218-477b-ad9f-df3544a5962d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+Adjudicação TP 01
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6AFA0E418FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6AFA0E418FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-tp-01-floriano-49375">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Camara_Floriano_Errata_adjudicacao_tp_01_9e85ece6-a335-4776-a618-8609653bb20d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=627&amp;q[flag_doc_diario_true]=1">
+433
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE R003-2023
+</td>
+<td class="text-center">
+09-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B8EEDAA439314
+<br/><br/>
+<a class="fileDoc" data-file-hash="B8EEDAA439314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-r003-2023-queimada-nova-49392">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/8/DOP_EDICAO__9-3-2023_ED_433_Prefeitura_Queimada_Nova_Aviso_da_Homologacao_termo_de_homologacao_pe_r003_2023_c00cef65-a482-484b-bbf3-918829e5ac4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

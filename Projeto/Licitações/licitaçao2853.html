@@ -1,0 +1,1559 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+recibo balancete camara fev 2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Morro Cabeça no Tempo
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>25C7A910DC234
+<br/><br/>
+<a class="fileDoc" data-file-hash="25C7A910DC234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/recibo-balancete-camara-fev-2022-morro-cabeca-no-tempo-15775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Camara_Morro_Cabeca_no_Tempo_Atos_recibo_balancete_camara_fev_2022_edb14401-8f25-4895-a986-9717e6111b03.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE ADITIVO CONTRATUAL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2FEEF9F2640E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2FEEF9F2640E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-contratual-caxingo-15763">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caxingo_Extrato_extrato_de_aditivo_contratual_4269042c-97a8-4d94-a816-2a7907a396cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE ADITIVO CONTRATUAL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5585377AA7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5585377AA7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-contratual-caxingo-15762">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caxingo_Extrato_extrato_de_aditivo_contratual_e9c81476-49ce-4b66-b9e1-62b44a5c6f9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+PE nº 008-2022 - aviso de licitação
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>76033FED47914
+<br/><br/>
+<a class="fileDoc" data-file-hash="76033FED47914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-n-008-2022-aviso-de-licitacao-barra-d-alcantara-15784">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Barra_DAlcantara_Aviso_de_licitacao_pe_n_008_2022_aviso_de_licitacao_ab03821f-509d-4e30-96cb-8c2f22e71081.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 262-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9028849A5AA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="9028849A5AA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-262-2022-buriti-dos-lopes-15771">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_262_2022_9f52cc81-1def-4610-ba38-63b1487ec42c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 262-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>53F82FD33F724
+<br/><br/>
+<a class="fileDoc" data-file-hash="53F82FD33F724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-262-2022-buriti-dos-lopes-15770">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_262_2022_6321d744-84f5-47b4-ac18-ee84a7f5998d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO-CONTROLE DE LIBERAÇÃO ADESÃO INTERNA Nº 24-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC3A3EB3B3E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC3A3EB3B3E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-controle-de-liberacao-adesao-interna-n-24-2022-floriano-15794">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Floriano_Outros_atos_administrativos_extrato_controle_de_liberacao_adesao_interna_n_24_2022_3edd991f-ab63-4c98-bfba-6bc0c69153d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CV 004B/2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2ADA9AE31844
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2ADA9AE31844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-cv-004b-2022-campinas-do-piaui-15789">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_cv_004b_2022_df125c26-465a-43ee-b7fe-7bf51310804a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 261-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2A9B04F9EA64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2A9B04F9EA64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-261-2022-buriti-dos-lopes-15768">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_261_2022_ef5b2302-ec88-419f-9cfd-05755e047745.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CV 03B/2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>705DA2124DC74
+<br/><br/>
+<a class="fileDoc" data-file-hash="705DA2124DC74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-cv-03b-2022-campinas-do-piaui-15788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_cv_03b_2022_365f2b4c-66ae-4b45-aa1b-b1835130bb83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CV 005B/2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3DC443D0790C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3DC443D0790C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-cv-005b-2022-campinas-do-piaui-15790">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_cv_005b_2022_0a08956d-a207-4583-a383-2c9e131bd2b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO - PREGÃO ELETRÔNICO Nº. 002/2022 Processo Administrativo nº. 020/2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C1ADA7101954
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C1ADA7101954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pregao-eletronico-n-002-2022-processo-administrativo-n-020-2022-rio-grande-do-piaui-15793">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Rio_Grande_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_pregao_eletronico_n_002_2022_processo_administrativo_n_020_2022_ed8b039b-8d38-46a0-9a53-18f2bf4bc9b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DAE5E85E04B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="DAE5E85E04B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-15739">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_abd861bc-a0c2-4a6d-93b3-96909e40c7e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE ADITIVO CONTRATUAL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BFC09C092D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BFC09C092D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-contratual-caxingo-15759">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caxingo_Extrato_extrato_de_aditivo_contratual_0f4cf4c0-22bc-4cc5-85c6-03d0b7a8f1b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE ADITIVO CONTRATUAL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E337DB1EE214
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E337DB1EE214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-contratual-caxingo-15758">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caxingo_Extrato_extrato_de_aditivo_contratual_ba0207b0-a223-4ca2-80dd-5341efb166f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE ADITIVO CONTRATUAL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>20984D58EE674
+<br/><br/>
+<a class="fileDoc" data-file-hash="20984D58EE674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-contratual-caxingo-15755">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caxingo_Extrato_extrato_de_aditivo_contratual_1ed065e7-dc30-4c43-a4e3-0b963c246df0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 260-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E215C94D3D334
+<br/><br/>
+<a class="fileDoc" data-file-hash="E215C94D3D334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-260-2022-buriti-dos-lopes-15767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_260_2022_e3d6dee7-a43b-4af6-8d18-076aee3e4e63.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 259-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E9BCF763A10F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E9BCF763A10F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-259-2022-buriti-dos-lopes-15766">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_259_2022_cbcfdac4-46f8-41ce-ad5c-55f0419b9e9c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO 065-B
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CAE82E49887C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CAE82E49887C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-065-b-itaueira-15718">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Itaueira_Extrato_extrato_065_b_758c56b4-b704-43b9-90e4-9d365f30472a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de licitaçao 017-22
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6129F1BE59284
+<br/><br/>
+<a class="fileDoc" data-file-hash="6129F1BE59284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-017-22-tanque-do-piaui-15754">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Tanque_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_017_22_cad81408-220b-43dc-9325-6fdb892602bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+SEMED 258-2022
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>09CC12C80F1B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="09CC12C80F1B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/semed-258-2022-buriti-dos-lopes-15765">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_semed_258_2022_9cbc4659-579c-487f-b383-3662ee7171b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de continuidade
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>88CBA80C5CE54
+<br/><br/>
+<a class="fileDoc" data-file-hash="88CBA80C5CE54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-continuidade-caraubas-do-piaui-15745">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_continuidade_7c9e14be-06b6-4922-a83a-869b29d5fa5b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+ratificação
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>EADF81701A904
+<br/><br/>
+<a class="fileDoc" data-file-hash="EADF81701A904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-caraubas-do-piaui-15743">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Caraubas_do_Piaui_Atos_ratificacao_884620b0-61c4-4877-90aa-cfcbf13f8862.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato-Contrato nº 032-2022-Fornec. de gen. aliment. p. Ass. Social-PMPL
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCC1C46B5A2B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCC1C46B5A2B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-032-2022-fornec-de-gen-aliment-p-ass-social-pmpl-paes-landim-15744">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Paes_Landim_Aviso_do_extrato_de_contrato_extrato_contrato_n_032_2022_fornec_de_gen_aliment_p_ass_social_pmpl_4edc1092-7c21-4f4f-87ff-d33f38ab326d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FD488DA06524
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FD488DA06524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16652/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_4cb21f6d-efe9-41b7-913c-46057e34cc18.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B6248A0923504
+<br/><br/>
+<a class="fileDoc" data-file-hash="B6248A0923504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16653/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_5a3f8028-e62f-4109-84f3-f300a1a6f104.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>83AF9EF3301D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="83AF9EF3301D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16654/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_6652f8a3-ebf7-4c00-b2b2-f3b0b5842ba7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02C1693A55B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="02C1693A55B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16655/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_a7dec3eb-2e0a-4333-80c3-c523b6ab20ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2381B41ADC1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2381B41ADC1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16656/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_ad8ac652-0b96-46e9-a853-c18f73e2be3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A70A21FA10F74
+<br/><br/>
+<a class="fileDoc" data-file-hash="A70A21FA10F74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16657/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_b6231d4f-6a7d-4922-8970-f107a24d4f3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D76E52272264
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D76E52272264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16658/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_444509a8-71e8-4a41-ae90-ee8a07c3e677.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B41EEC46CA914
+<br/><br/>
+<a class="fileDoc" data-file-hash="B41EEC46CA914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16659/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_1397d30f-cf3f-4282-88ad-099e95c1c770.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7350A419D0F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="7350A419D0F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16660/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_ee2f86e3-b6e9-40c4-99b3-ec2aea9a9447.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=327&amp;q[flag_doc_diario_true]=1">
+229
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 1° BIMESTRE /
+</td>
+<td class="text-center">
+13-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE89329A83DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE89329A83DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/16661/rreo-1-bimestre-luis-correia-15719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/12/DOP_EDICAO__13-5-2022_ED_229_Prefeitura_Luis_Correia_Balanco_orcamentario_rreo_1_bimestre_c51c5896-548f-454e-ac1e-101ba455a505.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

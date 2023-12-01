@@ -1,0 +1,1332 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa nº 024-2022 - Manutenção de impressoras - extrato
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>11B2E7A9E78A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="11B2E7A9E78A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-024-2022-manutencao-de-impressoras-extrato-sigefredo-pacheco-18371">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_024_2022_manutencao_de_impressoras_extrato_b893d0a5-49b5-401b-8f36-b3e200a9718e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 133
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>73DAEF9509A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="73DAEF9509A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-133-ipiranga-do-piaui-18376">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_133_768eb91f-5db8-43d3-b4ac-55831ed8565c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+decreto
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>103CBAB73B164
+<br/><br/>
+<a class="fileDoc" data-file-hash="103CBAB73B164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-cajazeiras-do-piaui-18377">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Cajazeiras_do_Piaui_Decretos_decreto_13f10b09-87b4-4e5b-ab40-4e10111a965e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 246-2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DF712DF328A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DF712DF328A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-246-2022-buriti-dos-lopes-18382">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_246_2022_78e3f743-45e8-410f-9dad-1c8fe16e6ba7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação - PP 036.2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DEF7F04165D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="DEF7F04165D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pp-036-2022-acaua-18374">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Acaua_Aviso_de_licitacao_aviso_de_licitacao_pp_036_2022_d15edd27-6810-4189-853b-7eecadfc9688.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 28/2021 MUDA O ARTIGO 14 DA LEI Nº 251
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4AA6D483B03C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4AA6D483B03C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-28-2021-muda-o-artigo-14-da-lei-n-251-buriti-dos-montes-18399">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Montes_Decretos_decreto_n_28_2021_muda_o_artigo_14_da_lei_n_251_aa871488-2e7f-439c-b521-2d60f3ee6579.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA58066CD1D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA58066CD1D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18398">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_4f509c1f-d11f-4ede-98b0-dc90301ee7a6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1089D5F7FC004
+<br/><br/>
+<a class="fileDoc" data-file-hash="1089D5F7FC004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18379">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_64815bbe-dedd-4d7d-9ec5-3a590e563c4d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E9D3B08641C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E9D3B08641C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18380">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_7647c7fa-8a20-4597-9ae2-bc24233e76f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5CA6002434824
+<br/><br/>
+<a class="fileDoc" data-file-hash="5CA6002434824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18381">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_f6c2d950-a5a5-48f8-ae6a-a3970e894d8c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>91A4565D373D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="91A4565D373D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18385">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_bf58b9e0-09c5-4912-942a-3f66e24875c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>277C813ADAAB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="277C813ADAAB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18388">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_7c2f9d57-4f31-4caf-9653-918383722705.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Termo de cooperação técnica 05 - PE 22
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>72275323037C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="72275323037C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-termo-de-cooperacao-tecnica-05-pe-22-nazare-do-piaui-18386">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Nazare_do_Piaui_Extrato_extrato_termo_de_cooperacao_tecnica_05_pe_22_664c4097-af4e-4602-b69f-6f784d262b37.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F83F9F912A8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F83F9F912A8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_591de444-8811-4728-937b-b7a329525b73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FADED77F0B0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FADED77F0B0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Caxingo_Extrato_extrato_contratual_9c266bef-7894-4874-a092-8b5751137137.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO REVOGAÇÃO CC 01-2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso da Revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>EAE4182F7C6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EAE4182F7C6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-revogacao-cc-01-2022-beneditinos-18404">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Beneditinos_Aviso_da_Revogacao_aviso_revogacao_cc_01_2022_f84d75b0-13cb-4e12-b98e-a1de17f8127b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 029/2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA7F620CAE204
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA7F620CAE204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-029-2022-wall-ferraz-18408">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Wall_Ferraz_Decretos_decreto_029_2022_b5746a4f-fbf0-4215-87b7-8dd5fd9f3d10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+REPUBLICAÇÃO - PORTARIA Nº 8 - DANIELA RABELO
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>077B9937219C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="077B9937219C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-portaria-n-8-daniela-rabelo-santa-rosa-do-piaui-18415">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Santa_Rosa_do_Piaui_Portarias_republicacao_portaria_n_8_daniela_rabelo_50eedb89-73ec-4d0f-abb4-8de4e728f8ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Dispõe sobre a nomeação da comissão Tomada de Contas Especial
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2ECA019ADB464
+<br/><br/>
+<a class="fileDoc" data-file-hash="2ECA019ADB464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispoe-sobre-a-nomeacao-da-comissao-tomada-de-contas-especial-tanque-do-piaui-18411">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Tanque_do_Piaui_Portarias_dispoe_sobre_a_nomeacao_da_comissao_tomada_de_contas_especial_d438f22f-5b8a-4c32-98e5-5566d9e02811.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução CMAS nº 09/2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>C213AA3FF78A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C213AA3FF78A4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmas-n-09-2022-floriano-18417">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Floriano_Resolucoes_resolucao_cmas_n_09_2022_bbac6ef0-6090-4514-b90c-2cba613b1029.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução CMAS nº 08/2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>41CCDC001C974
+<br/><br/>
+<a class="fileDoc" data-file-hash="41CCDC001C974" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmas-n-08-2022-floriano-18418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Floriano_Resolucoes_resolucao_cmas_n_08_2022_c0f1ab0d-84a2-4294-acad-aa0d5a04101c.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+ATO SEM EFEITO-EDUCAÇÃO-DIONIZIO MEDEIROS
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>81472157B3B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="81472157B3B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-sem-efeito-educacao-dionizio-medeiros-floriano-18419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Floriano_Outros_ato_sem_efeito_educacao_dionizio_medeiros_5012fb8e-6ab9-433e-947e-c34d5cee7b0d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE REABERTURA DE PRAZO - DISPENSA Nº 038
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>E08496A02C684
+<br/><br/>
+<a class="fileDoc" data-file-hash="E08496A02C684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-reabertura-de-prazo-dispensa-n-038-floriano-18420">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Floriano_Outros_aviso_de_reabertura_de_prazo_dispensa_n_038_36786f43-c969-4eb1-a748-17ee384c3048.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de licitação 006/2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>53E18CD9BF9D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="53E18CD9BF9D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-006-2022-colonia-do-piaui-18409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Colonia_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_006_2022_08555a6e-09e6-41f0-a895-a68b2e450902.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>51E6B0F8A0CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="51E6B0F8A0CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19644/rgf-1-quadrimestre-buriti-dos-lopes-18424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_1_quadrimestre_55f2657e-18c8-49a1-bf76-2bce083f4c68.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C99D233BD68E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C99D233BD68E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19645/rgf-1-quadrimestre-buriti-dos-lopes-18424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_1_quadrimestre_62190e35-11b5-493d-9b00-b7c355a3ab5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>56FD04E2127B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="56FD04E2127B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19646/rgf-1-quadrimestre-buriti-dos-lopes-18424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_1_quadrimestre_a4e79c22-0a91-4d03-94f0-e43711b7d87b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA53E07DA4D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA53E07DA4D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19647/rgf-1-quadrimestre-buriti-dos-lopes-18424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_1_quadrimestre_0037fd6a-36ef-4907-830b-50d59861fb75.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>394314CD2F924
+<br/><br/>
+<a class="fileDoc" data-file-hash="394314CD2F924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19648/rgf-1-quadrimestre-buriti-dos-lopes-18424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_1_quadrimestre_e00b87a0-7e60-4c5f-b6a2-c9886e19549f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

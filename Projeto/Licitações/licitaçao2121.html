@@ -1,0 +1,1766 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 22 , DE 01 DE SETEMBRO DE 2022 - LEI Nº 90 - CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>704C3EB7644C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="704C3EB7644C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-22-de-01-de-setembro-de-2022-lei-n-90-credito-adicional-suplementar-sigefredo-pacheco-32749">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Sigefredo_Pacheco_Decretos_decreto_n_22_de_01_de_setembro_de_2022_lei_n_90_credito_adicional_suplementar_70288952-505a-4cf6-a715-163873b07506.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL DA DL - 032/2022
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C378FE5E190B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C378FE5E190B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-da-dl-032-2022-caxingo-32738">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Caxingo_Extrato_extrato_contratual_da_dl_032_2022_b72260e2-65d4-4ca8-8d00-e20928009df6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO SUPLEMENTAÇÃO 65/2022
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3B740CB03FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3B740CB03FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementacao-65-2022-sao-pedro-do-piaui-32769">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Sao_Pedro_do_Piaui_Decretos_decreto_suplementacao_65_2022_f3f2c535-8ba6-4ade-ac55-958f56504954.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+pregão 024-2022 republicação
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBAFDE30BD644
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBAFDE30BD644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-024-2022-republicacao-conceicao-do-caninde-32734">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Conceicao_do_Caninde_Aviso_de_licitacao_pregao_024_2022_republicacao_8571c42b-85b3-4e00-9e6e-95679b567045.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+PE 018/2022 - HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FFBB8E4778E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="FFBB8E4778E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-018-2022-homologacao-nazaria-32728">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Nazaria_Aviso_da_Homologacao_pe_018_2022_homologacao_29d240cd-7117-4575-8526-76fd60169ba7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO TP 004 2022
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE1DC9D8D26B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE1DC9D8D26B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-tp-004-2022-nazaria-32679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Nazaria_Extrato_extrato_de_contrato_tp_004_2022_c305af47-8f4f-4df1-bac6-04ee63c4e55d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>712C60D63B964
+<br/><br/>
+<a class="fileDoc" data-file-hash="712C60D63B964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35302/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_f75eafd0-31df-4300-8217-92b36db81d72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>70677CAD61264
+<br/><br/>
+<a class="fileDoc" data-file-hash="70677CAD61264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35303/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_cf09acc9-2b66-46d7-abd8-80c575c9f759.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9995BC993D2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9995BC993D2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35304/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_e28f7ffe-8e80-4c1d-ba6f-d3df1aec0150.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C02E6CDAFB04
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C02E6CDAFB04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35305/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_490fa501-74eb-4b9f-905f-8410f221c400.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9D05429C5804
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9D05429C5804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35306/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_526cc1de-98ee-4456-b97f-33ecdc7456fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2100F025A404
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2100F025A404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35307/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_7c491fa1-352f-4f89-8c23-773e06ce021b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>394B38D870B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="394B38D870B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35308/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_8e7a4568-279e-4b2a-a938-87351f13c2a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>167ED3BE6D274
+<br/><br/>
+<a class="fileDoc" data-file-hash="167ED3BE6D274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35309/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_24120647-3762-413e-ab5a-0f7d5f5922de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F265E2426B9E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F265E2426B9E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35310/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_fa0beaa2-a278-448f-9591-0b21a782c793.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0F970140BB0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0F970140BB0A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35311/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_75b4f2a6-a5fa-4e54-a73c-88a4203f882d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0DD9DBEEF1F14
+<br/><br/>
+<a class="fileDoc" data-file-hash="0DD9DBEEF1F14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35312/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_e2696811-9dfb-4e30-b04d-b67a25186292.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AFA0EBFABA994
+<br/><br/>
+<a class="fileDoc" data-file-hash="AFA0EBFABA994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35313/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_cb946790-d102-4ed1-9cb7-2bb0dbcc5c3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3414128C107A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3414128C107A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35314/anexo-01-balanco-orcamentario-barra-d-alcantara-32688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_d31d9386-d3a6-453e-9dbd-aef09706ee99.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>33A2A8AA6D5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="33A2A8AA6D5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35315/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_564c21b3-4d6b-49ac-9964-7f19f56affaa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6058E0245ADC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6058E0245ADC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35316/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_e77720c5-44ea-4913-891d-d954a0f7b53c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>380F9B682F404
+<br/><br/>
+<a class="fileDoc" data-file-hash="380F9B682F404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35317/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_085120f8-11e5-4216-bdca-21d266c2d7f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B367B02DF344
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B367B02DF344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35318/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_4b400ed7-8223-493d-8679-6b9bd875932a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BF10A38155C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BF10A38155C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35319/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_f3401ad3-97ad-434b-ade8-8519517bb518.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4B124513BE54
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4B124513BE54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35320/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_3dedc01d-eff2-4a60-a8c9-9a170fdea0c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>490672BCBDB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="490672BCBDB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35321/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_4b7255f0-616e-4553-9f49-fc41e2e3c96a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A41FF7D1F6D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="A41FF7D1F6D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35322/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_5bda9034-9ae7-4d93-be57-70435c2471d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5A2E1993B1C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="5A2E1993B1C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35323/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_8b92fa61-7124-4068-81fe-b6ea0d8d264e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>514B53774F584
+<br/><br/>
+<a class="fileDoc" data-file-hash="514B53774F584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35324/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_e17f3a25-4a7e-468a-a23f-5e22488679b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A144642E4CE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="A144642E4CE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35325/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_b0f3f664-991c-42d9-bb54-ef2eb2ed64ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B180B0EC88B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B180B0EC88B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35326/rreo-5-bimestre-2022-santa-rosa-do-piaui-32689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Santa_Rosa_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_4c2c6bb6-e471-4ae7-8949-e448cc751894.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de licitação leilão publico n° 001/2022
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A896583DE2754
+<br/><br/>
+<a class="fileDoc" data-file-hash="A896583DE2754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-leilao-publico-n-001-2022-agricolandia-32733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Agricolandia_Outros_aviso_de_licitacao_leilao_publico_n_001_2022_10c3409d-79e6-4e31-88d8-4f56c228ad38.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+PE RE 013/2022 - CONVOCAÇÃO P/ ASSINATURA DE ARP
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>05A569C450FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="05A569C450FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-re-013-2022-convocacao-p-assinatura-de-arp-nazaria-32731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Nazaria_Ato_Convocatorio_pe_re_013_2022_convocacao_p_assinatura_de_arp_1ce38344-b1f0-4297-8c27-5d78dd6daf4a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 090-22
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>19F17C85B76E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="19F17C85B76E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-090-22-nazaria-32725">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Nazaria_Portarias_portaria_090_22_347e6fa2-71b7-493f-ae61-4280241b6253.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+decreto 19
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D6D461B328D14
+<br/><br/>
+<a class="fileDoc" data-file-hash="D6D461B328D14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-19-sebastiao-barros-32702">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Sebastiao_Barros_Decretos_decreto_19_45400f26-2ad6-40a3-816e-276cdf0ffc3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+HOMOLOGAÇÃO E ADJUDICAÇÃO DA TP - 008/2022
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FD8FF2E1AAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FD8FF2E1AAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-e-adjudicacao-da-tp-008-2022-caxingo-32714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Caxingo_Aviso_da_homologacao_homologacao_e_adjudicacao_da_tp_008_2022_f58a3c9b-86a8-4461-b8b7-488e515591be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=528&amp;q[flag_doc_diario_true]=1">
+366
+</a>
+-
+2022
+</td>
+<td class="">
+CP 004
+</td>
+<td class="text-center">
+30-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>CD09EED8CA104
+<br/><br/>
+<a class="fileDoc" data-file-hash="CD09EED8CA104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp-004-luis-correia-32705">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/29/DOP_EDICAO__30-11-2022_ED_366_Prefeitura_Luis_Correia_Atas_cp_004_ac3f73c3-6276-4c0a-a0f0-399ed3141cce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

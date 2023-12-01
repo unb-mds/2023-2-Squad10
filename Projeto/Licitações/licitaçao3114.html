@@ -1,0 +1,1416 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação P.E. 003/2022
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4E271B7D3414
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4E271B7D3414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-p-e-003-2022-barreiras-do-piaui-9443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Barreiras_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_p_e_003_2022_67997fbe-3e28-4775-a657-4244dd693332.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>62C8127BDF204
+<br/><br/>
+<a class="fileDoc" data-file-hash="62C8127BDF204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9435">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_bb12af1e-638e-46d3-8597-64c55f67262b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FFFC9D2469B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="FFFC9D2469B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9433">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_5cb33e62-4c7f-43b6-8b67-12745187419e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>72C87A8227A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="72C87A8227A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9432">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_c4589cd4-07fb-438c-8cc4-c61056b91baa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>85FEAFA52C564
+<br/><br/>
+<a class="fileDoc" data-file-hash="85FEAFA52C564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9428">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_136e42e9-fb89-4a34-a675-0a664380f116.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9709C81A5F224
+<br/><br/>
+<a class="fileDoc" data-file-hash="9709C81A5F224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9412">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_5544afcf-1221-4904-84ca-f505569e2b73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>233CD0DF1BEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="233CD0DF1BEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_ad9a31b4-3054-4708-bf70-779e6bef2b92.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E8431E84AAAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E8431E84AAAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9439">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_0aed3265-d84c-488a-9ac7-5ac6b5ec4a2b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>179853A3152F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="179853A3152F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9437">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_c16af1db-0ee5-41ba-891f-c2f9d63a9355.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6CFC2E72FA8F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6CFC2E72FA8F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9436">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_b2468b02-eb9d-4a20-a055-87906bd0dc45.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4B156E2695D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4B156E2695D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9423">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_0320ceb5-9294-4991-9dde-2e4d88b49e11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>586C18D7FBBC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="586C18D7FBBC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9420">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_1fd0d518-c1dc-4038-9646-006456fbf2df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F25ACE130F404
+<br/><br/>
+<a class="fileDoc" data-file-hash="F25ACE130F404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-9418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_a603eaf7-3c64-4cd4-864e-0665ddc62ff7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=257&amp;q[flag_doc_diario_true]=1">
+182
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6 BIM 2021 /
+</td>
+<td class="text-center">
+04-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE5EF37D7A074
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE5EF37D7A074" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9989/rreo-6-bim-2021-santa-cruz-dos-milagres-9421">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__4-3-2022_ED_182_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_rreo_6_bim_2021_fe5e5498-dbc4-4f5e-9bc7-dbd6a0ba7b67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 181
+</td>
+<td class="text-center dopcom">
+03-03-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="AE1BBB69CBA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-181-piaui-9345/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/3/DOP_EDICAO__3-3-2022_ED_181_CADERNO_a____diario_oficial_completo_edicao_181_21d809fa-9380-4233-98b9-966051905494.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7029C5B6FC164
+<br/><br/>
+<a class="fileDoc" data-file-hash="7029C5B6FC164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9842/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_bef724db-e52a-45e9-8666-2967a30c2573.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8559D16987D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="8559D16987D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9843/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_ada63277-2861-4b14-942a-6f0444c4da84.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F13A3AAF6ABD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F13A3AAF6ABD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9844/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_edcd3eee-fbdc-4eae-a368-afb4a17035ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F331BDF250534
+<br/><br/>
+<a class="fileDoc" data-file-hash="F331BDF250534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9845/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_db4ee704-3a11-413a-a7c0-b587fe38fcdc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D4392D9FCD5D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D4392D9FCD5D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9846/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_57cb9586-8e7d-4031-83c0-6cc4b481f241.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6B61259F2314
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6B61259F2314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9847/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_e62fefb3-b9e9-4470-a5e7-add1799b855b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8434A93A3D684
+<br/><br/>
+<a class="fileDoc" data-file-hash="8434A93A3D684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9848/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_75cb739b-cab7-405e-ad55-115c892fbbc2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6892509E5A774
+<br/><br/>
+<a class="fileDoc" data-file-hash="6892509E5A774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9849/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_ddb5774e-b098-4107-a398-907bbb45c7b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL - 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D5F55E5714574
+<br/><br/>
+<a class="fileDoc" data-file-hash="D5F55E5714574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9850/relatorios-de-gestao-fiscal-3-quadrimestre-sigefredo-pacheco-9316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sigefredo_Pacheco_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_3_quadrimestre_61dbbe50-f608-42b8-b9c9-8e4bb19eb90c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+2.1. Demonstrativo da Despesa com Pessoal /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>410A660076C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="410A660076C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9884/2-1-demonstrativo-da-despesa-com-pessoal-brejo-do-piaui-9338">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Camara_Brejo_do_Piaui_Relatorios_de_gestao_fiscal_2_1_demonstrativo_da_despesa_com_pessoal_e2bd28b9-7806-4bea-a8ee-fde1c4c23792.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+TP 001 - Poços
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C561ED0840124
+<br/><br/>
+<a class="fileDoc" data-file-hash="C561ED0840124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-001-pocos-lagoinha-do-piaui-9335">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Lagoinha_do_Piaui_Aviso_de_licitacao_tp_001_pocos_96ab76e7-253c-46bd-b141-58680533582b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+PP 001 - Móveis
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB56FC59D4D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB56FC59D4D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pp-001-moveis-agricolandia-9334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Agricolandia_Aviso_de_licitacao_pp_001_moveis_823f3448-82b9-48ff-b600-f8f06e1e2e0f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PREGÃO ELETRÔNICO N° 015/2022
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>742313C99E704
+<br/><br/>
+<a class="fileDoc" data-file-hash="742313C99E704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pregao-eletronico-n-015-2022-sao-jose-do-piaui-9325">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Sao_Jose_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_pregao_eletronico_n_015_2022_c6084a9f-e4da-4ea9-9109-9c21d4247baf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+1.1. Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar /
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D0EBE7E42D474
+<br/><br/>
+<a class="fileDoc" data-file-hash="D0EBE7E42D474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9883/1-1-demonstrativo-da-disponibilidade-de-caixa-e-dos-restos-a-pagar-brejo-do-piaui-9337">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Camara_Brejo_do_Piaui_Relatorios_de_gestao_fiscal_1_1_demonstrativo_da_disponibilidade_de_caixa_e_dos_restos_a_pagar_764a069e-5559-4efa-9216-1159ff710f44.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=256&amp;q[flag_doc_diario_true]=1">
+181
+</a>
+-
+2022
+</td>
+<td class="">
+LEI COMPLEMENTAR Nº 17 DE 2022 PISO PROFESSOR
+</td>
+<td class="text-center">
+03-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>A5D4E19EFB2D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A5D4E19EFB2D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-complementar-n-17-de-2022-piso-professor-pimenteiras-9339">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/2/DOP_EDICAO__3-3-2022_ED_181_Prefeitura_Pimenteiras_Leis_lei_complementar_n_17_de_2022_piso_professor_a2a8d417-ce24-4a6b-83a7-9f07ad3c1b9a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1445 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>30EC03DD7C734
+<br/><br/>
+<a class="fileDoc" data-file-hash="30EC03DD7C734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78911/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_12cf1785-76ab-48b4-8d12-227cdc12129d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15A9F92DC7EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="15A9F92DC7EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78912/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_1731cc34-67ce-4860-b6af-9b0deee9cbe6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>862F027D824E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="862F027D824E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78913/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_412eeff8-fde4-4dc1-949b-ac857b39f722.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FD26171950E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FD26171950E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78914/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_401eb03b-8f71-4807-aabd-abf3782ba13b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FE3C2C766D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FE3C2C766D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78915/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_1188de96-fbdb-406c-8d4c-f07533c0e857.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E1AA6FA6CEB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="E1AA6FA6CEB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78916/relatorio-de-gestao-fiscal-colonia-do-gurgueia-73471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_551b2063-2c6c-4488-87a7-854d0a86cd8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+CERTIDÃO DE CONCLUSÃO-JOSE MARIA
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>744FECE334B54
+<br/><br/>
+<a class="fileDoc" data-file-hash="744FECE334B54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/certidao-de-conclusao-jose-maria-oeiras-73520">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Oeiras_Outros_certidao_de_conclusao_jose_maria_8dc15b0a-a71d-4ffd-baea-fae61fbd7f27.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+CERTIDÃO DE CONCLUSÃO-ANTONIO PEREIRA
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA61D0BEE69A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA61D0BEE69A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/certidao-de-conclusao-antonio-pereira-oeiras-73509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Oeiras_Outros_certidao_de_conclusao_antonio_pereira_319e36ba-8cf5-4c8d-9123-52366019b4a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+TP 003/2023- Iluminação Publica
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE302339E52C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE302339E52C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-003-2023-iluminacao-publica-brejo-do-piaui-73495">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Brejo_do_Piaui_Aviso_de_licitacao_tp_003_2023_iluminacao_publica_70d54b29-3494-437b-b24a-ebad6a25946e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+extrato e contrato
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B4B50335B954
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B4B50335B954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-e-contrato-ipiranga-do-piaui-73466">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_e_contrato_be5b2e5e-a77e-45aa-921f-8910925e8b54.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 456/2023
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>019F168B72134
+<br/><br/>
+<a class="fileDoc" data-file-hash="019F168B72134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-456-2023-wall-ferraz-73483">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Wall_Ferraz_Portarias_portaria_456_2023_ca1b1dfc-d416-4f80-ac9d-56f85c92d266.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 21, DE 03 DE JULHO DE 2023 - LEI Nº 108 - CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>21F2A8029A874
+<br/><br/>
+<a class="fileDoc" data-file-hash="21F2A8029A874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-21-de-03-de-julho-de-2023-lei-n-108-credito-adicional-suplementar-sigefredo-pacheco-73469">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Sigefredo_Pacheco_Decretos_decreto_n_21_de_03_de_julho_de_2023_lei_n_108_credito_adicional_suplementar_f4463807-f876-432b-98b0-04e25c3acb67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>81CEBD53C3A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="81CEBD53C3A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78929/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_558ca8dd-aaad-4f7e-b0b4-f3af3c44ae8c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>911E702790474
+<br/><br/>
+<a class="fileDoc" data-file-hash="911E702790474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78930/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_09968d13-5a3c-4cba-b878-45a4dc7f44e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42F32BA1A9394
+<br/><br/>
+<a class="fileDoc" data-file-hash="42F32BA1A9394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78931/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_a7cd9e65-3454-4d62-8378-c871534c4a5e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA4120DD04014
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA4120DD04014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78932/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_2fafac5e-e5f4-4c01-83f5-c473f58039ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A975B2F187284
+<br/><br/>
+<a class="fileDoc" data-file-hash="A975B2F187284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78933/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_b419edf7-55a4-4d97-8484-883f4ff7c037.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B85337AD18094
+<br/><br/>
+<a class="fileDoc" data-file-hash="B85337AD18094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78934/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_d039192c-c9c0-4a30-8e22-60889e04ef9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BF7216FE4214
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BF7216FE4214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78935/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_b979ce2a-12e3-44d4-8e97-e0e667d40b3d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>034AE2164BBC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="034AE2164BBC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78936/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_29ab8c03-1cdb-49bf-aeb2-81fd5686ceb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A71F4F57E2574
+<br/><br/>
+<a class="fileDoc" data-file-hash="A71F4F57E2574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78937/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_5a468358-8e09-4972-a306-6c1b50095be1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7A6605F368C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="7A6605F368C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78938/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_72f07190-195f-49aa-bd4f-5d9caf51bc8a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AABF12FD05A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="AABF12FD05A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/78939/relatorio-resumido-da-execucao-orcamentaria-colonia-do-gurgueia-73484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Colonia_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumido_da_execucao_orcamentaria_26c98d3c-34b7-4c1a-b6fc-85eafe3e9c7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO RETIFICADO PE 029/2023
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EDFBF4649854
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EDFBF4649854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-retificado-pe-029-2023-sao-jose-do-piaui-73481">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Sao_Jose_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_retificado_pe_029_2023_73a439cd-b296-4d74-a355-01fc59e2df01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+CONVOCAÇÃO ASSINATURA CONTRATO PENA 012-2023
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso de convocação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A38FBA3A33C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="A38FBA3A33C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-assinatura-contrato-pena-012-2023-nazaria-73496">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Nazaria_Aviso_de_convocacao_convocacao_assinatura_contrato_pena_012_2023_35e3b3f7-7bf5-41e3-80c9-2b151228b293.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+CERTIDÃO DE CONCLUSÃO-MARCIO VINICIO
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C23C41654304
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C23C41654304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/certidao-de-conclusao-marcio-vinicio-oeiras-73522">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Oeiras_Outros_certidao_de_conclusao_marcio_vinicio_b53b6c10-8463-4fd8-ac4b-6bc3c1b19fa9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 123
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A635C77C5794
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A635C77C5794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-123-lagoa-do-barro-do-piaui-73444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_123_6d3efda0-1fee-4c1b-97a1-8fa34fbdd70f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+HOMOLOGAÇÃO PENA 013-2023
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6F7A30A3D494
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6F7A30A3D494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pena-013-2023-nazaria-73438">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Nazaria_Aviso_da_Homologacao_homologacao_pena_013_2023_e11aa5da-a186-42d7-b948-f8a2640b5742.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 268
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E78FB7BD907D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E78FB7BD907D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-268-lagoa-do-barro-do-piaui-73532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_268_7c6dced4-df76-4eeb-aa15-0752936157d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=799&amp;q[flag_doc_diario_true]=1">
+550
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto nº 063/2023
+</td>
+<td class="text-center">
+28-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0367A95B92294
+<br/><br/>
+<a class="fileDoc" data-file-hash="0367A95B92294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-063-2023-amarante-73440">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/25/DOP_EDICAO__28-8-2023_ED_550_Prefeitura_Amarante_Decretos_decreto_n_063_2023_f5f01e22-a01b-413a-a36a-5a7695861b9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

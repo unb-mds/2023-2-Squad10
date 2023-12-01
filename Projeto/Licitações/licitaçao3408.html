@@ -1,0 +1,1242 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD389D39F7334
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD389D39F7334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2319/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_d1e442b9-c0bb-48eb-993d-b6cdbbf4e958.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C8B64912FE774
+<br/><br/>
+<a class="fileDoc" data-file-hash="C8B64912FE774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2320/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_6a437f9f-19f7-4d6e-84ef-9ebfa280da7a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF6C3EE3E7644
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF6C3EE3E7644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2321/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_b5377b02-78ca-416c-b898-565f10deebb3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1636469ADAB34
+<br/><br/>
+<a class="fileDoc" data-file-hash="1636469ADAB34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2322/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_19caa970-9eeb-42b2-b63a-bb91478272fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA345F2DE7954
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA345F2DE7954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2323/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_aa489e39-dad4-4c5d-baae-070202b21c12.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIOS /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>45595983AE414
+<br/><br/>
+<a class="fileDoc" data-file-hash="45595983AE414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2324/relatorios-itaueira-2190">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_relatorios_aca61d79-f5e4-44ad-adab-ebd0df4bd6c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+PORTARIAS
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F505B00914AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F505B00914AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-itaueira-2189">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Portarias_portarias_c8a1f14e-d7ce-4ca2-acd3-2476d57cb8bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETOS
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CFDB1F310C074
+<br/><br/>
+<a class="fileDoc" data-file-hash="CFDB1F310C074" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretos-itaueira-2188">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Decretos_decretos_9e02e892-b5a6-4dad-b8a0-91a7be711cd4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETOS
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>080695B041E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="080695B041E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretos-itaueira-2186">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Decretos_decretos_4a6a48ae-d606-4b16-a65d-265924cd2379.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETOS
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>87387DD0949D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87387DD0949D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretos-itaueira-2185">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Decretos_decretos_04f814e7-e2ff-43cb-8142-737a9843b16a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Dispensa nº 025-2021 - Insulina - extrato
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>03E0EF2238444
+<br/><br/>
+<a class="fileDoc" data-file-hash="03E0EF2238444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-025-2021-insulina-extrato-sigefredo-pacheco-2184">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_025_2021_insulina_extrato_b130bdeb-6591-418a-9012-43bc001c89b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Dispensa nº 024-2021 - Academia de saúde- extrato
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3154E9700CF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="3154E9700CF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-024-2021-academia-de-saude-extrato-sigefredo-pacheco-2183">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_024_2021_academia_de_saude_extrato_eeac2248-4600-4df1-ba1c-21e43723706f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETO 046 - MEDIDAS SANITÁRIAS COVID-19 - 27 A 03 DE NOVEMBRO DE 2021
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>08A888810BED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="08A888810BED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-046-medidas-sanitarias-covid-19-27-a-03-de-novembro-de-2021-sigefredo-pacheco-2182">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Sigefredo_Pacheco_Decretos_decreto_046_medidas_sanitarias_covid_19_27_a_03_de_novembro_de_2021_7b70d4f8-6b3e-48a8-b2a4-154099933c5c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETOS
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>55563B46563F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="55563B46563F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretos-itaueira-2187">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Decretos_decretos_1a8ee9ea-0a14-4e6d-bd2e-6b5d376c3de7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5B50CC1FFC974
+<br/><br/>
+<a class="fileDoc" data-file-hash="5B50CC1FFC974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2307/relatorio-de-gestao-fiscal-ribeira-do-piaui-2180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Ribeira_do_Piaui_Leis_de_diretrizes_orcamentarias_relatorio_de_gestao_fiscal_fd7b356d-a0c4-4683-a4e6-77b753d435a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA4BD1FB91004
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA4BD1FB91004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2308/relatorio-de-gestao-fiscal-ribeira-do-piaui-2180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Ribeira_do_Piaui_Leis_de_diretrizes_orcamentarias_relatorio_de_gestao_fiscal_ca27279a-1f74-4e16-91cd-5bdf22f09388.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB78C128D5274
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB78C128D5274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2309/relatorio-de-gestao-fiscal-ribeira-do-piaui-2180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Ribeira_do_Piaui_Leis_de_diretrizes_orcamentarias_relatorio_de_gestao_fiscal_280ad811-ee6f-469e-9353-471e05ac74ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+EDITAL DE CONVOCAÇÃO
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>910C9D1D1B8E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="910C9D1D1B8E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-campinas-do-piaui-2179">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Campinas_do_Piaui_Outros_edital_de_convocacao_df02a8cf-7d20-4826-bfcb-c94631487400.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+2° QUADRIMESTRE DA CM - SÃO MIGUEL DO TAPUIO - 2021
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Tapuio
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABE6F7099A924
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABE6F7099A924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-quadrimestre-da-cm-sao-miguel-do-tapuio-2021-sao-miguel-do-tapuio-2178">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Sao_Miguel_do_Tapuio_Outros_2_quadrimestre_da_cm_sao_miguel_do_tapuio_2021_c97618b9-8f49-4771-a604-63ae87988d69.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Decreto
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D2C4AC6276144
+<br/><br/>
+<a class="fileDoc" data-file-hash="D2C4AC6276144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-itaueira-2176">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Itaueira_Decretos_decreto_f7617b6e-fd76-41d8-9fe8-bcca5249c031.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 093
+</td>
+<td class="text-center dopcom">
+28-10-2021
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="EFB4C1241E804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-093-piaui-2177/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093____diario_oficial_completo_edicao_093_4cbc2357-c9eb-4832-9805-a66945ff5dba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="">
+Resolução Nº024/2021
+</td>
+<td class="text-center">
+28-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>95BA09930E724
+<br/><br/>
+<a class="fileDoc" data-file-hash="95BA09930E724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-024-2021-batalha-2175">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093_Camara_Batalha_Resolucoes_resolucao_n_024_2021_fe3f0c0f-50c5-4746-9ead-614d65bbd49d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="">
+Resolução Nº014/2021
+</td>
+<td class="text-center">
+28-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>E9783D42C1BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E9783D42C1BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-014-2021-batalha-2165">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093_Camara_Batalha_Resolucoes_resolucao_n_014_2021_c22dea80-ccb6-40d5-8162-716bc8b658ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="">
+Resolução Nº023/2021
+</td>
+<td class="text-center">
+28-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>998BD14568854
+<br/><br/>
+<a class="fileDoc" data-file-hash="998BD14568854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-023-2021-batalha-2174">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093_Camara_Batalha_Resolucoes_resolucao_n_023_2021_d5824595-5a78-4e4a-878f-a72fc72a59a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="">
+Resolução Nº022/2021
+</td>
+<td class="text-center">
+28-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>06E99ECF355C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="06E99ECF355C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-022-2021-batalha-2173">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093_Camara_Batalha_Resolucoes_resolucao_n_022_2021_96aa852f-3193-4e00-b577-e0caf7495d47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=130&amp;q[flag_doc_diario_true]=1">
+093
+</a>
+-
+2021
+</td>
+<td class="">
+Resolução Nº021/2021
+</td>
+<td class="text-center">
+28-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>7602C89851B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="7602C89851B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-021-2021-batalha-2172">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/27/DOP_EDICAO_093_Camara_Batalha_Resolucoes_resolucao_n_021_2021_e16f029f-a663-43c4-8d63-ef140f7bd3fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

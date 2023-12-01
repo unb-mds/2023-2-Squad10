@@ -1,0 +1,1340 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO 002 - PE 008/2022
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6AC5F869D0284
+<br/><br/>
+<a class="fileDoc" data-file-hash="6AC5F869D0284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-002-pe-008-2022-prata-do-piaui-69490">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Prata_do_Piaui_Extrato_extrato_de_contrato_002_pe_008_2022_3f61f1b3-50dc-42e2-adbf-ba46ffc99a9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 161-2023
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>00A5BBB320594
+<br/><br/>
+<a class="fileDoc" data-file-hash="00A5BBB320594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-161-2023-oeiras-69428">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Oeiras_Portarias_portaria_n_161_2023_c5846d36-9002-4169-8fa9-1ad7334380c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+LISTAGEM GERAL DOS CANDIDATOS HOMOLOGADOS
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Outros atos de concurso
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC91AA96BBF54
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC91AA96BBF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/listagem-geral-dos-candidatos-homologados-alvorada-do-gurgueia-69420">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Alvorada_do_Gurgueia_Outros_atos_de_concurso_listagem_geral_dos_candidatos_homologados_5ef6f79e-c999-4547-99c5-fcb63244cfcb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 15 , DE 01 DE JUNHO DE 2023 - LEI N.268
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A350CF3F95B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="A350CF3F95B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-15-de-01-de-junho-de-2023-lei-n-268-beneditinos-69411">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Decretos_decreto_n_15_de_01_de_junho_de_2023_lei_n_268_b3ca7500-d9be-4346-93d6-776255e7f47f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RATIFICAÇÃO INEXIGIBILIDADE Nº 12/2023
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A11E490E69C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A11E490E69C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inexigibilidade-n-12-2023-demerval-lobao-69419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Demerval_Lobao_Aviso_de_Ratificacao_ratificacao_inexigibilidade_n_12_2023_167678f3-a395-4cef-9595-e71b76fe36c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+LEI 013.2023
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3E230D201014
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3E230D201014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-013-2023-jatoba-do-piaui-69413">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Camara_Jatoba_do_Piaui_Leis_lei_013_2023_c80e86b7-a807-4494-9ccf-64e46d05a549.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 014/2023 NOMEAÇÃO DE COMISSÃO DE LICITAÇÃO
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Portaria de nomeação de compradores e comissões de licitações
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E578A6E46C14
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E578A6E46C14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-014-2023-nomeacao-de-comissao-de-licitacao-batalha-69417">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Camara_Batalha_Portaria_de_nomeacao_de_compradores_e_comissoes_de_licitacoes_portaria_014_2023_nomeacao_de_comissao_de_lic_8c8febd6-f909-4eba-9a5b-892378c8d893.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2FDAE0AE7F844
+<br/><br/>
+<a class="fileDoc" data-file-hash="2FDAE0AE7F844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74470/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_4a4ccd63-d308-4821-a012-17f24b045aae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E342FB86D7104
+<br/><br/>
+<a class="fileDoc" data-file-hash="E342FB86D7104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74471/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_d8e38d68-cb04-455a-bf89-53595bf2aece.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7BC3AE0C2524
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7BC3AE0C2524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74472/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_1370cf60-a0ae-49f7-8e8d-3495db376b1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>94AF3F64FCB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="94AF3F64FCB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74473/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_c3eb2c48-6c98-42fe-a14e-95c1a1c052ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>073FE49EC5B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="073FE49EC5B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74474/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_93c44adc-a072-4827-9315-e58e75fbe5b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD394626F3DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD394626F3DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74475/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_dca2f240-2de0-47dc-8b8d-995a2fc10903.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE5C470A11844
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE5C470A11844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74476/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_2f2e9389-af46-4cf8-a64e-5cbfcccf8d60.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15BC76F4E2E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="15BC76F4E2E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74477/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_8c2363f4-40db-4a34-af79-58b28812e9b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F6141D82D0F14
+<br/><br/>
+<a class="fileDoc" data-file-hash="F6141D82D0F14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74478/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_7a5d43f9-38bd-4fac-89b8-197d23beddb2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2127B9A62E544
+<br/><br/>
+<a class="fileDoc" data-file-hash="2127B9A62E544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74479/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_0e59bcc6-1985-4d35-b8e9-033e9988a154.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B96AE26C8EBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B96AE26C8EBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74480/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_0c4376ba-9f2e-41e1-952f-46fc3695fd20.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>24C6ECB950ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="24C6ECB950ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74481/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_ba0e38d7-f0d2-4861-a2fe-dfe89d4fa8bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A8DD6D61B394
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A8DD6D61B394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74482/rreo-3-bimestre-2023-beneditinos-69410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2023_f4c9db82-7d8e-41f7-b3cd-3e1f016979a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DL 038/2023
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>74ADA64374354
+<br/><br/>
+<a class="fileDoc" data-file-hash="74ADA64374354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dl-038-2023-buriti-dos-lopes-69412">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Buriti_dos_Lopes_Extrato_extrato_dl_038_2023_274eb444-5612-4232-82dc-f297dbe460c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3517C2A6F5F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="3517C2A6F5F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74464/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_a4c9a833-b2aa-4557-a091-5f6876f6d4c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B5D6DCD4B3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B5D6DCD4B3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74465/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_027d89a5-26d7-4096-9993-3e848729d591.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B59D0390EEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B59D0390EEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74466/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_cefdd849-13af-4a96-8716-604cc1070664.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3262C1688B844
+<br/><br/>
+<a class="fileDoc" data-file-hash="3262C1688B844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74467/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_8b7fc0ef-f96f-4033-b85e-415735e08c1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>957E84AEF7274
+<br/><br/>
+<a class="fileDoc" data-file-hash="957E84AEF7274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74468/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_972d64f1-049e-466b-bda9-4fa8ed69d3a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=764&amp;q[flag_doc_diario_true]=1">
+525
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º SEMESTRE 2023 /
+</td>
+<td class="text-center">
+24-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5528FB075E854
+<br/><br/>
+<a class="fileDoc" data-file-hash="5528FB075E854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74469/rgf-1-semestre-2023-beneditinos-69409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/21/DOP_EDICAO__24-7-2023_ED_525_Prefeitura_Beneditinos_Relatorios_de_gestao_fiscal_rgf_1_semestre_2023_3e647677-5e86-4aa4-8b8b-f5770d345d90.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

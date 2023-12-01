@@ -1,0 +1,1205 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DA GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB64E499BF634
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB64E499BF634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50795/relatorio-da-gestao-fiscal-caxingo-47452">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_da_gestao_fiscal_4614469e-863e-48db-b138-a84a447ebaf8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DA GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C49A94ACA5434
+<br/><br/>
+<a class="fileDoc" data-file-hash="C49A94ACA5434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50796/relatorio-da-gestao-fiscal-caxingo-47452">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_da_gestao_fiscal_18837651-7a37-4136-9d82-82babbcdd7b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DA GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>090C5B71FAF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="090C5B71FAF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50797/relatorio-da-gestao-fiscal-caxingo-47452">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_da_gestao_fiscal_c30c4b9b-3bb0-4e67-889e-109f6877610e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+portaria 050-2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>61EE4D3E84BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="61EE4D3E84BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-050-2023-ipiranga-do-piaui-47279">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_050_2023_2d1ea5d2-4452-4e95-a2cb-8614edc0985b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+decreto 08-2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>94DD447FB8C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="94DD447FB8C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-08-2023-ipiranga-do-piaui-47286">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Ipiranga_do_Piaui_Decretos_decreto_08_2023_e09df7ff-4ba5-4631-b11b-f6bff3670692.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+extrato de contrato
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A442112213E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A442112213E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-47273">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_61d47579-6f5c-4159-93c3-dc992010e558.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO - J P ROCHA &amp; CIA LTDA - LOTE 1
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD131A26E7BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD131A26E7BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-j-p-rocha-cia-ltda-lote-1-cajazeiras-do-piaui-47297">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Cajazeiras_do_Piaui_Extrato_extrato_do_contrato_j_p_rocha_cia_ltda_lote_1_7f53bb3a-1dd8-489c-9910-c58add25ddb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Edital de convocação 03-2023 TESTE SELETIVO 01-2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso de convocação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E372DE1C8884
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E372DE1C8884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-03-2023-teste-seletivo-01-2023-queimada-nova-47269">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Queimada_Nova_Aviso_de_convocacao_edital_de_convocacao_03_2023_teste_seletivo_01_2023_0cc5f4cf-1f60-453b-832c-db77d8b3e238.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 132/2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>01D4AD3F90024
+<br/><br/>
+<a class="fileDoc" data-file-hash="01D4AD3F90024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-132-2023-wall-ferraz-47266">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Wall_Ferraz_Portarias_portaria_132_2023_ac7820e8-4544-4fae-a9c8-5a74b47cb306.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria redução de jornada Gilbervane.pdf
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EAC3E4B9663E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EAC3E4B9663E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-reducao-de-jornada-gilbervane-pdf-isaias-coelho-47291">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Isaias_Coelho_Portarias_portaria_reducao_de_jornada_gilbervane_pdf_c04ecb0e-ad31-4e57-ac11-3d5113751043.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Primeiro Aditivo ao Contrato 109.2022 - DISPENSA 014.2022
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FAA9D8C6F0BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FAA9D8C6F0BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/primeiro-aditivo-ao-contrato-109-2022-dispensa-014-2022-acaua-47292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Acaua_Contratos_e_seus_aditivos_primeiro_aditivo_ao_contrato_109_2022_dispensa_014_2022_ca135fd9-deec-46ad-8767-6866d6a05f0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA FISCAL DE CONTRATO PE 002/2023 - LOTE IV
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D4B8A5B275D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D4B8A5B275D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-fiscal-de-contrato-pe-002-2023-lote-iv-pio-ix-47285">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Pio_IX_Portarias_portaria_fiscal_de_contrato_pe_002_2023_lote_iv_7ff92132-153d-4483-8c44-97c7d4be6256.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Adjudicação PP 019/2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF8EF805551E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF8EF805551E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pp-019-2023-pimenteiras-47435">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Pimenteiras_Aviso_da_Adjudicacao_termo_de_adjudicacao_pp_019_2023_cc27a6f6-2698-449d-8b7d-5162b5d73a12.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+LEI MUNICIPAL N° 270 NIIPED PROTEÇÃO DOS DIREITOS DA PESSOA COM TRANSTORNO DO ESPECTO AUTISTA
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>10C96FB7122F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="10C96FB7122F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-municipal-n-270-niiped-protecao-dos-direitos-da-pessoa-com-transtorno-do-especto-autista-beneditinos-47382">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Beneditinos_Leis_lei_municipal_n_270_niiped_protecao_dos_direitos_da_pessoa_com_transtorno_do_especto_autista_8197c674-9899-4d7d-8cd7-fb0f041a12eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria - Exoneração
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Exoneração
+</td>
+<td class="text-center">
+<strong>ID: </strong>CBA5240C239F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CBA5240C239F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-exoneracao-sao-pedro-do-piaui-47493">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Pedro_do_Piaui_Exoneracao_portaria_exoneracao_def0ba2d-3606-4a99-8c38-5173cfc55a6d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+CP007.2023 - RATIFICAÇÃO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>51582293A8234
+<br/><br/>
+<a class="fileDoc" data-file-hash="51582293A8234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp007-2023-ratificacao-sao-jose-do-divino-47480">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Jose_do_Divino_Aviso_de_Ratificacao_cp007_2023_ratificacao_27dc8b55-5eaf-4cfc-b6fa-c6179dd8b5f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+CP006.2023 - HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>7CFAD73326CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7CFAD73326CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp006-2023-homologacao-sao-jose-do-divino-47477">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Jose_do_Divino_Aviso_da_Homologacao_cp006_2023_homologacao_e15f90bd-4b28-4fc0-8815-423c910bec52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 161-2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD18EB77AB154
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD18EB77AB154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-161-2023-buriti-dos-lopes-47437">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_161_2023_9df1a1c3-0eb0-4972-8891-ae4448029dc2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Julgamento habilitação TP n° 001/2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>849415A1A3D14
+<br/><br/>
+<a class="fileDoc" data-file-hash="849415A1A3D14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-habilitacao-tp-n-001-2023-barreiras-do-piaui-47438">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Barreiras_do_Piaui_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_julgamento_habilitacao_tp_n_001_2023_8a2c1ec1-c567-450d-8f45-32496569fe9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato Disp 011/2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCB00E9525F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCB00E9525F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-disp-011-2023-oeiras-47466">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Oeiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_disp_011_2023_44a1516d-af89-4f83-9239-41da1047537e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C99A5B773974
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C99A5B773974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-cajazeiras-do-piaui-47487">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Cajazeiras_do_Piaui_Portarias_portaria_8d064dae-0dff-4525-9b22-ef8efb72e654.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>79C43CA6E32F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="79C43CA6E32F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-cajazeiras-do-piaui-47459">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Cajazeiras_do_Piaui_Portarias_portaria_16826e9d-85fe-41fe-8f94-94fd605421b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 129
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC8122A085E24
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC8122A085E24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-129-paqueta-47470">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Paqueta_Decretos_decreto_129_fdf61729-bfc3-40ee-9d26-b3151ab00dd4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+CC03.2023 - AVISO DE ADIAMENTO DE LICITAÇÃO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>77E0F81D6BB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="77E0F81D6BB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cc03-2023-aviso-de-adiamento-de-licitacao-sao-jose-do-divino-47426">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Jose_do_Divino_Aviso_do_Adiamento_de_licitacao_cc03_2023_aviso_de_adiamento_de_licitacao_d59be6fe-c9c2-4448-8936-fec167e71e87.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+portaria 2023dulcenea.pdf
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D452800852784
+<br/><br/>
+<a class="fileDoc" data-file-hash="D452800852784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-2023dulcenea-pdf-isaias-coelho-47411">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Isaias_Coelho_Portarias_portaria_2023dulcenea_pdf_093c6baa-bdc1-4ef2-8a63-a36515fbc953.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria de nomeação ismaell 2023.pdf
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B449DDE08E504
+<br/><br/>
+<a class="fileDoc" data-file-hash="B449DDE08E504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-nomeacao-ismaell-2023-pdf-isaias-coelho-47402">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Isaias_Coelho_Portarias_portaria_de_nomeacao_ismaell_2023_pdf_276a028b-c6dd-416b-9f98-64280c41e954.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

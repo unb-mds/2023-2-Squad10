@@ -1,0 +1,1183 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO VIII /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E83D86C81784
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E83D86C81784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35205/anexo-viii-sao-felix-do-piaui-32608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Felix_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_anexo_viii_4527bd1a-9c1a-459c-bf36-7550436b3a8c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO XII /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>26CCAB8E087E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="26CCAB8E087E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35212/anexo-xii-sao-felix-do-piaui-32615">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Felix_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_anexo_xii_c252ef21-2b9f-45b3-8b66-3e35aa74fd11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DL - 032/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F31831AB7E914
+<br/><br/>
+<a class="fileDoc" data-file-hash="F31831AB7E914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dl-032-2022-caxingo-32583">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Caxingo_Extrato_extrato_dl_032_2022_4d22a3ce-dcb6-43f5-bbd5-2c8c427a66a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato PREGÃO ELETRÔNICO Nº 029 - 2022 CONSULTAS E EXAME DE IMAGEM (Unimagem PICOS)
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F1DD7EB34A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F1DD7EB34A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pregao-eletronico-n-029-2022-consultas-e-exame-de-imagem-unimagem-picos-sao-joao-da-varjota-32634">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Joao_da_Varjota_Aviso_do_extrato_de_contrato_extrato_de_contrato_pregao_eletronico_n_029_2022_consultas_e_exame_de_imagem_unimagem_picos_9fff9cb1-6b24-440e-8de6-ef7583c7e835.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO XIV /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>18775379C5794
+<br/><br/>
+<a class="fileDoc" data-file-hash="18775379C5794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35214/anexo-xiv-sao-felix-do-piaui-32617">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Felix_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_anexo_xiv_beffd3e9-8ce8-48a2-b236-17c5e540656e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D14BBA4D5B2F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D14BBA4D5B2F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-alvorada-do-gurgueia-32625">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Alvorada_do_Gurgueia_Aviso_de_licitacao_aviso_de_licitacao_d0da2317-2eb3-4377-8b3e-2a0ad4aca61e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CC8640F0EBD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CC8640F0EBD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-alvorada-do-gurgueia-32627">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Alvorada_do_Gurgueia_Aviso_de_licitacao_aviso_de_licitacao_0f2ccb77-ebb8-4a0b-8968-e5f38e5408d9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Dispensa de Licitação nº 023-2022 - Regularização do SIOPSE
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA0060A8A5AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA0060A8A5AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispensa-de-licitacao-n-023-2022-regularizacao-do-siopse-santa-rosa-do-piaui-32648">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Santa_Rosa_do_Piaui_Aviso_de_licitacao_aviso_de_dispensa_de_licitacao_n_023_2022_regularizacao_do_siopse_9a821c5b-32ed-43eb-a837-7920243f5a0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATRO DO 1º TERMO ADITIVO AO CONTRATO Nº 004/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>50BD717748B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="50BD717748B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extratro-do-1-termo-aditivo-ao-contrato-n-004-2022-pimenteiras-32632">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Camara_Pimenteiras_Aviso_do_extrato_de_contrato_extratro_do_1_termo_aditivo_ao_contrato_n_004_2022_44c50b79-19e3-4155-afd6-9957078edfd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO IX /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5EBE515C15B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5EBE515C15B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35208/anexo-ix-sao-felix-do-piaui-32611">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Felix_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_anexo_ix_7d595fc9-39bd-4aaf-957f-0101eccdefc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO NOVEMBRO 1
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>05B2B148164F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="05B2B148164F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-novembro-1-luis-correia-32543">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Luis_Correia_Decretos_decreto_novembro_1_e0711c55-08f3-4653-9814-b3ed7c99578a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+PE 032/2022- Aquisição de um Veiculo
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F83646927F2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F83646927F2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-032-2022-aquisicao-de-um-veiculo-ipiranga-do-piaui-32581">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Ipiranga_do_Piaui_Aviso_de_licitacao_pe_032_2022_aquisicao_de_um_veiculo_81c03a21-54aa-4513-818c-a1fa62d322a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+RGF- anexo 6 Demonstrativo Simplificado do Relatório de Gestão Fiscal - Jan/2022 a Jun/2022 /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>200F944C88F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="200F944C88F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35162/rgf-anexo-6-demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-jan-2022-a-jun-2022-nazare-do-piaui-32565">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_anexo_6_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_jan_2022_a_jun_2022_58fef3fc-9038-47e8-aab4-c3a81a042e47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ATA 04-2022 CONSELHO MUNICIPAL DE DEFESA DO MEIO AMBIENTE
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Atas e deliberações dos conselhos municipais
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF4D8536313E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF4D8536313E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-04-2022-conselho-municipal-de-defesa-do-meio-ambiente-beneditinos-32630">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Beneditinos_Atas_e_deliberacoes_dos_conselhos_municipais_ata_04_2022_conselho_municipal_de_defesa_do_meio_ambiente_377a7d0c-d960-4689-bda6-7b589ed000d5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE 031
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>54308047B9AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="54308047B9AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-031-itaueira-32578">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Itaueira_Aviso_de_licitacao_aviso_de_031_de21db36-5ba7-4361-a1b4-6f3e74fbceea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PE 52 2022 - MARCIANO KLEBER DOS REIS CARVALHO ME (CNPJ nº 26.751.0530001-38).
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5A7F41CBA7994
+<br/><br/>
+<a class="fileDoc" data-file-hash="5A7F41CBA7994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-52-2022-marciano-kleber-dos-reis-carvalho-me-cnpj-n-26-751-0530001-38-francisco-macedo-32576">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_pe_52_2022_marciano_kleber_dos_reis_carvalho_me_cnpj_n_26_751_0530001_38_bc8d316e-3f4a-475a-8cc7-2e222eaec183.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N0 022/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>905F7A1A910C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="905F7A1A910C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n0-022-2022-coivaras-32573">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Coivaras_Decretos_decreto_n0_022_2022_8f240b67-15c4-42ba-b07f-ebe5f69b3b9a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+EDITAL DE NOTIFICAÇÃO Nº 084-2022-REURB
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>24A1062EC2C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="24A1062EC2C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-notificacao-n-084-2022-reurb-oeiras-32645">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Oeiras_Outros_edital_de_notificacao_n_084_2022_reurb_e8f9d5ae-ca73-4cd7-a896-0d0ff78830ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 130/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFC3EEEEED544
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFC3EEEEED544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-130-2022-wall-ferraz-32586">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Wall_Ferraz_Portarias_portaria_130_2022_74d00359-34f3-4195-bcca-ba81d2a8ed97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N° 35 . DE 01 DE SETEMBRO
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>415BBA779A184
+<br/><br/>
+<a class="fileDoc" data-file-hash="415BBA779A184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-35-de-01-de-setembro-acaua-32598">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Acaua_Decretos_decreto_n_35_de_01_de_setembro_72842ea2-c92b-4409-a616-f15a01c4c1aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO ATA PE Nº 026/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>743E7A731FF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="743E7A731FF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-pe-n-026-2022-demerval-lobao-32663">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Demerval_Lobao_Extrato_extrato_ata_pe_n_026_2022_2ccf4eb3-a376-4bb8-b839-c8d73f8e4716.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de rebertura de sessão
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>67838C0093394
+<br/><br/>
+<a class="fileDoc" data-file-hash="67838C0093394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-rebertura-de-sessao-oeiras-32610">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Oeiras_Outros_atos_administrativos_aviso_de_rebertura_de_sessao_dd321765-c4f4-4cf9-bce8-d3d96570b42c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO V /
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DB0FE0ED81554
+<br/><br/>
+<a class="fileDoc" data-file-hash="DB0FE0ED81554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35193/anexo-v-sao-felix-do-piaui-32596">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Felix_do_Piaui_Relatorios_de_gestao_fiscal_anexo_v_031093c4-bf5f-420a-8dfd-65d38a11cd32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO 070/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D99D52397664
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D99D52397664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-070-2022-sao-jose-do-piaui-32585">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_070_2022_8218e81e-b224-488f-9f33-77e4a7fb1095.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=527&amp;q[flag_doc_diario_true]=1">
+365
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE CANCELAMENTO DE PUBLICAÇÃO JORNAL TP 06/2022
+</td>
+<td class="text-center">
+29-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso do cancelamento
+</td>
+<td class="text-center">
+<strong>ID: </strong>1BE4C6CB34A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="1BE4C6CB34A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-cancelamento-de-publicacao-jornal-tp-06-2022-amarante-32561">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/28/DOP_EDICAO__29-11-2022_ED_365_Prefeitura_Amarante_Aviso_do_cancelamento_aviso_de_cancelamento_de_publicacao_jornal_tp_06_2022_a6fa5c3a-2c5d-4613-ad1d-acbcccf93adf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

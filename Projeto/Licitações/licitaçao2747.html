@@ -1,0 +1,1520 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 081.2022, PE nº 010.2022.
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C8C1FCA8D1A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C8C1FCA8D1A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-081-2022-pe-n-010-2022-barra-d-alcantara-18264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Barra_DAlcantara_Aviso_da_Adjudicacao_contrato_administrativo_n_081_2022_pe_n_010_2022_5181e770-f1ba-4115-a2b1-07225ec6e840.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A294367C6D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A294367C6D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18207">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Caxingo_Extrato_extrato_contratual_40b31b3c-5786-46f3-ac10-bf2a841624ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 042-2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3F2807D3E424
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3F2807D3E424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-ata-registro-de-precos-pe-042-2022-floriano-18244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Extrato_extrato_parcial_ata_registro_de_precos_pe_042_2022_9b0d179a-d87e-43d8-a2ff-fb29d15f7f11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LICITANET - Ata de Realização do Pregão Eletrônico
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>40AA810F96454
+<br/><br/>
+<a class="fileDoc" data-file-hash="40AA810F96454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-ata-de-realizacao-do-pregao-eletronico-floriano-18245">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Atas_licitanet_ata_de_realizacao_do_pregao_eletronico_7d36ed43-e4df-4c02-b958-295b408bffc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LICITANET - TERMO DE ADJUDICAÇÃO
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9C100AA93A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9C100AA93A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-termo-de-adjudicacao-floriano-18246">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Outros_licitanet_termo_de_adjudicacao_e08c7273-a8c2-45d7-b914-165c575d6aca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ADIAMENTO DO PREGÃO PRESENCIAL NR 19-2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8925DF121C234
+<br/><br/>
+<a class="fileDoc" data-file-hash="8925DF121C234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adiamento-do-pregao-presencial-nr-19-2022-sebastiao-barros-18269">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Sebastiao_Barros_Aviso_do_Adiamento_de_licitacao_aviso_de_adiamento_do_pregao_presencial_nr_19_2022_318a40a5-1bba-4132-9873-ae2283db9a51.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE CHAMADA PUBLICA 021-2022 - FORNECIMENTO DE HORTIFRUTI
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A2A5B7E6A634
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A2A5B7E6A634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-chamada-publica-021-2022-fornecimento-de-hortifruti-floriano-18254">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_de_licitacao_aviso_de_chamada_publica_021_2022_fornecimento_de_hortifruti_7cfbe6b2-5d43-41ee-ab5e-eea3e5385f83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 168-2022 SMS - GENERO - ITENS 3 E 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>982B04B4F1824
+<br/><br/>
+<a class="fileDoc" data-file-hash="982B04B4F1824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-168-2022-sms-genero-itens-3-e-7-floriano-18255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_168_2022_sms_genero_itens_3_e_7_8ed6e560-7a4d-41dd-919e-567d7042d6a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 020-A-2022 - itens 3 e 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D8A03A4BA4B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="D8A03A4BA4B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-ata-registro-de-precos-pe-020-a-2022-itens-3-e-7-floriano-18256">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Extrato_extrato_parcial_ata_registro_de_precos_pe_020_a_2022_itens_3_e_7_676c2ac7-bb13-4b23-bd39-e53ee3c58241.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE SRP 020-2022 - ITENS 3 e 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1048830D942D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1048830D942D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-srp-020-2022-itens-3-e-7-floriano-18259">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_srp_020_2022_itens_3_e_7_e8b73625-9e2e-4425-aff2-23cc355ff7fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 004-2022 RECEB. MATERIAIS E SERVIÇOS
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C30E935EC4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C30E935EC4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-004-2022-receb-materiais-e-servicos-floriano-18270">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Portarias_portaria_n_004_2022_receb_materiais_e_servicos_ded806de-871b-4709-b489-a20b06e501e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 12 DE 2022. NOMEAÇÃO ALIPS
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7782EE070F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7782EE070F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-12-de-2022-nomeacao-alips-pimenteiras-18271">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Pimenteiras_Portarias_portaria_12_de_2022_nomeacao_alips_4b511d5f-b258-4320-b884-0245b13255b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE PREGÃO DESERTO - PE016/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA93C36600AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA93C36600AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-pregao-deserto-pe016-2022-demerval-lobao-18122">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Demerval_Lobao_Aviso_de_licitacao_aviso_de_pregao_deserto_pe016_2022_16539cf0-f13f-4ce7-93d0-554aa2e1b354.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+ADJUDICAÇÃO Dispensa de Licitação nº. 012/2022 Processo Administrativo nº. 027/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>921CA34FDBE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="921CA34FDBE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-dispensa-de-licitacao-n-012-2022-processo-administrativo-n-027-2022-rio-grande-do-piaui-18099">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Extrato_adjudicacao_dispensa_de_licitacao_n_012_2022_processo_administrativo_n_027_2022_d15a4392-2db4-42c3-8837-76ebe5d499e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+extrato do contrato 080-2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F7C6D09677C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F7C6D09677C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-080-2022-barra-d-alcantara-18115">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Barra_DAlcantara_Extrato_extrato_do_contrato_080_2022_fbb4426c-7c4b-4388-8885-1fd8f371de95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATUAL
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>477909A8DF844
+<br/><br/>
+<a class="fileDoc" data-file-hash="477909A8DF844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contratual-caxingo-18210">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Caxingo_Extrato_extrato_contratual_a60bac85-4ef5-4a6e-ad60-9f33be4d283b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+HOMOLOGAÇÃO CC 02/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D83C99B179284
+<br/><br/>
+<a class="fileDoc" data-file-hash="D83C99B179284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-cc-02-2022-demerval-lobao-18117">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Demerval_Lobao_Aviso_da_Homologacao_homologacao_cc_02_2022_a5a14e70-6ad9-4dd7-a885-fdde3201c828.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO Nº. 029/2022 PROCESSO ADMINISTRATIVO N°. 028/2022 DISPENSA DE LICITAÇÃO Nº 013/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>291027077B9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="291027077B9B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-029-2022-processo-administrativo-n-028-2022-dispensa-de-licitacao-n-013-2022-rio-grande-do-piaui-18104">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Extrato_contrato_n_029_2022_processo_administrativo_n_028_2022_dispensa_de_licitacao_n_013_2022_3a846088-8345-4eff-902e-173bdd0bf939.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF3A5A2EC73F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF3A5A2EC73F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19303/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_3260eaeb-01cb-4959-980e-aaf379d3a4f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>56A265181AAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="56A265181AAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19304/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_c0ae99e9-aad1-4a33-823c-e19a8b9ab0e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0BABADEBC9274
+<br/><br/>
+<a class="fileDoc" data-file-hash="0BABADEBC9274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19305/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_b760e2b2-6d10-4d5c-ba08-001bb163b4e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E37F9E999A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E37F9E999A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19306/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_f9e62b80-8112-4c2f-8cd3-cf11e0eae285.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5AABA3DFEA144
+<br/><br/>
+<a class="fileDoc" data-file-hash="5AABA3DFEA144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19307/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_775344db-9920-40da-9ded-b4fd345cd1d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8880B57AE6694
+<br/><br/>
+<a class="fileDoc" data-file-hash="8880B57AE6694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19308/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_aa950df5-6711-45f6-b2ee-576bf9871420.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>507B3ED1A09D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="507B3ED1A09D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19309/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_8e0a9287-5946-49cb-b1ba-609cb3e553f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF49836B22564
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF49836B22564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19310/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_a37e094e-2010-4fa8-bb2b-f06be25c6c75.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F90B4750F10F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F90B4750F10F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19311/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_bcfd0dfc-e7d2-4b3e-bf20-7e7459131337.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>86E3682B1D344
+<br/><br/>
+<a class="fileDoc" data-file-hash="86E3682B1D344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19312/lrf-rreo-2-bimestre-2022-angical-do-piaui-18139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_2_bimestre_2022_a169b791-70b9-4e4d-84fc-0ab47acc832d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PREGÃO ELETRÔNICO Nº. 004/2022 Processo Administrativo nº. 025/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1DD5E6783B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1DD5E6783B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-004-2022-processo-administrativo-n-025-2022-rio-grande-do-piaui-18088">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Aviso_de_licitacao_pregao_eletronico_n_004_2022_processo_administrativo_n_025_2022_37b1dd0e-c050-46b9-9911-d976a54dd456.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO Dispensa de Licitação nº. 12/2022 Processo Administrativo nº. 027/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA2912F8FBAB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA2912F8FBAB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-dispensa-de-licitacao-n-12-2022-processo-administrativo-n-027-2022-rio-grande-do-piaui-18100">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Extrato_ratificacao_dispensa_de_licitacao_n_12_2022_processo_administrativo_n_027_2022_abde5b22-1f2d-41cf-a192-c16a117465e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PREGÃO ELETRÔNICO Nº. 005/2022 Processo Administrativo nº. 026/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>056791957B7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="056791957B7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-005-2022-processo-administrativo-n-026-2022-rio-grande-do-piaui-18089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Aviso_de_licitacao_pregao_eletronico_n_005_2022_processo_administrativo_n_026_2022_c9524f6e-9e40-4e62-b30e-3870727e4369.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Exoneração Servidor - Kaline
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>47F381D552334
+<br/><br/>
+<a class="fileDoc" data-file-hash="47F381D552334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/exoneracao-servidor-kaline-demerval-lobao-18097">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Demerval_Lobao_Portarias_exoneracao_servidor_kaline_84d81287-6ac6-4f24-872d-d0547ce2fa55.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Exoneração Servidor - Renata
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>199DB409C7D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="199DB409C7D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/exoneracao-servidor-renata-demerval-lobao-18096">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Demerval_Lobao_Portarias_exoneracao_servidor_renata_1c5c85b0-1da3-429a-bc51-56c63e4c7163.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1434 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1CE09E68C844
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1CE09E68C844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50317">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_4de8ba64-a5c4-497a-9593-573f09041c0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>9EACFFF7A7154
+<br/><br/>
+<a class="fileDoc" data-file-hash="9EACFFF7A7154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50326">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_a62339e6-ad95-47f1-9837-33b84afeac4e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE CHAMADA PUBLICA N° 001-2023
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8705D12C508D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8705D12C508D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-chamada-publica-n-001-2023-sao-felix-do-piaui-50353">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Sao_Felix_do_Piaui_Aviso_de_licitacao_aviso_de_chamada_publica_n_001_2023_51453539-10dc-41b4-b9da-4be1ed6ba8ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>CABE80AB07964
+<br/><br/>
+<a class="fileDoc" data-file-hash="CABE80AB07964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50328">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_906e55cf-ed6d-4d0a-a57d-b0f6ea0b5d90.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>2881A49062E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="2881A49062E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50329">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_198ffe8d-d31c-460a-8647-b1801645cab5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>94290EFE4B2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="94290EFE4B2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50339">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_46469267-9225-4734-bb40-9bf6620e64e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Anexo 2 /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>834709CB93204
+<br/><br/>
+<a class="fileDoc" data-file-hash="834709CB93204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/54013/anexo-2-buriti-dos-lopes-50343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_anexo_2_7550ee57-660c-46eb-9dfb-624b4cbb3bba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ACCF191F77634
+<br/><br/>
+<a class="fileDoc" data-file-hash="ACCF191F77634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53911/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_1feae06c-56f5-4f31-b84c-181971744485.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>66019D8E4D754
+<br/><br/>
+<a class="fileDoc" data-file-hash="66019D8E4D754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53912/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_0d37d2a2-ea29-4b9e-b22a-d084ac0c4424.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9EE9CFEF4C904
+<br/><br/>
+<a class="fileDoc" data-file-hash="9EE9CFEF4C904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53913/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_50b74ac6-5a2a-4a7c-87b8-408808983abe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>649C26BA4A1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="649C26BA4A1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53914/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_50679684-ab9a-4cf7-a5ea-795e1761f710.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1BBA980C60524
+<br/><br/>
+<a class="fileDoc" data-file-hash="1BBA980C60524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53915/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_fb1c4a82-1386-42e0-ac78-d49eb92a7cc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D6FB381EF6024
+<br/><br/>
+<a class="fileDoc" data-file-hash="D6FB381EF6024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53916/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_843fd683-6e0f-4ded-ae19-1040657bf236.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9A122945B8E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9A122945B8E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53917/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_a3be27d1-e7a3-40d6-bfa7-8cdc3db57a55.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>53554DF41E894
+<br/><br/>
+<a class="fileDoc" data-file-hash="53554DF41E894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53918/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_4793ac2a-fa66-4c2f-b5e1-7b9a93cd145c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL - RGF - 3º QUADRIMESTRE/2022. /
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A16C599F9404
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A16C599F9404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/53919/relatorio-de-gestao-fiscal-rgf-3-quadrimestre-2022-marcos-parente-50249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_rgf_3_quadrimestre_2022_bda4b7f6-e70c-4038-abb4-1d32dea9f191.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DISPENSA ELETRONICA DE LICITAÇÃO Nº 006/2023
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E9C7835300CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E9C7835300CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispensa-eletronica-de-licitacao-n-006-2023-curral-novo-do-piaui-50296">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_de_dispensa_eletronica_de_licitacao_n_006_2023_43e4123f-b4ae-45cc-85ff-e51cd0697876.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato-Teste Seletivo
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>14B0366453714
+<br/><br/>
+<a class="fileDoc" data-file-hash="14B0366453714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-50340">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_1f712376-f75d-44db-940e-e2bfa4cfe111.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE CHAMADA PUBLICA N° 001.2023
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E812F37019874
+<br/><br/>
+<a class="fileDoc" data-file-hash="E812F37019874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-chamada-publica-n-001-2023-nossa-senhora-de-nazare-50362">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_de_licitacao_aviso_de_chamada_publica_n_001_2023_498b5106-748c-49f6-b9e0-bf1a1a5fbdf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº008-2023 DISPÕE SOBRE FERIADO AO DIA DO VAQUEIRO
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E52C661325A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E52C661325A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-008-2023-dispoe-sobre-feriado-ao-dia-do-vaqueiro-altos-50330">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Altos_Decretos_decreto_n_008_2023_dispoe_sobre_feriado_ao_dia_do_vaqueiro_87aa0ca2-c01c-453e-aa71-dabfe09bd1c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO ANDREVANIA NUNES BARBOSA DE MIRANDA
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D6FAF25E7F934
+<br/><br/>
+<a class="fileDoc" data-file-hash="D6FAF25E7F934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-andrevania-nunes-barbosa-de-miranda-marcos-parente-50325">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Marcos_Parente_Aviso_do_extrato_de_contrato_extrato_andrevania_nunes_barbosa_de_miranda_fb9199fa-1b82-49bc-a2f2-281d8e8453e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DISPENSA DE LICITAÇÃO N° 005/2023
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>81C55FAAE9B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="81C55FAAE9B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispensa-de-licitacao-n-005-2023-sao-jose-do-piaui-50313">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Camara_Sao_Jose_do_Piaui_Aviso_da_Dispensa_aviso_de_dispensa_de_licitacao_n_005_2023_c1c8dcee-72a7-44b9-98a9-5a295844492e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+Acordo Administrativo - Aquisição por desapropriação
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>45CC23A8CBD54
+<br/><br/>
+<a class="fileDoc" data-file-hash="45CC23A8CBD54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/acordo-administrativo-aquisicao-por-desapropriacao-currais-50348">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Currais_Atos_acordo_administrativo_aquisicao_por_desapropriacao_f01d90b4-b5aa-4104-aa88-3aa81eab4845.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=633&amp;q[flag_doc_diario_true]=1">
+437
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO N° 024/2023
+</td>
+<td class="text-center">
+15-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B16104569F754
+<br/><br/>
+<a class="fileDoc" data-file-hash="B16104569F754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-n-024-2023-sao-jose-do-piaui-50360">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/14/DOP_EDICAO__15-3-2023_ED_437_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_n_024_2023_4cf53a48-4e06-422e-800e-8a5d443bd93d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 436
+</td>
+<td class="text-center dopcom">
+14-03-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="888053A3F9604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-436-piaui-50195/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_CADERNO_a____diario_oficial_completo_edicao_436_ca1cd291-af8f-4f8e-a3c0-d594bd4beb3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+RATIFICAÇÃO DA DISPENSA 002/2023
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC22DF0633604
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC22DF0633604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-da-dispensa-002-2023-currais-50121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Currais_Aviso_de_Ratificacao_ratificacao_da_dispensa_002_2023_dc50b7f2-aa03-42c7-b439-3c6ab5e15792.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 38 , DE 01 DE DEZEMBRO DE 2022 - LEI N.246
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Projeto de decreto
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5FD934C36044
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5FD934C36044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-38-de-01-de-dezembro-de-2022-lei-n-246-beneditinos-50172">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Beneditinos_Projeto_de_decreto__decreto_n_38_de_01_de_dezembro_de_2022_lei_n_246_d89395b3-a264-4f1a-a90e-a9b57d922d2d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+adiamento 004
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>28B9EDDC87504
+<br/><br/>
+<a class="fileDoc" data-file-hash="28B9EDDC87504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adiamento-004-passagem-franca-do-piaui-50173">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Passagem_Franca_do_Piaui_Aviso_do_Adiamento_de_licitacao_adiamento_004_92fa2dd8-e86e-4060-86d8-041e94fcb427.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 001 2023
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1AD1721EBB824
+<br/><br/>
+<a class="fileDoc" data-file-hash="1AD1721EBB824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-001-2023-altos-50164">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Altos_Portarias_portaria_001_2023_01c50dea-5bf2-4394-af83-ab2ebf4b2a25.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+5 ADITIVO DE PRAZO DP 008 2022
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>642BF4C6C7B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="642BF4C6C7B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/5-aditivo-de-prazo-dp-008-2022-wall-ferraz-50142">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Wall_Ferraz_Aviso_do_Termo_Aditivo_5_aditivo_de_prazo_dp_008_2022_b3aa1582-23fd-4b7e-bb65-57726574cd95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=632&amp;q[flag_doc_diario_true]=1">
+436
+</a>
+-
+2023
+</td>
+<td class="">
+4 ADITIVO DE PRAZO DP 008 2022
+</td>
+<td class="text-center">
+14-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B782C27076F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B782C27076F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/4-aditivo-de-prazo-dp-008-2022-wall-ferraz-50141">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/13/DOP_EDICAO__14-3-2023_ED_436_Prefeitura_Wall_Ferraz_Contratos_e_seus_aditivos_4_aditivo_de_prazo_dp_008_2022_743cb1b7-a5f9-4a22-ac61-fe507d0d38df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

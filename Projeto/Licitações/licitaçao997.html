@@ -1,0 +1,1226 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 051 - MÁRCIA REGINA
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3ED12323B8E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="3ED12323B8E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-051-marcia-regina-cajazeiras-do-piaui-60181">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Cajazeiras_do_Piaui_Portarias_portaria_051_marcia_regina_8a186f68-21dc-48ec-b6d0-57cf6c545571.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+TP004.2023 - AVISO DE ADIAMENTO
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4AC22E2D5E094
+<br/><br/>
+<a class="fileDoc" data-file-hash="4AC22E2D5E094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp004-2023-aviso-de-adiamento-sao-jose-do-divino-60235">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Sao_Jose_do_Divino_Aviso_do_Adiamento_de_licitacao_tp004_2023_aviso_de_adiamento_c555403b-cf2b-48f6-b77b-bbad0369be32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PE 01-2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Miguel Alves
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>264B2BE875F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="264B2BE875F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-01-2023-miguel-alves-60223">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Camara_Miguel_Alves_Aviso_de_licitacao_aviso_de_licitacao_pe_01_2023_82af09f0-cd1d-4585-9bb0-6e9880e352e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato 044 2023 PE 017 2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DAEA2936D99F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DAEA2936D99F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-044-2023-pe-017-2023-wall-ferraz-60262">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_044_2023_pe_017_2023_7ee613e0-49db-424e-9054-8d2085367cc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO de Suspensão PE SRP 10.2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2AACD25E549F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2AACD25E549F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-suspensao-pe-srp-10-2023-coivaras-60257">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Coivaras_Aviso_de_licitacao_aviso_de_suspensao_pe_srp_10_2023_c03d176e-9db7-44f8-bb05-bd81c485053b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 176-2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A779E0E036444
+<br/><br/>
+<a class="fileDoc" data-file-hash="A779E0E036444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-176-2023-currais-60211">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Currais_Portarias_portaria_n_176_2023_a101af40-ffaa-4066-bc80-a981e1b3ef57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato - PE nº 007-2023 - Peças Auto - LUIZ CARLOS
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F913718E34604
+<br/><br/>
+<a class="fileDoc" data-file-hash="F913718E34604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pe-n-007-2023-pecas-auto-luiz-carlos-brejo-do-piaui-60243">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Brejo_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_pe_n_007_2023_pecas_auto_luiz_carlos_7ecab91f-f1f4-4f47-9749-01e0fd520bac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 029
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C528FA0530604
+<br/><br/>
+<a class="fileDoc" data-file-hash="C528FA0530604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-029-angical-do-piaui-60229">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Angical_do_Piaui_Portarias_portaria_n_029_5b3c8d18-45b1-4ad2-84f3-7f6cc40ca5fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 030 2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF08BAB4E2C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF08BAB4E2C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-030-2023-wall-ferraz-60259">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Wall_Ferraz_Aviso_de_licitacao_aviso_pe_030_2023_82db402e-a076-4827-8056-bb1d4d339664.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+Edital de convocação de aprovados teste seletivo
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Edital dirigido aos aprovados em concurso público convocando para passe
+</td>
+<td class="text-center">
+<strong>ID: </strong>799408A941894
+<br/><br/>
+<a class="fileDoc" data-file-hash="799408A941894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-de-aprovados-teste-seletivo-lagoa-do-barro-do-piaui-60236">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Lagoa_do_Barro_do_Piaui_Edital_dirigido_aos_aprovados_em_concurso_publico_convocando_para_passe_edital_de_convo_03b623b2-0d3d-49a5-9147-c1d7be4e5fff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F9D4C2412C7E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F9D4C2412C7E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64395/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_01c7a1ff-15cd-47aa-900b-db773c215a26.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A129126A65AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A129126A65AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64396/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_88b748c1-76e2-4ef6-8288-8c73902a66d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B290F5613DBC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B290F5613DBC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64397/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_f49ef1fb-2e45-41f7-8df1-26ca8a02c60c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD35205BF3E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD35205BF3E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64398/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_2831b483-baa7-429d-9d06-598fc91ee24b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D53513B9EAE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="D53513B9EAE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64399/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_55dc1a69-713b-4d64-90db-56a9de93ef25.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2393479D18384
+<br/><br/>
+<a class="fileDoc" data-file-hash="2393479D18384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64400/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_d5757aa9-5458-4a3b-8b38-f3864a3b9224.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B942CF5139314
+<br/><br/>
+<a class="fileDoc" data-file-hash="B942CF5139314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64401/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_a135a8d7-a3e1-4e45-a575-d9bb9a4ba02f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>43C07C2298634
+<br/><br/>
+<a class="fileDoc" data-file-hash="43C07C2298634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64402/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_e290f0bd-ccfb-4b0b-8818-a137d7be684f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA433BDA56B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA433BDA56B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64403/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_6b820585-b9bf-465d-941c-9001027916d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3BA1FDB7CB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3BA1FDB7CB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64404/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_c379e42f-8969-4f8f-af74-bbc535a5f089.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D9F9983ED514
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D9F9983ED514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64405/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_e7555b59-5e69-41c4-9347-b04c29ab37f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F23BD6036D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F23BD6036D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64406/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_d1dabd6a-8b68-4df0-b148-d33dd5fad9b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DA756933A364
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DA756933A364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64407/relatorio-resumidos-da-execucao-orcamentaria-caxingo-60240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_relatorio_resumidos_da_execucao_orcamentaria_c90855a2-fe0d-47a1-baeb-e8e28790f46e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB992D7E73C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB992D7E73C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sao-pedro-do-piaui-60239">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_b094f8a9-2263-43ec-b37d-2158881d0f42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=695&amp;q[flag_doc_diario_true]=1">
+477
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 139-2023
+</td>
+<td class="text-center">
+16-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>42F7D7C86DAD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="42F7D7C86DAD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-139-2023-oeiras-60255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/15/DOP_EDICAO__16-5-2023_ED_477_Prefeitura_Oeiras_Portarias_portaria_n_139_2023_d1599772-4050-494c-b685-7f9c631dbc8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

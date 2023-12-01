@@ -1,0 +1,1238 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Lei nº 1117/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>608D9CF3D2F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="608D9CF3D2F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-1117-2023-amarante-70301">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Amarante_Leis_lei_n_1117_2023_9b6ee54c-1099-428b-8009-5e9e177dcaa4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+ATA DE REGISTRO DE PREÇOS PE 010/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>3F15A0E49E504
+<br/><br/>
+<a class="fileDoc" data-file-hash="3F15A0E49E504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-registro-de-precos-pe-010-2023-amarante-70299">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Amarante_Atas_ata_de_registro_de_precos_pe_010_2023_e0b510df-1701-4179-8622-109e35f88b7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+JULGAMENTO DE HABILITAÇÃO DOS DOCUMENTOS DE HABILITAÇÃO - TP 02/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>64F4BFE752EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="64F4BFE752EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-de-habilitacao-dos-documentos-de-habilitacao-tp-02-2023-monsenhor-gil-70314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Monsenhor_Gil_Outros_julgamento_de_habilitacao_dos_documentos_de_habilitacao_tp_02_2023_179079d7-3c7c-4f03-baa4-3acfa8bc3922.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE SRP Nº 046-2023 -CUIDADORES EDUCAÇÃO
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEAD169126654
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEAD169126654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-srp-n-046-2023-cuidadores-educacao-floriano-70309">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Floriano_Outros_aviso_pe_srp_n_046_2023_cuidadores_educacao_00cac945-71eb-4f13-913c-82dfca49a4b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 190-2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>03529AA9773A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="03529AA9773A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-190-2023-itaueira-70292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Itaueira_Aviso_do_extrato_de_contrato_extrato_contrato_190_2023_ade1e74f-39f4-42fd-a0a8-431c8204ced1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 192-2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5485F46C4364
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5485F46C4364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-192-2023-itaueira-70290">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Itaueira_Aviso_do_extrato_de_contrato_extrato_contrato_192_2023_5813b087-d811-4c89-99c9-5f31fb4ef950.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 017/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C99FB0B45304
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C99FB0B45304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-017-2023-caxingo-70273">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caxingo_Decretos_decreto_017_2023_1fc5a185-00f5-4eee-b706-159a3b8d3c43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Dispensa 009/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pajeú do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>31438A67A42D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="31438A67A42D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-009-2023-pajeu-do-piaui-70298">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Camara_Pajeu_do_Piaui_Aviso_da_Dispensa_dispensa_009_2023_e1230309-5159-4476-bf34-5c71237b40ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Carta Convite 001/2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pajeú do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA7F0FA008D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA7F0FA008D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/carta-convite-001-2023-pajeu-do-piaui-70289">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Camara_Pajeu_do_Piaui_Aviso_de_licitacao_carta_convite_001_2023_4b5ad309-49e2-4f1e-bdcf-7d4fa8a519c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO - INEX 012-2023
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0BFE7C7AD0904
+<br/><br/>
+<a class="fileDoc" data-file-hash="0BFE7C7AD0904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-inex-012-2023-colonia-do-gurgueia-70281">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Colonia_do_Gurgueia_Aviso_do_extrato_de_contrato_extrato_de_contrato_inex_012_2023_c954e21e-25b4-41b0-89bb-d63bab1da0e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Depesas com pessoal
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Luzilândia
+</td>
+<td class="text-center">
+Outros atos de pessoal
+</td>
+<td class="text-center">
+<strong>ID: </strong>94DFC03D89E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="94DFC03D89E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/depesas-com-pessoal-luzilandia-70323">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Camara_Luzilandia_Outros_atos_de_pessoal_depesas_com_pessoal_3e0747fe-d2e6-46ed-bd8a-81dc526130a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4133511F2EA44
+<br/><br/>
+<a class="fileDoc" data-file-hash="4133511F2EA44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75609/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_568f8cf8-dcab-4051-b149-4a7d0bb9e64d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>68E286CC1DA54
+<br/><br/>
+<a class="fileDoc" data-file-hash="68E286CC1DA54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75610/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_803d6cf9-354c-4511-9df0-0e0be45a40c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C44E227E3FC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C44E227E3FC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75611/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_ca0b4d59-c735-4ec6-b0bd-3725eae3c884.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEF1F8DDE4AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEF1F8DDE4AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75612/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_dacd68c0-ffef-4ae0-ab35-17db0a7b407d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C808DAE86EF44
+<br/><br/>
+<a class="fileDoc" data-file-hash="C808DAE86EF44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75613/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_0bca76e8-4736-417b-8876-60c8dbef4893.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0613EAE3E7E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="0613EAE3E7E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75614/lrf-rgf-caraubas-do-piaui-70318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_75d45a03-e685-4711-aa73-f1e478ba0322.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+REPUBLICAÇÃO AVISO PE Nº 026-2023- SAÚDE - AQUISIÇÃO DE OXIGENIO
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>53031B98254F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="53031B98254F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-aviso-pe-n-026-2023-saude-aquisicao-de-oxigenio-floriano-70322">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Floriano_Aviso_de_licitacao_republicacao_aviso_pe_n_026_2023_saude_aquisicao_de_oxigenio_48b1bc33-c044-48c4-aa9c-c52cff59bae6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 043-2023 Rescisão de contratos temporários
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0E8DF180E504
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0E8DF180E504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-043-2023-rescisao-de-contratos-temporarios-curral-novo-do-piaui-70304">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Curral_Novo_do_Piaui_Decretos_decreto_043_2023_rescisao_de_contratos_temporarios_4198293e-5ec2-4a4f-a700-64f121f19c4c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+RESULTADO PRELIMINAR DO PROCESSO SELETIVO EDUCADOR FISICO
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Resultado dos aprovados e sua classificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6053993E97764
+<br/><br/>
+<a class="fileDoc" data-file-hash="6053993E97764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-preliminar-do-processo-seletivo-educador-fisico-marcos-parente-70275">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Marcos_Parente_Resultado_dos_aprovados_e_sua_classificacao_resultado_preliminar_do_processo_seletivo_educador_f_41b572f2-e46b-400e-bda7-925bdc6f8998.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato - DSP 17
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B93D222935C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B93D222935C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dsp-17-monsenhor-gil-70264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Monsenhor_Gil_Outros_extrato_de_contrato_dsp_17_e9f75872-2e05-450b-a859-6fbebcbc026d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+Lei nº 804/2008 - Fundo Municipal de Habitação de Interesse Social - FHIS
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>1087C322B44C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1087C322B44C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-804-2008-fundo-municipal-de-habitacao-de-interesse-social-fhis-amarante-70287">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Amarante_Leis_lei_n_804_2008_fundo_municipal_de_habitacao_de_interesse_social_fhis_aafad990-4fc7-46ab-a2dd-1669afcbc418.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+decreto
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA89437BAF214
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA89437BAF214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-caraubas-do-piaui-70317">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Decretos_decreto_f87dfd3f-d3c2-4948-a995-8cf2b61de63a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE81D00565E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE81D00565E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75617/lrf-rgf-caraubas-do-piaui-70321">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_20429aa0-577b-4a45-b6db-d33fce66ec7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2BEB715C59FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2BEB715C59FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75618/lrf-rgf-caraubas-do-piaui-70321">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_24ca68f1-e7cd-4aec-947b-07cc95a905ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=771&amp;q[flag_doc_diario_true]=1">
+530
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+31-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1925B0BAD4CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1925B0BAD4CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/75619/lrf-rgf-caraubas-do-piaui-70321">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/28/DOP_EDICAO__31-7-2023_ED_530_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rgf_3cbc0440-61c9-4991-b27e-05fda9acfa95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1202 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMOSTRATIVO DA EXECUÇÃO DA EXECUÇÃO DAS DESPESAS POR FUNÇÃO E SUBFUNÇÃO /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BEAAFB91CF474
+<br/><br/>
+<a class="fileDoc" data-file-hash="BEAAFB91CF474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/828/demostrativo-da-execucao-da-execucao-das-despesas-por-funcao-e-subfuncao-caxingo-809">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_resumidos_da_execucao_orcamentaria_demostrativo_da_execucao_da_execucao_das_despesas_por_funcao_e_subfuncao_6a0d3603-c143-4f55-a30d-1bd03c9cd9ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVO DA RECEITA CORRENTE LIQUIDA /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C022BDCCCC74
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C022BDCCCC74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/829/demonstrativo-da-receita-corrente-liquida-caxingo-810">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_demonstrativo_da_receita_corrente_liquida_5243d88f-1a4c-4208-9f9c-efa7f0002970.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+RELATORIO DA RECEITAS E DESPESAS PREVIDENCIARIA DO REGIME PRÓPRIO DOS S. PUBLICOS /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>64347EFEE1DF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="64347EFEE1DF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/830/relatorio-da-receitas-e-despesas-previdenciaria-do-regime-proprio-dos-s-publicos-caxingo-811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_da_receitas_e_despesas_previdenciaria_do_regime_proprio_dos_s_publicos_423cd1fd-8d93-4561-b38f-4c33c48959b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVO DOS RESULTADOS PRIMARIO E NOMINAL /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1A0003FBC4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1A0003FBC4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/831/demonstrativo-dos-resultados-primario-e-nominal-caxingo-812">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_demonstrativo_dos_resultados_primario_e_nominal_0f7e0cd4-6691-4169-92b2-d2c2ec370da3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMOSTRATIVO DA RECEITAS E DESPESAS COM MANUTENÇÃO E DESENVOLVIMENTO DO ENSINO - MDE - MUNICIPIOS /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>158397266DFA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="158397266DFA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/833/demostrativo-da-receitas-e-despesas-com-manutencao-e-desenvolvimento-do-ensino-mde-municipios-caxingo-814">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_demostrativo_da_receitas_e_despesas_com_manutencao_e_desenvolvimento_do_ensino_mde_municipios_bd598a31-e84a-4523-80fc-f792b8cc9ee3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVO DA RECEITA DE IMPOSTO E DAS DESPESAS PRÓPRIAS COM SAÚDE /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>527F94074B594
+<br/><br/>
+<a class="fileDoc" data-file-hash="527F94074B594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/837/demonstrativo-da-receita-de-imposto-e-das-despesas-proprias-com-saude-caxingo-818">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_demonstrativo_da_receita_de_imposto_e_das_despesas_proprias_com_saude_e7c5503b-4fed-4cea-8169-f56a414becd4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE ADJUDICAÇÃO - PREGÃO PRESENCIAL nº 021/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>93937E0178114
+<br/><br/>
+<a class="fileDoc" data-file-hash="93937E0178114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-adjudicacao-pregao-presencial-n-021-2021-rio-grande-do-piaui-841">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_adjudicacao_pregao_presencial_n_021_2021_959b594a-b87c-4d25-bd27-0c57cecfb6a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO nº. 048/2021 - PREGÃO PRESENCIAL nº 020/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>382CDB9470D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="382CDB9470D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-048-2021-pregao-presencial-n-020-2021-rio-grande-do-piaui-840">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_048_2021_pregao_presencial_n_020_2021_b126e1aa-f90c-460a-a7ef-fd6b199c4fe3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE HOMOLOGAÇÃO - PREGÃO PRESENCIAL nº 020/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>51AE88D6546E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="51AE88D6546E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-homologacao-pregao-presencial-n-020-2021-rio-grande-do-piaui-839">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_homologacao_pregao_presencial_n_020_2021_c6af431f-0c53-4aa3-8a5b-7b562242c249.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE ADJUDICAÇÃO - PREGÃO PRESENCIAL nº 020/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A893B48A6464
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A893B48A6464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-adjudicacao-pregao-presencial-n-020-2021-rio-grande-do-piaui-838">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_adjudicacao_pregao_presencial_n_020_2021_1f92b049-35cd-4a5c-a71b-75a2573c8cf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO nº. 051/2021 - PREGÃO PRESENCIAL nº 019/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABAA4DDDCFA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABAA4DDDCFA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-051-2021-pregao-presencial-n-019-2021-rio-grande-do-piaui-837">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_051_2021_pregao_presencial_n_019_2021_2f7bee50-4641-4723-a323-aba967742052.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE HOMOLOGAÇÃO - PREGÃO PRESENCIAL nº 019/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C2154C25F244
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C2154C25F244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-homologacao-pregao-presencial-n-019-2021-rio-grande-do-piaui-836">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_homologacao_pregao_presencial_n_019_2021_5a95d21f-3f6f-49b2-a57a-66460458f3ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE ADJUDICAÇÃO - PREGÃO PRESENCIAL nº 019/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>26EEF39E7A0D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="26EEF39E7A0D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-adjudicacao-pregao-presencial-n-019-2021-rio-grande-do-piaui-835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_adjudicacao_pregao_presencial_n_019_2021_d525757b-8e18-4f66-bbb3-90f49b16c5a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº. 047/2021 - TOMADA DE PREÇOS Nº. 002/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4ABF54AE6A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4ABF54AE6A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-047-2021-tomada-de-precos-n-002-2021-rio-grande-do-piaui-834">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_047_2021_tomada_de_precos_n_002_2021_de7136e2-10d2-4242-b610-61713d7ddeee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE HOMOLOGAÇÃO - TOMADA DE PREÇOS Nº 002/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B826A5C9F794
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B826A5C9F794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-homologacao-tomada-de-precos-n-002-2021-rio-grande-do-piaui-833">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_homologacao_tomada_de_precos_n_002_2021_015757f0-4c26-4e72-8e96-26078d93c637.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE ADJUDICAÇÃO - TOMADA DE PREÇOS Nº 002/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>66700E1F557E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="66700E1F557E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-adjudicacao-tomada-de-precos-n-002-2021-rio-grande-do-piaui-832">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_adjudicacao_tomada_de_precos_n_002_2021_b449b485-e344-4bd0-93fc-5b077446a4f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+DEMONSTRATIVO SIMPLIFICADO DO RELATÓRIO DE GESTÃO CONSOLIDADO /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E1B7C6FB1B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E1B7C6FB1B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/850/demonstrativo-simplificado-do-relatorio-de-gestao-consolidado-caxingo-831">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_demonstrativo_simplificado_do_relatorio_de_gestao_consolidado_cd15363d-0a12-4400-86d4-87f4a68375d5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+TERMO DE HOMOGAÇÃO E RATIFICAÇÃO - PROCESSO ADMINISTRATIVO N°. 048/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>89E135CBC27D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="89E135CBC27D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homogacao-e-ratificacao-processo-administrativo-n-048-2021-rio-grande-do-piaui-830">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_termo_de_homogacao_e_ratificacao_processo_administrativo_n_048_2021_42831e68-5e66-4210-8692-f6ce2e87fc0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE HOMOLOGAÇÃO - PREGÃO PRESENCIAL nº 021/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>177B94D866774
+<br/><br/>
+<a class="fileDoc" data-file-hash="177B94D866774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-homologacao-pregao-presencial-n-021-2021-rio-grande-do-piaui-842">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_homologacao_pregao_presencial_n_021_2021_fbbb25d7-9569-41f8-ae78-c105789c5909.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO nº. 049/2021 - PREGÃO PRESENCIAL nº 021/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D827DFC96B1A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D827DFC96B1A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-049-2021-pregao-presencial-n-021-2021-rio-grande-do-piaui-843">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_049_2021_pregao_presencial_n_021_2021_cc7cb383-8d5b-462b-8411-26863fdf35b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE ADJUDICAÇÃO - PREGÃO PRESENCIAL nº 022/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B766971166A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="B766971166A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-adjudicacao-pregao-presencial-n-022-2021-rio-grande-do-piaui-844">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_adjudicacao_pregao_presencial_n_022_2021_c28b9e03-c30e-45bf-9042-20e5667541ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE HOMOLOGAÇÃO - PREGÃO PRESENCIAL nº 022/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DD0F3DACC384
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DD0F3DACC384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-homologacao-pregao-presencial-n-022-2021-rio-grande-do-piaui-845">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_homologacao_pregao_presencial_n_022_2021_f5b9d7a5-5450-4a45-8023-b3107ba0575f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO nº. 050/2021 - PREGÃO PRESENCIAL nº 022/2021
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9785CE48880D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9785CE48880D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-050-2021-pregao-presencial-n-022-2021-rio-grande-do-piaui-846">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_050_2021_pregao_presencial_n_022_2021_9eb3d18b-ad55-4d4e-8c34-46996ad79bb1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+RREO 3º BIMESTRE /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C214269316694
+<br/><br/>
+<a class="fileDoc" data-file-hash="C214269316694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/879/rreo-3-bimestre-nazare-do-piaui-860">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Nazare_do_Piaui_Balanco_orcamentario_rreo_3_bimestre_7669f6ba-b998-4dd7-bc5c-41a87c66f1e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=57&amp;q[flag_doc_diario_true]=1">
+041
+</a>
+-
+2021
+</td>
+<td class="">
+RREO 3º BIMESTRE /
+</td>
+<td class="text-center">
+16-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C73DB46C5F254
+<br/><br/>
+<a class="fileDoc" data-file-hash="C73DB46C5F254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/878/rreo-3-bimestre-nazare-do-piaui-859">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/13/DOP_EDICAO_041_Prefeitura_Nazare_do_Piaui_Balanco_orcamentario_rreo_3_bimestre_f92179be-ad83-4a4e-ad99-a7016d4d064c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

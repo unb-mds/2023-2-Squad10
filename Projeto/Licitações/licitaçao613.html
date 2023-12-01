@@ -1,0 +1,1412 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL DE REGULARIZAÇÃO-EMP FUNERARIA VIDA NOVA
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1B14AF9D76F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1B14AF9D76F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-de-regularizacao-emp-funeraria-vida-nova-oeiras-69317">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Oeiras_Outros_licenca_ambiental_de_regularizacao_emp_funeraria_vida_nova_29cbe52e-5729-467e-9be7-3239802df4a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RECISÃO AMIGAVEL RESCISÃO
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso da Rescisão de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C674424B6004
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C674424B6004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-recisao-amigavel-rescisao-sao-joao-da-fronteira-69305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Sao_Joao_da_Fronteira_Aviso_da_Rescisao_de_contrato_termo_de_recisao_amigavel_rescisa_o_322fbf20-1da8-46df-928a-18b9f43c30db.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL SIMPLIFICADA-EMP LUIS FELIPE
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>E26DC6D7F99F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E26DC6D7F99F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-simplificada-emp-luis-felipe-oeiras-69316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Oeiras_Outros_licenca_ambiental_simplificada_emp_luis_felipe_f6ea1647-c717-487f-9931-d2de61b6db3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+CC 003 - Equipe de futebol
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>394C2591EF704
+<br/><br/>
+<a class="fileDoc" data-file-hash="394C2591EF704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cc-003-equipe-de-futebol-agricolandia-69291">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Agricolandia_Aviso_de_licitacao_cc_003_equipe_de_futebol_b5033e58-b049-465b-8cca-465eba574c08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+Recesso Festejos
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>09DDED164F0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="09DDED164F0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/recesso-festejos-demerval-lobao-69286">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Demerval_Lobao_Decretos_recesso_festejos_8ed1c73f-9108-46eb-a475-0c1f2235073a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Ratificação DP 018 2023
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A22E62D575F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="A22E62D575F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dp-018-2023-wall-ferraz-69333">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Wall_Ferraz_Aviso_de_Ratificacao_termo_de_ratificacao_dp_018_2023_82e2f919-11a1-4358-a195-d3a691dca7d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL SIMPLIFICADA-EMP ANA MARIA
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>99F234CFAD9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="99F234CFAD9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-simplificada-emp-ana-maria-oeiras-69313">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Oeiras_Outros_licenca_ambiental_simplificada_emp_ana_maria_65700bd5-1a66-4771-8783-dee8b48c7d3d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO - MATERIAL GRAFICO
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB9DB04A1E0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB9DB04A1E0A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-material-grafico-santa-rosa-do-piaui-69275">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Santa_Rosa_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_material_grafico_263606aa-f61e-4fd6-a8b2-ac190c93149a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+TP nº 002-2023 - pav conv codevasf 919595/2021 - julgamento dos recursos
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA55F4B4C4D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA55F4B4C4D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-n-002-2023-pav-conv-codevasf-919595-2021-julgamento-dos-recursos-barra-d-alcantara-69251">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Barra_DAlcantara_Outros_atos_administrativos_tp_n_002_2023_pav_conv_codevasf_919595_2021_julgamento_dos_recurso_2c25c519-18bc-4f47-9425-08143aed2d5b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+Despesas com Pessoal
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A988A1A50054
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A988A1A50054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despesas-com-pessoal-palmeira-do-piaui-69249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Camara_Palmeira_do_Piaui_Demonstrativo_de_receitas_e_despesas_despesas_com_pessoal_5a604a63-6687-4f24-8bf8-c87fb13503f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+Ratificação - Inexigibilidade nº 006-2023 - Banda S Cultural
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3DE5EA2F61544
+<br/><br/>
+<a class="fileDoc" data-file-hash="3DE5EA2F61544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inexigibilidade-n-006-2023-banda-s-cultural-santa-cruz-dos-milagres-69239">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Santa_Cruz_dos_Milagres_Aviso_de_Ratificacao_ratificacao_inexigibilidade_n_006_2023_banda_s_cultural_4b7f25aa-d1cc-4f97-a0ad-52d1bab4b661.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>35D6D811145F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="35D6D811145F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74281/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_b404d4ef-cf0f-4013-8d39-37fc708cca67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDE78468E0B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDE78468E0B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74282/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_fef69bc8-eb2c-4fb7-810f-7a7c8306506f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B4704E1BF7894
+<br/><br/>
+<a class="fileDoc" data-file-hash="B4704E1BF7894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74283/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_d4f2388b-a8ee-4d8c-a720-752b474ef1e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E2BB69A33D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E2BB69A33D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74284/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_2e0925f0-3b46-4e14-bf0a-39cad880ed4c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EFF771481F324
+<br/><br/>
+<a class="fileDoc" data-file-hash="EFF771481F324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74285/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_0976d068-99f2-42f1-b7e4-87a58ce18d1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+1º SEM RGF 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBF0A44362DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBF0A44362DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74286/1-sem-rgf-2023-paqueta-69248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_de_gestao_fiscal_1_sem_rgf_2023_781f3699-bb23-4ec2-bae5-fd180fea2215.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>878F1B40AFB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="878F1B40AFB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74269/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_38480327-225f-482f-a8f9-a4a4d53463d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>477818ACE56B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="477818ACE56B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74270/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_2d470b5e-2074-4af7-a654-3b6cc99a2f3f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>82FA4313C94F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="82FA4313C94F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74271/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_e78fc07d-8eed-46a3-93b9-d656e6469e22.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>468298C9F7624
+<br/><br/>
+<a class="fileDoc" data-file-hash="468298C9F7624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74272/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_a9d2f3d4-36a7-4e1d-bc6a-80ee56d30550.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>807C600FDE864
+<br/><br/>
+<a class="fileDoc" data-file-hash="807C600FDE864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74273/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_51a0048e-57fa-4987-ab15-1d226b95ae3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0F4231202A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0F4231202A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74274/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_d723f54d-1b45-49fa-a7bb-520242175497.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B0C7F344E7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B0C7F344E7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74275/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_95f38890-e38d-480e-8742-c6b6d9ac916e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>294ABE7546DC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="294ABE7546DC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74276/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_ad7b8921-ab40-435b-b9fd-ed9b7c66d235.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6304090EAEEA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6304090EAEEA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74277/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_20691104-8677-4ea8-a349-e884643ffda2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>897E0DD6E01E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="897E0DD6E01E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74278/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_3e1f84c0-a41a-4217-8283-cb95b18d7f39.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D179237DCEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D179237DCEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74279/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_eeae87d6-cd35-4d5b-b77d-94fd4d358d52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=761&amp;q[flag_doc_diario_true]=1">
+524
+</a>
+-
+2023
+</td>
+<td class="">
+3º BIM RREO 2023 /
+</td>
+<td class="text-center">
+21-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3997D56BB5AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3997D56BB5AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74280/3-bim-rreo-2023-paqueta-69247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/20/DOP_EDICAO__21-7-2023_ED_524_Prefeitura_Paqueta_Relatorios_resumidos_da_execucao_orcamentaria_3_bim_rreo_2023_3d6ec277-eb9b-4fdd-a622-ec776ed585a5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

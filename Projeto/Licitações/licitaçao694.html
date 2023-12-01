@@ -1,0 +1,1383 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+DL084.2023 - EXTRATO CONTRATO 272.2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7C1148BA1E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7C1148BA1E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dl084-2023-extrato-contrato-272-2023-sao-jose-do-divino-67311">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Sao_Jose_do_Divino_Aviso_do_extrato_de_contrato_dl084_2023_extrato_contrato_272_2023_a432b6ea-23c8-4c44-9b98-6afc7151e402.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+Edital CMDCA 02/2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>984B912DBCB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="984B912DBCB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-cmdca-02-2023-floriano-67240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Floriano_Atos_edital_cmdca_02_2023_5d7b187e-a32b-4f85-b7bb-0c3def6144fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL 14
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>92D2AEFC8D3D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="92D2AEFC8D3D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-14-landri-sales-67293">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Landri_Sales_Outros_licenca_ambiental_14_7c051c2d-4b14-42a3-b9ff-d23ff4ba4450.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL 01
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5E8E6A5AF934
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5E8E6A5AF934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-01-landri-sales-67274">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Landri_Sales_Outros_licenca_ambiental_01_dad1f7be-2f45-4c4e-83bd-d7f49093d909.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+Lei nº 684 - Educação Ambiental
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>CAA52A19EC384
+<br/><br/>
+<a class="fileDoc" data-file-hash="CAA52A19EC384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-684-educacao-ambiental-demerval-lobao-67252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Demerval_Lobao_Leis_lei_n_684_educacao_ambiental_45594564-a137-418e-8dea-5fda4f553aeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato PE 11.2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A7DD980C9D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A7DD980C9D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pe-11-2023-coivaras-67271">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Coivaras_Aviso_do_extrato_de_contrato_extrato_de_contrato_pe_11_2023_1882aa4b-b018-47c2-9e2e-6441feffe6e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+errato
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B70F9582C014
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B70F9582C014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errato-caraubas-do-piaui-67305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Caraubas_do_Piaui_Errata_errato_9ddab935-216b-4012-a992-447e653601e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO - IRISMARCOS DA SILVA PEREIRA
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>087AAC34B0C74
+<br/><br/>
+<a class="fileDoc" data-file-hash="087AAC34B0C74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-irismarcos-da-silva-pereira-rio-grande-do-piaui-67300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Rio_Grande_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_irismarcos_da_silva_pereira_e0842934-e3e9-4aa8-a67a-e811c7c73153.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria n.° 042.2023 - 30 de junho de 2023 - Exonerar Patrícia Marks Nascimento Portela
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1425B2BC5BA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="1425B2BC5BA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-042-2023-30-de-junho-de-2023-exonerar-patricia-marks-nascimento-portela-sao-jose-do-divino-67269">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Sao_Jose_do_Divino_Portarias_portaria_n_042_2023_30_de_junho_de_2023_exonerar_patricia_marks_nascimento_portela_d48f655e-c8cb-4eed-b6e3-f064f8bd510c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+aviso de remarcação
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D3BD87994384
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D3BD87994384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-remarcacao-caraubas-do-piaui-67302">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Caraubas_do_Piaui_Atos_aviso_de_remarcacao_1615744c-deca-47b0-9139-3e82112de4b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+CONVOCAÇÃO - LUANA GRASIELLY DE SOUSA SANTOS PIMENTEL
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>61CC638F5C104
+<br/><br/>
+<a class="fileDoc" data-file-hash="61CC638F5C104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-luana-grasielly-de-sousa-santos-pimentel-wall-ferraz-67266">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Wall_Ferraz_Ato_Convocatorio_convocacao_luana_grasielly_de_sousa_santos_pimentel_8fc0f8d5-9eb1-47c1-ab27-38e29a4ed590.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+adiamento 012.2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A829E0DA8C9D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A829E0DA8C9D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adiamento-012-2023-passagem-franca-do-piaui-67307">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Passagem_Franca_do_Piaui_Aviso_do_Adiamento_de_licitacao_adiamento_012_2023_db9b66fe-a0d0-4666-9b8a-6a1a6625af17.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 56 - SUPLEMENTAÇAÕ
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0620253A97F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0620253A97F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-56-suplementacao-buriti-dos-montes-67173">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Buriti_dos_Montes_Decretos_decreto_n_56_suplementacao_37ca6f22-6657-400d-b684-34d9445ba6a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 216 de 03 de Julho de 2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B119A01491804
+<br/><br/>
+<a class="fileDoc" data-file-hash="B119A01491804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-216-de-03-de-julho-de-2023-currais-67254">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Currais_Portarias_portaria_n_216_de_03_de_julho_de_2023_cc958db2-01c4-4898-a8ca-173b9ce1598c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C66F0123BA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C66F0123BA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72132/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_764dd8c5-9d60-4634-b156-45094f4fe983.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD8D7B4FD4934
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD8D7B4FD4934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72133/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_362287cc-b829-4037-9f42-ef9c55181568.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>59E827C225D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="59E827C225D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72134/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_06d4a4c7-ecd5-464e-b37c-1858dd4690a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E13C788C6F874
+<br/><br/>
+<a class="fileDoc" data-file-hash="E13C788C6F874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72135/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_2a17ea3c-1b3b-46aa-bf6b-7ad37a08f71a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13A48A2CEF3A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="13A48A2CEF3A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72136/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_7eeb6670-0623-440e-98b8-37af71024502.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 1º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9625AFD42124
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9625AFD42124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/72137/rgf-1-quadrimestre-de-2023-nossa-senhora-de-nazare-67217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_de_gestao_fiscal_rgf_1_quadrimestre_de_2023_1f66bbc0-d164-4824-b056-55b80c5ea622.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LDO 2024 - TEXTO DA LEI Nº 013/2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LDO - LEI DE DIRETRIZES ORÇAMENTÁRIAS</strong>
+<br/><br/>
+2024
+</td>
+<td class="text-center">
+<strong>ID: </strong>0009EA3DF1C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="0009EA3DF1C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ldo-2024-texto-da-lei-n-013-2023-hugo-napoleao-67286">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Hugo_Napoleao_Leis_de_diretrizes_orcamentarias_ldo_2024_texto_da_lei_n_013_2023_2e6a7f3a-a726-4cf1-a97c-ae6299d850b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL 07
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>44EDC970E0EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="44EDC970E0EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-07-landri-sales-67283">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Landri_Sales_Outros_licenca_ambiental_07_cb4611d4-80a4-4016-81e8-c2888ff57a08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL 05
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>F72F146B20024
+<br/><br/>
+<a class="fileDoc" data-file-hash="F72F146B20024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-05-landri-sales-67281">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Landri_Sales_Outros_licenca_ambiental_05_345b9e32-b64d-4f5f-aad8-52c9baf36372.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+decreto legislativo 002/2023
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Novo Oriente do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7319CACE6C664
+<br/><br/>
+<a class="fileDoc" data-file-hash="7319CACE6C664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-legislativo-002-2023-novo-oriente-do-piaui-67297">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Camara_Novo_Oriente_do_Piaui_Decretos_decreto_legislativo_002_2023_449efd71-2458-46b1-99c5-381706ff54ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO NONO ADITIVO VIGÊNCIA CONTRATO Nº 550-2017 -MEGALINK
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>00F1E6A2E9624
+<br/><br/>
+<a class="fileDoc" data-file-hash="00F1E6A2E9624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-nono-aditivo-vigencia-contrato-n-550-2017-megalink-floriano-67279">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Floriano_Outros_atos_administrativos_extrato_nono_aditivo_vigencia_contrato_n_550_2017_megalink_987e9857-5862-476d-996a-9bf4de76f601.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato concorrência n° 01-2023 - Portal de Entrada da Cidade
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>852693ECB1164
+<br/><br/>
+<a class="fileDoc" data-file-hash="852693ECB1164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-concorrencia-n-01-2023-portal-de-entrada-da-cidade-beneditinos-67296">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Beneditinos_Aviso_do_extrato_de_contrato_extrato_de_contrato_concorrencia_n_01_2023_portal_de_entrada_da_cidade_aae7a671-5cf0-48c2-a0b9-5b5becc72a8b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+CONVOCAÇÃO - CLEUSON BORGES DE SOUSA
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>089E1735B5C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="089E1735B5C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-cleuson-borges-de-sousa-wall-ferraz-67265">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Wall_Ferraz_Ato_Convocatorio_convocacao_cleuson_borges_de_sousa_0cedbee0-7f18-4150-aae1-7b889e92aad7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+LICENÇA AMBIENTAL 15
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>CBE4968106894
+<br/><br/>
+<a class="fileDoc" data-file-hash="CBE4968106894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-ambiental-15-landri-sales-67295">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Landri_Sales_Outros_licenca_ambiental_15_b1b77368-3958-4e46-ab0d-3dc4927fb6fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO Nº 001-2023 CONTRATO Nº 011-2023 PE 011-2022
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>2AE124853FD94
+<br/><br/>
+<a class="fileDoc" data-file-hash="2AE124853FD94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-n-001-2023-contrato-n-011-2023-pe-011-2022-queimada-nova-67251">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Prefeitura_Queimada_Nova_Aviso_do_Termo_Aditivo_aditivo_n_001_2023_contrato_n_011_2023_pe_011_2022_6880c3d3-cb7a-4579-b341-a511dcb8f68f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=744&amp;q[flag_doc_diario_true]=1">
+511
+</a>
+-
+2023
+</td>
+<td class="">
+AQUISIÇÃO DE COMBUSTIVEL, POR MEIO DE REGISTRO DE PREÇO, PARA ATENDER AS DEMANDAS DA CÂMARA
+</td>
+<td class="text-center">
+04-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C5C5BF399FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C5C5BF399FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aquisicao-de-combustivel-por-meio-de-registro-de-preco-para-atender-as-demandas-da-camara-buriti-dos-lopes-67258">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/3/DOP_EDICAO__4-7-2023_ED_511_Camara_Buriti_dos_Lopes_Aviso_de_licitacao_aquisicao_de_combustivel_por_meio_de_registro_de_preco_para_atender_as_demandas__4be368bf-6aec-40f4-8089-07ccaf16ba81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

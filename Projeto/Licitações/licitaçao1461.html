@@ -1,0 +1,1252 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO DE DIÁRIAS
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coronel José Dias
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>61128723163C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="61128723163C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-diarias-coronel-jose-dias-48774">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Camara_Coronel_Jose_Dias_Decretos_decreto_de_diarias_79a76a28-cb6d-4946-843f-ee7743a3701e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+extrato de contrato
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E214DE299044
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E214DE299044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-48816">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_738df4b4-a3d0-4971-99ec-dc0ed6a209ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 029/2023
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC599B441A0D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC599B441A0D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-029-2023-caxingo-48775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Caxingo_Portarias_portaria_029_2023_f2601852-5ac2-40eb-8623-0e8d00dd08f9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE ADJUDICAÇÃO E HOMOLOGAÇÃO PE 012/2023
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>298AE21351984
+<br/><br/>
+<a class="fileDoc" data-file-hash="298AE21351984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adjudicacao-e-homologacao-pe-012-2023-sao-jose-do-piaui-48771">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Sao_Jose_do_Piaui_Aviso_da_Adjudicacao_aviso_de_adjudicacao_e_homologacao_pe_012_2023_154a92fb-1497-46a2-82ce-c9b94df02f20.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 8º ADITIVO CONTRATO PP 016-2021
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B67C373570C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="B67C373570C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-8-aditivo-contrato-pp-016-2021-paqueta-48831">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Paqueta_Extrato_extrato_8_aditivo_contrato_pp_016_2021_7fc0a3f7-921f-4c88-9b9a-21911925c911.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO PARCIAL DA ATA DE REGISTRO DE PREÇOS PE 023/2022
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB805CA00EBB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB805CA00EBB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-da-ata-de-registro-de-precos-pe-023-2022-amarante-48744">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Amarante_Extrato_extrato_parcial_da_ata_de_registro_de_precos_pe_023_2022_a7e253c6-a8c3-4054-ab00-c49ed469fc2a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 135 - SUPLEMENTAÇÃO
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F98CBB6028384
+<br/><br/>
+<a class="fileDoc" data-file-hash="F98CBB6028384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-135-suplementacao-buriti-dos-montes-48727">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Decretos_decreto_135_suplementacao_7f9ffe08-bc21-4dd0-b793-859214fdc10e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DEM SIMPLIFICADO RGF CONSOLIDADO /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>53E40C29DB1B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="53E40C29DB1B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52313/dem-simplificado-rgf-consolidado-buriti-dos-montes-48723">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_de_gestao_fiscal_dem_simplificado_rgf_consolidado_a01758fd-fa44-49bd-9537-66674ec5a47d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DEM DESPESA COM PESSOAL CONSOLIDADO /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B939E644F29F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B939E644F29F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52311/dem-despesa-com-pessoal-consolidado-buriti-dos-montes-48721">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_de_gestao_fiscal_dem_despesa_com_pessoal_consolidado_e97fa69c-52a5-4f7b-b3e6-c624e8c80b96.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>55C4D115E45E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="55C4D115E45E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52314/rgf-3-quadrimestre-sao-jose-do-piaui-48724">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Camara_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quadrimestre_4b0cd8e8-8dbf-4939-9c78-1ce3e0a3cf35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87DA32A460B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="87DA32A460B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52315/rgf-3-quadrimestre-sao-jose-do-piaui-48724">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Camara_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quadrimestre_0a6b7836-9904-474b-89e2-a389503b1209.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUADRIMESTRE /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>37B74FF12E594
+<br/><br/>
+<a class="fileDoc" data-file-hash="37B74FF12E594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52316/rgf-3-quadrimestre-sao-jose-do-piaui-48724">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Camara_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quadrimestre_73ad9d43-a7a7-4403-a82b-7388a4071312.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO IX /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>942145C220DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="942145C220DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52328/anexo-ix-alvorada-do-gurgueia-48736">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Alvorada_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_anexo_ix_99200e42-28ed-44ca-ad3f-7fecfbbda72b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO IV /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>88F52284F0584
+<br/><br/>
+<a class="fileDoc" data-file-hash="88F52284F0584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52324/anexo-iv-alvorada-do-gurgueia-48732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Alvorada_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_anexo_iv_ba0c5f96-4451-4871-afd6-767f25fc69c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DISPONIBILIDADE DE CAIXA E RESTOS A PAGAR /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8F6E141E5AF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8F6E141E5AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52312/disponibilidade-de-caixa-e-restos-a-pagar-buriti-dos-montes-48722">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_de_gestao_fiscal_disponibilidade_de_caixa_e_restos_a_pagar_6598b524-082f-4706-8fa0-6d2fc061a042.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DESPESA COM PESSOAL PODER EXECUTIVO /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B80534146B834
+<br/><br/>
+<a class="fileDoc" data-file-hash="B80534146B834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52302/despesa-com-pessoal-poder-executivo-buriti-dos-montes-48712">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_de_gestao_fiscal_despesa_com_pessoal_poder_executivo_62724003-55de-480e-8a96-a0129a4ac684.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO XIV /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>34A5D11238F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="34A5D11238F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52333/anexo-xiv-alvorada-do-gurgueia-48741">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Alvorada_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_anexo_xiv_fe73724c-b005-4168-988e-6bf85b49bf47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO III /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2430C6A19C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2430C6A19C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52323/anexo-iii-alvorada-do-gurgueia-48731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Alvorada_do_Gurgueia_Relatorios_resumidos_da_execucao_orcamentaria_anexo_iii_dcc82957-1ff8-46ac-98c1-6a1f7b8a6e05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO I /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C5EB1FA23BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C5EB1FA23BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52272/anexo-i-alvorada-do-gurgueia-48682">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Alvorada_do_Gurgueia_Relatorios_de_gestao_fiscal_anexo_i_76699572-9db1-4d24-ac32-07f4dda4ead1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTARIO /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C211B5678BF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C211B5678BF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52275/balanco-orcamentario-buriti-dos-montes-48685">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_ffc493f0-66b5-4dd4-8fd5-597249e6a46e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+4.5. Demonstrativo Simplificado do Relatório de Gestão Fiscal /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>45DED067C5FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="45DED067C5FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52290/4-5-demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-prata-do-piaui-48700">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Prata_do_Piaui_Relatorios_de_gestao_fiscal_4_5_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_cb580c13-5224-4c4b-8f70-7cc4b6434f3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+1.2. Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar - Consolidado /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3952611E958D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3952611E958D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52285/1-2-demonstrativo-da-disponibilidade-de-caixa-e-dos-restos-a-pagar-consolidado-prata-do-piaui-48695">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Prata_do_Piaui_Relatorios_de_gestao_fiscal_1_2_demonstrativo_da_disponibilidade_de_caixa_e_dos_restos_a_pagar_co_26b18994-8c65-4b74-937b-05190ff3621e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+2.1. Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE267E7054EF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE267E7054EF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52288/2-1-demonstrativo-da-disponibilidade-de-caixa-e-dos-restos-a-pagar-prata-do-piaui-48698">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Prata_do_Piaui_Relatorios_de_gestao_fiscal_2_1_demonstrativo_da_disponibilidade_de_caixa_e_dos_restos_a_pagar_1c375e3f-3744-4198-8303-45004cdf41c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DEM DE RESTOS A PAGAR POR PODER E ORGÃO /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6085FB67F76A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6085FB67F76A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52286/dem-de-restos-a-pagar-por-poder-e-orgao-buriti-dos-montes-48696">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_resumidos_da_execucao_orcamentaria_dem_de_restos_a_pagar_por_poder_e_orgao_a161eea0-cf66-4b37-bce7-a130e0eb12f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=625&amp;q[flag_doc_diario_true]=1">
+431
+</a>
+-
+2023
+</td>
+<td class="">
+DEM DO RESULTADO PRIMARIO E NOMINAL /
+</td>
+<td class="text-center">
+07-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F706B661CA54
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F706B661CA54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52284/dem-do-resultado-primario-e-nominal-buriti-dos-montes-48694">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/6/DOP_EDICAO__7-3-2023_ED_431_Prefeitura_Buriti_dos_Montes_Relatorios_resumidos_da_execucao_orcamentaria_dem_do_resultado_primario_e_nominal_ee6281df-06cd-4b74-adaf-a257f2553fd0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

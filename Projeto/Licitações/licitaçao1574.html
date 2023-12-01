@@ -1,0 +1,1598 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+TS001.20222 - EXTRATOS DE CONTRATOS 55.23 - 64.23
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>43DF0EE445204
+<br/><br/>
+<a class="fileDoc" data-file-hash="43DF0EE445204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ts001-20222-extratos-de-contratos-55-23-64-23-sao-jose-do-divino-46506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Sao_Jose_do_Divino_Aviso_do_extrato_de_contrato_ts001_20222_extratos_de_contratos_55_23_64_23_5468021a-317e-45c5-be14-9a1a0b91b2cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N°53/2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6106917F40144
+<br/><br/>
+<a class="fileDoc" data-file-hash="6106917F40144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-53-2023-landri-sales-46543">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Landri_Sales_Portarias_portaria_n_53_2023_e7a47a48-b532-4d6b-abd7-788e5dfe9019.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD. 2022 - CONSOLIDADO /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E28C83B83DA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="E28C83B83DA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49666/rgf-3-quad-2022-consolidado-amarante-46479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_consolidado_8ac986d3-76c9-47d9-8654-77cb9e5aa160.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD. 2022 - CONSOLIDADO /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>16A3F2D7787C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="16A3F2D7787C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49667/rgf-3-quad-2022-consolidado-amarante-46479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_consolidado_c3d9f398-c43b-4aa5-b998-20deae3fd387.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD. 2022 - CONSOLIDADO /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13572BCA9FEA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="13572BCA9FEA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49668/rgf-3-quad-2022-consolidado-amarante-46479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_consolidado_de1eff58-0fe0-493f-ae21-079033fbe846.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+LRF-RREO (SEMESTRAL) MUNICIPAL /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>348BB7D684584
+<br/><br/>
+<a class="fileDoc" data-file-hash="348BB7D684584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49451/lrf-rreo-semestral-municipal-demerval-lobao-46325">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Demerval_Lobao_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_semestral_municipal_b0c8bf99-1ff8-498e-a69b-beeaa1af817b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO RATIFICAÇÃO DIPSENSA DE LICITAÇÃO 001-2023 PORTAL DA TRANSPARENCIA
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coronel José Dias
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3448F75F347D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3448F75F347D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-dipsensa-de-licitacao-001-2023-portal-da-transparencia-coronel-jose-dias-46530">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Camara_Coronel_Jose_Dias_Aviso_de_Ratificacao_extrato_ratificacao_dipsensa_de_licitacao_001_2023_portal_da_transparencia_14e5da8d-ec9a-4e7d-a042-4e1127147302.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Ratificação da Inexigibilidade n° 02.2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>899B675C4F924
+<br/><br/>
+<a class="fileDoc" data-file-hash="899B675C4F924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-ratificacao-da-inexigibilidade-n-02-2023-sao-jose-do-peixe-46525">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Sao_Jose_do_Peixe_Extrato_extrato_de_ratificacao_da_inexigibilidade_n_02_2023_ea1233b1-eece-4dd5-8ef7-d8e870b783df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA CONSELHO CMAS
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>07318A7877DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07318A7877DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-conselho-cmas-campinas-do-piaui-46470">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Campinas_do_Piaui_Portarias_portaria_conselho_cmas_a8abcf11-ae4e-432c-9934-3cf7d5127e37.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+Retificação Aviso de Chamamento Público 001/2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D8E9A7BE1044
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D8E9A7BE1044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-aviso-de-chamamento-publico-001-2023-pimenteiras-46532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Pimenteiras_Outros_retificacao_aviso_de_chamamento_publico_001_2023_c8f4a327-1d80-49d3-bcf4-d5ba13efd8a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO 019-2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>45B885EAA1544
+<br/><br/>
+<a class="fileDoc" data-file-hash="45B885EAA1544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-019-2023-itaueira-46496">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Itaueira_Aviso_do_extrato_de_contrato_extrato_do_contrato_019_2023_4432ac45-6051-4b94-986e-0b30122f8edb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N°52/2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE8CA166990F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE8CA166990F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-52-2023-landri-sales-46529">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Landri_Sales_Portarias_portaria_n_52_2023_1caea317-a46e-44e6-a187-a7913af4c572.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N°50/2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3AE930B086974
+<br/><br/>
+<a class="fileDoc" data-file-hash="3AE930B086974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-50-2023-landri-sales-46526">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Landri_Sales_Portarias_portaria_n_50_2023_7aec9840-2cd0-4929-ba8e-721d47e13a3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO CONVOCAÇÃO - JULGAMENTO PROPOSTAS DE PREÇOS-TP 014-2022
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>278B520C68F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="278B520C68F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-convocacao-julgamento-propostas-de-precos-tp-014-2022-floriano-46516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Floriano_Outros_atos_administrativos_aviso_convocacao_julgamento_propostas_de_precos_tp_014_2022_80a308e0-25fd-4178-a01b-bd20a9657698.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO CHAMADA PUBLICA 003-2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADA7B5BC44944
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADA7B5BC44944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-chamada-publica-003-2023-floriano-46515">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Floriano_Outros_atos_administrativos_aviso_chamada_publica_003_2023_a7231418-57bc-4780-9ea6-f63aed103735.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIAS DE NUMEROS 034-035-036-037-038-039-040-041-042-043 E 044 -2023 REMANEJAMENTOS
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9110EA71C5A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9110EA71C5A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-de-numeros-034-035-036-037-038-039-040-041-042-043-e-044-2023-remanejamentos-altos-46486">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Altos_Portarias_portarias_de_numeros_034_035_036_037_038_039_040_041_042_043_e_044_2023_remanejamentos_e49cf806-02bf-4ec7-adf8-d98e6efe2ca7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIAS NUMEROS 045-046-047 E 048 DE EXONERAÇÕES
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C996B150655B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C996B150655B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-numeros-045-046-047-e-048-de-exoneracoes-altos-46483">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Altos_Portarias_portarias_numeros_045_046_047_e_048_de_exoneracoes_9f707e4a-eb28-40df-b22a-47655ba39151.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO PORTAL
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Marcolândia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>63FF26B4050C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="63FF26B4050C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-portal-marcolandia-46471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Camara_Marcolandia_Extrato_extrato_contrato_portal_14f122a1-f454-4b38-a997-34f86f46938a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO - REF. DISPENSA DE LICITAÇÃO 001-2023 - ASSESSORIA PORTAL DA TRANSPARENCIA
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coronel José Dias
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>82C804A1FDBD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="82C804A1FDBD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-ref-dispensa-de-licitacao-001-2023-assessoria-portal-da-transparencia-coronel-jose-dias-46531">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Camara_Coronel_Jose_Dias_Aviso_do_extrato_de_contrato_extrato_contrato_ref_dispensa_de_licitacao_001_2023_assessoria_porta_a512b2d9-2126-4c5b-8d96-851972996592.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato Administrativo nº 028.2023, Dispensa 012.2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>602AB098AF374
+<br/><br/>
+<a class="fileDoc" data-file-hash="602AB098AF374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-administrativo-n-028-2023-dispensa-012-2023-barra-d-alcantara-46539">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Barra_DAlcantara_Aviso_do_extrato_de_contrato_extrato_de_contrato_administrativo_n_028_2023_dispensa_012_2023_a80f7804-a518-47bb-b9ac-6d55251f4d84.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO SUPLEMENTAÇÃO 05/2023
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A35AF1F86CC44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A35AF1F86CC44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementacao-05-2023-sao-pedro-do-piaui-46461">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Sao_Pedro_do_Piaui_Decretos_decreto_suplementacao_05_2023_ae956934-061d-40ea-ac03-27e0a83a1d09.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E8391CAA59E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E8391CAA59E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49642/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_9b021fb1-91fc-4925-bb93-65bc3a6b32b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>546D8C3689E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="546D8C3689E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49643/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_755846f1-dee1-4d49-9890-73c6666ad886.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>05B8729E25604
+<br/><br/>
+<a class="fileDoc" data-file-hash="05B8729E25604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49644/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_131355e7-168d-45ae-ab49-7995ae9aeb70.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC61C17634D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC61C17634D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49645/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_60d9d2e8-f6bd-4567-9a6a-f3d5622f9edd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>53615E054D1E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="53615E054D1E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49646/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_362472b4-1e3c-4d91-9986-83b7a2b5ca33.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>96B070F5F41F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="96B070F5F41F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49647/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_5739be32-91bc-4c13-b4f5-7eb1e9717d08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>680049D22C144
+<br/><br/>
+<a class="fileDoc" data-file-hash="680049D22C144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49648/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_e0eae934-9ac6-448d-9bcd-86dc0a9512a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E592F44C2FFE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E592F44C2FFE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49649/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_cacdb2ec-9315-4a25-a9ec-facdee8bf9ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5A290DCA1804
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5A290DCA1804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49650/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_798bc2aa-42f2-48d2-af5f-de7a1c776965.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>47D00E7078444
+<br/><br/>
+<a class="fileDoc" data-file-hash="47D00E7078444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49651/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_d8dea1a4-2e06-409e-b334-4c9db0c38482.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B5EFC0CC25D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B5EFC0CC25D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49652/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_41fbd5f4-72f0-4483-a4a8-bb1dc20cc49f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D5391E62FE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D5391E62FE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49653/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_66a5d837-99fd-494c-9ba3-8fe7a2540804.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=614&amp;q[flag_doc_diario_true]=1">
+424
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIM 2022 /
+</td>
+<td class="text-center">
+24-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E338F23E2B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E338F23E2B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49654/rreo-6-bim-2022-amarante-46472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/23/DOP_EDICAO__24-2-2023_ED_424_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_22929cdf-2dab-4452-824d-7feba15b5a13.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

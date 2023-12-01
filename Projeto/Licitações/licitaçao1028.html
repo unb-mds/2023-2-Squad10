@@ -1,0 +1,1616 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+ANEXO DECRETO 24
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>70AB74E1FED04
+<br/><br/>
+<a class="fileDoc" data-file-hash="70AB74E1FED04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/anexo-decreto-24-itaueira-59496">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Itaueira_Decretos_anexo_decreto_24_aa5fcbd6-1f95-4c77-a4eb-529a195c0d9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO Nº 255-SMS - SAMU
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E7611ABB2D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E7611ABB2D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-255-sms-samu-floriano-59509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Floriano_Extrato_extrato_contrato_n_255_sms_samu_e5e38ef6-daa1-4498-8650-cc48478d4843.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DISPESA DE LICITAÇÃO Nº 003/2023
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>764F549B700F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="764F549B700F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispesa-de-licitacao-n-003-2023-buriti-dos-montes-59443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Camara_Buriti_dos_Montes_Aviso_da_Dispensa_aviso_de_dispesa_de_licitacao_n_003_2023_f3d4d7fd-db15-4a63-b1f3-66c95a52a0d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO DE PRAZO SOUSA E CAMPELO PE 010/2022
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF3824827D494
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF3824827D494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-de-prazo-sousa-e-campelo-pe-010-2022-luis-correia-59471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Luis_Correia_Aviso_do_Termo_Aditivo_aditivo_de_prazo_sousa_e_campelo_pe_010_2022_76165784-1802-460e-b03e-2cfbcf44f375.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº030-2023 ELEIÇÃO CONSELHO TUTELAR
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE9F9F74C1124
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE9F9F74C1124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-030-2023-eleicao-conselho-tutelar-altos-59475">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Altos_Decretos_decreto_n_030_2023_eleicao_conselho_tutelar_1f12df47-b6a0-496a-870c-03f808e3ea65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 252-2023 SMS OFTAMOLOGISTA - HERONT PJ
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>724AEE11AFB44
+<br/><br/>
+<a class="fileDoc" data-file-hash="724AEE11AFB44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-252-2023-sms-oftamologista-heront-pj-floriano-59451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_252_2023_sms_oftamologista_heront_pj_42033fc7-268b-4f7d-8f61-7e6529cd81fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 76-2023 – DISP. 13-2023 - JULIANA DA S CARVALHO ME (CNPJ 37.096.6280001-42)
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>31B5092E57D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="31B5092E57D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-76-2023-disp-13-2023-juliana-da-s-carvalho-me-cnpj-37-096-6280001-42-francisco-macedo-59479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_76_2023_disp_13_2023_juliana_da_s_carvalho__16e9380f-3604-4c1d-a9be-2982fd70df06.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA ADM N°21/2023 FERIAS REGULAMENTARES
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5D3B07AA258E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5D3B07AA258E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-adm-n-21-2023-ferias-regulamentares-landri-sales-59481">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Landri_Sales_Portarias_portaria_adm_n_21_2023_ferias_regulamentares_347c3626-1189-4e28-b383-07ed4bd2a1eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RAZÃO DA ESCOLHA DA EMPRESA
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9597746B3934
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9597746B3934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/razao-da-escolha-da-empresa-sao-joao-da-fronteira-59486">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Sao_Joao_da_Fronteira_Atos_razao_da_escolha_da_empresa_4766a6bd-0094-4446-a95d-a0439f92a6ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+DESPACHO DE HOMOLOGAÇÃO E ADJUDICAÇÃO
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>00C81ADBE06C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="00C81ADBE06C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-homologacao-e-adjudicacao-sao-joao-da-fronteira-59487">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Sao_Joao_da_Fronteira_Aviso_da_Homologacao_despacho_de_homologacao_e_adjudicacao_a348ceeb-15d8-4481-bcd4-050bbaf0244e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+aviso P.A 009
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9196A461954C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9196A461954C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-p-a-009-lagoa-do-barro-do-piaui-59484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_de_licitacao_aviso_p_a_009_ae7580db-374e-470e-a7d9-8d9af3a11f26.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+LEI Nº 311/2023 - GRATIFICAÇÃO A CPL
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>93C884648E324
+<br/><br/>
+<a class="fileDoc" data-file-hash="93C884648E324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-311-2023-gratificacao-a-cpl-jardim-do-mulato-59478">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Jardim_do_Mulato_Leis_lei_n_311_2023_gratificacao_a_cpl_d392abae-4bfe-46c3-a851-88f72b6a00b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA ADM N°20 2023 LICENÇA PREMIO
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB3FD5B7EB1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB3FD5B7EB1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-adm-n-20-2023-licenca-premio-landri-sales-59480">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Landri_Sales_Portarias_portaria_adm_n_20_2023_licenca_premio_927cfc51-99bd-4525-a763-4771345c2c6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO N° 153-2023 - V L MONTEIRO
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBD6FD0025694
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBD6FD0025694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-153-2023-v-l-monteiro-floriano-59530">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_153_2023_v_l_monteiro_0040b8e7-4acd-4146-b690-64430301f142.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO Nº 36/2023 - FUNDO DE PREVIDENCIA DO MUNICIPIO
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C383918FAABA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C383918FAABA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-36-2023-fundo-de-previdencia-do-municipio-landri-sales-59498">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Landri_Sales_Extrato_contrato_n_36_2023_fundo_de_previdencia_do_municipio_b724d389-7070-46c5-a0d9-c9ae4e0abf5c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado FINAL - TP 001-2023-PMP
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9338F72DB4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9338F72DB4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-final-tp-001-2023-pmp-paqueta-59518">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Paqueta_Atos_resultado_final_tp_001_2023_pmp_a6b20cfc-377f-4c14-b947-25000a9c2177.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 25
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4886102B6AEF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4886102B6AEF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-25-itaueira-59502">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Itaueira_Decretos_decreto_25_03e86189-52d1-42f6-b194-de370f243d1c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL DE CONVAÇÃO ELEIÇÃO BRIGADA
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>585F13392A514
+<br/><br/>
+<a class="fileDoc" data-file-hash="585F13392A514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convacao-eleicao-brigada-pimenteiras-59520">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Pimenteiras_Outros_edital_de_convacao_eleicao_brigada_a0d7b217-9efe-4d0f-a27f-11716dd03ef4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 174/2023
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AFFE6707DE8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AFFE6707DE8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-174-2023-wall-ferraz-59522">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Wall_Ferraz_Portarias_portaria_174_2023_494dff5a-8ee6-4791-b29e-ad0aa59eca32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO Nº 254-SMS - SAMU
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6142E71388DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6142E71388DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-254-sms-samu-floriano-59508">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Floriano_Extrato_extrato_contrato_n_254_sms_samu_c197adc9-b640-4ce5-926e-48f13d707d05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+Termo Aditivo ao Contrato 027/2022
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>6667969B6B764
+<br/><br/>
+<a class="fileDoc" data-file-hash="6667969B6B764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-ao-contrato-027-2022-dom-expedito-lopes-59503">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Dom_Expedito_Lopes_Aviso_do_Termo_Aditivo_termo_aditivo_ao_contrato_027_2022_7a3018b9-6e61-44cf-9517-e47441d01abb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+ATO DE REVOGAÇÃO - PE 021-2023
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1474CF330FA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="1474CF330FA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-de-revogacao-pe-021-2023-floriano-59529">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Floriano_Aviso_da_revogacao_ato_de_revogacao_pe_021_2023_17cc17ab-c0d2-4fb9-aedf-eeb0be26dac7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3C2E80024C74
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3C2E80024C74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63625/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_06277522-c91a-482b-9cb9-af10dfc78454.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11BE656C91454
+<br/><br/>
+<a class="fileDoc" data-file-hash="11BE656C91454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63626/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_99490b87-1580-48d9-ac6b-a31fdf1ec6bd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C4DB369610D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C4DB369610D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63627/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_1eecb673-69be-4276-95ad-bb456fcb1af8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>362DA7E1EA304
+<br/><br/>
+<a class="fileDoc" data-file-hash="362DA7E1EA304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63628/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_5e957eff-319e-45b9-99b0-3dce7b7393a5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7FE19E0CF2534
+<br/><br/>
+<a class="fileDoc" data-file-hash="7FE19E0CF2534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63629/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_9aee263b-859c-435a-bbf3-e81890558db5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FB2BDDCF8614
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FB2BDDCF8614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63630/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_678d8391-e12c-431b-8af4-9b034a55839c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F56B7A456BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F56B7A456BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63631/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_02baebc4-ac34-4da4-aaf2-022eae7d8fd4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD95608539F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD95608539F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63632/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_82696b33-1f0c-4eb1-90ec-263712f86e58.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A489F16C4794
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A489F16C4794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63633/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_071152b4-8683-48d3-9ce2-599ff77944eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FECD526024C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="FECD526024C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63634/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_915efcbd-dca6-4221-b659-57840ae1fb18.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF4B4F8FC2314
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF4B4F8FC2314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63635/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_82b73334-03f5-4b0a-9c38-b8bbf8c841e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF1F65569E854
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF1F65569E854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63636/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_5308615d-dd53-4ea7-b0a8-b8a5f24aad7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=689&amp;q[flag_doc_diario_true]=1">
+473
+</a>
+-
+2023
+</td>
+<td class="">
+RREP 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+10-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BA8CAB02A004
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BA8CAB02A004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/63637/rrep-1-bimestre-2023-curral-novo-do-piaui-59534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/9/DOP_EDICAO__10-5-2023_ED_473_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rrep_1_bimestre_2023_9ad6e1e8-3647-4e7a-86cf-94f659497222.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

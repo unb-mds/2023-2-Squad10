@@ -1,0 +1,1334 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO SEXTO TERMO ADMINISTRAÇÃO- CONTRATO 550-2017
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>993A8A983FBF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="993A8A983FBF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-sexto-termo-administracao-contrato-550-2017-floriano-5967">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Extrato_extrato_sexto_termo_administracao_contrato_550_2017_9734024e-0788-460f-aca4-ff1729e60244.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO 001/2022
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>012DA805B7DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="012DA805B7DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-001-2022-nazaria-5989">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Nazaria_Resolucoes_resolucao_001_2022_bc120cd6-4e75-47ce-afe8-9531dcd23db9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução CMAS nº 011/2021
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9BA5B7F5332C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9BA5B7F5332C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmas-n-011-2021-floriano-5971">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Resolucoes_resolucao_cmas_n_011_2021_aa16ba63-0e01-47a7-a6f6-08935e422637.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE COOPERAÇÃO APAE-EDUCAÇÃO
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0295AC36734E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0295AC36734E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-cooperacao-apae-educacao-floriano-5909">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Outros_atos_administrativos_termo_de_cooperacao_apae_educacao_07943ec4-396c-49bc-b209-b824b70acdfa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+NOTIFICAÇÃO 009-2022-EDUCAÇÃO- MÓVEIS JB
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFD666094DC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFD666094DC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/notificacao-009-2022-educacao-moveis-jb-floriano-5950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Outros_notificacao_009_2022_educacao_moveis_jb_879199cf-a250-4200-b001-477e3f7930e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+LICITANET - Termo de Ratificação da Dispensa Eletrônica
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>22EA374A8DAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="22EA374A8DAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-termo-de-ratificacao-da-dispensa-eletronica-floriano-5948">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Outros_licitanet_termo_de_ratificacao_da_dispensa_eletronica_a64be1f4-e54d-4dfb-96a1-2962038646f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação e ratificação - contabilidade
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8875187CDB614
+<br/><br/>
+<a class="fileDoc" data-file-hash="8875187CDB614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-e-ratificacao-contabilidade-itaueira-5915">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Itaueira_Aviso_da_Homologacao_homologacao_e_ratificacao_contabilidade_e023ee13-036c-445e-98c9-bbfbd8cee391.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução 02
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB1312B0B7E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB1312B0B7E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-02-conceicao-do-caninde-5910">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Conceicao_do_Caninde_Resolucoes_resolucao_02_d7a33fc7-524b-4858-baf8-e276c777a229.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Declarações de Baixo Impacto Ambiental - Novembro 2021
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>552C4471C9D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="552C4471C9D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/declaracoes-de-baixo-impacto-ambiental-novembro-2021-floriano-5959">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Atos_declaracoes_de_baixo_impacto_ambiental_novembro_2021_41b94643-5b79-4b9b-8a89-eb725d726fb1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO PRIMEIRO BIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9563720441FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9563720441FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/6282/rreo-referente-ao-primeiro-bimestre-de-2021-passagem-franca-do-piaui-5928">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_primeiro_bimestre_de_2021_53247c76-2b62-427b-860d-abe4a65d179d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO PRIMEIRO BIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>552DB312D4974
+<br/><br/>
+<a class="fileDoc" data-file-hash="552DB312D4974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/6283/rreo-referente-ao-primeiro-bimestre-de-2021-passagem-franca-do-piaui-5928">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_primeiro_bimestre_de_2021_9be9b4de-9dc5-4369-886f-ab50afb97abd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO PRIMEIRO BIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13AD6E0303AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="13AD6E0303AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/6284/rreo-referente-ao-primeiro-bimestre-de-2021-passagem-franca-do-piaui-5928">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_primeiro_bimestre_de_2021_fb7842f2-d7df-4b21-a035-21879d3d8f70.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO PRIMEIRO BIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2D18834891944
+<br/><br/>
+<a class="fileDoc" data-file-hash="2D18834891944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/6285/rreo-referente-ao-primeiro-bimestre-de-2021-passagem-franca-do-piaui-5928">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_primeiro_bimestre_de_2021_9648527e-ea4c-4123-ab4a-c8b7ea3d3cff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO PRIMEIRO BIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>66D027B483224
+<br/><br/>
+<a class="fileDoc" data-file-hash="66D027B483224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/6286/rreo-referente-ao-primeiro-bimestre-de-2021-passagem-franca-do-piaui-5928">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_primeiro_bimestre_de_2021_726d587e-ff24-45fe-b9c9-27dc303871e4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 001/2022 - Secretaria Municipal de Educação
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>37B2587B54FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="37B2587B54FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-001-2022-secretaria-municipal-de-educacao-floriano-5894">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Floriano_Portarias_portaria_001_2022_secretaria_municipal_de_educacao_c7d0ec54-a8da-4aa8-bcda-2d67b55e250a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+portaria
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B3FAC018B194
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B3FAC018B194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-isaias-coelho-5899">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Isaias_Coelho_Portarias_portaria_742fc492-306a-4177-a26a-38a154bcfd9c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+regimento
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>51D8601D90A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="51D8601D90A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/regimento-isaias-coelho-5902">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Isaias_Coelho_Outros_regimento_8c1d3200-62ed-40f6-a8c3-2a1e4bf36aba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO - RB TELECOM
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DD4BB6027E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DD4BB6027E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-rb-telecom-angical-do-piaui-5898">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Angical_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_rb_telecom_724b2357-eed2-40e3-987f-721244ebcfc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Requerimento
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDF45A54CDF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDF45A54CDF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/requerimento-dom-expedito-lopes-5896">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_requerimento_88193427-0406-4216-9d25-c1f0c6c3c4c9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 008/2022
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>25C67F1C29704
+<br/><br/>
+<a class="fileDoc" data-file-hash="25C67F1C29704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-008-2022-buriti-dos-montes-5893">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Buriti_dos_Montes_Decretos_decreto_n_008_2022_9bcdcf25-23a7-4c9b-8051-8ee9857dcab9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO - RB TELECOM
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC190FF702164
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC190FF702164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-rb-telecom-angical-do-piaui-5897">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Angical_do_Piaui_Aviso_de_Ratificacao_ratificacao_rb_telecom_b929e187-098f-4f9b-a709-c6314fb62fe5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO ADMINISTRATIVO Nº 001/2022 - DISPENSA
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A31F7D6901184
+<br/><br/>
+<a class="fileDoc" data-file-hash="A31F7D6901184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-001-2022-dispensa-nazaria-5900">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Nazaria_Aviso_do_Contrato_contrato_administrativo_n_001_2022_dispensa_1d3529f3-ddf0-4b19-87c0-1b1a5bea249c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO DE PUBLICAÇÃO DE ATOS OFICIAIS
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D4EA41558EF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="D4EA41558EF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-de-publicacao-de-atos-oficiais-nazaria-5901">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Nazaria_Aviso_do_Contrato_contrato_de_publicacao_de_atos_oficiais_ab26bd85-2a0e-487d-96d7-e164fc5aa00d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO LEANDRO TORRES
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1061F10171604
+<br/><br/>
+<a class="fileDoc" data-file-hash="1061F10171604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-leandro-torres-demerval-lobao-5906">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Demerval_Lobao_Extrato_extrato_leandro_torres_0a995371-5ed4-4e44-af4b-b7a74f02cf48.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Despacho de Ratificação - Dispensa n° 001/2022
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DE1DE6B394E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DE1DE6B394E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-ratificacao-dispensa-n-001-2022-altos-5904">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Altos_Aviso_de_Ratificacao_despacho_de_ratificacao_dispensa_n_001_2022_4093b870-d9b4-4c57-91d8-236d1faa5c04.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO - ADTR
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FAEB2B5D536B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FAEB2B5D536B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-adtr-demerval-lobao-5905">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Camara_Demerval_Lobao_Extrato_extrato_adtr_f861a9c1-df95-4d40-a025-fcfe1f6d0b1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato n° 002/2022 - Dispensa n° 001/2022
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>96E89C25B6114
+<br/><br/>
+<a class="fileDoc" data-file-hash="96E89C25B6114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-002-2022-dispensa-n-001-2022-altos-5907">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Altos_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_002_2022_dispensa_n_001_2022_4d66a848-edbf-4b68-9cc6-826d219eea50.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N° 011-2022
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>929AC1E6D0204
+<br/><br/>
+<a class="fileDoc" data-file-hash="929AC1E6D0204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-011-2022-sao-jose-do-piaui-5908">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Sao_Jose_do_Piaui_Portarias_portaria_n_011_2022_3e882927-a2e9-48e5-a113-0ac94003948a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=218&amp;q[flag_doc_diario_true]=1">
+153
+</a>
+-
+2022
+</td>
+<td class="">
+edital de convocação teste seletivo
+</td>
+<td class="text-center">
+24-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Edital de concurso público
+</td>
+<td class="text-center">
+<strong>ID: </strong>41AB4B08B8504
+<br/><br/>
+<a class="fileDoc" data-file-hash="41AB4B08B8504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-teste-seletivo-agricolandia-5924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/21/DOP_EDICAO__24-1-2022_ED_153_Prefeitura_Agricolandia_Edital_de_concurso_publico_edital_de_convocacao_teste_seletivo_733bd6d5-bfa4-46cf-8a4d-f75c867df6e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

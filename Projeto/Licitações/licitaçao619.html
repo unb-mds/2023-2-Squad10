@@ -1,0 +1,1427 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+05 - APROVAÇÃO DA PORTARIA 886-2023
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F676FE6FFCA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F676FE6FFCA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/05-aprovacao-da-portaria-886-2023-rio-grande-do-piaui-69086">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Rio_Grande_do_Piaui_Resolucoes_05_aprovacao_da_portaria_886_2023_e894b9c8-5a6a-4d53-bf43-3fa4f186bbe4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato dispensa 15
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B747FFCE68054
+<br/><br/>
+<a class="fileDoc" data-file-hash="B747FFCE68054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-15-nazare-do-piaui-69078">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_dispensa_15_8b8953d5-2065-46fc-9724-12226fc115b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 86, DE 01 DE JULHO DE 2023.
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7713A11B35244
+<br/><br/>
+<a class="fileDoc" data-file-hash="7713A11B35244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-86-de-01-de-julho-de-2023-dom-expedito-lopes-69082">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Dom_Expedito_Lopes_Decretos_decreto_n_86_de_01_de_julho_de_2023_776db504-5957-49ca-b3cf-3e710e4f78f9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do Contrato
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>85908C1539D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="85908C1539D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-currais-69080">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Camara_Currais_Aviso_do_extrato_de_contrato_extrato_do_contrato_a7f53a63-f023-44bd-bd43-a048a442a87f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+RETIFICAÇÃO - 1° SEMESTRE - 2023
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>14BEFF105C634
+<br/><br/>
+<a class="fileDoc" data-file-hash="14BEFF105C634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-1-semestre-2023-monsenhor-gil-69085">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Monsenhor_Gil_Outros_retificacao_1_semestre_2023_6870ee1f-97dd-4f30-a77c-9ea5bc82c3bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL Nº 006.2023 - CMDCA
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>086D5C0608584
+<br/><br/>
+<a class="fileDoc" data-file-hash="086D5C0608584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-n-006-2023-cmdca-jardim-do-mulato-69098">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Jardim_do_Mulato_Edital_de_Chamada_edital_n_006_2023_cmdca_4ec57d27-90ae-46ee-8147-7a4028009a58.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Despesas com Pessoal /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D49C4B2331A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D49C4B2331A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74119/despesas-com-pessoal-currais-69130">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Camara_Currais_Relatorios_de_gestao_fiscal_despesas_com_pessoal_7ae9643d-ffaf-497b-982a-0c10f4c9c78a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Contratação Temporária da Sra. Francinalva Francisca
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5ADEE47F379C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5ADEE47F379C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-da-sra-francinalva-francisca-paes-landim-69122">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_da_sra_francinalva_francisca_4941e182-a3ed-4fdf-8d5e-717c8ac4de72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+PE046.2022 - 1º TERMO ADITIVO
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>54E765C04A6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="54E765C04A6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe046-2022-1-termo-aditivo-sao-jose-do-divino-69137">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Sao_Jose_do_Divino_Aviso_do_Termo_Aditivo_pe046_2022_1_termo_aditivo_6181c8cc-c631-4166-9dcf-1ff135bc2023.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+PE041.2022 - 1º TERMO ADITIVO
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>19495395E55B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="19495395E55B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe041-2022-1-termo-aditivo-sao-jose-do-divino-69136">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Sao_Jose_do_Divino_Aviso_do_Termo_Aditivo_pe041_2022_1_termo_aditivo_3cc1d2bb-72e0-4184-9c46-e3946d365cf8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Contratação Temporária da Sra. Francisdalva Lima do Nascimento.
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DDDAE83859104
+<br/><br/>
+<a class="fileDoc" data-file-hash="DDDAE83859104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-da-sra-francisdalva-lima-do-nascimento-paes-landim-69127">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_da_sra_francisdalva_lima_do_nascimento_b4e3f13c-138f-4f71-9963-8578e83382cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 017/2023 MATERIAL PERMANETE SAÚDE
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E784046E30254
+<br/><br/>
+<a class="fileDoc" data-file-hash="E784046E30254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-017-2023-material-permanete-saude-buriti-dos-lopes-69107">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Buriti_dos_Lopes_Aviso_de_licitacao_aviso_pe_017_2023_material_permanete_saude_e44a32e0-922d-4562-a701-e073cb1eb5df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+HOMOLOGAÇÃO PENA 011_2023
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>80065D05082C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="80065D05082C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pena-011_2023-nazaria-69099">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Nazaria_Aviso_da_Homologacao_homologacao_pena_011_2023_1f97ace0-241e-40a2-92b4-fa24bc79a109.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A723B05E148A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A723B05E148A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-sao-joao-da-fronteira-69090">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Sao_Joao_da_Fronteira_Aviso_do_extrato_de_contrato_extrato_do_contrato_1e73065f-1b68-40fb-8c1f-5ff26cd2ec99.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº107-A-2023 EXONERAÇÃO MARIA DO SOCORRO LEMOS DO NASCIMENTO
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2A8A680877E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2A8A680877E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-107-a-2023-exoneracao-maria-do-socorro-lemos-do-nascimento-altos-69111">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Altos_Portarias_portaria_n_107_a_2023_exoneracao_maria_do_socorro_lemos_do_nascimento_60a35824-7d78-40b3-a5d2-a24cb3ead70f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 33 , DE 01 DE JUNHO DE 2023 - LEI N.847
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>65AE4AB988A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="65AE4AB988A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-33-de-01-de-junho-de-2023-lei-n-847-landri-sales-69088">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Decretos_decreto_n_33_de_01_de_junho_de_2023_lei_n_847_6f244319-1e7d-4d6a-94af-6e5bfd64cbb7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução n° 11.2023
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9367C26E1E654
+<br/><br/>
+<a class="fileDoc" data-file-hash="9367C26E1E654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-11-2023-sao-jose-do-peixe-69102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Sao_Jose_do_Peixe_Resolucoes_resolucao_n_11_2023_7cfa0cd3-3cc8-4495-b913-22ce9c2ec7f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C427323847B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="C427323847B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74066/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_fa6128e7-fe2a-4a94-aee1-da85f9dcb7a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>124CF84D942E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="124CF84D942E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74067/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_81165061-ac59-4a66-9ebe-bc2b5b362077.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>090CF7ADB8964
+<br/><br/>
+<a class="fileDoc" data-file-hash="090CF7ADB8964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74068/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_2c6afb52-e2eb-439f-a2c4-050ffb2a5eda.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>310350085CA44
+<br/><br/>
+<a class="fileDoc" data-file-hash="310350085CA44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74069/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_de602ea0-afa0-4111-b67d-83306f0351d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B917AA2025784
+<br/><br/>
+<a class="fileDoc" data-file-hash="B917AA2025784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74070/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_ae980f94-2db3-413c-beab-afb38df452f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7D1492EFE4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7D1492EFE4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74071/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_0d0fc416-5257-4e23-9ea3-3d1aa935ee9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A72B9110E8DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A72B9110E8DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74072/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_a010fb1d-9f3f-482b-8189-469443cd178e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>37C7B5A314804
+<br/><br/>
+<a class="fileDoc" data-file-hash="37C7B5A314804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74073/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_e432809f-688a-427e-a9b0-407851d06376.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCACF9646BEC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCACF9646BEC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74074/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_c00dfbf2-bf5f-446e-ae37-98867eb50a9d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0B1D5F230A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0B1D5F230A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74075/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_f84ffb28-3df3-42bb-9227-8a7aaa76fd6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>70877AEDB02F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="70877AEDB02F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74076/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_f1e1c5b2-8e3a-4c17-a5d6-aedac60729fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5B1A1AFFD4154
+<br/><br/>
+<a class="fileDoc" data-file-hash="5B1A1AFFD4154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74077/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_cfb5d465-b2c0-4235-8a3b-be2c380ca067.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=760&amp;q[flag_doc_diario_true]=1">
+523
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+20-07-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>369ABEC244D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="369ABEC244D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/74078/balanco-orcamentario-landri-sales-69089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/7/19/DOP_EDICAO__20-7-2023_ED_523_Prefeitura_Landri_Sales_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_2e41db19-bc9e-45bf-a1d7-0721314a3819.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

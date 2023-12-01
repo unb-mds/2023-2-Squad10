@@ -1,0 +1,1218 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONT 040/2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D89657BC5BB84
+<br/><br/>
+<a class="fileDoc" data-file-hash="D89657BC5BB84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-cont-040-2022-campinas-do-piaui-22294">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Campinas_do_Piaui_Extrato_extrato_cont_040_2022_26b4a532-b897-4617-afad-2f8842c8d4e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONT 039/2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F44EC97993424
+<br/><br/>
+<a class="fileDoc" data-file-hash="F44EC97993424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-cont-039-2022-campinas-do-piaui-22292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Campinas_do_Piaui_Extrato_extrato_cont_039_2022_10ae274c-43cb-420e-8ffb-7ff0dddb2d00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONT 038/2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FD220BDF03F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FD220BDF03F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-cont-038-2022-campinas-do-piaui-22291">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Campinas_do_Piaui_Extrato_extrato_cont_038_2022_f5b33b97-2661-4a43-9a35-908f74a1afa6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONT 034/2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5FA6F3B680B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="5FA6F3B680B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-cont-034-2022-campinas-do-piaui-22287">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Campinas_do_Piaui_Extrato_extrato_cont_034_2022_636008f2-dc63-426d-ba44-04cf5f1adff3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ADIAMENTO PE 45 – 2022 - 20072022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C1F1AAC32384
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C1F1AAC32384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adiamento-pe-45-2022-20072022-francisco-macedo-22250">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Francisco_Macedo_Aviso_do_Adiamento_de_licitacao_aviso_de_adiamento_pe_45_2022_20072022_7aca4590-8ddc-44ab-ad6d-9b1a3acd03c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C6FAED8E9F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C6FAED8E9F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-isaias-coelho-22249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Isaias_Coelho_Extrato_extrato_ce0bcdf9-f71c-4f84-b0f3-e084628e73fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 143-2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>30B4C0996D2D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="30B4C0996D2D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-143-2022-oeiras-22248">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Oeiras_Portarias_portaria_n_143_2022_2f413348-4e53-4954-935f-07d745cafe3f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de licitação
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>545FB4133EE34
+<br/><br/>
+<a class="fileDoc" data-file-hash="545FB4133EE34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-isaias-coelho-22247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Isaias_Coelho_Aviso_de_licitacao_aviso_de_licitacao_405f8f33-0887-4845-be99-60eef3b679fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+ATA DA SESSÃO - CP 002/2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>B61EC21989F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="B61EC21989F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-sessao-cp-002-2022-luis-correia-22240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Luis_Correia_Atas_ata_da_sessao_cp_002_2022_f267b004-6262-4998-ab4b-aca31ba9499b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+ferias
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Requerimento
+</td>
+<td class="text-center">
+<strong>ID: </strong>441E0A50BFF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="441E0A50BFF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ferias-bocaina-22242">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Bocaina_Requerimento_ferias_aa876999-32b3-4bdc-9abb-77cee44d1aa9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+RELATORIO DE GESTAO FISCAL /
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE23C64D440E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE23C64D440E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/23719/relatorio-de-gestao-fiscal-sao-joao-da-varjota-22244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_d948143f-e8be-4c10-8a1f-a6a18b9ac7f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+RELATORIO DE GESTAO FISCAL /
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F22B858E5AE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="F22B858E5AE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/23720/relatorio-de-gestao-fiscal-sao-joao-da-varjota-22244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_f7d97c7e-609c-402a-af9c-471af7709f2e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+RELATORIO DE GESTAO FISCAL /
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>26CC4980BD914
+<br/><br/>
+<a class="fileDoc" data-file-hash="26CC4980BD914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/23721/relatorio-de-gestao-fiscal-sao-joao-da-varjota-22244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_655be293-97c7-4a2c-a3b1-6df54495c917.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+RELATORIO DE GESTAO FISCAL /
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A5642296D874
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A5642296D874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/23722/relatorio-de-gestao-fiscal-sao-joao-da-varjota-22244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_5c4ac7cc-568b-44e0-9b3c-34293896a25e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+RELATORIO DE GESTAO FISCAL /
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>878066CD2E4C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="878066CD2E4C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/23723/relatorio-de-gestao-fiscal-sao-joao-da-varjota-22244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_6766dc42-0fdc-4ab4-8444-5070c4b95d51.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 007.2022Maria de Lourdes Souza da Costa
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>79F52E025EAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="79F52E025EAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-007-2022maria-de-lourdes-souza-da-costa-luis-correia-22246">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Luis_Correia_Portarias_portaria_007_2022maria_de_lourdes_souza_da_costa_c72cdf92-8f84-49e3-b991-f3f4436baf06.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato contrato - Clecio
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB7653EC983A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB7653EC983A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-clecio-buriti-dos-montes-22235">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_clecio_627f4530-600e-42a2-b537-cc6d2d33147b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato contrato - Troca Certa
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>61F45B394B1F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="61F45B394B1F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-troca-certa-buriti-dos-montes-22239">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_troca_certa_169d251f-43f5-4560-8026-de1bf951a503.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 006.2022 - Antonio de Farias Costa
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>01F8624426D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="01F8624426D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-006-2022-antonio-de-farias-costa-luis-correia-22245">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Luis_Correia_Portarias_portaria_006_2022_antonio_de_farias_costa_fe6a050c-3fac-409d-a07e-2ce6a6fb83fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato contrato - original
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>185CC62956E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="185CC62956E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-original-buriti-dos-montes-22237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_original_72d17260-3050-4f3d-ba17-a871d1fd4e9a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO_CONTRATO_Nº_006_2022
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>85DF0AF71F824
+<br/><br/>
+<a class="fileDoc" data-file-hash="85DF0AF71F824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato_contrato_n-_006_2022-pimenteiras-22241">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Camara_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_contrato_n__006_2022_41a79470-13b0-486a-8596-d56e75b6c3ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE RESCISÃO UNILATERAL_DOP
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso da Rescisão de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F1E90B24BF44
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F1E90B24BF44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-rescisao-unilateral_dop-pimenteiras-22238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Camara_Pimenteiras_Aviso_da_Rescisao_de_contrato_extrato_de_rescisao_unilateral_dop_ff1efd01-fa93-49ca-8bb8-3b667f485b99.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=394&amp;q[flag_doc_diario_true]=1">
+275
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato - J D DE CARVALHO
+</td>
+<td class="text-center">
+19-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D5963843BA9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D5963843BA9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-j-d-de-carvalho-buriti-dos-montes-22236">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/18/DOP_EDICAO__19-7-2022_ED_275_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_j_d_de_carvalho_4be98d51-b53f-4b04-842a-5be9bcb52f84.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=393&amp;q[flag_doc_diario_true]=1">
+274
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 274
+</td>
+<td class="text-center dopcom">
+18-07-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="872EA41FC0AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-274-piaui-22243/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/15/DOP_EDICAO__18-7-2022_ED_274_CADERNO_a____diario_oficial_completo_edicao_274_03eb9143-3ad6-4653-8ca0-79ed477d9927.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=393&amp;q[flag_doc_diario_true]=1">
+274
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO - INEX 005/2022
+</td>
+<td class="text-center">
+18-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC6CDF2061534
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC6CDF2061534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inex-005-2022-caxingo-22171">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/15/DOP_EDICAO__18-7-2022_ED_274_Prefeitura_Caxingo_Aviso_de_Ratificacao_ratificacao_inex_005_2022_ad39604a-2649-4a84-a6cf-95a48a2f181f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=393&amp;q[flag_doc_diario_true]=1">
+274
+</a>
+-
+2022
+</td>
+<td class="">
+Emenda Modificativa Nº 01/2022 ao PL Nº 15/2022 - Diretrizes Orçamentária para 2023
+</td>
+<td class="text-center">
+18-07-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>C61CFDB506AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C61CFDB506AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/emenda-modificativa-n-01-2022-ao-pl-n-15-2022-diretrizes-orcamentaria-para-2023-nazare-do-piaui-22168">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/15/DOP_EDICAO__18-7-2022_ED_274_Camara_Nazare_do_Piaui_Outros_emenda_modificativa_n_01_2022_ao_pl_n_15_2022_diretrizes_orcamentaria_para_2023_8b091bdf-3024-4a37-b2dd-74f2cd4bfb49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

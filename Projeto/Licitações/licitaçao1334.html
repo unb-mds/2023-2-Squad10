@@ -1,0 +1,1265 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO CMDCA N.04/2023
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2252D228EE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2252D228EE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmdca-n-04-2023-luis-correia-51993">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Luis_Correia_Outros_resolucao_cmdca_n_04_2023_8646ec2d-e3bd-4f74-8eda-3f50f6bece85.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+PROTESES DENTARIAS
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>2255424B8AEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2255424B8AEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/proteses-dentarias-luis-correia-52050">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Luis_Correia_Aviso_da_Dispensa_proteses_dentarias_3a43d34c-880e-4a54-abdc-8c014e43cbe5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+ERRATA EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>8854BA1198484
+<br/><br/>
+<a class="fileDoc" data-file-hash="8854BA1198484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-extrato-de-contrato-amarante-52041">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Amarante_Errata_errata_extrato_de_contrato_0d330964-a824-4001-95dc-92fbd5f3c9ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução CMDCA 002-2023 - Resolução Unificada da Comissão Especial da Eleição CT 2023
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>379F9874E6204
+<br/><br/>
+<a class="fileDoc" data-file-hash="379F9874E6204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmdca-002-2023-resolucao-unificada-da-comissao-especial-da-eleicao-ct-2023-sigefredo-pacheco-52046">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Sigefredo_Pacheco_Resolucoes_resolucao_cmdca_002_2023_resolucao_unificada_da_comissao_especial_da_eleicao_ct_20_8cefd38b-8d96-4d13-ab98-af0db815290d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução CMDCA 001-2023 - Processo de Escolha do CT Sigefredo
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>68077C0FCB434
+<br/><br/>
+<a class="fileDoc" data-file-hash="68077C0FCB434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmdca-001-2023-processo-de-escolha-do-ct-sigefredo-sigefredo-pacheco-52045">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Sigefredo_Pacheco_Resolucoes_resolucao_cmdca_001_2023_processo_de_escolha_do_ct_sigefredo_40b3f59f-2285-4440-b39c-c2ff0c351ccb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>123BEC5A9A6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="123BEC5A9A6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55767/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_60562b12-d397-4278-a287-71c8206d8d57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BF33326F9F794
+<br/><br/>
+<a class="fileDoc" data-file-hash="BF33326F9F794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55768/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_e26310bd-cce2-4df6-a784-87007390c371.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C419421CCD14
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C419421CCD14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55769/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_10a99851-5ca8-4ea2-9bb5-77a3f5c3e742.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD5E00B21D094
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD5E00B21D094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55770/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_0c25277d-fc27-4626-9f0a-e5646cdcdb47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E89E8D529994
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E89E8D529994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55771/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_67506ebc-b29f-40e7-be52-a5416a8e7223.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DF7195D32944
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DF7195D32944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55772/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_7a48a900-9d97-474a-840e-eab7c5b992f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D441422C708A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D441422C708A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55773/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_b5bb8239-e357-4ef9-a9ce-d58bf6ace717.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C794EC0B2CC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C794EC0B2CC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55774/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_98c90331-0779-445c-86b9-8c609e7c0172.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>730B88FC066A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="730B88FC066A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55775/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_56c733da-def4-44f0-ab76-9a0fcaccc238.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5DF27E60A2E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="5DF27E60A2E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55776/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_469f3d74-f054-45b1-90c8-81ff56ab43cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0242D2CB78694
+<br/><br/>
+<a class="fileDoc" data-file-hash="0242D2CB78694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55777/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_0baecec5-d2a5-4522-8dc7-ea7268db10fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>39DA67B467EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="39DA67B467EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55778/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_760091c0-e38e-4a24-9e22-2986319e1726.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9550D922822D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9550D922822D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/55779/rreo-itaueira-52011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_826535d0-c925-41fa-b14b-f2f3668df9df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO N° 11/2023
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>333F05C2E1234
+<br/><br/>
+<a class="fileDoc" data-file-hash="333F05C2E1234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-11-2023-currais-52009">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Currais_Decretos_decreto_n_11_2023_0b7bdb84-2170-4311-9c87-1600b9a7a71c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE PREGÃO ELETRÔNICO Nº 0178/2023
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E96319439F0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E96319439F0A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-pregao-eletronico-n-0178-2023-demerval-lobao-52030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Demerval_Lobao_Aviso_de_licitacao_aviso_de_pregao_eletronico_n_0178_2023_7f171d32-78a9-452b-8589-5cffa9282f45.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria N 024/2023
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>03255D6B2ADC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="03255D6B2ADC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-024-2023-coivaras-52023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Coivaras_Portarias_portaria_n_024_2023_670296f3-19e1-4dfb-bc19-144e1ff39936.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+LEI N°851 2023 REAJUSTE DOS BENEFICIOS PAGOS PELO FUNDO PEVIDENCIARIO DO MUNICIPIO DE LANDRI SALES
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>861FD786BCE04
+<br/><br/>
+<a class="fileDoc" data-file-hash="861FD786BCE04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-851-2023-reajuste-dos-beneficios-pagos-pelo-fundo-pevidenciario-do-municipio-de-landri-sales-landri-sales-52002">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Landri_Sales_Leis_lei_n_851_2023_reajuste_dos_beneficios_pagos_pelo_fundo_pevidenciario_do_municipio_de_landri__0f5fa264-ccf9-4eda-a3cb-e38e1e137176.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+aviso pregão eletronico 018
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6517504FE4DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6517504FE4DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pregao-eletronico-018-curral-novo-do-piaui-52018">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_pregao_eletronico_018_28f5e27b-4095-4d90-bd77-b8c5d7fcc686.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL DE NOTIFICAÇÃO Nº 122-2023-REURB
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>EFD0C324F1B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="EFD0C324F1B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-notificacao-n-122-2023-reurb-oeiras-52036">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Oeiras_Outros_edital_de_notificacao_n_122_2023_reurb_2a3c37d4-834f-4dbf-b4f0-4185ea724ca9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+Ata Audiência Pública
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>83AFF608715D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="83AFF608715D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-audiencia-publica-nossa-senhora-de-nazare-51994">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Nossa_Senhora_de_Nazare_Atas_ata_audiencia_publica_9c4f23d1-1fba-42b6-b68f-8e9cc9800f58.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=641&amp;q[flag_doc_diario_true]=1">
+443
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO TESTE SELETIVO
+</td>
+<td class="text-center">
+23-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>3006CB6F72FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3006CB6F72FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-teste-seletivo-paqueta-51990">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/22/DOP_EDICAO__23-3-2023_ED_443_Prefeitura_Paqueta_Outros_contrato_teste_seletivo_797e648d-1772-4b46-b731-0fc6508ff3d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

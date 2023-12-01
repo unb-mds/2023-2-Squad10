@@ -1,0 +1,1559 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato Administrativo nº 022.2023 Dispensa 010-2023-Urnas Funerárias
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B17D70BF7AF84
+<br/><br/>
+<a class="fileDoc" data-file-hash="B17D70BF7AF84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-022-2023-dispensa-010-2023-urnas-funerarias-sao-felix-do-piaui-48215">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Felix_do_Piaui_Aviso_da_homologacao_contrato_administrativo_n_022_2023_dispensa_010_2023_urnas_funerarias_b53b0c6d-413d-4fa3-9b17-525bd0a308e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato Administrativo nº 022.2023 Dispensa 010-2023-Urnas Funerárias
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>773C72E919DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="773C72E919DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-022-2023-dispensa-010-2023-urnas-funerarias-sao-felix-do-piaui-48213">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_extrato_de_contrato_contrato_administrativo_n_022_2023_dispensa_010_2023_urnas_funer_4e942418-1271-4786-95e1-b1027dd7859a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+6° BIMESTRE - 2022
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3AD6301EEAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3AD6301EEAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/6-bimestre-2022-monsenhor-gil-48247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Monsenhor_Gil_Outros_6_bimestre_2022_16ddda4f-73f5-4187-b6b2-8e505e86b97e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato PE 006
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E79066F289B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="E79066F289B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-006-prata-do-piaui-48244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Prata_do_Piaui_Aviso_do_extrato_de_contrato_extrato_pe_006_20bf67ff-471e-45e9-9fe7-6bfaacd8e3fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Dispensa nº 011-2023 - Gás - extrato de contrato
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CF69215BEAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CF69215BEAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-011-2023-gas-extrato-de-contrato-sigefredo-pacheco-48270">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sigefredo_Pacheco_Aviso_do_extrato_de_contrato_dispensa_n_011_2023_gas_extrato_de_contrato_61bfbb5c-37a7-464a-be50-f0cc0b335344.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE35F64BA7BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE35F64BA7BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51722/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_31686618-d633-4fcf-b4ea-83fd426ca25f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5636886E32C74
+<br/><br/>
+<a class="fileDoc" data-file-hash="5636886E32C74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51723/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_0f1ad636-73d7-4afa-beb1-bf81238972a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFCE1200B09A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFCE1200B09A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51724/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_69ef4cc9-5a29-4eab-8e27-bbba9b71dbb4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>27D6F16A1CC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="27D6F16A1CC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51725/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_0ad1bd48-582e-4188-96f7-340cd43a3a24.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>779C2038A4B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="779C2038A4B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51726/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_c77ff61c-4f15-4e12-a98c-358df0eb59de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E001DC2A4C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E001DC2A4C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51727/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_4cdf2a33-0619-44eb-ae15-b45a90e7d077.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>100E429F4B004
+<br/><br/>
+<a class="fileDoc" data-file-hash="100E429F4B004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51728/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_26172bac-3e25-42aa-ab11-e8a0b0904486.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E671B07A0F394
+<br/><br/>
+<a class="fileDoc" data-file-hash="E671B07A0F394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51729/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_13e9e81b-56f9-4cf2-b084-1005f506e50c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02E8627B4B024
+<br/><br/>
+<a class="fileDoc" data-file-hash="02E8627B4B024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51730/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_11315b53-769f-4381-b58b-41dada8f631a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD38CA9C24F74
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD38CA9C24F74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51731/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_05450c67-ce2b-42df-a8cb-eea9f54e3d1c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BF05BED552A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BF05BED552A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51732/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_4d876e31-bdaf-4c1e-bb04-82689750bcab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>377610EC8E994
+<br/><br/>
+<a class="fileDoc" data-file-hash="377610EC8E994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51733/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_28b4ebea-49e5-4a51-9f26-bb2da929513b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED3D7B43DA3F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED3D7B43DA3F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51734/rreo-6-bimestre-2022-isaias-coelho-48230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_0f2dd8af-682e-4505-bfa3-3c65a42e215e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 011/2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D0CE9F40E774
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D0CE9F40E774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-011-2023-campinas-do-piaui-48252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_011_2023_d2c82a0e-ce23-4517-87f5-bcfef0e7122f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF SEGUNDO SEMESTRE DE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>658EACA9FC104
+<br/><br/>
+<a class="fileDoc" data-file-hash="658EACA9FC104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51764/rgf-segundo-semestre-de-2022-nazare-do-piaui-48260">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_segundo_semestre_de_2022_cbafa36b-5099-4aea-b0e5-af4e42d75dd2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Ratificação Inexgibilidade 014/2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>447F71BB2E854
+<br/><br/>
+<a class="fileDoc" data-file-hash="447F71BB2E854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inexgibilidade-014-2023-currais-48272">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Currais_Aviso_de_Ratificacao_ratificacao_inexgibilidade_014_2023_d99bf2f7-f36d-4977-b17c-17b37d9a3e4d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RESULTADO TP01.23
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>12F13E36D5E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="12F13E36D5E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-tp01-23-monsenhor-gil-48284">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Monsenhor_Gil_Outros_resultado_tp01_23_c2362a01-aa5b-4786-adb0-4c849b0d4f72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Ata PE 006
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E1A3B67BF384
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E1A3B67BF384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-pe-006-prata-do-piaui-48242">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Prata_do_Piaui_Atas_ata_pe_006_ec3b7787-cf33-4cae-98e3-92058893f545.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15B1A9501EF14
+<br/><br/>
+<a class="fileDoc" data-file-hash="15B1A9501EF14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51709/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_78ecf619-c4a0-470c-8d47-3432c6087828.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ACEFD6E611014
+<br/><br/>
+<a class="fileDoc" data-file-hash="ACEFD6E611014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51710/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_a392ce9e-1288-4a57-8f87-b001551f0c93.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F1C32FC796C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F1C32FC796C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51711/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_857ae3ae-4ae7-4012-b776-4837db48dddc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BBAB9BADA8284
+<br/><br/>
+<a class="fileDoc" data-file-hash="BBAB9BADA8284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51712/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_70b7c69e-293c-495a-add3-660eabe6b0f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D693EC39351B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D693EC39351B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51713/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_445d9f57-7494-40a5-8eba-a97f0a205ebd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2DBE1B2840974
+<br/><br/>
+<a class="fileDoc" data-file-hash="2DBE1B2840974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51714/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_299a45de-f6ec-47b5-a457-4a8124d4074d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>27EE4743AB2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="27EE4743AB2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51715/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_20be2265-9887-4faa-bb13-652859e421b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8028EE355394
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8028EE355394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51716/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_12ac64de-c804-476d-b418-a448317625cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E745AAE9F444
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E745AAE9F444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51717/rgf-2-semestre-2022-isaias-coelho-48225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Isaias_Coelho_Relatorios_de_gestao_fiscal_rgf_2_semestre_2022_db530d54-ab9a-4ff9-ab21-2d7bb4107573.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

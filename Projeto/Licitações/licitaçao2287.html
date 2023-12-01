@@ -1,0 +1,1529 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 557/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDA50FFFAAF24
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDA50FFFAAF24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-557-2022-floriano-28985">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Floriano_Portarias_portaria_557_2022_db764178-25d3-4b31-8074-4e6e6f380dcf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Edital de Chamada Seletivo Professores
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF6B9939960A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF6B9939960A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-chamada-seletivo-professores-sao-pedro-do-piaui-28973">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Sao_Pedro_do_Piaui_Edital_de_Chamada_edital_de_chamada_seletivo_professores_d24dae5d-4bff-4b6a-a59a-14b58976c9ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 06 - DEMONSTRATIVO DOS RESULTADOS PRIMÁRIO E NOMINAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CDC4AF4BD0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CDC4AF4BD0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31061/anexo-06-demonstrativo-dos-resultados-primario-e-nominal-barra-d-alcantara-28882">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_06_demonstrativo_dos_resultados_primario_e_nominal_e3ff6838-0b15-448f-b64e-2c69728e70ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 08 - DEMONSTRATIVO DAS RECEITAS E DESPESAS COM MANUTENÇÃO E DESENVOLVIMENTO DO ENSINO - MDE /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F19B6029DC904
+<br/><br/>
+<a class="fileDoc" data-file-hash="F19B6029DC904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31063/anexo-08-demonstrativo-das-receitas-e-despesas-com-manutencao-e-desenvolvimento-do-ensino-mde-barra-d-alcantara-28884">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_08_demonstrativo_das_receitas_e_despesas_com_manutencao_e_desenvolvimento_do_ensino_mde_2259d9ff-20c1-4227-ab22-1b87c299caa8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 570/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D09BB3E632A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D09BB3E632A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-570-2022-floriano-29003">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Floriano_Portarias_portaria_570_2022_bc5ce513-5dfc-4bc1-a8c2-fa1cd9713858.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 568/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>07CE2521E19D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07CE2521E19D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-568-2022-floriano-29000">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Floriano_Portarias_portaria_568_2022_47f406b1-9012-46ee-8cfa-7cd06c412add.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 32 DE 2022, AGLEYSON
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>209AB581D7064
+<br/><br/>
+<a class="fileDoc" data-file-hash="209AB581D7064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-32-de-2022-agleyson-pimenteiras-28998">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Pimenteiras_Portarias_portaria_32_de_2022_agleyson_65eb8859-820f-4ca2-b248-15d6791382ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7C8261D8FD54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7C8261D8FD54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-monsenhor-gil-28895">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Monsenhor_Gil_Extrato_extrato_contrato_23837aeb-d60b-4693-a33a-17380fcf1898.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO INEX 16 2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Inexigibilidade
+</td>
+<td class="text-center">
+<strong>ID: </strong>10B17ED558254
+<br/><br/>
+<a class="fileDoc" data-file-hash="10B17ED558254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-inex-16-2022-francisco-macedo-28868">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Francisco_Macedo_Aviso_da_Inexigibilidade_extrato_inex_16_2022_b9bb5049-e03d-453f-9b8b-7332db14b90e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 06 - DEMONSTRATIVO SIMPLIFICADO /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>264C195A864C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="264C195A864C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31056/anexo-06-demonstrativo-simplificado-barra-d-alcantara-28877">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Barra_DAlcantara_Relatorios_de_gestao_fiscal_anexo_06_demonstrativo_simplificado_f9c743ae-473d-468f-a73e-b293fba052c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B89E9DB17734
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B89E9DB17734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31057/anexo-01-balanco-orcamentario-barra-d-alcantara-28878">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_1dbf18ad-182c-4f79-a1b6-58d974434a6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 03 - RECEITA CORRENTE LÍQUIDA /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>610306F1E18E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="610306F1E18E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31059/anexo-03-receita-corrente-liquida-barra-d-alcantara-28880">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_03_receita_corrente_liquida_33363da0-2448-43c1-9503-db36ab6857c9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 06/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE10814EEC8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE10814EEC8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-06-2022-itaueira-28917">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Camara_Itaueira_Portarias_portaria_06_2022_e6a49541-0646-4093-8e51-81727feec861.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C58AD5CB45224
+<br/><br/>
+<a class="fileDoc" data-file-hash="C58AD5CB45224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31125/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_9ce71a1b-ecff-4da5-9527-d9eb435229c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4E69EC500934
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4E69EC500934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31126/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_b07bf8c2-3e01-4e58-9ef3-b2c8948d44aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E305D52A0D1F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E305D52A0D1F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31127/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_cec9684b-2116-45ef-b136-0d5a2d416f05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2613BE2FFCEE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2613BE2FFCEE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31128/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_3b28f795-c405-4eb7-a82f-ece95252528f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>826416A27C944
+<br/><br/>
+<a class="fileDoc" data-file-hash="826416A27C944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31129/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_2dbde955-fec3-4f0c-9610-17e27188f6a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3139856B8F6E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3139856B8F6E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31130/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_b0729eba-d919-47a2-814f-29d489ce777c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF5AA949144C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF5AA949144C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31131/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_ef057792-1d56-4c17-be3c-abf77df802b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>440AEA85C6E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="440AEA85C6E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31132/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_946203a5-caf4-4c62-880a-8eed68b13ca4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5F47833CD9F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5F47833CD9F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31133/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_72637eea-7d66-4254-9f58-a508fd88329e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13216674057C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="13216674057C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31134/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_4598c845-537a-4cfa-befa-d8d11d2bf19e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>827B63574F3E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="827B63574F3E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31135/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_f7ac9254-ff75-4a3b-ba68-cd10f6b44243.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7AE1B64FED64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7AE1B64FED64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31136/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_9ea7bb47-b267-46ff-aaa3-9a6f81356302.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO BIMESTRAL /
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A781FE19136A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A781FE19136A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/31137/lrf-rreo-bimestral-caraubas-do-piaui-28946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Atos_lrf_rreo_bimestral_dc377cd8-dbb4-4bc1-b3da-d2b5ede45c05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 001/2022 - SEMED
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2AFC15C3A75A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2AFC15C3A75A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-001-2022-semed-santa-rosa-do-piaui-28940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Santa_Rosa_do_Piaui_Portarias_portaria_n_001_2022_semed_f464c44c-092d-4990-995a-90f73fc4cc30.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de licitação
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F62E6DA6C12B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F62E6DA6C12B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-caraubas-do-piaui-28977">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_cb74aa52-5b42-479f-bdd6-c5a04999bd61.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 227/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>13D561859F514
+<br/><br/>
+<a class="fileDoc" data-file-hash="13D561859F514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-227-2022-currais-28944">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Currais_Portarias_portaria_227_2022_4d637ba4-115f-4158-85d9-53b7f93e2fe6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+REVOGA LICENÇA
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C312BEE1B6C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="C312BEE1B6C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/revoga-licenca-monsenhor-gil-28912">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Monsenhor_Gil_Decretos_revoga_licenca_49c0a800-10e4-43d5-aaab-6a8c9abfa91b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 07/2022
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A60DADE51434
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A60DADE51434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-07-2022-itaueira-28919">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Camara_Itaueira_Portarias_portaria_07_2022_5bc09767-cd8f-469a-8068-893f462fdcf9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=478&amp;q[flag_doc_diario_true]=1">
+334
+</a>
+-
+2022
+</td>
+<td class="">
+Lei 274-2022 - terra pronta - aragem
+</td>
+<td class="text-center">
+11-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>B14A519A75F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="B14A519A75F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-274-2022-terra-pronta-aragem-marcos-parente-28907">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/10/DOP_EDICAO__11-10-2022_ED_334_Prefeitura_Marcos_Parente_Leis_lei_274_2022_terra_pronta_aragem_38513e18-d0a5-41a7-931d-0f6fb0766c4a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

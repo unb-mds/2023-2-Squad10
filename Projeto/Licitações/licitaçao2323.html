@@ -1,0 +1,1481 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO DA LICITAÇÃO PE Nº 003/2022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C7FC7F358984
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C7FC7F358984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-da-licitacao-pe-n-003-2022-floriano-28175">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Camara_Floriano_Aviso_da_Homologacao_termo_de_homologacao_da_licitacao_pe_n_003_2022_6adbf9ed-009e-4f84-a62b-460880114e34.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 014-2021- JUVENAL MACHADO DE ARAÚJO
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>BCCFA29DB5C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="BCCFA29DB5C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-014-2021-juvenal-machado-de-araujo-floriano-28239">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Outros_termo_apostilamento_contrato_n_014_2021_juvenal_machado_de_araujo_86e8d4f4-8017-4044-b545-472028ab7514.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato 112022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Novo Oriente do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7AEF5FB14E324
+<br/><br/>
+<a class="fileDoc" data-file-hash="7AEF5FB14E324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-112022-novo-oriente-do-piaui-28133">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Camara_Novo_Oriente_do_Piaui_Extrato_extrato_contrato_112022_50b642e5-1c53-426d-9ba8-1623aadb7317.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 015-2021- LENILDO PEREIRA DOS SANTOS
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>206A503C69CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="206A503C69CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-015-2021-lenildo-pereira-dos-santos-floriano-28240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Outros_termo_apostilamento_contrato_n_015_2021_lenildo_pereira_dos_santos_88e7879e-dd6a-476c-9416-09ed40501799.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato 102022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Novo Oriente do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E62A78D842134
+<br/><br/>
+<a class="fileDoc" data-file-hash="E62A78D842134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-102022-novo-oriente-do-piaui-28132">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Camara_Novo_Oriente_do_Piaui_Extrato_extrato_contrato_102022_5409d4b5-f6d0-4961-ba63-b36baabeab1d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato 092022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Novo Oriente do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D948CE6F6754
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D948CE6F6754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-092022-novo-oriente-do-piaui-28131">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Camara_Novo_Oriente_do_Piaui_Extrato_extrato_contrato_092022_2b65bdf6-f660-484f-9354-5cfda77dd73e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 022-2021 -ROSIMAR SILVA DA COSTA
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE0D261E55B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE0D261E55B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-022-2021-rosimar-silva-da-costa-floriano-28247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Outros_termo_apostilamento_contrato_n_022_2021_rosimar_silva_da_costa_e7f0b83b-5168-4511-a68a-5c20ed43ab3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+registro de preço
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E89F6BE51FF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="E89F6BE51FF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/registro-de-preco-caraubas-do-piaui-28206">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Caraubas_do_Piaui_Atos_registro_de_preco_fd29a2ab-9432-406d-a6be-9a6746684583.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+Licença Prêmio Iva Conrado
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos de pessoal
+</td>
+<td class="text-center">
+<strong>ID: </strong>0214822FD40C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0214822FD40C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-premio-iva-conrado-dom-expedito-lopes-28121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Dom_Expedito_Lopes_Outros_atos_de_pessoal_licenca_premio_iva_conrado_baf4cb43-102e-46d6-a5e7-cf0525e6a80a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+portaria
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3AA834C65D454
+<br/><br/>
+<a class="fileDoc" data-file-hash="3AA834C65D454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-caraubas-do-piaui-28209">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Caraubas_do_Piaui_Portarias_portaria_a49307e0-1d73-47f3-a048-0612ce4f037e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE 21/2022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>99C0EE476D5A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="99C0EE476D5A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-21-2022-landri-sales-28140">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Landri_Sales_Aviso_de_licitacao_aviso_pe_21_2022_c95a07b9-52de-4624-b261-f270b3da60f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 024-2021 -VALDEIR DE JESUS BARBOSA
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>12A07C6C0E124
+<br/><br/>
+<a class="fileDoc" data-file-hash="12A07C6C0E124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-024-2021-valdeir-de-jesus-barbosa-floriano-28249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Outros_termo_apostilamento_contrato_n_024_2021_valdeir_de_jesus_barbosa_5525a70b-ba17-4118-a8a9-5a515ec0d8ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+ERRTADO DO TERMO DE RATIFICAÇÃO
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B853265D7F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B853265D7F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errtado-do-termo-de-ratificacao-amarante-28142">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Amarante_Errata_errtado_do_termo_de_ratificacao_0662fd6d-a249-474c-bc54-e32ad7c786cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3756A57B90884
+<br/><br/>
+<a class="fileDoc" data-file-hash="3756A57B90884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30212/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_1cfe15a1-d736-46c0-8716-dec9d9f4f01d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8CC897383C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8CC897383C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30213/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_bedbdd84-d874-4a78-9f52-eef9328e3c28.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9BFF2AAF4CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9BFF2AAF4CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30214/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_638ee871-866a-404d-ad79-83a531f97155.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8130A6B5F0EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8130A6B5F0EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30215/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_9c19fc14-4a43-4a9c-bf02-688ca51bd67e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>018E75374F664
+<br/><br/>
+<a class="fileDoc" data-file-hash="018E75374F664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30216/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_255d6424-e93f-474d-b302-1aa4079a53c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>179084BCF5BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="179084BCF5BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30217/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_235d2c4d-3d81-4fd8-8275-fadf089500fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6A4858EBB804
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6A4858EBB804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30218/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_81f50010-ea42-432a-be63-9ba006774eef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BF53BF01D53C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BF53BF01D53C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30219/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_3c79db34-d4c0-4467-b9f4-475b3f230b3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCB6F874FBAF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCB6F874FBAF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30220/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_93f4665c-84a9-4931-a0f8-23b8586434bd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, ref. ao 4º Bimestre/2022 /
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>63BC77711F4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="63BC77711F4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30221/rreo-ref-ao-4-bimestre-2022-floriano-28145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_4_bimestre_2022_46705f1e-0900-4908-a1b8-e4f8e067ec01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 018-2021- MAURICIO STÊNIO CARVALHO
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>61A4CF04441E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="61A4CF04441E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-018-2021-mauricio-stenio-carvalho-floriano-28243">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Floriano_Outros_termo_apostilamento_contrato_n_018_2021_mauricio_stenio_carvalho_9296e83d-4dff-4f3e-a468-73a5478877b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>93F0F1CC8CFC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="93F0F1CC8CFC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-28204">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_4fc06bcf-cb16-4f0c-9375-09dd532744e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 187
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E55AA334CFA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="E55AA334CFA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-187-ipiranga-do-piaui-28136">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_187_10cc4651-1a48-49a6-8cf8-c629d2a72cf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 94.2020
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>57B62F320B464
+<br/><br/>
+<a class="fileDoc" data-file-hash="57B62F320B464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-94-2020-dom-expedito-lopes-28117">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Dom_Expedito_Lopes_Portarias_portaria_n_94_2020_c5e6ad64-e8a7-4199-bd10-61ef3262a3ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+extrato 239
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C394410D81B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C394410D81B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-239-itaueira-28154">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Itaueira_Extrato_extrato_239_bd0505b7-6d18-4f23-a45c-d3797a65a701.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO DL Nº 016/2022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>839E6AF0BFFE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="839E6AF0BFFE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dl-n-016-2022-colonia-do-piaui-28160">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Colonia_do_Piaui_Aviso_de_Ratificacao_termo_de_ratificacao_dl_n_016_2022_8cf15c26-c080-4999-8e54-ee510ab09227.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 25-2022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCA1448047254
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCA1448047254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-25-2022-queimada-nova-28181">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Queimada_Nova_Decretos_decreto_25_2022_a2034bf9-2ac3-4d1e-aefa-6da7256551bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 237-2022
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC221E63C2F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC221E63C2F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-237-2022-oeiras-28173">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Oeiras_Portarias_portaria_n_237_2022_0a18995b-a630-4bc3-b41e-31fe9535b24f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=466&amp;q[flag_doc_diario_true]=1">
+326
+</a>
+-
+2022
+</td>
+<td class="">
+TR IPL 006 - Festejos São Francisco
+</td>
+<td class="text-center">
+29-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA5E6C798BB34
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA5E6C798BB34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tr-ipl-006-festejos-sao-francisco-hugo-napoleao-28135">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/28/DOP_EDICAO__29-9-2022_ED_326_Prefeitura_Hugo_Napoleao_Aviso_de_Ratificacao_tr_ipl_006_festejos_sao_francisco_9673830c-4cad-43e5-90b1-f06203dc4e7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1457 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LEI N-004-2022
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1CC5C21074D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1CC5C21074D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-004-2022-hugo-napoleao-9226">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Hugo_Napoleao_Leis_lei_n_004_2022_1be469d6-3124-4fe5-8b5e-683dca11a7dd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+PP 001 2021 Extrato de Aditivo de Contrato
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BC45F44B42A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BC45F44B42A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pp-001-2021-extrato-de-aditivo-de-contrato-wall-ferraz-9228">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Wall_Ferraz_Extrato_pp_001_2021_extrato_de_aditivo_de_contrato_7fd01e29-867a-4920-a42f-cc0b034f3aad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+VETO A EMENDA
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Veto
+</td>
+<td class="text-center">
+<strong>ID: </strong>9540ECFD6A2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9540ECFD6A2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/veto-a-emenda-hugo-napoleao-9219">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Hugo_Napoleao_Veto_veto_a_emenda_5ea96c2c-2ce0-41bc-b22a-69212d80290c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB75C7F207964
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB75C7F207964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9680/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_128b74e4-bdaf-4e25-8ef5-64368b31c522.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E102B82BE674
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E102B82BE674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9681/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_461426ea-0dcc-495b-ae42-6917512d9c61.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9038FFB5F9964
+<br/><br/>
+<a class="fileDoc" data-file-hash="9038FFB5F9964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9682/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_231cc69c-2e34-4fdf-b007-d0e240797cac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>74431A1080864
+<br/><br/>
+<a class="fileDoc" data-file-hash="74431A1080864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9683/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_388076d4-619b-4a96-b6f2-5aa708e5e25d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>119B3612F8304
+<br/><br/>
+<a class="fileDoc" data-file-hash="119B3612F8304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9684/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_8bcaf269-2fd4-4783-92f1-fb4b86b73d63.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>54530D4A431A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="54530D4A431A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9685/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_f4fcad48-3ae7-4d4f-9300-e91b660ac2bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE45C5DE399F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE45C5DE399F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9686/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_d91abc43-8793-47c2-8cbf-aaf4a954ff7e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E1B2D7404E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E1B2D7404E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9687/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_b5be0662-f2c5-4f26-b3aa-d8442c7c1476.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42957414D1634
+<br/><br/>
+<a class="fileDoc" data-file-hash="42957414D1634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9688/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_87e1268a-585c-45d4-a4cd-20a7fa07ba5d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>39673CA07DAF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="39673CA07DAF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9689/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_214e8175-bfbb-41df-b985-949efa7270f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4CC63EB158E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4CC63EB158E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9690/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_115cb127-99fc-4edd-b1c4-431555462411.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C18E455E7F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C18E455E7F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9691/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_5a21301b-4557-47f7-9056-98748d6d12ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CCCF0F7E2DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CCCF0F7E2DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9692/lrf-rreo-caxingo-9214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rreo_f6c1a84c-ceb8-4725-a37f-e8dcfac89276.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LEI N-001-2022
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0030D1396064
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0030D1396064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-001-2022-hugo-napoleao-9218">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Hugo_Napoleao_Leis_lei_n_001_2022_84fae86c-86b7-458e-a468-1b38852ea89d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2EA3C02DA8F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2EA3C02DA8F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9696/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_a7eb2fc3-09bb-4f63-8db6-4f03842f800f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F51E344A2494
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F51E344A2494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9697/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_9cbe1304-da71-46d6-b77b-450a504871dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B0534E8E8884
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B0534E8E8884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9698/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_15bc841b-e078-4650-9d0e-5e0d4eef4af6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>32B8EA2111264
+<br/><br/>
+<a class="fileDoc" data-file-hash="32B8EA2111264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9699/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_82d4164c-e960-4b08-b6c9-3df786222eeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04ABB503389B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="04ABB503389B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9700/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_621b178a-d46e-4237-ab09-e6cf79e47d33.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RGF /
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1C7A52EA0644
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1C7A52EA0644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9701/lrf-rgf-caxingo-9216">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Caxingo_Leis_lrf_rgf_1266c259-52cb-4993-8667-e2e77ab5549c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+2º ADITIVO INEXIGIBILIDADE Nº 001-2018
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>80637E0F54C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="80637E0F54C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-aditivo-inexigibilidade-n-001-2018-conceicao-do-caninde-9116">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Conceicao_do_Caninde_Extrato_2_aditivo_inexigibilidade_n_001_2018_5c2260d7-b982-4028-8b3c-95e489ef77df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Adjudicação PP 011/2022
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>34E0776CA05B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="34E0776CA05B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pp-011-2022-pimenteiras-9206">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Pimenteiras_Aviso_da_Adjudicacao_termo_de_adjudicacao_pp_011_2022_836c92fa-605f-4d6a-9a5f-91f6dff55edb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Republicar
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B75260A5A524
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B75260A5A524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-republicar-buriti-dos-lopes-9157">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_republicar_b1062d64-eea7-4ef5-a6bc-5f929a76d29b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Republicar
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>91AB7B4BCDE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="91AB7B4BCDE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-republicar-buriti-dos-lopes-9158">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_republicar_1bc87e5f-d740-4949-a11a-df93219b3699.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+Despacho de Ratificação do contrato n.042.2022, dispensa 013.2022
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8CDFCA45BB524
+<br/><br/>
+<a class="fileDoc" data-file-hash="8CDFCA45BB524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-ratificacao-do-contrato-n-042-2022-dispensa-013-2022-barra-d-alcantara-9224">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Barra_DAlcantara_Aviso_de_Ratificacao_despacho_de_ratificacao_do_contrato_n_042_2022_dispensa_013_2022_3cf14cd7-f0cc-490d-be55-11aebfb1402d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Republicar
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>65C1F7E375DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="65C1F7E375DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-republicar-buriti-dos-lopes-9156">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_republicar_c5887506-784f-411d-b7dc-4c579b1bf5cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=253&amp;q[flag_doc_diario_true]=1">
+178
+</a>
+-
+2022
+</td>
+<td class="">
+2º termo aditivo ao Contrato da TP 007/2021
+</td>
+<td class="text-center">
+28-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>31990088603F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="31990088603F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-termo-aditivo-ao-contrato-da-tp-007-2021-buriti-dos-montes-9212">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__28-2-2022_ED_178_Prefeitura_Buriti_dos_Montes_Aviso_do_Termo_Aditivo_2_termo_aditivo_ao_contrato_da_tp_007_2021_cb364138-9316-4f9f-9ad1-8bf90c8f76db.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

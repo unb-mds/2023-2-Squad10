@@ -1,0 +1,1538 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B0F17BDEEA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B0F17BDEEA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58366/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_8c139b7f-2cee-4cfa-b564-e45536672403.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3155449570274
+<br/><br/>
+<a class="fileDoc" data-file-hash="3155449570274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58367/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_ae0a488e-62c8-424f-bb0f-929f715b4723.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFF3A243B9724
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFF3A243B9724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58368/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_4c985863-f634-46bb-a42b-776c47e7d2de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DEE02DB6C2CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DEE02DB6C2CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58369/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_a2b91e07-ffb0-4faa-8b73-603486c88f73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>157D5C4D68BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="157D5C4D68BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58370/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_d7008fe6-5974-4c4e-bf56-2c1475ea63c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>628FD3A06E524
+<br/><br/>
+<a class="fileDoc" data-file-hash="628FD3A06E524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58371/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_68e0bda8-976b-439d-b8dc-1a773f014e85.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>20E83E56F2534
+<br/><br/>
+<a class="fileDoc" data-file-hash="20E83E56F2534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58372/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_8c9a4082-ad1b-4b1a-a627-330d0f935509.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B7F9DE757CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B7F9DE757CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58373/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_259bda94-d4d1-4222-88b8-377cb83c2d4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7699ED251D834
+<br/><br/>
+<a class="fileDoc" data-file-hash="7699ED251D834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58374/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_cf652d3f-34df-47a9-93fa-ffdbb17c2cad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C41C86A2A824
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C41C86A2A824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58375/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_20755545-41b1-4b86-a25b-cf17745c722b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE97976DB1E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE97976DB1E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58376/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_c1320c32-1aeb-49f7-9431-f130bf8e9d7d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F04EB4F46D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F04EB4F46D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58377/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_37478ab6-8369-4051-b19c-c3e8f1059262.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - RREO /
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>535EEABDF5804
+<br/><br/>
+<a class="fileDoc" data-file-hash="535EEABDF5804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/58378/rgf-rreo-sao-joao-da-fronteira-54509">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_resumidos_da_execucao_orcamentaria_rgf_rreo_ad48d217-ca10-4e53-bf9a-3cb1519cc68a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+Portarias N 033/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8D05C52697B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="8D05C52697B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-n-033-2023-coivaras-54513">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Coivaras_Portarias_portarias_n_033_2023_468f3e76-6f0b-4f7d-91e1-474169debbd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+decreto 010-2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9145EFE18054
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9145EFE18054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-010-2023-ipiranga-do-piaui-54508">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Ipiranga_do_Piaui_Decretos_decreto_010_2023_6a321403-c15a-4896-a0bf-26d36826eff3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 27/2023 - CPL
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>605152760D6A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="605152760D6A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-27-2023-cpl-landri-sales-54514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Landri_Sales_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_27_2023_cpl_9652348a-9351-4916-b6f9-db520d496648.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 02/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F90422E88FD94
+<br/><br/>
+<a class="fileDoc" data-file-hash="F90422E88FD94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-02-2023-campinas-do-piaui-54504">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Campinas_do_Piaui_Decretos_decreto_02_2023_b4914383-5418-4857-814c-6f9806f56770.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EC DPL 009 - Pescado
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>93FFEB36C5414
+<br/><br/>
+<a class="fileDoc" data-file-hash="93FFEB36C5414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-dpl-009-pescado-lagoinha-do-piaui-54503">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Contrato_ec_dpl_009_pescado_74a409b1-bad0-46be-a71f-9456b368a47c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+TR DPL 008 - Urnas Funerárias
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DFB0A345D484
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DFB0A345D484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tr-dpl-008-urnas-funerarias-lagoinha-do-piaui-54501">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Lagoinha_do_Piaui_Aviso_de_Ratificacao_tr_dpl_008_urnas_funerarias_64e595fa-db1f-4059-b2d2-3e76ac7c3ea7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+in 001
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E95F5BDF71294
+<br/><br/>
+<a class="fileDoc" data-file-hash="E95F5BDF71294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/in-001-luis-correia-54471">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Luis_Correia_Aviso_da_Homologacao_in_001_0e4e6f63-c25a-4327-8870-fe5be071294b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+PE 01
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>7924013219924
+<br/><br/>
+<a class="fileDoc" data-file-hash="7924013219924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-01-luis-correia-54467">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Luis_Correia_Aviso_da_Homologacao_pe_01_9d0f7c42-73a4-4bb5-b709-7998945b6141.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXT. CONTRATO PE Nº 08/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C28C768B06544
+<br/><br/>
+<a class="fileDoc" data-file-hash="C28C768B06544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ext-contrato-pe-n-08-2023-demerval-lobao-54493">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Aviso_do_extrato_de_contrato_ext_contrato_pe_n_08_2023_3829a043-2a2e-4719-9276-f18c3197ee76.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO ATA PE Nº 08/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B604C3967F3D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B604C3967F3D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-pe-n-08-2023-demerval-lobao-54492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Extrato_extrato_ata_pe_n_08_2023_892e063b-131e-4c17-976e-924c1310ef5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+HOM PE Nº 08/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C76583183D374
+<br/><br/>
+<a class="fileDoc" data-file-hash="C76583183D374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/hom-pe-n-08-2023-demerval-lobao-54491">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Aviso_da_Homologacao_hom_pe_n_08_2023_c509e608-c44b-420d-81c1-f0a5d226dc08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+ADJ PE Nº 08/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>229C5761E75B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="229C5761E75B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adj-pe-n-08-2023-demerval-lobao-54490">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Aviso_da_Adjudicacao_adj_pe_n_08_2023_fae07da3-9a81-42fe-89c7-c92d281f0ac8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO PE Nº 06/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BEB9F03BB83A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BEB9F03BB83A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-pe-n-06-2023-demerval-lobao-54488">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Aviso_do_extrato_de_contrato_extrato_contrato_pe_n_06_2023_29278f45-c4ef-4cad-885e-7574fbc55795.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO ATA PE Nº 06/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>772424D1E38B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="772424D1E38B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-pe-n-06-2023-demerval-lobao-54487">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Extrato_extrato_ata_pe_n_06_2023_a02343c8-2c62-4151-97e2-05927e6704d2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+ADJ PE Nº 06/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso da adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC4CB71BACF34
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC4CB71BACF34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adj-pe-n-06-2023-demerval-lobao-54485">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Demerval_Lobao_Aviso_da_adjudicacao_adj_pe_n_06_2023_e7eb6fb0-15a7-4176-bd99-e9e793f5b7fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+TP007.2021 - EXTRATO DE 1º ADITIVO AO CONTRATO Nº 185.2021
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>088DF031EA8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="088DF031EA8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp007-2021-extrato-de-1-aditivo-ao-contrato-n-185-2021-sao-jose-do-divino-54498">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Sao_Jose_do_Divino_Extrato_tp007_2021_extrato_de_1_aditivo_ao_contrato_n_185_2021_7bd5720a-3c2d-484b-9838-ec2c3d55e0f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO Nº 001/2023 - CMDCA
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>A22F0AD062F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A22F0AD062F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-001-2023-cmdca-jardim-do-mulato-54458">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Jardim_do_Mulato_Resolucoes_resolucao_n_001_2023_cmdca_9dacc444-3ffc-4176-8292-7554c004b44b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EC DPL 008 - Urnas Funerárias
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>56663B27850E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="56663B27850E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-dpl-008-urnas-funerarias-lagoinha-do-piaui-54500">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Contrato_ec_dpl_008_urnas_funerarias_db69a963-bbb6-4b76-865a-86a6464a6669.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO DSP 005-2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>591002F119634
+<br/><br/>
+<a class="fileDoc" data-file-hash="591002F119634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-dsp-005-2023-queimada-nova-54443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_contrato_dsp_005_2023_d1428cf0-828e-4212-badf-0def37f42a97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=654&amp;q[flag_doc_diario_true]=1">
+452
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do Contrato n° 0404202301/2023
+</td>
+<td class="text-center">
+05-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DF30CCE42AE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="DF30CCE42AE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-0404202301-2023-alvorada-do-gurgueia-54517">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/4/DOP_EDICAO__5-4-2023_ED_452_Prefeitura_Alvorada_do_Gurgueia_Aviso_do_extrato_de_contrato_extrato_do_contrato_n_0404202301_2023_7057fcac-63e0-4135-8884-5f0b6b79bd03.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

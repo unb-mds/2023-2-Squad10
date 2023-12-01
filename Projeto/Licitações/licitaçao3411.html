@@ -1,0 +1,1340 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>55BE7F7AC4144
+<br/><br/>
+<a class="fileDoc" data-file-hash="55BE7F7AC4144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2243/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_c781a2a3-fa86-4fa4-8e85-f62f80fd9d49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED48FE7E4EDD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED48FE7E4EDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2244/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_ca9f93f7-510c-42b7-84c3-82f8fe658918.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C79B5D396E1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C79B5D396E1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2245/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_348c3644-bee7-44d8-9b8e-8097a43754ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A5A98F6AB1504
+<br/><br/>
+<a class="fileDoc" data-file-hash="A5A98F6AB1504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2246/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_544f74f9-867b-4431-91e3-83f54d29f462.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>26B77DF3430A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="26B77DF3430A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2247/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_41c912a5-8089-4d20-942e-fa4b1268b6f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RGF PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3784AF9E8F634
+<br/><br/>
+<a class="fileDoc" data-file-hash="3784AF9E8F634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2248/rgf-pmbl-buriti-dos-lopes-2121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_pmbl_81d5f9f7-7f19-4001-926d-6a8e7609563c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>203831E7859E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="203831E7859E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2231/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_f50763b0-919f-4149-9215-3dbe904fce28.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C7B992DD3724
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C7B992DD3724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2232/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_d379280f-6ee2-4bef-870d-f82674bd6f4f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCDC04300EED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCDC04300EED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2233/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_1dc43747-9f41-4f2d-9802-e1bf51bad38f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2DF0BCF9E9E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="2DF0BCF9E9E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2234/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_35859a3d-feea-4ee1-b40c-9073083a73ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C606F0B0AFA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C606F0B0AFA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2235/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_eb2b83a8-631d-4638-8942-6c88363e1ea9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCCAA98344EF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCCAA98344EF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2236/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_bb4b3ea1-82bc-4dad-a8fa-95e293888bc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2AD8893CE2484
+<br/><br/>
+<a class="fileDoc" data-file-hash="2AD8893CE2484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2237/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_28f348ae-bd90-4bde-bf96-10419ec7603d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C57FDC4DA914
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C57FDC4DA914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2238/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_24600827-f601-41aa-956a-dfd38f35a1e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D83F6072EC44
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D83F6072EC44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2239/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_d79945a1-ed02-48f2-842d-cc9902cf29e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11A1166E172D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="11A1166E172D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2240/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_ec552507-2576-49c9-b093-8d6404f179f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E167307F1364
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E167307F1364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2241/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_9424c56a-06b6-40ee-b133-350ad330ca5e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+RREO PMBL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C07ED6B7D8604
+<br/><br/>
+<a class="fileDoc" data-file-hash="C07ED6B7D8604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2242/rreo-pmbl-buriti-dos-lopes-2120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_pmbl_9d4df76c-0838-49eb-ad90-a647fda2cf40.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+DESPESA DE PESSOAL /
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>54D8B4C3C7E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="54D8B4C3C7E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2230/despesa-de-pessoal-batalha-2119">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Camara_Batalha_Relatorios_de_gestao_fiscal_despesa_de_pessoal_ed5826d9-8e44-4315-8f28-fb3e88bb3b48.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+PORTARIA N.098/2021
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A4D0262BB224
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A4D0262BB224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-098-2021-angical-do-piaui-2111">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Angical_do_Piaui_Portarias_portaria_n_098_2021_8a4c5b7a-7c44-4048-ba69-4d0b8c7608a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+PROJETO VEREADOR MIRIM
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>B43E1C2251EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B43E1C2251EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-vereador-mirim-monsenhor-gil-2113">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Camara_Monsenhor_Gil_Resolucoes_projeto_vereador_mirim_9174a6a5-11f8-4d7c-959c-25e15202dff7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato de Contrato PP 030-B/2021
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A623A55281644
+<br/><br/>
+<a class="fileDoc" data-file-hash="A623A55281644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pp-030-b-2021-pimenteiras-2112">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_pp_030_b_2021_661a96a4-64ac-45ae-822b-43cb91f3360d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+Projeto de Lei 020/2021
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Tapuio
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>470BA42063F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="470BA42063F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-020-2021-sao-miguel-do-tapuio-2109">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Camara_Sao_Miguel_do_Tapuio_Projeto_de_lei_projeto_de_lei_020_2021_91e15af5-3eea-4e4d-9e13-98bfbd663e6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+Decreto 25
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7620DA94D56F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7620DA94D56F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-25-buriti-dos-lopes-2118">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_25_d117f98c-d184-405c-b813-4410af5f50e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+Decreto 24
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>479F368C482A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="479F368C482A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-24-buriti-dos-lopes-2117">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_24_80e650ac-026f-4453-98b8-a7eb5305d879.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato de Contrato PP 030-C/2021
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>53E127B333F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="53E127B333F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pp-030-c-2021-pimenteiras-2116">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_pp_030_c_2021_5c6e53f1-d181-4af9-a935-db586288cbb0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=129&amp;q[flag_doc_diario_true]=1">
+092
+</a>
+-
+2021
+</td>
+<td class="">
+JULGAMENTO DE HABILITAÇÃO TP 011
+</td>
+<td class="text-center">
+27-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>E24B1132E84C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E24B1132E84C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-de-habilitacao-tp-011-itaueira-2115">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/26/DOP_EDICAO_092_Prefeitura_Itaueira_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_julgamento_de_habilitacao_tp_011_ce7eb8ce-efac-4ad7-b250-60bfbbb31e66.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

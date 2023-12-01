@@ -1,0 +1,1287 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO nº. 040/2022 PROC. ADM. DE ADESÃO SRP/PMPF-PI N°. 046/2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2BC4F0019A04
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2BC4F0019A04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-040-2022-proc-adm-de-adesao-srp-pmpf-pi-n-046-2022-rio-grande-do-piaui-23707">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Rio_Grande_do_Piaui_Extrato_contrato_n_040_2022_proc_adm_de_adesao_srp_pmpf_pi_n_046_2022_11e8d5aa-1156-4c3a-8af2-2ecd07673742.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO B. MEDICAMENTOS PE 024-22
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EAF6537164FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EAF6537164FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-b-medicamentos-pe-024-22-tanque-do-piaui-23716">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_b_medicamentos_pe_024_22_44a01597-007d-4569-a059-661b4e3b941b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+ADJUDICAÇÃO Dispensa de Licitação nº. 019/2022 Processo Administrativo nº. 041/2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7569377F0C094
+<br/><br/>
+<a class="fileDoc" data-file-hash="7569377F0C094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-dispensa-de-licitacao-n-019-2022-processo-administrativo-n-041-2022-rio-grande-do-piaui-23708">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Rio_Grande_do_Piaui_Extrato_adjudicacao_dispensa_de_licitacao_n_019_2022_processo_administrativo_n_041_2022_5c48ef6b-2ad7-4271-a7cf-5a4dadcc5616.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO Dispensa de Licitação nº. 019/2022 Processo Administrativo nº. 041/2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8250ED39BC944
+<br/><br/>
+<a class="fileDoc" data-file-hash="8250ED39BC944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-dispensa-de-licitacao-n-019-2022-processo-administrativo-n-041-2022-rio-grande-do-piaui-23709">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Rio_Grande_do_Piaui_Extrato_ratificacao_dispensa_de_licitacao_n_019_2022_processo_administrativo_n_041_2022_e87def22-fad6-4f14-b61c-924c438b5ab5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 286
+</td>
+<td class="text-center dopcom">
+03-08-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="6A5546B8542B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-286-piaui-23610/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_CADERNO_a____diario_oficial_completo_edicao_286_ed57e4a7-26a6-4959-9d8b-598b2052f499.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E96C08C8CE374
+<br/><br/>
+<a class="fileDoc" data-file-hash="E96C08C8CE374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25157/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_7449c1cb-e8de-4875-ac9d-a7707cf82042.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>562238163BCD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="562238163BCD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25158/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_340ec638-6b32-4fa6-ad04-d5c784bb6401.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD949A0B721A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD949A0B721A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25159/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_5eb9f290-54f5-404d-ad6a-ca3ff9d5007f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DB68B36CAEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DB68B36CAEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25160/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_ea84e240-a19c-4033-92f7-d3b44250bc18.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EACCD99805A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="EACCD99805A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25161/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_a45ac8dc-cf60-4f77-961c-edc7f78b3789.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>20D9648E09884
+<br/><br/>
+<a class="fileDoc" data-file-hash="20D9648E09884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25162/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_c55b2529-2b67-4f32-bfeb-01fa43374ad1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC56363743D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC56363743D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25163/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_63a16978-6c33-4258-828c-cb400ad2553b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA2ECC5865294
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA2ECC5865294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25164/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_2cfb57d8-8fd2-47f9-9070-93c8027d177e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE949A507C834
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE949A507C834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25165/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_f66302d0-18a7-470f-a06e-79f493a3f601.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>22F3B322F4274
+<br/><br/>
+<a class="fileDoc" data-file-hash="22F3B322F4274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25166/rreo-3-bimestre-2022-sao-pedro-do-piaui-23506">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_2022_250f246f-924e-4f15-9c91-4366eb46370e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 09, DE 01 DE MARÇO DE 2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C75EF3D810E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C75EF3D810E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-09-de-01-de-marco-de-2022-alvorada-do-gurgueia-23479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Alvorada_do_Gurgueia_Decretos_decreto_n_09_de_01_de_marco_de_2022_6ba627c2-0455-40cd-9380-2b82f5d187b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 23 , DE 01 DE JUNHO DE 2022 - LEI N.246
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A845214FA5EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A845214FA5EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-23-de-01-de-junho-de-2022-lei-n-246-beneditinos-23490">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Beneditinos_Decretos_decreto_n_23_de_01_de_junho_de_2022_lei_n_246_153224c8-3148-4623-885b-2707597ba504.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+Resultado
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>B8DA760F7B9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B8DA760F7B9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-demerval-lobao-23495">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Demerval_Lobao_Edital_de_Chamada_resultado_ab447da8-c821-4c8d-bbe7-a0838592365a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+CANCELAMENTO PREGÃO ELETRÔNICO Nº. 006/2022 Processo Administrativo nº. 037/2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso do cancelamento
+</td>
+<td class="text-center">
+<strong>ID: </strong>B083D42408244
+<br/><br/>
+<a class="fileDoc" data-file-hash="B083D42408244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cancelamento-pregao-eletronico-n-006-2022-processo-administrativo-n-037-2022-rio-grande-do-piaui-23483">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Rio_Grande_do_Piaui_Aviso_do_cancelamento_cancelamento_pregao_eletronico_n_006_2022_processo_administrativo_n_037_2022_f198eb64-7bd9-4580-8078-a41fd29ab927.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do contrato 064_2022 - PE 019_2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>97894F4ED3904
+<br/><br/>
+<a class="fileDoc" data-file-hash="97894F4ED3904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-064_2022-pe-019_2022-bocaina-23559">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Bocaina_Aviso_do_extrato_de_contrato_extrato_do_contrato_064_2022_pe_019_2022_6c033865-e31e-4ac6-97a7-3f4a56d0b899.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 097/2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>19629E2903C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="19629E2903C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-097-2022-floriano-23568">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Floriano_Decretos_decreto_097_2022_3103fdd9-db43-4702-8dbe-a38b8ce1fea3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+decisão de habilitação carta convite 003-2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Despachos
+</td>
+<td class="text-center">
+<strong>ID: </strong>967BE66456F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="967BE66456F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decisao-de-habilitacao-carta-convite-003-2022-conceicao-do-caninde-23557">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Conceicao_do_Caninde_Despachos_decisao_de_habilitacao_carta_convite_003_2022_bfe4b3e8-9d4b-4e89-a9d2-29b47a8e404f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+RETIFICAÇÃO AVISO PE 49-2022 aq. unif.- ret
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>176A3A976C6A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="176A3A976C6A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-aviso-pe-49-2022-aq-unif-ret-francisco-macedo-23477">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Francisco_Macedo_Aviso_de_licitacao_retificacao_aviso_pe_49_2022_aq_unif_ret_8999c0dd-934f-4f1a-8e37-baf03c254cb7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato PE 033 2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2C7AAA2EDFB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2C7AAA2EDFB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pe-033-2022-wall-ferraz-23575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_pe_033_2022_d345d47d-9dd0-498c-ac83-f5fcc86e38e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Adjudicação PE 033 2022
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFD99523404B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFD99523404B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-033-2022-wall-ferraz-23574">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Wall_Ferraz_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_033_2022_878d05a5-50f3-4ebb-abf9-fc2201d888c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N°24 DE 01 DE JUNHO DE 2022 LEI N 826
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A51D66FA0E0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A51D66FA0E0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-24-de-01-de-junho-de-2022-lei-n-826-landri-sales-23569">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Landri_Sales_Decretos_decreto_n_24_de_01_de_junho_de_2022_lei_n_826_e66649d1-ec86-4a78-b2ee-7aece6cafdc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=409&amp;q[flag_doc_diario_true]=1">
+286
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N°25 DE 20 DE JUNHO DE 2022 LEI N 832
+</td>
+<td class="text-center">
+03-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4EA581A8D1094
+<br/><br/>
+<a class="fileDoc" data-file-hash="4EA581A8D1094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-25-de-20-de-junho-de-2022-lei-n-832-landri-sales-23567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/2/DOP_EDICAO__3-8-2022_ED_286_Prefeitura_Landri_Sales_Decretos_decreto_n_25_de_20_de_junho_de_2022_lei_n_832_f90bfd6b-38b0-4c24-9b8a-9004ffe15585.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

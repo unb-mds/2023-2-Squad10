@@ -1,0 +1,1403 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 13
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>934ABE553B194
+<br/><br/>
+<a class="fileDoc" data-file-hash="934ABE553B194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-13-paqueta-76731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Paqueta_Portarias_portaria_13_f1719ade-1b72-485e-8c38-aea3169a43cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+HOMOLOGAÇÃO IN AVINE VINNY
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B6E5CF467744
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B6E5CF467744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-in-avine-vinny-luis-correia-76664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Luis_Correia_Aviso_da_Homologacao_homologacao_in_avine_vinny_9c2f9eb2-d1e9-42ae-ae53-5252272258cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 283
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>576BD95781E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="576BD95781E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-283-lagoa-do-barro-do-piaui-76656">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_283_84acded5-8832-49c4-88b3-e65b5e10e7db.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 051/2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C06279DB4A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C06279DB4A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-051-2023-wall-ferraz-76699">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Wall_Ferraz_Decretos_decreto_051_2023_4e723769-1155-4c75-a9c8-3426e223bc45.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATOS DE CONTRATO TESTE SELETIVO EDITAL 04/2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6EF939A5F5554
+<br/><br/>
+<a class="fileDoc" data-file-hash="6EF939A5F5554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extratos-de-contrato-teste-seletivo-edital-04-2023-alvorada-do-gurgueia-76667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Alvorada_do_Gurgueia_Extrato_extratos_de_contrato_teste_seletivo_edital_04_2023_cafa293b-5369-47d7-9f67-2ea17935f5e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Lei 854-2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C957AF65F164
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C957AF65F164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-854-2023-ipiranga-do-piaui-76654">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Ipiranga_do_Piaui_Leis_lei_854_2023_83d97837-515f-4383-81fe-1ff953725266.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO AO CONTRATO 053
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>E8634FBEE1CC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E8634FBEE1CC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-ao-contrato-053-lagoa-do-barro-do-piaui-76662">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_do_Termo_Aditivo_aditivo_ao_contrato_053_55bd9996-b256-45bc-b456-f324967619c6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Balanço orçamentário /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pedro Laurentino
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>84EE10CECFB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="84EE10CECFB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82243/balanco-orcamentario-pedro-laurentino-76670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Pedro_Laurentino_Relatorios_de_gestao_fiscal_balanco_orcamentario_f0c9136e-c85c-4a35-a069-46229f7e73d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3DB82AB878A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3DB82AB878A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82252/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_7cca16fc-e901-4555-bde0-100db2bfa898.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>29A2833B00A94
+<br/><br/>
+<a class="fileDoc" data-file-hash="29A2833B00A94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82253/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_e8f01754-01c6-42ff-bdc0-b756e199b5cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3956925B7D824
+<br/><br/>
+<a class="fileDoc" data-file-hash="3956925B7D824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82254/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_6f4cd468-82b3-4374-a1de-c4b0aa24299d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4FE7E3EC2A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4FE7E3EC2A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82255/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_e3ffeec6-6c6e-4f77-8440-301ba2fd91f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B6A8528D0C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B6A8528D0C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82256/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_36ca4c3d-bb57-42dc-b235-ba6549777e8b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C65FDC16B18B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C65FDC16B18B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82257/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_9185d689-1b97-440d-afb8-000e49ac78c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>553DBB4A5C284
+<br/><br/>
+<a class="fileDoc" data-file-hash="553DBB4A5C284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82258/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_b7476062-681b-4c5f-97b3-d0022d2de846.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA5EEA88A5D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA5EEA88A5D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82259/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_6adf1869-dcf8-490b-a30a-c8088fdab296.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BB8A5DDB3AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BB8A5DDB3AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/82260/relatorio-de-gestao-fiscal-landri-sales-76679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_2849335b-9a2a-4319-befb-3f31613cff87.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 096.2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>86D69928F6304
+<br/><br/>
+<a class="fileDoc" data-file-hash="86D69928F6304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-096-2023-nazaria-76653">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Nazaria_Portarias_portaria_096_2023_31bcd663-e2ee-43e7-b5bb-468021627c4a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 287
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0B4E60CE5F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0B4E60CE5F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-287-lagoa-do-barro-do-piaui-76660">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_287_42c664fa-11db-460d-97f6-b1382233ce7a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 286
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA33303EE6CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA33303EE6CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-286-lagoa-do-barro-do-piaui-76659">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_286_b16d193b-3f33-4b7e-94c9-e2e3baa4caaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 288
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBA0156130F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBA0156130F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-288-lagoa-do-barro-do-piaui-76661">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_288_0aec57af-5aaa-4310-b5c2-371741c4c3f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 131
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4EDB189725D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="4EDB189725D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-131-lagoa-do-barro-do-piaui-76721">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_131_0367d0e4-457b-4d1e-9aa2-281f91debc12.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE COOPERAÇÃO TÉCNICA Nº 03/2023 - CAJAZEIRAS DO PIAUÍ E SÃO JOSÉ DO PEIXE-PI
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Alvarás e demais atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8DC0D7C9115F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8DC0D7C9115F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-cooperacao-tecnica-n-03-2023-cajazeiras-do-piaui-e-sao-jose-do-peixe-pi-cajazeiras-do-piaui-76663">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Cajazeiras_do_Piaui_Alvaras_e_demais_atos_administrativos_termo_de_cooperacao_tecnica_n_03_2023_cajazeiras_do_p_53b412b6-a773-46ae-b4f5-103784a373d4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO PORTARIA 886-2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEFFF70B4AAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEFFF70B4AAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-portaria-886-2023-marcos-parente-76637">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Marcos_Parente_Resolucoes_resoluc_a_o_portaria_886_2023_14d18bc2-a91a-4763-ac6b-54e643e4f837.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Lei 855-2023
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>285CA84EEA0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="285CA84EEA0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-855-2023-ipiranga-do-piaui-76655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Ipiranga_do_Piaui_Leis_lei_855_2023_63a86c8e-a699-4d7e-bf8e-09354e3dbed1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+edital de convocação
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCCCE03BFE524
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCCCE03BFE524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-lagoa-do-barro-do-piaui-76666">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Edital_de_Chamada_edital_de_convocacao_e981bf66-9bc3-451f-99aa-8cb2ac4bcc0b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 285
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>85A0FAF9BE8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="85A0FAF9BE8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-285-lagoa-do-barro-do-piaui-76658">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_285_6c50f39e-568e-47e4-b440-be9462d28df5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 284
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FD49FE8A1E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FD49FE8A1E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-284-lagoa-do-barro-do-piaui-76657">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_284_017b2eef-0ed9-4d65-ae74-8c6b4b04dcc5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 131, DE 25 DE SETEMBRO DE 2023.
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC9BF5024ACA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC9BF5024ACA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-131-de-25-de-setembro-de-2023-dom-expedito-lopes-76669">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Dom_Expedito_Lopes_Portarias_portaria_n_131_de_25_de_setembro_de_2023_57f2d91b-432a-49bc-9a6b-680fab5e5ba7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=829&amp;q[flag_doc_diario_true]=1">
+571
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria n.° 058.2023 - 26 de setembro de 2023 - Servidores para eleições (retificação)
+</td>
+<td class="text-center">
+27-09-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3A089C03C6B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3A089C03C6B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-058-2023-26-de-setembro-de-2023-servidores-para-eleicoes-retificacao-sao-jose-do-divino-76685">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/9/26/DOP_EDICAO__27-9-2023_ED_571_Prefeitura_Sao_Jose_do_Divino_Portarias_portaria_n_058_2023_26_de_setembro_de_2023_servidores_para_eleicoes_retificacao_6b34cf5a-465a-4d75-abc4-df3bd792a3dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

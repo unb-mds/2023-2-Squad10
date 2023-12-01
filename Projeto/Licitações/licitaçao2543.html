@@ -1,0 +1,1340 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO Contrato 082/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>910CD8EDD8934
+<br/><br/>
+<a class="fileDoc" data-file-hash="910CD8EDD8934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-082-2022-dom-expedito-lopes-23036">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_contrato_082_2022_2dca0f19-87c4-4b1e-a060-1b0350707fa6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Contrato 087/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3361228EC0F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="3361228EC0F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-087-2022-dom-expedito-lopes-23042">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_contrato_087_2022_4a9c9cb0-52bc-43bf-a788-e2390d5ef7f0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO Contrato 085/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>12B8BD2625624
+<br/><br/>
+<a class="fileDoc" data-file-hash="12B8BD2625624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-085-2022-dom-expedito-lopes-23040">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_contrato_085_2022_2fe70b6c-611f-4df6-8528-5d90b4c0e2d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Contrato 089/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D84FC9CC4474
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D84FC9CC4474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-089-2022-dom-expedito-lopes-23043">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_contrato_089_2022_6cb900ed-1884-4172-8ddb-27b5f5f115a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Contrato 086/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B7F402400CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B7F402400CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-086-2022-dom-expedito-lopes-23041">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_contrato_086_2022_1b453b91-acf6-4001-bb33-c7ce61221789.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3AC174DE904C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3AC174DE904C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24547/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_97e8bc73-9091-49d5-b485-4e03da508ab9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A369B2E949174
+<br/><br/>
+<a class="fileDoc" data-file-hash="A369B2E949174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24548/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_ee409425-411c-4510-899c-ce30d4b7f723.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2FDDC0FC38F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2FDDC0FC38F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24549/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_ccf8faa6-e60b-499e-a6e8-025325f3f724.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D5222647B9A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="D5222647B9A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24550/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_5878debf-f9cf-4902-810e-b03135c8e053.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5830D25E73FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5830D25E73FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24551/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_03e86043-7c34-4849-a687-ab50e6c03b52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF /
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E437B69DB394
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E437B69DB394" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24552/rgf-itaueira-23023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_rgf_c1ca75ae-7f80-4150-82e9-2319e9327c0b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Tomada de Preços nº 001-2021 - limpeza publica - EXTRATO DE 1º ADITIVO
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8630737AF5B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="8630737AF5B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tomada-de-precos-n-001-2021-limpeza-publica-extrato-de-1-aditivo-sigefredo-pacheco-23047">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Sigefredo_Pacheco_Extrato_tomada_de_precos_n_001_2021_limpeza_publica_extrato_de_1_aditivo_4da03a5d-7785-436d-b3b7-10f106b6d1ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE 018-2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>240D6C0306694
+<br/><br/>
+<a class="fileDoc" data-file-hash="240D6C0306694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-018-2022-queimada-nova-23048">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Queimada_Nova_Aviso_da_Homologacao_termo_de_homologacao_pe_018_2022_36c91abd-e54e-46d0-8a5a-b542183ea523.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato de Dispensa n 026.2022-Estrututa da Festa Cultural
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C05AFC95D4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C05AFC95D4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-de-dispensa-n-026-2022-estrututa-da-festa-cultural-nossa-senhora-de-nazare-23082">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_do_extrato_de_contrato_extrato_de_contrato_de_dispensa_n_026_2022_estrututa_da_festa_cultural_e6a09013-6f65-4e38-8b8b-1708b6f4d83a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+TH PP 005 - Combustivel
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>690439F0B3BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="690439F0B3BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/th-pp-005-combustivel-agricolandia-23075">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Agricolandia_Aviso_da_homologacao_th_pp_005_combustivel_f7d63c4d-2ce2-4bd3-a7da-cf6ed8fb5ca3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+LEI 013-2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DB38C7D46E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DB38C7D46E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-013-2022-wall-ferraz-23078">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Wall_Ferraz_Leis_lei_013_2022_86c11f96-f1dd-4a3c-ba92-05f3cef25a5b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+EC PP 005 - Combustivel
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E00E482A3564
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E00E482A3564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-pp-005-combustivel-agricolandia-23076">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Agricolandia_Aviso_do_Contrato_ec_pp_005_combustivel_0a553636-b3b7-4fd0-a2d4-ca4ce615a8fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+LEI 012-2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6F57FD03DD44
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6F57FD03DD44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-012-2022-wall-ferraz-23077">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Wall_Ferraz_Leis_lei_012_2022_d2083c2c-27f2-42c5-be85-4b88ca3084b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 018-2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5FB846F54D114
+<br/><br/>
+<a class="fileDoc" data-file-hash="5FB846F54D114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-018-2022-queimada-nova-23050">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Queimada_Nova_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_018_2022_fa2f6622-80bd-4945-83cb-b65c80af8216.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Declaração de Aceite sobre notificação
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>14B0017891F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="14B0017891F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/declaracao-de-aceite-sobre-notificacao-currais-23055">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Currais_Outros_declaracao_de_aceite_sobre_notificacao_16d49ee2-e991-4848-9c79-2be256b2847b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria N 038/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2978641D88E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2978641D88E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-038-2022-coivaras-23061">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Coivaras_Portarias_portaria_n_038_2022_abe9c5b0-8e55-4bb8-911d-bfa9788787a6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Notificação
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B695E14911B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="B695E14911B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-notificacao-currais-23051">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Currais_Atos_aviso_de_notificacao_94412e50-f7fd-447a-8868-2258640e8f08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+PRIMEIRO TERMO ADITIVO AO CONTRATO Nº 0601202208/2022.
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>162DD6385B774
+<br/><br/>
+<a class="fileDoc" data-file-hash="162DD6385B774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/primeiro-termo-aditivo-ao-contrato-n-0601202208-2022-currais-23080">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Currais_Aviso_do_Termo_Aditivo_primeiro_termo_aditivo_ao_contrato_n_0601202208_2022_b786a892-765d-4591-9526-b5e56f6ecf0d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE COMPROMISSO DE PRESTAÇÃO DE SERVIÇO DE ESTAGIÁRIO
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>9BA2BF1926EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9BA2BF1926EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-compromisso-de-prestacao-de-servico-de-estagiario-coivaras-23073">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Coivaras_Outros_termo_de_compromisso_de_prestacao_de_servico_de_estagiario_c010e488-dce3-4f84-94ba-e5422130811f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Ata SRP PP 005 - Ambulância
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Registro de preço
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C164EF1F9694
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C164EF1F9694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-srp-pp-005-ambulancia-lagoinha-do-piaui-23079">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Registro_de_preco_ata_srp_pp_005_ambulancia_cb00d20d-85b5-4d8f-ba75-84c9763913a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+TH PP 005 - Ambulância
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2629B7C999EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2629B7C999EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/th-pp-005-ambulancia-lagoinha-do-piaui-23065">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Lagoinha_do_Piaui_Aviso_da_Homologacao_th_pp_005_ambulancia_1487c37f-c28b-48d6-9031-96b039cb9bc1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação PE 027/2022
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA4666E9D30D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA4666E9D30D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pe-027-2022-oeiras-23019">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Oeiras_Aviso_da_Homologacao_homologacao_pe_027_2022_cac89284-c530-43f1-b158-2d53d76ad611.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO N 001/2022 CMS
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>C18638D34E1E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C18638D34E1E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-001-2022-cms-alvorada-do-gurgueia-23066">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Prefeitura_Alvorada_do_Gurgueia_Resolucoes_resolucao_n_001_2022_cms_db428f7a-36c9-4fd4-bb23-2883812ad759.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=402&amp;q[flag_doc_diario_true]=1">
+281
+</a>
+-
+2022
+</td>
+<td class="">
+RGF PESSOAL 1 SEM 2022 (retificado)
+</td>
+<td class="text-center">
+27-07-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+</td>
+<td class="text-center">
+<strong>ID: </strong>DB886FEA3ADA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DB886FEA3ADA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/rgf-pessoal-1-sem-2022-retificado-demerval-lobao-23024">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/26/DOP_EDICAO__27-7-2022_ED_281_Camara_Demerval_Lobao_Relatorios_de_gestao_fiscal_rgf_pessoal_1_sem_2022_retificado_2e3061de-55e0-4bbc-9e40-4f8e90b37788.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

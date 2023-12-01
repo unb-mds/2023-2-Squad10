@@ -1,0 +1,1293 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto Suplementar nº 55/2021
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>74DCB470910A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="74DCB470910A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementar-n-55-2021-altos-60943">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Altos_Decretos_decreto_suplementar_n_55_2021_ae4b63a4-0875-4b9f-aa3b-1d62dac92b35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO - SAAE
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB10767D80254
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB10767D80254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-saae-nazaria-60984">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Nazaria_Contratos_e_seus_aditivos_aditivo_saae_40bf6f10-e326-44eb-a54a-bc385b1cf411.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+Despesas com MDE /
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C6B6C8B1F9D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C6B6C8B1F9D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65352/despesas-com-mde-currais-61038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Currais_Relatorios_resumidos_da_execucao_orcamentaria_despesas_com_mde_c0242fef-2eca-4364-9fec-813ebe50361a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 229-2023 SMS - LABOFLOR
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1C09100C6B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1C09100C6B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-229-2023-sms-laboflor-floriano-61053">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Floriano_Outros_extrato_de_contrato_n_229_2023_sms_laboflor_4f1e89ff-8358-4985-a8b7-201974e6b6c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+LICITANET - ATA DE REALIZAÇÃO DO PREGÃO ELETRÔNICO
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>05EBE44920454
+<br/><br/>
+<a class="fileDoc" data-file-hash="05EBE44920454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-ata-de-realizacao-do-pregao-eletronico-floriano-61083">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Floriano_Atas_licitanet_ata_de_realizacao_do_pregao_eletronico_04b31708-6097-4892-95e6-0c48ffb16b8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL Nº002-2023 RELAÇÃO NOMINAL DOS CANDIDATOS INSC DO PROC DOS MEMBROS DO CONSELHO TUTELAR
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2CEB394D4514
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2CEB394D4514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-n-002-2023-relacao-nominal-dos-candidatos-insc-do-proc-dos-membros-do-conselho-tutelar-altos-60963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Altos_Outros_edital_n_002_2023_relacao_nominal_dos_candidatos_insc_do_proc_dos_membros_do_conselho_tutelar_c3eb76b3-f0bb-4849-be79-69f8a6fcdcf1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato 053/2023
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1726703B29AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1726703B29AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-053-2023-dom-expedito-lopes-60972">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_de_contrato_053_2023_17137c29-e768-4e7d-8527-34e024e7cd21.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato 055/2023
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5110E74994574
+<br/><br/>
+<a class="fileDoc" data-file-hash="5110E74994574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-055-2023-dom-expedito-lopes-60974">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_de_contrato_055_2023_8aa210a9-1459-4fb6-aca9-4ad51458aa4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+corrig.-Extrato-Contrato nº 006-2023-Construção da Câmara Municipal
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A568ED11EB674
+<br/><br/>
+<a class="fileDoc" data-file-hash="A568ED11EB674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-extrato-contrato-n-006-2023-construcao-da-camara-municipal-ribeira-do-piaui-61090">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Camara_Ribeira_do_Piaui_Aviso_do_extrato_de_contrato_corrig_extrato_contrato_n_006_2023_construcao_da_camara_municipal_745bdaba-b24d-4f6a-a4c8-0f228e866cb2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+DEMOSNTRATIVO FUNÇÃO E SUBFUNÇÃO
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>674C1929DF934
+<br/><br/>
+<a class="fileDoc" data-file-hash="674C1929DF934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demosntrativo-funcao-e-subfuncao-santa-cruz-dos-milagres-61078">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Santa_Cruz_dos_Milagres_Outros_demosntrativo_funcao_e_subfuncao_1f0b481b-e99c-415b-866c-62aef7806f12.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DL PESQUISA DE OPINIÃO
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>633388B0D9554
+<br/><br/>
+<a class="fileDoc" data-file-hash="633388B0D9554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-dl-pesquisa-de-opiniao-luis-correia-61066">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Luis_Correia_Aviso_da_Dispensa_aviso_dl_pesquisa_de_opiniao_a5cc75b4-708e-4b6d-a81f-2215cdddd9a5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE TERMO DE APOSTILAMENTO AO CONTRATO 08-2023
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>009F393C6F704
+<br/><br/>
+<a class="fileDoc" data-file-hash="009F393C6F704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-termo-de-apostilamento-ao-contrato-08-2023-cajazeiras-do-piaui-61056">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Cajazeiras_do_Piaui_Extrato_extrato_de_termo_de_apostilamento_ao_contrato_08_2023_e1f0d278-1c29-4451-99b9-aaa7c2ff20b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+INEXIGIBILIDADE N° 028.2023
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>CD72E26D46334
+<br/><br/>
+<a class="fileDoc" data-file-hash="CD72E26D46334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/inexigibilidade-n-028-2023-sao-pedro-do-piaui-61071">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Sao_Pedro_do_Piaui_Aviso_de_Ratificacao_inexigibilidade_n_028_2023_a44f8d27-7b21-4284-b760-4d06ab11d4e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+LEI N°861 2023 POLITICA MUNICIPAL SOBRE MUDANÇAS CLIMATICAS
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>C24083E97F9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C24083E97F9B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-861-2023-politica-municipal-sobre-mudancas-climaticas-landri-sales-61058">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Landri_Sales_Leis_lei_n_861_2023_politica_municipal_sobre_mudancas_climaticas_b0c81a1f-b4ab-4e98-a872-d7b442abc783.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=701&amp;q[flag_doc_diario_true]=1">
+481
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL Nº 003/2023
+</td>
+<td class="text-center">
+22-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>D634C07D68294
+<br/><br/>
+<a class="fileDoc" data-file-hash="D634C07D68294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-n-003-2023-jardim-do-mulato-60980">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/19/DOP_EDICAO__22-5-2023_ED_481_Prefeitura_Jardim_do_Mulato_Edital_de_Chamada_edital_n_003_2023_30fb9e2c-b6f6-450f-9015-e4501419020d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 480
+</td>
+<td class="text-center dopcom">
+19-05-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="3CB5C1526A304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-480-piaui-60957/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_CADERNO_a____diario_oficial_completo_edicao_480_5327d0b5-9606-459c-af3f-92c2ecc77caf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C6B6689D2FE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="C6B6689D2FE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65221/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_d04ce672-330a-4219-b0b9-f25738eaa889.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D1AC9A776C524
+<br/><br/>
+<a class="fileDoc" data-file-hash="D1AC9A776C524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65222/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_22382bf9-3c2b-4f81-b58b-c9d5bdf6c43a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E14DA87058F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E14DA87058F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65223/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_21a9dbfe-261f-4585-a7a9-98ee3e6dde8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C940DF4DFAC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C940DF4DFAC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65224/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_53134843-e117-42d8-bce4-da5635a9df40.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>01B0851272954
+<br/><br/>
+<a class="fileDoc" data-file-hash="01B0851272954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65225/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_c77886a4-68fc-478a-852c-28bb6aa2da1d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>54B51FC87BE14
+<br/><br/>
+<a class="fileDoc" data-file-hash="54B51FC87BE14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65226/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_862979a4-6c5c-4971-884b-7372f5179f49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>23B1A49857CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="23B1A49857CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65227/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_8c40fb4e-337e-44fb-95f4-8c1ea6b6064d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7CE7D57634B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="7CE7D57634B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65228/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_9873fd34-6bc9-421d-ba0b-72066c3dc766.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>06F2D47889764
+<br/><br/>
+<a class="fileDoc" data-file-hash="06F2D47889764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65229/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_a86dadb7-b161-49f6-8c90-d004a61488b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2023 /
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E202FD0328934
+<br/><br/>
+<a class="fileDoc" data-file-hash="E202FD0328934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/65230/rreo-2-bimestre-2023-sao-pedro-do-piaui-60920">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2023_b835dc5d-a263-46a7-896a-d1b298f50dfd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=698&amp;q[flag_doc_diario_true]=1">
+480
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto nº 034 - 2023 - REGIMENTO INTERNON APA
+</td>
+<td class="text-center">
+19-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>734B93EF1C104
+<br/><br/>
+<a class="fileDoc" data-file-hash="734B93EF1C104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-034-2023-regimento-internon-apa-santa-cruz-dos-milagres-60921">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__19-5-2023_ED_480_Prefeitura_Santa_Cruz_dos_Milagres_Decretos_decreto_n_034_2023_regimento_internon_apa_3e3ddd0d-718c-447f-9d08-b596ad28f0df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

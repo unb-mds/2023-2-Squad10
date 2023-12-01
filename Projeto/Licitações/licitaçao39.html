@@ -1,0 +1,1577 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCA05B5B39504
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCA05B5B39504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89109/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_c4590689-b921-4d25-b743-1425347f4b7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0F42BDD8F3604
+<br/><br/>
+<a class="fileDoc" data-file-hash="0F42BDD8F3604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89110/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_e9c32b00-ec0c-461a-a075-930cbcf79723.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD1171A2D9E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD1171A2D9E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89111/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_17affc28-19c9-4a78-935f-d2c3070a69b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B87B3F7754B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B87B3F7754B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89112/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_13a9b54a-cb26-4ca2-9391-58489a0320f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>862CEE5E01344
+<br/><br/>
+<a class="fileDoc" data-file-hash="862CEE5E01344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89113/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_5e0a209d-8a43-420a-a36b-b4c827990a4c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7A02860B6D7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7A02860B6D7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89114/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_2f2dc09f-6e82-429f-b427-27092f86a519.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CD37252FBE984
+<br/><br/>
+<a class="fileDoc" data-file-hash="CD37252FBE984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89115/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_d6fba1f3-2c81-426a-b7c1-2acb02caeeba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>17FA686219644
+<br/><br/>
+<a class="fileDoc" data-file-hash="17FA686219644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89116/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_2a817905-11b6-41f6-9bf2-1126a0882108.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5BAD2F3CA9254
+<br/><br/>
+<a class="fileDoc" data-file-hash="5BAD2F3CA9254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89117/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_4d485621-1acc-4b84-ba64-be1ec6743c1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DD4151A0CA54
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DD4151A0CA54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89118/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_3585cc3a-a5bb-42ef-9986-0cdb0a255cdc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>17F145A907CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="17F145A907CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89119/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_a9063050-f020-484c-ada3-c22fd7c00e05.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E83669D678A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E83669D678A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89120/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_56e9dfde-a4dc-41f1-8a34-503f90497406.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5 BIMESTRE 2023 PM BENEDITINOS /
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE31528709F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE31528709F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/89121/rreo-5-bimestre-2023-pm-beneditinos-beneditinos-82983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2023_pm_beneditinos_b8dadfc3-272b-4217-9030-0142112632ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+corrig.-Aviso-Pregão Eletrônico nº 011-2023-Prest. de serv. de operacionalização dos poços-PMPP
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC69FE2285AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC69FE2285AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-aviso-pregao-eletronico-n-011-2023-prest-de-serv-de-operacionalizacao-dos-pocos-pmpp-palmeira-do-piaui-82946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Palmeira_do_Piaui_Aviso_de_licitacao_corrig_aviso_pregao_eletronico_n_011_2023_prest_de_serv_de_operacionaliza_1a8b2730-7f90-4b19-b7c4-02df252c3e85.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+TP 005.2021 - 4 TERMO
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>58600A6080624
+<br/><br/>
+<a class="fileDoc" data-file-hash="58600A6080624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-005-2021-4-termo-buriti-dos-lopes-82910">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Buriti_dos_Lopes_Aviso_do_Termo_Aditivo_tp_005_2021_4_termo_35f12039-b4b1-4497-8bb2-37536b570673.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO TEMPORÁRIO Nº 167/2023 - ADM
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E05BD23403BF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E05BD23403BF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-temporario-n-167-2023-adm-landri-sales-82979">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Landri_Sales_Extrato_extrato_de_contrato_temporario_n_167_2023_adm_20ede14b-383a-4c8f-baf6-c5b693b24cda.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+Dispensa 001.2023
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Fidalgo
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>12E5EE9DDEA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="12E5EE9DDEA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-001-2023-sao-miguel-do-fidalgo-82978">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Camara_Sao_Miguel_do_Fidalgo_Aviso_da_Homologacao_dispensa_001_2023_cb696fd9-e607-4bd9-942f-e4c45cdd97a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+CARTA-CONVITE 03/2023: FISCAL DE CONTRATO
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5DAAA858DDE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5DAAA858DDE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/carta-convite-03-2023-fiscal-de-contrato-jose-de-freitas-82958">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Camara_Jose_de_Freitas_Atos_carta_convite_03_2023_fiscal_de_contrato_45c64d63-3a8c-4f18-a198-51f3cfe449d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+Lei nº 428-2023 - Dispõe sobre denominação de log público de MARIA SALOMÉ DO ROSÁRIO
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>5D34000112E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="5D34000112E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-428-2023-dispoe-sobre-denominacao-de-log-publico-de-maria-salome-do-rosario-santa-cruz-dos-milagres-82932">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Santa_Cruz_dos_Milagres_Leis_lei_n_428_2023_dispoe_sobre_denominacao_de_log_publico_de_maria_salome_do_rosario_f790c431-bfc1-4afe-8472-da1fbd6e0a57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO TEMPORÁRIO 168/2023 - ADM
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>236805643DF14
+<br/><br/>
+<a class="fileDoc" data-file-hash="236805643DF14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-temporario-168-2023-adm-landri-sales-82982">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Landri_Sales_Extrato_extrato_de_contrato_temporario_168_2023_adm_00032383-268b-40c5-a050-6fa3fd2ba1ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8BB483002B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8BB483002B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-sao-joao-da-fronteira-82950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Sao_Joao_da_Fronteira_Aviso_de_licitacao_aviso_de_licitacao_bc9fa1dc-390b-47c1-a407-e78acb293975.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 90-2023 exonera betânia
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>054036C28BD14
+<br/><br/>
+<a class="fileDoc" data-file-hash="054036C28BD14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-90-2023-exonera-betania-alvorada-do-gurgueia-82853">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_90_2023_exonera_betania_43400035-df51-403d-ae97-47f2ddb64c00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Adjudicação PP N° 010.2023
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9855879DA2474
+<br/><br/>
+<a class="fileDoc" data-file-hash="9855879DA2474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pp-n-010-2023-sao-jose-do-peixe-82908">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Sao_Jose_do_Peixe_Aviso_da_Adjudicacao_termo_de_adjudicacao_pp_n_010_2023_51013964-905f-476e-bbda-6f907718e159.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 3º ADITIVO CONTRATO 056
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E7BA242CE284
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E7BA242CE284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-3-aditivo-contrato-056-paqueta-82912">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Paqueta_Extrato_extrato_3_aditivo_contrato_056_627b6dd4-da3a-4ccb-a716-b5fa001caf49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO ESCOLA DO LEGISLATIVO
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coronel José Dias
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>06A17B5633374
+<br/><br/>
+<a class="fileDoc" data-file-hash="06A17B5633374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-escola-do-legislativo-coronel-jose-dias-82886">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Camara_Coronel_Jose_Dias_Resolucoes_resolucao_escola_do_legislativo_27cbc9a3-c878-4d21-b90f-ee4d3f4d57a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO TEMPORÁRIO Nº 165/2023 - ADM
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A40FB2E6D3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A40FB2E6D3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-temporario-n-165-2023-adm-landri-sales-82984">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Landri_Sales_Extrato_extrato_de_contrato_temporario_n_165_2023_adm_013ed560-ed32-42b5-a749-dc621dfc2a24.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+LEI 1092-2023 - ALTERA A LEI MUNICIPAL 737-2023 - ACORDO DE PARCELAMENTO DIVIDA FUND PREV
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>0109F98094614
+<br/><br/>
+<a class="fileDoc" data-file-hash="0109F98094614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-1092-2023-altera-a-lei-municipal-737-2023-acordo-de-parcelamento-divida-fund-prev-luis-correia-82949">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Luis_Correia_Leis_lei_1092_2023_altera_a_lei_municipal_737_2023_acordo_de_parcelamento_divida_fund_prev_062e39ef-a9a9-48f4-bb6f-7bdca1f70bd5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE PRIMEIRO TERMO DE ADITIVO ao Contrato nº 059-2021- Locação de um veículo
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>A50DF1B63D744
+<br/><br/>
+<a class="fileDoc" data-file-hash="A50DF1B63D744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-primeiro-termo-de-aditivo-ao-contrato-n-059-2021-locacao-de-um-veiculo-barra-d-alcantara-82954">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Barra_DAlcantara_Aviso_do_Termo_Aditivo_extrato_de_primeiro_termo_de_aditivo_ao_contrato_n_059_2021_locacao_de_6e854075-05c0-41e0-ab5a-a15441167a1e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO PE 035 2023 - 1
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>25C54DFEFE954
+<br/><br/>
+<a class="fileDoc" data-file-hash="25C54DFEFE954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-035-2023-1-campinas-do-piaui-82963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Campinas_do_Piaui_Extrato_extrato_pe_035_2023_1_0964905e-c40d-4ed6-9a31-7591007ab29b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 041-2023 - CRIAÇÃO DO FMPE
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>44E3B3F2FB234
+<br/><br/>
+<a class="fileDoc" data-file-hash="44E3B3F2FB234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-041-2023-criacao-do-fmpe-sao-jose-do-piaui-82986">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Sao_Jose_do_Piaui_Decretos_decreto_n_041_2023_criacao_do_fmpe_929eb479-ae5c-4055-9f2e-076be78c2c5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+REPUBLICAÇÃO-AVISO Nº 105-2023-DISPENSA ELETRÔNICA
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>89D08E9CBD124
+<br/><br/>
+<a class="fileDoc" data-file-hash="89D08E9CBD124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-aviso-n-105-2023-dispensa-eletronica-floriano-82973">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Floriano_Aviso_de_licitacao_republicacao_aviso_n_105_2023_dispensa_eletronica_d6cee921-afaf-4aa4-8666-3186299c6d39.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO Nº 108-23-DISPENSA ELETRÔNICA
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6892782702FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6892782702FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-n-108-23-dispensa-eletronica-floriano-82972">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Floriano_Aviso_de_licitacao_aviso_de_licitacao_n_108_23_dispensa_eletronica_ed223100-ddc9-43e1-9c04-6a5893b4e370.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+TOMADA DE PREÇO N° 01/2023
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso do julgamento e classificação de propostas
+</td>
+<td class="text-center">
+<strong>ID: </strong>D1EEEC0ED4A04
+<br/><br/>
+<a class="fileDoc" data-file-hash="D1EEEC0ED4A04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tomada-de-preco-n-01-2023-sao-pedro-do-piaui-82968">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Sao_Pedro_do_Piaui_Aviso_do_julgamento_e_classificacao_de_propostas_tomada_de_preco_n_01_2023_b9c9c15b-a6a8-45cc-8f6e-e77799b67f29.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=891&amp;q[flag_doc_diario_true]=1">
+611
+</a>
+-
+2023
+</td>
+<td class="">
+RATIFICAÇÃO DE INEXIGIBILIDADE 10-2023
+</td>
+<td class="text-center">
+28-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>670B0D34433D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="670B0D34433D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-de-inexigibilidade-10-2023-tanque-do-piaui-82945">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/27/DOP_EDICAO__28-11-2023_ED_611_Prefeitura_Tanque_do_Piaui_Aviso_de_Ratificacao_ratificacao_de_inexigibilidade_10_2023_c99e7c96-a943-4ed5-a19f-7f46f4b20768.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

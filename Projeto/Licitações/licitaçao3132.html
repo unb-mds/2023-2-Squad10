@@ -1,0 +1,1391 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 20/2022/GP, DE 24 DE FEVEREIRO DE 2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB8D159709594
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB8D159709594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-20-2022-gp-de-24-de-fevereiro-de-2022-francisco-macedo-9079">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Francisco_Macedo_Portarias_portaria_20_2022_gp_de_24_de_fevereiro_de_2022_a744f0b1-709a-4f7e-a85e-f4545c45ef18.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE CANCELAMENTO PE 004/2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>5ECC0BB609644
+<br/><br/>
+<a class="fileDoc" data-file-hash="5ECC0BB609644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-cancelamento-pe-004-2022-buriti-dos-lopes-9095">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Buriti_dos_Lopes_Outros_aviso_de_cancelamento_pe_004_2022_13d32978-a817-476a-8817-c92cdd08d4d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO N 01 - CONTRATO - 062-2022 - PE 004-2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>142D0F8A80E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="142D0F8A80E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-01-contrato-062-2022-pe-004-2022-floriano-8984">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Floriano_Outros_atos_administrativos_termo_apostilamento_n_01_contrato_062_2022_pe_004_2022_aaa6d48d-bff0-4697-8e05-b819b006bc04.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Demonstrativo Simplificado do Relatório de Gestão Fiscal 2 Semestre /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>81C7A2806AD54
+<br/><br/>
+<a class="fileDoc" data-file-hash="81C7A2806AD54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9402/demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-2-semestre-landri-sales-8980">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Camara_Landri_Sales_Relatorios_de_gestao_fiscal_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_2_semestre_a649cdd2-425a-4dc2-b5f5-88bed97cb972.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 079/2022 - SEMEC
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A44EE12CC5C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A44EE12CC5C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-079-2022-semec-wall-ferraz-8982">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Wall_Ferraz_Portarias_portaria_079_2022_semec_023a9241-3286-4ef9-b041-ca5729ca99ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Demonstrativo da Disponibilidade de Caixa e Resto a Pagar 2 Semestre 2021 /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jerumenha
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>73BFB70B771A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="73BFB70B771A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9398/demonstrativo-da-disponibilidade-de-caixa-e-resto-a-pagar-2-semestre-2021-jerumenha-8976">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Camara_Jerumenha_Relatorios_de_gestao_fiscal_demonstrativo_da_disponibilidade_de_caixa_e_resto_a_pagar_2_semestre_2021_a8478726-9e84-426f-bf9d-4b218764a644.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+2° TERMO ADITIVO AO CONTRATO N° 020/2021
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6458E111A8B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="6458E111A8B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-termo-aditivo-ao-contrato-n-020-2021-francisco-macedo-9074">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Francisco_Macedo_Contratos_e_seus_aditivos_2_termo_aditivo_ao_contrato_n_020_2021_77b7c82e-2202-4948-bd06-6e186efd6862.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FBA65DF14564
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FBA65DF14564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-9061">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_1b927a19-48ee-4c74-9c89-208f164470bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4FA2FBB12DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4FA2FBB12DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-9058">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_9cafa507-821c-4661-b5d7-e7fe30ca5cec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO 05 2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Marcolândia
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CA0E42C4B154
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CA0E42C4B154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-05-2022-marcolandia-9038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Camara_Marcolandia_Resolucoes_resolucao_05_2022_e8ebde58-65a5-4979-a62e-643a528f406e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N.008-2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2D4ADF5206D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="2D4ADF5206D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-008-2022-barra-d-alcantara-9100">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Barra_DAlcantara_Decretos_decreto_n_008_2022_6e0da7ff-3128-4cb3-ba1b-f632cfa85981.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+pe 005 cancelamento
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso do cancelamento
+</td>
+<td class="text-center">
+<strong>ID: </strong>334ED5E38D2E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="334ED5E38D2E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-005-cancelamento-passagem-franca-do-piaui-9102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Passagem_Franca_do_Piaui_Aviso_do_cancelamento_pe_005_cancelamento_f650b977-8cca-45bc-8afd-45c507d5e065.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato-Contrato nº 013-2022-Fornec. de gen. aliment.-J. H. SUPERMERCADO
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C90604631734
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C90604631734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-013-2022-fornec-de-gen-aliment-j-h-supermercado-paes-landim-9103">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Paes_Landim_Aviso_do_extrato_de_contrato_extrato_contrato_n_013_2022_fornec_de_gen_aliment_j_h_supermercado_9a7cedc2-8def-4338-901f-ccca58914050.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato-Contrato nº 015-2022-Fornec. de pneus p. Secret.-DANTAS E BARROS LTDA-EPP
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C79EC70C46194
+<br/><br/>
+<a class="fileDoc" data-file-hash="C79EC70C46194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-015-2022-fornec-de-pneus-p-secret-dantas-e-barros-ltda-epp-paes-landim-9104">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Paes_Landim_Aviso_do_extrato_de_contrato_extrato_contrato_n_015_2022_fornec_de_pneus_p_secret_dantas_e_barros_ltda_epp_a0f60f2c-2e14-4536-9c6c-75c33c0ef778.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria SEMED 08/2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>54FB8203B83A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="54FB8203B83A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-semed-08-2022-floriano-9072">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Floriano_Portarias_portaria_semed_08_2022_1b4b8985-9015-435a-a4c4-585177c1fbf9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PE 002/2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>175F3F9FF8AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="175F3F9FF8AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-002-2022-campinas-do-piaui-9076">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Campinas_do_Piaui_Extrato_extrato_pe_002_2022_ea41842c-38c6-498a-871d-45973d1f0ba5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+RETIFICAÇÃO EXTRATO DO CONTRATO Nº 114-2022-CULTURA- R A MELO
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C16AC1443A724
+<br/><br/>
+<a class="fileDoc" data-file-hash="C16AC1443A724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-extrato-do-contrato-n-114-2022-cultura-r-a-melo-floriano-9088">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Floriano_Extrato_retificacao_extrato_do_contrato_n_114_2022_cultura_r_a_melo_a5eee643-ca73-463f-bdfc-ac92e29c9fef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC1D9018E6154
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC1D9018E6154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9476/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_ce4a5e4e-ab21-480c-bf24-f200111fdb8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE2DF6AA3F754
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE2DF6AA3F754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9477/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_659e922d-603a-48de-a95c-ea81b53bc510.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C13808DD7F344
+<br/><br/>
+<a class="fileDoc" data-file-hash="C13808DD7F344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9478/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_eb505dcd-514a-478f-bcb6-70eaa3f11de2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1FF63A9BB9F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="1FF63A9BB9F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9479/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_efd13d8b-cea5-4f2b-a709-03db270308f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1ACF42E26C7E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1ACF42E26C7E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9480/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_e489486f-bb30-4c80-b085-7629d4ba28fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+relatorios de gestão fiscal /
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A40621EF7DC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A40621EF7DC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9481/relatorios-de-gestao-fiscal-sao-jose-do-piaui-9037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_9babe42f-3b2d-4f91-bc1a-2e79f1d9c928.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 135-2022 RURAL-F. REIS
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>34BC882F80FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="34BC882F80FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-135-2022-rural-f-reis-floriano-9083">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_135_2022_rural_f_reis_8c53947b-d0ee-4042-8907-c114a8133268.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N. 009-2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CAC95BDB7EB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="CAC95BDB7EB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-009-2022-barra-d-alcantara-9101">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Barra_DAlcantara_Decretos_decreto_n_009_2022_a487fe9b-491a-44c5-8858-c22130699354.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE RATIFICAÇÃO
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Marcolândia
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A053E8951D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A053E8951D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-ratificacao-marcolandia-9036">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Camara_Marcolandia_Aviso_de_Ratificacao_extrato_de_ratificacao_2a6aa4ae-2fa7-41ca-a34e-bc6714ca8f87.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N° 07/2022 PONTO FACULTATIVO CARNAVAL
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7334B6E8A1844
+<br/><br/>
+<a class="fileDoc" data-file-hash="7334B6E8A1844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-07-2022-ponto-facultativo-carnaval-beneditinos-8971">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Beneditinos_Decretos_decreto_n_07_2022_ponto_facultativo_carnaval_1e678fe0-cb09-4dd9-a7ee-77304038169a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 019/2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>23F81B6EDA354
+<br/><br/>
+<a class="fileDoc" data-file-hash="23F81B6EDA354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-019-2022-wall-ferraz-8973">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_019_2022_2c5cd936-1dd5-4f94-81fd-7bac84e61440.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 009/2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>AFAE8B8F48914
+<br/><br/>
+<a class="fileDoc" data-file-hash="AFAE8B8F48914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-009-2022-wall-ferraz-8972">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_009_2022_760cde9d-a114-464d-af87-ff2d6bbcd778.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=250&amp;q[flag_doc_diario_true]=1">
+177
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 174-2022
+</td>
+<td class="text-center">
+25-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D4446AC81EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D4446AC81EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-174-2022-buriti-dos-lopes-9065">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/25/DOP_EDICAO__25-2-2022_ED_177_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_174_2022_6ce3e379-37fc-4179-8342-f600f7f5d802.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

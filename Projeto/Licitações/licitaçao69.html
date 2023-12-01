@@ -1,0 +1,1662 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+OFICIO Nº 157-2023 - ABERTURA DE CONTS
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA4CF831C6D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA4CF831C6D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficio-n-157-2023-abertura-de-conts-sao-joao-da-fronteira-82253">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Sao_Joao_da_Fronteira_Atos_oficio_n_157_2023_abertura_de_conts_cd09ae4c-3d92-4c96-afff-64de723cb9fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+RREO ANEXO 02 /
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4052A0DC9A9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4052A0DC9A9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88323/rreo-anexo-02-lagoa-do-barro-do-piaui-82261">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Lagoa_do_Barro_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_anexo_02_90f94876-d8bd-4c6f-b907-913e854a658b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+RE-1.0061/2023 - PARECER ADM - OLGA SOUZA D'ANGELO
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC5A3B8E97AE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC5A3B8E97AE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/re-1-0061-2023-parecer-adm-olga-souza-d-angelo-santa-rosa-do-piaui-80983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Santa_Rosa_do_Piaui_Atos_re_1_0061_2023_parecer_adm_olga_souza_d_angelo_7b2d6bf8-2d03-4bc1-bb8c-4b051ae602d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado Preliminar- audiovisual Lei Paulo Gustavo
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>650D9195446C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="650D9195446C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-preliminar-audiovisual-lei-paulo-gustavo-brejo-do-piaui-82336">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Brejo_do_Piaui_Extrato_resultado_preliminar_audiovisual_lei_paulo_gustavo_dbe59ccf-e5ed-44c3-9d82-1e9b01d74132.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato Inex 006/2023- Artista Thiago Freitas
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F721D7A29EF14
+<br/><br/>
+<a class="fileDoc" data-file-hash="F721D7A29EF14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-inex-006-2023-artista-thiago-freitas-ipiranga-do-piaui-82252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Ipiranga_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_inex_006_2023_artista_thiago_freitas_67a5f654-b504-48e5-9b75-3064c6fa2142.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=884&amp;q[flag_doc_diario_true]=1">
+606
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato n° 080/2023 - Dispensa n° 051/2023
+</td>
+<td class="text-center">
+21-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>242D370DCABB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="242D370DCABB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-080-2023-dispensa-n-051-2023-altos-82283">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/20/DOP_EDICAO__21-11-2023_ED_606_Prefeitura_Altos_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_080_2023_dispensa_n_051_2023_aa529716-a280-4d8b-bf9e-31e463c7b425.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 605
+</td>
+<td class="text-center dopcom">
+20-11-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="B09F50643FDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-605-piaui-82222/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_CADERNO_a____diario_oficial_completo_edicao_605_ad30c0ab-480a-4cca-a9c7-b0a76021fad4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A2B427B75C14
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A2B427B75C14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82137">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_4e972ddd-f9a1-492f-8ee2-945db4753dbd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B9568607DA44
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B9568607DA44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82135">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_6161ba50-20b3-4bb0-b08c-7301c28c12b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>E3D8F6499C054
+<br/><br/>
+<a class="fileDoc" data-file-hash="E3D8F6499C054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82131">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_9f56930b-ce09-4837-98d6-55b357651068.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+PE SRP 13/2023
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1BDB208788E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1BDB208788E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-srp-13-2023-coivaras-82165">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Coivaras_Aviso_da_Homologacao_pe_srp_13_2023_8d8f1316-9c0a-44b9-a39b-3f18230fd374.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - 2° Quadrimestre /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F6163E18CA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F6163E18CA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88153/rgf-2-quadrimestre-pimenteiras-82102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Camara_Pimenteiras_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_6a4e3473-89a0-479a-85cf-e43543b60d7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+aviso de adiamento
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>08D5631121F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="08D5631121F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adiamento-caraubas-do-piaui-82218">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caraubas_do_Piaui_Atos_aviso_de_adiamento_e83d5285-f171-43fe-8a77-209262604604.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº 065/2023 PE 011/2023
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>58C7DB18AAEA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="58C7DB18AAEA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-065-2023-pe-011-2023-jardim-do-mulato-82125">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Jardim_do_Mulato_Extrato_extrato_do_contrato_n_065_2023_pe_011_2023_b853b4d8-070b-4185-b2b3-d51670a34528.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+CARTA CONVITE 003/2023
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C487404E7A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C487404E7A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/carta-convite-003-2023-tanque-do-piaui-82124">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Camara_Tanque_do_Piaui_Aviso_de_licitacao_carta_convite_003_2023_e3a9715a-42f1-4f77-90bd-520a97ef161a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 303-2023 - MARIA DO SOCORRO CARDOSO SOARES
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>076FD3D6F5A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="076FD3D6F5A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-303-2023-maria-do-socorro-cardoso-soares-luis-correia-82127">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Luis_Correia_Portarias_portaria_303_2023_maria_do_socorro_cardoso_soares_4e03f00b-b49d-4536-9406-de00896321c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>97D9492265A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="97D9492265A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_77582a62-1015-4277-a62a-0213cac347b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C728A879B904
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C728A879B904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82136">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_647f9143-56ce-44f1-b418-5dd729a1d65b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+ADITIVO CONTRATUAL DE TRABALHO COM PRAZO DETERMINADO
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE017D0FEBFA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE017D0FEBFA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-contratual-de-trabalho-com-prazo-determinado-caxingo-82139">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Caxingo_Aviso_do_Termo_Aditivo_aditivo_contratual_de_trabalho_com_prazo_determinado_3000ef3b-4b6e-4d61-8c09-45e70d12852c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RETIFICAÇÃO - EXTRATO DE CONTRATO Nº 322-2023
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3EC1310C9DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3EC1310C9DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-retificacao-extrato-de-contrato-n-322-2023-floriano-82215">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Floriano_Outros_atos_administrativos_termo_de_retificacao_extrato_de_contrato_n_322_2023_8edfd155-7a8a-4404-a2e7-01bbf03e2179.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 138/2023/GP, DE 09 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC062F8BB62B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC062F8BB62B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-138-2023-gp-de-09-de-novembro-de-2023-francisco-macedo-82115">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Francisco_Macedo_Portarias_portaria_n_138_2023_gp_de_09_de_novembro_de_2023_2dfcee98-0365-46f5-aee6-8ad34c0b20b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO DE TRABALHO TEMPORÁRIO Nº470-2022 SARA BEATRYZ B CAVALCANTE
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>056DA50CD3524
+<br/><br/>
+<a class="fileDoc" data-file-hash="056DA50CD3524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-de-trabalho-temporario-n-470-2022-sara-beatryz-b-cavalcante-altos-82191">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Altos_Extrato_extrato_de_contrato_de_trabalho_temporario_n_470_2022_sara_beatryz_b_cavalcante_79fe74ac-96ec-4dc9-bb0a-c8ac4bbb3adf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 33
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0F59F9FB15F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0F59F9FB15F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-33-nazaria-82217">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Decretos_decreto_n_33_ef1bbbda-b0a0-4e3d-b07c-d2cea0cd5954.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15054945FA2D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="15054945FA2D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88171/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_0da6946a-7e4d-4a27-935a-49197836a660.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC92A7B2887A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC92A7B2887A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88172/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_87c14674-d15a-4c68-a6e8-3b39bf26f3d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E066F6C24B4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E066F6C24B4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88173/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2428f462-a01f-4045-971e-487f423e87a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0D4989548AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0D4989548AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88174/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_c3a76697-43ba-440f-b389-63285f49328d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>469EA317EEB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="469EA317EEB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88175/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_4aa86726-6cac-4ddd-b3ae-037301a26500.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DB96951C887F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DB96951C887F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88176/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_3ac736c9-0228-4718-bf18-56e3abb2e48b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0B43F7B31014
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0B43F7B31014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88177/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_cd366a24-9c07-48ee-91d1-5eb10cca7218.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C1BA6C1D1074
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C1BA6C1D1074" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88178/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_ad50a57f-ab90-411f-bf53-ba0ee7713462.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1BE7EE29EE004
+<br/><br/>
+<a class="fileDoc" data-file-hash="1BE7EE29EE004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88179/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_4cdcdced-d3d1-4a3c-99e8-bf2b08c47a92.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42105AF55C834
+<br/><br/>
+<a class="fileDoc" data-file-hash="42105AF55C834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88180/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_d58dd611-785f-4da4-a758-229ad44ffbce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A01DCB41AF184
+<br/><br/>
+<a class="fileDoc" data-file-hash="A01DCB41AF184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88181/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_def91790-b479-4a34-be0d-8360d13c41ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA0A692A00014
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA0A692A00014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88182/rreo-5-bimestre-nazaria-82120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_7054f687-161b-4498-bf1d-80cd4ab3aad7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=883&amp;q[flag_doc_diario_true]=1">
+605
+</a>
+-
+2023
+</td>
+<td class="">
+Edital 01/2023 Apoio a Projetos Culturais Audiovisual.
+</td>
+<td class="text-center">
+20-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1D49F4147D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1D49F4147D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-01-2023-apoio-a-projetos-culturais-audiovisual-nazaria-82198">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/17/DOP_EDICAO__20-11-2023_ED_605_Prefeitura_Nazaria_Edital_de_Chamada_edital_01_2023_apoio_a_projetos_culturais_audiovisual_c84847e6-745f-44d3-b830-5e78d55a7ab9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

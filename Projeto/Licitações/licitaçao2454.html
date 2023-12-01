@@ -1,0 +1,1417 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO CMS Nº 022-2022
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B88038ADDBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B88038ADDBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cms-n-022-2022-oeiras-24987">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Oeiras_Resolucoes_resolucao_cms_n_022_2022_3b083f90-1aa3-40bf-a7f2-f5d125753c6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação 017 A
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E397758FA42A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E397758FA42A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-017-a-marcos-parente-24940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Marcos_Parente_Aviso_de_licitacao_aviso_de_licitac_a_o_017_a_46b3682f-7d3f-435e-b919-3e0d168330ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+OFÍCIO Nº 115-2022
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CEEC1D2351C14
+<br/><br/>
+<a class="fileDoc" data-file-hash="CEEC1D2351C14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficio-n-115-2022-dom-expedito-lopes-24942">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_oficio_n_115_2022_ad64e911-697f-4d6f-857e-e9e2ee45fa46.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação 26
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4BE9843C1414
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4BE9843C1414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-26-marcos-parente-24941">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Marcos_Parente_Aviso_de_licitacao_aviso_de_licitac_a_o_26_7658be18-4700-40e5-9112-339109447293.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+ERRATA EXTRATO CONTRATO MOTORISTA
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADE6277BB9BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADE6277BB9BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-extrato-contrato-motorista-batalha-24937">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Camara_Batalha_Errata_errata_extrato_contrato_motorista_23ecae85-e676-4391-97db-d36fa35ec244.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+CÂMARA MUNICIPAL DE LANDRI SALES /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ECFB7F01B4C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="ECFB7F01B4C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26760/camara-municipal-de-landri-sales-landri-sales-24945">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Camara_Landri_Sales_Relatorios_de_gestao_fiscal_camara_municipal_de_landri_sales_b8112dda-6edc-4b1e-bcae-d0b093b366c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+extrato - Contrato PE 019/2022 - mat. esportivo
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>25F218C8DADD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="25F218C8DADD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-pe-019-2022-mat-esportivo-buriti-dos-montes-24939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_pe_019_2022_mat_esportivo_74486a35-9c4c-40e0-835b-274d8cb8cd8b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 055/2022
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF00DC845E3B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF00DC845E3B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-055-2022-caxingo-24981">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Caxingo_Decretos_decreto_055_2022_a7ecb1fd-61f9-430d-aeec-8c31f49c2d01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+TP 003 - Ref e Amp UBS
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>632F3BB1146E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="632F3BB1146E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-003-ref-e-amp-ubs-lagoinha-do-piaui-24944">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Lagoinha_do_Piaui_Aviso_de_licitacao_tp_003_ref_e_amp_ubs_2d6ff773-2048-4242-bbeb-5122db80b00e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Câmara Municipal de Jerumenha /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jerumenha
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B5D5A48C75F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B5D5A48C75F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26761/camara-municipal-de-jerumenha-jerumenha-24946">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Camara_Jerumenha_Relatorios_de_gestao_fiscal_camara_municipal_de_jerumenha_c20910e4-55d0-4ef1-bf46-cabc38626c10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Demonstrativo da Divida Consolidada /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5B4E70DB3E634
+<br/><br/>
+<a class="fileDoc" data-file-hash="5B4E70DB3E634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26764/demonstrativo-da-divida-consolidada-paes-landim-24949">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_demonstrativo_da_divida_consolidada_bb265753-4a07-457b-8449-a1361833cc11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Demonstrativo das Operações de Credito /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C3EEA9297974
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C3EEA9297974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26766/demonstrativo-das-operacoes-de-credito-paes-landim-24951">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_demonstrativo_das_operacoes_de_credito_8c2f3a6e-1fce-468c-93e9-83aeee57a776.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Dem conso da disponibilidade de caixa e de restos a pagar /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9165702BF4634
+<br/><br/>
+<a class="fileDoc" data-file-hash="9165702BF4634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26767/dem-conso-da-disponibilidade-de-caixa-e-de-restos-a-pagar-paes-landim-24952">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_dem_conso_da_disponibilidade_de_caixa_e_de_restos_a_pagar_c46e5741-c5e6-4135-822b-6c6e587160da.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+demonstrativo simplificado do relatório de gestão fiscal /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>65768F6E13634
+<br/><br/>
+<a class="fileDoc" data-file-hash="65768F6E13634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26768/demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-paes-landim-24953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_23567c99-4a5e-4b3c-bde1-c6fc867d3099.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Demonstrativo das Garantias e Contra Garantias de Valores /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CA8A9A117D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CA8A9A117D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26765/demonstrativo-das-garantias-e-contra-garantias-de-valores-paes-landim-24950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Paes_Landim_Relatorios_de_gestao_fiscal_demonstrativo_das_garantias_e_contra_garantias_de_valores_802deec8-7b72-467c-9943-8c866d10cd71.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+02.1. EXTRATO PARCIAL ARP 01.1508.2022 - capina. sinalização, recomposição
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D8693D5B85C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D8693D5B85C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/02-1-extrato-parcial-arp-01-1508-2022-capina-sinalizacao-recomposicao-beneditinos-24957">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Beneditinos_Extrato_02_1_extrato_parcial_arp_01_1508_2022_capina_sinalizacao_recomposicao_1ca264ad-4e4c-4439-8dda-96b3d7edf63f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Educação
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C5282AC4DD5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C5282AC4DD5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-educacao-sao-pedro-do-piaui-24961">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_educacao_f9940dff-1732-45e4-93b2-346a66886360.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB5BCDD8B0204
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB5BCDD8B0204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26779/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_33aacf85-6a32-4869-8f01-2829deb91daf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8DFE21C92D5B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8DFE21C92D5B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26780/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_0b856dc4-3644-4b64-81df-f5ff3af664c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8CE12953D2724
+<br/><br/>
+<a class="fileDoc" data-file-hash="8CE12953D2724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26781/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_6a450c4f-1249-45de-9f3a-e6f0d4d0f690.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8132B82136254
+<br/><br/>
+<a class="fileDoc" data-file-hash="8132B82136254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26782/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_4cf4d48a-1823-459b-b62d-30c11ad84bec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B982D32A8D7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B982D32A8D7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26783/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_a8332390-4f27-4f73-ac02-1f9009ea6f0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5A3F8515948A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5A3F8515948A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26784/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_f1f3410b-21bb-4081-bfdd-c81726a817f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>61DBEECB28974
+<br/><br/>
+<a class="fileDoc" data-file-hash="61DBEECB28974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26785/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_3875fe73-88be-49a5-92ae-b876fff42f23.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0DF553F807A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0DF553F807A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26786/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_955e1a98-b477-4e34-a8b6-3f655a9ba1f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF21C56227CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF21C56227CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26787/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_56b65e32-b159-4af4-84e4-b66ed01b40d5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D544B48295864
+<br/><br/>
+<a class="fileDoc" data-file-hash="D544B48295864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26788/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_aff3f914-57ba-4473-bc65-460c4f7f31c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>459EBCEC6D2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="459EBCEC6D2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26789/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_5bcb3731-35ff-46cd-988a-a3b6193ca4a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C85FB0CD5E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C85FB0CD5E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26790/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_20064253-c5f2-41a3-887c-c5b54c36c1d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1379 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de adiamento PE 008
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4F7464C4A4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4F7464C4A4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adiamento-pe-008-passagem-franca-do-piaui-10226">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Passagem_Franca_do_Piaui_Aviso_do_Adiamento_de_licitacao_aviso_de_adiamento_pe_008_ba85c947-1569-44f2-b557-ad61769ca946.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE SRP Nº 080.2021
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>ECD92F2ED49A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ECD92F2ED49A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-srp-n-080-2021-floriano-10282">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Floriano_Aviso_da_Homologacao_termo_de_homologacao_pe_srp_n_080_2021_c0de732b-032f-45cf-8c94-38befd41157a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO N° 03-2022 DISPÕE SOBRE O PLANO MUNICIPAL DE ASS. SOCIAL 2022-2025
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>4ED57FBEC4484
+<br/><br/>
+<a class="fileDoc" data-file-hash="4ED57FBEC4484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-03-2022-dispoe-sobre-o-plano-municipal-de-ass-social-2022-2025-beneditinos-10271">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Beneditinos_Resolucoes_resolucao_n_03_2022_dispoe_sobre_o_plano_municipal_de_ass_social_2022_2025_5d9ce71c-001e-4dd6-973b-e76e0953551a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato DL 005/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>82F404141E3E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="82F404141E3E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dl-005-2022-pimenteiras-10263">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_dl_005_2022_b2e6a1e2-d49b-4a41-ad81-70ec956bdd9c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DISPENSA 011-2022 UNIFORMES
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B7152F993584
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B7152F993584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-011-2022-uniformes-francisco-macedo-10267">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Francisco_Macedo_Aviso_da_Dispensa_extrato_dispensa_011_2022_uniformes_2c477feb-3926-4d59-92d5-1f2cc882948c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+CONFERÊNCIA INTERNA DA JUVENTUDE
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>BAA0BCB572AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BAA0BCB572AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/conferencia-interna-da-juventude-itaueira-10264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Itaueira_Outros_conferencia_interna_da_juventude_a2483d14-600f-4391-a643-d3324eaf881f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Errata Despacho de Ratificação - Dispensa 013/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>42AF1A0948D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="42AF1A0948D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-despacho-de-ratificacao-dispensa-013-2022-altos-10249">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Altos_Errata_errata_despacho_de_ratificacao_dispensa_013_2022_23dd33fb-fcb5-4543-ac96-fa70f393654c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+ATA DE JULGAMENTO DOC. HABILITATÓRIOS- TP-004.2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>BEB00FD7E24A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BEB00FD7E24A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-julgamento-doc-habilitatorios-tp-004-2022-floriano-10278">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Floriano_Outros_atos_administrativos_ata_de_julgamento_doc_habilitatorios_tp_004_2022_a58d6d15-83d1-4b04-9943-5919e48c7ecf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE RATIFICAÇÃO Dispensa de Licitação nº. 004/2022 Processo Administrativo nº. 008/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D07C67280EA74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D07C67280EA74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-ratificacao-dispensa-de-licitacao-n-004-2022-processo-administrativo-n-008-2022-rio-grande-do-piaui-10219">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_ratificacao_dispensa_de_licitacao_n_004_2022_processo_administrativo_n_008_2022_df04aeec-4092-4cb2-98f3-b60d42fccb31.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Ratificação de Dispensa nº004/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D0CCE9805264
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D0CCE9805264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-de-dispensa-n-004-2022-santa-cruz-dos-milagres-10235">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Santa_Cruz_dos_Milagres_Aviso_de_Ratificacao_ratificacao_de_dispensa_n_004_2022_819f851a-d522-46be-889f-0c0886e71b39.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria n 007
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>79594F963CF94
+<br/><br/>
+<a class="fileDoc" data-file-hash="79594F963CF94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-007-conceicao-do-caninde-10224">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Conceicao_do_Caninde_Portarias_portaria_n_007_322332e0-e21e-486e-a87e-bbf2fe0aed53.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+processo seletivo aptidao
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A171317A1004
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A171317A1004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/processo-seletivo-aptidao-isaias-coelho-10208">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Isaias_Coelho_Outros_processo_seletivo_aptidao_99f237af-e41f-4985-9108-0ae8b02f0dd2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>182C68459B1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="182C68459B1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10891/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_cc57c773-e933-4712-a0e9-5b8072931705.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>51F01BA7B4504
+<br/><br/>
+<a class="fileDoc" data-file-hash="51F01BA7B4504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10892/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_ad00a0cb-1b24-43f2-a137-20cf18ded57b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC1709674AB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC1709674AB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10893/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_efb7fbdf-5471-4e87-a07a-8d51d692d94e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>970A82AD213C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="970A82AD213C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10894/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_cf2ca185-ed82-4807-bdd9-84b8118d0bcc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>86969A68C1124
+<br/><br/>
+<a class="fileDoc" data-file-hash="86969A68C1124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10895/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_62d52681-7fe2-4558-a361-a03780ef73bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 3º Quadrimestre /
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7AECA14D7724
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7AECA14D7724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10896/rgf-3-quadrimestre-buriti-dos-lopes-10247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rgf_3_quadrimestre_24b1a168-5d85-4a29-96a0-8cfa76c6bef1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+DECISÃO PROCESSO ADM. 004-2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6A7C84CF4504
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6A7C84CF4504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decisao-processo-adm-004-2022-barra-d-alcantara-10285">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Barra_DAlcantara_Outros_atos_administrativos_decisao_processo_adm_004_2022_e50ddff9-338c-4634-8ce2-cb912701dad4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Torna sem efeito a publicação do extrato do contrato administrativo n°041/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso da anulação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DEDB5557751D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DEDB5557751D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/torna-sem-efeito-a-publicacao-do-extrato-do-contrato-administrativo-n-041-2022-barreiras-do-piaui-10244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Barreiras_do_Piaui_Aviso_da_anulacao_torna_sem_efeito_a_publicacao_do_extrato_do_contrato_administrativo_n_041_2022_15f389c2-a6b5-4219-93d4-afadd0f7f8b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 040 2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B38ABDD8A854
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B38ABDD8A854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-040-2022-agricolandia-10258">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Agricolandia_Portarias_portaria_040_2022_0b4378f4-5227-4edd-b5b2-c452158f3fcb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+RESULTADO FINAL
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>36FE43555A6E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="36FE43555A6E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-final-hugo-napoleao-10246">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Hugo_Napoleao_Outros_resultado_final_e4085e25-13a6-4afe-be3e-f28c45274949.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+EDITAL DE CONVOCAÇÃO nº 002/2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C23CB0E15684
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C23CB0E15684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-n-002-2022-caxingo-10260">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Camara_Caxingo_Outros_edital_de_convocacao_n_002_2022_eebdb998-2f62-4cf6-9a6d-bd21d1f8a1d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Errata Decreto
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA1B745C19D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA1B745C19D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-decreto-buriti-dos-lopes-10250">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Buriti_dos_Lopes_Errata_errata_decreto_4f5bca47-cbc5-46a0-bc29-fc57ec05ee43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato homologação PE 06
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2BA37A9A6F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2BA37A9A6F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-homologacao-pe-06-nazare-do-piaui-10252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Nazare_do_Piaui_Aviso_da_Homologacao_extrato_homologacao_pe_06_4a635543-cf86-49d1-b5e0-070525c633ce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 038 2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB8B8AF63A664
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB8B8AF63A664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-038-2022-agricolandia-10255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Agricolandia_Portarias_portaria_038_2022_c82e58e0-3824-4c01-89c9-e4a97df53a0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria n 012
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3D2D241129C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3D2D241129C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-012-conceicao-do-caninde-10237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Conceicao_do_Caninde_Portarias_portaria_n_012_ecac6f7e-d0a4-4f66-97a4-4382f5537314.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA DE EXONERAÇÃO DE Nº 046-2022
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6794014859AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6794014859AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-exoneracao-de-n-046-2022-altos-10256">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Prefeitura_Altos_Portarias_portaria_de_exoneracao_de_n_046_2022_1cf01c11-3bdf-4c00-9a55-4ec3afd5b9f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+006 - NOMEAÇÃO - DEILDA
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D60DCD6F5C0D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D60DCD6F5C0D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/006-nomeacao-deilda-demerval-lobao-10239">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Camara_Demerval_Lobao_Portarias_006_nomeacao_deilda_e726457c-69a6-49dd-bf8d-386b1af81a5d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=267&amp;q[flag_doc_diario_true]=1">
+188
+</a>
+-
+2022
+</td>
+<td class="">
+004 - NOMEAÇÃO - LUCAS FRANCISCO
+</td>
+<td class="text-center">
+14-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>82A18354E0874
+<br/><br/>
+<a class="fileDoc" data-file-hash="82A18354E0874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/004-nomeacao-lucas-francisco-demerval-lobao-10236">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/11/DOP_EDICAO__14-3-2022_ED_188_Camara_Demerval_Lobao_Portarias_004_nomeacao_lucas_francisco_b0963c8f-1d99-4a82-bb02-0e507338dcd5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

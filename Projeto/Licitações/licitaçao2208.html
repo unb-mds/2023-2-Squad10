@@ -1,0 +1,1556 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>925F101236544
+<br/><br/>
+<a class="fileDoc" data-file-hash="925F101236544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33043/rgf-2-quadrimestre-2022-sebastiao-barros-30553">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Camara_Sebastiao_Barros_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_2022_ab1fd0bf-99d5-439f-8128-672389be6b66.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8E3975589544
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8E3975589544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33054/rgf-agosto-de-2022-luis-correia-30564">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rgf_agosto_de_2022_aed6b0dd-778f-440a-9143-63686c0d3b6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F4F5AB89F7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F4F5AB89F7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33055/rgf-agosto-de-2022-luis-correia-30564">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rgf_agosto_de_2022_b56b0ac7-5eac-456c-bfa9-f14cf2644265.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2006E8EB5D234
+<br/><br/>
+<a class="fileDoc" data-file-hash="2006E8EB5D234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33056/rgf-agosto-de-2022-luis-correia-30564">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rgf_agosto_de_2022_63a4c25b-3237-453a-95ae-032659b61205.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E43116B26CFF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E43116B26CFF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33057/rgf-agosto-de-2022-luis-correia-30564">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rgf_agosto_de_2022_dc0362b0-37f3-4411-95e0-c2310d42d206.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RGF AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D6927691F0F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="D6927691F0F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33058/rgf-agosto-de-2022-luis-correia-30564">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rgf_agosto_de_2022_53475567-3c35-4d88-8a5b-96d1ab6cc22c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 014/2022
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C9F818F8EB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C9F818F8EB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-014-2022-pimenteiras-30582">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Camara_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_014_2022_dfc83896-9d97-475e-b0bc-78d17b7255b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RETIFICAÇÃO EXTRATO DE CONTRATO - BANDA A JAPA
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC309CABB38F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC309CABB38F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-extrato-de-contrato-banda-a-japa-landri-sales-30576">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Landri_Sales_Extrato_retificacao_extrato_de_contrato_banda_a_japa_474c6a4f-e218-40bb-a561-3e3bf2f5a2c1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato Alvorada PE 033-22
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D2D22095EDFC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D2D22095EDFC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-alvorada-pe-033-22-tanque-do-piaui-30600">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_alvorada_pe_033_22_8f0ed41c-df75-4099-bb7c-69c521c97c7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Ata de julgamento de habilitação
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>2BC0955465B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="2BC0955465B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-julgamento-de-habilitacao-oeiras-30611">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Oeiras_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_ata_de_julgamento_de_habilitacao_5cee3f65-3f0d-448e-96f9-29a241d407df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+ATO SAÚDE
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>49166869DD854
+<br/><br/>
+<a class="fileDoc" data-file-hash="49166869DD854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-saude-campinas-do-piaui-30598">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Campinas_do_Piaui_Atos_ato_saude_714c99b7-dfcf-445c-89da-bd3ca94939c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Termo aditivo Pregão Eletrônico 021 - 2021
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FE5D8C125DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FE5D8C125DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-pregao-eletronico-021-2021-angical-do-piaui-30619">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Angical_do_Piaui_Aviso_do_Termo_Aditivo_termo_aditivo_pregao_eletronico_021_2021_55af438e-fcf5-41fa-b48f-4d493fe10869.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato R Alves PE -33-22
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E984EEE779C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E984EEE779C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-r-alves-pe-33-22-tanque-do-piaui-30601">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_r_alves_pe_33_22_46347a6e-98e3-4ef9-b4d4-3e983959ab84.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DISPENSA 33 2022 KLEBER LIRA E SILVA - MEI (CNPJ n° 45.641.430/0001-20).
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>423B15B03AA54
+<br/><br/>
+<a class="fileDoc" data-file-hash="423B15B03AA54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-33-2022-kleber-lira-e-silva-mei-cnpj-n-45-641-430-0001-20-francisco-macedo-30603">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Francisco_Macedo_Aviso_da_Dispensa_extrato_dispensa_33_2022_kleber_lira_e_silva_mei_cnpj_n_45_641_430_0001_20_0b4f20bc-18db-4185-847d-d78ba3b4b636.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação 36
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A1CAC4D97714
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A1CAC4D97714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-36-marcos-parente-30595">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Marcos_Parente_Aviso_de_licitacao_aviso_de_licitac_a_o_36_919566d7-6f2a-4b07-a322-25542248418f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Notificação de Rescisão do Contrato 090/2021
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>9BEEC189E82C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9BEEC189E82C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/notificacao-de-rescisao-do-contrato-090-2021-sao-jose-do-peixe-30605">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Sao_Jose_do_Peixe_Outros_notificacao_de_rescisao_do_contrato_090_2021_190a5349-7306-4f8d-8657-5f4f7b7c6ccf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+Ata da decima quinta sessão
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>2FFE0660355B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2FFE0660355B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-decima-quinta-sessao-cristino-castro-30581">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Camara_Cristino_Castro_Atas_ata_da_decima_quinta_sessao_123d4640-cc4e-4d0e-9306-ca9e479b4216.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+DECISÃO EM JULGAMENTO DE RECURSO ADMINISTRATIVO TP 004-2022
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso do Julgamento e classificação de propostas
+</td>
+<td class="text-center">
+<strong>ID: </strong>F31162EDB6C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="F31162EDB6C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decisao-em-julgamento-de-recurso-administrativo-tp-004-2022-altos-30620">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Altos_Aviso_do_Julgamento_e_classificacao_de_propostas_decisao_em_julgamento_de_recurso_administrativo_tp_004_2022_f75937f7-aa84-47f9-b7d0-e82de9499b4f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+EXONERAÇÃO - MANOEL MESSIAS
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Exoneração
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0F083D5DC3A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0F083D5DC3A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/exoneracao-manoel-messias-santa-rosa-do-piaui-30612">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Santa_Rosa_do_Piaui_Exoneracao_exoneracao_manoel_messias_af174fbb-78c3-4774-8043-684dad72c628.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+corrig-Extrato-Contrato nº 060-2022-Fornec. de 02 veículos-PMPL
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2EF1B30BC23B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2EF1B30BC23B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-extrato-contrato-n-060-2022-fornec-de-02-veiculos-pmpl-paes-landim-30622">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Paes_Landim_Aviso_do_extrato_de_contrato_corrig_extrato_contrato_n_060_2022_fornec_de_02_veiculos_pmpl_66f333a3-9ba9-45e2-bbf4-87f6f2665069.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B21AC2895BA64
+<br/><br/>
+<a class="fileDoc" data-file-hash="B21AC2895BA64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33061/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_dbd6f59d-8de5-421a-b358-18b00b56a744.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E0EA0E803D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E0EA0E803D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33062/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_117fa45b-e984-4f9d-b428-8e7e1cf417a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D8E63B24BED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D8E63B24BED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33063/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_5255f15c-da62-4816-a7f6-d96e3408c95b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87A431549F0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87A431549F0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33064/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_eb086687-e29b-4c34-8d55-6a3608b4afa8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>33DFA83A69CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="33DFA83A69CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33065/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_81e69281-6853-40c3-a826-6fa0ba654706.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>30DE56C46BDD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="30DE56C46BDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33066/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_ce676858-3e91-46a4-9446-77443e866747.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB8BCE64F1614
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB8BCE64F1614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33067/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_e03477e5-03d1-4541-a34f-9edf23e30e9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>46B7E32300864
+<br/><br/>
+<a class="fileDoc" data-file-hash="46B7E32300864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33068/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_6753b524-e870-4365-90e0-d1dc13395a8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E9E71E8D4A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E9E71E8D4A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33069/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_a2600bf8-0405-4cd1-aced-fff8bf668393.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RREO AGOSTO DE 2022 /
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C057F5DBC6514
+<br/><br/>
+<a class="fileDoc" data-file-hash="C057F5DBC6514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33070/rreo-agosto-de-2022-luis-correia-30567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_agosto_de_2022_7039d289-ec15-45ff-9131-3bfdf7064130.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO N° 475-2022 - COMBUSTÍVEL-SEGOV-P N S DA GUIA
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDC676199AE34
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDC676199AE34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-475-2022-combustivel-segov-p-n-s-da-guia-floriano-30631">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_475_2022_combustivel_segov_p_n_s_da_guia_3369e00c-5275-47b1-8316-7dc46da9929d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIO DE JULGAMENTO - CP 08-22
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>47DDC4DDB4DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="47DDC4DDB4DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/relatorio-de-julgamento-cp-08-22-floriano-30637">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Floriano_Atas_relatorio_de_julgamento_cp_08_22_d54c3041-db02-4257-ad07-afed6d6d076e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=501&amp;q[flag_doc_diario_true]=1">
+348
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato dispensa nº011/2022 - projeto básico quadra e pista de caminhada
+</td>
+<td class="text-center">
+03-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8A68D0A135D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8A68D0A135D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-dispensa-n-011-2022-projeto-basico-quadra-e-pista-de-caminhada-buriti-dos-montes-30602">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/1/DOP_EDICAO__3-11-2022_ED_348_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_dispensa_n_011_2022_projeto_basico_quadra_e_pista_de_caminhada_be77f732-3add-4cab-bd78-f1d14cb00577.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

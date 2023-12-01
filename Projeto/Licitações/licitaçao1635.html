@@ -1,0 +1,1385 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL Nº004/2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>91EEA580C4A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="91EEA580C4A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-n-004-2023-hugo-napoleao-44731">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Hugo_Napoleao_Edital_de_Chamada_edital_n_004_2023_55a36c52-4e64-4b1d-8ccd-d6c88fb1a413.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+2º TA IPL 004/2021 - Ass Jurídica
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>810F25D8FFE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="810F25D8FFE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-ta-ipl-004-2021-ass-juridica-lagoinha-do-piaui-44732">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Termo_Aditivo_2_ta_ipl_004_2021_ass_juridica_62535b83-b18d-4f59-9b73-db8cd6ab08bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 007/2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Joaquim Pires
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>01494B4E87054
+<br/><br/>
+<a class="fileDoc" data-file-hash="01494B4E87054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-007-2023-joaquim-pires-44689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Camara_Joaquim_Pires_Portarias_portaria_007_2023_5dd305e2-5d7c-4fb8-ba85-a2e270a8fa88.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 482/2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F44A85BAB8CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F44A85BAB8CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-482-2023-floriano-44685">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Floriano_Portarias_portaria_482_2023_6d43eac3-eb58-4f85-81e8-960425643f2a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+LEI 212-2021 - FUNDEB
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0F030D4B97E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0F030D4B97E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-212-2021-fundeb-sao-joao-da-fronteira-44686">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Joao_da_Fronteira_Leis_lei_212_2021_fundeb_54df4e15-5874-43c8-b8be-f4421810d0bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+REL LRF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Matias Olímpio
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4F7A7C037A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4F7A7C037A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47781/rel-lrf-3-quad-2022-matias-olimpio-44657">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Camara_Matias_Olimpio_Relatorios_de_gestao_fiscal_rel_lrf_3_quad_2022_cfe2e0da-ddc8-41bc-a4a3-ceba63ce7e83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇAO 02/2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>8679F12579F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="8679F12579F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-02-2023-sao-jose-do-piaui-44648">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Camara_Sao_Jose_do_Piaui_Resolucoes_resolucao_02_2023_421019cc-e957-4f9b-b7a7-2d0a39c64457.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+OFICIL
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>53030E7EAF024
+<br/><br/>
+<a class="fileDoc" data-file-hash="53030E7EAF024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficil-lagoinha-do-piaui-44658">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Lagoinha_do_Piaui_Atas_oficil_fdbf4344-77f3-4cf5-8788-04729f9737eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+2º aditivo pp 005-21
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C90A900FDE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C90A900FDE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-aditivo-pp-005-21-tanque-do-piaui-44683">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_2_aditivo_pp_005_21_19c200bf-3307-4e4b-955d-2fa5399308d4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO PRIMEIRO TERMO DE ADITIVO DA DISPENSA DE LICITAÇÃO Nº 022/2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB7AB26BD8A24
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB7AB26BD8A24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-primeiro-termo-de-aditivo-da-dispensa-de-licitacao-n-022-2023-jardim-do-mulato-44647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Jardim_do_Mulato_Aviso_do_Termo_Aditivo_extrato_do_primeiro_termo_de_aditivo_da_dispensa_de_licitacao_n_022_202_9f529b90-2985-4092-b169-a41ce8d0a828.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+LEI MUNICIPAL Nº 300/2023 - DISPÕE SOBRE O PAGAMENTO DE DIÁRIAS A SERVIDORES MUNICIPAIS
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>76ACCFF7D5AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="76ACCFF7D5AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-municipal-n-300-2023-dispoe-sobre-o-pagamento-de-diarias-a-servidores-municipais-jardim-do-mulato-44633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Jardim_do_Mulato_Leis_lei_municipal_n_300_2023_dispoe_sobre_o_pagamento_de_diarias_a_servidores_municipais_aa877db9-e317-40b5-9f80-6a2bb1332a10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 01-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>51704B3C23054
+<br/><br/>
+<a class="fileDoc" data-file-hash="51704B3C23054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-01-2023-buriti-dos-lopes-44681">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_01_2023_29221790-c454-43d4-934e-a617dea9c46c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 23-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>16B888642BC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="16B888642BC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-23-2023-buriti-dos-lopes-44680">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_23_2023_80e0baa7-7aef-472e-b9f6-a23508a557fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 22-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>90DB941686F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="90DB941686F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-22-2023-buriti-dos-lopes-44679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_22_2023_757188e7-c7ba-49b3-a5ae-ecbf8f0a2605.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 21-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C6F54A105FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C6F54A105FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-21-2023-buriti-dos-lopes-44678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_21_2023_de15d334-7cd3-4654-a4d6-a82a46d99847.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 20-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2064BC97722C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2064BC97722C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-20-2023-buriti-dos-lopes-44677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_20_2023_efa45293-ca31-4eec-9c03-7a38700b6639.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 19-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>23F870CC9FAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="23F870CC9FAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-19-2023-buriti-dos-lopes-44676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_19_2023_7ac91e6c-77a4-4f09-b4e7-8602859caffe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 18-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>615C5F84AE814
+<br/><br/>
+<a class="fileDoc" data-file-hash="615C5F84AE814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-18-2023-buriti-dos-lopes-44675">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_18_2023_4e586dde-9947-4e23-b6ee-b2f4f4b83793.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 17-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B64EAA69F47A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B64EAA69F47A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-17-2023-buriti-dos-lopes-44674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_17_2023_c8fea276-38da-4ed3-9b2a-e26e72fc7d26.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 16-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0748AD5EEE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0748AD5EEE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-16-2023-buriti-dos-lopes-44673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_16_2023_62c0920c-c618-43d3-92dc-f842e4f15933.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Dispensa nº 001-2023 extrato.pdf
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D00131C84ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D00131C84ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-001-2023-extrato-pdf-isaias-coelho-44656">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Isaias_Coelho_Extrato_dispensa_n_001_2023_extrato_pdf_af15d197-855b-4469-b6f3-9fb487d21207.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 13-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A5BEC93F55894
+<br/><br/>
+<a class="fileDoc" data-file-hash="A5BEC93F55894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-13-2023-buriti-dos-lopes-44671">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_13_2023_8ceb2365-c055-4b1e-8c6d-86a4a802beff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02A3DEF7D5094
+<br/><br/>
+<a class="fileDoc" data-file-hash="02A3DEF7D5094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47756/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_de286abf-f15c-4d4e-81c4-bbdc30dc8d14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABBA1F43BF194
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABBA1F43BF194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47757/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_4cb648a2-347e-4322-a5dc-561ffc1a6a3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>76A4129DFB044
+<br/><br/>
+<a class="fileDoc" data-file-hash="76A4129DFB044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47758/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_144e85b3-7917-490c-99d0-037a5164946c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D78DFBA18C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D78DFBA18C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47759/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_7f14130d-d8a6-4a9b-b991-1ee060f43ef3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>70283D8E4A204
+<br/><br/>
+<a class="fileDoc" data-file-hash="70283D8E4A204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47760/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_382264f4-4431-4afd-8ad2-3632c607d42a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>50B4A26B199D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="50B4A26B199D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47761/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_536496a4-7fe4-4519-9f9d-378a8df322e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 12-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>846BBDB529FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="846BBDB529FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-12-2023-buriti-dos-lopes-44670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_12_2023_3adae629-7e0d-44ef-80d8-14df43311cec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 11-2023
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>430089CDE0D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="430089CDE0D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-11-2023-buriti-dos-lopes-44669">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_11_2023_fd11a22f-1bc5-4adf-9ade-12b7de4360cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1344 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 2 - Divida /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC65BDFC98C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC65BDFC98C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47269/rgf-anexo-2-divida-sao-joao-da-fronteira-44180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_2_divida_2f910231-f61a-4818-94f0-a58e64e35325.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 2 - Divida /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>870565BD330F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="870565BD330F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47270/rgf-anexo-2-divida-sao-joao-da-fronteira-44180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_2_divida_7a28dcf8-39dd-4693-93c9-5d67c00783e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 2 - Divida /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0EEA3C40CC024
+<br/><br/>
+<a class="fileDoc" data-file-hash="0EEA3C40CC024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47271/rgf-anexo-2-divida-sao-joao-da-fronteira-44180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_2_divida_9599b69d-44d4-4870-9d41-7c728bcdecfa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 2 - Divida /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8777DD59172D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8777DD59172D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47272/rgf-anexo-2-divida-sao-joao-da-fronteira-44180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_2_divida_b8826ff7-e675-4ea5-bb28-863eb430418b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 2 - Divida /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>19F2B97B90F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="19F2B97B90F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47273/rgf-anexo-2-divida-sao-joao-da-fronteira-44180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_2_divida_47b626b8-5e56-44ef-8a30-ef975227f187.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 480/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>83F27DAA99AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="83F27DAA99AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-480-2023-floriano-44250">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_480_2023_63914619-0c05-4a47-ac5e-b534453c4256.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 472/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>038DF852A3694
+<br/><br/>
+<a class="fileDoc" data-file-hash="038DF852A3694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-472-2023-floriano-44242">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_472_2023_1de22c79-7a56-4ea1-ac05-c12e406ed595.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+extrato 004
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CD3D36B53B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CD3D36B53B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-004-passagem-franca-do-piaui-44254">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Passagem_Franca_do_Piaui_Extrato_extrato_004_f773ac8b-315b-451c-83e9-35c5b3e52b66.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+OFICIO
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>348086EEF8FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="348086EEF8FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficio-lagoinha-do-piaui-44176">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Lagoinha_do_Piaui_Atas_oficio_71abc35b-05df-48db-a1b3-0fb9e1ebeb3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 5 - Disponibilidade de Caixa /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F40D02506D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F40D02506D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47266/rgf-anexo-5-disponibilidade-de-caixa-sao-joao-da-fronteira-44177">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_5_disponibilidade_de_caixa_b9381be6-a61c-45ab-a35f-d2c6e7c2a02f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA DE NOMEAÇÃO 030 2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>11B15A76BD164
+<br/><br/>
+<a class="fileDoc" data-file-hash="11B15A76BD164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-nomeacao-030-2023-altos-44171">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Altos_Portarias_portaria_de_nomeacao_030_2023_abacdfb2-eead-4c0a-bf67-716362a6828b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+DIVULGAÇÃO DE RESULTADO FINAL TESTE SELETIVO 001-2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FE32189EB724
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FE32189EB724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/divulgacao-de-resultado-final-teste-seletivo-001-2023-queimada-nova-44231">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Queimada_Nova_Atos_divulgacao_de_resultado_final_teste_seletivo_001_2023_d61f00d1-7587-4390-a138-80d406fd7609.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 477/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>41F5BF8D05634
+<br/><br/>
+<a class="fileDoc" data-file-hash="41F5BF8D05634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-477-2023-floriano-44247">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_477_2023_7997cf9b-0125-4493-aa8f-3aaa2438acf6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 470/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0BA3D45956A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0BA3D45956A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-470-2023-floriano-44240">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_470_2023_bb247f26-622e-489a-bf94-c014578f825b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 466/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1AC866C3CD24
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1AC866C3CD24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-466-2023-floriano-44236">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_466_2023_e99b2122-dc2c-4acb-ab72-32c196be7688.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO DA SEC. MUNICIPAL DE ADMINISTRAÇÃO
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6285AD994BD94
+<br/><br/>
+<a class="fileDoc" data-file-hash="6285AD994BD94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-administracao-barreiras-do-piaui-44205">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_administracao_e3ea243a-18cb-4c6f-adc4-63a6677791c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 457/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BCEB0184D33A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BCEB0184D33A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-457-2023-floriano-44213">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_457_2023_eef6d787-8319-415f-bf39-f132b788447d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 451/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>411195A37D364
+<br/><br/>
+<a class="fileDoc" data-file-hash="411195A37D364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-451-2023-floriano-44203">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_451_2023_c643c843-50b5-4dda-b878-b9312a9f4ad9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 443/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E83589D218C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E83589D218C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-443-2023-floriano-44193">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_443_2023_243002b3-0ce8-43bf-b939-08a8d34f06fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 442/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E37BBDA128A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E37BBDA128A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-442-2023-floriano-44192">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_442_2023_dc3191bb-9d7d-4125-bb21-e1b675f593f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 440/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1F4DFC6D4E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1F4DFC6D4E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-440-2023-floriano-44186">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Floriano_Portarias_portaria_440_2023_5dc7d92f-20cd-4402-a528-84f1c140c1cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+Homologação Dispensa de Licitação Nº 007/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>26D977CF049A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="26D977CF049A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-dispensa-de-licitacao-n-007-2023-currais-44197">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Currais_Aviso_da_Homologacao_homologacao_dispensa_de_licitacao_n_007_2023_0b304d87-fe9f-4662-8401-19aa1202b7e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº 0702202302/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>01BC21EA78EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="01BC21EA78EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-0702202302-2023-currais-44195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Currais_Aviso_da_Dispensa_extrato_do_contrato_n_0702202302_2023_77fe2269-8741-47a4-ac4d-35b368b895d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+dl 01.2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B4F9B2D89964
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B4F9B2D89964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dl-01-2023-buriti-dos-lopes-44225">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_dl_01_2023_63982985-decd-401e-a52f-b8cb54ead874.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+dl 062
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>81A30BE71C4A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="81A30BE71C4A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dl-062-buriti-dos-lopes-44224">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Buriti_dos_Lopes_Extrato_dl_062_7586b0fa-8bde-4a68-86e1-c6529bed193c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - ANEXO 6 - Simplificado /
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3854C617775A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3854C617775A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47264/rgf-anexo-6-simplificado-sao-joao-da-fronteira-44175">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Sao_Joao_da_Fronteira_Relatorios_de_gestao_fiscal_rgf_anexo_6_simplificado_f02d642a-c321-4959-877a-bb96004d0399.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 026/2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D48A21C38724
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D48A21C38724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-026-2023-caxingo-44172">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Caxingo_Portarias_portaria_026_2023_987a8ece-243c-4341-bd49-a16742359689.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA DE NOMEAÇÃO 031 2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8694D8091374
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8694D8091374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-nomeacao-031-2023-altos-44173">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Altos_Portarias_portaria_de_nomeacao_031_2023_05ecf51f-9b48-4ac5-bf6e-bcbd96cc3947.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=600&amp;q[flag_doc_diario_true]=1">
+417
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA DE EXONERAÇÃO 029 2023
+</td>
+<td class="text-center">
+10-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E819A3941374
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E819A3941374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-exoneracao-029-2023-altos-44167">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/9/DOP_EDICAO__10-2-2023_ED_417_Prefeitura_Altos_Portarias_portaria_de_exoneracao_029_2023_517dafb3-f4ad-4737-9939-ea33648b1da0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

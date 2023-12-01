@@ -1,0 +1,1598 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DISP 029A/2021
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0AB5E61ACF384
+<br/><br/>
+<a class="fileDoc" data-file-hash="0AB5E61ACF384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-disp-029a-2021-campinas-do-piaui-1877">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Campinas_do_Piaui_Extrato_extrato_disp_029a_2021_ac21a1f5-a6d6-4b06-b09f-0ff08d686362.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DISP 026/2021
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DD6EAA136AE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DD6EAA136AE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-disp-026-2021-campinas-do-piaui-1876">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Campinas_do_Piaui_Extrato_extrato_disp_026_2021_b2d11a04-cc9c-4118-9838-2f3df5adcc76.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+AVISO DO PREGÃO Nº 027-2021 locação de sistema de contabilidade Publica
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E8D77EC23C5E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E8D77EC23C5E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-do-pregao-n-027-2021-locacao-de-sistema-de-contabilidade-publica-dom-expedito-lopes-1875">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Dom_Expedito_Lopes_Aviso_de_licitacao_aviso_do_pregao_n_027_2021_locacao_de_sistema_de_contabilidade_publica_8857e27e-ad17-425f-96a5-c6e57d979602.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+Retificação Aviso de Licitação PP 037/2021
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E7AD548583134
+<br/><br/>
+<a class="fileDoc" data-file-hash="E7AD548583134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-aviso-de-licitacao-pp-037-2021-pimenteiras-1874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Pimenteiras_Aviso_de_licitacao_retificacao_aviso_de_licitacao_pp_037_2021_3d4fd7bd-e41c-4643-b088-5fc4fbe57030.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL JAN/2020 A DEZ/2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E20005A7D0894
+<br/><br/>
+<a class="fileDoc" data-file-hash="E20005A7D0894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1938/relatorio-de-gestao-fiscal-jan-2020-a-dez-2020-angical-do-piaui-1863">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Angical_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_jan_2020_a_dez_2020_42497ac9-7b3a-48de-acc7-70bcd0047c09.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+RESULTADO DO TESTE SELETIVO PRO ALFABETIZAÇÃO
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Resultado dos aprovados e sua classificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3888FA3CD4F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="3888FA3CD4F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-do-teste-seletivo-pro-alfabetizacao-caxingo-1872">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caxingo_Resultado_dos_aprovados_e_sua_classificacao_resultado_do_teste_seletivo_pro_alfabetizacao_028f2193-91fa-4531-a076-0225e7e41d29.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE CONTRATO CHAMADA PUBLICA 02.2021.04
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>66078FE2E6704
+<br/><br/>
+<a class="fileDoc" data-file-hash="66078FE2E6704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-chamada-publica-02-2021-04-buriti-dos-montes-1871">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_de_contrato_chamada_publica_02_2021_04_dd212bc6-57c7-4ed9-bd29-9a0fdb9e9ea8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE CONTRATO CHAMADA PUBLICA 02.2021.03
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>65A581FACF564
+<br/><br/>
+<a class="fileDoc" data-file-hash="65A581FACF564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-chamada-publica-02-2021-03-buriti-dos-montes-1870">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_de_contrato_chamada_publica_02_2021_03_9ec6e047-4572-4212-b897-a14a9d2cd6b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE CONTRATO CHAMADA PUBLICA 02.2021.02
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF45796965A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF45796965A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-chamada-publica-02-2021-02-buriti-dos-montes-1869">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_de_contrato_chamada_publica_02_2021_02_67fb8496-1ac5-43f0-8aff-8724a5f7472d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE CONTRATO CHAMADA PUBLICA 02.2021
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>82789AD6639A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="82789AD6639A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-chamada-publica-02-2021-buriti-dos-montes-1868">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_de_contrato_chamada_publica_02_2021_b02a8cdc-c7f0-409b-8af4-f4e3963e6e91.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CFBB9FCFDA104
+<br/><br/>
+<a class="fileDoc" data-file-hash="CFBB9FCFDA104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caxingo-1867">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caxingo_Extrato_extrato_ce12a5f7-aae1-4dc7-a434-5e8840852148.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>609D90ABFF7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="609D90ABFF7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1949/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_c199a460-2b39-4d91-9cbf-ceb727a7f6ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C96F12762ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C96F12762ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1950/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_1e742ea0-0eb7-4293-9237-0e88f26b3111.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>84C545E929614
+<br/><br/>
+<a class="fileDoc" data-file-hash="84C545E929614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1951/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_311c6276-8c05-46e9-998b-e33ef4f9e5c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E46AA4EEF1E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E46AA4EEF1E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1952/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_0c4eac3a-26d5-423a-8d56-aa4a777c98d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>81BFAD8C7B574
+<br/><br/>
+<a class="fileDoc" data-file-hash="81BFAD8C7B574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1953/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_3a00958e-c2c0-4804-9868-549390ed94df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D284AC4490534
+<br/><br/>
+<a class="fileDoc" data-file-hash="D284AC4490534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1954/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_23401fa5-3994-4307-a1ef-2ac1f723ad2d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3258EC9335E24
+<br/><br/>
+<a class="fileDoc" data-file-hash="3258EC9335E24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1955/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_70aeb487-30fa-4540-b253-156e4c835dcd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDE32D44429E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDE32D44429E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1956/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_e9acbcf2-0bf2-4f20-a542-c4ab6e004698.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A461E62395014
+<br/><br/>
+<a class="fileDoc" data-file-hash="A461E62395014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1957/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_aee522e7-4c62-4633-8b1a-8e95fb7fae14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB464DD74BBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB464DD74BBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1958/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_c3bebebd-9076-49dd-a4c7-ffb572a0682b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>630F591376754
+<br/><br/>
+<a class="fileDoc" data-file-hash="630F591376754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1959/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_66affa89-0b55-4bb4-a4f8-217d10268420.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F79BC58DC3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F79BC58DC3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1960/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_152c6eb9-7dcf-49d8-9c05-dbcf37ca46b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 RREO /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>74C11CE3D1E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="74C11CE3D1E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1961/lrf-2020-rreo-caraubas-do-piaui-1866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_rreo_4216c36a-bf63-4f22-8e0a-6383c793cedf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4911AA9E219B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4911AA9E219B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1940/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_93268edf-918f-4ff7-9919-9fff543fe0fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>96678D5455254
+<br/><br/>
+<a class="fileDoc" data-file-hash="96678D5455254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1941/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_6941edee-7c7c-43b4-bf8f-ab02ccf6f3d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B10B01CB6624
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B10B01CB6624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1942/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_1da65a99-5a39-4304-b86f-f0a9a974fca5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F5251331BF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F5251331BF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1943/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_ca1d84aa-e8c6-4e7a-bc71-2c354794e494.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>07411C29B05C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07411C29B05C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1944/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_5d8bc603-18c4-4f4a-a116-39a2e5fb4bef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5C4C6907D544
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5C4C6907D544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1945/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_daf82709-7b54-406c-8255-b5cf292e32ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>72330823DAC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="72330823DAC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1946/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_bf255cb2-e690-4c5c-b264-088f50b92ff4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD82811648A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD82811648A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1947/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_0aa2f671-1bed-4357-a40f-048ede260471.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=116&amp;q[flag_doc_diario_true]=1">
+083
+</a>
+-
+2021
+</td>
+<td class="">
+LRF 2020 /
+</td>
+<td class="text-center">
+14-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BED177E68A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BED177E68A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1948/lrf-2020-caraubas-do-piaui-1865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/13/DOP_EDICAO_083_Prefeitura_Caraubas_do_Piaui_Atos_lrf_2020_a202412c-98e9-465e-867c-35582514337c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

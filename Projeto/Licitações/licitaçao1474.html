@@ -1,0 +1,1364 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº053-2023 NOMEAR DIVINA DE BRITO M CARNEIRO DA CUNHA
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>334ECDCFED694
+<br/><br/>
+<a class="fileDoc" data-file-hash="334ECDCFED694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-053-2023-nomear-divina-de-brito-m-carneiro-da-cunha-altos-48563">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Altos_Portarias_portaria_n_053_2023_nomear_divina_de_brito_m_carneiro_da_cunha_a4284d45-b2d0-41ff-aec0-c6831968c1f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº052-2023 NOMEAR ALICE BISPO DOS SANTOS
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>14F26428D3724
+<br/><br/>
+<a class="fileDoc" data-file-hash="14F26428D3724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-052-2023-nomear-alice-bispo-dos-santos-altos-48559">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Altos_Portarias_portaria_n_052_2023_nomear_alice_bispo_dos_santos_a7eb888e-2df7-4909-add6-b3625b2d4302.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 104-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>20E6BB8E61D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="20E6BB8E61D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-104-2023-queimada-nova-48562">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_104_2023_106fcdd7-380e-4393-ba5a-b0599ad736e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 099-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF966FAC5C604
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF966FAC5C604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-099-2023-queimada-nova-48552">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_099_2023_1e946ad0-166a-4d84-b05f-9c83bf8f5831.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 092-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3374F40124214
+<br/><br/>
+<a class="fileDoc" data-file-hash="3374F40124214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-092-2023-queimada-nova-48539">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_092_2023_d45656be-9922-4261-b6dd-b4a791c87ec3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 051-2023 EXONERAR WELLINGTON NUNES DE FREITAS
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA2B3B98EC0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA2B3B98EC0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-051-2023-exonerar-wellington-nunes-de-freitas-altos-48554">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Altos_Portarias_portaria_n_051_2023_exonerar_wellington_nunes_de_freitas_e20f27a7-898a-4b56-99d0-327f5f77daf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 098-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1EF609618F7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1EF609618F7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-098-2023-queimada-nova-48550">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_098_2023_eb6996c6-5e9d-4360-ae74-01103886290b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 093-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>808E104490374
+<br/><br/>
+<a class="fileDoc" data-file-hash="808E104490374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-093-2023-queimada-nova-48540">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_093_2023_cb409bc8-b90c-45cf-aef2-b4653b3ee34b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DISPENSA
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED6808318F8A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED6808318F8A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-itaueira-48561">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Itaueira_Aviso_da_Dispensa_dispensa_bcbc9ac5-77e9-4131-a63b-b5ff4c788c78.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 020-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CEFFDAEA28824
+<br/><br/>
+<a class="fileDoc" data-file-hash="CEFFDAEA28824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-020-2023-oeiras-48544">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Oeiras_Decretos_decreto_n_020_2023_cea2db87-3477-45ba-b820-6e76e2937a02.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Ofício 016 - 22 Sec Educação
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0C9EF0C50D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0C9EF0C50D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficio-016-22-sec-educacao-sao-felix-do-piaui-48538">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Felix_do_Piaui_Outros_atos_administrativos_oficio_016_22_sec_educacao_8c145894-6bc1-4e50-859c-6e57f837eb1d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 090-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E9D55243DBB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E9D55243DBB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-090-2023-queimada-nova-48536">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_090_2023_7432155e-b319-4b6e-ab06-866a2e2c4966.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CT 087-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9AF80EE907EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9AF80EE907EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ct-087-2023-queimada-nova-48531">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Aviso_do_extrato_de_contrato_extrato_ct_087_2023_15833687-c1b7-4b1b-aaae-3a9ef1307d71.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Oficio nº 003 - 22 Sec Educação
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2F4D2F0147A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2F4D2F0147A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/oficio-n-003-22-sec-educacao-sao-felix-do-piaui-48535">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Felix_do_Piaui_Outros_atos_administrativos_oficio_n_003_22_sec_educacao_17728f12-af26-406a-8c8c-6ede0f6218da.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL TESTE SELETIVO 02-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>A7E371DC38954
+<br/><br/>
+<a class="fileDoc" data-file-hash="A7E371DC38954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-teste-seletivo-02-2023-queimada-nova-48528">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Queimada_Nova_Edital_de_Chamada_edital_teste_seletivo_02_2023_3f6e93d3-0d71-4075-b3b6-c978ad92b2e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+CD009.2023 - ATA DA SESSÃO
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB7E4C5CE2CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB7E4C5CE2CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cd009-2023-ata-da-sessao-sao-jose-do-divino-48499">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Divino_Atas_cd009_2023_ata_da_sessao_9130a88f-2b37-40d4-89c7-811a8e3fa16f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+TP Nº 002-2023 - ATA DE RESULTADO DA ANALISE DOS DOC DE HABILITAÇÃO
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5CB463FE4FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5CB463FE4FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-n-002-2023-ata-de-resultado-da-analise-dos-doc-de-habilitacao-barra-d-alcantara-48523">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Barra_DAlcantara_Atas_tp_n_002_2023_ata_de_resultado_da_analise_dos_doc_de_habilitacao_aeff8f3c-c37e-4637-82b2-9a2dda01daee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+TP Nº 001-2023 - ATA DE RESULTADO DA ANÁLISE DOS DOC DE HABILITAÇÃO
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>3CB0D0A70A0D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3CB0D0A70A0D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-n-001-2023-ata-de-resultado-da-analise-dos-doc-de-habilitacao-barra-d-alcantara-48521">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Barra_DAlcantara_Atas_tp_n_001_2023_ata_de_resultado_da_analise_dos_doc_de_habilitacao_dc05fabc-b79e-4d7d-a53d-163897dfa5f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO TERMO ADITIVO CONTRATO 228-2022-ANTONIO TURIBA
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C78D3BF75D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C78D3BF75D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-termo-aditivo-contrato-228-2022-antonio-turiba-itaueira-48519">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Itaueira_Aviso_do_Termo_Aditivo_extrato_termo_aditivo_contrato_228_2022_antonio_turiba_e1e62a12-558d-4983-84c6-179b0104c663.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BEBC7F4FF8CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BEBC7F4FF8CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52085/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_346ac06b-6f80-4723-90ef-c108cf9e99f9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DF70C9A2FC74
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DF70C9A2FC74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52086/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_aba3c436-eb58-48ec-83e3-5856b0ce0067.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>31AE18E977E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="31AE18E977E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52087/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_344fc426-6f7f-4d4e-b5f1-236b3d839482.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>12532D7127534
+<br/><br/>
+<a class="fileDoc" data-file-hash="12532D7127534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52088/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_7db8018e-e532-4c86-b615-5044dd21c36b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0ED4BC018E984
+<br/><br/>
+<a class="fileDoc" data-file-hash="0ED4BC018E984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52089/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_bc8e1eca-06a1-4f78-b21f-e52d6580a8d4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B1019092A094
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B1019092A094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52090/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_35cbd991-0bd1-40e2-a267-47f65d5005a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2CCC82A7F4164
+<br/><br/>
+<a class="fileDoc" data-file-hash="2CCC82A7F4164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52091/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_b4ecb6a5-8f92-44fe-8ac0-f2717f32e544.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C3856C6EBE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C3856C6EBE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52092/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_c9855946-dd91-4079-91c6-2cd0d3f8dbac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1021DC05B9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1021DC05B9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52093/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_8d940ac9-2669-4cfe-8059-3da91e5470bd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS GESTÃO FISCAL /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6BB6F7E796B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="6BB6F7E796B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/52094/relatorios-gestao-fiscal-sao-jose-do-piaui-48516">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_895316f3-475a-48b3-92b9-76f8e8718dd9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

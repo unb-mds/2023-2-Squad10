@@ -1,0 +1,1520 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 69/2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6923A3B3114E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6923A3B3114E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-69-2022-queimada-nova-13936">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Queimada_Nova_Portarias_portaria_69_2022_667b8580-b47f-4c78-ae4c-859b67973756.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de aditivo
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7622A5BD1E404
+<br/><br/>
+<a class="fileDoc" data-file-hash="7622A5BD1E404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-isaias-coelho-13953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Isaias_Coelho_Extrato_extrato_de_aditivo_aa870d29-7cd2-41c4-a6d3-c9b7550c8826.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 024/2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>ACD94D3FBC594
+<br/><br/>
+<a class="fileDoc" data-file-hash="ACD94D3FBC594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-024-2022-wall-ferraz-13939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Wall_Ferraz_Decretos_decreto_024_2022_97de4ae1-08f3-4460-8891-617460e95f77.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>19214A2488044
+<br/><br/>
+<a class="fileDoc" data-file-hash="19214A2488044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-13974">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Atos_extrato_945f7475-1b26-45f1-be5b-fa466ec841a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5DCD271192C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="5DCD271192C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-14011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_e0ee811b-8ed8-4a8b-83df-226ff505eb8a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 065/2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>90500B1313A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="90500B1313A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-065-2022-wall-ferraz-14001">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Wall_Ferraz_Portarias_portaria_065_2022_c13fb9fa-da77-4695-8210-439643c35ec1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+Ata da decima nona sessão ordinária de 2021
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE0E62A17D064
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE0E62A17D064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-decima-nona-sessao-ordinaria-de-2021-cristino-castro-13967">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Camara_Cristino_Castro_Atas_ata_da_decima_nona_sessao_ordinaria_de_2021_266869f3-69ed-4ae9-a7e4-0934d9ce7903.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+JULGAMENTO DE RECURSO DA TOMADA DE PREÇO 01/2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE8F57F08E9F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE8F57F08E9F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-de-recurso-da-tomada-de-preco-01-2022-itaueira-13965">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Itaueira_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_julgamento_de_recurso_da_tomada_de_preco_01_2022_bc34089a-1278-4446-827b-13819f2d06aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CC1A6F4494144
+<br/><br/>
+<a class="fileDoc" data-file-hash="CC1A6F4494144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-13977">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Atos_extrato_d045f452-b88b-4493-809f-e02ac9187360.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1DBA27F53AE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1DBA27F53AE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-caraubas-do-piaui-14022">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Portarias_portaria_0f64f947-e985-4d53-b6ff-c9f437d50edd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>23540CD5EFE04
+<br/><br/>
+<a class="fileDoc" data-file-hash="23540CD5EFE04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-caraubas-do-piaui-14023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Portarias_portaria_1a974190-8b10-4387-b215-d1bbfc31aea4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO INEX 007 2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>43DEB73EDF0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="43DEB73EDF0A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-inex-007-2022-wall-ferraz-14015">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Wall_Ferraz_Extrato_extrato_inex_007_2022_df3d1260-cf84-4e66-9105-56c96f7c9ce9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC6D49D54BCC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC6D49D54BCC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-caraubas-do-piaui-14027">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Portarias_portaria_920abbec-82a2-4fc2-b852-8a6c4be1fd10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4707A949DA524
+<br/><br/>
+<a class="fileDoc" data-file-hash="4707A949DA524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-caraubas-do-piaui-14028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Portarias_portaria_873d5a0b-8f8b-4811-8bbf-a46f40b8c205.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RESULTADO FINAL DA CHAMADA PÚBLICA PARA VOLUNTÁRIOS DO PROGRAMA BRASIL NA ESCOLA – ANO LETIVO 2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Resultado dos aprovados e sua classificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D875DAAC8C554
+<br/><br/>
+<a class="fileDoc" data-file-hash="D875DAAC8C554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-final-da-chamada-publica-para-voluntarios-do-programa-brasil-na-escola-ano-letivo-2022-angical-do-piaui-13960">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Angical_do_Piaui_Resultado_dos_aprovados_e_sua_classificacao_resultado_final_da_chamada_publica_para_voluntarios_do_programa_brasil_na_escola_ano_letivo_2022_6ae1852c-6229-4d7d-a116-1f83f8b4a161.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO 078
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>651AC09DA73D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="651AC09DA73D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-078-itaueira-13962">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Itaueira_Extrato_extrato_078_6d996120-3be0-4944-bebf-8ad7e1309d16.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO 078 A
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>09C6A63E7D2D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="09C6A63E7D2D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-078-a-itaueira-13963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Itaueira_Extrato_extrato_078_a_3d680a35-f3ab-47c7-b228-0578c01149f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Cleginalda Chamada publica 001-22
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>61267C3A22C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="61267C3A22C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-cleginalda-chamada-publica-001-22-tanque-do-piaui-13964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_cleginalda_chamada_publica_001_22_d2fb0ca3-b9b2-42bb-8afa-0d96926a57b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+pregão 010-2022
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5DA7231A95E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5DA7231A95E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-010-2022-conceicao-do-caninde-13951">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Conceicao_do_Caninde_Extrato_pregao_010_2022_b20592b0-54c1-4dac-8a3c-8ef87265be23.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+termo de revogação
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso da Revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0203EAD0A1D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="0203EAD0A1D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-revogacao-caraubas-do-piaui-13982">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Aviso_da_Revogacao_termo_de_revogacao_bca2ea3a-d4e1-491f-8169-43dddc2763a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+termo de revogação
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso da Revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B2E9E8DCF674
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B2E9E8DCF674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-revogacao-caraubas-do-piaui-13983">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Caraubas_do_Piaui_Aviso_da_Revogacao_termo_de_revogacao_39ef39f4-184f-45fd-b9cb-358c2c9856ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Nº 013/2021, Dispõe sobre a nomeação dos membros do CMMA
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F6809A0224DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F6809A0224DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-013-2021-dispoe-sobre-a-nomeacao-dos-membros-do-cmma-santa-cruz-dos-milagres-13986">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Santa_Cruz_dos_Milagres_Decretos_decreto_n_013_2021_dispoe_sobre_a_nomeacao_dos_membros_do_cmma_b1094232-fb8f-4f7d-9f51-4cc77ed88f64.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>776158E5EC164
+<br/><br/>
+<a class="fileDoc" data-file-hash="776158E5EC164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14773/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_d2af94fa-975f-490b-a2e4-93e904b84655.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E961118FE934
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E961118FE934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14774/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_c5aa3b89-2d89-4e32-95fb-f2629f290930.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B60C197593A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="B60C197593A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14775/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_f9962640-251f-4591-a87a-b53e866f2a36.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>01D7EC7F293E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="01D7EC7F293E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14776/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_f763daf9-c872-4a77-bed6-8ffb5b54350a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>481251A3FA8A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="481251A3FA8A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14777/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_e8118a0c-a7dc-435d-96d8-f2054e52f06a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>00BCF65ACB824
+<br/><br/>
+<a class="fileDoc" data-file-hash="00BCF65ACB824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14778/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_cf4548a8-9452-46e8-bc57-d71b97e1d137.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA60A8E2B3DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA60A8E2B3DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14779/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_e851d617-ca1a-4551-b890-b24140f651be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D839ADEF30E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D839ADEF30E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14780/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_b3b02106-3dab-425d-ada3-88ec38eb3912.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>936269F6EDA64
+<br/><br/>
+<a class="fileDoc" data-file-hash="936269F6EDA64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14781/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_39fa0d80-47e8-4b13-9cc5-1d9be489ef95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - JANEIRO - FEVEREIRO /
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FECBF321F194
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FECBF321F194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14782/rreo-janeiro-fevereiro-francisco-macedo-13940">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_janeiro_fevereiro_389bf2c4-1074-407f-8460-149cad654acb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=311&amp;q[flag_doc_diario_true]=1">
+217
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato Dispensa 015-22
+</td>
+<td class="text-center">
+27-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>19B367ADFCF54
+<br/><br/>
+<a class="fileDoc" data-file-hash="19B367ADFCF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dispensa-015-22-tanque-do-piaui-14008">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/26/DOP_EDICAO__27-4-2022_ED_217_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_dispensa_015_22_6f426a36-5762-46a1-87e8-feb7553b578b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

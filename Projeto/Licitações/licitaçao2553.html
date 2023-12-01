@@ -1,0 +1,1464 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+HOMOLOGAÇÃO E ADJUDICAÇÃO TP - 002/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2624E2358B5D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2624E2358B5D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-e-adjudicacao-tp-002-2022-caxingo-22795">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Caxingo_Aviso_da_Homologacao_homologacao_e_adjudicacao_tp_002_2022_fc2e2f43-2e69-43aa-a105-fbc797ec336f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 20-2022 Rep.
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCC6035895194
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCC6035895194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-20-2022-rep-buriti-dos-lopes-22796">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_20_2022_rep_c3036425-80f1-4171-9111-fad523004df7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 23-2022 Rep.
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F8AECFA943E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F8AECFA943E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-23-2022-rep-buriti-dos-lopes-22797">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_23_2022_rep_c67cccc1-b332-447d-97ee-9ff051c04390.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO INX Nº 010/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9255003306BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9255003306BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inx-n-010-2022-demerval-lobao-22805">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Demerval_Lobao_Aviso_de_Ratificacao_ratificacao_inx_n_010_2022_68957afe-0792-4d63-a88e-b6659045d042.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+combustível 2022 - Extrato de 5º contrato REAJUSTE 3
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A841FF9493F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="A841FF9493F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/combustivel-2022-extrato-de-5-contrato-reajuste-3-sigefredo-pacheco-22798">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Sigefredo_Pacheco_Extrato_combustivel_2022_extrato_de_5_contrato_reajuste_3_18ae4983-2a1a-4519-996d-fa5c54d60061.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 021/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3BF514828314
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3BF514828314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-021-2022-caxingo-22799">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Caxingo_Decretos_decreto_021_2022_fb272f02-5046-4e53-b2d5-a77d76454ab3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 022/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>55AFD3FC6E704
+<br/><br/>
+<a class="fileDoc" data-file-hash="55AFD3FC6E704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-022-2022-caxingo-22800">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Caxingo_Decretos_decreto_022_2022_74f633de-b544-439b-86da-6dfe81d310e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 024/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B8FF3E69B5F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="B8FF3E69B5F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-024-2022-caxingo-22801">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Caxingo_Decretos_decreto_024_2022_11549a48-2df5-411a-84cc-37b9fe4dd792.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 023/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>46D833B14EE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="46D833B14EE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-023-2022-caxingo-22802">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Caxingo_Decretos_decreto_023_2022_8ec29f9e-ac73-40db-81cf-54c1d598ce73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Lei nº 560/2022 LDO
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LDO - LEI DE DIRETRIZES ORÇAMENTÁRIAS</strong>
+<br/><br/>
+2023
+</td>
+<td class="text-center">
+<strong>ID: </strong>4EF2D861FA864
+<br/><br/>
+<a class="fileDoc" data-file-hash="4EF2D861FA864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-560-2022-ldo-sao-felix-do-piaui-22803">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Sao_Felix_do_Piaui_Leis_de_diretrizes_orcamentarias_lei_n_560_2022_ldo_3d4a5355-69a6-4947-ace9-297044c44b71.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO INX Nº 010/2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>405AD28482714
+<br/><br/>
+<a class="fileDoc" data-file-hash="405AD28482714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-inx-n-010-2022-demerval-lobao-22806">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Demerval_Lobao_Aviso_do_extrato_de_contrato_extrato_contrato_inx_n_010_2022_25164546-801b-4d4c-8954-ca50bd0807b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+LEI MUNICIPAL Nº 259-2022 LOA 2023
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>2586123B124B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2586123B124B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-municipal-n-259-2022-loa-2023-beneditinos-22809">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Beneditinos_Leis_lei_municipal_n_259_2022_loa_2023_c10a3e11-4988-478c-8bfc-b89d1115b0a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa nº 028-2022 - Equipamentos sala de fisioterapia - extrato de retificação
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C6D92A54E50B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C6D92A54E50B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-028-2022-equipamentos-sala-de-fisioterapia-extrato-de-retificacao-sigefredo-pacheco-22810">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Sigefredo_Pacheco_Extrato_dispensa_n_028_2022_equipamentos_sala_de_fisioterapia_extrato_de_retificacao_9fdcddf8-194f-4253-984f-7f26e36e1e30.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO ADM ( CLEDSON BARREIRA)
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>47E2056E99914
+<br/><br/>
+<a class="fileDoc" data-file-hash="47E2056E99914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-adm-cledson-barreira-barreiras-do-piaui-22807">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_adm_cledson_barreira_1b3dccd0-fc93-4d7b-a881-b6697f709bae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO ADM ( JEMIMA FERREIRA)
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C777E6AB5E4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C777E6AB5E4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-adm-jemima-ferreira-barreiras-do-piaui-22808">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_adm_jemima_ferreira_6c1153a1-49ec-476a-8caa-6e0ff7605bc6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso Dispensa N° 007 - 2022 Posto de Saúde Mãe Teresa - CEPISA
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>917599DB022F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="917599DB022F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-dispensa-n-007-2022-posto-de-saude-mae-teresa-cepisa-sao-joao-da-varjota-22811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Sao_Joao_da_Varjota_Aviso_de_licitacao_aviso_dispensa_n_007_2022_posto_de_saude_mae_teresa_cepisa_f46d7c2f-bb84-4108-a755-ee723e5e9d93.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+ATA AUDIÊNCIA PÚBLICA 1º QUADRIMESTRE DE 2022
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FAD63869E5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FAD63869E5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-audiencia-publica-1-quadrimestre-de-2022-alvorada-do-gurgueia-22812">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Alvorada_do_Gurgueia_Atas_ata_audiencia_publica_1_quadrimestre_de_2022_6a482d7a-9d1c-48dd-9452-ddcd4212f1fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa 017/2022- Informática
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3ED7F9341D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3ED7F9341D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-017-2022-informatica-brejo-do-piaui-22813">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Brejo_do_Piaui_Aviso_do_extrato_de_contrato_dispensa_017_2022_informatica_faf63872-d75b-453e-bac1-9c097b880920.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>96FCBD1B880A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="96FCBD1B880A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24319/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_65515f42-f5e2-4e76-9c5d-0a7232c764b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBA546CC544A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBA546CC544A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24320/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_f81ab270-d128-4c09-b8e0-71557be5da5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>62EEDF9168B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="62EEDF9168B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24321/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_c0f31a0d-c2bf-48b3-97d5-973a1715060f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E114CEC1CB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E114CEC1CB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24322/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_b2636444-35af-4ece-9111-f089e42bf924.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>23733FF5983E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="23733FF5983E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24323/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_79541aba-8277-4ae8-a33d-18d70165bed0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0B800C05ECB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0B800C05ECB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24324/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_2d6cf667-3853-416e-9c27-1137df3f47b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D924CDB947184
+<br/><br/>
+<a class="fileDoc" data-file-hash="D924CDB947184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24325/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_d6446f88-247f-4dc3-a6b4-de16b55ec99c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBE902047E7E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBE902047E7E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24326/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_2b59d65b-40d8-4337-a4e8-cac9a5efdfc3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB6AC4F38D1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB6AC4F38D1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24327/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_98f2f521-363b-42f4-859b-a456ef4d3406.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D7AABF0E4BBF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D7AABF0E4BBF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24328/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_40e9354b-b4d0-4f1b-ac11-e707e310db4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2237D077959C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2237D077959C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24329/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_fe26d91b-3ee3-45c3-96d6-aba5e591a4b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4BEE519DF874
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4BEE519DF874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24330/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_e5a67fb8-2434-4fa3-88c6-0458e09de7b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=400&amp;q[flag_doc_diario_true]=1">
+279
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D272927CAD414
+<br/><br/>
+<a class="fileDoc" data-file-hash="D272927CAD414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/24331/rreo-1-bimestre-2022-passagem-franca-do-piaui-22819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/22/DOP_EDICAO__25-7-2022_ED_279_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2022_bd0aceb0-07c2-4ab2-8f2a-d7c1cabd22fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1295 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PRIMEIRO TERMO_ VIGENCIA- EDUCAÇÃO - PE SRP Nº34_2020 - COMBUSTÍVEL
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>3427008B05934
+<br/><br/>
+<a class="fileDoc" data-file-hash="3427008B05934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-primeiro-termo_-vigencia-educacao-pe-srp-n-34_2020-combustivel-floriano-5393">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_do_Termo_Aditivo_extrato_primeiro_termo__vigencia_educacao_pe_srp_n_34_2020_combustivel_68e4bc8e-9e81-403f-9cc6-f5025e9d4162.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+Convocação de Abertura de Propostas Tomada de Preço 003/2021
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>6EA64A82C90B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6EA64A82C90B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-de-abertura-de-propostas-tomada-de-preco-003-2021-dom-expedito-lopes-5388">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Dom_Expedito_Lopes_Ato_Convocatorio_convocacao_de_abertura_de_propostas_tomada_de_preco_003_2021_bed35358-a363-4649-8990-62cd78ebd227.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO REPUBLICAÇÃO PE SRP Nº 081-2021 - ADM - AQUISIÇÃO DE MATERIAIS DE EXPEDIENTE
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF0177EF81094
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF0177EF81094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-republicacao-pe-srp-n-081-2021-adm-aquisicao-de-materiais-de-expediente-floriano-5389">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_de_licitacao_aviso_republicacao_pe_srp_n_081_2021_adm_aquisicao_de_materiais_de_expediente_4f30de67-1403-471c-99f4-6eaf0466eb3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PRIMEIRO TERMO_ VIGENCIA- FINANÇAS - PE SRP Nº34_2020 - COMBUSTÍVEL
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>7653315E39CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7653315E39CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-primeiro-termo_-vigencia-financas-pe-srp-n-34_2020-combustivel-floriano-5395">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_do_Termo_Aditivo_extrato_primeiro_termo__vigencia_financas_pe_srp_n_34_2020_combustivel_d8e378d4-4ed6-4041-b190-77c6041a2a34.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE CONVOCAÇÃO CONCORRÊNCIA Nº 01-2021
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de convocação dos interessados
+</td>
+<td class="text-center">
+<strong>ID: </strong>663C07F29F204
+<br/><br/>
+<a class="fileDoc" data-file-hash="663C07F29F204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-convocacao-concorrencia-n-01-2021-floriano-5387">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_de_convocacao_dos_interessados_aviso_de_convocacao_concorrencia_n_01_2021_2a4f0db4-d97e-4c44-8dad-6393c27f4fc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO CONTRATO- Nº 003-2021-FINANÇAS- L&amp;F ASSESSORIA E CONSULTORIA
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E99CC52F1654
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E99CC52F1654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-contrato-n-003-2021-financas-l-f-assessoria-e-consultoria-floriano-5409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Contratos_e_seus_aditivos_termo_apostilamento_contrato_n_003_2021_financas_l_f_assessoria_e_consultoria_46d40e31-5152-4d0d-85db-81ced5f1318e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+Ratificação de Inexigibilidade
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Santa Luz
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4B672CDDF744
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4B672CDDF744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-de-inexigibilidade-santa-luz-5384">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Camara_Santa_Luz_Aviso_de_Ratificacao_ratificacao_de_inexigibilidade_5fc03ac7-8aa0-41ea-b9e5-9570f483c39c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação Tomada de Preços n° 01-2022
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6EDE2EF56EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6EDE2EF56EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-tomada-de-precos-n-01-2022-beneditinos-5383">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Beneditinos_Aviso_de_licitacao_aviso_de_licitacao_tomada_de_precos_n_01_2022_6e480ed4-0723-47ee-a10a-69fca3c47077.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PRIMEIRO TERMO_ VIGENCIA- ASS. SOCIAL - PE SRP Nº34_2020 - COMBUSTÍVEL
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>D63D531A8CB84
+<br/><br/>
+<a class="fileDoc" data-file-hash="D63D531A8CB84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-primeiro-termo_-vigencia-ass-social-pe-srp-n-34_2020-combustivel-floriano-5391">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_do_Termo_Aditivo_extrato_primeiro_termo__vigencia_ass_social_pe_srp_n_34_2020_combustivel_3fb40bdc-a90c-4c72-966f-fac8e1e292f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+pregão 043-2021
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>692447EAF6014
+<br/><br/>
+<a class="fileDoc" data-file-hash="692447EAF6014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-043-2021-conceicao-do-caninde-5381">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Conceicao_do_Caninde_Extrato_pregao_043_2021_5954a98b-7015-4ae7-85ee-8dbdf111f096.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PRIMEIRO TERMO_ VIGENCIA- GOVERNO - PE SRP Nº34_2020 - COMBUSTÍVEL
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E00A5B64322D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E00A5B64322D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-primeiro-termo_-vigencia-governo-pe-srp-n-34_2020-combustivel-floriano-5397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Contratos_e_seus_aditivos_extrato_primeiro_termo__vigencia_governo_pe_srp_n_34_2020_combustivel_774dd235-aaab-4031-92aa-243f09363c47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO N° 004 DISP 003/2022
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D26B9DB9BFC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D26B9DB9BFC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-n-004-disp-003-2022-sao-jose-do-piaui-5380">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_n_004_disp_003_2022_a8567cfd-02dd-4257-8ed5-2671af46d067.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE RATIFICAÇÃO DE DISPENSA DE LICITAÇÃO N° 003/2022
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E64071AAE474
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E64071AAE474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-ratificacao-de-dispensa-de-licitacao-n-003-2022-sao-jose-do-piaui-5379">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Sao_Jose_do_Piaui_Aviso_de_Ratificacao_aviso_de_ratificacao_de_dispensa_de_licitacao_n_003_2022_01f11254-7198-47e9-ab38-a449a3e176bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N.006 - LUIS RONALDO
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>19381C03752F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="19381C03752F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-006-luis-ronaldo-barra-d-alcantara-5414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Barra_DAlcantara_Portarias_portaria_n_006_luis_ronaldo_05eb620c-bc61-44ef-bb1c-e326795b4bff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato_ Contador2022
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A6052DEF1ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A6052DEF1ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato_-contador2022-nazare-do-piaui-5377">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Camara_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato__contador2022_8d8e8dd4-726b-449a-a738-08dc1d4a0d43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+ATA_LICITACAO_PORTUGUES_913813
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4B09B819EF234
+<br/><br/>
+<a class="fileDoc" data-file-hash="4B09B819EF234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata_licitacao_portugues_913813-floriano-5421">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Outros_atos_administrativos_ata_licitacao_portugues_913813_48a5f046-05a7-4c3c-87fc-b8a3e37d5a14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EC DPL 002 - Rastreadores
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E94F80AFC6B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E94F80AFC6B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-dpl-002-rastreadores-agricolandia-5417">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Agricolandia_Aviso_do_extrato_de_contrato_ec_dpl_002_rastreadores_07d3758b-c39a-4083-a6aa-b5d6e643c43c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+TR DPL 002 - Rastreadores
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>18C9ECA4F9DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="18C9ECA4F9DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tr-dpl-002-rastreadores-agricolandia-5416">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Agricolandia_Aviso_de_Ratificacao_tr_dpl_002_rastreadores_ccf4b72a-4334-45cb-a640-531f7b637f7a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE TERMO DE CESSÃO
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>68B705AB38AF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="68B705AB38AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-termo-de-cessao-barra-d-alcantara-5415">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Barra_DAlcantara_Extrato_extrato_de_termo_de_cessao_ef9e1310-d04d-442d-81f4-eedb279a602a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+NOTIFICAÇÃO N° 001.2022 - EMPRESA BONANZA COMÉRCIO SERVIÇOS
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Notificação de penalidades a licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA48B25A31244
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA48B25A31244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/notificacao-n-001-2022-empresa-bonanza-comercio-servicos-floriano-5405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Floriano_Aviso_da_Notificacao_de_penalidades_a_licitantes_notificacao_n_001_2022_empresa_bonanza_comercio_servicos_1b91d6d9-2b21-4737-96aa-730fe57db1be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato INEX 002 2022
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D4812E241BD14
+<br/><br/>
+<a class="fileDoc" data-file-hash="D4812E241BD14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-inex-002-2022-wall-ferraz-5406">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_inex_002_2022_ef509571-549b-4b3b-be2f-f89265b6c358.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO - REPROGRAMAÇÃO DE SALDOS
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>6141D08643184
+<br/><br/>
+<a class="fileDoc" data-file-hash="6141D08643184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-reprogramacao-de-saldos-campinas-do-piaui-5372">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Campinas_do_Piaui_Resolucoes_resolucao_reprogramacao_de_saldos_1ad2b481-399d-4603-bff7-0802d0a87906.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B07D58D514814
+<br/><br/>
+<a class="fileDoc" data-file-hash="B07D58D514814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-itaueira-5370">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Itaueira_Portarias_portaria_133480c7-b2b2-40ae-9382-50126aeeeb3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO SEGUNDO BIM 2021 /
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A51A0D6417DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A51A0D6417DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/5700/rreo-referente-ao-segundo-bim-2021-passagem-franca-do-piaui-5368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_segundo_bim_2021_15804498-a3f0-49e2-9e96-3f28bfecf17b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO SEGUNDO BIM 2021 /
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>668CC1E9752D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="668CC1E9752D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/5701/rreo-referente-ao-segundo-bim-2021-passagem-franca-do-piaui-5368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_segundo_bim_2021_e7e1f829-2e65-4f75-bc49-b1fe16a44681.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO SEGUNDO BIM 2021 /
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>72DDAF89AD054
+<br/><br/>
+<a class="fileDoc" data-file-hash="72DDAF89AD054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/5702/rreo-referente-ao-segundo-bim-2021-passagem-franca-do-piaui-5368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_segundo_bim_2021_9e0439f0-5f9b-4755-845c-f8e1ed346b41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO SEGUNDO BIM 2021 /
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>85167A77DC3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="85167A77DC3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/5703/rreo-referente-ao-segundo-bim-2021-passagem-franca-do-piaui-5368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_segundo_bim_2021_9601c37b-0d04-46ff-893b-bde35e4ebf9c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=208&amp;q[flag_doc_diario_true]=1">
+147
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REFERENTE AO SEGUNDO BIM 2021 /
+</td>
+<td class="text-center">
+14-01-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6302A06F6E024
+<br/><br/>
+<a class="fileDoc" data-file-hash="6302A06F6E024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/5704/rreo-referente-ao-segundo-bim-2021-passagem-franca-do-piaui-5368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/1/13/DOP_EDICAO__14-1-2022_ED_147_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_referente_ao_segundo_bim_2021_a256d004-57d4-4745-92d6-883b6abf1561.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

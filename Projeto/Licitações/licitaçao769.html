@@ -1,0 +1,1364 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO VETERINARIO
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>64050D24D9884
+<br/><br/>
+<a class="fileDoc" data-file-hash="64050D24D9884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-veterinario-pio-ix-65463">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Pio_IX_Extrato_extrato_contrato_veterinario_41cc8f65-9c8e-49a8-a3af-064e7b975946.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+PE012.2022 - 2º TERMO ADITIVO
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>358790EA9C104
+<br/><br/>
+<a class="fileDoc" data-file-hash="358790EA9C104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe012-2022-2-termo-aditivo-sao-jose-do-divino-65456">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Jose_do_Divino_Aviso_do_Termo_Aditivo_pe012_2022_2_termo_aditivo_3fc5e104-9c93-44fd-9d98-30900ca3d0dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+extrato contrato 2 termo aditivo inegibilidade 001/2021 marcos andre lima ramos
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BBD0F6BB9D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BBD0F6BB9D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-2-termo-aditivo-inegibilidade-001-2021-marcos-andre-lima-ramos-curral-novo-do-piaui-65452">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Curral_Novo_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_2_termo_aditivo_inegibilidade_001_2021_marco_c3290801-9dc3-45f0-a9c4-d3b27e73acaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+TH 004 - Recuperação de Pavimentação
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C9C52BE23524
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C9C52BE23524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/th-004-recuperacao-de-pavimentacao-agricolandia-65496">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Agricolandia_Aviso_da_homologacao_th_004_recuperacao_de_pavimentacao_7d361f14-df9f-4ea0-80a5-b3b2c61e24c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+Julgamento de habilitação P.A 054
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso de julgamento e habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DA7CDF719E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DA7CDF719E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-de-habilitacao-p-a-054-lagoa-do-barro-do-piaui-65440">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_de_julgamento_e_habilitacao_de_licitantes_julgamento_de_habilitacao_p_a_054_64854a1d-2667-411a-a772-36ecbeebe9b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>095BAB190C904
+<br/><br/>
+<a class="fileDoc" data-file-hash="095BAB190C904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70243/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_3d2a29cf-3920-4cd6-a1b9-ee43c8a04a7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D920F631102B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D920F631102B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70244/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_abcd4e10-7aa3-4dd2-b5fc-ea48b8450fef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DC8EC8B9EF64
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DC8EC8B9EF64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70245/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_31fcb8d8-08f5-4d7f-b891-8e5a5e7dfb13.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F969A24DAFE54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F969A24DAFE54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70246/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_616f5a73-7ce8-4355-8ff4-c3a3b55c05e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>91F49CE929764
+<br/><br/>
+<a class="fileDoc" data-file-hash="91F49CE929764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70247/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_120f0f5e-73f6-4b93-ad62-4c8dc346116a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+LEIS ORÇAMENTÁRIAS /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C60C018073714
+<br/><br/>
+<a class="fileDoc" data-file-hash="C60C018073714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70248/leis-orcamentarias-sao-felix-do-piaui-65401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_leis_orcamentarias_bfe58e9f-2f31-4fb3-a3eb-3925c89063ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+EC 004 - Recuperação de Pavimentação
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>32CF6A7F5AC84
+<br/><br/>
+<a class="fileDoc" data-file-hash="32CF6A7F5AC84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-004-recuperacao-de-pavimentacao-agricolandia-65493">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Agricolandia_Aviso_do_Contrato_ec_004_recuperacao_de_pavimentacao_a919f0b9-04a5-4521-9fa6-8793985705bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D33EF2A5E7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D33EF2A5E7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-sao-felix-do-piaui-65439">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Felix_do_Piaui_Outros_edital_a7df6907-5fdf-4fd5-8c4e-a30d94a591d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Finanças Dispensa 001/2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D7F5CAF007704
+<br/><br/>
+<a class="fileDoc" data-file-hash="D7F5CAF007704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-financas-dispensa-001-2023-prata-do-piaui-65470">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Prata_do_Piaui_Extrato_extrato_financas_dispensa_001_2023_3342a51a-42f5-4dc4-88d0-9b5e3b8db1ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Assistência Dispensa 001/2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>970D0BC4E1D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="970D0BC4E1D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-assistencia-dispensa-001-2023-prata-do-piaui-65469">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Prata_do_Piaui_Extrato_extrato_assistencia_dispensa_001_2023_187a23ff-a078-4033-8c0e-de386e0d83b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO 283-2023 SMS - BRASIL
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0836BBA7FAE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="0836BBA7FAE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-283-2023-sms-brasil-floriano-65518">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Floriano_Extrato_extrato_de_contrato_283_2023_sms_brasil_85d88fd2-d220-4ac5-bcf8-399a1631356c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO Nº 006-2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>417FA6AB881E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="417FA6AB881E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-006-2023-paqueta-65429">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Paqueta_Resolucoes_resolucao_n_006_2023_1f8caf2f-33cd-4e8e-aeb2-7dfeb7f7e9e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+ATA DE DESENVOLVIMENTO URBANO
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>DF58A97158294
+<br/><br/>
+<a class="fileDoc" data-file-hash="DF58A97158294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-desenvolvimento-urbano-pio-ix-65535">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Pio_IX_Atas_ata_de_desenvolvimento_urbano_91fe6f9d-ef10-46be-9fa4-e166e52ccae9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 011-B-2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>30900F08B4434
+<br/><br/>
+<a class="fileDoc" data-file-hash="30900F08B4434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-ata-registro-de-precos-pe-011-b-2023-floriano-65505">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Floriano_Extrato_extrato_parcial_ata_registro_de_precos_pe_011_b_2023_e9b0f802-6fd3-485f-bf0f-8acff296a552.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+TH TP 003 - Acessibilidade
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8B7C3E883FD74
+<br/><br/>
+<a class="fileDoc" data-file-hash="8B7C3E883FD74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/th-tp-003-acessibilidade-agricolandia-65492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Agricolandia_Aviso_da_Homologacao_th_tp_003_acessibilidade_c31684b1-c6af-431b-a79e-1a603f789767.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+DESPESA /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>810278055AAB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="810278055AAB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70278/despesa-lagoinha-do-piaui-65431">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Lagoinha_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_despesa_4ac669fa-9dde-4945-a90b-7f614cac0a02.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+RECEITAS OP /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BFFB8CD27634
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BFFB8CD27634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70269/receitas-op-lagoinha-do-piaui-65422">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Lagoinha_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_receitas_op_e3b1e72c-2166-4a4e-9e15-e1f511e8b4b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+Projeto “Recicle para o bem
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>33C3AF73CCF04
+<br/><br/>
+<a class="fileDoc" data-file-hash="33C3AF73CCF04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-recicle-para-o-bem-sao-pedro-do-piaui-65413">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Sao_Pedro_do_Piaui_Outros_projeto_recicle_para_o_bem_7d23b18e-6843-443c-bd7a-a639198b6ea9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+RECEITA /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E02098DA9E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E02098DA9E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70265/receita-lagoinha-do-piaui-65418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Lagoinha_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_receita_8537b68a-d375-4dd8-a4f6-716304d49420.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 159-2023 - LEONCIO ALVES DOS SANTOS
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>428ACDDB9B284
+<br/><br/>
+<a class="fileDoc" data-file-hash="428ACDDB9B284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-159-2023-leoncio-alves-dos-santos-luis-correia-65391">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Luis_Correia_Portarias_portaria_159_2023_leoncio_alves_dos_santos_7e8cdf65-6761-47ba-865a-b5d609feaad3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+18 CHAMADA EDITAL 003 2022 ANO LETIVO 2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>95BE80DBD4E24
+<br/><br/>
+<a class="fileDoc" data-file-hash="95BE80DBD4E24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/18-chamada-edital-003-2022-ano-letivo-2023-altos-65379">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Altos_Edital_de_Chamada_18_chamada_edital_003_2022_ano_letivo_2023_9adc406f-672a-408f-b411-6b4463538737.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+Aviso de Licitação PE 015/2023
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0BC616E13EE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="0BC616E13EE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-015-2023-oeiras-65390">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Oeiras_Aviso_de_licitacao_aviso_de_licitacao_pe_015_2023_7c4cd21d-0c3b-460b-80d3-458f774b5961.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 261-2023 - SANDRA DA SILVA FONTENELE
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>34190105A8284
+<br/><br/>
+<a class="fileDoc" data-file-hash="34190105A8284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-261-2023-sandra-da-silva-fontenele-luis-correia-65411">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Luis_Correia_Portarias_portaria_261_2023_sandra_da_silva_fontenele_74d2cf2f-bce8-4317-b104-62784b0208ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=730&amp;q[flag_doc_diario_true]=1">
+501
+</a>
+-
+2023
+</td>
+<td class="">
+PARCERIA /
+</td>
+<td class="text-center">
+20-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>28209940E9AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="28209940E9AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/70261/parceria-lagoinha-do-piaui-65414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/20/DOP_EDICAO__20-6-2023_ED_501_Prefeitura_Lagoinha_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_parceria_601d3dca-eef1-4b57-9b54-a744ac0076c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

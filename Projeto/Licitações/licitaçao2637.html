@@ -1,0 +1,1241 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Atas Conselho Municipal de Habitação
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C2545FFD71F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C2545FFD71F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/atas-conselho-municipal-de-habitacao-demerval-lobao-20657">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Demerval_Lobao_Atas_atas_conselho_municipal_de_habitacao_7caa13a3-f363-4d86-8c3b-57aeaf363244.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação - Dispensa nº 009-2022 - Aquisição de Tecidos
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>12CA0A593E7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="12CA0A593E7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dispensa-n-009-2022-aquisicao-de-tecidos-santa-rosa-do-piaui-20674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Santa_Rosa_do_Piaui_Aviso_de_Ratificacao_termo_de_ratificacao_dispensa_n_009_2022_aquisicao_de_tecidos_4cfd72a5-e2d6-4fb3-8f2d-4c24a97dac9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Educação
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>738D7DBA13D14
+<br/><br/>
+<a class="fileDoc" data-file-hash="738D7DBA13D14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-educacao-itaueira-20658">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Itaueira_Extrato_extrato_educacao_4f31b2c6-bee5-414b-ad91-53e36d246377.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO DA RECEITA DE IMPOSTOS E DAS DESPESAS PRÓPRIAS COM SAÚDE /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5EC1712747824
+<br/><br/>
+<a class="fileDoc" data-file-hash="5EC1712747824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22111/demonstrativo-da-receita-de-impostos-e-das-despesas-proprias-com-saude-coivaras-20672">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_da_receita_de_impostos_e_das_despesas_proprias_com_saude_384f7e4d-fef7-4e87-a43b-39ec354bdd0c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO DOS RESTOS A PAGAR POR PODER E ORGÃO /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>141531A14DD84
+<br/><br/>
+<a class="fileDoc" data-file-hash="141531A14DD84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22110/demonstrativo-dos-restos-a-pagar-por-poder-e-orgao-coivaras-20671">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_dos_restos_a_pagar_por_poder_e_orgao_dd16e844-3509-4493-af4a-932124d5d91f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO SIMPLIFICADO DO RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>620922E3F62B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="620922E3F62B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22101/demonstrativo-simplificado-do-relatorio-resumido-da-execucao-orcamentaria-coivaras-20662">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_simplificado_do_relatorio_resumido_da_execucao_orcamentaria_90c3c182-da85-4b54-a722-0a7707d7bb50.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO DOS RESULTADOS PRIMÁRIO E NOMINAL /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>24AB2EAA641A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="24AB2EAA641A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22094/demonstrativo-dos-resultados-primario-e-nominal-coivaras-20655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_dos_resultados_primario_e_nominal_1c7aa55b-b9f4-41bd-899e-3959c47e5932.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO DAS PARCERIAS PUBLICO-PRIVADAS /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8C4841810E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8C4841810E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22092/demonstrativo-das-parcerias-publico-privadas-coivaras-20653">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_das_parcerias_publico_privadas_b38f0d19-a680-46ac-9887-bb59e1feb2ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato PE 17
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8F19F81B0A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8F19F81B0A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-17-nazare-do-piaui-20680">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_pe_17_2181d596-dc40-43f3-a3a6-99543ad050a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Infraestrutura
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCAF56FA4B4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCAF56FA4B4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-infraestrutura-itaueira-20656">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Itaueira_Extrato_extrato_infraestrutura_d4b321bd-8a52-4fda-a876-4190085ac62d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Hospital
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>81EC2451FAB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="81EC2451FAB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-hospital-itaueira-20654">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Itaueira_Extrato_extrato_hospital_482e3c2d-ac4e-4095-b272-625f1b2033ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Adjudicação PE 17
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4B2349AEC604
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4B2349AEC604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-adjudicacao-pe-17-nazare-do-piaui-20678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Nazare_do_Piaui_Aviso_da_Adjudicacao_extrato_adjudicacao_pe_17_bce62772-4a3c-43df-b73c-8b67b7472a45.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DISP 049/2022
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>A37EA201E8F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="A37EA201E8F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-disp-049-2022-campinas-do-piaui-20670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Campinas_do_Piaui_Aviso_da_Dispensa_aviso_disp_049_2022_526d427c-8440-4a91-8595-94da7d316f63.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Aditivo PE 04/2022-Repetição
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7B516A933E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7B516A933E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-aditivo-pe-04-2022-repeticao-coivaras-20611">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Coivaras_Aviso_do_Termo_Aditivo_extrato_aditivo_pe_04_2022_repeticao_2158f084-f3c2-4eeb-83f6-2810529d481b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE 041/2022
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>06DB896FD9F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="06DB896FD9F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-041-2022-campinas-do-piaui-20668">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_041_2022_aa80f16b-c15f-4f0d-9c3a-77fc213654c6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 19-2022 MEIO AMBIENTE
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>428EC001DEB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="428EC001DEB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-19-2022-meio-ambiente-beneditinos-20677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Beneditinos_Decretos_decreto_n_19_2022_meio_ambiente_5ff542cd-ac0a-4add-b88a-c84c2a8eee43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação - Dispensa nº 010-2022 - Aquisição de Luminárias
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2196387F2D574
+<br/><br/>
+<a class="fileDoc" data-file-hash="2196387F2D574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dispensa-n-010-2022-aquisicao-de-luminarias-santa-rosa-do-piaui-20669">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Santa_Rosa_do_Piaui_Aviso_de_Ratificacao_termo_de_ratificacao_dispensa_n_010_2022_aquisicao_de_luminarias_69c725f5-ebd1-4c6f-8ce3-783ab8beb384.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 18-2022 MEIO AMBIENTE
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF857CAFF3354
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF857CAFF3354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-18-2022-meio-ambiente-beneditinos-20676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Beneditinos_Decretos_decreto_n_18_2022_meio_ambiente_2523ec7d-f0c4-4c78-b950-7478720407f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato_Contrato nº 034.2022_Dispensa nº 010.2022 - Luminárias
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E8461F2B9754
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E8461F2B9754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato_contrato-n-034-2022_dispensa-n-010-2022-luminarias-santa-rosa-do-piaui-20664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Santa_Rosa_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_n_034_2022_dispensa_n_010_2022_luminarias_09750d85-2553-4589-8af4-c3a4291f2cb7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F224E87C8EB64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F224E87C8EB64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22127/rreo-1-bimestre-luis-correia-20688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_1_bimestre_5387e9e9-5617-413a-865d-cb1952c9de68.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D15332D586F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D15332D586F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22128/rreo-1-bimestre-luis-correia-20688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_1_bimestre_e8b9caef-b74a-40fd-82ed-83c7565bf0a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6CC5903293904
+<br/><br/>
+<a class="fileDoc" data-file-hash="6CC5903293904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22129/rreo-1-bimestre-luis-correia-20688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_1_bimestre_acf815a4-3e7d-4183-845e-af696c6ab1b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 1 BIMESTRE /
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5D8B23C1C6364
+<br/><br/>
+<a class="fileDoc" data-file-hash="5D8B23C1C6364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22130/rreo-1-bimestre-luis-correia-20688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_1_bimestre_731786dc-10c7-480d-a968-61d3d3a7cb58.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+plano de recomposição
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Planos
+</td>
+<td class="text-center">
+<strong>ID: </strong>064DF3DB2E1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="064DF3DB2E1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/plano-de-recomposicao-francisco-macedo-20761">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Francisco_Macedo_Planos_plano_de_recomposicao_efd5f4b7-daef-4bd7-b2ff-80b7744085be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+ATA DE REUNIÃO CONS MUNICIPAL DO FUNDO DE MEIO AMBIENTE - FUNDEMA
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>1FB44E1E785F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1FB44E1E785F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-reuniao-cons-municipal-do-fundo-de-meio-ambiente-fundema-altos-20660">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Altos_Atas_ata_de_reuniao_cons_municipal_do_fundo_de_meio_ambiente_fundema_35c98315-b9c6-4c8f-9b6a-4132ef00e84e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=376&amp;q[flag_doc_diario_true]=1">
+263
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PE 41 – 2022 - CJ CONSTRUCOES E EDIFICACOES LTDA EPP (CNPJ nº. 45.750.3660001-16).
+</td>
+<td class="text-center">
+01-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6017BBF98C504
+<br/><br/>
+<a class="fileDoc" data-file-hash="6017BBF98C504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-41-2022-cj-construcoes-e-edificacoes-ltda-epp-cnpj-n-45-750-3660001-16-francisco-macedo-20665">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/1/DOP_EDICAO__1-7-2022_ED_263_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_pe_41_2022_cj_construcoes_e_edificacoes_ltda_epp_cnpj_n_45_750_3660001_16_a34390c9-505a-4d8a-bca3-d403b332f86d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

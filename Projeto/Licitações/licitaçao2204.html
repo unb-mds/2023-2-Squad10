@@ -1,0 +1,1382 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 057 2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD9EA80D98ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD9EA80D98ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-057-2022-passagem-franca-do-piaui-30739">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_057_2022_09e9f57d-6857-4961-ab05-e87c1de11b57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+ATO DE REVOGAÇÃO- PE SRP 010-2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C75D8653BD024
+<br/><br/>
+<a class="fileDoc" data-file-hash="C75D8653BD024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-de-revogacao-pe-srp-010-2022-floriano-30733">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Floriano_Aviso_da_Revogacao_ato_de_revogacao_pe_srp_010_2022_015e56a8-434e-45ee-80b6-5dedc606ae42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 055 2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F9B31970D8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F9B31970D8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-055-2022-passagem-franca-do-piaui-30738">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_055_2022_569b4d1c-9300-448b-9457-670ab4ba9966.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO-CHAMADA PÚBLICA-008-2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>E685768634A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="E685768634A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-chamada-publica-008-2022-floriano-30741">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Floriano_Outros_termo_de_ratificacao_chamada_publica_008_2022_5b32b3c6-51ca-4cff-a126-367fbf979555.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO nº. 050/2022 PREGÃO ELETRÔNICO Nº. 013/2022 Processo Administrativo nº. 046/2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBCB4DDABAC84
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBCB4DDABAC84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-050-2022-pregao-eletronico-n-013-2022-processo-administrativo-n-046-2022-rio-grande-do-piaui-30735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Rio_Grande_do_Piaui_Extrato_contrato_n_050_2022_pregao_eletronico_n_013_2022_processo_administrativo_n_046_2022_3c471d1a-d143-4183-a0ee-9a0e3ffcd840.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>76F1BBB70EBB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="76F1BBB70EBB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33150/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_bb807955-a9e9-4122-ad85-3d797301de1c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>665A0A108D224
+<br/><br/>
+<a class="fileDoc" data-file-hash="665A0A108D224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33151/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_f43e01cf-fedb-4f39-9876-f37373b1dffe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E81E6FF368914
+<br/><br/>
+<a class="fileDoc" data-file-hash="E81E6FF368914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33152/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_f91cf18f-9848-45fb-a7f0-a58c285c6219.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>703A3C0D1C874
+<br/><br/>
+<a class="fileDoc" data-file-hash="703A3C0D1C874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33153/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_9a54d899-0240-4c4c-8953-dbfa33353c6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBD04CEB5AA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBD04CEB5AA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33154/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_a53ad7e4-80f7-493a-91da-5e0c67b96856.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABAA8966A44A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABAA8966A44A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33155/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_8834a636-a76f-492f-b0c9-555f66e0de35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>05DF397BA17F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="05DF397BA17F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33156/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_86e7620b-3ff6-493f-aa03-6db61eb69cd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B25DCC0EEE14
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B25DCC0EEE14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33157/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_50abdd04-fb80-4d77-bb97-423d547b2ea2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D92C30C70A534
+<br/><br/>
+<a class="fileDoc" data-file-hash="D92C30C70A534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33158/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_2ab93c46-44a5-4d43-b7c6-31f64d02a0ce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A242EAC3724E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A242EAC3724E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33159/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_5f8d1177-d422-4658-8418-c2f01d250c3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9474AE7818F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="9474AE7818F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33160/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_819deeab-75bd-44bd-983f-75706f3cc947.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EC64B0B85CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EC64B0B85CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33161/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_7091e217-a65d-40c8-8d39-42ec4b0d3e40.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4 BIM /
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C12250B0B4454
+<br/><br/>
+<a class="fileDoc" data-file-hash="C12250B0B4454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33162/rreo-4-bim-colonia-do-piaui-30647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Colonia_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bim_34c66169-9f7f-449f-b026-85414759f467.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Convocação
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Tapuio
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7EF0D9873E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7EF0D9873E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-sao-miguel-do-tapuio-30644">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Camara_Sao_Miguel_do_Tapuio_Ato_Convocatorio_convocacao_ddd2fe7e-1258-4c53-a404-f11e1837cf51.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 482-2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>ACA5352EFB4C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ACA5352EFB4C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-482-2022-floriano-30740">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Floriano_Outros_extrato_de_contrato_n_482_2022_4344988f-483e-4cc2-b393-d5815a9db99a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+32 - EXONERAÇÃO DE SERVIDOR - APOSENTADORIA - MARIA VILANI PROCÓPIO DA SILVA
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>250381FB1C484
+<br/><br/>
+<a class="fileDoc" data-file-hash="250381FB1C484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/32-exoneracao-de-servidor-aposentadoria-maria-vilani-procopio-da-silva-rio-grande-do-piaui-30730">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Rio_Grande_do_Piaui_Portarias_32_exoneracao_de_servidor_aposentadoria_maria_vilani_procopio_da_silva_23e9c6ef-6a15-4122-a621-344e46a1408e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+ATA 114
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA6B4223D7004
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA6B4223D7004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-114-itaueira-30695">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Itaueira_Atas_ata_114_6a18d6ae-62af-40d8-936d-51bed74bfa97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto nº 131, de 26.10.2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>3AAB61D30BBF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3AAB61D30BBF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-131-de-26-10-2022-floriano-30696">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Floriano_Decretos_decreto_n_131_de_26_10_2022_16eb6736-b384-46d0-96e8-9d83400c800b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+ATA DE HABILITAÇÃO CP 06-2022
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F722F680DE24
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F722F680DE24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-habilitacao-cp-06-2022-floriano-30723">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Floriano_Atas_ata_de_habilitacao_cp_06_2022_0b421ff8-043d-4cb7-8d06-e61bb5ad98ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do 2º Termo Aditivo ao Contrato PP 024/2021
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>486D8F45428B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="486D8F45428B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-2-termo-aditivo-ao-contrato-pp-024-2021-pimenteiras-30649">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Pimenteiras_Aviso_do_Termo_Aditivo_extrato_do_2_termo_aditivo_ao_contrato_pp_024_2021_bad8b5cb-c8c5-429f-b129-986aa4a36ae0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de lictação
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FB45FF42A6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FB45FF42A6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-lictacao-caraubas-do-piaui-30693">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_lictacao_96e9d656-8cfc-4524-bc8b-b1d29fda3db3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+Plano de gerenciamento de residuos
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Planos
+</td>
+<td class="text-center">
+<strong>ID: </strong>383261F43E094
+<br/><br/>
+<a class="fileDoc" data-file-hash="383261F43E094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/plano-de-gerenciamento-de-residuos-sao-felix-do-piaui-30707">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Prefeitura_Sao_Felix_do_Piaui_Planos_plano_de_gerenciamento_de_residuos_42595040-302b-408d-bf95-797bf4a0dacc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nossa Senhora dos Remédios
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9755521185974
+<br/><br/>
+<a class="fileDoc" data-file-hash="9755521185974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-nossa-senhora-dos-remedios-30685">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Camara_Nossa_Senhora_dos_Remedios_Aviso_do_extrato_de_contrato_extrato_de_contrato_8dc42848-c04c-4627-9553-687f2baca517.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=502&amp;q[flag_doc_diario_true]=1">
+349
+</a>
+-
+2022
+</td>
+<td class="">
+projeto de resolução
+</td>
+<td class="text-center">
+04-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>0976C9AA8CC04
+<br/><br/>
+<a class="fileDoc" data-file-hash="0976C9AA8CC04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-resolucao-pio-ix-30655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/3/DOP_EDICAO__4-11-2022_ED_349_Camara_Pio_IX_Resolucoes_projeto_de_resolucao_ef034362-7a95-44a9-92c2-0163cab56c81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

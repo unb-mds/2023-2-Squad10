@@ -1,0 +1,1460 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>93187F0450434
+<br/><br/>
+<a class="fileDoc" data-file-hash="93187F0450434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88732/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_6df40294-b986-4738-8ba1-8430847ef4e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>90C8B41D96754
+<br/><br/>
+<a class="fileDoc" data-file-hash="90C8B41D96754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88733/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_634d2247-b4e9-4a8b-b6c5-55a3a5909b91.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04B3A4F89D864
+<br/><br/>
+<a class="fileDoc" data-file-hash="04B3A4F89D864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88734/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_04d11257-ae58-4565-a236-2f4c83f1420d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>645F106B3E6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="645F106B3E6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88735/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_05032b4c-d9d0-453d-a69d-bad3e5fe17d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3095AA428BE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3095AA428BE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88736/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_fdd9ba67-4e93-4099-b706-73666732a1c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2EE91D055AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2EE91D055AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88737/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_214b298c-f5b1-40e8-8c84-a6e3d040bc6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3501849C4F204
+<br/><br/>
+<a class="fileDoc" data-file-hash="3501849C4F204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88738/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_e19e5b37-b9bc-4209-97d8-6013a73cd104.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CC428E1D9FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CC428E1D9FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88739/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_39e98a03-001a-4ad7-bd99-3fd7aa7dde84.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8D2C33CB55D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="8D2C33CB55D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88740/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_eb5c9c10-a79c-4e94-86f9-6dd056566d81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>753725E243E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="753725E243E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88741/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_c44e76a4-2a8b-4465-abee-5f0eee049348.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F426E5AD9BE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F426E5AD9BE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88742/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_3520d192-fc86-49ad-b4da-561b30206b25.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CFA052A5EA1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CFA052A5EA1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88743/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_b0aa9050-2ec7-480e-bbb8-a0489f83a177.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5° BIMESTRE TCE - PI /
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>52B0220DCBCB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="52B0220DCBCB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/88744/rreo-5-bimestre-tce-pi-queimada-nova-82670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_5_bimestre_tce_pi_161be29e-a8f1-4de9-9fcd-b6028a5fbdcf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 825/2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2940E94F4D104
+<br/><br/>
+<a class="fileDoc" data-file-hash="2940E94F4D104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-825-2023-floriano-82706">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Floriano_Portarias_portaria_825_2023_42da54e9-27fa-4df2-bc79-9eb5b25cbeb6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO N° 325-2023 MARIA DE JESUS ALVES BEZERRA
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>926E96D6D0C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="926E96D6D0C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-325-2023-maria-de-jesus-alves-bezerra-floriano-82710">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Floriano_Outros_extrato_de_contrato_n_325_2023_maria_de_jesus_alves_bezerra_0b594e8c-1410-4a88-bd1c-4b9d7bba958b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+LEI N° 331/2023, DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>0474B767CE9E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0474B767CE9E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-331-2023-de-22-de-novembro-de-2023-francisco-macedo-82688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Francisco_Macedo_Leis_lei_n_331_2023_de_22_de_novembro_de_2023_0daa464c-79ba-4ad5-bfdc-c050257a78bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+REPUBLICAÇÃO AVISO PE SRP Nº 065-2023 COMBUSTÍVEL -
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>839775B0F5DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="839775B0F5DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-aviso-pe-srp-n-065-2023-combustivel-floriano-82718">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Floriano_Aviso_de_licitacao_republicacao_aviso_pe_srp_n_065_2023_combustivel_8a78d90b-a39d-42f7-a346-ba8c6bb8cd50.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 304-2023 - MARIA DA CONCEIÇÃO DE LIMA VIERIA
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB472C6CF63A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB472C6CF63A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-304-2023-maria-da-conceicao-de-lima-vieria-luis-correia-82693">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Luis_Correia_Portarias_portaria_304_2023_maria_da_conceicao_de_lima_vieria_06924e43-f443-43a3-abbb-d758fe12f40f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+Dispensa 24-2023 Aquisição de enfeites natalinos
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF676CB19D124
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF676CB19D124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-24-2023-aquisicao-de-enfeites-natalinos-tanque-do-piaui-82697">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_dispensa_24_2023_aquisicao_de_enfeites_natalinos_15f69c32-9fea-4fe0-b2d6-181d17e2f497.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Adjudicação Contrato Administrativo nº 107.2023- Dispensa 026.2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D234BDFD6D0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D234BDFD6D0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-contrato-administrativo-n-107-2023-dispensa-026-2023-barra-d-alcantara-82715">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Barra_DAlcantara_Aviso_da_Adjudicacao_termo_de_adjudicacao_contrato_administrativo_n_107_2023_dispensa_026_202_d52ba55c-3e62-426e-a9c0-b6f6c6b17056.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DISPENSA 01/2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>677C938482044
+<br/><br/>
+<a class="fileDoc" data-file-hash="677C938482044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-01-2023-monsenhor-gil-82674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Camara_Monsenhor_Gil_Extrato_extrato_dispensa_01_2023_ab868ac1-e9fd-4083-aefa-6d07f8bf57b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DECLARAÇÃO DAS PROPOSTAS DE PREÇOS TP 03/2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Julgamento e classificação de propostas
+</td>
+<td class="text-center">
+<strong>ID: </strong>811175F8A2E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="811175F8A2E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-declaracao-das-propostas-de-precos-tp-03-2023-jardim-do-mulato-82659">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Jardim_do_Mulato_Aviso_do_Julgamento_e_classificacao_de_propostas_aviso_de_declaracao_das_propostas_de_precos__f84f7925-6965-42dc-b06f-ed4ee1df91f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria N 116Aposetadoria Maria Jovelina
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D0325DD78314
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D0325DD78314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-116aposetadoria-maria-jovelina-colonia-do-gurgueia-82676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Colonia_do_Gurgueia_Portarias_portaria_n_116aposetadoria_maria_jovelina_9f8fd2e6-36de-4021-b674-89f6b60889a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO SÉTIMO TERMO ADITIVO CONTRATO Nº 01.3006/2017
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>250D93E49E224
+<br/><br/>
+<a class="fileDoc" data-file-hash="250D93E49E224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-setimo-termo-aditivo-contrato-n-01-3006-2017-sao-pedro-do-piaui-82713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Sao_Pedro_do_Piaui_Aviso_do_Termo_Aditivo_extrato_do_setimo_termo_aditivo_contrato_n_01_3006_2017_fd23b013-9cc1-4603-8195-700cca537a1d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+LEI N° 334/2023, DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>E92CDD674F4E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E92CDD674F4E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-334-2023-de-22-de-novembro-de-2023-francisco-macedo-82684">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Francisco_Macedo_Leis_lei_n_334_2023_de_22_de_novembro_de_2023_1e6f3fe0-3f29-48db-a2aa-eb76e7aac502.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 136, DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D653FBC1FCE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="D653FBC1FCE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-136-de-22-de-novembro-de-2023-dom-expedito-lopes-82610">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Dom_Expedito_Lopes_Portarias_portaria_n_136_de_22_de_novembro_de_2023_6fe0f12f-8f41-4a93-915a-fd39062a6117.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PE 026 2023- mat Permanente Sec Educação
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA1EFF51FAB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA1EFF51FAB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-026-2023-mat-permanente-sec-educacao-brejo-do-piaui-82606">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Brejo_do_Piaui_Aviso_da_Homologacao_pe_026_2023_mat_permanente_sec_educacao_12ffeae6-0471-4ec5-80e3-13d4b24357fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 46 DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Betânia do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>500D16713F2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="500D16713F2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-46-de-22-de-novembro-de-2023-betania-do-piaui-82601">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Betania_do_Piaui_Portarias_portaria_46_de_22_de_novembro_de_2023_ac30e50d-f6df-4876-b3c7-81ce9688c760.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 45 DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Betânia do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>657AA511FC694
+<br/><br/>
+<a class="fileDoc" data-file-hash="657AA511FC694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-45-de-22-de-novembro-de-2023-betania-do-piaui-82600">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Betania_do_Piaui_Portarias_portaria_45_de_22_de_novembro_de_2023_a8871f06-111b-4611-90cf-e95cfd79b743.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 44 DE 22 DE NOVEMBRO DE 2023
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Betânia do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FA45E2407BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FA45E2407BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-44-de-22-de-novembro-de-2023-betania-do-piaui-82599">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Betania_do_Piaui_Portarias_portaria_44_de_22_de_novembro_de_2023_e032c1cc-a57c-4e76-bf2a-85bb39a9c30f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=887&amp;q[flag_doc_diario_true]=1">
+609
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato ata SRP- PE 026/2023 Mat Permanente
+</td>
+<td class="text-center">
+24-11-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B087F2BFE814
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B087F2BFE814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-srp-pe-026-2023-mat-permanente-brejo-do-piaui-82607">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/11/23/DOP_EDICAO__24-11-2023_ED_609_Prefeitura_Brejo_do_Piaui_Extrato_extrato_ata_srp_pe_026_2023_mat_permanente_74fc9da9-6212-4c4c-8827-82a37896d466.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

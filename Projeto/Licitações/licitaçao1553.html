@@ -1,0 +1,1484 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1035A7C2B6054
+<br/><br/>
+<a class="fileDoc" data-file-hash="1035A7C2B6054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49966/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_e20edf64-59cc-433a-b907-1dfb8e94da41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F9D58DA4CC934
+<br/><br/>
+<a class="fileDoc" data-file-hash="F9D58DA4CC934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49967/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_0bae0f92-2855-4746-82bf-e08ca28cac7e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>33B925ED0BCC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="33B925ED0BCC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49968/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_0e6f29d2-1244-43e6-b48f-99e8413cc2fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>86EC596DF7664
+<br/><br/>
+<a class="fileDoc" data-file-hash="86EC596DF7664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49969/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_96a36db5-d393-4269-92d0-3e16b7e5bfb4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB91B96626804
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB91B96626804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49970/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_3abde1df-5963-4c1d-a7e2-2a6e78e4b983.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C46C330B98AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C46C330B98AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49971/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_e8f411d8-72f2-4e07-b390-0b07719fb897.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>502B59EEC7F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="502B59EEC7F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49972/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_fda781b9-1c16-4452-a43c-b25b1b2fcf42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>990B82978DEC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="990B82978DEC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49973/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_7c00302a-1952-4aa7-a7c1-e7d310f71d54.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>604EFD59983D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="604EFD59983D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49974/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_7f82cfd4-26df-4000-8847-ae37183836fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CD5EF91BF924
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CD5EF91BF924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49975/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_f80cd5f0-0163-4812-a977-0c4fda4af3c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>193FD147E1544
+<br/><br/>
+<a class="fileDoc" data-file-hash="193FD147E1544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49976/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_f31cf8c8-611c-401e-9009-b250f130a0f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>88FC822212AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="88FC822212AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49977/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_d5da4bd2-823e-4c73-bfea-5867e9ef165a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA82BD2420B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA82BD2420B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49978/rreo-6-bimestre-2022-rio-grande-do-piaui-46756">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2022_f9d23449-9bc8-4a70-ab4a-59189e025f42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Resultado Final - Auxílio Estudantil
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>A42A43CF4E624
+<br/><br/>
+<a class="fileDoc" data-file-hash="A42A43CF4E624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-final-auxilio-estudantil-sao-pedro-do-piaui-46674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Sao_Pedro_do_Piaui_Edital_de_Chamada_resultado_final_auxilio_estudantil_fbe19821-bb51-4103-a001-3305339401f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 066/2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>30481B71FCCD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="30481B71FCCD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-066-2023-jardim-do-mulato-46714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Jardim_do_Mulato_Portarias_portaria_n_066_2023_76e47133-d520-4fe3-a7fd-f70b55b67c25.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 125-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8635311EC444
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8635311EC444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-125-2023-buriti-dos-lopes-46710">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_125_2023_f4fc3219-d820-4954-98d5-bfc95638d067.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N°67/2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5FD32DCB9F294
+<br/><br/>
+<a class="fileDoc" data-file-hash="5FD32DCB9F294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-67-2023-landri-sales-46713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Landri_Sales_Portarias_portaria_n_67_2023_a86e1ac5-d3f9-42c1-abe5-9458df49dfeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 121-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>37FCBB5BE45A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="37FCBB5BE45A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-121-2023-buriti-dos-lopes-46703">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_121_2023_5f097c0b-45e5-4024-b855-bfde68ecdd0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 110-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E10D66999A234
+<br/><br/>
+<a class="fileDoc" data-file-hash="E10D66999A234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-110-2023-buriti-dos-lopes-46688">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_110_2023_84ee207f-06d3-4bba-8cb8-e13da4c61086.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 109-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADF55784EB614
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADF55784EB614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-109-2023-buriti-dos-lopes-46687">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_109_2023_60b91a70-1c1e-4a3c-a10a-8689e2608542.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 107-2023
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>357C2E698B2F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="357C2E698B2F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-107-2023-buriti-dos-lopes-46684">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_107_2023_c51133e3-b674-4d34-8481-fa02a9c785e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA - EDUCAÇÃO
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>789911BC5C914
+<br/><br/>
+<a class="fileDoc" data-file-hash="789911BC5C914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-educacao-sao-pedro-do-piaui-46721">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_educacao_728776b9-4e7b-4c48-96ad-ae681727fa56.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria 065
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9C27804C2FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9C27804C2FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-065-lagoa-do-barro-do-piaui-46682">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_065_16323812-9f15-4343-99bf-49b9a27d9419.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 033
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0F8205569CA14
+<br/><br/>
+<a class="fileDoc" data-file-hash="0F8205569CA14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-033-lagoa-do-barro-do-piaui-46665">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_033_baa85e45-2ea4-439a-8c23-20414480d666.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 032
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1126107F6264
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1126107F6264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-032-lagoa-do-barro-do-piaui-46664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_032_2d91c521-2099-4c99-91bb-ef87490b577f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 094-2023 - MARIA DIVONICE SANTOS DE OLIVEIRA
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8DF27E17A5B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="8DF27E17A5B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-094-2023-maria-divonice-santos-de-oliveira-luis-correia-46641">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Luis_Correia_Portarias_portaria_094_2023_maria_divonice_santos_de_oliveira_9bef5322-095e-4c40-a55b-153fa35937b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+portaria sead 024
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2FE33231FC384
+<br/><br/>
+<a class="fileDoc" data-file-hash="2FE33231FC384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sead-024-lagoa-do-barro-do-piaui-46643">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_sead_024_0abfad32-be68-4753-8512-1957c9fc07e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE - TCE /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C00BAD1AC644
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C00BAD1AC644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49922/rgf-2-semestre-tce-queimada-nova-46715">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rgf_2_semestre_tce_2c190d21-cc3d-4203-9322-a2b3741eadaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE - TCE /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>947F813164824
+<br/><br/>
+<a class="fileDoc" data-file-hash="947F813164824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49923/rgf-2-semestre-tce-queimada-nova-46715">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rgf_2_semestre_tce_aa5c28a8-ee9b-4a6c-b6af-8c4512990b1d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE - TCE /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1E90AD4F4CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1E90AD4F4CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49924/rgf-2-semestre-tce-queimada-nova-46715">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rgf_2_semestre_tce_c3535963-a0a0-46c1-b2a1-9342d3feddb3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=617&amp;q[flag_doc_diario_true]=1">
+425
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º SEMESTRE - TCE /
+</td>
+<td class="text-center">
+27-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FD7E61962F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FD7E61962F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/49925/rgf-2-semestre-tce-queimada-nova-46715">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/25/DOP_EDICAO__27-2-2023_ED_425_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rgf_2_semestre_tce_aa9c329b-19d6-47e3-94d2-599afb0643ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

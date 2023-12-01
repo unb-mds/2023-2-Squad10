@@ -1,0 +1,1841 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>785447197F574
+<br/><br/>
+<a class="fileDoc" data-file-hash="785447197F574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11410/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_e098b753-ec93-439c-8edd-306613dd90e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A2389E480714
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A2389E480714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11411/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_19cdd80e-3dec-4f6d-adc1-c0466221efc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3EB0456BE3A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3EB0456BE3A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11412/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_a90b46ec-09e9-492d-8b99-39b3da98bd81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F01A7C4F2E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F01A7C4F2E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11413/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_1a09fe8f-7ac4-4ff9-bfb9-6a784ff5c3a6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DACDD27D7964
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DACDD27D7964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11414/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_b3be9038-d0d8-46e4-8b86-a257479b1c6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B317692A4D384
+<br/><br/>
+<a class="fileDoc" data-file-hash="B317692A4D384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11415/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_c90ee91a-1208-4f86-a949-f91674a499bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>17D65A15DA8B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="17D65A15DA8B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11416/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_55316c35-3dbd-4154-ab73-73910e2ab3a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6EAB1F62F85E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6EAB1F62F85E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11417/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_8871285e-c0cc-4ec3-9577-43085a8f7251.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8B7D4A9E8C0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8B7D4A9E8C0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11418/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_94ef211f-97a3-4a46-b270-872b6e3ad6c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D580257A0EF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D580257A0EF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11419/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_4b1d8a0c-de1c-41ff-9a55-09d565d3fa96.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCFE174AEA8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCFE174AEA8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11420/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_4b319248-7524-491f-8417-c221d04e4dc2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RREO REF. AO SEGUNDO BIMESTRE 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AF565AAF8ABF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AF565AAF8ABF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11421/rreo-ref-ao-segundo-bimestre-2021-passagem-franca-do-piaui-10757">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ref_ao_segundo_bimestre_2021_b84cec24-44d9-4b1c-9209-3c1a86f5d6ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO FMS 016
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>688FA080F7EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="688FA080F7EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-fms-016-campinas-do-piaui-10816">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Campinas_do_Piaui_Extrato_extrato_fms_016_751409f6-417b-41b5-87e3-69467550e872.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+PP 010.2018 Extrato 4 Termo Aditivo
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DB7647883514
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DB7647883514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pp-010-2018-extrato-4-termo-aditivo-oeiras-10768">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Oeiras_Aviso_do_Termo_Aditivo_pp_010_2018_extrato_4_termo_aditivo_49c4696e-289d-435e-b009-3ca31a6eb7c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N.005-2022 MARIA ELOIDE FERREIRA
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2921388473D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2921388473D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-005-2022-maria-eloide-ferreira-barra-d-alcantara-10798">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Camara_Barra_DAlcantara_Portarias_portaria_n_005_2022_maria_eloide_ferreira_dfe94ab6-d74d-43d0-8eae-822f5a1b70f9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+combustível 2022 - Extrato de 2º contrato REAJUSTE 1
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9955543250A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9955543250A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/combustivel-2022-extrato-de-2-contrato-reajuste-1-sigefredo-pacheco-10753">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Sigefredo_Pacheco_Extrato_combustivel_2022_extrato_de_2_contrato_reajuste_1_35f54137-7768-4f21-99cb-1978cbbe1064.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DISEPNSA 004 - 2022
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5453BE3E48F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="5453BE3E48F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-disepnsa-004-2022-angical-do-piaui-10778">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Angical_do_Piaui_Extrato_extrato_disepnsa_004_2022_0d1b8313-b773-4e7e-82b7-97c12397ea79.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Parecer da CCJ ao PL 14/2022-Proibição de queimadas no âmbito do município
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Parecer prévio
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA529BAB969C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA529BAB969C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-da-ccj-ao-pl-14-2022-proibicao-de-queimadas-no-ambito-do-municipio-nazare-do-piaui-10761">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Camara_Nazare_do_Piaui_Parecer_previo_parecer_da_ccj_ao_pl_14_2022_proibicao_de_queimadas_no_ambito_do_municipio_8a57bcf2-1324-489b-a403-66de1be3d1e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+ratificação
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>46CD73427B6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="46CD73427B6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-caraubas-do-piaui-10788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Caraubas_do_Piaui_Atos_ratificacao_aee1e5fe-331e-428e-89f0-c5aa323449d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+ATA DE REGISTRO DE PREÇO
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A58E31722174
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A58E31722174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-registro-de-preco-itaueira-10773">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Itaueira_Atas_ata_de_registro_de_preco_3d406db5-5ea7-4d40-94f8-48b77ce73306.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Parecer da COFT ao PL 13/2022-Dispõe sobre a Politica Municipal de Meio Ambiente
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Parecer prévio
+</td>
+<td class="text-center">
+<strong>ID: </strong>48FD5AEE48A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="48FD5AEE48A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-da-coft-ao-pl-13-2022-dispoe-sobre-a-politica-municipal-de-meio-ambiente-nazare-do-piaui-10759">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Camara_Nazare_do_Piaui_Parecer_previo_parecer_da_coft_ao_pl_13_2022_dispoe_sobre_a_politica_municipal_de_meio_ambiente_da9250fa-a831-4102-a060-4534f0ec7c9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria nº 02/2022 - Nomeação de Fiscal Ambiental
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEF126262D2E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEF126262D2E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-02-2022-nomeacao-de-fiscal-ambiental-santa-rosa-do-piaui-10770">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Santa_Rosa_do_Piaui_Portarias_portaria_n_02_2022_nomeacao_de_fiscal_ambiental_664ea38b-69ed-4b83-8662-13a3f1c5a33e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Convocação Contrato PE 001/2022
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>239E13648E384
+<br/><br/>
+<a class="fileDoc" data-file-hash="239E13648E384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-contrato-pe-001-2022-barreiras-do-piaui-10766">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Barreiras_do_Piaui_Ato_Convocatorio_convocacao_contrato_pe_001_2022_41303917-9468-4996-b787-8d61824eeeca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa 013 - Metalurgica
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2A97BDB0F5304
+<br/><br/>
+<a class="fileDoc" data-file-hash="2A97BDB0F5304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-013-metalurgica-sigefredo-pacheco-10762">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Sigefredo_Pacheco_Aviso_de_licitacao_dispensa_013_metalurgica_336208d9-adb4-4d01-ae0a-090379bfdfab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO 006-2022 SERVIÇOS DE INTERNET
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Tamboril do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>170B180055214
+<br/><br/>
+<a class="fileDoc" data-file-hash="170B180055214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-006-2022-servicos-de-internet-tamboril-do-piaui-10810">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Camara_Tamboril_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_006_2022_servicos_de_internet_b2b4c591-f73a-4fbb-ab79-476ee6b72af5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO ADITIVO - TP MSD
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>53FC18067FD04
+<br/><br/>
+<a class="fileDoc" data-file-hash="53FC18067FD04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-aditivo-tp-msd-angical-do-piaui-10776">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Angical_do_Piaui_Aviso_do_Termo_Aditivo_extrato_aditivo_tp_msd_5bd8c45b-e6c5-489c-958d-5e7dd30fefd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+Parecer da CMA ao PL 14/2022-Proibição de queimadas no âmbito do município
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Parecer prévio
+</td>
+<td class="text-center">
+<strong>ID: </strong>A38867D4C3DF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A38867D4C3DF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-da-cma-ao-pl-14-2022-proibicao-de-queimadas-no-ambito-do-municipio-nazare-do-piaui-10764">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Camara_Nazare_do_Piaui_Parecer_previo_parecer_da_cma_ao_pl_14_2022_proibicao_de_queimadas_no_ambito_do_municipio_ec1fcf7a-8501-417c-ae04-125427f10b74.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO ADM 028
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B30C11ECBC4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B30C11ECBC4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-adm-028-campinas-do-piaui-10819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Campinas_do_Piaui_Extrato_extrato_adm_028_00c0ede3-024f-408b-953f-4d9a5c9a842f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE RATIFICAÇÃO DISP 005/2022
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DB8458B22D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DB8458B22D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-ratificacao-disp-005-2022-sao-jose-do-piaui-10784">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Sao_Jose_do_Piaui_Aviso_de_Ratificacao_aviso_de_ratificacao_disp_005_2022_80496323-fdcd-4daa-8344-e5a32c0c6d06.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO DO PE 16-2022 - PREST. DE SERV. DE LOCAÇÃO DE VEI. PARA A SECRETARIA DE SAÚDE.
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADCA5C7437414
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADCA5C7437414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-do-pe-16-2022-prest-de-serv-de-locacao-de-vei-para-a-secretaria-de-saude-francisco-macedo-10671">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_do_contrato_do_pe_16_2022_prest_de_serv_de_locacao_de_vei_para_a_secretaria_de_saude_7f308cda-8d95-415b-988d-ba2ae3adaa47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO PE 17-2022 - AQUISIÇÃO DE MATERIAL DE CONSTRUÇÃO - COMEMORAR CONSTRUCOES LTDA EPP.
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B083755AD6054
+<br/><br/>
+<a class="fileDoc" data-file-hash="B083755AD6054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-pe-17-2022-aquisicao-de-material-de-construcao-comemorar-construcoes-ltda-epp-francisco-macedo-10672">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_do_pe_17_2022_aquisicao_de_material_de_construcao_comemorar_construcoes_ltda_epp_1531c3d7-76c5-411e-b279-92fa86c77cf5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO PE 17-2022 - AQUISIÇÃO DE MATERIAL DE CONSTRUÇÃO - J J DA COSTA NETO ME.
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>24B38E1B74614
+<br/><br/>
+<a class="fileDoc" data-file-hash="24B38E1B74614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-pe-17-2022-aquisicao-de-material-de-construcao-j-j-da-costa-neto-me-francisco-macedo-10673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_do_pe_17_2022_aquisicao_de_material_de_construcao_j_j_da_costa_neto_me_ccba2934-5c25-4f74-8f3b-c402840de231.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO N° 032/2022
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>504F78D398A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="504F78D398A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-n-032-2022-sao-jose-do-piaui-10786">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_n_032_2022_d103b84a-7294-47ef-9716-93cc0f28e949.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B4BF2A17D104
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B4BF2A17D104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11431/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_0591b8b7-c57f-4b66-b882-f2b3ec6ce599.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9873CA5781BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9873CA5781BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11432/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_4358df6f-4b7a-4fa0-9b1f-ee5bfe6a7d79.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B48CD028A9A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="B48CD028A9A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11433/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_eba1aaef-b3bf-44c6-932f-eaa842ebb7e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8850C3AF82774
+<br/><br/>
+<a class="fileDoc" data-file-hash="8850C3AF82774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11434/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_268f6838-2e72-4687-b450-184ddd849160.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6EDA86FA74EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6EDA86FA74EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11435/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_9534833c-08eb-4d0c-8d2d-973e6236722b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+RGF REFERENTE AO PRIMEIRO QUADR 2021 /
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>53482E471BE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="53482E471BE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/11436/rgf-referente-ao-primeiro-quadr-2021-passagem-franca-do-piaui-10767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_de_gestao_fiscal_rgf_referente_ao_primeiro_quadr_2021_387b02c5-39d5-43e7-b720-92ba376e3b74.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=271&amp;q[flag_doc_diario_true]=1">
+192
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO PE 18-2022 - PRESTAÇÃO DE SERVIÇOS DE APOIO ADM. E ELAB. DE DOC. ESPEC. PARA A SEDUC
+</td>
+<td class="text-center">
+18-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B71F7EDD1844
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B71F7EDD1844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-pe-18-2022-prestacao-de-servicos-de-apoio-adm-e-elab-de-doc-espec-para-a-seduc-francisco-macedo-10674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/21/DOP_EDICAO__18-3-2022_ED_192_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_do_pe_18_2022_prestacao_de_servicos_de_apoio_adm_e_elab_de_doc_espec_para_a_seduc_1b547a89-cf1e-43fa-8a02-e347b66686b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

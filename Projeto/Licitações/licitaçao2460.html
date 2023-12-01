@@ -1,0 +1,1301 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>747A72E05EF84
+<br/><br/>
+<a class="fileDoc" data-file-hash="747A72E05EF84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26669/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_bd09dc51-fd79-4947-ac95-ae28e8a6e424.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B01EEFCF8D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B01EEFCF8D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26670/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_4e93a413-7677-476f-a69e-a3ec0beaa4ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6AF17389BCFE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6AF17389BCFE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26671/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_8f1e260c-37f8-4e9c-ab37-ba8fefa369f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A5B437C71134
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A5B437C71134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26672/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_f1c010bc-1873-410e-89fc-884e432e64d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6CA67BB059504
+<br/><br/>
+<a class="fileDoc" data-file-hash="6CA67BB059504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26673/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_1beebb01-00c2-4969-b218-b1b5009b5d35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D62B206F4A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D62B206F4A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26674/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_243cff74-daca-4088-aec3-c73af56903e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>913FD83C67094
+<br/><br/>
+<a class="fileDoc" data-file-hash="913FD83C67094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26675/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_b175f95f-c2d2-40de-a885-07f462b3dc57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7A0C2E83E06D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7A0C2E83E06D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26676/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_01730bb5-25fd-4977-8c79-14dd83745e36.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB0C0ED2FD814
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB0C0ED2FD814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26677/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_96d2a926-698f-4961-983b-a0e66bc020f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D67785978A964
+<br/><br/>
+<a class="fileDoc" data-file-hash="D67785978A964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26678/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_69354f42-4164-4f87-94d8-e0dd3bca6bd1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>887EBBF754E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="887EBBF754E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26679/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_5153c031-6de9-46c8-b6b8-dfa7ccaf692f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3527D6309DE24
+<br/><br/>
+<a class="fileDoc" data-file-hash="3527D6309DE24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26680/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_1fc07309-97a4-4e10-931c-ccb714aa1d74.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B26A4DA3CE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B26A4DA3CE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26681/lei-de-responsabilidade-fiscal-caraubas-do-piaui-24873">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_c572a4c6-422a-4ae9-afec-f7a834fd6620.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+TP 010.2022 Aviso de Licitação
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>EDCDA622655C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EDCDA622655C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-010-2022-aviso-de-licitacao-oeiras-24870">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Oeiras_Aviso_de_licitacao_tp_010_2022_aviso_de_licitacao_03540a25-e0e6-4d6f-8a01-11b249458cc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 016
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0850759D91F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="0850759D91F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-016-cajazeiras-do-piaui-24850">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Cajazeiras_do_Piaui_Decretos_decreto_016_f11fe3c1-6a08-4760-a19b-4bcff32956b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+2 ATA COMPL 2 SEM 21 PREF
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>34F73AFD30254
+<br/><br/>
+<a class="fileDoc" data-file-hash="34F73AFD30254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-ata-compl-2-sem-21-pref-santa-cruz-dos-milagres-24862">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Santa_Cruz_dos_Milagres_Atas_2_ata_compl_2_sem_21_pref_245787fb-b78f-47df-8a98-883a57422824.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 515/2022
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B4A2641F36C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B4A2641F36C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-515-2022-floriano-24858">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Floriano_Portarias_portaria_515_2022_c04f040d-667d-44a2-8b67-311528d42d6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+PE 032.2022 Aviso de Licitação
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D6B611C9BB64
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D6B611C9BB64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-032-2022-aviso-de-licitacao-oeiras-24866">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Oeiras_Aviso_de_licitacao_pe_032_2022_aviso_de_licitacao_fe9f5ca1-72b3-456a-b429-00b74392aed7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+PE 033.2022 Aviso de Licitação
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E7317188BD74
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E7317188BD74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-033-2022-aviso-de-licitacao-oeiras-24867">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Oeiras_Aviso_de_licitacao_pe_033_2022_aviso_de_licitacao_52dc6f7f-2c35-41a3-a22a-fc3b57b363e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+TP 009.2022 Aviso de Licitação
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>512DC5B21BE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="512DC5B21BE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-009-2022-aviso-de-licitacao-oeiras-24869">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Oeiras_Aviso_de_licitacao_tp_009_2022_aviso_de_licitacao_709988c7-bc3e-4ba5-8e53-05cbc59d2c09.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E23E460332814
+<br/><br/>
+<a class="fileDoc" data-file-hash="E23E460332814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26682/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_29effab3-eb12-4911-8298-48cb62432905.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCF290790DCA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCF290790DCA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26683/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_c01391a3-cfce-4a3d-a666-9dbe6871b97b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2B9BEEDDEAB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2B9BEEDDEAB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26684/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_3727e6f1-524d-4ec1-ab8b-ea49bd7ea983.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>63A593FDA8B54
+<br/><br/>
+<a class="fileDoc" data-file-hash="63A593FDA8B54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26685/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_e825963f-830e-46da-b01a-33c8c8ee6c73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>283F7CFE58F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="283F7CFE58F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26686/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_f4e943eb-c28e-4430-968f-1c8df3361d92.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=424&amp;q[flag_doc_diario_true]=1">
+297
+</a>
+-
+2022
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL RGF /
+</td>
+<td class="text-center">
+18-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>507D42B456104
+<br/><br/>
+<a class="fileDoc" data-file-hash="507D42B456104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26687/lei-de-responsabilidade-fiscal-rgf-caraubas-do-piaui-24874">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/17/DOP_EDICAO__18-8-2022_ED_297_Prefeitura_Caraubas_do_Piaui_Atos_lei_de_responsabilidade_fiscal_rgf_001f65f3-e696-459e-a592-f3f3e5302293.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

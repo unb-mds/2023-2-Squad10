@@ -1,0 +1,1595 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+pe 018.2023
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>839659C56D524
+<br/><br/>
+<a class="fileDoc" data-file-hash="839659C56D524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-018-2023-passagem-franca-do-piaui-77326">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Passagem_Franca_do_Piaui_Aviso_de_licitacao_pe_018_2023_4263e1bb-a5ab-4eeb-9c68-69bfdf964fe2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 24
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>156B615486964
+<br/><br/>
+<a class="fileDoc" data-file-hash="156B615486964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-24-nazaria-77348">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Nazaria_Decretos_decreto_n_24_9f289b5c-1b44-47a6-b91a-159ffc9b0c8c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>90C0982FBADD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="90C0982FBADD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83216/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_07f49014-65c5-4399-aca5-dca38c83eaa1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F98DCA2B4F6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F98DCA2B4F6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83217/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_ec2b8108-7846-4b22-b8d7-35373a1cf044.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>376B90BFADCE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="376B90BFADCE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83218/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_6e2efc71-be5b-4fc3-85b3-774125045942.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>00414167E83D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="00414167E83D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83219/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_2f1e3a83-5fc6-44ca-ae4d-f784bc196bfc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBF17BFE4F954
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBF17BFE4F954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83220/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_53359747-171f-43e5-b47e-d55060a20d1e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0241143D84C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="0241143D84C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83221/rgf-2-quadrimestre-de-2023-altos-77349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Altos_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_de_2023_d017a7eb-a605-4365-ac76-8f40cae600e4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Homologação PE 017/2023- Serviços veiculos
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A81AECAF92AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A81AECAF92AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-017-2023-servicos-veiculos-ipiranga-do-piaui-77258">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Ipiranga_do_Piaui_Aviso_da_Homologacao_termo_de_homologacao_pe_017_2023_servicos_veiculos_053cdf1f-9a5d-4b20-959e-ebfc94694ae3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE HOMOLOGAÇÃO PE 032/2023 EQUIPAMENTO
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D1C7107C69774
+<br/><br/>
+<a class="fileDoc" data-file-hash="D1C7107C69774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-homologacao-pe-032-2023-equipamento-sao-jose-do-piaui-77301">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Sao_Jose_do_Piaui_Aviso_da_Homologacao_aviso_de_homologacao_pe_032_2023_equipamento_9ee75843-9b5b-4acb-818c-2411a75d4753.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 029/2023
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>092A8F8E00DC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="092A8F8E00DC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-029-2023-isaias-coelho-77295">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Isaias_Coelho_Decretos_decreto_n_029_2023_11cd852e-32e0-46f5-bb30-9f56029e5870.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 178
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pedro Laurentino
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A089EF7290604
+<br/><br/>
+<a class="fileDoc" data-file-hash="A089EF7290604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-178-pedro-laurentino-77293">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Pedro_Laurentino_Portarias_portaria_178_2d08580c-e3fb-4fe1-bdb8-208ed5dd4aa6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+NOVO EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 071-2022 - NARACELIA
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BF4BCDB873F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BF4BCDB873F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/novo-extrato-parcial-ata-registro-de-precos-pe-071-2022-naracelia-floriano-77310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Floriano_Extrato_novo_extrato_parcial_ata_registro_de_precos_pe_071_2022_naracelia_417136e4-bd66-4973-8214-0705768d2aa0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+ratificação dispensa 0014-2023
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3ADF6761FB994
+<br/><br/>
+<a class="fileDoc" data-file-hash="3ADF6761FB994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-dispensa-0014-2023-conceicao-do-caninde-77264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Conceicao_do_Caninde_Extrato_ratificacao_dispensa_0014_2023_9bfd10b8-27ed-4d50-b2c0-aa1df485f84d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+LRF RGF DESPESA COM PESSOAL - 2° QUADRIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3FBED22C0534
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3FBED22C0534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83080/lrf-rgf-despesa-com-pessoal-2-quadrimestre-2023-sao-raimundo-nonato-77255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Camara_Sao_Raimundo_Nonato_Relatorios_de_gestao_fiscal_lrf_rgf_despesa_com_pessoal_2_quadrimestre_2023_0b59c39b-13d0-4842-994d-90e12205a269.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0479B4501674
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0479B4501674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83154/rgf-2-quadrimestre-buriti-dos-lopes-77305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_e0cdc4b0-0052-4c50-976a-93ea3ff9889c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>209274C1F05D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="209274C1F05D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83155/rgf-2-quadrimestre-buriti-dos-lopes-77305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_a4bb7a06-dc9b-476c-b170-7e2411a381cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2º QUADRIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E6892D52F334
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E6892D52F334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83156/rgf-2-quadrimestre-buriti-dos-lopes-77305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_rgf_2_quadrimestre_11798ab3-fae0-443c-8bab-9536e0bfc804.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE ADESÃO Á NOTA FISCAL DE SERVIÇOS ELETRONICOS DE PADRÃO NACIONAL
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>07B38FB608DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07B38FB608DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adesao-a-nota-fiscal-de-servicos-eletronicos-de-padrao-nacional-landri-sales-77227">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Landri_Sales_Outros_termo_de_adesao_a_nota_fiscal_de_servicos_eletronicos_de_padrao_nacional_653a55ff-69e4-440a-8eda-563fcd3d1cf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA FISCAL DE CONTRATO - INEXIGIBILIDADE 011/2023
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3F9F4E2344554
+<br/><br/>
+<a class="fileDoc" data-file-hash="3F9F4E2344554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-fiscal-de-contrato-inexigibilidade-011-2023-pio-ix-77277">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Pio_IX_Portarias_portaria_fiscal_de_contrato_inexigibilidade_011_2023_cbcfd383-e93c-4abf-9ec9-8e3a0d43efb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E2BEEF6F8CC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E2BEEF6F8CC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83137/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_a958cf75-2dfa-4c05-b03d-6d917d397086.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>45C70CB14E6A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="45C70CB14E6A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83138/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_5cb561f9-f9ec-4a0d-bf1b-9cdd68f15107.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>080A0CB54E1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="080A0CB54E1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83139/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_d0815ef7-aa56-428e-b79e-e049102da0bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>77A500F009624
+<br/><br/>
+<a class="fileDoc" data-file-hash="77A500F009624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83140/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_a75d23d7-a74a-4639-9fe7-1e208a61d7ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F805A588EEC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F805A588EEC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83141/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_36249c24-0ccd-42ff-884c-42375b7b08b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B65DA8B8FE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B65DA8B8FE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83142/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_a06f391d-72cd-4f58-bac3-7f1547449239.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>54B58D4285B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="54B58D4285B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83143/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_9741e8f8-ef63-4786-b16c-cd25f0e9593f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BA8CD2BDA534
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BA8CD2BDA534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83144/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_7960d689-d7ca-4625-9ce2-3423fd178b96.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5333462D707C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5333462D707C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83145/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_ddb521ee-c744-4616-83d1-e439f6ec5dde.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F740ABA4C73C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F740ABA4C73C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83146/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_c44ed8c7-0d90-4a65-bca5-5134cc4a1fb5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B11B326AFB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B11B326AFB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83147/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_7bcd61b5-8e5f-4c76-80cf-1ef85f211a97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2BACE99BB7864
+<br/><br/>
+<a class="fileDoc" data-file-hash="2BACE99BB7864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83148/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_d2fda05f-5657-488a-9da9-230407f5d6dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=834&amp;q[flag_doc_diario_true]=1">
+574
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4º BIMESTRE /
+</td>
+<td class="text-center">
+02-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>934A2B0C443E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="934A2B0C443E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83149/rreo-4-bimestre-buriti-dos-lopes-77300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/1/DOP_EDICAO__2-10-2023_ED_574_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_682e4311-9284-4197-babb-e93920c808a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

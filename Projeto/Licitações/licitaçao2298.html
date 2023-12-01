@@ -1,0 +1,1343 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato n° 0610202203/2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B222A43004294
+<br/><br/>
+<a class="fileDoc" data-file-hash="B222A43004294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-0610202203-2022-alvorada-do-gurgueia-28679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Alvorada_do_Gurgueia_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_0610202203_2022_c56405d5-6b8e-4dae-a6ec-dbc9b3b66b08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>10761B54BBD44
+<br/><br/>
+<a class="fileDoc" data-file-hash="10761B54BBD44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-alvorada-do-gurgueia-28678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Alvorada_do_Gurgueia_Aviso_de_Ratificacao_termo_de_ratificacao_317ef17a-4c6c-45dd-a205-bf829b5291bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+2ª ADITIVO – PE 012022 – COMBUSTÍVEL SEDE
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D57D234AA6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D57D234AA6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-aditivo-pe-012022-combustivel-sede-francisco-macedo-28657">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Francisco_Macedo_Aviso_do_Adiamento_de_licitacao_2_aditivo_pe_012022_combustivel_sede_9da3b419-c23f-46e7-a89c-71dc81dad3f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+extrato 18
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A07E529303A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A07E529303A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-18-isaias-coelho-28660">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Isaias_Coelho_Extrato_extrato_18_b632c930-4b85-456f-8ea6-11a4bb9711b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>54AB0E9C00B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="54AB0E9C00B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sebastiao-barros-28659">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Sebastiao_Barros_Atos_portaria_849f68f4-245e-42d9-98de-5bd6c844442c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de licitação
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E9413F1BFE54
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E9413F1BFE54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-caraubas-do-piaui-28670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_50e33930-a6e5-489d-b1df-d491cb557332.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+termo de autorização
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>098B6D8EDA544
+<br/><br/>
+<a class="fileDoc" data-file-hash="098B6D8EDA544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-autorizacao-caraubas-do-piaui-28653">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Caraubas_do_Piaui_Atos_termo_de_autorizacao_755a5924-39e2-46f3-a9aa-3a08c7212aaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>03DD5C7C1FC34
+<br/><br/>
+<a class="fileDoc" data-file-hash="03DD5C7C1FC34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-28651">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_2f745b91-c49f-4e7e-b999-dc5f3fa0253c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+ata de julgamento
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2ABD87B75CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2ABD87B75CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-julgamento-caraubas-do-piaui-28650">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Caraubas_do_Piaui_Atos_ata_de_julgamento_9d507fcd-4dde-46c2-8184-2be21b70e505.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9D319124D144
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9D319124D144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-campinas-do-piaui-28644">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Campinas_do_Piaui_Decretos_decreto_6d396abd-ace0-4815-93db-3c4278f9dff8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato TP 004/2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>20402CAEAC734
+<br/><br/>
+<a class="fileDoc" data-file-hash="20402CAEAC734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-tp-004-2022-oeiras-28667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Oeiras_Aviso_do_extrato_de_contrato_extrato_contrato_tp_004_2022_7c6f4072-6c33-4a27-abdd-1a35ba9e8dcb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 083-22
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA1935527A814
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA1935527A814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-083-22-nazaria-28668">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Nazaria_Portarias_portaria_083_22_79953892-1ed0-43e5-b335-5ea05b3695f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO DE Nº023-2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>E90685E12EC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="E90685E12EC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-de-n-023-2022-altos-28643">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Altos_Resolucoes_resolucao_de_n_023_2022_1e717b31-7c49-4607-a6c1-512b2f749b95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+portaria n 078
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>34DFA8E6B3D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="34DFA8E6B3D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-078-conceicao-do-caninde-28697">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Conceicao_do_Caninde_Portarias_portaria_n_078_e2cab313-5d7f-425d-b6e4-a2f0aa95f0cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução nº 04/2019 - Verba Indenizatória - atualizada com Resolução nº 04/2022
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>120BAF09C4564
+<br/><br/>
+<a class="fileDoc" data-file-hash="120BAF09C4564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-04-2019-verba-indenizatoria-atualizada-com-resolucao-n-04-2022-sao-raimundo-nonato-28689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Camara_Sao_Raimundo_Nonato_Resolucoes_resolucao_n_04_2019_verba_indenizatoria_atualizada_com_resolucao_n_04_2022_c96724bf-3b0d-4c40-adf8-2ce0c34e4005.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BF5BAFA09354
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BF5BAFA09354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30808/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_9a3bcbd4-feb0-4f11-99be-dbe5a959484f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E36C3EAFC99D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E36C3EAFC99D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30809/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_5fa2a83b-9bed-4948-8c94-a275f862af29.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>91D7A720890D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="91D7A720890D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30810/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_d56c418d-424d-4c6b-bc54-b68647ed5111.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C61AE831C1454
+<br/><br/>
+<a class="fileDoc" data-file-hash="C61AE831C1454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30811/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_2c52cca5-1711-4f95-99c1-9b3b7ac95051.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E478688C9974
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E478688C9974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30812/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_8d58d961-60b8-446c-9232-515a8c9bc46f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B84BF3E87B3D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B84BF3E87B3D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30813/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_bd775bf7-2277-49f0-bc3b-0d6284761349.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3ABDA762BB5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3ABDA762BB5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30814/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_4cb239f8-354a-409a-8fef-a8a869a289c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED48738DCC444
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED48738DCC444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30815/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_7414081b-7e0d-471f-b81c-3dd31ec95a2e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>98EA6F8E9E1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="98EA6F8E9E1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30816/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_fa48ccc4-dbf3-4ccb-889d-8a38ff758ecd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87079BED13854
+<br/><br/>
+<a class="fileDoc" data-file-hash="87079BED13854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30817/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_a3af648a-85a5-4230-8722-42c69afb5d4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D136ECCB26E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="D136ECCB26E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30818/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_13faf632-326f-4fbf-857c-3d5d199407d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>73BCFBBFCA814
+<br/><br/>
+<a class="fileDoc" data-file-hash="73BCFBBFCA814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30819/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_c3444983-d157-4e79-b683-963be5b09528.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=474&amp;q[flag_doc_diario_true]=1">
+332
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 4º BIMESTRE PM BENEDITINOS PI 2022 /
+</td>
+<td class="text-center">
+07-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>71FAEDC97A064
+<br/><br/>
+<a class="fileDoc" data-file-hash="71FAEDC97A064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/30820/rreo-4-bimestre-pm-beneditinos-pi-2022-beneditinos-28677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/6/DOP_EDICAO__7-10-2022_ED_332_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_pm_beneditinos_pi_2022_ae6e8061-7ac3-4a8d-a871-f1c0d668eec9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

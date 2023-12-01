@@ -1,0 +1,1228 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 321-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F79129CEAAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F79129CEAAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-321-2022-amarante-34541">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_321_2022_d0c4a6b2-c803-4474-afca-a62fdc908547.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 322-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9686D1F629334
+<br/><br/>
+<a class="fileDoc" data-file-hash="9686D1F629334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-322-2022-amarante-34542">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_322_2022_6e935acb-243d-4c0e-a77b-bb26988f3c94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 326-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3B92FA35EA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3B92FA35EA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-326-2022-amarante-34546">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_326_2022_7c501323-b342-4507-b4c6-a39dfb63cc2c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 328-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D45C1839D5E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="D45C1839D5E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-328-2022-amarante-34549">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_328_2022_f13efbda-a6b7-48cb-bc28-b735b25fa409.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 330-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>80EA8A83EA644
+<br/><br/>
+<a class="fileDoc" data-file-hash="80EA8A83EA644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-330-2022-amarante-34554">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_330_2022_d1a860b1-bd89-49e0-92cc-cbc21af7b07e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 331-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E3750D7E9ED34
+<br/><br/>
+<a class="fileDoc" data-file-hash="E3750D7E9ED34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-331-2022-amarante-34555">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_331_2022_96fa462f-348d-47a5-8d6d-b965a856f846.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de cont. A2 PE 005-2022 (medimantos)
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F65121A9F80A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F65121A9F80A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-cont-a2-pe-005-2022-medimantos-altos-34532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Altos_Extrato_extrato_de_cont_a2_pe_005_2022_medimantos_27bb3bd4-c2b1-40e9-acc5-3e588665bf0b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 302-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>043BEE6FBF674
+<br/><br/>
+<a class="fileDoc" data-file-hash="043BEE6FBF674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-302-2022-amarante-34518">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_302_2022_187ca1d6-824d-4be4-9acb-f2b5e353590a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 304-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8DD04B4C66E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8DD04B4C66E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-304-2022-amarante-34520">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_304_2022_c23c02b3-c324-4c81-bc82-d49d466d749e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE PRIMEIRO TERMO DE ADITIVO. 1º Aditivo ao Contrato nº 115.2021- M. C. DA CUNHA
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>C384571B2C354
+<br/><br/>
+<a class="fileDoc" data-file-hash="C384571B2C354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-primeiro-termo-de-aditivo-1-aditivo-ao-contrato-n-115-2021-m-c-da-cunha-barra-d-alcantara-34562">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barra_DAlcantara_Aviso_do_Termo_Aditivo_extrato_de_primeiro_termo_de_aditivo_1_aditivo_ao_contrato_n_115_2021_m_c_da_cunha_ac3d97b6-a544-486d-a747-ac0569009dba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 313-2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6204615F53034
+<br/><br/>
+<a class="fileDoc" data-file-hash="6204615F53034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-313-2022-amarante-34531">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Amarante_Portarias_portaria_n_313_2022_731a5c64-d168-495a-9142-4278b7236318.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A3E3683513B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A3E3683513B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37236/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_c65645ad-f9fb-4328-8c37-a9e1d8b38eed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>74F3858114324
+<br/><br/>
+<a class="fileDoc" data-file-hash="74F3858114324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37237/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_fc9cad4d-ca13-4364-a5b8-d52ffec599bd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9FD10EBB5574
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9FD10EBB5574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37238/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_80eaf375-98b8-4970-a319-7558e99faccb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>48D0A2BF0CF94
+<br/><br/>
+<a class="fileDoc" data-file-hash="48D0A2BF0CF94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37239/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_5353605a-5fb9-438a-8d36-9f3386d8ebb3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>97D11FF19F324
+<br/><br/>
+<a class="fileDoc" data-file-hash="97D11FF19F324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37240/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_d388e73e-de0c-4c23-b61f-3e823213c1de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7019D0535DC44
+<br/><br/>
+<a class="fileDoc" data-file-hash="7019D0535DC44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37241/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_6c1957ae-330d-46b3-addd-75ac33c36b8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D7E05B7670554
+<br/><br/>
+<a class="fileDoc" data-file-hash="D7E05B7670554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37242/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_714b93fb-5027-402a-a7e5-4c58557d74eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE3DA255FF7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE3DA255FF7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37243/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_d64c995c-2b0b-41b3-8e48-bcbbd3ba866b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E891D2BE6CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E891D2BE6CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37244/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_b4cff524-9761-4c84-9e70-d1c253a8abca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>55954E1B431F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="55954E1B431F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37245/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_6271c460-7ff0-4c48-8e1c-6030dbbcb978.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D546477EF8844
+<br/><br/>
+<a class="fileDoc" data-file-hash="D546477EF8844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37246/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_789dac85-e848-4482-9939-e7b5570bd910.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4D5CC4C445F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4D5CC4C445F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37247/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_7300f87f-f537-45f6-9ae2-211096a82df9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º BIMESTRE /
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>20CA6ED885324
+<br/><br/>
+<a class="fileDoc" data-file-hash="20CA6ED885324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/37248/rreo-5-bimestre-barreiras-do-piaui-34451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_0c192956-c5c5-4931-a74c-ef9db5538a6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=548&amp;q[flag_doc_diario_true]=1">
+379
+</a>
+-
+2022
+</td>
+<td class="">
+Lei 229/2022
+</td>
+<td class="text-center">
+20-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>LOA - LEI ORCAMENTÁRIA ANUAL</strong>
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA7E67A6B96D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA7E67A6B96D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-229-2022-lagoinha-do-piaui-34443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/21/DOP_EDICAO__20-12-2022_ED_379_Prefeitura_Lagoinha_do_Piaui_Leis_lei_229_2022_9914babe-8ff2-4890-9526-b700e47f4776.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

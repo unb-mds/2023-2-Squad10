@@ -1,0 +1,1343 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+OP DE CREDITO /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4DEDCA035FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4DEDCA035FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10312/op-de-credito-campinas-do-piaui-9690">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_de_gestao_fiscal_op_de_credito_2fba5050-8ff7-4b89-8783-df777af24dd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 178/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E11871B96C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E11871B96C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-178-2022-floriano-9590">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_178_2022_b75842f8-aace-4bcf-85b9-e2cabd2bf149.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>10E5D933D4FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="10E5D933D4FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10260/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_f6d3c18f-c81b-489b-8acb-9c2a55ccf458.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE67B877F1834
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE67B877F1834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10261/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_8d75ac17-3208-4b0d-b702-dc945d8fd568.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>05370BAD8CE14
+<br/><br/>
+<a class="fileDoc" data-file-hash="05370BAD8CE14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10262/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_c37054dc-5c8e-4be2-a8de-28f70361626b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0294EF771F764
+<br/><br/>
+<a class="fileDoc" data-file-hash="0294EF771F764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10263/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_41907678-d5a1-47a6-a81b-e796828bfdb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E3F4025D52C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E3F4025D52C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10264/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_9e19a576-e6a0-49a6-ae96-f8eca876045d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Anexo I /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3DE384ABABFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3DE384ABABFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10265/anexo-i-buriti-dos-lopes-9655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_anexo_i_e5fccf03-c351-4169-937a-2f876bd3dbcd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 034/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>95E53E6DF1DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="95E53E6DF1DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-034-2022-wall-ferraz-9618">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Wall_Ferraz_Portarias_portaria_034_2022_27f8227e-a618-41a5-9746-e3f1f60e3e56.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Liberação Adesão 002/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>1006C44C55AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1006C44C55AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/liberacao-adesao-002-2022-ipiranga-do-piaui-9682">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Ipiranga_do_Piaui_Outros_liberacao_adesao_002_2022_5fcca4b9-b5fe-4c02-a5dd-c4d852f3e29e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DEM RECEITAS DE IMPOSTOS E DAS DESPESAS PROPRIAS COM SAUDE /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABB938ADFECE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABB938ADFECE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10329/dem-receitas-de-impostos-e-das-despesas-proprias-com-saude-campinas-do-piaui-9707">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_dem_receitas_de_impostos_e_das_despesas_proprias_com_saude_9a14210c-6f08-4e28-8de2-882154b849e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Nº 05 2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F95D9633922A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F95D9633922A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-05-2022-passagem-franca-do-piaui-9546">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Passagem_Franca_do_Piaui_Decretos_decreto_n_05_2022_67b827ed-31f9-465f-8d46-8a796b90a6c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RESTOS A PAGAR /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FEFF1993DDE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="FEFF1993DDE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10328/restos-a-pagar-campinas-do-piaui-9706">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_restos_a_pagar_4327a6ef-1790-470f-90f2-8f2201350d3f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO RATIFICAÇÃO - REF. INEXIGBILIDADE DE LICITAÇÃO 002-2022 ASSESSORIA JURÍDICA
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Tamboril do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>128747F2FC8A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="128747F2FC8A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-ref-inexigbilidade-de-licitacao-002-2022-assessoria-juridica-tamboril-do-piaui-9712">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Camara_Tamboril_do_Piaui_Aviso_de_Ratificacao_extrato_ratificacao_ref_inexigbilidade_de_licitacao_002_2022_assessoria_juridica_bc59f270-97d4-49e2-b93a-d818290eeb1c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 188/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BFB8683EA514
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BFB8683EA514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-188-2022-floriano-9601">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_188_2022_e174f056-9b50-435f-8538-40f3c4cda8d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DEM DAS RECEITAS DE IMPOSTOS E DESPESAS PRÓPRIAS COM SAÚDE /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B79FF186E1C14
+<br/><br/>
+<a class="fileDoc" data-file-hash="B79FF186E1C14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10254/dem-das-receitas-de-impostos-e-despesas-proprias-com-saude-campinas-do-piaui-9649">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_dem_das_receitas_de_impostos_e_despesas_proprias_com_saude_d82ce839-1b69-41b1-ae43-85c26db72bbc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+projeto de lei n° 002/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D17E0EBB89E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D17E0EBB89E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-n-002-2022-agricolandia-9587">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Agricolandia_Projeto_de_lei_projeto_de_lei_n_002_2022_8e3ad6bc-c5d0-4fe9-8b8f-c3bfac712fa4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 194/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A341EA62333F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A341EA62333F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-194-2022-floriano-9607">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_194_2022_940b24ae-0567-4703-ad3e-9006b541fe41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 189/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE16318B1A984
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE16318B1A984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-189-2022-floriano-9603">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_189_2022_49128e15-7b56-41f8-9f71-60c372b19885.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RECEITA CORRENTE LIQUIDA /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD911560BF614
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD911560BF614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10326/receita-corrente-liquida-campinas-do-piaui-9704">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_receita_corrente_liquida_8d6f4d6f-0039-4c5c-8f2c-e11e56f34129.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 103-2022 LENISE
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>668B0E0BF2244
+<br/><br/>
+<a class="fileDoc" data-file-hash="668B0E0BF2244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-103-2022-lenise-floriano-9683">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_103_2022_lenise_b6d94a60-be85-40c7-ad78-f6db39ba5806.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 139-2022 - COLAB
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E36EA6D54D7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E36EA6D54D7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-139-2022-colab-floriano-9675">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_139_2022_colab_f483d952-f189-4d02-b803-64be6ea0c1d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO 043/2022 MATERIAL GRAFICO
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5A303CE5F284
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5A303CE5F284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-043-2022-material-grafico-barra-d-alcantara-9646">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Barra_DAlcantara_Extrato_extrato_contrato_043_2022_material_grafico_47d80ae5-e469-44ff-aaf6-19504b9dd174.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+lei complemetar de n° 476/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1EA64B28AC04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1EA64B28AC04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-complemetar-de-n-476-2022-agricolandia-9582">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Agricolandia_Projeto_de_lei_lei_complemetar_de_n_476_2022_113bddd8-16bd-44ec-91df-86e18433216d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 193/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>72EF404AD7674
+<br/><br/>
+<a class="fileDoc" data-file-hash="72EF404AD7674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-193-2022-floriano-9606">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_193_2022_f2b4ed00-4ba3-4679-b77f-90bedd96f083.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A22CECA2EB524
+<br/><br/>
+<a class="fileDoc" data-file-hash="A22CECA2EB524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10241/balanco-orcamentario-campinas-do-piaui-9636">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Balanco_orcamentario_balanco_orcamentario_d0e06720-b8ec-495a-86f0-b33bc9dffbd6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+ALIENAÇÃO DE ATIVOS /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6BD52785FC44
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6BD52785FC44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10240/alienacao-de-ativos-campinas-do-piaui-9635">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_alienacao_de_ativos_5bb0e85f-c989-4718-86cf-0f39c058ffbf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DESPACHO DE RATIFICAÇÃO
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D03027D64E174
+<br/><br/>
+<a class="fileDoc" data-file-hash="D03027D64E174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-ratificacao-barra-d-alcantara-9651">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Barra_DAlcantara_Aviso_de_Ratificacao_despacho_de_ratificacao_2f42bfd3-8068-4b03-89ac-4d79dc4bd8e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

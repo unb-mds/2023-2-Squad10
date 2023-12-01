@@ -1,0 +1,1579 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria de Fiscal do Processo Administrativo de 01/2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2707C12281D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="2707C12281D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-fiscal-do-processo-administrativo-de-01-2023-jose-de-freitas-48304">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Jose_de_Freitas_Portarias_portaria_de_fiscal_do_processo_administrativo_de_01_2023_9813849d-4c83-4a6f-b05f-4f525cffe2a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do Processo Administrativo de 01/2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9A6F867F1FC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="9A6F867F1FC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-processo-administrativo-de-01-2023-jose-de-freitas-48303">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Jose_de_Freitas_Extrato_extrato_do_processo_administrativo_de_01_2023_13c020ae-5e87-43b3-80e3-fa6dc2618855.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Despesa com Pessoal ano de 2022
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+</td>
+<td class="text-center">
+<strong>ID: </strong>C5AF1884584B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C5AF1884584B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despesa-com-pessoal-ano-de-2022-jose-de-freitas-48296">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Jose_de_Freitas_Demonstrativo_de_receitas_e_despesas_despesa_com_pessoal_ano_de_2022_731e1e7d-f511-4802-beb3-3234e6f58a8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Demonstrativo Simplificado do Relatório de Gestão Fiscal- Ano de 2022
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD8AB96E7B244
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD8AB96E7B244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-ano-de-2022-jose-de-freitas-48294">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Jose_de_Freitas_Demonstrativo_de_receitas_e_despesas_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_ano_de_e669f33e-ffcc-403a-9dd6-ebfe5af0cd1c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 70 CREDITOS ADICIONAIS
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Créditos adicionais
+</td>
+<td class="text-center">
+<strong>ID: </strong>50621D127B984
+<br/><br/>
+<a class="fileDoc" data-file-hash="50621D127B984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-70-creditos-adicionais-barreiras-do-piaui-48305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Barreiras_do_Piaui_Creditos_adicionais_decreto_n_70_creditos_adicionais_f617d6c1-9f13-4ac6-8f3b-535f4876903b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+extrato de rescisão de contrato
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E5FF0F7CE384
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E5FF0F7CE384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-rescisao-de-contrato-ipiranga-do-piaui-48309">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_rescisao_de_contrato_3a3ae81e-b2a7-44b4-b7f0-0792cccfe056.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 73
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E3795499E404
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E3795499E404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-73-brejo-do-piaui-48292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Brejo_do_Piaui_Decretos_decreto_73_9608a3e6-17dd-4ba9-a233-9762420ff438.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Convenio de Permuta 002-2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Convênios
+</td>
+<td class="text-center">
+<strong>ID: </strong>9312810B320C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9312810B320C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-convenio-de-permuta-002-2023-alvorada-do-gurgueia-48324">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Convenios_termo_de_convenio_de_permuta_002_2023_fd9ffac6-908b-42a5-ad2c-9ceaec8c9056.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 37 , DE 01 DE DEZEMBRO DE 2022
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6269A763B5CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6269A763B5CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-37-de-01-de-dezembro-de-2022-alvorada-do-gurgueia-48322">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Decretos_decreto_n_37_de_01_de_dezembro_de_2022_18f73ce7-1bf4-4743-86a3-4699678b719c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 041-2023 exonera simone de jesus oliveira
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C3D127CCCF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C3D127CCCF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-041-2023-exonera-simone-de-jesus-oliveira-alvorada-do-gurgueia-48320">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_041_2023_exonera_simone_de_jesus_oliveira_83f948fd-9b6d-4ff5-8829-7fa46a9bc3ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 039/2023, DE 22 DE FEVEREIRO DE 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>788F4D69711A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="788F4D69711A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-039-2023-de-22-de-fevereiro-de-2023-alvorada-do-gurgueia-48318">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_n_039_2023_de_22_de_fevereiro_de_2023_5d9ec978-3884-4562-a8e6-60b55eac11e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 038/2023, DE 22 DE FEVEREIRO DE 2023.
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>54A51AFFA3E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="54A51AFFA3E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-038-2023-de-22-de-fevereiro-de-2023-alvorada-do-gurgueia-48317">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_n_038_2023_de_22_de_fevereiro_de_2023_e75e8b10-5bf6-419e-adc9-621226a561fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 037/2023, DE 22 DE FEVEREIRO DE 2023.
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>DDF07585E0224
+<br/><br/>
+<a class="fileDoc" data-file-hash="DDF07585E0224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-037-2023-de-22-de-fevereiro-de-2023-alvorada-do-gurgueia-48316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_n_037_2023_de_22_de_fevereiro_de_2023_f7c88b6d-7f04-46a9-aa6a-2628ef337727.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE 023/2022
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1313AED4840C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1313AED4840C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-023-2022-amarante-48290">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Amarante_Aviso_da_Homologacao_termo_de_homologacao_pe_023_2022_19e8b98d-2db2-4aff-822e-303b9ce6a325.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 036/2023, DE 22 DE FEVEREIRO DE 2023.
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>27C49F388A7E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="27C49F388A7E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-036-2023-de-22-de-fevereiro-de-2023-alvorada-do-gurgueia-48315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_n_036_2023_de_22_de_fevereiro_de_2023_011ca0d0-efab-436c-a254-2bb92368ff9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+ERRATA a PORTARIA Nº 035/2023, DE 15 DE FEVEREIRO DE 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>9AAB5D0681954
+<br/><br/>
+<a class="fileDoc" data-file-hash="9AAB5D0681954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-a-portaria-n-035-2023-de-15-de-fevereiro-de-2023-alvorada-do-gurgueia-48314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Errata_errata_a_portaria_n_035_2023_de_15_de_fevereiro_de_2023_40ac442a-c637-41ce-b2d9-4a2a169df283.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+ERRATA AO DECRETO Nº 006/2023, DE 17 DE FEVEREIRO DE 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>209741C61C6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="209741C61C6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-ao-decreto-n-006-2023-de-17-de-fevereiro-de-2023-alvorada-do-gurgueia-48312">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Errata_errata_ao_decreto_n_006_2023_de_17_de_fevereiro_de_2023_07b53c01-7ab7-4d65-af3d-ab2c3949a246.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO 062
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0F911EA7398C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0F911EA7398C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-062-lagoa-do-barro-do-piaui-48301">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_do_extrato_de_contrato_extrato_do_contrato_062_f22974fe-3a93-478d-acd6-7ced57fa2f24.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 014
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>044FEAEE301F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="044FEAEE301F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-014-lagoa-do-barro-do-piaui-48298">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Lagoa_do_Barro_do_Piaui_Decretos_decreto_014_5a125570-2205-4505-95a9-bd549b1cfd95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 013
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FC45064EF774
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FC45064EF774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-013-lagoa-do-barro-do-piaui-48297">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Lagoa_do_Barro_do_Piaui_Decretos_decreto_013_13735322-99c8-49e6-8cf2-fafa60d375bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 74
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F0DA42B5C2F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F0DA42B5C2F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-74-brejo-do-piaui-48293">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Brejo_do_Piaui_Decretos_decreto_74_55f4dcd3-dd9c-4a51-8cb5-531f1782cfae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 023/2022
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso da adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9AAB549CC1FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9AAB549CC1FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-023-2022-amarante-48291">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Amarante_Aviso_da_adjudicacao_termo_de_adjudicacao_pe_023_2022_45199241-0770-49a3-81db-9e462b4e042a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 429
+</td>
+<td class="text-center dopcom">
+03-03-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="A2CF9081C5034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-429-piaui-48329/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_CADERNO_a____diario_oficial_completo_edicao_429_0e1491a8-a481-415e-a4b3-2b4b124754de.pdf" href="javascript:void(0)">
+baixar
+</a>
+<small><strong>CADERNO B</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="D054CC3183B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-429-piaui-48329/caderno/b">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_CADERNO_b____diario_oficial_completo_edicao_429_0a9c42d7-0019-4757-8fc9-8a2d328fe663.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>869EFD67BC884
+<br/><br/>
+<a class="fileDoc" data-file-hash="869EFD67BC884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51597/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_e1db9ee1-7d78-4e10-8967-74f637982f28.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>830229A8D1174
+<br/><br/>
+<a class="fileDoc" data-file-hash="830229A8D1174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51598/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4cf3667d-2cf0-4748-8396-0d4878bc166d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>69E293A431BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="69E293A431BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51599/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_df57c433-19f2-42c5-8f7a-f7a728af5726.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8ABA01086D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8ABA01086D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51600/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3d16464c-26b9-42db-8b78-3ec5a3e798bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>072C41C672DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="072C41C672DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51601/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_7b940fe9-caa1-40c7-b2c5-ae9e26861008.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>97C36C42E9B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="97C36C42E9B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51602/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_acff6489-6f2e-4ba5-8ced-0a469744f2b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB33C3B08FEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB33C3B08FEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51603/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6cf674ab-0be6-417e-a8c5-9d1f123e40a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D4FE9C43CFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D4FE9C43CFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51604/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_699d91b6-deb0-45a3-9d05-5316d5ebec64.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F4AA765158B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="F4AA765158B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51605/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_c5196c0e-de29-4f56-9269-b4f30e183b54.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E1E5286019F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="E1E5286019F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51606/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_22db8fdf-2ef4-486f-9bca-a69f84f138bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CD97795534BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CD97795534BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51607/rreo-brejo-do-piaui-48161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_c0dd53c1-9b8b-4fea-ab70-ca8135225002.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

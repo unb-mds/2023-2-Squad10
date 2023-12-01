@@ -1,0 +1,1577 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F9C17B8581694
+<br/><br/>
+<a class="fileDoc" data-file-hash="F9C17B8581694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35454/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_02da12f9-3d40-48d9-bf4b-2ffc0ed564af.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1629267D86D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="1629267D86D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35455/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_61e403c6-2758-46ba-bb33-c1300cc83911.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C0D925CE5514
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C0D925CE5514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35456/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_f050b19a-37e4-47f9-9896-f3b3320e0f29.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3F0F20AA4D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3F0F20AA4D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35457/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_1115a409-db70-4d34-a121-fe215d0925bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>280AF785C91A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="280AF785C91A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35458/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_1c3a963e-4670-412f-85fa-bd9c04272be1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>99FE3424C7034
+<br/><br/>
+<a class="fileDoc" data-file-hash="99FE3424C7034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35459/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_01399864-bf21-47bb-8de5-07a6a3f08f41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8D7015B5BD3F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8D7015B5BD3F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35460/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_baa37dd9-b654-44d5-82ce-0d304d97d78f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>65335BBB1D014
+<br/><br/>
+<a class="fileDoc" data-file-hash="65335BBB1D014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35461/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_e01e9585-fa71-4179-acf7-bab9c048a11e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>17202C2780094
+<br/><br/>
+<a class="fileDoc" data-file-hash="17202C2780094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35462/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_2405de8a-1f82-49b0-914b-a9889b1d1e21.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AADD80A631304
+<br/><br/>
+<a class="fileDoc" data-file-hash="AADD80A631304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35463/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_c0f234ae-05a6-4c47-bab6-f8ce606de081.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A948D157C694
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A948D157C694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35464/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_9af4c424-26cd-49dc-8aab-3a16c9770fd3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2AAD0D6173E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="2AAD0D6173E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35465/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_949e6134-5aa7-4a0c-bb46-40d032e4fc6d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 6º BIMESTRE 2021 /
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4777BC06F3C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="4777BC06F3C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35466/rreo-6-bimestre-2021-tanque-do-piaui-32817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_2021_b970ff9b-db1f-4e80-8ec8-b0913b47ef70.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Ordem do dia 02/12/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0F5569500F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0F5569500F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ordem-do-dia-02-12-2022-cristino-castro-32841">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Camara_Cristino_Castro_Atos_ordem_do_dia_02_12_2022_ea5fc34d-389f-4767-bca2-e7081b568e50.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CARTA CONVITE Nº 04/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>46D22F8085134
+<br/><br/>
+<a class="fileDoc" data-file-hash="46D22F8085134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-carta-convite-n-04-2022-landri-sales-32865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Landri_Sales_Aviso_de_licitacao_aviso_carta_convite_n_04_2022_6e394464-292e-4229-97aa-131c9a7146d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>73F2C4DC1EBE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="73F2C4DC1EBE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-alvorada-do-gurgueia-32852">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Alvorada_do_Gurgueia_Aviso_de_Ratificacao_termo_de_ratificacao_5333065f-efb5-43ed-b2c2-25f470e04122.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CARTA CONVITE Nº 02/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>61874A8261C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="61874A8261C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-carta-convite-n-02-2022-landri-sales-32863">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Landri_Sales_Aviso_de_licitacao_aviso_carta_convite_n_02_2022_5a8cd57a-d679-4ee1-a6b7-279cd2fc27be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de extrato de contrato nº 021-2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>58E00D83844B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="58E00D83844B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-n-021-2022-currais-32897">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Currais_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_n_021_2022_0fc85bbe-2b9b-4f80-b809-9b014ede1444.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 134.2022- Dispensa 038.2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4ED1C00CB4EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4ED1C00CB4EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-134-2022-dispensa-038-2022-barra-d-alcantara-32938">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Barra_DAlcantara_Aviso_da_Adjudicacao_contrato_administrativo_n_134_2022_dispensa_038_2022_7a48279d-8757-4b31-a93e-1af44d6f7090.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 25-A 2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2E2A59397D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2E2A59397D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-25-a-2022-queimada-nova-32917">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Queimada_Nova_Decretos_decreto_25_a_2022_a6dc8f71-2f96-4d91-a20c-60250991f13c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+PE63/2022 - ADJUDICAÇÃO
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B4D7D7BE6EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B4D7D7BE6EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe63-2022-adjudicacao-sao-jose-do-divino-32923">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Sao_Jose_do_Divino_Aviso_da_Adjudicacao_pe63_2022_adjudicacao_576b1233-568c-46f0-ae18-077ad44d6058.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+PE63.2022 - HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>947893DF78744
+<br/><br/>
+<a class="fileDoc" data-file-hash="947893DF78744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe63-2022-homologacao-sao-jose-do-divino-32924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Sao_Jose_do_Divino_Aviso_da_Homologacao_pe63_2022_homologacao_6e050034-fc3e-455d-9c7c-76f998f185de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Adjudicação P.E. n° 028/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B540D29709914
+<br/><br/>
+<a class="fileDoc" data-file-hash="B540D29709914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-p-e-n-028-2022-barreiras-do-piaui-32941">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Barreiras_do_Piaui_Aviso_da_Adjudicacao_adjudicacao_p_e_n_028_2022_1af98ee8-8596-4706-a835-a69125097806.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 134.2022- Dispensa 038.2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8588DAE2E76A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8588DAE2E76A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-134-2022-dispensa-038-2022-barra-d-alcantara-32939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Barra_DAlcantara_Aviso_da_homologacao_contrato_administrativo_n_134_2022_dispensa_038_2022_b0e0e9cb-fcbe-4967-9b7a-849defe404c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+portarias n°38 2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCB1E5DF89954
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCB1E5DF89954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-n-38-2022-landri-sales-32871">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Landri_Sales_Portarias_portarias_n_38_2022_d7b56ddf-0de1-420a-851f-f4bcc1eb32a6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+portaria n°37 2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7083768170CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7083768170CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-37-2022-landri-sales-32872">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Landri_Sales_Portarias_portaria_n_37_2022_e94dda09-6f20-4ced-b750-6176ca9ceaa2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7013CDE081ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7013CDE081ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-32834">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_59fc9dde-ff51-46b1-b553-c6b28e3bf8b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nº 064 2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>03277DD065B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="03277DD065B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-064-2022-passagem-franca-do-piaui-32860">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_064_2022_d5dc2485-1a28-4c5e-b6f8-ce582cd3313c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RE-1.0021/2022 - CRF - FRANCISCO NUNES REGO
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F7961251DF24
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F7961251DF24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/re-1-0021-2022-crf-francisco-nunes-rego-santa-rosa-do-piaui-32879">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Santa_Rosa_do_Piaui_Atos_re_1_0021_2022_crf_francisco_nunes_rego_142d0d96-d72f-49f0-82ac-5a989131a14f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO N 2911202201/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3928862618B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="3928862618B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-2911202201-2022-alvorada-do-gurgueia-32857">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Prefeitura_Alvorada_do_Gurgueia_Extrato_extrato_de_contrato_n_2911202201_2022_0ec6f655-b70f-414c-a4c8-8ac98eeac308.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUCAO N.º 003/2022 DISCIPLINA PROCEDIMENTOS DA ELEICAO DA MESA DIRETORA BIENIO 2023/2024
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Tamboril do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>B011E57C86FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B011E57C86FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-003-2022-disciplina-procedimentos-da-eleicao-da-mesa-diretora-bienio-2023-2024-tamboril-do-piaui-32869">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Camara_Tamboril_do_Piaui_Resolucoes_resolucao_n_003_2022_disciplina_procedimentos_da_eleicao_da_mesa_diretora_bienio_2023_2024_5ea12d09-e6cf-4ee0-a600-79121b8c4db3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N. 009/2022
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D819A26EADF54
+<br/><br/>
+<a class="fileDoc" data-file-hash="D819A26EADF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-009-2022-barra-d-alcantara-32868">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Camara_Barra_DAlcantara_Portarias_portaria_n_009_2022_4bdd2acd-1261-48cc-8952-3bc09393bc18.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+PRESTAÇÃO DE SERVIÇOS DE VIGIA NOTURNO
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8EAA900F87D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="8EAA900F87D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/prestacao-de-servicos-de-vigia-noturno-coivaras-32906">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Camara_Coivaras_Contratos_e_seus_aditivos_prestacao_de_servicos_de_vigia_noturno_29f37d2a-9dda-4c48-bd51-b5cc92921bc6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=529&amp;q[flag_doc_diario_true]=1">
+367
+</a>
+-
+2022
+</td>
+<td class="">
+PRESTAÇÃO DE SERVIÇOS DE ZELADORA
+</td>
+<td class="text-center">
+01-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8B8C7DD3BD2D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8B8C7DD3BD2D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/prestacao-de-servicos-de-zeladora-coivaras-32908">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/30/DOP_EDICAO__1-12-2022_ED_367_Camara_Coivaras_Contratos_e_seus_aditivos_prestacao_de_servicos_de_zeladora_95e417ae-bcbb-42a2-83c4-8a19133056f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

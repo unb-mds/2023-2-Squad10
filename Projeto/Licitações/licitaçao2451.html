@@ -1,0 +1,1611 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Posse
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7D836277BA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7D836277BA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-dom-expedito-lopes-25121">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_termo_de_posse_6dc0be13-ace3-419b-91e0-f10b7e342439.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA NOMEAÇÃO 081-2022 JOELMA
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E9C250ADBE284
+<br/><br/>
+<a class="fileDoc" data-file-hash="E9C250ADBE284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-nomeacao-081-2022-joelma-marcos-parente-25110">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Marcos_Parente_Portarias_portaria_nomeacao_081_2022_joelma_70654824-5681-4044-9446-18cbbdfeee9a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO INE-003-2022
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>990092F4A0744
+<br/><br/>
+<a class="fileDoc" data-file-hash="990092F4A0744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-ine-003-2022-conceicao-do-caninde-25062">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Conceicao_do_Caninde_Aviso_de_Ratificacao_ratificacao_ine_003_2022_82892f93-56c6-4e4e-983a-828fbbe73763.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Nomeação - Yamir
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2293B88B3E7D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2293B88B3E7D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nomeacao-yamir-demerval-lobao-25082">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Demerval_Lobao_Portarias_nomeacao_yamir_8c69f6d3-c7d4-4736-956a-a1f0abf6045a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO Nº 02 - CONTRATO 152-2022 - CP 018-2022 -JOANNA
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DDFAF5D8EBD34
+<br/><br/>
+<a class="fileDoc" data-file-hash="DDFAF5D8EBD34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-02-contrato-152-2022-cp-018-2022-joanna-floriano-25150">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Floriano_Atos_termo_apostilamento_n_02_contrato_152_2022_cp_018_2022_joanna_90a5f3a1-bab5-46dc-a108-30b9f801c555.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Edital de Convocação
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>324BD637A71B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="324BD637A71B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-dom-expedito-lopes-25120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Dom_Expedito_Lopes_Ato_Convocatorio_edital_de_convocacao_7de76fe7-26d7-40eb-90d9-9daca512dd8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato/Ratificação a Inexigibilidade 09/2023
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3B640F9828B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3B640F9828B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-a-inexigibilidade-09-2023-dom-expedito-lopes-25119">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Dom_Expedito_Lopes_Aviso_de_Ratificacao_extrato_ratificacao_a_inexigibilidade_09_2023_2e818104-c9c3-4eed-9d83-8e33cdb1301d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1ACD9A2BCBE24
+<br/><br/>
+<a class="fileDoc" data-file-hash="1ACD9A2BCBE24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-cajazeiras-do-piaui-25124">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Cajazeiras_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_4318fbfd-6343-4697-b13d-09ed299e33b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO Nº 02 - CONTRATO 224-2021- CP 007-2021- HELLEN
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>958281B59CAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="958281B59CAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-02-contrato-224-2021-cp-007-2021-hellen-floriano-25152">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Floriano_Atos_termo_apostilamento_n_02_contrato_224_2021_cp_007_2021_hellen_930d95e6-82b4-4522-959c-3a046dd55e0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA DE Nº157-2022 PROMOVER MARIA HELENA DA SILVA
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5185FDACFA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5185FDACFA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-n-157-2022-promover-maria-helena-da-silva-altos-25103">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Altos_Portarias_portaria_de_n_157_2022_promover_maria_helena_da_silva_f44eb559-4cbc-4dc8-8f68-57c8531115fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO Nº 02 - CONTRATO 147-2021- CP 007-2021- ALINE
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D5706B22DC3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D5706B22DC3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-02-contrato-147-2021-cp-007-2021-aline-floriano-25145">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Floriano_Atos_termo_apostilamento_n_02_contrato_147_2021_cp_007_2021_aline_9ea5322b-a106-4d47-b04c-866f3502d183.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO Nº 02 - CONTRATO 135-2021- CP 007-2021- MILENA
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D15C476188504
+<br/><br/>
+<a class="fileDoc" data-file-hash="D15C476188504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-02-contrato-135-2021-cp-007-2021-milena-floriano-25132">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Floriano_Atos_termo_apostilamento_n_02_contrato_135_2021_cp_007_2021_milena_3b353ac6-8264-48bd-a324-a1ac985143e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Ata Parcial PE SRP n. 232022
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E29B4B706E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E29B4B706E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-parcial-pe-srp-n-232022-coivaras-25104">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Coivaras_Extrato_extrato_ata_parcial_pe_srp_n_232022_017d8dd7-fd03-41bf-91c3-bb36a6a60b45.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+LICITAÇÃO PREGÃO ELETRÔNICO Nº. 009/2022 Processo Administrativo nº. 042/2022
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1355FA0EB4FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1355FA0EB4FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitacao-pregao-eletronico-n-009-2022-processo-administrativo-n-042-2022-rio-grande-do-piaui-25111">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Rio_Grande_do_Piaui_Aviso_de_licitacao_licitacao_pregao_eletronico_n_009_2022_processo_administrativo_n_042_2022_ecdd39f8-ff20-41a6-a399-4e684e12bec9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO APOSTILAMENTO Nº 02 - CONTRATO 238-2021- CP 007-2021- ANA CAROLINE
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3833B251EFC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3833B251EFC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-02-contrato-238-2021-cp-007-2021-ana-caroline-floriano-25153">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Floriano_Atos_termo_apostilamento_n_02_contrato_238_2021_cp_007_2021_ana_caroline_a8effa1c-cf53-4e9a-9c1c-938022b5c5e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Convocação de abertura de proposta
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso de convocação dos interessados
+</td>
+<td class="text-center">
+<strong>ID: </strong>E36BC37E57704
+<br/><br/>
+<a class="fileDoc" data-file-hash="E36BC37E57704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-convocacao-de-abertura-de-proposta-dom-expedito-lopes-25117">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Dom_Expedito_Lopes_Aviso_de_convocacao_dos_interessados_aviso_de_convocacao_de_abertura_de_proposta_c2e46582-2a06-4379-834d-c07f23c3e649.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=428&amp;q[flag_doc_diario_true]=1">
+299
+</a>
+-
+2022
+</td>
+<td class="">
+ADJUDICAÇÃO PREGÃO ELETRÔNICO Nº. 008/2022 Processo Administrativo nº. 040/2022
+</td>
+<td class="text-center">
+22-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C992CE25E9094
+<br/><br/>
+<a class="fileDoc" data-file-hash="C992CE25E9094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-pregao-eletronico-n-008-2022-processo-administrativo-n-040-2022-rio-grande-do-piaui-25113">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/19/DOP_EDICAO__22-8-2022_ED_299_Prefeitura_Rio_Grande_do_Piaui_Extrato_adjudicacao_pregao_eletronico_n_008_2022_processo_administrativo_n_040_2022_054da961-ab7c-411d-a3a2-2a563b262869.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 298
+</td>
+<td class="text-center dopcom">
+19-08-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="D42BE45DEDF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-298-piaui-25070/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_CADERNO_a____diario_oficial_completo_edicao_298_4f05c1ba-ad3d-4b38-b3d8-d3fa692054b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+aviso de licitação transporte escolar
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE195B2F86A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE195B2F86A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-transporte-escolar-isaias-coelho-24956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Isaias_Coelho_Aviso_de_licitacao_aviso_de_licitacao_transporte_escolar_bf947b29-b5be-4f14-95a5-532c8b8e1869.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Educação
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>571057C71E7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="571057C71E7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-educacao-sao-pedro-do-piaui-24960">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_educacao_35c332b6-80aa-46ad-94c4-3a2a22b744a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO ADM - MARIO TAVARES
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7EBADD780CD64
+<br/><br/>
+<a class="fileDoc" data-file-hash="7EBADD780CD64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-adm-mario-tavares-barreiras-do-piaui-24968">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_adm_mario_tavares_237e81bb-97a8-42e8-aa34-eca404d05902.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB5BCDD8B0204
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB5BCDD8B0204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26779/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_33aacf85-6a32-4869-8f01-2829deb91daf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8DFE21C92D5B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8DFE21C92D5B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26780/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_0b856dc4-3644-4b64-81df-f5ff3af664c2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8CE12953D2724
+<br/><br/>
+<a class="fileDoc" data-file-hash="8CE12953D2724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26781/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_6a450c4f-1249-45de-9f3a-e6f0d4d0f690.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8132B82136254
+<br/><br/>
+<a class="fileDoc" data-file-hash="8132B82136254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26782/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_4cf4d48a-1823-459b-b62d-30c11ad84bec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B982D32A8D7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B982D32A8D7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26783/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_a8332390-4f27-4f73-ac02-1f9009ea6f0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5A3F8515948A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5A3F8515948A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26784/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_f1f3410b-21bb-4081-bfdd-c81726a817f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>61DBEECB28974
+<br/><br/>
+<a class="fileDoc" data-file-hash="61DBEECB28974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26785/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_3875fe73-88be-49a5-92ae-b876fff42f23.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0DF553F807A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0DF553F807A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26786/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_955e1a98-b477-4e34-a8b6-3f655a9ba1f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF21C56227CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF21C56227CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26787/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_56b65e32-b159-4af4-84e4-b66ed01b40d5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D544B48295864
+<br/><br/>
+<a class="fileDoc" data-file-hash="D544B48295864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26788/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_aff3f914-57ba-4473-bc65-460c4f7f31c4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>459EBCEC6D2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="459EBCEC6D2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26789/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_5bcb3731-35ff-46cd-988a-a3b6193ca4a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C85FB0CD5E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C85FB0CD5E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26790/rreo-3-bimestre-2022-altos-24964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Balanco_orcamentario_rreo_3_bimestre_2022_20064253-c5f2-41a3-887c-c5b54c36c1d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação de Dispensa nº 020/2022
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2937635499CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2937635499CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-de-dispensa-n-020-2022-santa-cruz-dos-milagres-25012">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Santa_Cruz_dos_Milagres_Aviso_de_Ratificacao_termo_de_ratificacao_de_dispensa_n_020_2022_4acb2c6b-8d6a-480e-92a1-d5e8432a3b26.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=425&amp;q[flag_doc_diario_true]=1">
+298
+</a>
+-
+2022
+</td>
+<td class="">
+DECISÃO DE HABILITAÇÃO E INABILITAÇÃO TP 003-2022
+</td>
+<td class="text-center">
+19-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>D54B52B77D0D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D54B52B77D0D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decisao-de-habilitacao-e-inabilitacao-tp-003-2022-altos-25017">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/18/DOP_EDICAO__19-8-2022_ED_298_Prefeitura_Altos_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_decisao_de_habilitacao_e_inabilitacao_tp_003_2022_1b5cbe30-6ee5-4b30-a253-cc4ad169246f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1355 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+TP006.2023 - AVISO DE CONTINUIDADE E ABERTURA DE PROPOSTA
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E820364F2BEE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E820364F2BEE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp006-2023-aviso-de-continuidade-e-abertura-de-proposta-sao-jose-do-divino-72395">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Sao_Jose_do_Divino_Atos_tp006_2023_aviso_de_continuidade_e_abertura_de_proposta_c5a32d9a-38aa-4af8-bf77-8b5e7f9fb84b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 138 DE 2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2A9C55D8C1A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2A9C55D8C1A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-138-de-2023-pimenteiras-72484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Pimenteiras_Portarias_portaria_138_de_2023_c0153963-72eb-4eb5-90d5-2f29f7685be7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE RETIFICAÇÃO - EXTRATO DE CONTRATO Nº 190-2023 - CNPJ
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>01BCE191F1D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="01BCE191F1D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-retificacao-extrato-de-contrato-n-190-2023-cnpj-floriano-72475">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Floriano_Outros_atos_administrativos_aviso_de_retificacao_extrato_de_contrato_n_190_2023_cnpj_09c4fb3e-9f04-46f9-924b-39b9fe7c639d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO - PE 020-2023 - ESTRUTURA PARA EVENTOS
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4BB24E7DBED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4BB24E7DBED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-020-2023-estrutura-para-eventos-buriti-dos-montes-72480">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Buriti_dos_Montes_Aviso_de_licitacao_aviso_de_licitacao_pe_020_2023_estrutura_para_eventos_f3f1de0c-672f-426a-ac36-cff9f41e6570.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 208-2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A80ABB90ECB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A80ABB90ECB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-208-2023-itaueira-72455">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Itaueira_Aviso_do_extrato_de_contrato_extrato_contrato_208_2023_f69727e6-7718-4344-a54b-95e9ea8c88f1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 025-2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1531EFACB6BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1531EFACB6BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-025-2023-itaueira-72457">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Itaueira_Aviso_de_licitacao_aviso_pe_025_2023_a978a753-7fac-4fc1-88ad-9c17ffc61980.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+Errata do Extrato do Contrato 052.2023 - PE 019.2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>D80EF7F19EC34
+<br/><br/>
+<a class="fileDoc" data-file-hash="D80EF7F19EC34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-do-extrato-do-contrato-052-2023-pe-019-2023-acaua-72450">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Acaua_Errata_errata_do_extrato_do_contrato_052_2023_pe_019_2023_8103da3e-8cb2-43e6-a01d-b26f014dc216.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO N° 058/2023 - RATIFICAÇÃO DE EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>7EE9F3D7B0024
+<br/><br/>
+<a class="fileDoc" data-file-hash="7EE9F3D7B0024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-058-2023-ratificacao-de-extrato-de-contrato-paqueta-72432">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Paqueta_Outros_contrato_n_058_2023_ratificacao_de_extrato_de_contrato_ea89c090-8ab6-4aac-ab6d-66ad4a523991.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO CONCORRÊNCIA 010-2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B5AE29B9A404
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B5AE29B9A404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-concorrencia-010-2023-itaueira-72459">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Itaueira_Aviso_de_licitacao_aviso_concorrencia_010_2023_01e63a32-c3c3-49a8-a4e5-e78b6dc5ccfc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 139-2023 - NOMEAR FRANCISCO DAS CHAGAS MACEDO SOBRINHO
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>65C18AA480734
+<br/><br/>
+<a class="fileDoc" data-file-hash="65C18AA480734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-139-2023-nomear-francisco-das-chagas-macedo-sobrinho-beneditinos-72445">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Beneditinos_Portarias_portaria_n_139_2023_nomear_francisco_das_chagas_macedo_sobrinho_787d51f1-413b-4534-8d13-fd92a77cca3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 97/2023, DE 16 DE AGOSTO DE 2023.
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0D0262F69754
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0D0262F69754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-97-2023-de-16-de-agosto-de-2023-passagem-franca-do-piaui-72419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_97_2023_de_16_de_agosto_de_2023_55373691-da0b-47a9-bf50-2534caf44d02.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 122
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2693611E68A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2693611E68A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-122-colonia-do-piaui-72418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Colonia_do_Piaui_Portarias_portaria_122_f006e962-935f-4583-b7ff-d47ca5c62b4e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+ATO DE PROMULGAÇÃO E PUBLICAÇÃO DE EMENDA À LEI ORGÂNICA
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2334E4759CAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2334E4759CAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-de-promulgacao-e-publicacao-de-emenda-a-lei-organica-bocaina-72412">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Camara_Bocaina_Atos_ato_de_promulgacao_e_publicacao_de_emenda_a_lei_organica_06936ba4-830d-483d-836b-61ab9de57479.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+aditivo
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9FF88A9CA31A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9FF88A9CA31A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-caraubas-do-piaui-72416">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caraubas_do_Piaui_Atos_aditivo_25a373e1-e14e-4883-9f7c-2172fb8d6dae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 211-2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>08804946D1F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="08804946D1F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-211-2023-itaueira-72453">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Itaueira_Aviso_do_extrato_de_contrato_extrato_contrato_211_2023_196f73cf-ca65-4941-8b49-e5b345604e9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02F3DB9F145C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="02F3DB9F145C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77844/relatorio-de-gestao-fiscal-caxingo-72406">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_5345b31e-8370-403c-82ac-936fd271d691.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2511727EB2994
+<br/><br/>
+<a class="fileDoc" data-file-hash="2511727EB2994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77845/relatorio-de-gestao-fiscal-caxingo-72406">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_2deb0e1e-48d1-4a7c-a242-bf058686f72f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E5CDF9475AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E5CDF9475AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77846/relatorio-de-gestao-fiscal-caxingo-72406">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_07ef3edb-b8ce-4454-80ae-ef920c55345c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+ATO DE PROMULGAÇÃO E PUBLICAÇÃO DO DECRETO LEGISLATIVO N 01 - 2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE6C1E0FA5114
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE6C1E0FA5114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-de-promulgacao-e-publicacao-do-decreto-legislativo-n-01-2023-bocaina-72420">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Camara_Bocaina_Atos_ato_de_promulgacao_e_publicacao_do_decreto_legislativo_n_01_2023_85b3d817-342b-4ef4-86dd-fa6354cc8b95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DA DISPENSA 019-2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A1FDD2C83FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A1FDD2C83FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-da-dispensa-019-2023-tanque-do-piaui-72410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_da_dispensa_019_2023_bb97badb-8e64-4a92-8c59-f01a841fe762.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>56075FF17F244
+<br/><br/>
+<a class="fileDoc" data-file-hash="56075FF17F244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77838/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_b03aeabf-d5be-407f-9e6f-00c729821322.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>59B3CC327BB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="59B3CC327BB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77839/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_da767566-5e94-4e17-922e-ba93576ea18d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>50443C1422284
+<br/><br/>
+<a class="fileDoc" data-file-hash="50443C1422284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77840/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_cd9c1eda-c6a4-4286-8c2d-f0e53f4ca65f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC84EF46E4004
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC84EF46E4004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77841/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_21265bbc-78be-4f6c-abdf-a23a1ec4fddf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>428342C71FCC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="428342C71FCC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77842/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_8fc7ecbb-735f-427b-868b-009d6a5b9f0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓTIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>092274C578CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="092274C578CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/77843/relatotio-de-gestao-fiscal-caxingo-72405">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Caxingo_Relatorios_de_gestao_fiscal_relatotio_de_gestao_fiscal_86db259a-a89b-459f-aba7-9c92b11ac988.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+CP 003.2023 - ANA LINA
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>79722C25D5B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="79722C25D5B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp-003-2023-ana-lina-luis-correia-72398">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Luis_Correia_Aviso_do_extrato_de_contrato_cp_003_2023_ana_lina_da385aac-03cb-4aec-a3a0-402a622c5b23.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº247 de 16 Agosto de 2023
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5D0E2B6B5D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5D0E2B6B5D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-247-de-16-agosto-de-2023-currais-72427">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Currais_Portarias_portaria_n_247_de_16_agosto_de_2023_4ce27401-1837-44bb-8e83-2d7d07e33654.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=788&amp;q[flag_doc_diario_true]=1">
+543
+</a>
+-
+2023
+</td>
+<td class="">
+CP 003.2023 MEDICOS E PROFISSIONAIS DA SAUDE
+</td>
+<td class="text-center">
+17-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>ECB9013EF6ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ECB9013EF6ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp-003-2023-medicos-e-profissionais-da-saude-luis-correia-72397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/16/DOP_EDICAO__17-8-2023_ED_543_Prefeitura_Luis_Correia_Aviso_da_Homologacao_cp_003_2023_medicos_e_profissionais_da_saude_a6e1adae-3547-4ab4-9291-90ba7f120f41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

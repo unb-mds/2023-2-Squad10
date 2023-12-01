@@ -1,0 +1,1341 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL 001-23 SEMEC
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCBE8C5FA4014
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCBE8C5FA4014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-001-23-semec-sao-felix-do-piaui-44969">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Sao_Felix_do_Piaui_Edital_de_Chamada_edital_001_23_semec_475ead23-557e-4f12-98ad-272c6747ed75.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 035-2023 - TASSIA SANTOS FONTENELE
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C0AFB3826894
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C0AFB3826894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-035-2023-tassia-santos-fontenele-luis-correia-45008">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Luis_Correia_Portarias_portaria_035_2023_tassia_santos_fontenele_e05aa5d4-6856-4f6b-999a-c6fb7034cf34.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 064-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB3E7E4009B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB3E7E4009B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-064-2023-sao-joao-da-fronteira-44960">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Sao_Joao_da_Fronteira_Portarias_portaria_064_2023_1d70cfab-3ab7-47bf-bf90-7f4ec3a489b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE Nº 010-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>957DDE8AFAA94
+<br/><br/>
+<a class="fileDoc" data-file-hash="957DDE8AFAA94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-n-010-2023-currais-44976">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Homologacao_termo_de_homologacao_pe_n_010_2023_ff397bdd-5ab5-4661-af18-f96b68fbbd24.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+2 ADITIVO PE 112021 - PEDRO RODRIGUES COELHO - ME (CNPJ n. 16.564.2100001-42).
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3DACC9A123A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3DACC9A123A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-aditivo-pe-112021-pedro-rodrigues-coelho-me-cnpj-n-16-564-2100001-42-francisco-macedo-44950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Francisco_Macedo_Aviso_do_Termo_Aditivo_2_aditivo_pe_112021_pedro_rodrigues_coelho_me_cnpj_n_16_564_2100001_42_d326de0f-d486-49e8-b53d-d76c1eef8ac6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE Nº 009-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C43DB1FCDA764
+<br/><br/>
+<a class="fileDoc" data-file-hash="C43DB1FCDA764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-n-009-2023-currais-44955">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Homologacao_termo_de_homologacao_pe_n_009_2023_71fc7e1c-81e5-410b-9db0-b9b09072b4da.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 009-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>71E323DE08F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="71E323DE08F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-009-2023-currais-44954">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_009_2023_4470fe17-f3f3-4a90-9998-42d324ded8ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+Termo Adjudicação PE 008-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB6D503FC8244
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB6D503FC8244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-adjudicacao-pe-008-2023-currais-44948">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Adjudicacao_termo_adjudicacao_pe_008_2023_d1bed38c-9c40-4e1f-83c2-3bab526ffd1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO BRIGADISTA 007.2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DD0B245D02F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DD0B245D02F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-brigadista-007-2023-wall-ferraz-44989">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Wall_Ferraz_Extrato_extrato_brigadista_007_2023_16435a95-73ac-43e5-9e38-c593034c4326.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO BRIGADISTA 005.2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D427A65D5A24
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D427A65D5A24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-brigadista-005-2023-wall-ferraz-44987">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Wall_Ferraz_Extrato_extrato_brigadista_005_2023_7afc9204-4f89-4005-a1c3-f448661df1d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 007 - CARGO COMISSIONADO
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E5A38D4992D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E5A38D4992D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-007-cargo-comissionado-buriti-dos-montes-44888">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Camara_Buriti_dos_Montes_Portarias_portaria_007_cargo_comissionado_a9a777c3-3614-4889-a595-846bc6bd3de3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+34 - ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F5A2FED657E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F5A2FED657E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/34-abertura-de-credito-adicional-suplementar-rio-grande-do-piaui-44904">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Rio_Grande_do_Piaui_Decretos_34_abertura_de_credito_adicional_suplementar_8b07cf41-0bb7-45ca-8582-e726383fe2f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+extrato de contrato da sec. municipal de saude
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>826A13A40F274
+<br/><br/>
+<a class="fileDoc" data-file-hash="826A13A40F274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-saude-barreiras-do-piaui-44887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_saude_d4315cdd-3d46-4430-af8d-a2b9a9761540.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 002
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6796DE95B5094
+<br/><br/>
+<a class="fileDoc" data-file-hash="6796DE95B5094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-002-currais-44889">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_002_ae8b20e0-9b8b-4ef5-a623-ac404bd87439.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Nº 019-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>91D4458222594
+<br/><br/>
+<a class="fileDoc" data-file-hash="91D4458222594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-019-2023-amarante-44898">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Amarante_Portarias_portaria_n_019_2023_340ee706-5d39-428b-903d-df2e7fb71a8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO 027.2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC860155B05A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC860155B05A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-027-2023-amarante-44897">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Amarante_Aviso_do_extrato_de_contrato_contrato_027_2023_91f10377-c246-4a0b-a530-c042b3627c8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Flores do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>086BB238862E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="086BB238862E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-flores-do-piaui-44891">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Camara_Flores_do_Piaui_Aviso_da_Homologacao_homologacao_3b33dfaa-7fc7-4ff3-9c2b-6f42d70af319.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 001-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>76AD9CF36F6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="76AD9CF36F6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-001-2023-currais-44901">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_001_2023_7feef515-3c6b-478e-85d6-ade865c1ee86.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE 002-2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>665116D6D3CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="665116D6D3CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-002-2023-currais-44890">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Currais_Aviso_da_Homologacao_termo_de_homologacao_pe_002_2023_df70a12a-c3a1-429c-ac2d-f0b0114f9b42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO 014.2023
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso da Inexigibilidade
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDF307F95C954
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDF307F95C954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-014-2023-amarante-44896">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Amarante_Aviso_da_Inexigibilidade_termo_de_ratificacao_014_2023_f2a01f7c-0313-4a2d-8c67-4f121bd28382.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+32 - ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F81D30AEC1D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F81D30AEC1D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/32-abertura-de-credito-adicional-suplementar-rio-grande-do-piaui-44903">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Prefeitura_Rio_Grande_do_Piaui_Decretos_32_abertura_de_credito_adicional_suplementar_cb27a06f-3142-48ad-aca8-e384db4a5925.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=605&amp;q[flag_doc_diario_true]=1">
+420
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+15-02-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Flores do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F383340F40A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="F383340F40A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-flores-do-piaui-44892">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/14/DOP_EDICAO__15-2-2023_ED_420_Camara_Flores_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_9fe29986-7cdf-40cb-adaf-e4abba8f6343.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 419
+</td>
+<td class="text-center dopcom">
+14-02-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="8CE34B46B0DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-419-piaui-44918/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_CADERNO_a____diario_oficial_completo_edicao_419_f12ef60a-9061-4e67-b511-4e0f0f9ec693.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02A3DEF7D5094
+<br/><br/>
+<a class="fileDoc" data-file-hash="02A3DEF7D5094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47756/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_de286abf-f15c-4d4e-81c4-bbdc30dc8d14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABBA1F43BF194
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABBA1F43BF194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47757/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_4cb648a2-347e-4322-a5dc-561ffc1a6a3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>76A4129DFB044
+<br/><br/>
+<a class="fileDoc" data-file-hash="76A4129DFB044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47758/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_144e85b3-7917-490c-99d0-037a5164946c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D78DFBA18C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D78DFBA18C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47759/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_7f14130d-d8a6-4a9b-b991-1ee060f43ef3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>70283D8E4A204
+<br/><br/>
+<a class="fileDoc" data-file-hash="70283D8E4A204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47760/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_382264f4-4431-4afd-8ad2-3632c607d42a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=604&amp;q[flag_doc_diario_true]=1">
+419
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 3º QUAD 2022 /
+</td>
+<td class="text-center">
+14-02-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>50B4A26B199D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="50B4A26B199D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/47761/rgf-3-quad-2022-sao-pedro-do-piaui-44639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/13/DOP_EDICAO__14-2-2023_ED_419_Prefeitura_Sao_Pedro_do_Piaui_Relatorios_de_gestao_fiscal_rgf_3_quad_2022_536496a4-7fe4-4519-9f9d-378a8df322e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

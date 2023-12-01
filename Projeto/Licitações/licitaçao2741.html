@@ -1,0 +1,1820 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 010-2022 ED
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1DABD470A664
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1DABD470A664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-010-2022-ed-queimada-nova-18356">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Decretos_decreto_010_2022_ed_b73bb94d-b0f3-4ae9-8ca7-4f74d526af1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO - CARONA DE AROAZES
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>55DAE29AFE944
+<br/><br/>
+<a class="fileDoc" data-file-hash="55DAE29AFE944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-carona-de-aroazes-monsenhor-gil-18358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Monsenhor_Gil_Extrato_extrato_de_contrato_carona_de_aroazes_b591a083-e65f-4da0-b812-7241da68b866.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 044-2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C5B9F3A50344
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C5B9F3A50344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-044-2022-oeiras-18360">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Oeiras_Decretos_decreto_n_044_2022_d0b88db7-3221-4036-874f-18fc61c69274.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 015 22
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FEAB854E619E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FEAB854E619E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-015-22-sao-felix-do-piaui-18353">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Felix_do_Piaui_Decretos_decreto_015_22_0027115f-9b73-43a0-b98e-a1a9b7e20d88.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 043-2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>852B41DDAF184
+<br/><br/>
+<a class="fileDoc" data-file-hash="852B41DDAF184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-043-2022-oeiras-18359">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Oeiras_Decretos_decreto_n_043_2022_c85795d2-f714-43b1-99e5-533c32797bad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO - PE 12
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>03781E1651874
+<br/><br/>
+<a class="fileDoc" data-file-hash="03781E1651874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pe-12-monsenhor-gil-18348">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Monsenhor_Gil_Extrato_extrato_de_contrato_pe_12_e3848783-9977-44ae-b085-079966a5b330.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+BRUNO
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>ECB0F266388C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ECB0F266388C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/bruno-luis-correia-18362">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Luis_Correia_Extrato_bruno_dd3dbdd6-552d-4892-ba09-8f870631df98.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+Atas 1
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>8437621BBBA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="8437621BBBA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/atas-1-itaueira-18346">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Itaueira_Atas_atas_1_cf9c9137-6c03-4bd3-9df0-02c8e695fe96.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+TA I CC 012/2021 - Const Quadra Esportiva
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>5084456DD7664
+<br/><br/>
+<a class="fileDoc" data-file-hash="5084456DD7664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ta-i-cc-012-2021-const-quadra-esportiva-lagoinha-do-piaui-18345">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Termo_Aditivo_ta_i_cc_012_2021_const_quadra_esportiva_b48b3c54-be2b-4938-ac33-e0ced4a3964b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+14 - ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>076CF7ECAC0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="076CF7ECAC0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/14-abertura-de-credito-adicional-suplementar-rio-grande-do-piaui-18392">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Rio_Grande_do_Piaui_Decretos_14_abertura_de_credito_adicional_suplementar_a249f2e5-c7e2-4b64-9e7d-810927697866.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+coop ceara
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C78976CB7C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C78976CB7C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/coop-ceara-luis-correia-18354">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Luis_Correia_Extrato_coop_ceara_d040b179-9a85-4107-bf53-b866386a9c69.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 042-2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E117CDFCBF244
+<br/><br/>
+<a class="fileDoc" data-file-hash="E117CDFCBF244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-042-2022-oeiras-18357">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Oeiras_Decretos_decreto_n_042_2022_80f6a151-b3ec-4339-be76-64a64a93a0f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+coop ma
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>755A10438FAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="755A10438FAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/coop-ma-luis-correia-18355">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Luis_Correia_Extrato_coop_ma_820cfb7b-48c5-41ba-aed1-aaf0db473a31.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 68-2022 NOMEAR ADRIANA MARIA MENDES DE SOUSA
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3CDF8CAAB96B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3CDF8CAAB96B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-68-2022-nomear-adriana-maria-mendes-de-sousa-beneditinos-18340">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Beneditinos_Portarias_portaria_n_68_2022_nomear_adriana_maria_mendes_de_sousa_272ddf57-1dac-41ae-af7b-3c6b0afb5b3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2BDB08E09714
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2BDB08E09714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19654/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_b1674181-6c8d-462e-b7e5-754478d831c1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9BB4A274B624
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9BB4A274B624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19655/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2a4cf08e-42a4-415e-9676-da07c05e3bdf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC991345C3944
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC991345C3944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19656/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_d4581e20-9f7e-4368-97b3-58992e06bf6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>68E74210EF6A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="68E74210EF6A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19657/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_70b8ab9d-f858-4ec1-8446-530bc09c770c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA9F4168DDDD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA9F4168DDDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19658/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_d3e154c7-f20e-469b-82e2-016a1355d02a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EBB465E44534
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EBB465E44534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19659/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_0fe471c3-d2cc-4e04-943a-61a4167a4116.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>65C633C847434
+<br/><br/>
+<a class="fileDoc" data-file-hash="65C633C847434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19660/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_a28baa7f-1b38-44a5-b63b-37fb92b500f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2014BFA312E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2014BFA312E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19661/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_6756d183-2f3b-47e1-844d-32f4f05c4920.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DAE897C23AB64
+<br/><br/>
+<a class="fileDoc" data-file-hash="DAE897C23AB64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19662/rreo-2-bimestre-buriti-dos-lopes-18430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_ff38e4a6-859d-4400-96c8-006981442fc4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO N°15, DE 01 DE MARÇO DE 2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D941BBADF74C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D941BBADF74C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-15-de-01-de-marco-de-2022-luis-correia-18431">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Luis_Correia_Decretos_decreto_n_15_de_01_de_marco_de_2022_f8d99a11-0ca9-435c-85ad-5195ab30ccaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+REPUBLICAÇÃO - PORTARIA Nº 29 - JOSE MUNIZ
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>479881F2D6374
+<br/><br/>
+<a class="fileDoc" data-file-hash="479881F2D6374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-portaria-n-29-jose-muniz-santa-rosa-do-piaui-18414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Santa_Rosa_do_Piaui_Portarias_republicacao_portaria_n_29_jose_muniz_f8160ea5-83f3-4442-b258-c364bfe52545.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DIS 22 – 2022 - PRESTAÇÃO DE SERVIÇOS DE SEGURANÇA DESARMADA DE APOIO E SUPORTE A EVENTOS CULTURAIS.
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>D44D05C6E5E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D44D05C6E5E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dis-22-2022-prestacao-de-servicos-de-seguranca-desarmada-de-apoio-e-suporte-a-eventos-culturais-francisco-macedo-18402">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Francisco_Macedo_Aviso_da_Dispensa_dis_22_2022_prestacao_de_servicos_de_seguranca_desarmada_de_apoio_e_suporte_a_eventos_culturais_8e194483-227a-4843-bc8b-ccf3f82e715b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8160BD1BEC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8160BD1BEC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19511/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_c846d350-63b5-4772-8cab-b3d9f30c9205.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>22F23DF4EAF24
+<br/><br/>
+<a class="fileDoc" data-file-hash="22F23DF4EAF24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19512/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_e68b94d1-abea-4dc6-9da7-bfc9f9d931a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2572E9EF2EE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="2572E9EF2EE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19513/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_dc3ea97d-7e8b-444f-ac70-fdb5112d890f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DC9007686674
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DC9007686674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19514/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_cb9e29a1-791b-44ec-adc5-6df4f2303fa4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5699DC2AAFC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="5699DC2AAFC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19515/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_1cde94d3-5a2c-4955-8a18-e268e0dbdd9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>99A4343331BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="99A4343331BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19516/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_1eb028d7-2a47-4085-b627-8813e19ff559.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>30034E4E95204
+<br/><br/>
+<a class="fileDoc" data-file-hash="30034E4E95204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19517/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_0151626a-0b62-413b-af0f-e2e22f09b805.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ECAC1E6D154F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ECAC1E6D154F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19518/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_ddd6e3d8-c19c-4df7-b8c5-614d7ae40df4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A16BB832B7984
+<br/><br/>
+<a class="fileDoc" data-file-hash="A16BB832B7984" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19519/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_8ef9b098-215c-469b-8a5f-be56db481d65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4EEE1459D764
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4EEE1459D764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19520/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_b3b18183-c090-4ae0-b857-0788ab3067ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9830EA12AB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9830EA12AB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19521/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_53ce13a9-700b-4c94-b0bb-979cbb5af1cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA POR FUNÇÃO E SUBFUNCAO /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B9F7D221DE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B9F7D221DE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19522/despesa-por-funcao-e-subfuncao-sao-joao-da-varjota-18314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Sao_Joao_da_Varjota_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_subfuncao_7bc610ba-9414-4087-a1e2-ed2de0a196c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 65-2022 NOMEAR ROMÃO FERNANDES DE LIMA
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1BC1428B65E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1BC1428B65E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-65-2022-nomear-romao-fernandes-de-lima-beneditinos-18336">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Beneditinos_Portarias_portaria_n_65_2022_nomear_romao_fernandes_de_lima_908be6e5-f821-4e23-b40a-bddc9fd9a8ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1460 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>66A40519AAFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="66A40519AAFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64595/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_72e11e74-95f2-4b3d-b21a-f99b9348c83e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>51A5A005E4634
+<br/><br/>
+<a class="fileDoc" data-file-hash="51A5A005E4634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64596/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_6f04fea8-21a8-43bb-a5fc-5cc2f04c83bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>47D6726BEAAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="47D6726BEAAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64597/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_ea59d76c-2466-48a1-8bef-a95e193ef4ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7C7E8C8BECB84
+<br/><br/>
+<a class="fileDoc" data-file-hash="7C7E8C8BECB84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64598/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_276321b8-cf00-49c5-a1f8-39d374f16eae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D507B57338224
+<br/><br/>
+<a class="fileDoc" data-file-hash="D507B57338224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64599/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_b495c6ed-a54d-4af0-81ac-8b857e928fb2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0AC2B1330FC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="0AC2B1330FC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64600/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_02311a29-73b1-43b1-8cf7-2789622bfbab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B04D48E3B9464
+<br/><br/>
+<a class="fileDoc" data-file-hash="B04D48E3B9464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64601/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_a2cab80e-148d-47e6-90e9-72e1e24a6529.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1339B435EF514
+<br/><br/>
+<a class="fileDoc" data-file-hash="1339B435EF514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64602/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_60d0b962-234e-4f87-ba41-5d0fc388e47b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>847A2C85424C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="847A2C85424C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64603/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_c8d4fbbf-96e1-436b-9ba9-3159ad3c0bf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>95328B40DFAA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="95328B40DFAA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64604/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_61440584-5654-4404-9c22-d1967fdcc76b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>514CF1C3E5434
+<br/><br/>
+<a class="fileDoc" data-file-hash="514CF1C3E5434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64605/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_03149732-bef2-499b-bd13-a8950402c5be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F47CBF012EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F47CBF012EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64606/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_75b5bb41-c77f-4bd6-b969-7679c325af59.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA6BAC415A6E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA6BAC415A6E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64607/rreo-1-bimestre-de-2023-marcos-parente-60401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Marcos_Parente_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_de_2023_1953e30b-82c0-4628-9de9-1a724101c544.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE POSSE DE MEMBROS GESTORES DO FMMA
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6FC5D1B1BFF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6FC5D1B1BFF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-de-membros-gestores-do-fmma-landri-sales-60409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Landri_Sales_Outros_termo_de_posse_de_membros_gestores_do_fmma_ed61b63d-54de-4a36-9d01-bd859975e813.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+2º ADITIVO STERLIX
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>C777FF6765A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C777FF6765A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-aditivo-sterlix-demerval-lobao-60299">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Demerval_Lobao_Aviso_do_Termo_Aditivo_2_aditivo_sterlix_d6bcf8d6-c1d6-4ff4-8a20-88b61848bd10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Republicação da Dispensa 16/2023
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF3B0164D9C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF3B0164D9C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-da-dispensa-16-2023-floriano-60407">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Camara_Floriano_Aviso_da_Dispensa_republicacao_da_dispensa_16_2023_832c8b04-835b-4807-93bd-6fce8aec5439.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato-Contrato nº 028-2023-prest. de serv. dedetizaçaõ-PMPL
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>718B98F968FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="718B98F968FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-n-028-2023-prest-de-serv-dedetizacao-pmpl-paes-landim-60298">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Paes_Landim_Extrato_extrato_contrato_n_028_2023_prest_de_serv_dedetizacao_pmpl_817afe71-5dc3-4c60-a018-51605571617f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+relação de candidatos
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>03CCB6ED5C064
+<br/><br/>
+<a class="fileDoc" data-file-hash="03CCB6ED5C064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/relacao-de-candidatos-lagoa-do-barro-do-piaui-60300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Lagoa_do_Barro_do_Piaui_Atos_relacao_de_candidatos_5e6b091b-672e-41b0-8e82-a31a4c8c01f5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Adjudicação - PE 07.2023
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>9FB325F929104
+<br/><br/>
+<a class="fileDoc" data-file-hash="9FB325F929104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-pe-07-2023-monsenhor-gil-60481">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Monsenhor_Gil_Outros_adjudicacao_pe_07_2023_7c866517-5c0c-4b86-9b49-b7cb9f2fd29a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Convocação de profissionais - professores - EDITAL SEMED DL N° 03/2021
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>5B9D311CCB504
+<br/><br/>
+<a class="fileDoc" data-file-hash="5B9D311CCB504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-de-profissionais-professores-edital-semed-dl-n-03-2021-demerval-lobao-60483">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Demerval_Lobao_Edital_de_Chamada_convocacao_de_profissionais_professores_edital_semed_dl_n_03_2021_2922aaa9-cbe3-4685-a378-8a1d87828e1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DISPENSA 008-23
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>02400CD67FD14
+<br/><br/>
+<a class="fileDoc" data-file-hash="02400CD67FD14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-dispensa-008-23-tanque-do-piaui-60453">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Tanque_do_Piaui_Aviso_de_licitacao_aviso_dispensa_008_23_ce872f56-ec2f-40e4-863d-ede71f374be1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+1° BIMESTRE - 2023
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADE7436C1CCC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADE7436C1CCC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/1-bimestre-2023-pio-ix-60434">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Pio_IX_Outros_1_bimestre_2023_a529b5f5-be6b-407a-98a0-463f298ff9c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Homologação DISPENSA Nº 035-2023
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>029121A0B7EF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="029121A0B7EF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-dispensa-n-035-2023-currais-60443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Currais_Aviso_da_Homologacao_homologacao_dispensa_n_035_2023_efecb5cf-0e94-4750-8cce-43b076a54a53.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Pregão Presencial nº 009-2023 - extrato.pdf
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>50A1A3A140284
+<br/><br/>
+<a class="fileDoc" data-file-hash="50A1A3A140284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-presencial-n-009-2023-extrato-pdf-isaias-coelho-60397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Isaias_Coelho_Extrato_pregao_presencial_n_009_2023_extrato_pdf_922b5f5c-872e-4bd9-b1ae-485b79361395.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+DESPACHO DE CANCELAMENTO - IVICTA
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso da revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3CF701145EDF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3CF701145EDF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-cancelamento-ivicta-santa-rosa-do-piaui-60441">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Santa_Rosa_do_Piaui_Aviso_da_revogacao_despacho_de_cancelamento_ivicta_babafb13-78c8-41bb-a0fa-15d0c00558a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Quarto termo aditivo - Escola FNDE
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>E705FB57C6694
+<br/><br/>
+<a class="fileDoc" data-file-hash="E705FB57C6694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/quarto-termo-aditivo-escola-fnde-angical-do-piaui-60426">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Angical_do_Piaui_Aviso_do_Termo_Aditivo_quarto_termo_aditivo_escola_fnde_4fb9ce06-1bb8-4fd8-b5ae-2dd615296bc0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PE 012-2023 (LOCAÇÃO DE MÁQUINAS PESADAS)
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A39F38C0C6014
+<br/><br/>
+<a class="fileDoc" data-file-hash="A39F38C0C6014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-012-2023-locacao-de-maquinas-pesadas-altos-60403">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Altos_Aviso_de_licitacao_aviso_de_licitacao_pe_012_2023_locacao_de_maquinas_pesadas_711b0b42-5e02-443f-a3f4-372ebb8b444a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 164-2023-INFRA- CONSTRUTORA ALMEIDA
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E49DDC54781C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E49DDC54781C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-164-2023-infra-construtora-almeida-floriano-60465">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Floriano_Outros_atos_administrativos_extrato_contrato_164_2023_infra_construtora_almeida_8a70c3db-f1be-4d1a-96bf-8611c19f2b00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 271-2023
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C20F1BF15FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C20F1BF15FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-271-2023-buriti-dos-lopes-60423">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_271_2023_623e89b3-2371-4c21-b7d9-64e0b1611cb5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+aviso de resultado
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Morro Cabeça no Tempo
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0CFF872AD9C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0CFF872AD9C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-resultado-morro-cabeca-no-tempo-60408">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Camara_Morro_Cabeca_no_Tempo_Aviso_da_homologacao_aviso_de_resultado_2659e546-3dc7-4106-a6fc-00936aac1a5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=696&amp;q[flag_doc_diario_true]=1">
+478
+</a>
+-
+2023
+</td>
+<td class="">
+portaria 157
+</td>
+<td class="text-center">
+17-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F410E50B935D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F410E50B935D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-157-lagoa-do-barro-do-piaui-60418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/16/DOP_EDICAO__17-5-2023_ED_478_Prefeitura_Lagoa_do_Barro_do_Piaui_Portarias_portaria_157_e5b05c4f-0a4b-4fda-b4cd-116b0e1063cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

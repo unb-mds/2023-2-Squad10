@@ -1,0 +1,1442 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo receitas de operação
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1CC6EE84100A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1CC6EE84100A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-receitas-de-operacao-sebastiao-barros-62205">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativo_receitas_de_operacao_f5283692-a683-4980-afcb-577b3c38f37a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+resultado primerio
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F96B4F42ABC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F96B4F42ABC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-primerio-sebastiao-barros-62179">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_resultado_primerio_55e549f9-909a-4000-9fbe-a4afed1c7b4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo de Recita
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1EFA32836D5D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1EFA32836D5D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-de-recita-sebastiao-barros-62177">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativo_de_recita_17366f9c-577e-436b-abf2-f9c52cd6fe14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo caixa a pagar
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9597CE2B6FB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="9597CE2B6FB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-caixa-a-pagar-sebastiao-barros-62175">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativo_caixa_a_pagar_dbd20eb5-2a02-4301-90c8-956efe3a7da1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 197-2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>946CEF7924184
+<br/><br/>
+<a class="fileDoc" data-file-hash="946CEF7924184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-197-2023-currais-62122">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Currais_Portarias_portaria_n_197_2023_8a975b74-01a9-4591-99b8-4a6d0f6b5f1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+Ranking PE SRP 06.2023-REP LOTE I
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9206C658E68D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9206C658E68D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ranking-pe-srp-06-2023-rep-lote-i-coivaras-62165">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Coivaras_Extrato_ranking_pe_srp_06_2023_rep_lote_i_50600f5f-61ef-4e54-8253-0ad6c52cd811.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Ata Parcial PE SRP n. 06.2023-REP LOTE I
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>96A22BE1C6034
+<br/><br/>
+<a class="fileDoc" data-file-hash="96A22BE1C6034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-parcial-pe-srp-n-06-2023-rep-lote-i-coivaras-62164">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Coivaras_Extrato_extrato_ata_parcial_pe_srp_n_06_2023_rep_lote_i_dc8a3277-691e-41c2-8c7d-c96b234f8974.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+BALANÇO ORÇAMENTÁRIO - 2BM 2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF84A4E9CE324
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF84A4E9CE324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/balanco-orcamentario-2bm-2023-jardim-do-mulato-62316">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Jardim_do_Mulato_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_2bm_2023_7243b6fb-def9-45c5-a764-116b9588f2fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+PE012.2023 - EXTRATO DA ATA SRP
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC304EF213054
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC304EF213054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe012-2023-extrato-da-ata-srp-sao-jose-do-divino-62147">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sao_Jose_do_Divino_Extrato_pe012_2023_extrato_da_ata_srp_2ef0ba98-2a09-4945-8be1-67d07e56ac0b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO- FUNCAO E SUBFUNCAO 2BM.2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+</td>
+<td class="text-center">
+<strong>ID: </strong>A01EA72F95EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A01EA72F95EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/rreo-funcao-e-subfuncao-2bm-2023-jardim-do-mulato-62319">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Jardim_do_Mulato_Relatorios_resumidos_da_execucao_orcamentaria_rreo_funcao_e_subfuncao_2bm_2023_687e4157-0544-421b-8f92-cdd01d7834c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+portaria juliana
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4062F1686D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4062F1686D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-juliana-isaias-coelho-62129">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Isaias_Coelho_Portarias_portaria_juliana_e967cd79-d3f2-443a-b320-705e2c340309.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+HOMOLOGAÇÃO DA DL 022/2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>7523437890084
+<br/><br/>
+<a class="fileDoc" data-file-hash="7523437890084" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-da-dl-022-2023-caxingo-62150">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Caxingo_Aviso_da_homologacao_homologacao_da_dl_022_2023_28caf216-c8c5-49c3-86d7-066c27b10834.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+Errata a Portaria 120/2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>48D163F9AEA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="48D163F9AEA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-a-portaria-120-2023-dom-expedito-lopes-62169">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Dom_Expedito_Lopes_Errata_errata_a_portaria_120_2023_070c9559-6458-4779-8ffa-19ec1de61ea8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO RETIFICADO DL RESIDUOS
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB14D4327FA54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB14D4327FA54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-retificado-dl-residuos-luis-correia-62141">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Luis_Correia_Extrato_extrato_retificado_dl_residuos_9375ddb5-1a3a-41c6-81ae-b7f1c5bddc17.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE Continuidade LICITAÇÃO TP 01.2023 Coivaras
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C904EA78111F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C904EA78111F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-continuidade-licitacao-tp-01-2023-coivaras-coivaras-62103">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Coivaras_Aviso_de_licitacao_aviso_de_continuidade_licitacao_tp_01_2023_coivaras_a0c78981-697e-4341-ba30-477927d3a38a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 002-2023
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9D75B0DD3AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9D75B0DD3AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-002-2023-buriti-dos-lopes-62168">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_002_2023_9397fdc4-3b70-4083-b187-eaf0399d7788.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RIACHO FRADE
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>55A8DBAD0BA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="55A8DBAD0BA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/riacho-frade-ipiranga-do-piaui-62230">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Ipiranga_do_Piaui_Outros_riacho_frade_02e9a5ca-c3cf-4087-a857-d7c1ac5d865d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+decretod
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A631ACA7AC8E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A631ACA7AC8E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretod-caraubas-do-piaui-62245">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Caraubas_do_Piaui_Decretos_decretod_7b09b0a8-56f2-45f6-b953-a4729eb6ab2f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo 2020
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C567D8E4B5CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C567D8E4B5CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-2020-sebastiao-barros-62127">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativo_2020_386ec6b2-e357-4631-86cd-72b45183b167.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo 2020
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A878C16028094
+<br/><br/>
+<a class="fileDoc" data-file-hash="A878C16028094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-2020-sebastiao-barros-62120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativo_2020_c8db8bcb-3212-4b20-b2b7-b8aaaafe3d95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativos saude
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC804E06545C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC804E06545C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativos-saude-sebastiao-barros-62112">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Sebastiao_Barros_Atos_demonstrativos_saude_4191b331-27a0-4b40-8abe-609d44706fa2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9A9AAA669CAF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9A9AAA669CAF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66680/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_a31980ce-2811-4dea-88c0-124fd4942189.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA677BF931824
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA677BF931824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66681/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_a3878c60-e5bb-4478-b609-a104a39a11d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1851CFC25F534
+<br/><br/>
+<a class="fileDoc" data-file-hash="1851CFC25F534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66682/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_61e7286c-3d0b-4e32-bca5-dbc7148ac4ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11CF47FF71564
+<br/><br/>
+<a class="fileDoc" data-file-hash="11CF47FF71564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66683/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_a2a908a6-c7bb-4245-85df-b9a10a3377a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1FD0BA4962FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1FD0BA4962FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66684/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_629c214d-03f0-42d6-84ce-9fc4f9848c97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E66C9B8BC8D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="E66C9B8BC8D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66685/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_5de850be-777a-4096-b71e-d4dceb51d2e9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7448169788094
+<br/><br/>
+<a class="fileDoc" data-file-hash="7448169788094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66686/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_1dbe7475-aaa8-4db7-99bb-b0c8b66c4ae2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA47A2DDE2324
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA47A2DDE2324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66687/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_06e098d5-a456-4dc3-885a-69a7bba3618b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBC37C647FF24
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBC37C647FF24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66688/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_2d3838da-81e8-4492-98ba-be2c5df785f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=709&amp;q[flag_doc_diario_true]=1">
+487
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE 2024 /
+</td>
+<td class="text-center">
+30-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3247ADE2C4494
+<br/><br/>
+<a class="fileDoc" data-file-hash="3247ADE2C4494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/66689/rreo-2-bimestre-2024-amarante-62238">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/29/DOP_EDICAO__30-5-2023_ED_487_Prefeitura_Amarante_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2024_cea9a34b-c4f7-4cd0-8485-946dd67db1fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

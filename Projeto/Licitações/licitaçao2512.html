@@ -1,0 +1,1407 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A43F17CCA0FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A43F17CCA0FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25414/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_88409828-a7f7-4319-bd02-e113fca14acc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D6CDB63FEBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D6CDB63FEBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25415/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_5b4b73ba-ed43-4fdb-98bf-ad2ea47bb000.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>685AAEA645964
+<br/><br/>
+<a class="fileDoc" data-file-hash="685AAEA645964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25416/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_8af57fe1-1a68-415e-af21-93c67f66f15c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FF3C27648914
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FF3C27648914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25417/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_a9271946-10d5-4e97-8506-549be6fb354e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B73F1E1256434
+<br/><br/>
+<a class="fileDoc" data-file-hash="B73F1E1256434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25418/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_c92ea8f5-5882-4ca6-a9ec-30a6014a26e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3CDED4936D764
+<br/><br/>
+<a class="fileDoc" data-file-hash="3CDED4936D764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25419/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_8258de12-d7ae-43e5-8759-226ed73f69f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA5ED7312EE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA5ED7312EE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25420/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_ae28d4dd-7146-42bb-af53-14df0ea3f589.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>88C4E7E793744
+<br/><br/>
+<a class="fileDoc" data-file-hash="88C4E7E793744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25421/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_87ec4e4c-19dd-4ccb-91d9-86cbdf192f9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BCDF020581E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="BCDF020581E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25422/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_0fd1fd88-3a29-49a7-ae40-9d2ed210c37d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+LRF RREO 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A89FEF71AD804
+<br/><br/>
+<a class="fileDoc" data-file-hash="A89FEF71AD804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25423/lrf-rreo-3-bimestre-2022-angical-do-piaui-23742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Angical_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_lrf_rreo_3_bimestre_2022_7eef1f8b-621c-4e78-a624-ba2396c27244.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO II DE METAS FISCAIS - ATUAIS COMPARADAS COM AS FIXADAS NOS TRÊS EXERCÍCIOS ANTERIORES
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Leis de diretrizes orçamentárias
+<br/><br/>
+<strong>LDO - LEI DE DIRETRIZES ORÇAMENTÁRIAS</strong>
+<br/><br/>
+2023
+</td>
+<td class="text-center">
+<strong>ID: </strong>C8CDD94DA4F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C8CDD94DA4F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/anexo-ii-de-metas-fiscais-atuais-comparadas-com-as-fixadas-nos-tres-exercicios-anteriores-rio-grande-do-piaui-23736">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Rio_Grande_do_Piaui_Leis_de_diretrizes_orcamentarias_anexo_ii_de_metas_fiscais_atuais_comparadas_com_as_fixadas_nos_tres_exercicios_anteriores_985dbbd7-e80f-49b5-9dbb-f7716a13c427.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 052/2022 - POÇO - CARAIBINHAS
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7023BE6B9A934
+<br/><br/>
+<a class="fileDoc" data-file-hash="7023BE6B9A934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-052-2022-poco-caraibinhas-brejo-do-piaui-23660">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_052_2022_poco_caraibinhas_50910fcc-e5d9-4f08-9485-1d6e2cf64db7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 054/2022 - POÇO - ÁGUA DOCE
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A2A568BA0AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A2A568BA0AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-054-2022-poco-agua-doce-brejo-do-piaui-23662">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_054_2022_poco_agua_doce_32456e6d-38dd-48ce-bb42-a445e2136b8a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 037/2022 - POÇO - MORRO DO ABELARDO
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>82EE3A3112894
+<br/><br/>
+<a class="fileDoc" data-file-hash="82EE3A3112894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-037-2022-poco-morro-do-abelardo-brejo-do-piaui-23641">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_037_2022_poco_morro_do_abelardo_4e7c5989-7305-4a98-a43f-c82476d0220e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 038/2022 - POÇO - CARAÍBAS II
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8864E922A8804
+<br/><br/>
+<a class="fileDoc" data-file-hash="8864E922A8804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-038-2022-poco-caraibas-ii-brejo-do-piaui-23642">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_038_2022_poco_caraibas_ii_10470d5c-c04c-4808-b325-37939e481754.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO GO VENDA PE 024-22
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>62EA89D7385A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="62EA89D7385A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-go-venda-pe-024-22-tanque-do-piaui-23717">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_go_venda_pe_024_22_c1787aab-bdb9-4eaf-a418-e7ab6f9e8d88.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+Edital 004.2022 - Chamada Pública
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>B18DC34C1C194
+<br/><br/>
+<a class="fileDoc" data-file-hash="B18DC34C1C194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-004-2022-chamada-publica-acaua-23704">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Acaua_Edital_de_Chamada_edital_004_2022_chamada_publica_9297456c-a3fb-4d39-bfea-a3b3a11738fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 039/2022 - POÇO - CARAÍBAS I
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF1F6A6A28BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF1F6A6A28BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-039-2022-poco-caraibas-i-brejo-do-piaui-23643">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_039_2022_poco_caraibas_i_8e4c776e-99ae-42f7-a24b-61365fc8d3b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 040/2022 - POÇO - NOVO MUNDO
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D72B8CFEA4C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D72B8CFEA4C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-040-2022-poco-novo-mundo-brejo-do-piaui-23645">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_040_2022_poco_novo_mundo_23d40852-d834-49c8-b25d-896eb11915dd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 041/2022 - POÇO - CERCA DE PEDRA
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE4FF19FF9834
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE4FF19FF9834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-041-2022-poco-cerca-de-pedra-brejo-do-piaui-23646">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_041_2022_poco_cerca_de_pedra_924bb386-67e9-46e9-8282-c8b2b574059b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 042/2022 - POÇO - SÃO GONÇALO
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>65E79EE98C714
+<br/><br/>
+<a class="fileDoc" data-file-hash="65E79EE98C714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-042-2022-poco-sao-goncalo-brejo-do-piaui-23648">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_042_2022_poco_sao_goncalo_fbbee7dc-e616-41d8-8687-32a7064a3e27.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação PE 028.2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>18E6D66FD5704
+<br/><br/>
+<a class="fileDoc" data-file-hash="18E6D66FD5704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pe-028-2022-oeiras-23649">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Oeiras_Aviso_da_Homologacao_homologacao_pe_028_2022_f592d265-eb93-446b-8189-dd250c5c0a87.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+EXONERAÇÃO - LUCAS FURTADO
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4575C4D77C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4575C4D77C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/exoneracao-lucas-furtado-demerval-lobao-23608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Camara_Demerval_Lobao_Portarias_exoneracao_lucas_furtado_3a22940a-84fd-47ce-acef-d7b675874eec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato PE 028/2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DB52640822A94
+<br/><br/>
+<a class="fileDoc" data-file-hash="DB52640822A94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pe-028-2022-oeiras-23650">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Oeiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_pe_028_2022_50e25ee0-3719-4d33-8842-027357903f01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 055/2022 - POÇO - MARAVILHA
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>99E97A14C3E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="99E97A14C3E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-055-2022-poco-maravilha-brejo-do-piaui-23664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_055_2022_poco_maravilha_8d818db0-eada-42d0-9145-7fe7a674ad35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 043/2022 - POÇO - CAPIVARA
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>BCC6B30F46464
+<br/><br/>
+<a class="fileDoc" data-file-hash="BCC6B30F46464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-043-2022-poco-capivara-brejo-do-piaui-23651">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_043_2022_poco_capivara_36222651-643f-49fd-b45f-87c74748124d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 047/2022 - POÇO - BOM JARDIM
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>235A17F0DEDC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="235A17F0DEDC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-047-2022-poco-bom-jardim-brejo-do-piaui-23655">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_047_2022_poco_bom_jardim_cddf4e0c-6a02-4342-9853-a2bdd4bfda2e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato n° 081/2022
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>39A235D3DC794
+<br/><br/>
+<a class="fileDoc" data-file-hash="39A235D3DC794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-081-2022-dom-expedito-lopes-23656">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Dom_Expedito_Lopes_Aviso_do_Contrato_contrato_n_081_2022_0baba609-1243-445e-8682-505fbd285c19.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+Lista Provisoria do Edital 003.2022 - Processo Seletivo
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>DB56B0235A2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DB56B0235A2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lista-provisoria-do-edital-003-2022-processo-seletivo-acaua-23703">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Acaua_Outros_lista_provisoria_do_edital_003_2022_processo_seletivo_f7ab70e3-6ad8-4311-9b1f-96ec9c0c9eba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=410&amp;q[flag_doc_diario_true]=1">
+287
+</a>
+-
+2022
+</td>
+<td class="">
+extrato contrato PE 015-2022 serviços de manutenção
+</td>
+<td class="text-center">
+04-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>57AB6DEC52F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="57AB6DEC52F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-pe-015-2022-servicos-de-manutencao-buriti-dos-montes-23601">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/3/DOP_EDICAO__4-8-2022_ED_287_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_pe_015_2022_servicos_de_manutencao_05833e2e-df9b-4cd4-8563-aa892df081ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1577 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Convocação Assinatura de Contrato
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de convocação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9359BE90BCDF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9359BE90BCDF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-assinatura-de-contrato-wall-ferraz-70846">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Aviso_de_convocacao_convocacao_assinatura_de_contrato_d8d12cee-ebea-4989-a042-9eeb9981495d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Distrato de Contrato n° 31.2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Aviso da Rescisão de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2D54D08B085D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2D54D08B085D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/distrato-de-contrato-n-31-2023-sao-jose-do-peixe-70823">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Sao_Jose_do_Peixe_Aviso_da_Rescisao_de_contrato_distrato_de_contrato_n_31_2023_d9a6d7c9-9c6c-49e1-9a04-105203f0f708.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+CP 003/2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>3055F7E58D444
+<br/><br/>
+<a class="fileDoc" data-file-hash="3055F7E58D444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp-003-2023-luis-correia-70821">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Luis_Correia_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_cp_003_2023_f49ed8b8-ef53-468b-9860-5cacbb3756a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 036
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C99712DB36C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C99712DB36C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-036-palmeira-do-piaui-70803">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Palmeira_do_Piaui_Portarias_portaria_036_a8cca883-f918-4165-bda2-b602c79e1b2e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato INEX 009 2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1A0FF05A81D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1A0FF05A81D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-inex-009-2023-wall-ferraz-70896">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Extrato_extrato_de_contrato_inex_009_2023_8c052f18-f0c7-47b2-9b38-c1c8561b6461.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Ratificação INEX 009 2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B6F1A0FE2ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B6F1A0FE2ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-inex-009-2023-wall-ferraz-70895">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Aviso_de_Ratificacao_termo_de_ratificacao_inex_009_2023_8e7b5079-aae5-4247-bc80-c949f3754401.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 043 2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FD5A0284A9A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FD5A0284A9A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-043-2023-wall-ferraz-70893">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Aviso_de_licitacao_aviso_pe_043_2023_60bd6092-0134-41ad-8588-842ca716fcfd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 312-2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>255F1E2D21254
+<br/><br/>
+<a class="fileDoc" data-file-hash="255F1E2D21254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-312-2023-buriti-dos-lopes-70829">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_312_2023_0d8b403d-e57b-46df-8385-b9ba22d690bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Ratificação - Dispensa nº 014-2023 - Programa de SST Saúde e Segurança do Trabalho
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8462BC523BC94
+<br/><br/>
+<a class="fileDoc" data-file-hash="8462BC523BC94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dispensa-n-014-2023-programa-de-sst-saude-e-seguranca-do-trabalho-santa-rosa-do-piaui-70833">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Santa_Rosa_do_Piaui_Aviso_de_Ratificacao_termo_de_ratificacao_dispensa_n_014_2023_programa_de_sst_saude_e_segura_a562bf79-e417-4526-8578-aad7a1bc8a22.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Convocação Assinatura de Contrato
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de convocação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9918052B6CAF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9918052B6CAF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-assinatura-de-contrato-wall-ferraz-70845">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Aviso_de_convocacao_convocacao_assinatura_de_contrato_059433c2-30a9-4d7b-b153-84fcd121be38.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RETIFICAÇÃO - EXTRATO DE CONTRATO 360-2023- ALAIDYANNE
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0D02ED993304
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0D02ED993304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-retificacao-extrato-de-contrato-360-2023-alaidyanne-floriano-70899">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Floriano_Outros_termo_de_retificacao_extrato_de_contrato_360_2023_alaidyanne_36f800d0-63ea-44c4-b633-091c9955625f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO APOSTILAMENTO N 01 - CONTRATO -342-2023- SMS - JV MONTEIRO
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3DB1BED00FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3DB1BED00FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-apostilamento-n-01-contrato-342-2023-sms-jv-monteiro-floriano-70898">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Floriano_Outros_termo_apostilamento_n_01_contrato_342_2023_sms_jv_monteiro_46207bc2-7cef-41f3-ab47-13bbd2059a58.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 042 2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B746C3FB1014
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B746C3FB1014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-042-2023-wall-ferraz-70892">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Wall_Ferraz_Aviso_de_licitacao_aviso_pe_042_2023_fb252f8b-9722-4de3-a4c7-856a41a3574a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RESPOSTA IMPUGNAÇÃO PE 10-2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB798ACD05BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB798ACD05BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resposta-impugnacao-pe-10-2023-santa-cruz-dos-milagres-70902">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Santa_Cruz_dos_Milagres_Outros_resposta_impugnac_a_o_pe_10_2023_e5cb8502-17aa-4bd4-8646-840222968208.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE ADJUDICAÇÃO E HOMOLOGAÇÃO CHAMADA
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F73235EDC3F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F73235EDC3F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adjudicacao-e-homologacao-chamada-sao-jose-do-piaui-70811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Sao_Jose_do_Piaui_Aviso_da_Homologacao_aviso_de_adjudicacao_e_homologacao_chamada_3e26ee38-5e33-41ee-9ded-9c061283e63d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO 062/2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA85592DBBED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA85592DBBED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-062-2023-sao-jose-do-piaui-70805">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_062_2023_89d05a00-e780-4df9-8e80-5ec7343999b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE ADJUDICAÇÃO E HOMOLOGAÇÃO CHAMADA
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0DD3A946AB34
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0DD3A946AB34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adjudicacao-e-homologacao-chamada-sao-jose-do-piaui-70796">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Sao_Jose_do_Piaui_Aviso_da_Homologacao_aviso_de_adjudicacao_e_homologacao_chamada_90a49d20-e3c7-4f5b-9cfb-65eccee9ea07.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 089/2023
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5DD6C50BC3184
+<br/><br/>
+<a class="fileDoc" data-file-hash="5DD6C50BC3184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-089-2023-floriano-70884">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Floriano_Decretos_decreto_089_2023_6d5c2a87-4b4c-464f-9d60-f324c95650d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO N 11 - CREDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>776EA3799CBF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="776EA3799CBF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-11-credito-adicional-suplementar-passagem-franca-do-piaui-70889">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Decretos_decreto_n_11_credito_adicional_suplementar_189ada8f-0921-41ad-a40f-c06a064ba34d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+DECISÃO RECURSO
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A46595B9EE964
+<br/><br/>
+<a class="fileDoc" data-file-hash="A46595B9EE964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decisao-recurso-santa-cruz-dos-milagres-70901">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Santa_Cruz_dos_Milagres_Outros_decisa_o_recurso_e31d0cc9-571f-45e2-b110-125653adac56.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B435E35F9124
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B435E35F9124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76291/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_85ecec51-ed27-4f94-a576-e6c5b6a37f10.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABADDA701D854
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABADDA701D854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76292/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_e2f33e29-f85b-4529-9a2b-a03b0c65e18e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB8A867ED27C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB8A867ED27C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76293/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_e69f8bc6-8314-4541-a0b6-44b41b02ce3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F11CBE6E3D234
+<br/><br/>
+<a class="fileDoc" data-file-hash="F11CBE6E3D234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76294/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_2ddab777-c78c-4ed1-8401-dcb56d357e9c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA8CEFD9B8B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA8CEFD9B8B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76295/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_b2c8d1ca-6ccd-4e99-aadb-0649bd17769b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1808282A41D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="1808282A41D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76296/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_3f71c4ef-b57a-4ba9-9dc2-6c1aa1dc6f73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>448C1E488CBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="448C1E488CBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76297/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_0f704db8-dfe2-4bd3-b815-14a674890f28.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3985792B5844
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3985792B5844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76298/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_c7785e98-81df-4ed9-a44b-e6643eb1f950.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>68928154F5BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="68928154F5BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76299/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_3e5f19d8-10d5-4969-825c-467242f88f66.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>92D30C7F03F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="92D30C7F03F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76300/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_e9fa97d5-0f02-4001-8154-b3df7f6652ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13763217D4304
+<br/><br/>
+<a class="fileDoc" data-file-hash="13763217D4304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76301/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_a345c8e7-2e22-4ccd-8584-3efb5079f86e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CECA48AD426E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CECA48AD426E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76302/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_9b0b4e77-5ed6-47b7-aa20-7c57c827b52e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3 BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BD50B268B674
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BD50B268B674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76303/rreo-3-bimestre-de-2023-passagem-franca-do-piaui-70887">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Passagem_Franca_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_de_2023_fa9d5620-99d3-4c95-807c-eaf7ed32883f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=774&amp;q[flag_doc_diario_true]=1">
+533
+</a>
+-
+2023
+</td>
+<td class="">
+TP nº 001-2023 - despacho de recurso administrativo - Recurso empresa FBS
+</td>
+<td class="text-center">
+03-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do Recurso
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D8C52C0ACF84
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D8C52C0ACF84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-n-001-2023-despacho-de-recurso-administrativo-recurso-empresa-fbs-sao-felix-do-piaui-70894">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/2/DOP_EDICAO__3-8-2023_ED_533_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_Recurso_tp_n_001_2023_despacho_de_recurso_administrativo_recurso_empresa_fbs_1493b043-833b-47e7-94b6-aa3332b1b950.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

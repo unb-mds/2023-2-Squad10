@@ -1,0 +1,1571 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>20C912CA0CAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="20C912CA0CAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9059/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_3f938415-1c5f-4fd3-8c05-98e1a864a8dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>16DF9EE9B20A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="16DF9EE9B20A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9060/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_6f682408-e053-4325-836a-db01aef4dc42.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4BB3F9654214
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4BB3F9654214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9061/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_e051aa42-d33b-4e2d-aedb-35076e73f1cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A8C5BA2E1254
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A8C5BA2E1254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9062/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_53ac4cc4-efcc-4337-b6d6-68aa235ddc51.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>48D96EBD2B284
+<br/><br/>
+<a class="fileDoc" data-file-hash="48D96EBD2B284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9063/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_d5b40482-d0c9-4de4-b435-3daa9fa29ccf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEEB370382724
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEEB370382724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9064/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_3ead8d16-ebd4-41d5-8c12-dda15f7656ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1561F17293464
+<br/><br/>
+<a class="fileDoc" data-file-hash="1561F17293464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9065/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_a0fd4ecc-da8b-4f4f-b6ca-1a5fbaa10646.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D49DF82DE4B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D49DF82DE4B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9066/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_ca0be305-04bb-4150-b0df-a98b01e932b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>819231BBF2264
+<br/><br/>
+<a class="fileDoc" data-file-hash="819231BBF2264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9067/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_2d5ccd22-6a0a-4852-aae9-92ef6c197bf1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BBF8F9D16FF54
+<br/><br/>
+<a class="fileDoc" data-file-hash="BBF8F9D16FF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9068/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_db4108cd-8a2f-4476-b3fd-4962f184e0ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49CA419180BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="49CA419180BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9069/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_006c2568-b12a-4d85-95a4-24d0ed87879e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+RREO-RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>07B5F478DFFF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07B5F478DFFF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/9070/rreo-relatorios-resumidos-de-execucao-orcamentaria-francisco-macedo-8673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Francisco_Macedo_Relatorios_resumidos_da_execucao_orcamentaria_rreo_relatorios_resumidos_de_execucao_orcamentaria_0b0570d0-d08d-4109-bba8-85e09afa5207.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Aditivo contrato 101/2021
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>1086E1E2AA854
+<br/><br/>
+<a class="fileDoc" data-file-hash="1086E1E2AA854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-aditivo-contrato-101-2021-nazare-do-piaui-8674">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Nazare_do_Piaui_Aviso_do_Termo_Aditivo_extrato_aditivo_contrato_101_2021_3b99a492-4783-4c58-804e-ed9d89ba38a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Edital
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>764CF6D194EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="764CF6D194EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-itaueira-8676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Itaueira_Outros_edital_334e4286-dec0-4526-ac58-38e758dc164d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Leis
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>87D62F5D01EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87D62F5D01EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/leis-itaueira-8678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Itaueira_Leis_leis_83d91a20-9f8f-42aa-83cb-e44cc216f8e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 129/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0078BB2513F94
+<br/><br/>
+<a class="fileDoc" data-file-hash="0078BB2513F94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-129-2022-floriano-8670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Portarias_portaria_129_2022_b64e1c5a-136a-49d1-9232-89d921a16292.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO CONTRATO
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7CC9E9F222224
+<br/><br/>
+<a class="fileDoc" data-file-hash="7CC9E9F222224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-angical-do-piaui-8720">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Angical_do_Piaui_Extrato_extrato_contrato_e594d926-400f-43cd-b473-6843f466e344.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+AD. BL x ILHA
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>926297E9C3834
+<br/><br/>
+<a class="fileDoc" data-file-hash="926297E9C3834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ad-bl-x-ilha-buriti-dos-lopes-8671">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Buriti_dos_Lopes_Extrato_ad_bl_x_ilha_64f33e90-7cbd-4c70-9cfb-2db579e22271.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+portaria
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D197F72E40C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="D197F72E40C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-isaias-coelho-8696">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Isaias_Coelho_Portarias_portaria_b3541bb8-e054-43b0-aced-33e24c212d7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 030/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D9B592162624
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D9B592162624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-030-2022-wall-ferraz-8710">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Wall_Ferraz_Portarias_portaria_030_2022_00ce2204-269a-41cc-ab1b-e44aa1a2ad76.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+DESPACHO DE RATIFICAÇÃO- Contrato Administrativo Nº 025.2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2694952906D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2694952906D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-ratificacao-contrato-administrativo-n-025-2022-barra-d-alcantara-8642">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Barra_DAlcantara_Aviso_de_Ratificacao_despacho_de_ratificacao_contrato_administrativo_n_025_2022_12a40624-06d6-4b67-a639-def3e814d162.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 005/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4542F5824A5F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4542F5824A5F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-005-2022-floriano-8699">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_005_2022_93315b23-9eb3-459b-a334-70af0d46ee94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 090/2022 BIOMED
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>58AC3BF6777C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="58AC3BF6777C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-090-2022-biomed-floriano-8705">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_do_contrato_090_2022_biomed_a05556af-00b7-46c3-a77c-78791e957245.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Errata Aviso de Licitação PP 012/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BF25FCF61854
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BF25FCF61854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-aviso-de-licitacao-pp-012-2022-pimenteiras-8714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Pimenteiras_Errata_errata_aviso_de_licitacao_pp_012_2022_c304076d-8ad1-479e-a858-5809d342ba61.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de homologação do Contrato Administrativo Nº 023/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD54D316B36E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD54D316B36E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-do-contrato-administrativo-n-023-2022-barra-d-alcantara-8640">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Barra_DAlcantara_Aviso_da_homologacao_termo_de_homologacao_do_contrato_administrativo_n_023_2022_5c62baf1-0e68-4bdf-a812-2f7bb8d06433.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 005/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>071B6FBEBD7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="071B6FBEBD7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-005-2022-floriano-8698">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_005_2022_cabdf930-330e-4b2e-a0a2-d3f7e9cdbaf1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE 007/2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5AFFBAB14FE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="5AFFBAB14FE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-007-2022-floriano-8697">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_da_Homologacao_termo_de_homologacao_pe_007_2022_b551e7a4-337c-497e-8607-69e798972e7e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 035 - Pregão 001
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E75A09BCD1534
+<br/><br/>
+<a class="fileDoc" data-file-hash="E75A09BCD1534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-035-pregao-001-agricolandia-8718">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Agricolandia_Portarias_portaria_035_pregao_001_9e5abd3a-d7bd-4fe3-a1b6-82d695381105.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+EC CC 001 - Refeitório
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FE9F2B223514
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FE9F2B223514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-cc-001-refeitorio-agricolandia-8719">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Agricolandia_Aviso_do_Contrato_ec_cc_001_refeitorio_f6ed8ee2-301e-4ff5-b3b2-8ab240337481.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO DISP. N º11-2022
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>03CE8E5DB4874
+<br/><br/>
+<a class="fileDoc" data-file-hash="03CE8E5DB4874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-disp-n-11-2022-floriano-8713">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_de_Ratificacao_termo_de_ratificacao_disp_n_11_2022_7082d678-249b-402d-9801-e6cd4c59e452.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+PRESTAÇÃO DE CONTAS 3º QUADRIMESTRE DE 2021 - PROCURADORIA GERAL DO MUNICÍPIO
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E993FACC3F364
+<br/><br/>
+<a class="fileDoc" data-file-hash="E993FACC3F364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/prestacao-de-contas-3-quadrimestre-de-2021-procuradoria-geral-do-municipio-dom-expedito-lopes-8647">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_prestacao_de_contas_3_quadrimestre_de_2021_procuradoria_geral_do_municipio_34e443d6-1174-4e2f-b0e5-9028df37cfaa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+TH CC 001 - Refeitório
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>74FA1F60D9C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="74FA1F60D9C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/th-cc-001-refeitorio-agricolandia-8721">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Agricolandia_Aviso_da_Homologacao_th_cc_001_refeitorio_e90afbd9-ad9c-440e-9193-8ace83e2ff8b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 091/2022 BRASIL
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC99CB83F1824
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC99CB83F1824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-091-2022-brasil-floriano-8704">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_do_contrato_091_2022_brasil_50a42ba5-8224-49b3-8d84-cc935b0aa697.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=247&amp;q[flag_doc_diario_true]=1">
+174
+</a>
+-
+2022
+</td>
+<td class="">
+errata disp estradas vicinais
+</td>
+<td class="text-center">
+22-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A051954C4194
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A051954C4194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-disp-estradas-vicinais-buriti-dos-lopes-8650">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/21/DOP_EDICAO__22-2-2022_ED_174_Prefeitura_Buriti_dos_Lopes_Aviso_do_Contrato_errata_disp_estradas_vicinais_47ea2e5a-ee9c-40c4-ad66-6ba59df3814c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

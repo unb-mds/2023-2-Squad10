@@ -1,0 +1,1202 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+PARCERIAS /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CACF816ABA994
+<br/><br/>
+<a class="fileDoc" data-file-hash="CACF816ABA994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84297/parcerias-luis-correia-78308">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_parcerias_871439a2-6dea-4527-bb77-37b2763fcc3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+RESUMIDO /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DFFA9632D4B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="DFFA9632D4B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84298/resumido-luis-correia-78309">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_resumido_93fa5af1-d0e1-48fe-8e5b-a26db67a0c97.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+PE 006.2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C58DACCEDA594
+<br/><br/>
+<a class="fileDoc" data-file-hash="C58DACCEDA594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-006-2023-luis-correia-78314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Aviso_do_extrato_de_contrato_pe_006_2023_bcc5e12f-e8f7-4ed0-8c06-ad1c3d7dd3fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+Aviso de Licitação P E 034/2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>46832AB102704
+<br/><br/>
+<a class="fileDoc" data-file-hash="46832AB102704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-p-e-034-2023-curral-novo-do-piaui-78294">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_p_e_034_2023_59e79ab6-2b36-4f4d-970d-0dbcfd95b771.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+corrig.-Extrato-Contrato nº 008-2023-Preest. de serv. de consultiria e assessoria em Tombamento
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>64FF93384B5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="64FF93384B5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-extrato-contrato-n-008-2023-preest-de-serv-de-consultiria-e-assessoria-em-tombamento-ribeira-do-piaui-78310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Camara_Ribeira_do_Piaui_Extrato_corrig_extrato_contrato_n_008_2023_preest_de_serv_de_consultiria_e_assessoria_em_tombamen_f5802366-1158-466d-9ce8-05e8c008932e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+LEI Nº 319/2023 - OUVIDORIA MUNICIPAL
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F213211482B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F213211482B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-319-2023-ouvidoria-municipal-jardim-do-mulato-78312">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Jardim_do_Mulato_Leis_lei_n_319_2023_ouvidoria_municipal_8f41b127-484d-4363-ab33-06fb0a39da43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+ENSINO /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D0BC599DFC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D0BC599DFC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84291/ensino-luis-correia-78302">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_ensino_60730e5c-88b5-44f5-862d-22e6b455436f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+RESTOS A PAGAR /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2140F7769AF34
+<br/><br/>
+<a class="fileDoc" data-file-hash="2140F7769AF34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84290/restos-a-pagar-luis-correia-78301">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_restos_a_pagar_e8a5ce1c-8da2-467e-b95f-aa7473ad43ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+RECEITA CORRENTE LIQUIDA /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>27F5AAD702CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="27F5AAD702CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84287/receita-corrente-liquida-luis-correia-78298">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_receita_corrente_liquida_21ccfcbe-c802-4c9a-ae0a-c911c0326bb2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+PREVIDENCIARIAS /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7AF813040B184
+<br/><br/>
+<a class="fileDoc" data-file-hash="7AF813040B184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84288/previdenciarias-luis-correia-78299">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_previdenciarias_0aa99d83-20d8-48bb-bc83-cf271440adc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+PRIMARIO E NOMINAL /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>37BDED75713B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="37BDED75713B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84289/primario-e-nominal-luis-correia-78300">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_primario_e_nominal_9169efea-db98-4d55-bb41-5ae567a92be1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+2° TERMO ADITIVO P P 022/2021
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>D39860452F974
+<br/><br/>
+<a class="fileDoc" data-file-hash="D39860452F974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/2-termo-aditivo-p-p-022-2021-curral-novo-do-piaui-78295">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Curral_Novo_do_Piaui_Aviso_do_Termo_Aditivo_2_termo_aditivo_p_p_022_2021_20f05969-a232-464f-a34e-0a12af917f8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+SAUDE /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4039BF3276294
+<br/><br/>
+<a class="fileDoc" data-file-hash="4039BF3276294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84296/saude-luis-correia-78307">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_saude_39eabd81-8192-4a74-b632-7cb3d00337d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB974B89BE784
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB974B89BE784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-sao-joao-da-fronteira-78292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Sao_Joao_da_Fronteira_Aviso_do_extrato_de_contrato_extrato_do_contrato_7343b59e-b5bc-4348-92d5-45d803633297.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO N 022/2023 - Dispõe sobre regulamentação da Lei Paulo Gustavo Lei Complementar Nº 195
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C8A2AAFA50BF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C8A2AAFA50BF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-022-2023-dispoe-sobre-regulamentacao-da-lei-paulo-gustavo-lei-complementar-n-195-coivaras-78290">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Coivaras_Decretos_decreto_n_022_2023_dispoe_sobre_regulamentacao_da_lei_paulo_gustavo_lei_complementar_n_195_2892dad7-b3b1-49f7-bbda-7f892f6ca5d8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+INTIMAÇÃO DECISÃO HAB TPNA 004_2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>742FA72453254
+<br/><br/>
+<a class="fileDoc" data-file-hash="742FA72453254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/intimacao-decisao-hab-tpna-004_2023-nazaria-78287">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Nazaria_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_intimacao_decisao_hab_tpna_004_2023_92256795-bc2c-43f7-aebd-5bee439c9e35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 304
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BFD8DF84F724
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BFD8DF84F724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-304-lagoa-do-barro-do-piaui-78280">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Lagoa_do_Barro_do_Piaui_Decretos_decreto_304_5705010d-2486-47bb-a076-bdf8b7b61fb7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 46-2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0879912D04024
+<br/><br/>
+<a class="fileDoc" data-file-hash="0879912D04024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-46-2023-buriti-dos-lopes-78350">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_46_2023_d55e7bfe-224a-4925-a48d-f74af8b7f888.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+EDITAL - CE 0018-2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>96648162BC004
+<br/><br/>
+<a class="fileDoc" data-file-hash="96648162BC004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-ce-0018-2023-sao-joao-da-fronteira-78311">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Sao_Joao_da_Fronteira_Edital_de_Chamada_edital_ce_0018_2023_47b507b3-5683-446a-b3c7-ed10e5ef8fe2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+Ata da 1° Reunião Ordinária do mês de Outubro de 2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C4466560B8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C4466560B8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-1-reuniao-ordinaria-do-mes-de-outubro-de-2023-queimada-nova-78284">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Camara_Queimada_Nova_Atas_ata_da_1_reuniao_ordinaria_do_mes_de_outubro_de_2023_b8e733c9-f476-4f99-9135-27e7cfd2dcc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+ALIENAÇÃO /
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>28AC6020358D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="28AC6020358D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/84294/alienacao-luis-correia-78305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Luis_Correia_Relatorios_de_gestao_fiscal_alienacao_16f2497f-84db-4427-8e9d-dd33131a88ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+LICITANET - Termo de Homologação pe 51
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>4CA31A4D962F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4CA31A4D962F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-termo-de-homologacao-pe-51-floriano-78409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Floriano_Outros_licitanet_termo_de_homologacao_pe_51_e0962282-0f80-4754-8b59-740f5857f8bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+ATA DA VIGESIMA QUINTA SESSÂO ORDINÁRIA DE 2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Pajeú do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>2DE4F07D87CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2DE4F07D87CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-vigesima-quinta-sessao-ordinaria-de-2023-pajeu-do-piaui-78289">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Camara_Pajeu_do_Piaui_Atas_ata_da_vigesima_quinta_sessao_ordinaria_de_2023_2b18324c-c509-4e5d-a5ef-610da0f2f0b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 476/2023
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4E12DA069D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4E12DA069D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-476-2023-wall-ferraz-78293">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Prefeitura_Wall_Ferraz_Portarias_portaria_476_2023_cbac0ebf-136d-4cde-b71d-1be25bcbd2a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=842&amp;q[flag_doc_diario_true]=1">
+580
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO RATIFICAÇÃO - REF. INEXIGIBILIDADE DE LICITAÇÃO 007-2023 ELABORAÇÃO PROJETO BÁSICO
+</td>
+<td class="text-center">
+10-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>957BB832EF944
+<br/><br/>
+<a class="fileDoc" data-file-hash="957BB832EF944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-ref-inexigibilidade-de-licitacao-007-2023-elaboracao-projeto-basico-sao-raimundo-nonato-78395">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/9/DOP_EDICAO__10-10-2023_ED_580_Camara_Sao_Raimundo_Nonato_Aviso_de_Ratificacao_extrato_ratificacao_ref_inexigibilidade_de_licitacao_007_2023_elaboracao__9425bb29-e2b1-4624-8c30-fae5a2195cb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

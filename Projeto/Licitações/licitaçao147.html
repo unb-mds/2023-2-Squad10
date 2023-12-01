@@ -1,0 +1,1556 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+TP 02/2023
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DFC4B9FF01FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DFC4B9FF01FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-02-2023-landri-sales-80227">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Landri_Sales_Aviso_de_licitacao_tp_02_2023_aa63f2ff-903a-40ff-bacc-cdc4f8add570.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 035/2023
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>69A7C30E4AB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="69A7C30E4AB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-035-2023-campinas-do-piaui-80237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_035_2023_72a9509e-f818-4234-b5e0-13abae328756.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO TOMADA DE PREÇO N 008/2023
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9C7DBD155ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9C7DBD155ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-tomada-de-preco-n-008-2023-curral-novo-do-piaui-80193">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Curral_Novo_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_tomada_de_preco_n_008_2023_25bec0b4-8222-4226-ac69-c6ddfd960ddc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Dispensa 24
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F32557B1B4794
+<br/><br/>
+<a class="fileDoc" data-file-hash="F32557B1B4794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-24-floriano-80223">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Camara_Floriano_Extrato_extrato_dispensa_24_62565e26-753e-417f-b4bf-fda8216067d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+3ª TERMO DE ADITIVO PE 001-2022
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0513126062C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0513126062C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/3-termo-de-aditivo-pe-001-2022-altos-80194">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Altos_Aviso_do_Termo_Aditivo_3_termo_de_aditivo_pe_001_2022_3afccf35-8201-46d8-a8f6-07b460319946.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3864BE606EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3864BE606EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-80209">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_e27d58cf-8b37-44c4-b229-be93a3923442.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS RREO 4º BIMESTRE/2023 /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F442836C2C74
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F442836C2C74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86239/relatorios-bimestrais-rreo-4-bimestre-2023-dom-expedito-lopes-80195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorios_bimestrais_rreo_4_bimestre_2023_e98c4242-6240-40fe-9b54-478078ee3e81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS RREO 4º BIMESTRE/2023 /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6CF284CE13D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="6CF284CE13D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86240/relatorios-bimestrais-rreo-4-bimestre-2023-dom-expedito-lopes-80195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorios_bimestrais_rreo_4_bimestre_2023_b5ca19e0-b9b0-4cd4-ad5d-22cd4312c03d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS RREO 4º BIMESTRE/2023 /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F253C9A55D7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F253C9A55D7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86241/relatorios-bimestrais-rreo-4-bimestre-2023-dom-expedito-lopes-80195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorios_bimestrais_rreo_4_bimestre_2023_264af6d6-3bc3-493d-ae64-ee49037bfee0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS RREO 4º BIMESTRE/2023 /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AFDB43B79E844
+<br/><br/>
+<a class="fileDoc" data-file-hash="AFDB43B79E844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86242/relatorios-bimestrais-rreo-4-bimestre-2023-dom-expedito-lopes-80195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Dom_Expedito_Lopes_Balanco_orcamentario_relatorios_bimestrais_rreo_4_bimestre_2023_b898b2c2-fbff-4d30-8fa9-51cb48addc1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+corrig.-Aviso-Pregão Eletrônico nº 010-2023-Fornec. de fardamento escol. e de func..-PMPP
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>588D114743AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="588D114743AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-aviso-pregao-eletronico-n-010-2023-fornec-de-fardamento-escol-e-de-func-pmpp-palmeira-do-piaui-80197">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Aviso_de_licitacao_corrig_aviso_pregao_eletronico_n_010_2023_fornec_de_fardamento_escol_e_de_50df6998-9c23-4408-9389-5072b5d7042c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+Aviso Concorrência nº 04-2023 - Bueiros
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8C117AEA9FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8C117AEA9FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-concorrencia-n-04-2023-bueiros-beneditinos-80218">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Beneditinos_Aviso_de_licitacao_aviso_concorrencia_n_04_2023_bueiros_1ab60c5a-73f2-4c10-a3e2-a108c8b04ff9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Homologação
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9DF8EBE60E924
+<br/><br/>
+<a class="fileDoc" data-file-hash="9DF8EBE60E924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-currais-80214">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Currais_Aviso_da_Homologacao_termo_de_homologacao_ae1b438c-cfca-4252-8a30-7131271c07e4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+corrig.-Aviso-Pregão Eletrônico nº 009-2023-Aquis. de urnas funerárias.-PMPP
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>87D1B56A4E8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87D1B56A4E8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-aviso-pregao-eletronico-n-009-2023-aquis-de-urnas-funerarias-pmpp-palmeira-do-piaui-80196">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Aviso_de_licitacao_corrig_aviso_pregao_eletronico_n_009_2023_aquis_de_urnas_funerarias_pmpp_d8863f65-fb39-4a09-8eda-7c61cf15d554.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+Aviso Republicação de Licitação TP 06
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1A4071D1E454
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1A4071D1E454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-republicacao-de-licitacao-tp-06-marcos-parente-80241">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Marcos_Parente_Aviso_de_licitacao_aviso_republicacao_de_licitacao_tp_06_b5f0c22d-6f19-4711-97ee-7660267dfa0f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD881DE2DCCC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD881DE2DCCC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-80199">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_6e7e80db-2c70-4a55-80df-afdcfda2e5b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>46020607BC7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="46020607BC7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-80202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_e3c2e137-7879-4ffa-8b2b-9ae355b2faa6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>92A4B8EFC3A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="92A4B8EFC3A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-80201">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_b3733c13-4c09-4501-9c57-1a160a59b7a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FBD1E20607404
+<br/><br/>
+<a class="fileDoc" data-file-hash="FBD1E20607404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86190/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_ae8bb54f-443e-45ba-ba72-7097ad29a7bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0FF573AA17154
+<br/><br/>
+<a class="fileDoc" data-file-hash="0FF573AA17154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86191/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_c0346634-5347-4a1a-ab71-0631f912f1ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>73BE6314532D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="73BE6314532D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86192/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_3f3ea00b-1820-4fcc-a45a-a36997897209.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B8D7CE7CF51E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B8D7CE7CF51E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86193/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_e865fc20-d787-40b8-b96f-6c53f6a80a0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>695EA53F30914
+<br/><br/>
+<a class="fileDoc" data-file-hash="695EA53F30914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86194/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_de0128c6-e9a0-42f3-8f8e-3ec4695d824c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6DD081B2D944
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6DD081B2D944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86195/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_571e4fe9-1eef-4913-be36-6dfe80a402df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA6B4B37147B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA6B4B37147B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86196/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_5f8fb8b3-3a15-4f57-b385-31e412ab0740.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3020BCA57B3A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3020BCA57B3A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86197/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_7b218332-eb76-4859-8363-5402b1dbdd60.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF6B777AB2044
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF6B777AB2044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86198/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_96b3b78e-370f-4fad-bef1-4dc1ccd1a55e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD2DB1620AB44
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD2DB1620AB44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86199/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_b0e36843-40ce-4270-9542-ae4d5bc23976.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE70EA03DD634
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE70EA03DD634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86200/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_3d3f16e6-b1b1-4000-855b-1d48f1a0627f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4D0FDEA99384
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4D0FDEA99384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/86201/relatorio-de-gestao-fiscal-palmeira-do-piaui-80162">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Palmeira_do_Piaui_Relatorios_de_gestao_fiscal_relatorio_de_gestao_fiscal_357772f5-1bfa-483c-b2d4-eeed34ce7872.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+extrato
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>63682179151B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="63682179151B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-80204">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_7439c57a-f19b-4327-a128-7c32afbbf594.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+DECFRETO 027/2023
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>613C3EA8FEC04
+<br/><br/>
+<a class="fileDoc" data-file-hash="613C3EA8FEC04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decfreto-027-2023-caxingo-80213">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Caxingo_Decretos_decfreto_027_2023_f63fcf7e-433d-4f27-b2d8-0fb45a9ddcf1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=862&amp;q[flag_doc_diario_true]=1">
+592
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de contrato administrativo n 099.2023- CC n 003.2023- Pavimentação
+</td>
+<td class="text-center">
+30-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>94FDA7756A7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="94FDA7756A7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-administrativo-n-099-2023-cc-n-003-2023-pavimentacao-sao-felix-do-piaui-80221">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/27/DOP_EDICAO__30-10-2023_ED_592_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_administrativo_n_099_2023_cc_n_003_2023_pa_5b7686b7-4044-4ace-9080-1d11d2b23acc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

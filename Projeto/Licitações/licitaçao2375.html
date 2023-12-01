@@ -1,0 +1,1461 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE M
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C78C8E3355CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C78C8E3355CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-m-caraubas-do-piaui-26867">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Caraubas_do_Piaui_Atos_aviso_de_m_84c8718f-2c99-4a58-a1ef-e53782c432a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Notificação 001 - 2021 Empresa Concretize
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Aviso da Notificação de penalidades a licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>2BDAC50244F74
+<br/><br/>
+<a class="fileDoc" data-file-hash="2BDAC50244F74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/notificacao-001-2021-empresa-concretize-sao-joao-da-varjota-26858">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Sao_Joao_da_Varjota_Aviso_da_Notificacao_de_penalidades_a_licitantes_notificacao_001_2021_empresa_concretize_afcae03b-8616-4f68-8b3b-660706c454ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE DISPENSA
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>14B76A5B357A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="14B76A5B357A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispensa-caraubas-do-piaui-26865">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Caraubas_do_Piaui_Atos_aviso_de_dispensa_f7515ba9-744e-4d46-a658-4738e8441fd8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+HOMOLOGAÇÃO PREGÃO ELETRÔNICO Nº. 010/2022 Processo Administrativo nº. 043/2022
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D68010D4E26A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D68010D4E26A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pregao-eletronico-n-010-2022-processo-administrativo-n-043-2022-rio-grande-do-piaui-26884">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Rio_Grande_do_Piaui_Extrato_homologacao_pregao_eletronico_n_010_2022_processo_administrativo_n_043_2022_8d2acdc3-f91a-415d-b2a1-dfbbda9ef3a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO EDILBERTO
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C5D5E58445F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C5D5E58445F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-edilberto-marcos-parente-26851">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Marcos_Parente_Aviso_do_extrato_de_contrato_extrato_edilberto_8326d417-3a69-465c-9064-57feffd131fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Homologação
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>83F1CDB1A7F14
+<br/><br/>
+<a class="fileDoc" data-file-hash="83F1CDB1A7F14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-alvorada-do-gurgueia-26826">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Alvorada_do_Gurgueia_Aviso_da_Homologacao_termo_de_homologacao_8573b80d-962e-45b3-b790-4b3db87b516a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato (Arleide) CORRIGIDO
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A9FE0D9812C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A9FE0D9812C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-arleide-corrigido-barreiras-do-piaui-26913">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_arleide_corrigido_a0b0df1e-f824-4b11-964f-0c2a7a305d65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO N° 307-2022
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>973685987D214
+<br/><br/>
+<a class="fileDoc" data-file-hash="973685987D214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-307-2022-floriano-26904">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Floriano_Extrato_extrato_de_contrato_n_307_2022_f8d5f7e3-33a9-409d-a57d-bbadbc709334.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE SRP Nº 063-2022- RECARGA PARA IMPRESSORAS
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF3A1A4A2EC34
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF3A1A4A2EC34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-srp-n-063-2022-recarga-para-impressoras-floriano-26899">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Floriano_Outros_aviso_pe_srp_n_063_2022_recarga_para_impressoras_cb5df5c4-7281-4c2c-8726-fc1c713a8b6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+RETIFICAÇÃO DOS EXTRATOS MONITORES
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>34E74C91C2E54
+<br/><br/>
+<a class="fileDoc" data-file-hash="34E74C91C2E54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/retificacao-dos-extratos-monitores-marcos-parente-26916">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Marcos_Parente_Aviso_do_extrato_de_contrato_retificacao_dos_extratos_monitores_c1448e9b-d3ff-41db-ac16-682db7627554.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo 103.2022, Dispensa n 031.2022
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>408A6172F72C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="408A6172F72C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-103-2022-dispensa-n-031-2022-nossa-senhora-de-nazare-26903">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_da_Adjudicacao_contrato_administrativo_103_2022_dispensa_n_031_2022_84f47d8f-f514-48e6-b446-b860fff8875e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo 103.2022, Dispensa n 031.2022
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F316B5D2DA534
+<br/><br/>
+<a class="fileDoc" data-file-hash="F316B5D2DA534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-103-2022-dispensa-n-031-2022-nossa-senhora-de-nazare-26910">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_da_Homologacao_contrato_administrativo_103_2022_dispensa_n_031_2022_72dde494-9b9f-4bcc-a62e-8e1f77a1d332.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato da secretaria municipal de administração
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A60569F9CD94
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A60569F9CD94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-secretaria-municipal-de-administracao-barreiras-do-piaui-26855">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_secretaria_municipal_de_administracao_90156bd5-8911-463b-9073-0dbf60642028.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação Chamada Pública da Agricultura familiar
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F49B0B3D43ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F49B0B3D43ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-chamada-publica-da-agricultura-familiar-beneditinos-26816">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Beneditinos_Aviso_da_Homologacao_homologacao_chamada_publica_da_agricultura_familiar_0dc4096a-41fe-4372-99db-53d8b1148b60.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=449&amp;q[flag_doc_diario_true]=1">
+313
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 34
+</td>
+<td class="text-center">
+12-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>94F5A31072AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="94F5A31072AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-34-ipiranga-do-piaui-26820">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/9/DOP_EDICAO__12-9-2022_ED_313_Prefeitura_Ipiranga_do_Piaui_Decretos_decreto_34_7cdecbb3-7443-4206-8a36-ec7ba58d9415.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 312
+</td>
+<td class="text-center dopcom">
+09-09-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="20573F192D134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-312-piaui-26823/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_CADERNO_a____diario_oficial_completo_edicao_312_070b585c-90a5-4c21-b24b-34ea109f161f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 016/2022 Processo Administrativo Disciplinar 001/2022
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>DED356C661B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="DED356C661B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-016-2022-processo-administrativo-disciplinar-001-2022-coivaras-26752">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Coivaras_Portarias_portaria_016_2022_processo_administrativo_disciplinar_001_2022_e08c122a-dbb6-4d9a-952b-e6f5370553ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+Adjudicação PE 018/2022
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E99C0FCD34AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E99C0FCD34AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-pe-018-2022-currais-26742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Currais_Aviso_da_Adjudicacao_adjudicacao_pe_018_2022_d32e5184-9d8b-4a0c-97c9-7acf9ebe4f4f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDAF934158B54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDAF934158B54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28749/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_306fab36-0eb0-4ff4-8991-862b0ad07267.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7DD88CFCE554
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7DD88CFCE554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28750/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_19224b88-d88d-4232-a8f9-95b7f3fb853d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A7BBC75648024
+<br/><br/>
+<a class="fileDoc" data-file-hash="A7BBC75648024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28751/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_323455f0-ae44-41b2-9f36-d82e7d3b26c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BE3A65E7CE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BE3A65E7CE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28752/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_bd54304d-b2aa-44ad-9e0b-354532927b6a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B6C8F3D89AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B6C8F3D89AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28753/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_5f5a61c9-f3c3-494d-ae51-13c457c254f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>02EC2C47D8CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="02EC2C47D8CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28754/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_ac023d92-6761-42a0-be2a-f8bb349f95ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D16AF8881B1E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D16AF8881B1E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28755/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_1ceebc74-5727-4773-bbbc-52e19b29c4b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F65836ACF2844
+<br/><br/>
+<a class="fileDoc" data-file-hash="F65836ACF2844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28756/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_47af49b6-fce5-4ac7-9615-0d21493eb415.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>229592C374304
+<br/><br/>
+<a class="fileDoc" data-file-hash="229592C374304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28757/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_f8b9bd01-370a-4b58-82d4-fd720c0db8e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4574E5952CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4574E5952CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28758/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_1974dcdb-a5a1-48c6-9c1a-d83f06255854.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC6BB8B1D8E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC6BB8B1D8E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28759/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_0e18e825-7386-489a-928e-577b42312db3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>13D99E90B6724
+<br/><br/>
+<a class="fileDoc" data-file-hash="13D99E90B6724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28760/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_81db1823-09f6-4187-b7db-5d794ed26382.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=446&amp;q[flag_doc_diario_true]=1">
+312
+</a>
+-
+2022
+</td>
+<td class="">
+lei de responsabilidade fiscal 1° bimestre /
+</td>
+<td class="text-center">
+09-09-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A52CAECCC4FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A52CAECCC4FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/28761/lei-de-responsabilidade-fiscal-1-bimestre-agricolandia-26735">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/9/8/DOP_EDICAO__9-9-2022_ED_312_Prefeitura_Agricolandia_Relatorios_de_gestao_fiscal_lei_de_responsabilidade_fiscal_1_bimestre_12090d5d-20da-426f-b5c5-1da7c361f3dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

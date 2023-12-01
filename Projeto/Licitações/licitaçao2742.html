@@ -1,0 +1,1539 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO TERCEIRO TERMO ADITIVO 117-2021-INFRA-IBERO-100
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>912C39251EAD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="912C39251EAD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-terceiro-termo-aditivo-117-2021-infra-ibero-100-floriano-18422">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Floriano_Extrato_extrato_do_terceiro_termo_aditivo_117_2021_infra_ibero_100_fae7b132-3537-4897-b333-c80f249aaa68.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO SUPLEMENTAR N.017 2022
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C15F8A3868F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C15F8A3868F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementar-n-017-2022-angical-do-piaui-18425">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Angical_do_Piaui_Decretos_decreto_suplementar_n_017_2022_fd283afb-2191-4c93-97ee-c0682844841a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+DIS 22 – 2022 - PRESTAÇÃO DE SERVIÇOS DE SEGURANÇA DESARMADA DE APOIO E SUPORTE A EVENTOS CULTURAIS.
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>D44D05C6E5E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D44D05C6E5E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dis-22-2022-prestacao-de-servicos-de-seguranca-desarmada-de-apoio-e-suporte-a-eventos-culturais-francisco-macedo-18402">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Francisco_Macedo_Aviso_da_Dispensa_dis_22_2022_prestacao_de_servicos_de_seguranca_desarmada_de_apoio_e_suporte_a_eventos_culturais_8e194483-227a-4843-bc8b-ccf3f82e715b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6AFBB848C8414
+<br/><br/>
+<a class="fileDoc" data-file-hash="6AFBB848C8414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19542/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_3868ee7d-47c3-4f5b-8a7a-d14ac0b464f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C619AE7FA6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C619AE7FA6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19543/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_159b4535-ff82-4287-85e1-ab1c4355c937.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>46FCCEC31E8A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="46FCCEC31E8A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19544/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_22741c55-f0c9-4bb9-9976-efbebb16efa8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA969D65DAA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA969D65DAA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19545/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_0293ec4f-5bca-4893-bed1-d4d5d793c3b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>759E3030B7054
+<br/><br/>
+<a class="fileDoc" data-file-hash="759E3030B7054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19546/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_dad38f6f-9cf0-4901-b125-6a0b0db09978.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A251495537674
+<br/><br/>
+<a class="fileDoc" data-file-hash="A251495537674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19547/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_1d0a8b9d-ca11-4f6f-9d82-7e7b51d55fa0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C577BB61C54C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C577BB61C54C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19548/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_47d6a4b4-e087-47d8-afa7-f2ee7b6a72cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>69564DF73F9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="69564DF73F9B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19549/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_7bb60ae8-adf3-4bfb-be6f-a6ba2df7509a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F53B825B80144
+<br/><br/>
+<a class="fileDoc" data-file-hash="F53B825B80144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19550/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_5aad5249-c83c-4576-a50f-846fe92a8a0c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6BEDFEC2FFA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6BEDFEC2FFA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19551/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_db02b97b-e534-4289-a080-b8ba34bba110.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4687BE7C7D824
+<br/><br/>
+<a class="fileDoc" data-file-hash="4687BE7C7D824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19552/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_1a10cfd5-3184-4d17-bba4-229cec43665d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>98AE56B522364
+<br/><br/>
+<a class="fileDoc" data-file-hash="98AE56B522364" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19553/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_791afdf8-5744-4a51-9721-34fbaadc6a75.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=355&amp;q[flag_doc_diario_true]=1">
+249
+</a>
+-
+2022
+</td>
+<td class="">
+RREO - 2° BIMESTRE /
+</td>
+<td class="text-center">
+10-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D00190C7B044
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D00190C7B044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/19554/rreo-2-bimestre-queimada-nova-18334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/9/DOP_EDICAO__10-6-2022_ED_249_Prefeitura_Queimada_Nova_Leis_Orcamentarias_rreo_2_bimestre_6f688d80-2511-4264-98be-f7febeb7f8fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 248
+</td>
+<td class="text-center dopcom">
+09-06-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="70A8AEDD18F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-248-piaui-18277/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_CADERNO_a____diario_oficial_completo_edicao_248_ef98f979-45fa-4227-862f-2ea9d0e3323c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+ATA RP 028/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>208E977B48EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="208E977B48EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-rp-028-2022-itaueira-18167">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Itaueira_Atas_ata_rp_028_2022_53668614-170c-427b-b9c4-c2bcf6ae182d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 12 DE 2022. NOMEAÇÃO ALIPS
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7782EE070F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7782EE070F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-12-de-2022-nomeacao-alips-pimenteiras-18271">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Pimenteiras_Portarias_portaria_12_de_2022_nomeacao_alips_4b511d5f-b258-4320-b884-0245b13255b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 004-2022 RECEB. MATERIAIS E SERVIÇOS
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9C30E935EC4F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9C30E935EC4F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-004-2022-receb-materiais-e-servicos-floriano-18270">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Portarias_portaria_n_004_2022_receb_materiais_e_servicos_ded806de-871b-4709-b489-a20b06e501e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE SRP 020-2022 - ITENS 3 e 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1048830D942D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1048830D942D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-srp-020-2022-itens-3-e-7-floriano-18259">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_srp_020_2022_itens_3_e_7_e8b73625-9e2e-4425-aff2-23cc355ff7fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 020-A-2022 - itens 3 e 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D8A03A4BA4B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="D8A03A4BA4B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-ata-registro-de-precos-pe-020-a-2022-itens-3-e-7-floriano-18256">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Extrato_extrato_parcial_ata_registro_de_precos_pe_020_a_2022_itens_3_e_7_676c2ac7-bb13-4b23-bd39-e53ee3c58241.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+PREGÃO ELETRÔNICO Nº. 004/2022 Processo Administrativo nº. 025/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1DD5E6783B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1DD5E6783B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-004-2022-processo-administrativo-n-025-2022-rio-grande-do-piaui-18088">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Aviso_de_licitacao_pregao_eletronico_n_004_2022_processo_administrativo_n_025_2022_37b1dd0e-c050-46b9-9911-d976a54dd456.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+CONTRATO Nº. 029/2022 PROCESSO ADMINISTRATIVO N°. 028/2022 DISPENSA DE LICITAÇÃO Nº 013/2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>291027077B9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="291027077B9B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-029-2022-processo-administrativo-n-028-2022-dispensa-de-licitacao-n-013-2022-rio-grande-do-piaui-18104">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Rio_Grande_do_Piaui_Extrato_contrato_n_029_2022_processo_administrativo_n_028_2022_dispensa_de_licitacao_n_013_2022_3a846088-8345-4eff-902e-173bdd0bf939.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 168-2022 SMS - GENERO - ITENS 3 E 7
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>982B04B4F1824
+<br/><br/>
+<a class="fileDoc" data-file-hash="982B04B4F1824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-168-2022-sms-genero-itens-3-e-7-floriano-18255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_168_2022_sms_genero_itens_3_e_7_8ed6e560-7a4d-41dd-919e-567d7042d6a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE CHAMADA PUBLICA 021-2022 - FORNECIMENTO DE HORTIFRUTI
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A2A5B7E6A634
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A2A5B7E6A634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-chamada-publica-021-2022-fornecimento-de-hortifruti-floriano-18254">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Aviso_de_licitacao_aviso_de_chamada_publica_021_2022_fornecimento_de_hortifruti_7cfbe6b2-5d43-41ee-ab5e-eea3e5385f83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ADIAMENTO DO PREGÃO PRESENCIAL NR 19-2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Aviso do Adiamento de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8925DF121C234
+<br/><br/>
+<a class="fileDoc" data-file-hash="8925DF121C234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-adiamento-do-pregao-presencial-nr-19-2022-sebastiao-barros-18269">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Sebastiao_Barros_Aviso_do_Adiamento_de_licitacao_aviso_de_adiamento_do_pregao_presencial_nr_19_2022_318a40a5-1bba-4132-9873-ae2283db9a51.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LICITANET - TERMO DE ADJUDICAÇÃO
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9C100AA93A44
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9C100AA93A44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-termo-de-adjudicacao-floriano-18246">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Outros_licitanet_termo_de_adjudicacao_e08c7273-a8c2-45d7-b914-165c575d6aca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+LICITANET - Ata de Realização do Pregão Eletrônico
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>40AA810F96454
+<br/><br/>
+<a class="fileDoc" data-file-hash="40AA810F96454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-ata-de-realizacao-do-pregao-eletronico-floriano-18245">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Atas_licitanet_ata_de_realizacao_do_pregao_eletronico_7d36ed43-e4df-4c02-b958-295b408bffc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PARCIAL ATA REGISTRO DE PREÇOS PE 042-2022
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3F2807D3E424
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3F2807D3E424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-ata-registro-de-precos-pe-042-2022-floriano-18244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Floriano_Extrato_extrato_parcial_ata_registro_de_precos_pe_042_2022_9b0d179a-d87e-43d8-a2ff-fb29d15f7f11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 081.2022, PE nº 010.2022.
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C8C1FCA8D1A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C8C1FCA8D1A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-081-2022-pe-n-010-2022-barra-d-alcantara-18264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Barra_DAlcantara_Aviso_da_Adjudicacao_contrato_administrativo_n_081_2022_pe_n_010_2022_5181e770-f1ba-4115-a2b1-07225ec6e840.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 081.2022, PE nº 010.2022.
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F5F94C906EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F5F94C906EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-081-2022-pe-n-010-2022-barra-d-alcantara-18263">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Barra_DAlcantara_Aviso_da_Homologacao_contrato_administrativo_n_081_2022_pe_n_010_2022_dc5460ac-e3ab-405a-b18d-30e993c71660.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=354&amp;q[flag_doc_diario_true]=1">
+248
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato Administrativo nº 081.2022, PE nº 010.2022.
+</td>
+<td class="text-center">
+09-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9A495750557D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9A495750557D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-administrativo-n-081-2022-pe-n-010-2022-barra-d-alcantara-18262">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/8/DOP_EDICAO__9-6-2022_ED_248_Prefeitura_Barra_DAlcantara_Aviso_do_extrato_de_contrato_extrato_de_contrato_administrativo_n_081_2022_pe_n_010_2022_4a550852-7f2a-4a1b-bdc4-faae70cdc38d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

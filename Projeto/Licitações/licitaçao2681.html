@@ -1,0 +1,1529 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+Regimento Interno do CMDU
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Atas e deliberações dos conselhos municipais
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E67D25989524
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E67D25989524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/regimento-interno-do-cmdu-nossa-senhora-de-nazare-19661">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Nossa_Senhora_de_Nazare_Atas_e_deliberacoes_dos_conselhos_municipais_regimento_interno_do_cmdu_b68f1f43-483a-4cd7-b1e5-14da7151c2df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+Plano de Gerenciamento de Resíduos Sólidos da Saúde
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Planos
+</td>
+<td class="text-center">
+<strong>ID: </strong>51E825939B8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="51E825939B8D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/plano-de-gerenciamento-de-residuos-solidos-da-saude-nossa-senhora-de-nazare-19662">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Nossa_Senhora_de_Nazare_Planos_plano_de_gerenciamento_de_residuos_solidos_da_saude_e5e32869-c0a6-4b31-a39c-0c4bf7334d4c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N 045
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7AB67A173EF24
+<br/><br/>
+<a class="fileDoc" data-file-hash="7AB67A173EF24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-045-conceicao-do-caninde-19689">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Conceicao_do_Caninde_Portarias_portaria_n_045_76eb4c6b-32da-4b7d-9b09-435c62c4ae35.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF3CBEB6ED5F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF3CBEB6ED5F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21036/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_31d47d00-81b0-4dd7-8f98-49290212397d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E5C009081834
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E5C009081834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21037/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_8a050728-20cc-4b61-966f-fb1e826b3888.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2258AD4A5B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2258AD4A5B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21038/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_a07836e8-722a-4808-8897-b6ee8d14b434.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>655C853529994
+<br/><br/>
+<a class="fileDoc" data-file-hash="655C853529994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21039/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_469510af-072c-454b-9e8e-bc34eaeddbcc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FC877DDCDB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FC877DDCDB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21040/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_f65e087f-b2e6-44da-ab60-4fc21b02595b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+1Q - RGF 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1AF0FA4C1E534
+<br/><br/>
+<a class="fileDoc" data-file-hash="1AF0FA4C1E534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21041/1q-rgf-2022-bocaina-19678">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_de_gestao_fiscal_1q_rgf_2022_66aea80e-58d3-48d2-89fa-369c40057d63.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 030/2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A245A43C72F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A245A43C72F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-030-2022-colonia-do-piaui-19696">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Colonia_do_Piaui_Aviso_do_extrato_de_contrato_extrato_do_contrato_030_2022_f849adaa-2d7c-4dd6-97fe-4b9ef4843a23.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+ADJUDICAÇÃO DIS 23 – 2022 - (CONVÊNIO N° 9194902021 - CODEVASF).
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C711B6289D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C711B6289D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-dis-23-2022-convenio-n-9194902021-codevasf-francisco-macedo-19679">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Francisco_Macedo_Aviso_da_Adjudicacao_adjudicacao_dis_23_2022_convenio_n_9194902021_codevasf_f9b08a6c-fb03-448f-a00e-0d0cde792b52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 029/2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E76690DD04004
+<br/><br/>
+<a class="fileDoc" data-file-hash="E76690DD04004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-029-2022-colonia-do-piaui-19695">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Colonia_do_Piaui_Aviso_do_extrato_de_contrato_extrato_do_contrato_029_2022_082c5b48-8fe9-448e-98f2-9660870cd1cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 028/2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>263A337FB3B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="263A337FB3B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-028-2022-colonia-do-piaui-19694">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Colonia_do_Piaui_Aviso_do_extrato_de_contrato_extrato_do_contrato_028_2022_f1cd862d-9d16-45ec-953e-a5174cb735dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO 027/2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A543C3A86D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A543C3A86D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-027-2022-colonia-do-piaui-19693">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Colonia_do_Piaui_Aviso_do_extrato_de_contrato_extrato_do_contrato_027_2022_f5074154-9fd1-49cc-ba87-39a29776897f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+ERRATA DECRETO 009-2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7A4B4D7F76E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7A4B4D7F76E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-decreto-009-2022-currais-19682">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Currais_Errata_errata_decreto_009_2022_992b9b74-43ef-46df-a257-6e7b97a71ed1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE PREGÃO ELETRÔNICO Nº 017/2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C934CA67BADC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C934CA67BADC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-pregao-eletronico-n-017-2022-demerval-lobao-19664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Demerval_Lobao_Aviso_de_licitacao_aviso_de_pregao_eletronico_n_017_2022_deea6751-7917-43d9-9394-e5febeb26388.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EC DPL 016 - Livros
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB07B41C68924
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB07B41C68924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-dpl-016-livros-agricolandia-19669">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Agricolandia_Aviso_do_Contrato_ec_dpl_016_livros_70c09dbf-0d78-4e61-af44-b1da70da639d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+portaria n° 053
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F569BC43FE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F569BC43FE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-053-agricolandia-19667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Agricolandia_Portarias_portaria_n_053_b4d5f1b4-ba07-4eeb-bab4-b75d2c2220eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>85E9D43529724
+<br/><br/>
+<a class="fileDoc" data-file-hash="85E9D43529724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21024/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_9ee86602-d131-4aca-9aa5-cf265a4de854.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>90756F6AF2FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="90756F6AF2FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21025/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_cfb5a4f5-5c5a-4d70-b816-d8aba25e6833.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>771696A7F30D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="771696A7F30D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21026/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_6b9401fd-6672-4cc4-a8b1-bfa9f6dfb2b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C755858DD1274
+<br/><br/>
+<a class="fileDoc" data-file-hash="C755858DD1274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21027/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_9c074313-9c9c-490e-9695-449d39ff44de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5331BA107B2E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5331BA107B2E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21028/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_760d30fa-576d-434f-805e-ecadc07ae036.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>93CE1761A2F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="93CE1761A2F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21029/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_3f94cc22-fd8b-4943-b45d-7c11e5a8972f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B42AA7A01FA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B42AA7A01FA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21030/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_8f5cb213-6633-4745-8143-37c28df92e94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>147AD7C6B2FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="147AD7C6B2FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21031/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_bb58585d-1d1a-412a-af13-2f54b99d39ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0054CBAEC0C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0054CBAEC0C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21032/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_eab9f34b-0c74-4f80-b174-35fc68028543.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A92A823AD3FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A92A823AD3FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21033/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_571d0ca2-c8c0-4c84-b5ad-457c25c97b6f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87D092D7A7234
+<br/><br/>
+<a class="fileDoc" data-file-hash="87D092D7A7234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21034/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_ff98f24e-3445-4e97-8cc7-bb37c6fa5fb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+2º BI - RREO 2022 /
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F10F52974CFB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F10F52974CFB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/21035/2-bi-rreo-2022-bocaina-19677">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Bocaina_Relatorios_resumidos_da_execucao_orcamentaria_2_bi_rreo_2022_111d0444-8e1a-43a5-9a40-c5794a885460.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO NR 42-2022 REF AO RPEGÃO NR 18-2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E166C4008FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E166C4008FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-nr-42-2022-ref-ao-rpegao-nr-18-2022-sebastiao-barros-19820">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Sebastiao_Barros_Aviso_do_extrato_de_contrato_extrato_do_contrato_nr_42_2022_ref_ao_rpegao_nr_18_2022_ff0e892a-fa2f-4c23-9e35-27f84924eb00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=369&amp;q[flag_doc_diario_true]=1">
+258
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DA ATA DE REGISTRO DE PREÇOS REF AO RPEGÃO NR 18-2022
+</td>
+<td class="text-center">
+24-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Aviso do Registro de preço
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD73E01305DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD73E01305DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-da-ata-de-registro-de-precos-ref-ao-rpegao-nr-18-2022-sebastiao-barros-19817">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/23/DOP_EDICAO__24-6-2022_ED_258_Prefeitura_Sebastiao_Barros_Aviso_do_Registro_de_preco_extrato_da_ata_de_registro_de_precos_ref_ao_rpegao_nr_18_2022_03d97d80-aa24-4831-85c1-6edf1c962ee5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

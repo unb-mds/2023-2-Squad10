@@ -1,0 +1,1226 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 83
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>26265C0596654
+<br/><br/>
+<a class="fileDoc" data-file-hash="26265C0596654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-83-sao-felix-do-piaui-64002">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_extrato_de_contrato_extrato_83_ec3e9f5e-85d2-41b7-a15f-b2e9b674ed57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 82
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3D3B83B489F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3D3B83B489F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-82-sao-felix-do-piaui-64000">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_extrato_de_contrato_extrato_82_ae4e0d00-1311-447d-ae6d-bf1b1549aaf8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 81
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF01A20DF6D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF01A20DF6D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-81-sao-felix-do-piaui-63998">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Sao_Felix_do_Piaui_Aviso_do_extrato_de_contrato_extrato_81_0682cc57-a035-45c2-8579-6d40dfe282b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO ADITIVO N. 01 AO EDITAL N. 01-2023
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>73CCD45945294
+<br/><br/>
+<a class="fileDoc" data-file-hash="73CCD45945294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-n-01-ao-edital-n-01-2023-barra-d-alcantara-64065">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Barra_DAlcantara_Aviso_do_Termo_Aditivo_termo_aditivo_n_01_ao_edital_n_01_2023_b0515671-c117-4c11-855f-15d0b25560a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO RATIFICAÇÃO INEXIGIBILIDADE DE LICITAÇÃO 005-2023 IMPLANTAÇÃO SST CEL
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coronel José Dias
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>606EECFD25E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="606EECFD25E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-inexigibilidade-de-licitacao-005-2023-implantacao-sst-cel-coronel-jose-dias-64068">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Camara_Coronel_Jose_Dias_Aviso_de_Ratificacao_extrato_ratificacao_inexigibilidade_de_licitacao_005_2023_implantacao_sst_ce_b243fa39-64b4-4c0e-9421-b007a1ec133e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N. 045-2023
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5983D4777F464
+<br/><br/>
+<a class="fileDoc" data-file-hash="5983D4777F464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-045-2023-barra-d-alcantara-64060">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Barra_DAlcantara_Portarias_portaria_n_045_2023_7a772475-f3b4-4491-83c7-29223162916f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+PLAO DE PREVENÇÃO COM FLORESTAS
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Planos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B17C8F654DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B17C8F654DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/plao-de-prevencao-com-florestas-barra-d-alcantara-64059">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Barra_DAlcantara_Planos_plao_de_prevencao_com_florestas_242d4442-52dd-401a-9d56-2c45d9869e1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato contrato 016-2023 locação
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5929BAABF5714
+<br/><br/>
+<a class="fileDoc" data-file-hash="5929BAABF5714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-016-2023-locacao-curral-novo-do-piaui-64067">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Curral_Novo_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_016_2023_locacao_83f43c03-f948-4e82-9d51-682755feabce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Polyana Erika
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C2096541CC44
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C2096541CC44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-polyana-erika-demerval-lobao-64056">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Demerval_Lobao_Portarias_portaria_polyana_erika_78b06cd8-a509-4f2d-b8f3-2a49c3730df0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO PARCIAL DA ATA DE REGISTRO DE PREÇOS PE 09/2023
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D5C9E18B6A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D5C9E18B6A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-parcial-da-ata-de-registro-de-precos-pe-09-2023-amarante-63969">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Amarante_Extrato_extrato_parcial_da_ata_de_registro_de_precos_pe_09_2023_beef6a7b-9cdf-4268-b50e-3e850e9647b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A6BE94D5ED74
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A6BE94D5ED74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68654/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_5f81b852-4da0-40d5-b466-2534a9f4af5b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CEF18C56CC74
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CEF18C56CC74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68655/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_3d27afd3-14bf-4913-8bd2-e26e7810e3c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA2B6F24C2DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA2B6F24C2DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68656/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_8f0669b7-7657-49fa-bf6f-e66ea19cf490.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>097AA959E60C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="097AA959E60C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68657/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_9014e230-f1e9-4e7a-938e-f35386fa6a08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4EC3BD0B235F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4EC3BD0B235F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68658/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_5f401c84-4229-44a4-be01-b8072788dfa7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04CEF2E752254
+<br/><br/>
+<a class="fileDoc" data-file-hash="04CEF2E752254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68659/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_71ef6d3a-f3c1-43ec-ac10-0d8ddbda7b1f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>36B4BE50A9C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="36B4BE50A9C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68660/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_1917469d-29d7-4752-ae23-12f1213f1e4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB7DAC5167764
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB7DAC5167764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68661/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_88698a3f-7fed-426e-b4cd-8929d6a47e82.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F6490DEE82154
+<br/><br/>
+<a class="fileDoc" data-file-hash="F6490DEE82154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68662/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_e9dc9003-4007-4e1e-b469-6d1ef3a49810.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FADAE6F9DCF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FADAE6F9DCF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68663/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_217713f5-176c-4206-a656-e40f270598c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CC0E7DD6B12B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CC0E7DD6B12B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68664/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_be6af991-c1de-4f93-9cef-42c6e018c744.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E679EE19E0DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E679EE19E0DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68665/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_8cb419b6-b4df-43f5-8fd1-879337dbe081.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE DE 2023 /
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A57AFEF2A8014
+<br/><br/>
+<a class="fileDoc" data-file-hash="A57AFEF2A8014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/68666/rreo-2-bimestre-de-2023-hugo-napoleao-63953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Hugo_Napoleao_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_de_2023_271f1f94-aaa2-4e92-998e-ccfca0c7d291.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato contrato PE 009/2023 - DICOREL
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6B4681EEC8904
+<br/><br/>
+<a class="fileDoc" data-file-hash="6B4681EEC8904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-pe-009-2023-dicorel-buriti-dos-montes-63968">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_pe_009_2023_dicorel_e16c1949-5dc6-46db-8f38-4a9798d95caa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=722&amp;q[flag_doc_diario_true]=1">
+495
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução Conselho Municipal de Educação
+</td>
+<td class="text-center">
+12-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>584D096F040E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="584D096F040E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-conselho-municipal-de-educacao-sao-felix-do-piaui-63963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/9/DOP_EDICAO__12-6-2023_ED_495_Prefeitura_Sao_Felix_do_Piaui_Resolucoes_resolucao_conselho_municipal_de_educacao_1fb44d18-8e25-4f23-a481-746cfa0761a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

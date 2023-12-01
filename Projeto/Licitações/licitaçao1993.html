@@ -1,0 +1,1341 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EACCD2680F404
+<br/><br/>
+<a class="fileDoc" data-file-hash="EACCD2680F404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38753/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_9a5e779a-6ce7-46da-b62e-e4575a27eaba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>99111A5993F74
+<br/><br/>
+<a class="fileDoc" data-file-hash="99111A5993F74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38754/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_223bddf5-2f56-4a06-b676-d1f40f56d03f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>15C31534A4254
+<br/><br/>
+<a class="fileDoc" data-file-hash="15C31534A4254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38755/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_521adeb4-697e-4318-bdba-490d615d6a98.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BF37B7EE6034
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BF37B7EE6034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38756/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_0c9090fe-f550-4260-807f-08d576f92377.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1D90B5308F14
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1D90B5308F14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38757/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_1fb74ccb-afce-4daf-8958-1a7486ee0d43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>045E65E7C9374
+<br/><br/>
+<a class="fileDoc" data-file-hash="045E65E7C9374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38758/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_43993455-4d11-42e1-a3e2-8b39424e0d83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7C9EE6BDE044
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7C9EE6BDE044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38759/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_77c219f6-1560-4eb7-a518-dca7a74219e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A8D32C79DD694
+<br/><br/>
+<a class="fileDoc" data-file-hash="A8D32C79DD694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38760/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_ab50652f-3eb7-40eb-ae5a-3a95a3c9d352.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FFEAE31AC3704
+<br/><br/>
+<a class="fileDoc" data-file-hash="FFEAE31AC3704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38761/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_83604a85-2ff5-46fd-98a8-fe8ae620335f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA5BD394A3144
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA5BD394A3144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38762/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_2a823d97-78c4-4a3e-be9d-9ae17b811da0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C98A73EA73144
+<br/><br/>
+<a class="fileDoc" data-file-hash="C98A73EA73144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38763/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_cbba1130-e07d-4a8e-ab25-2cdc4d454889.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RREO OUTUBRO DE 2022 /
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB17466E71A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB17466E71A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38764/rreo-outubro-de-2022-luis-correia-35835">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Luis_Correia_Leis_Orcamentarias_rreo_outubro_de_2022_bed42a03-b416-4f3f-802f-1692eaf81a4d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria Nomeação - Educação
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BD94E0457C944
+<br/><br/>
+<a class="fileDoc" data-file-hash="BD94E0457C944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-nomeacao-educacao-sao-pedro-do-piaui-35783">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_nomeacao_educacao_97353880-d99c-4e0e-b2c7-039483ecbb0c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+RESULTADO PRELIMINAR DA SELEÇÃO PARA DIRETORES ESCOLARES
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F32ED004A0CC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F32ED004A0CC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resultado-preliminar-da-selecao-para-diretores-escolares-buriti-dos-montes-35774">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Buriti_dos_Montes_Atos_resultado_preliminar_da_selecao_para_diretores_escolares_9283c0f7-0a93-4e9c-842a-f516fbf5c108.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIAS EXONERAÇÃO
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>369D4E7367604
+<br/><br/>
+<a class="fileDoc" data-file-hash="369D4E7367604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias-exoneracao-monsenhor-gil-35632">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Camara_Monsenhor_Gil_Portarias_portarias_exoneracao_0e092952-0724-48c7-a8f9-ed5f01dd8c46.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+LEI Nº 845-2022
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>C5B1317B45FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C5B1317B45FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-845-2022-landri-sales-35812">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Landri_Sales_Leis_lei_n_845_2022_40133acc-72b8-47cc-9a48-380cfd3974b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+Aditivo de Extrato de Agnaldo Alexandre da Silva- ME (Buffet)
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>B03DC2906DFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B03DC2906DFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-de-extrato-de-agnaldo-alexandre-da-silva-me-buffet-jose-de-freitas-35819">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Camara_Jose_de_Freitas_Aviso_do_Termo_Aditivo_aditivo_de_extrato_de_agnaldo_alexandre_da_silva_me_buffet_1ae0b486-9af5-4535-b6e7-1c9f9bf6bd61.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO ADITIVO INEXIGIBILIDADE 002 - 2021
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>14309B8D38FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="14309B8D38FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-inexigibilidade-002-2021-angical-do-piaui-35849">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Angical_do_Piaui_Aviso_do_Termo_Aditivo_termo_aditivo_inexigibilidade_002_2021_66178335-3d9a-474f-99e8-d5904876dba0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do 1º termo aditivo PP 010/2022
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F948DB827814
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F948DB827814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-1-termo-aditivo-pp-010-2022-bocaina-35809">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Bocaina_Aviso_do_Termo_Aditivo_extrato_do_1_termo_aditivo_pp_010_2022_db8de7b0-4689-4603-891f-0778f7bd018d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+LEI Nº 945-2022 - PPA 2023
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Leis
+<br/><br/>
+<strong>PPA - PLANO PLURIANUAL</strong>
+<br/><br/>
+2022 - 2025
+</td>
+<td class="text-center">
+<strong>ID: </strong>AECEB16796454
+<br/><br/>
+<a class="fileDoc" data-file-hash="AECEB16796454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-945-2022-ppa-2023-conceicao-do-caninde-35841">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Conceicao_do_Caninde_Leis_lei_n_945_2022_ppa_2023_d8829bae-280d-427e-9820-170fce0a035a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+PP 040/2021 – Extrato 3º Termo Aditivo
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD9FCB28B4EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD9FCB28B4EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pp-040-2021-extrato-3-termo-aditivo-pio-ix-35848">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Pio_IX_Aviso_do_Termo_Aditivo_pp_040_2021_extrato_3_termo_aditivo_60992524-6e26-4d14-85b3-921740fd2997.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do 2º termo aditivo PP 038/2022
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC6CE5CDDAA74
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC6CE5CDDAA74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-2-termo-aditivo-pp-038-2022-bocaina-35816">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Bocaina_Aviso_do_Termo_Aditivo_extrato_do_2_termo_aditivo_pp_038_2022_66b5feed-bf84-481b-b0fb-58e54fc60901.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N°21-2022-EXONERAÇÃO - SECRETÁRIO COMISSIONADO
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D83C7862D2E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D83C7862D2E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-21-2022-exoneracao-secretario-comissionado-angical-do-piaui-35767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Camara_Angical_do_Piaui_Portarias_portaria_n_21_2022_exoneracao_secretario_comissionado_bebe83de-9a28-4fd5-ac82-2e2052b46445.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N°19-2022-EXONERAÇÃO - TESOUREIRA COMISSIONADA DA RESP DE CONTRATAÇOES
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>253C3CE9FA694
+<br/><br/>
+<a class="fileDoc" data-file-hash="253C3CE9FA694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-19-2022-exoneracao-tesoureira-comissionada-da-resp-de-contratacoes-angical-do-piaui-35765">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Camara_Angical_do_Piaui_Portarias_portaria_n_19_2022_exoneracao_tesoureira_comissionada_da_resp_de_contratacoes_0a380004-556e-4e64-aac8-e0240d07c416.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+PE 002/2022 – Extrato 1º Termo Aditivo
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>49D8CDC77E374
+<br/><br/>
+<a class="fileDoc" data-file-hash="49D8CDC77E374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-002-2022-extrato-1-termo-aditivo-pio-ix-35853">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Pio_IX_Aviso_do_Termo_Aditivo_pe_002_2022_extrato_1_termo_aditivo_dab28749-771b-4d67-9468-314276271b8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO QUARTO ADITIVO MANUTENÇÃO DE AR CONDICIONADO
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Batalha
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>73EC223ED2D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="73EC223ED2D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-quarto-aditivo-manutencao-de-ar-condicionado-batalha-35827">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Camara_Batalha_Extrato_extrato_quarto_aditivo_manutencao_de_ar_condicionado_4bc3dc83-79e2-45d1-b5a8-23e711168542.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO SUPLEMENTAÇÃO 80/2022
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0BD955EFBAB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0BD955EFBAB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementacao-80-2022-sao-pedro-do-piaui-35760">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Sao_Pedro_do_Piaui_Decretos_decreto_suplementacao_80_2022_882b1b1f-8727-415e-8f7b-9e6f6109fcaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=558&amp;q[flag_doc_diario_true]=1">
+387
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto
+</td>
+<td class="text-center">
+30-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>11FB7EF72A204
+<br/><br/>
+<a class="fileDoc" data-file-hash="11FB7EF72A204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-sebastiao-barros-35791">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__30-12-2022_ED_387_Prefeitura_Sebastiao_Barros_Atos_decreto_8e6a74e0-8366-48c4-805b-1a0736a1567c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

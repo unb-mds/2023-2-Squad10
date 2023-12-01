@@ -1,0 +1,1226 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato 1° TERMO ADITIVO - quantidade 25% - Ello Distribuidora
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>477C8DA5B6AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="477C8DA5B6AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-1-termo-aditivo-quantidade-25-ello-distribuidora-sigefredo-pacheco-3776">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Sigefredo_Pacheco_Extrato_extrato_1_termo_aditivo_quantidade_25_ello_distribuidora_e6cdbc46-82a5-4172-b527-db9adb9daa41.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F9648F2D687D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F9648F2D687D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4057/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_125b2a0c-00d9-4a1f-b6a4-6cad619fd0e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C810F20E4BE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C810F20E4BE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4058/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_2c01d3cb-eb72-45ac-8b80-211699eda1c6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E4DD51ED1E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E4DD51ED1E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4059/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_b4dd0c46-f57b-44d9-b251-cf5d581185a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F552EEA12A664
+<br/><br/>
+<a class="fileDoc" data-file-hash="F552EEA12A664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4060/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_ab8c258d-a130-4842-9121-aef9fd2b5ef1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDCC51BFA7F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDCC51BFA7F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4061/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_071181ff-a0d8-4f0e-a549-afada39ffebd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F0FCB669A774
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F0FCB669A774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4062/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_fdaca305-6609-4beb-8252-61c85aebaf2b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4F56B6337EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4F56B6337EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4063/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_242651f6-a44f-4218-b1de-5f58286673ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A99DFEB16DC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A99DFEB16DC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4064/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_53363cde-f347-45bc-947a-73a8e2d61567.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E40FBF06247E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E40FBF06247E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4065/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_1379fe58-10eb-4134-adb9-12af630dea77.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B33B10EAC634
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B33B10EAC634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4066/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_edc2e774-579b-4798-a83d-34530ef3eddc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E97A8FFDACC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E97A8FFDACC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4067/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_94c319de-e89d-4c68-aeab-b9c1e9353af3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F4E9C78FEBB04
+<br/><br/>
+<a class="fileDoc" data-file-hash="F4E9C78FEBB04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4068/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_77f2217d-e1b3-46b8-bdf1-15c9ea344853.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D6BEB6DF7F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D6BEB6DF7F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/4069/1-balanco-orcamentario-beneditinos-3775">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_9a0b0991-c801-4571-8277-e97e34a90e31.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+tp 020 final
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso de julgamento e habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>77EE63FD36CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="77EE63FD36CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-020-final-buriti-dos-lopes-3740">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Buriti_dos_Lopes_Aviso_de_julgamento_e_habilitacao_de_licitantes_tp_020_final_c22e0662-40f3-4acf-92b3-22a8199ad030.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+Decreto n 44 - Cancelamento de Restos a Pagar
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2E2B88FE7D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2E2B88FE7D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-44-cancelamento-de-restos-a-pagar-passagem-franca-do-piaui-3774">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Passagem_Franca_do_Piaui_Decretos_decreto_n_44_cancelamento_de_restos_a_pagar_36ed3a3f-6b7f-4b6e-9ee4-5e66e299c762.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PORTARIA Nº 040/2021
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B6400A2150C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B6400A2150C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-040-2021-dom-expedito-lopes-3773">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Portarias_portaria_n_040_2021_fc048ba3-6d0c-4c0e-9eb1-dbc41f80c1fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER OUTUBRO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A9CF516FA0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A9CF516FA0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-outubro-2021-cmas-dom-expedito-lopes-3772">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_outubro_2021_cmas_404d56ea-b09c-44ff-aa0f-21d66ac7aafb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER SETEMBRO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1E33BF2AD924
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1E33BF2AD924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-setembro-2021-cmas-dom-expedito-lopes-3771">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_setembro_2021_cmas_d68447db-1f93-4791-b47a-5bac65262c0c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+decreto de credito especial
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4375BF23BF134
+<br/><br/>
+<a class="fileDoc" data-file-hash="4375BF23BF134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-credito-especial-beneditinos-3742">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Decretos_decreto_de_credito_especial_57cb6880-0590-40c4-ae04-5e9c1fdc466f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+decreto de suplementação outubro de 2021
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DC80CF249CC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="DC80CF249CC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-suplementacao-outubro-de-2021-beneditinos-3741">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Beneditinos_Decretos_decreto_de_suplementacao_outubro_de_2021_f9bd7450-41f8-459b-8919-409212e53c16.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER AGOSTO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB3FF52546DE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB3FF52546DE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-agosto-2021-cmas-dom-expedito-lopes-3770">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_agosto_2021_cmas_08ec15a4-8072-4bb4-8d34-30091b9bf991.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER JULHO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>39B0FBEBFA294
+<br/><br/>
+<a class="fileDoc" data-file-hash="39B0FBEBFA294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-julho-2021-cmas-dom-expedito-lopes-3769">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_julho_2021_cmas_03863f28-7952-408a-9efd-8a45448414fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER JUNHO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>515465D9DAAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="515465D9DAAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-junho-2021-cmas-dom-expedito-lopes-3768">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_junho_2021_cmas_994abc3c-5283-4053-aa16-8913d0d71b64.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=185&amp;q[flag_doc_diario_true]=1">
+130
+</a>
+-
+2021
+</td>
+<td class="">
+PARECER MAIO 2021 - CMAS
+</td>
+<td class="text-center">
+22-12-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>874EDDDCE3134
+<br/><br/>
+<a class="fileDoc" data-file-hash="874EDDDCE3134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-maio-2021-cmas-dom-expedito-lopes-3767">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/12/21/DOP_EDICAO__22-12-2021_130_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_parecer_maio_2021_cmas_2942e24a-de94-43e6-95f5-37fce5af20be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

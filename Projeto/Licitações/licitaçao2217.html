@@ -1,0 +1,1383 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0F2426F4FCD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0F2426F4FCD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-nossa-senhora-de-nazare-30479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Nossa_Senhora_de_Nazare_Decretos_decreto_39443f70-0431-421a-bcea-4710e9e919bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F40384011AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F40384011AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32953/relatorios-de-gestao-fiscal-sao-jose-do-piaui-30492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_b2f67d02-03fa-44de-809c-3a0eb479353c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B4CDC25927EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B4CDC25927EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32954/relatorios-de-gestao-fiscal-sao-jose-do-piaui-30492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_464fd5e0-709b-4965-945a-765bd2569680.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B11291D7636B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B11291D7636B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32955/relatorios-de-gestao-fiscal-sao-jose-do-piaui-30492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_78dc4270-7424-43f6-9d44-af7f14aaa435.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0781FBF60A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0781FBF60A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32956/relatorios-de-gestao-fiscal-sao-jose-do-piaui-30492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_f7901699-1709-4a0e-ab20-c744d35fb1f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>597A5809A3BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="597A5809A3BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32957/relatorios-de-gestao-fiscal-sao-jose-do-piaui-30492">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Sao_Jose_do_Piaui_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_1ea547c1-e869-4f35-ad4c-ca24a4c7b5ef.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E985362F4AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E985362F4AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-nossa-senhora-de-nazare-30477">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Nossa_Senhora_de_Nazare_Decretos_decreto_8212ff5e-58a1-4429-8de8-7ce47f4bf54f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>641A793A65D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="641A793A65D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-nossa-senhora-de-nazare-30478">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Nossa_Senhora_de_Nazare_Decretos_decreto_b0f6b5fc-36c5-458c-961e-caf9e0b27177.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 99.2022
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>454E6DDB386A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="454E6DDB386A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-99-2022-dom-expedito-lopes-30552">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Dom_Expedito_Lopes_Portarias_portaria_n_99_2022_b8bae182-802f-41a7-84a4-2f0a8e7bcdd6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+demonstrativo simplificado /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6FA4DE7E3654
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6FA4DE7E3654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32997/demonstrativo-simplificado-ribeira-do-piaui-30524">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Camara_Ribeira_do_Piaui_Relatorios_de_gestao_fiscal_demonstrativo_simplificado_4fad205a-0ce5-4cf4-a3a3-8f32f6f02673.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO DAS GARANTIAS E CONTRAGARANTIAS DE VALORES /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>45A9FDE2EA2E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="45A9FDE2EA2E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/33049/demonstrativo-das-garantias-e-contragarantias-de-valores-coivaras-30559">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_das_garantias_e_contragarantias_de_valores_65d10824-cf03-4399-bb3a-a64e1c3390a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+DISPONIBILIDADE CONTA CAIXA /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Ribeira do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F234DAD1D4C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="F234DAD1D4C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32998/disponibilidade-conta-caixa-ribeira-do-piaui-30525">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Camara_Ribeira_do_Piaui_Relatorios_de_gestao_fiscal_disponibilidade_conta_caixa_1b75a18e-3001-48fa-8484-a13372d03cf8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA/ADM N-°- 34/2022 ferias regulamentar
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>643B215464434
+<br/><br/>
+<a class="fileDoc" data-file-hash="643B215464434" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-adm-n-34-2022-ferias-regulamentar-landri-sales-30529">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Landri_Sales_Portarias_portaria_adm_n_34_2022_ferias_regulamentar_93dfc964-eb07-43dd-b092-665afa2f286c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=499&amp;q[flag_doc_diario_true]=1">
+347
+</a>
+-
+2022
+</td>
+<td class="">
+DEMONSTRATIVO SIMPLIFICADO DO RELATÓRIO DE GESTÃO FISCAL /
+</td>
+<td class="text-center">
+01-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DCB3BA5189A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DCB3BA5189A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32993/demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-coivaras-30520">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/31/DOP_EDICAO__1-11-2022_ED_347_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_demonstrativo_simplificado_do_relatorio_de_gestao_fiscal_04a853d2-46bf-45f8-a7c6-f8b61476fbe7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 346
+</td>
+<td class="text-center dopcom">
+31-10-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="83FF72BE90A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-346-piaui-30476/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_CADERNO_a____diario_oficial_completo_edicao_346_912277bf-8efa-4e95-980d-fa3a89e953d5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+045_2022
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA7728F3F7A94
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA7728F3F7A94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/045_2022-bocaina-30373">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Bocaina_Decretos_045_2022_42bfad61-34df-4a09-a32e-85d257852c95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 25 , DE 01 DE AGOSTO DE 2022 - LEI N.246
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A200DC5309E34
+<br/><br/>
+<a class="fileDoc" data-file-hash="A200DC5309E34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-25-de-01-de-agosto-de-2022-lei-n-246-beneditinos-30370">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Beneditinos_Decretos_decreto_n_25_de_01_de_agosto_de_2022_lei_n_246_6534dce9-1e62-44a9-8b1c-65aa804c4ea3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Ata Parcial PE SRP n. 25.2022 corrigido
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABF49F3E4FDD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABF49F3E4FDD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ata-parcial-pe-srp-n-25-2022-corrigido-coivaras-30369">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Coivaras_Extrato_extrato_ata_parcial_pe_srp_n_25_2022_corrigido_27ef0eb0-4132-45d4-b6bd-6ece17c795da.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+Ata da Sessão Extraordinária realizada em 18/10/2022
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>5905799B31EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5905799B31EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-sessao-extraordinaria-realizada-em-18-10-2022-sao-raimundo-nonato-30374">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Camara_Sao_Raimundo_Nonato_Atas_ata_da_sessao_extraordinaria_realizada_em_18_10_2022_edb9b83e-c616-46f5-a5bd-11d916133ce4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+Termo Aditivo ao Contrato 02/2022
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>F240EEB77FD04
+<br/><br/>
+<a class="fileDoc" data-file-hash="F240EEB77FD04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-ao-contrato-02-2022-dom-expedito-lopes-30368">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Dom_Expedito_Lopes_Aviso_do_Termo_Aditivo_termo_aditivo_ao_contrato_02_2022_23423ca4-60a7-43e9-ad51-53e440c5a8e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+HOMOLOGAÇÃO TP003
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>229D25C259714
+<br/><br/>
+<a class="fileDoc" data-file-hash="229D25C259714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-tp003-itaueira-30386">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Itaueira_Aviso_da_Homologacao_homologacao_tp003_94652ded-9b1c-493c-9c4a-72d72671867e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+BALANCO ORCAMENTARIO /
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>40F335F2FF1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="40F335F2FF1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32762/balanco-orcamentario-santa-cruz-dos-milagres-30388">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_d11accf8-d068-4583-a0d2-b8ad0d1bcff2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+04. REC. DESP. PREV /
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2056CDA4EA024
+<br/><br/>
+<a class="fileDoc" data-file-hash="2056CDA4EA024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32765/04-rec-desp-prev-santa-cruz-dos-milagres-30391">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_resumidos_da_execucao_orcamentaria_04_rec_desp_prev_8a42f23a-1e3a-4226-b291-89574c739399.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação TP 08.2022 Coivaras
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB7A3D6AA34C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB7A3D6AA34C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-tp-08-2022-coivaras-coivaras-30381">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Coivaras_Aviso_da_Homologacao_homologacao_tp_08_2022_coivaras_5cfaa7a3-bcdf-43bf-b40b-7e8979108660.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+REL. RESUMIDO /
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F399E223E724
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F399E223E724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32776/rel-resumido-santa-cruz-dos-milagres-30402">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_resumidos_da_execucao_orcamentaria_rel_resumido_a6a6f1ed-0fa6-4025-bd90-fe9333ba6a7e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO - TP 016/2022
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C545AC73688F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C545AC73688F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-tp-016-2022-buriti-dos-lopes-30408">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_extrato_de_contrato_tp_016_2022_42e7d9f0-4cd6-46f1-ba6a-fa18ed6b6691.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato TP 08-20212 - Coivaras
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E40898E3B1B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="E40898E3B1B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-tp-08-20212-coivaras-coivaras-30383">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Coivaras_Aviso_do_extrato_de_contrato_extrato_de_contrato_tp_08_20212_coivaras_47c1f9f8-b89c-4427-9a62-e63bb806c875.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+5 ADITIVO RDC
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE14BB1E613C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE14BB1E613C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/5-aditivo-rdc-buriti-dos-lopes-30384">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Buriti_dos_Lopes_Aviso_do_Termo_Aditivo_5_aditivo_rdc_0b20c976-70fd-4a82-a1f9-fe1ec18eb4d9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=498&amp;q[flag_doc_diario_true]=1">
+346
+</a>
+-
+2022
+</td>
+<td class="">
+05. PRIMARIO E NOMINAL /
+</td>
+<td class="text-center">
+31-10-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04357DC15DB84
+<br/><br/>
+<a class="fileDoc" data-file-hash="04357DC15DB84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/32767/05-primario-e-nominal-santa-cruz-dos-milagres-30393">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/10/28/DOP_EDICAO__31-10-2022_ED_346_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_resumidos_da_execucao_orcamentaria_05_primario_e_nominal_7e61c04c-a697-48ad-b3c4-2816b4dfd84b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

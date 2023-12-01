@@ -1,0 +1,1262 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EEC60B4C08B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="EEC60B4C08B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18664/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_879f6e96-d823-4b75-a948-d2cabdc3b84e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D9C88437F224
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D9C88437F224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18665/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_e132b82c-bc77-4c05-b306-0e2b2f0b7be2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB8514260A234
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB8514260A234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18666/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_1b22d096-db16-437e-b665-6563672dc6a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A1C4F11463A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A1C4F11463A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18667/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_351ecafd-3c27-4219-b944-cfa9846f4e7d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A91C202018F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="A91C202018F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18668/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_e892c619-d09e-450f-9173-c130cb0c91fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>69F0DC4851C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="69F0DC4851C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18669/despesa-com-pessoal-itaueira-17608">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_de_gestao_fiscal_despesa_com_pessoal_53abf254-de2e-46eb-9f15-9b0fb6ff4380.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO COOP LC - TEESINA - AR COND
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B5D8C01A06A64
+<br/><br/>
+<a class="fileDoc" data-file-hash="B5D8C01A06A64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-coop-lc-teesina-ar-cond-luis-correia-17607">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Luis_Correia_Aviso_de_licitacao_termo_coop_lc_teesina_ar_cond_2016e662-feca-48b3-bebe-4928c0a5210d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 10-2022
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>2C28D9EA9AF14
+<br/><br/>
+<a class="fileDoc" data-file-hash="2C28D9EA9AF14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-10-2022-queimada-nova-17619">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Queimada_Nova_Decretos_decreto_10_2022_2677e628-081d-4e69-b6b7-e6aa73d65ff3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7F6DDE6966744
+<br/><br/>
+<a class="fileDoc" data-file-hash="7F6DDE6966744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18670/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4ce1e55b-d0c3-4988-9c23-9046af9abcd5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2C9C8C40AB94
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2C9C8C40AB94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18671/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_02bfdb51-87e7-461f-8d49-b03ef0892c3a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1869BF43A9D24
+<br/><br/>
+<a class="fileDoc" data-file-hash="1869BF43A9D24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18672/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_17dc762c-03b4-43e6-b887-77c70bb0bc27.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42A8849042AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="42A8849042AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18673/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_a853456a-b387-4e1e-8cf6-86bf1b0a5c8a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>14C8B0A184274
+<br/><br/>
+<a class="fileDoc" data-file-hash="14C8B0A184274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18674/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_03965d80-b1d1-4456-97fc-b1b328b4effa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F53EEE18CD104
+<br/><br/>
+<a class="fileDoc" data-file-hash="F53EEE18CD104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18675/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_b585537e-6966-4dbf-af3f-ef194cad809a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FFB1A33B1924
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FFB1A33B1924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18676/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_7881779e-9ba8-42ba-b5ba-4f36f4f13fb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>43C8E6A49E834
+<br/><br/>
+<a class="fileDoc" data-file-hash="43C8E6A49E834" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18677/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1259635b-fb06-42fc-9cfc-18d5c1577c65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0B77934FC3E74
+<br/><br/>
+<a class="fileDoc" data-file-hash="0B77934FC3E74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18678/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_44420a1a-871e-485e-9e9d-38012e9909cf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1C0C833724C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1C0C833724C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18679/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_9abbaf0a-ddbd-4710-b230-3f8ef41f895c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D73424D5ECF94
+<br/><br/>
+<a class="fileDoc" data-file-hash="D73424D5ECF94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18680/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_b0965425-94d0-434a-9a9a-9d46a16a6e85.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>622485F49C5A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="622485F49C5A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18681/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_ecff9596-aac8-4f15-9be1-2a7fe80fd3c3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+RREO /
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A81BBF2BD5F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A81BBF2BD5F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/18682/rreo-itaueira-17609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Itaueira_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1dbb3402-4cc8-4bd3-8db6-320cafbeceed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+REPUBLICAÇÃO CONTRATO - ENG CIVIL - NATHANAEL DA SILVA LIMA
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C9AF4DCDDBA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C9AF4DCDDBA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/republicacao-contrato-eng-civil-nathanael-da-silva-lima-santa-rosa-do-piaui-17610">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Santa_Rosa_do_Piaui_Contratos_e_seus_aditivos_republicacao_contrato_eng_civil_nathanael_da_silva_lima_1178eec0-84d2-4615-8199-a70ab27e3fc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 85-2022
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E7B6873DAE3C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E7B6873DAE3C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-85-2022-queimada-nova-17633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Queimada_Nova_Portarias_portaria_85_2022_e7533819-c366-481e-b962-90bb7ff46e40.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 041-2022
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DF90B17106CF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DF90B17106CF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-041-2022-oeiras-17621">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Oeiras_Decretos_decreto_n_041_2022_c0607940-a879-4153-a297-0e9af7454190.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=348&amp;q[flag_doc_diario_true]=1">
+244
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato dispensa 021-22
+</td>
+<td class="text-center">
+03-06-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2548EBA94964
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2548EBA94964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dispensa-021-22-tanque-do-piaui-17611">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/6/2/DOP_EDICAO__3-6-2022_ED_244_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_dispensa_021_22_21badd62-6fce-4114-94bb-6accd97b091c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1295 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB6B3DC1C4964
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB6B3DC1C4964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2340/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_9a62439b-4c90-4c16-a0ab-3017233d425c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>626705D1843E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="626705D1843E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2341/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_0ade89e5-4e02-46cf-9b1d-b20e5f9f97fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>92CE4BEEF6204
+<br/><br/>
+<a class="fileDoc" data-file-hash="92CE4BEEF6204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2342/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_63d33ae1-64d5-44af-895d-3a3f85363913.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2CE2B7A637F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2CE2B7A637F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2343/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_d7969240-4270-41ba-b0f9-e480aa9aa8b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>89B847C8FC444
+<br/><br/>
+<a class="fileDoc" data-file-hash="89B847C8FC444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2344/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_38f5d518-140e-4b4c-bf3d-a29e03fc4e3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>69EAE1E91D7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="69EAE1E91D7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2345/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_a2faf333-5ba9-4e3d-9033-4106d86d18eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0EAE26B4D934
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0EAE26B4D934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2346/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_b67a13c4-490d-44b8-9f3f-cef07af57b6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2FA0E5A636414
+<br/><br/>
+<a class="fileDoc" data-file-hash="2FA0E5A636414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2347/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_f0b27e42-f4ff-4455-8465-c45ca3263a86.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E7E4EBD77C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E7E4EBD77C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2348/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_02fa0fb7-91ca-4c7d-9f82-05089b060040.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>51DA274CFB5C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="51DA274CFB5C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2349/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_4e850359-47b7-4c45-87d3-34abcc7e299d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E9D31BA5DA04
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E9D31BA5DA04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2350/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_9042b007-bc30-4cb4-ad76-58d68c76779a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatório Resumido de Execução Orçamentais /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A91FE93EEDB64
+<br/><br/>
+<a class="fileDoc" data-file-hash="A91FE93EEDB64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2351/relatorio-resumido-de-execucao-orcamentais-passagem-franca-do-piaui-2202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorio_resumido_de_execucao_orcamentais_f7c2de74-6c85-4d44-a062-768097ed93b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PE 027 - 2021
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D4057B83F1944
+<br/><br/>
+<a class="fileDoc" data-file-hash="D4057B83F1944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-027-2021-buriti-dos-montes-2201">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Buriti_dos_Montes_Aviso_de_licitacao_aviso_de_licitacao_pe_027_2021_90e526c0-2d50-4e43-96b1-8a2fc3509621.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatórios de gestão fiscal /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BABBE0D211704
+<br/><br/>
+<a class="fileDoc" data-file-hash="BABBE0D211704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2334/relatorios-de-gestao-fiscal-passagem-franca-do-piaui-2200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorios_de_gestao_fiscal_a55b330e-fe4e-4f45-8b48-3dc7b6dcc6a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatórios de gestão fiscal /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9093F94C045B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9093F94C045B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2335/relatorios-de-gestao-fiscal-passagem-franca-do-piaui-2200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorios_de_gestao_fiscal_d9df24d6-03bb-41fd-add1-6b24c82140b1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatórios de gestão fiscal /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>07ED89D0BE0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07ED89D0BE0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2336/relatorios-de-gestao-fiscal-passagem-franca-do-piaui-2200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorios_de_gestao_fiscal_2ce0357b-a87a-4b73-be12-212327fe4d94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatórios de gestão fiscal /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>477AB291B1F54
+<br/><br/>
+<a class="fileDoc" data-file-hash="477AB291B1F54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2337/relatorios-de-gestao-fiscal-passagem-franca-do-piaui-2200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorios_de_gestao_fiscal_66571204-fb53-4b28-82e4-086fc1ff17aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Relatórios de gestão fiscal /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>14B5EB52EB564
+<br/><br/>
+<a class="fileDoc" data-file-hash="14B5EB52EB564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2338/relatorios-de-gestao-fiscal-passagem-franca-do-piaui-2200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Demonstrativo_de_receitas_e_despesas_relatorios_de_gestao_fiscal_fd1cf155-5363-485f-ab1c-4459568852c1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PE 026 - 2021
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>2254F6127B744
+<br/><br/>
+<a class="fileDoc" data-file-hash="2254F6127B744" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-026-2021-buriti-dos-montes-2199">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Buriti_dos_Montes_Aviso_de_licitacao_aviso_de_licitacao_pe_026_2021_0cfd77eb-d850-49e3-bcf7-d0041623b12e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETO Nº 34
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1EDE2C635024
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1EDE2C635024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-34-passagem-franca-do-piaui-2198">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Decretos_decreto_n_34_9b050f10-b5e7-4488-a70b-f077f0888833.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+PREGÃO ELETRÔNICO Nº 033/2021
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB2DAE784E764
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB2DAE784E764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-033-2021-passagem-franca-do-piaui-2197">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Aviso_da_Adjudicacao_pregao_eletronico_n_033_2021_7b6e02d0-f3fb-45d5-bccd-3853a4102f72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+ATO HOMOLOGATÓRIO
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>3583F84108E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3583F84108E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-homologatorio-passagem-franca-do-piaui-2196">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Atos_ato_homologatorio_64e40551-12b0-423b-875a-1509ed76f616.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE CONTRATO
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7A151BE438B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="7A151BE438B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-passagem-franca-do-piaui-2195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Passagem_Franca_do_Piaui_Extrato_extrato_de_contrato_55c09378-4dbc-454e-896b-6a5afa67184e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Contrato Diário
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A507FF565E554
+<br/><br/>
+<a class="fileDoc" data-file-hash="A507FF565E554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-diario-landri-sales-2194">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Landri_Sales_Contratos_e_seus_aditivos_contrato_diario_1176e28b-b169-44d8-a9d2-894344de4cd0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+DESPESA COM PESSOAL ANEXO I /
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Lagoa Alegre
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>447C45CDA2E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="447C45CDA2E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/2327/despesa-com-pessoal-anexo-i-lagoa-alegre-2193">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Camara_Lagoa_Alegre_Relatorios_de_gestao_fiscal_despesa_com_pessoal_anexo_i_0069858b-cce0-4d17-818d-a5d179fa3ce3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=131&amp;q[flag_doc_diario_true]=1">
+094
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato de Contrato nº 014/2021/CV
+</td>
+<td class="text-center">
+29-10-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F00BCA49C4A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F00BCA49C4A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-014-2021-cv-paes-landim-2192">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/10/28/DOP_EDICAO_094_Prefeitura_Paes_Landim_Extrato_extrato_de_contrato_n_014_2021_cv_be7f77c7-c4a4-4532-8bb8-8395c6c7a6b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

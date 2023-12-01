@@ -1,0 +1,1616 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+fardamentos
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do Registro de preço
+</td>
+<td class="text-center">
+<strong>ID: </strong>642099E26FA14
+<br/><br/>
+<a class="fileDoc" data-file-hash="642099E26FA14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/fardamentos-buriti-dos-lopes-13355">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Buriti_dos_Lopes_Aviso_do_Registro_de_preco_fardamentos_67a85f25-4e8e-4657-877f-666f8a572613.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+dispensa nº006-2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E577BE42AF234
+<br/><br/>
+<a class="fileDoc" data-file-hash="E577BE42AF234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-n-006-2022-conceicao-do-caninde-13347">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Conceicao_do_Caninde_Aviso_de_licitacao_dispensa_n_006_2022_3c51593c-f3ef-4c6a-8f85-e8c10928cfe3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO 003/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8913A50B98204
+<br/><br/>
+<a class="fileDoc" data-file-hash="8913A50B98204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-003-2022-campinas-do-piaui-13255">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_003_2022_45b26d66-6cc5-4e66-873c-5518184bf360.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CV 002/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>90C1553BAEF64
+<br/><br/>
+<a class="fileDoc" data-file-hash="90C1553BAEF64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-cv-002-2022-campinas-do-piaui-13254">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_cv_002_2022_80630539-d737-4f26-8d18-1b55ab0d45e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 09
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5BD52C921E184
+<br/><br/>
+<a class="fileDoc" data-file-hash="5BD52C921E184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-09-buriti-dos-lopes-13305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Buriti_dos_Lopes_Decretos_decreto_09_edb7527a-4cbf-478c-b621-9012dd6f83ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria nº 11/2022-COMUNICADO DE FERIADO SEMANA SANTA
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3CCBE33BDB544
+<br/><br/>
+<a class="fileDoc" data-file-hash="3CCBE33BDB544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-11-2022-comunicado-de-feriado-semana-santa-sao-raimundo-nonato-13306">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Camara_Sao_Raimundo_Nonato_Portarias_portaria_n_11_2022_comunicado_de_feriado_semana_santa_d8864d82-fcfb-4bbc-8742-37f13b38a8ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 055-2022 Nomeação servidor
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>28C8FD82F6ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="28C8FD82F6ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-055-2022-nomeacao-servidor-luis-correia-13323">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Luis_Correia_Portarias_portaria_055_2022_nomeacao_servidor_1fd0fcbd-79c8-41a7-bf27-1f113a74c81c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EBF40FF467424
+<br/><br/>
+<a class="fileDoc" data-file-hash="EBF40FF467424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14064/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_8b0923d4-e9fa-456d-843a-1731dba55f5d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E0084294B104
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E0084294B104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14065/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_f9a97ba3-cdc7-4d9d-858b-d30a630d3041.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EF0B39A7BBE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EF0B39A7BBE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14066/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_a7fe017d-7746-41ee-92b8-bd54066fd4ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7EF3CEFDA974
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7EF3CEFDA974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14067/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_3030b223-7a43-4e32-81f0-6544a2b2e415.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>38B62FF100064
+<br/><br/>
+<a class="fileDoc" data-file-hash="38B62FF100064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14068/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_ffa13dd3-622d-483c-987a-dac459084581.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>165501828B6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="165501828B6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14069/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_3d873d4c-3da2-42e3-97ff-61218e07f35c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B01445667EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B01445667EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14070/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_1cffb87c-ca25-4531-9242-84c43f7ae3b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>58360D92FFCD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="58360D92FFCD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14071/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_1d99770d-3cf6-40b2-a04d-d58d7935334e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EAD13CF87A774
+<br/><br/>
+<a class="fileDoc" data-file-hash="EAD13CF87A774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14072/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_47b39d71-58e5-4367-b33b-eebe5beef47b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>114D87E93C424
+<br/><br/>
+<a class="fileDoc" data-file-hash="114D87E93C424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14073/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_ecb9f2e8-bd3d-4c92-9f98-972a0423354f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F568820B5BB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="F568820B5BB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14074/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_4af4cd2f-5db8-4448-8e77-17dfe013aa08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4CD441BF55844
+<br/><br/>
+<a class="fileDoc" data-file-hash="4CD441BF55844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14075/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_362db187-18e6-4f20-bc48-a97fdea82b13.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1F8198745724
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1F8198745724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/14076/rreo-2-bimestre-2022-tanque-do-piaui-13292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_2022_bfae7cbc-b7e1-4df5-84e4-04ab24ac7897.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE DESISTENCIA TESTE SELETIVO MUNICIPAL
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>40A05FF6FF044
+<br/><br/>
+<a class="fileDoc" data-file-hash="40A05FF6FF044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-desistencia-teste-seletivo-municipal-queimada-nova-13310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Queimada_Nova_Atos_termo_de_desistencia_teste_seletivo_municipal_12979dbe-5032-4eaf-94ff-fd9a80b1af65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO de contrato 024/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>49154154156E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="49154154156E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-024-2022-dom-expedito-lopes-13335">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Dom_Expedito_Lopes_Aviso_do_extrato_de_contrato_extrato_de_contrato_024_2022_593322a8-4092-497e-87e0-09a588ecb6e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 64-2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>89B1CB2B71A34
+<br/><br/>
+<a class="fileDoc" data-file-hash="89B1CB2B71A34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-64-2022-queimada-nova-13309">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Queimada_Nova_Portarias_portaria_64_2022_a16cecf0-76a5-463e-8772-cdc633c99fb3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 384/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>766D7EE28F094
+<br/><br/>
+<a class="fileDoc" data-file-hash="766D7EE28F094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-384-2022-floriano-13301">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Floriano_Portarias_portaria_384_2022_2b6f5838-a9b6-4f92-921e-ac077fa8ca3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 104
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB40CA3AE82C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB40CA3AE82C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-104-buriti-dos-montes-13311">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Buriti_dos_Montes_Portarias_portaria_n_104_cdb926b5-a82a-4fca-913d-e89dff8e1d9f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+COMUNICADO DE PRORROGAÇÃO CHAMADA PÚBLICA Nº 01-2022 AGRICULTURA FAMILIAR
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>70603C8924C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="70603C8924C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/comunicado-de-prorrogacao-chamada-publica-n-01-2022-agricultura-familiar-dom-expedito-lopes-13262">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Dom_Expedito_Lopes_Outros_atos_administrativos_comunicado_de_prorrogacao_chamada_publica_n_01_2022_agricultura_familiar_22acc755-a309-41a5-9cab-5602ded88446.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE 022/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C34A9D42BED04
+<br/><br/>
+<a class="fileDoc" data-file-hash="C34A9D42BED04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-022-2022-campinas-do-piaui-13252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_022_2022_23eee15e-c550-4b73-a4cf-d71171be6b8e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 194-2022_ RURAL COFFE BREAK
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>13306478077D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="13306478077D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-194-2022_-rural-coffe-break-floriano-13314">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_194_2022__rural_coffe_break_75a3eb62-0bfe-4997-8c7c-b06c4d44be4c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 012/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>48FEF6A5B5BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="48FEF6A5B5BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-012-2022-colonia-do-piaui-13338">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Colonia_do_Piaui_Decretos_decreto_012_2022_344725aa-fc08-4cf4-8e61-3772824a3775.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Errata Despacho de Ratificação - Dispensa n° 026/2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>839D66B74CB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="839D66B74CB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-despacho-de-ratificacao-dispensa-n-026-2022-altos-13275">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Altos_Errata_errata_despacho_de_ratificacao_dispensa_n_026_2022_218d5c7e-d2dc-4157-86f5-f867ca50f986.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto 0008/2022 (Ponto Facultativo Semana Santa)
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0C0357037F04
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0C0357037F04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-0008-2022-ponto-facultativo-semana-santa-pimenteiras-13274">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Pimenteiras_Decretos_decreto_0008_2022_ponto_facultativo_semana_santa_13e18c19-7081-4411-a12d-141b92c8d340.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+ATA N 038/22
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>A7FB01125D6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A7FB01125D6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-n-038-22-itaueira-13276">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Itaueira_Atas_ata_n_038_22_1e3d669a-d822-4ef2-b728-98cf25a446e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 040-2022
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3F30A0D8347A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3F30A0D8347A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-040-2022-oeiras-13279">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Oeiras_Portarias_portaria_n_040_2022_e03748f6-7d01-4d77-a77e-11a3193faa78.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de dispensa 016-22
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>062C4E6A23C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="062C4E6A23C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-dispensa-016-22-tanque-do-piaui-13334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Tanque_do_Piaui_Aviso_da_Dispensa_aviso_de_dispensa_016_22_53b3795f-d651-40e8-a4ac-af1abb57d9cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=302&amp;q[flag_doc_diario_true]=1">
+211
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Termo de cooperação técnica PE 22/2021
+</td>
+<td class="text-center">
+18-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD859E9A3E374
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD859E9A3E374" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-termo-de-cooperacao-tecnica-pe-22-2021-nazare-do-piaui-13324">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/4/13/DOP_EDICAO__18-4-2022_ED_211_Prefeitura_Nazare_do_Piaui_Extrato_extrato_de_termo_de_cooperacao_tecnica_pe_22_2021_6f9fd3ef-548a-4633-b6a6-8df18c80f80e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

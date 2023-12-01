@@ -1,0 +1,1481 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 129/2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B86FB45E4B074
+<br/><br/>
+<a class="fileDoc" data-file-hash="B86FB45E4B074" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-129-2022-wall-ferraz-32524">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Wall_Ferraz_Portarias_portaria_129_2022_cf18cc78-b156-4e91-8c24-f1d84c4d542b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE 052A/2022 - RETIFICAÇÃO
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>530A5A6CE4174
+<br/><br/>
+<a class="fileDoc" data-file-hash="530A5A6CE4174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-052a-2022-retificacao-campinas-do-piaui-32520">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_052a_2022_retificacao_59192b45-4eba-4397-9285-8396a38936dd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação PE 022_2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD2975449F794
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD2975449F794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-022_2022-bocaina-32505">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Bocaina_Aviso_de_licitacao_aviso_de_licitacao_pe_022_2022_68db9f9c-edf8-4319-b7b6-9b1ef35c4708.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ABERTURA DE LICITAÇÃO PE 022/2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>426F8E98B4134
+<br/><br/>
+<a class="fileDoc" data-file-hash="426F8E98B4134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-abertura-de-licitacao-pe-022-2022-amarante-32511">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Amarante_Aviso_de_licitacao_aviso_de_abertura_de_licitacao_pe_022_2022_be10034b-2c46-400b-89b8-4a62de6a06a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ABERTURA DE LICITAÇÃO PE 023/2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E55DCA61EDC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E55DCA61EDC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-abertura-de-licitacao-pe-023-2022-amarante-32518">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Amarante_Aviso_de_licitacao_aviso_de_abertura_de_licitacao_pe_023_2022_f83c78d0-a0ac-4ee7-abe2-700eeb3110f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+ERRATA Aviso de Licitação TP 015.2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>92CD7C5D07824
+<br/><br/>
+<a class="fileDoc" data-file-hash="92CD7C5D07824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-aviso-de-licitacao-tp-015-2022-oeiras-32512">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Oeiras_Errata_errata_aviso_de_licitacao_tp_015_2022_241ff7b9-cd40-49c3-8217-277ad7c2f55e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato administrativo 010.2022, Dispensa 003.2022-Aquisição de Combustíveis
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>986953D66EBB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="986953D66EBB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-administrativo-010-2022-dispensa-003-2022-aquisicao-de-combustiveis-nossa-senhora-de-nazare-32525">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Camara_Nossa_Senhora_de_Nazare_Aviso_do_extrato_de_contrato_extrato_de_contrato_administrativo_010_2022_dispensa_003_2022_aquisicao_de_combustiveis_2838ee73-d327-47e0-aa68-4371773d7bb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PE 057A/2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>7DE97E03803F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7DE97E03803F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-057a-2022-campinas-do-piaui-32522">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_057a_2022_7a522ae9-ac68-4db4-b356-9784af70d2ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO DISPENSA Nº 088-2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B39FB38C21DF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B39FB38C21DF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-dispensa-n-088-2022-floriano-32529">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Outros_atos_administrativos_termo_de_ratificacao_dispensa_n_088_2022_93f6efda-40ec-48f7-aa21-bfeb51d0a591.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+ADESÃO SRP/SMS-P-PI nº. 001/2022
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9CD260D2ACF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9CD260D2ACF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adesao-srp-sms-p-pi-n-001-2022-prata-do-piaui-32536">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Prata_do_Piaui_Extrato_adesao_srp_sms_p_pi_n_001_2022_404b0f0f-bbf7-449f-a2c3-20230e236266.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE ABERTURA DE LICITAÇÃO TP 06/2022 REPUBLICAÇÃO
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>F064FD09D7E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="F064FD09D7E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-abertura-de-licitacao-tp-06-2022-republicacao-amarante-32475">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Amarante_Aviso_de_licitacao_aviso_de_abertura_de_licitacao_tp_06_2022_republicacao_5432b98e-f4fc-47c5-b4ed-223f8b30f13c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+EDITAL N° 03 2022 CONSELHO FUNDEB
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>8045B60C9A814
+<br/><br/>
+<a class="fileDoc" data-file-hash="8045B60C9A814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-n-03-2022-conselho-fundeb-landri-sales-32539">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Landri_Sales_Edital_de_Chamada_edital_n_03_2022_conselho_fundeb_f482641b-6409-4598-9e09-ec0d84b8e501.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E91953F8FE634
+<br/><br/>
+<a class="fileDoc" data-file-hash="E91953F8FE634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35034/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_303ac4e7-3645-4624-ab57-ed3cf831c96d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D99966820E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D99966820E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35035/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_35f48a47-9118-4a9a-b3c9-4daca5be2fc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3C94FDE75764
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3C94FDE75764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35036/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_07be781e-5dbd-4545-90ff-01b47040ca4a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5DC4E4F740114
+<br/><br/>
+<a class="fileDoc" data-file-hash="5DC4E4F740114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35037/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_9dd60e73-7b9c-450e-aba7-1beef69ccdd7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF7758D6DA164
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF7758D6DA164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35038/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_39633ef2-fb3c-46fa-af62-96da3cc5aa80.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F7AE385EEE484
+<br/><br/>
+<a class="fileDoc" data-file-hash="F7AE385EEE484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35039/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_3e14f464-fb48-4af3-840f-f8c691a2510a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9BB5FEE8CF714
+<br/><br/>
+<a class="fileDoc" data-file-hash="9BB5FEE8CF714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35040/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_ed4c72ca-fdcc-4788-98e2-bd283c1ff916.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D2E9086EE7E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="D2E9086EE7E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35041/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_98c10773-90f8-4f9e-a2c1-ee930d2849c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>33DFEC2F816A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="33DFEC2F816A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35042/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_454f88e9-3c3f-45af-a3be-9032d71cfb17.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+RREO, 5º Bimestre/2022 /
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AEB0F17399124
+<br/><br/>
+<a class="fileDoc" data-file-hash="AEB0F17399124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/35043/rreo-5-bimestre-2022-floriano-32451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Floriano_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_dca55ab7-51b2-4f65-a1b8-2ed02830ae8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Ata de Registro PE 021
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>4667790A76B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4667790A76B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-de-registro-pe-021-prata-do-piaui-32537">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Prata_do_Piaui_Atas_ata_de_registro_pe_021_3316a170-0e4d-4fff-9a22-7550d953c398.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso da Homologação PE 021
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE1CE34038664
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE1CE34038664" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-da-homologacao-pe-021-prata-do-piaui-32538">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Prata_do_Piaui_Aviso_do_Contrato_aviso_da_homologacao_pe_021_c6159056-8f3d-4f10-90a2-84e4a831ae9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+portaria 219
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5000303694124
+<br/><br/>
+<a class="fileDoc" data-file-hash="5000303694124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-219-ipiranga-do-piaui-32469">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_219_a7ad828c-ef3a-4b32-a06e-e63b7ad8a986.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO 257
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C51E3BD161E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="C51E3BD161E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-257-itaueira-32474">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Itaueira_Extrato_extrato_257_ecf36d85-55bf-40ba-bd80-682b92d61dd9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Aditivo de Comodato 03 e 04
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F224DD9FD124
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F224DD9FD124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-de-comodato-03-e-04-buriti-dos-montes-32484">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Buriti_dos_Montes_Extrato_extrato_de_aditivo_de_comodato_03_e_04_3b9cebb5-1171-4d78-969a-4cd368b90bdc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Aditivo de Comodato 05 e 06
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EEEACEDA173B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EEEACEDA173B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-de-comodato-05-e-06-buriti-dos-montes-32485">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Buriti_dos_Montes_Extrato_extrato_de_aditivo_de_comodato_05_e_06_e98aea8f-e734-46dc-873b-474fffa0f82a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Aditivo de Comodato 01 e 02
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F2238B07F9724
+<br/><br/>
+<a class="fileDoc" data-file-hash="F2238B07F9724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-de-comodato-01-e-02-buriti-dos-montes-32483">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Buriti_dos_Montes_Extrato_extrato_de_aditivo_de_comodato_01_e_02_acb4b2c1-d86f-4fec-a686-320f29dc72e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto n 35
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>80D628BE091D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="80D628BE091D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-35-conceicao-do-caninde-32502">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Conceicao_do_Caninde_Decretos_decreto_n_35_3eb5b891-594a-4963-82e3-a3e51f3abda0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+portaria 216
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>90654FC516534
+<br/><br/>
+<a class="fileDoc" data-file-hash="90654FC516534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-216-ipiranga-do-piaui-32463">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_216_978dfe77-427b-45a6-b41c-ddd374084fc6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=526&amp;q[flag_doc_diario_true]=1">
+364
+</a>
+-
+2022
+</td>
+<td class="">
+portaria 217
+</td>
+<td class="text-center">
+28-11-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>07F628767F7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="07F628767F7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-217-ipiranga-do-piaui-32465">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/11/25/DOP_EDICAO__28-11-2022_ED_364_Prefeitura_Ipiranga_do_Piaui_Portarias_portaria_217_d6b40ba9-3211-412e-b039-80dd4d4391e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

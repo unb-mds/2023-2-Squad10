@@ -1,0 +1,1448 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO Nº 41, DE 27 DE DEZEMBRO DE 2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>40F8230C34B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="40F8230C34B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-41-de-27-de-dezembro-de-2022-landri-sales-35552">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Landri_Sales_Decretos_decreto_n_41_de_27_de_dezembro_de_2022_f8adf521-74ef-476f-ba5a-2d6c1aef3c2d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+DESPACHO HOM. E ADJ. TP 012-2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Despachos
+</td>
+<td class="text-center">
+<strong>ID: </strong>331283854E4B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="331283854E4B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-hom-e-adj-tp-012-2022-altos-35570">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Altos_Despachos_despacho_hom_e_adj_tp_012_2022_fdd059e7-dc7d-4f14-9480-1cb5ab2431d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO TP 011-2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D36AE42C502F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D36AE42C502F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-tp-011-2022-altos-35566">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Altos_Extrato_extrato_de_contrato_tp_011_2022_8b12fabf-71ca-4880-bcc1-8ef803b3eb9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO B TP 008-2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB1987C1079A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB1987C1079A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-b-tp-008-2022-altos-35575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Altos_Extrato_extrato_de_contrato_b_tp_008_2022_dee4c8ad-a77a-4813-afee-7db33c75eaf0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO TERMO DE COOPERAÇÃO TÉCNICA Nº 034-2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F61A9B1E5B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F61A9B1E5B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-termo-de-cooperacao-tecnica-n-034-2022-altos-35580">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Altos_Extrato_extrato_termo_de_cooperacao_tecnica_n_034_2022_06fa1fb8-9131-4031-abb2-e3bf33f1b316.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato ratificação 2 aditivo IPL 02/2021
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>68C042B465934
+<br/><br/>
+<a class="fileDoc" data-file-hash="68C042B465934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-2-aditivo-ipl-02-2021-nazare-do-piaui-35593">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Nazare_do_Piaui_Aviso_de_Ratificacao_extrato_ratificacao_2_aditivo_ipl_02_2021_3c95762d-eb4c-43fa-ae7e-a66eaa353a75.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 37-2022 PREFEITURA DE QUEIMADA NOVA - PI
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6D0DDE27C804
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6D0DDE27C804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-37-2022-prefeitura-de-queimada-nova-pi-queimada-nova-35589">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Queimada_Nova_Decretos_decreto_37_2022_prefeitura_de_queimada_nova_pi_490b70de-2a78-4b4b-bd4b-9f586aef73a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO DE CRÉDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>1367134A84004
+<br/><br/>
+<a class="fileDoc" data-file-hash="1367134A84004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-credito-adicional-suplementar-tanque-do-piaui-35588">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Tanque_do_Piaui_Decretos_decreto_de_credito_adicional_suplementar_1aeed221-964e-4041-a421-81e1e1b584b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato TP 03
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A69CED9326784
+<br/><br/>
+<a class="fileDoc" data-file-hash="A69CED9326784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-tp-03-nazare-do-piaui-35597">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_tp_03_7af49399-b87a-41b6-95d8-a5d74bb410b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato 2 aditivo IPL 02/2021
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>42E279EB55B64
+<br/><br/>
+<a class="fileDoc" data-file-hash="42E279EB55B64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-2-aditivo-ipl-02-2021-nazare-do-piaui-35594">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_2_aditivo_ipl_02_2021_5abe55c5-5970-443e-afba-bae8fc7c6443.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato homologação TP 03
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso da homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>5516EDE4C2064
+<br/><br/>
+<a class="fileDoc" data-file-hash="5516EDE4C2064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-homologacao-tp-03-nazare-do-piaui-35596">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Nazare_do_Piaui_Aviso_da_homologacao_extrato_homologacao_tp_03_6dbf7e99-accd-4b41-94ef-f9a74080c8a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Ratificação do Prefeito-ADESÃO nº 004-2022-Prest.de serv. de aluguel Som e Palco-PMPL
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>132098CFF0094
+<br/><br/>
+<a class="fileDoc" data-file-hash="132098CFF0094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-do-prefeito-adesao-n-004-2022-prest-de-serv-de-aluguel-som-e-palco-pmpl-paes-landim-35603">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Paes_Landim_Aviso_de_Ratificacao_termo_de_ratificacao_do_prefeito_adesao_n_004_2022_prest_de_serv_de_aluguel_som_e_palco_pmpl_45175ce5-5c5a-4b37-a22e-7eae8dc9e44e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RATIFICAÇÃO Inexigibilidade de Licitação n °006
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8162B1163D814
+<br/><br/>
+<a class="fileDoc" data-file-hash="8162B1163D814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inexigibilidade-de-licitacao-n-006-marcos-parente-35602">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Marcos_Parente_Aviso_de_Ratificacao_ratificacao_inexigibilidade_de_licitacao_n_006_cdcf1bad-515d-4207-b4b4-069a247b95a0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO TERMO DE COOPERAÇÃO TÉCNICA Nº 033-2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BD315C2931F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BD315C2931F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-termo-de-cooperacao-tecnica-n-033-2022-altos-35585">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Altos_Extrato_extrato_termo_de_cooperacao_tecnica_n_033_2022_9ee3e088-4ba7-4cfd-bd17-1569d97b97f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do Contrato 128.2022 - PE 002.2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>66EEE49A78DA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="66EEE49A78DA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-128-2022-pe-002-2022-acaua-35612">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Acaua_Aviso_do_extrato_de_contrato_extrato_do_contrato_128_2022_pe_002_2022_43dfd6d8-1a3a-47b9-8f04-603e3808e337.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+ata da eleição
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>BAADE89787C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="BAADE89787C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-eleicao-jatoba-do-piaui-35609">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Camara_Jatoba_do_Piaui_Atas_ata_da_eleicao_da92e85d-f1ff-4049-bcce-293a29d98122.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do Contrato 129.2022 - PE 002.2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C2EF385713034
+<br/><br/>
+<a class="fileDoc" data-file-hash="C2EF385713034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-129-2022-pe-002-2022-acaua-35614">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Acaua_Aviso_do_extrato_de_contrato_extrato_do_contrato_129_2022_pe_002_2022_071240b9-27b5-48e0-9c20-600c321e9d49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+ata da eleição
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>22CE809257974
+<br/><br/>
+<a class="fileDoc" data-file-hash="22CE809257974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-eleicao-jatoba-do-piaui-35606">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Camara_Jatoba_do_Piaui_Atas_ata_da_eleicao_a044f729-35e5-4071-9965-3f0d58707887.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do Aditivo de 25% ao Contrato n° 036.2022
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Termo de Aditamento de Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>53DF17973AE74
+<br/><br/>
+<a class="fileDoc" data-file-hash="53DF17973AE74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-aditivo-de-25-ao-contrato-n-036-2022-acaua-35616">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Acaua_Termo_de_Aditamento_de_Contrato_extrato_do_aditivo_de_25_ao_contrato_n_036_2022_314cd8e1-e379-4f86-b1b9-5f6463cc2c19.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato PÉ 007
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA98D6FE5C424
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA98D6FE5C424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-007-prata-do-piaui-35620">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Prata_do_Piaui_Extrato_extrato_pe_007_98047a7e-f6d3-4fbf-bbe1-ff39a9a6b7a5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F13965538DB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="F13965538DB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38440/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_529fa958-8427-4203-9daa-73f62211b7b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E670EBF638154
+<br/><br/>
+<a class="fileDoc" data-file-hash="E670EBF638154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38441/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_84e7449f-1e27-4160-89bd-9772d7cf8f04.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4AC532E92B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4AC532E92B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38442/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_c3f1a9e4-9030-4104-a296-108413c52280.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A14127FBB2384
+<br/><br/>
+<a class="fileDoc" data-file-hash="A14127FBB2384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38443/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_9edbe088-73ab-42de-be33-8e60f34efd59.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>27D26B9016014
+<br/><br/>
+<a class="fileDoc" data-file-hash="27D26B9016014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38444/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_70e89a7f-b5bf-4c93-98ee-0174983cdd01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>405CAB491BB84
+<br/><br/>
+<a class="fileDoc" data-file-hash="405CAB491BB84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38445/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_541afff5-08fe-4200-adec-d806055d63b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>12941396B0C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="12941396B0C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38446/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_ed8df1ce-9b94-4f81-bf6f-cb1276134107.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F7A5F63D2B84
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F7A5F63D2B84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38447/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_f1db193f-cabb-4162-a6f3-31f2b0e7e7a8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A0A0CB5677B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A0A0CB5677B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38448/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_5ecf984d-cc68-4b2c-81b0-bdf9f50b2137.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>82B4067B57264
+<br/><br/>
+<a class="fileDoc" data-file-hash="82B4067B57264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38449/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_35430882-7464-459c-b8f2-366e8fdee1ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=556&amp;q[flag_doc_diario_true]=1">
+385
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 5º Bimestre 2022 /
+</td>
+<td class="text-center">
+28-12-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F752E9FA0A014
+<br/><br/>
+<a class="fileDoc" data-file-hash="F752E9FA0A014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38450/rreo-5-bimestre-2022-buriti-dos-lopes-35532">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/27/DOP_EDICAO__28-12-2022_ED_385_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2022_1411583c-02a1-49e0-b0cc-32481a23cba1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

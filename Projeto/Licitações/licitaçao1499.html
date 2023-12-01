@@ -1,0 +1,1379 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Nº08.2023 - FUNDEB
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA5E703575304
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA5E703575304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-08-2023-fundeb-brejo-do-piaui-48088">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Brejo_do_Piaui_Portarias_portaria_n_08_2023_fundeb_f47ebaf5-7fd1-406e-ac60-e6242925f8fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1A7A159EF43B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1A7A159EF43B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-48071">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_ceb7bf01-fa8b-4be4-85d8-bea5a0e46ab2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA - EDUCAÇÃO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4B60377B5B604
+<br/><br/>
+<a class="fileDoc" data-file-hash="4B60377B5B604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-educacao-sao-pedro-do-piaui-48110">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_educacao_db6ce020-9c85-4c97-b919-884a9f760edc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+TP 006/2022 - AVISO DE RESULTADO DE HABILITAÇÃO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso de julgamento e habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>E398A660929D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E398A660929D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-006-2022-aviso-de-resultado-de-habilitacao-nazaria-48080">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Nazaria_Aviso_de_julgamento_e_habilitacao_de_licitantes_tp_006_2022_aviso_de_resultado_de_habilitacao_b9de76c6-ec59-44f2-8e3b-e2247289430a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de posse
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Tapuio
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>7D5EFCBCAF6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7D5EFCBCAF6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-sao-miguel-do-tapuio-48044">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Camara_Sao_Miguel_do_Tapuio_Outros_termo_de_posse_ae4378ad-6163-4437-84ce-f8d1e5755066.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E4245603AC04
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E4245603AC04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51409/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_be4c63e6-f509-4f08-ac40-7e749e4ab5a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11F6EC076C264
+<br/><br/>
+<a class="fileDoc" data-file-hash="11F6EC076C264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51410/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_12de6b9d-a520-4bc4-afe1-791e46d4b4b4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1C6C402AF79B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1C6C402AF79B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51411/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_50320ec4-80a0-4edb-8db8-e0ed778811c1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4AD8CE40FBE04
+<br/><br/>
+<a class="fileDoc" data-file-hash="4AD8CE40FBE04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51412/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_2dd79a6f-c0a0-4338-9423-c921da423423.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>998ECF1EB0404
+<br/><br/>
+<a class="fileDoc" data-file-hash="998ECF1EB0404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51413/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_59e6501d-6af2-46ce-87b0-8b07e1ffb10c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>06E257B260EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="06E257B260EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51414/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_cada79ce-0228-4cd6-9a4d-a4dc1027d5d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CEF0ACEEFDC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="CEF0ACEEFDC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51415/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_b61b4bea-db1b-4ee9-a542-0a02871af032.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A204686290B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A204686290B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51416/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_8dfef469-81c3-47ee-bcb5-ea18ce29e501.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA2B85F12A164
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA2B85F12A164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51417/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_da3fc098-6625-477a-979e-acb2c5583a3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87F7004B559D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87F7004B559D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51418/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_2b08133d-67f4-4ede-891f-90dd98410790.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>83B9F8A4A8144
+<br/><br/>
+<a class="fileDoc" data-file-hash="83B9F8A4A8144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51419/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_d68dd2b4-d14c-477d-b747-bc929fb5a9d4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM 2022 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3403AF538C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3403AF538C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51420/rreo-6-bim-2022-sao-jose-do-peixe-48030">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_2022_5acc9a6d-4811-49c7-b842-9928d1b36570.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D13A491E0BFA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D13A491E0BFA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51481/relatorio-santa-cruz-dos-milagres-48067">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_relatorio_170aa3a7-1570-4afa-8e2f-a565e1649ef6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE ABERTURA DE PROPOSTA TP Nº 001/2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0B9D4FDBEB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0B9D4FDBEB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-abertura-de-proposta-tp-n-001-2023-santa-cruz-dos-milagres-48076">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Outros_aviso_de_abertura_de_proposta_tp_n_001_2023_b8485d64-979c-49b1-8ec8-6ba762e9b3a9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>AACE457532294
+<br/><br/>
+<a class="fileDoc" data-file-hash="AACE457532294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-curral-novo-do-piaui-48072">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_86ad5232-64cc-4d07-822b-dcc8e65d06de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A5F3B103C4F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="A5F3B103C4F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-48068">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_722e38d3-0131-4bbc-9ada-e05ae51e0578.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1878E39C57A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1878E39C57A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-curral-novo-do-piaui-48060">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_b78df98a-7b99-406c-bca7-42eea86b803a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F300BEF52FF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="F300BEF52FF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51402/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_d0f4a31d-8918-44ea-ad85-1b6fa3b5802a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>777BE619D5874
+<br/><br/>
+<a class="fileDoc" data-file-hash="777BE619D5874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51403/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_d6122c51-e33e-4327-9a69-189ad1b655e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1575D6FCB90E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1575D6FCB90E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51404/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_55716e13-748d-4dcc-a47e-6d473bcea528.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5384A5EA56E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="5384A5EA56E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51405/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_992d1a14-11c8-4857-93d8-0a4af44dfd5a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F5887F57A464
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F5887F57A464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51406/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_85c57a2b-79b5-42f7-860a-f0f6b0a34758.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2 SEMESTRE - EXECUTIVO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CF285E28AFF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CF285E28AFF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51407/rgf-2-semestre-executivo-oeiras-48028">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_de_gestao_fiscal_rgf_2_semestre_executivo_2d22b820-dba1-4074-b49f-cc041dcfa44e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

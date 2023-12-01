@@ -1,0 +1,1288 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO - DSP 18
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B4C0E87F5F714
+<br/><br/>
+<a class="fileDoc" data-file-hash="B4C0E87F5F714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dsp-18-monsenhor-gil-25578">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Monsenhor_Gil_Outros_extrato_de_contrato_dsp_18_51a20019-c608-4d21-a5df-85918271ed6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>578D567C88EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="578D567C88EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27381/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_1afad97c-c7ea-4bc9-856f-a4697950fba9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>65154204601A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="65154204601A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27382/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_666b6463-389e-4b19-9797-7cae3215f3fe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F0D814232B894
+<br/><br/>
+<a class="fileDoc" data-file-hash="F0D814232B894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27383/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_b1e33082-5cd8-45df-977e-ccea4b1b098c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8C5D86D1C054
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8C5D86D1C054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27384/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_1f0d41c3-bcd5-433f-897b-19900379d723.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>507F74028D2B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="507F74028D2B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27385/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_36fd3808-48e9-43ff-8b56-4ed343bea404.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=432&amp;q[flag_doc_diario_true]=1">
+303
+</a>
+-
+2022
+</td>
+<td class="">
+Relatórios de Gestão Fiscal /
+</td>
+<td class="text-center">
+26-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>60D046415B4D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="60D046415B4D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27386/relatorios-de-gestao-fiscal-sao-joao-da-varjota-25514">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/25/DOP_EDICAO__26-8-2022_ED_303_Prefeitura_Sao_Joao_da_Varjota_Relatorios_de_gestao_fiscal_relatorios_de_gestao_fiscal_f1b587bd-e4ec-43d2-b8b6-63763e848b80.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 302
+</td>
+<td class="text-center dopcom">
+25-08-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="7CE0878E4D204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-302-piaui-25509/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_CADERNO_a____diario_oficial_completo_edicao_302_11dc66a5-3595-4bca-8a9a-9ad26bdaed52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato 1º Aditivo Razão Social e endereço ING 01.2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A192C2A0E0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A192C2A0E0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-1-aditivo-razao-social-e-endereco-ing-01-2022-coivaras-25392">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Coivaras_Extrato_extrato_1_aditivo_razao_social_e_endereco_ing_01_2022_0c88b896-ebe8-4811-87ff-01e9663d7fde.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+2.1. Balanço orçamentário /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>360466C2212C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="360466C2212C4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27252/2-1-balanco-orcamentario-wall-ferraz-25399">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_resumidos_da_execucao_orcamentaria_2_1_balanco_orcamentario_7da34882-3e18-4ec1-b30a-d2ce659373d2.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+2.3. Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>44BC7A4C4D144
+<br/><br/>
+<a class="fileDoc" data-file-hash="44BC7A4C4D144" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27254/2-3-demonstrativo-das-receitas-e-despesas-com-acoes-e-servicos-publicos-de-saude-wall-ferraz-25401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_resumidos_da_execucao_orcamentaria_2_3_demonstrativo_das_receitas_e_despesas_com_acoes_e_servicos_publicos_de_saude_e182534b-fbab-4ae6-bf2e-f519bab45d0d.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+tp 014
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A488BB8847A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A488BB8847A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-014-buriti-dos-lopes-25469">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_tp_014_f81d665b-e3ca-4a51-832f-6641bbd15618.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+3.5. Demonstrativo dos Resultados Primário e Nominal /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A79E3DFC459B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A79E3DFC459B4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27260/3-5-demonstrativo-dos-resultados-primario-e-nominal-wall-ferraz-25407">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_resumidos_da_execucao_orcamentaria_3_5_demonstrativo_dos_resultados_primario_e_nominal_433fb640-0ba0-4d42-8543-b07a3e901ada.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO JANZIANE MOREIRA FERREIRA DO BONFIM
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>0DBBDA1A58714
+<br/><br/>
+<a class="fileDoc" data-file-hash="0DBBDA1A58714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-janziane-moreira-ferreira-do-bonfim-marcos-parente-25431">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Marcos_Parente_Aviso_do_extrato_de_contrato_extrato_de_contrato_janziane_moreira_ferreira_do_bonfim_64557020-b60f-45d6-be07-7ba8340d4c9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO CHAMADA PUBLICA 007-2022- CONTRATAÇÃO DE TÉC. EM EDIFICAÇÕES
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Outros tipos de avisos de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FC787064D274
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FC787064D274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-chamada-publica-007-2022-contratacao-de-tec-em-edificacoes-floriano-25487">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Floriano_Outros_tipos_de_avisos_de_licitacao_aviso_chamada_publica_007_2022_contratacao_de_tec_em_edificacoes_8fad5402-f4e5-4b3b-9bbb-8c5ad0fbfbdf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Ordem do dia 26/08/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>60F9955537F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="60F9955537F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ordem-do-dia-26-08-2022-cristino-castro-25434">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Camara_Cristino_Castro_Atos_ordem_do_dia_26_08_2022_3f79731d-946e-42c7-afc3-157c0c366d90.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+LICENÇA CLEIDE
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>12BFF6A53C6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="12BFF6A53C6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licenca-cleide-demerval-lobao-25488">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Demerval_Lobao_Portarias_licenca_cleide_c96daef5-6f3e-48d0-8531-999b2bda888a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Dispensa 020/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1018545BB9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1018545BB9B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-020-2022-brejo-do-piaui-25440">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Brejo_do_Piaui_Aviso_da_Dispensa_dispensa_020_2022_d9c528ac-1aab-4a50-a103-506b15d7dae3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+PE 027/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>649AFF15BD504
+<br/><br/>
+<a class="fileDoc" data-file-hash="649AFF15BD504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-027-2022-ipiranga-do-piaui-25443">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Ipiranga_do_Piaui_Aviso_da_Homologacao_pe_027_2022_16e0663b-a635-4150-bb58-6a4f14fbfce5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+3.6. Demonstrativo Simplificado RREO /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7A041C40B7134
+<br/><br/>
+<a class="fileDoc" data-file-hash="7A041C40B7134" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27261/3-6-demonstrativo-simplificado-rreo-wall-ferraz-25408">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_resumidos_da_execucao_orcamentaria_3_6_demonstrativo_simplificado_rreo_4ee5d804-9529-4d6d-9331-ec11ab728343.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+1.1. Demonstrativo da Despesa com Pessoal /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0DD32869C68F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0DD32869C68F4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27262/1-1-demonstrativo-da-despesa-com-pessoal-wall-ferraz-25409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_de_gestao_fiscal_1_1_demonstrativo_da_despesa_com_pessoal_52f7ffeb-9b46-42d8-bc3d-f2b41d15b174.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+tp 13
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CADFEF775A234
+<br/><br/>
+<a class="fileDoc" data-file-hash="CADFEF775A234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-13-buriti-dos-lopes-25467">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_tp_13_5910bc2e-9e95-4735-983f-55fb8312c503.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 107/2022 - Comissão Organizadora do Concurso Rainha do Leite
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>469BD09697354
+<br/><br/>
+<a class="fileDoc" data-file-hash="469BD09697354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-107-2022-comissao-organizadora-do-concurso-rainha-do-leite-luis-correia-25474">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Luis_Correia_Portarias_portaria_107_2022_comissao_organizadora_do_concurso_rainha_do_leite_fbda2f68-5b54-4b72-bec1-e27477616994.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE 026/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>77668534A76D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="77668534A76D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-026-2022-sao-pedro-do-piaui-25482">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sao_Pedro_do_Piaui_Aviso_da_Homologacao_termo_de_homologacao_pe_026_2022_b37875a8-08ea-4d7d-8f35-5fcda748bbac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO ADM 071/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>924BE55305864
+<br/><br/>
+<a class="fileDoc" data-file-hash="924BE55305864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-adm-071-2022-campinas-do-piaui-25498">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Campinas_do_Piaui_Extrato_extrato_adm_071_2022_e849caa4-d0fd-436b-98f8-22c7dc363685.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+credenciamento cisternas 004
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>680A53A0B24E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="680A53A0B24E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/credenciamento-cisternas-004-luis-correia-25473">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Luis_Correia_Aviso_de_licitacao_credenciamento_cisternas_004_13e16b73-4d7e-44d9-a656-b3014626c0ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Exoneração Francisco
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A2F1ADD571954
+<br/><br/>
+<a class="fileDoc" data-file-hash="A2F1ADD571954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/exoneracao-francisco-demerval-lobao-25491">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Demerval_Lobao_Portarias_exoneracao_francisco_4828bd4d-f7a4-4cc7-a3ad-a98c2964f481.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

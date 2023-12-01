@@ -1,0 +1,1201 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=72&amp;q[flag_doc_diario_true]=1">
+052
+</a>
+-
+2021
+</td>
+<td class="">
+RGF- 1º semestre de 2021 /
+</td>
+<td class="text-center">
+31-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E69D47B02EF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E69D47B02EF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1048/rgf-1-semestre-de-2021-nazare-do-piaui-1029">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/30/DOP_EDICAO_052_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_de_2021_659ad950-f8e8-4aac-84f9-42a1766a0cb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=72&amp;q[flag_doc_diario_true]=1">
+052
+</a>
+-
+2021
+</td>
+<td class="">
+RGF- 1º semestre de 2021 /
+</td>
+<td class="text-center">
+31-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9A4BD9DD73894
+<br/><br/>
+<a class="fileDoc" data-file-hash="9A4BD9DD73894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/1049/rgf-1-semestre-de-2021-nazare-do-piaui-1029">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/30/DOP_EDICAO_052_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_de_2021_6c3ab244-e6c3-44d2-a681-ada9fcd7ea8f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=72&amp;q[flag_doc_diario_true]=1">
+052
+</a>
+-
+2021
+</td>
+<td class="">
+Veto 004/2021
+</td>
+<td class="text-center">
+31-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Miguel do Tapuio
+</td>
+<td class="text-center">
+Veto
+</td>
+<td class="text-center">
+<strong>ID: </strong>F683D99C18BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F683D99C18BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/veto-004-2021-sao-miguel-do-tapuio-1033">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/30/DOP_EDICAO_052_Camara_Sao_Miguel_do_Tapuio_Veto_veto_004_2021_d48233dc-576c-425c-8e25-c27edb724844.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 051
+</td>
+<td class="text-center dopcom">
+30-08-2021
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="F92DE2E2D15F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-051-piaui-1028/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051____diario_oficial_completo_edicao_051_fdecbb10-9af7-49be-a1d0-ab9143a5ec95.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3EB254A8EA514
+<br/><br/>
+<a class="fileDoc" data-file-hash="3EB254A8EA514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-1021">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_4ecbf3f6-1532-4a65-810c-33d5ea3e4780.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Extrato de Contrato 004/2021 (Edital Chico Caboclo 001/2021
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7E9E7CE69BDF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7E9E7CE69BDF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-004-2021-edital-chico-caboclo-001-2021-pimenteiras-1027">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_004_2021_edital_chico_caboclo_001_2021_6ac485f9-95de-4ee0-945d-4f1e0ef23738.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+PORTARIA 123/2021
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>20908DEBBAAC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="20908DEBBAAC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-123-2021-caxingo-1026">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caxingo_Portarias_portaria_123_2021_a0282f26-4531-4c83-9172-d437914355bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+portaria 124/2021
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3F99F55A283B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3F99F55A283B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-124-2021-caxingo-1025">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caxingo_Portarias_portaria_124_2021_d082e7bf-6b02-4401-8e20-4cc3c174f6b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9F226BB069A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9F226BB069A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-1024">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_d3f38898-b453-4566-9be9-416a1c914038.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A11F08CC924B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A11F08CC924B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-1023">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_95146c6e-3c8a-409a-bd06-122525bd6fb6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+RATIFICAÇÃO
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F681194B0054
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F681194B0054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-caraubas-do-piaui-1022">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Caraubas_do_Piaui_Atos_ratificacao_9b4a17ec-aceb-4069-8338-7a922308766e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Projeto de Emenda a Lei 051-2001- Cria Conselho de Alimentação Escolar
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>C620F329360B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C620F329360B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-emenda-a-lei-051-2001-cria-conselho-de-alimentacao-escolar-nazare-do-piaui-1020">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Nazare_do_Piaui_Projeto_de_lei_projeto_de_emenda_a_lei_051_2001_cria_conselho_de_alimentacao_escolar_e3ba5a1e-5c16-4af8-b0fe-51cdcd9e8bfe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Projeto de Lei 08-2021_Revoga o Artigo 12 parg 8 da Lei 217-2018
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>79B4A391EA054
+<br/><br/>
+<a class="fileDoc" data-file-hash="79B4A391EA054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-08-2021_revoga-o-artigo-12-parg-8-da-lei-217-2018-nazare-do-piaui-1019">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Nazare_do_Piaui_Projeto_de_lei_projeto_de_lei_08_2021_revoga_o_artigo_12_parg_8_da_lei_217_2018_9bb12bb2-13a8-499c-8b7c-44205855145b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Projeto de Lei 07-2021- Cria Código de Postura do município de Nazaré-PI
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>E336CE2558144
+<br/><br/>
+<a class="fileDoc" data-file-hash="E336CE2558144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-07-2021-cria-codigo-de-postura-do-municipio-de-nazare-pi-nazare-do-piaui-1018">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Nazare_do_Piaui_Projeto_de_lei_projeto_de_lei_07_2021_cria_codigo_de_postura_do_municipio_de_nazare_pi_cbc77241-1495-405e-bd62-0bd83a57d5e2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Projeto Lei 06-2021_Ensino de Noções da Lei Maria da Penha no âmbito das Escolas Municipais
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>5F17B3A5BB854
+<br/><br/>
+<a class="fileDoc" data-file-hash="5F17B3A5BB854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-lei-06-2021_ensino-de-nocoes-da-lei-maria-da-penha-no-ambito-das-escolas-municipais-nazare-do-piaui-1017">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Nazare_do_Piaui_Projeto_de_lei_projeto_lei_06_2021_ensino_de_nocoes_da_lei_maria_da_penha_no_ambito_das_escolas_municipais_2770abc5-4a8a-4b17-bfe9-8c336cd1e804.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+DECRETO Nº 73
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>56B59831247B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="56B59831247B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-73-buriti-dos-montes-1016">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Prefeitura_Buriti_dos_Montes_Decretos_decreto_n_73_fa8e85a6-6d1c-4c70-b6c8-01cde46728b3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Contrato Secretário 2021
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B27DBC4A78A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="B27DBC4A78A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-secretario-2021-demerval-lobao-1015">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Demerval_Lobao_Contratos_e_seus_aditivos_contrato_secretario_2021_9ae3747f-41a2-45f4-bc39-ea039dc769c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=71&amp;q[flag_doc_diario_true]=1">
+051
+</a>
+-
+2021
+</td>
+<td class="">
+Contrato - Motorista 2021
+</td>
+<td class="text-center">
+30-08-2021
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B316F4C06E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B316F4C06E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-motorista-2021-demerval-lobao-1014">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/27/DOP_EDICAO_051_Camara_Demerval_Lobao_Contratos_e_seus_aditivos_contrato_motorista_2021_073666b5-6c2f-4705-bad6-76bb99dbadb1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 050
+</td>
+<td class="text-center dopcom">
+27-08-2021
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="C5FD0111FC484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-050-piaui-1013/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050____diario_oficial_completo_edicao_050_c44c8f8c-a9ef-4aee-9860-bb583eec161d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+RATIFICAÇÃO
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>03A128DD5D504
+<br/><br/>
+<a class="fileDoc" data-file-hash="03A128DD5D504" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-nazare-do-piaui-1002">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Nazare_do_Piaui_Aviso_de_Ratificacao_ratificacao_963ee3b4-8e47-40ea-9636-ae51471117bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO CONTRATO
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4967204B02114
+<br/><br/>
+<a class="fileDoc" data-file-hash="4967204B02114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-caxingo-1012">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Caxingo_Extrato_extrato_contrato_6b563067-1f65-4996-b579-963bbb38c623.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO CONTRATO
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A7A673385D114
+<br/><br/>
+<a class="fileDoc" data-file-hash="A7A673385D114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-caxingo-1011">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Caxingo_Extrato_extrato_contrato_26b8cdb2-1c0c-4dcc-84e7-40dda7625b80.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+Pregão Eletrônico nº 008-2021 - Bombas - Extrato de contrato
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6386E4B437194
+<br/><br/>
+<a class="fileDoc" data-file-hash="6386E4B437194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-008-2021-bombas-extrato-de-contrato-sigefredo-pacheco-1010">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Sigefredo_Pacheco_Extrato_pregao_eletronico_n_008_2021_bombas_extrato_de_contrato_5081a78c-9ea5-47f0-85c4-9fe174ba6fe4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+Pregão Eletrônico nº 007-2021 - Ventiladores- Extrato de contrato
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>364CBD05D03B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="364CBD05D03B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pregao-eletronico-n-007-2021-ventiladores-extrato-de-contrato-sigefredo-pacheco-1009">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Sigefredo_Pacheco_Extrato_pregao_eletronico_n_007_2021_ventiladores_extrato_de_contrato_7fd700e2-1931-43f9-a174-8f0214478c52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº. 052/2021 - PROCESSO ADMINISTRATIVO N°. 051/2021 - DISPENSA DE LICITAÇÃO Nº 013/2021
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>891BC09988CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="891BC09988CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-052-2021-processo-administrativo-n-051-2021-dispensa-de-licitacao-n-013-2021-rio-grande-do-piaui-1008">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_do_contrato_n_052_2021_processo_administrativo_n_051_2021_dispensa_de_licitacao_n_013_2021_5225933e-9590-49f4-947e-1204f05bfc88.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=68&amp;q[flag_doc_diario_true]=1">
+050
+</a>
+-
+2021
+</td>
+<td class="">
+EXTRATO DE RATIFICAÇÃO - Dispensa de Licitação nº. 013/2021
+</td>
+<td class="text-center">
+27-08-2021
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6AB33C4224B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="6AB33C4224B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-ratificacao-dispensa-de-licitacao-n-013-2021-rio-grande-do-piaui-1007">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2021/8/26/DOP_EDICAO_050_Prefeitura_Rio_Grande_do_Piaui_Extrato_extrato_de_ratificacao_dispensa_de_licitacao_n_013_2021_f33d08cc-97cf-4d45-af51-8e4cdde92c60.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

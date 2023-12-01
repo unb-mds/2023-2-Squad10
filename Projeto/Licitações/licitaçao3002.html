@@ -1,0 +1,1379 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3693548821C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="3693548821C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12685/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_156961a8-0b6f-494a-add1-2926789a27f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>76D9FBC459474
+<br/><br/>
+<a class="fileDoc" data-file-hash="76D9FBC459474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12686/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_a3604f52-7ca8-4889-bad3-1bbc67ffef55.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D8522334E0814
+<br/><br/>
+<a class="fileDoc" data-file-hash="D8522334E0814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12687/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_ba62017f-008f-433d-8a1a-d434951bf5c0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11BA43108C154
+<br/><br/>
+<a class="fileDoc" data-file-hash="11BA43108C154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12688/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_47ef5f5e-1214-4fae-b53e-5958f1c51c32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>484F9B24FAB34
+<br/><br/>
+<a class="fileDoc" data-file-hash="484F9B24FAB34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12689/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_b0a2c187-9287-4d8f-9acf-8ae4dd6f2a2b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+1 DESPESA COM PESSOAL /
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+A programação financeira
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>04DA64F643354
+<br/><br/>
+<a class="fileDoc" data-file-hash="04DA64F643354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/12690/1-despesa-com-pessoal-wall-ferraz-11956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Wall_Ferraz_A_programacao_financeira_1_despesa_com_pessoal_23871808-99f6-4386-af05-f9cb4fd663df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária José Valdiná Barbosa de Araújo.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>58EB3C08E9614
+<br/><br/>
+<a class="fileDoc" data-file-hash="58EB3C08E9614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-jose-valdina-barbosa-de-araujo-paes-landim-11932">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_jose_valdina_barbosa_de_araujo_ba0bdc66-9a54-45d8-920e-062f96cde89e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Inácia Alves C. M.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8BC67740C5324
+<br/><br/>
+<a class="fileDoc" data-file-hash="8BC67740C5324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-inacia-alves-c-m-paes-landim-11934">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_inacia_alves_c_m_715201f0-8c48-49e1-a4a6-6501512ae7a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Liviane Miranda de Sousa.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F4C3EBD061A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="F4C3EBD061A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-liviane-miranda-de-sousa-paes-landim-11947">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_liviane_miranda_de_sousa_503e4333-71ff-42a5-9ee2-1b287a738b43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária José Luís Alves da Rocha
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>05B36572A6954
+<br/><br/>
+<a class="fileDoc" data-file-hash="05B36572A6954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-jose-luis-alves-da-rocha-paes-landim-11963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_jose_luis_alves_da_rocha_95fad127-d2fd-4797-9491-7e3baee0845e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Joselâne de Carvalho Sobrinho.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DF229ECEEA14
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DF229ECEEA14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-joselane-de-carvalho-sobrinho-paes-landim-11941">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_joselane_de_carvalho_sobrinho_6a66102f-9049-4bfe-af7f-7d9c9e76702d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Keilane Maria da Costa.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C0621F1741E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C0621F1741E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-keilane-maria-da-costa-paes-landim-11948">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_keilane_maria_da_costa_7a61c6e0-022e-4df7-8e07-0c6045f50ec4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Maricélia Rabelo Cavalcante
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE878BBAF5914
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE878BBAF5914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-maricelia-rabelo-cavalcante-paes-landim-11950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_maricelia_rabelo_cavalcante_4fdcfc1b-deda-4836-918d-177ca461907d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE REVOGAÇÃO LOTE II - PE N° 02-2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso da Revogação
+</td>
+<td class="text-center">
+<strong>ID: </strong>7B4F87B6A2584
+<br/><br/>
+<a class="fileDoc" data-file-hash="7B4F87B6A2584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-revogacao-lote-ii-pe-n-02-2022-beneditinos-11957">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Beneditinos_Aviso_da_Revogacao_termo_de_revogacao_lote_ii_pe_n_02_2022_a2273a2e-4bed-43a3-8771-607fc5b53e6c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária José Nelson Borges.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B20B68D567C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B20B68D567C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-jose-nelson-borges-paes-landim-11943">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_jose_nelson_borges_3df22e07-d960-47bb-9c25-20bafa3f21f7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Manoel Pedro da Silva Neto
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>283509D192ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="283509D192ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-manoel-pedro-da-silva-neto-paes-landim-11972">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_manoel_pedro_da_silva_neto_a1c3fd56-cd6e-4b3d-b51f-3a59f0b99658.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Ediso Rodrigues de C. Júnior
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE15452EB3B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE15452EB3B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-ediso-rodrigues-de-c-junior-paes-landim-11937">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_ediso_rodrigues_de_c_junior_96d8981f-4624-477e-a4b6-a1ab19d2cf6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Cleidilene Santana.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CCD8E8A7C1EB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CCD8E8A7C1EB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-cleidilene-santana-paes-landim-11967">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_cleidilene_santana_6286322d-2906-4e1c-9dae-b42ae2605e7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Deusenir Moraes da Silva.
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>008C2DBCB7FF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="008C2DBCB7FF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-deusenir-moraes-da-silva-paes-landim-11951">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_deusenir_moraes_da_silva_ee6d0af8-1f4a-472a-afbe-7e951f7c5b7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Contratação temporária Crisleide Tomaz Leal
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDD0521EAEFF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDD0521EAEFF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contratacao-temporaria-crisleide-tomaz-leal-paes-landim-11964">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Paes_Landim_Extrato_contratacao_temporaria_crisleide_tomaz_leal_e5f5c752-3076-4bce-a6b7-b51bd78ddfee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 231/2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>97CC3D7207BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="97CC3D7207BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-231-2022-floriano-12072">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Floriano_Portarias_portaria_231_2022_3f132eac-bb52-45cc-a356-16d4b0f7b832.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato ratificação dispensa 11
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCA83662F9BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCA83662F9BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-ratificacao-dispensa-11-nazare-do-piaui-12091">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Nazare_do_Piaui_Aviso_de_Ratificacao_extrato_ratificacao_dispensa_11_5d99e3d0-8443-46c8-b404-a6ea4228b4aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N° 34_2022_GP, DE 31 DE MARÇO DE 2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>692022941CEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="692022941CEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-34_2022_gp-de-31-de-marco-de-2022-francisco-macedo-12090">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Francisco_Macedo_Portarias_portaria_n_34_2022_gp_de_31_de_marco_de_2022_0fdb3d3a-96e1-4479-b8d6-f69c75df7ea6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+sanção 09
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>06F6255D55FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="06F6255D55FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/sancao-09-bocaina-12079">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Bocaina_Leis_sancao_09_73242b36-fdcc-46b4-97e4-2ad13f7a8bc7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 229/2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>50FA7617D8774
+<br/><br/>
+<a class="fileDoc" data-file-hash="50FA7617D8774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-229-2022-floriano-12068">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Floriano_Portarias_portaria_229_2022_397847c1-1d34-4ba5-869a-4d2c12898ac5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato dispensa 11
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A4FDDDACD4E24
+<br/><br/>
+<a class="fileDoc" data-file-hash="A4FDDDACD4E24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-dispensa-11-nazare-do-piaui-12092">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Nazare_do_Piaui_Aviso_do_extrato_de_contrato_extrato_dispensa_11_844c4061-6a83-405b-87e1-3da2dd8b1e5e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Chamda Pública 001/2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros tipos de avisos de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A63E75624B5D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A63E75624B5D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/chamda-publica-001-2022-oeiras-12085">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Oeiras_Outros_tipos_de_avisos_de_licitacao_chamda_publica_001_2022_13daae49-f00c-4abd-ae6c-9cb68e1fc236.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 279/2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D949BEF07E7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D949BEF07E7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-279-2022-floriano-12160">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Floriano_Portarias_portaria_279_2022_5930555a-407a-4e58-a55f-d959b61e5ccd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO TP 001-2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>6DB9167064B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="6DB9167064B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-tp-001-2022-conceicao-do-caninde-12161">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Conceicao_do_Caninde_Aviso_de_licitacao_aviso_tp_001_2022_c9001e4d-ed93-479d-837f-cf948e1590e8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=285&amp;q[flag_doc_diario_true]=1">
+202
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 235/2022
+</td>
+<td class="text-center">
+01-04-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E15FD8A45214
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E15FD8A45214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-235-2022-floriano-12078">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/31/DOP_EDICAO__1-4-2022_ED_202_Prefeitura_Floriano_Portarias_portaria_235_2022_09a923fa-5cd2-43e9-8e75-612d4f5631ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

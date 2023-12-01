@@ -1,0 +1,1544 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+PE 022.2023 PINDORAMA
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9B792D999AE94
+<br/><br/>
+<a class="fileDoc" data-file-hash="9B792D999AE94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-022-2023-pindorama-buriti-dos-lopes-77401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Buriti_dos_Lopes_Aviso_do_extrato_de_contrato_pe_022_2023_pindorama_c16cec90-830e-49e2-95da-b265764d89cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Ratificação-CONT 056-2023 -UNIFORMES
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>25418C7C1D8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="25418C7C1D8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-cont-056-2023-uniformes-paes-landim-77409">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Paes_Landim_Aviso_de_Ratificacao_termo_de_ratificacao_cont_056_2023_uniformes_f7939541-9019-438f-9162-37b39713ef73.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RESULTO ELEIÇÃO CONSELHO TUTELAR
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>519B6B4A16724
+<br/><br/>
+<a class="fileDoc" data-file-hash="519B6B4A16724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resulto-eleicao-conselho-tutelar-monsenhor-gil-77442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Monsenhor_Gil_Atos_resulto_eleicao_conselho_tutelar_8cfd2818-3902-4ffd-9d77-9ecb86ffbd14.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 101.2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>802A19349C784
+<br/><br/>
+<a class="fileDoc" data-file-hash="802A19349C784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-101-2023-nazaria-77480">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Nazaria_Portarias_portaria_101_2023_a8d61569-892a-4a4f-b8a3-2a896376bf02.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Ata 69ª Sessão - JARI
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>371A7CBA2E854
+<br/><br/>
+<a class="fileDoc" data-file-hash="371A7CBA2E854" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-69-sessao-jari-floriano-77534">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Floriano_Atas_ata_69_sessao_jari_570f2a67-e99f-4402-8df5-11737522e0b6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 030/2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B02DD0EB05DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B02DD0EB05DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-030-2023-campinas-do-piaui-77463">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Campinas_do_Piaui_Aviso_de_licitacao_aviso_pe_030_2023_ac3b37bb-e2b7-4365-9ef1-a17731449494.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Edital de convocação 10- 2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Outros atos administrativos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C98EC3A2E2084
+<br/><br/>
+<a class="fileDoc" data-file-hash="C98EC3A2E2084" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-de-convocacao-10-2023-ipiranga-do-piaui-77501">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Ipiranga_do_Piaui_Outros_atos_administrativos_edital_de_convocacao_10_2023_9a6e1936-e8c8-43d5-be76-1835d3827bc3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Permuta
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA3877D034754
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA3877D034754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-permuta-ipiranga-do-piaui-77356">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Ipiranga_do_Piaui_Outros_termo_de_permuta_57fadf26-ebf1-4128-95bc-f7fd2ba63112.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+ERRATA CONTRATO 081
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>18C21664C4594
+<br/><br/>
+<a class="fileDoc" data-file-hash="18C21664C4594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-contrato-081-monsenhor-gil-77391">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Monsenhor_Gil_Errata_errata_contrato_081_c99a0ed6-c00a-4635-b657-d95826cbf0e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 102.2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3624ABE985604
+<br/><br/>
+<a class="fileDoc" data-file-hash="3624ABE985604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-102-2023-nazaria-77482">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Nazaria_Portarias_portaria_102_2023_2f77c493-eaa7-404b-8b8e-96a29da6d74d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto nº 120, de 29.09.2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0A36112B3DF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0A36112B3DF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-120-de-29-09-2023-floriano-77357">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Floriano_Decretos_decreto_n_120_de_29_09_2023_00e65dd1-7d98-422c-81e9-e2000b6b1cbb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato aditivo PE 013 2022- Recuperação de Tributos
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7B0D0820A804
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7B0D0820A804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-aditivo-pe-013-2022-recuperacao-de-tributos-brejo-do-piaui-77436">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Brejo_do_Piaui_Aviso_do_Termo_Aditivo_extrato_aditivo_pe_013_2022_recuperacao_de_tributos_f4abb08e-3604-404a-af68-da2ddce298ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto 003/2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B6161E6B046F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B6161E6B046F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-003-2023-cristino-castro-77433">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Camara_Cristino_Castro_Decretos_decreto_003_2023_8dc0cb0f-5033-4b4b-af76-8048e429f440.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>971FA4253DEF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="971FA4253DEF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83316/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_8c6b29df-44ca-403c-aefb-7ed20f88b12e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>81487828D9C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="81487828D9C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83317/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_09b5d7ba-cb75-4da1-aa92-0a093b334447.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3656072B6164
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3656072B6164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83318/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_2656096c-a953-4497-ada3-4426cb1f6e82.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A660A53E92584
+<br/><br/>
+<a class="fileDoc" data-file-hash="A660A53E92584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83319/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_7c4a9987-221c-466c-a941-366a203eb836.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>302F4B0E83094
+<br/><br/>
+<a class="fileDoc" data-file-hash="302F4B0E83094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83320/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_981d0c0f-8be8-4647-a67e-aaf8ff3a4854.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D980F07ACA7C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D980F07ACA7C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83321/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_e1044ccc-292e-4b7a-9825-96475b26ac81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C461349E0264
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C461349E0264" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83322/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_a8ed2b61-0e31-4268-b464-ff913b723771.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A15DD8BD6A724
+<br/><br/>
+<a class="fileDoc" data-file-hash="A15DD8BD6A724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83323/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_41d8a3af-c494-4d28-8ff4-35f2a8d43a7b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6BB8D7E9BF9D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6BB8D7E9BF9D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83324/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_4fcc5959-1029-4dcc-9682-c898d0ad429f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D7F28F76B97F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D7F28F76B97F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83325/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_bdc83115-64d4-4dad-a820-825f20299775.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>56555C9FB8D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="56555C9FB8D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83326/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_5c21884b-1ebd-41de-a189-06d98ab5b448.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CC647A61EC6B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CC647A61EC6B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83327/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_4c93294c-1c32-47e6-a572-b1070a14685b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 4 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>670A8E898CE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="670A8E898CE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83328/rreo-4-bimestre-2023-cajazeiras-do-piaui-77444">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_4_bimestre_2023_bbb6caa1-7385-4960-a9fb-8fa03b4ec646.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+Demonstrativo de Despesa com Pessoal /
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Lagoa Alegre
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49393E770ED54
+<br/><br/>
+<a class="fileDoc" data-file-hash="49393E770ED54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/83279/demonstrativo-de-despesa-com-pessoal-lagoa-alegre-77407">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Camara_Lagoa_Alegre_Relatorios_de_gestao_fiscal_demonstrativo_de_despesa_com_pessoal_5ee3b87e-5c40-4ae7-ab51-7d89af42fa37.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+NOMEAÇÃO JOÃO VICTOR DE SOUSA ALVES
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Nomeação de servidor efetivo, celetista, temporário ou comissionado
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9A5F631E9E04
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9A5F631E9E04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nomeacao-joao-victor-de-sousa-alves-altos-77439">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Camara_Altos_Nomeacao_de_servidor_efetivo__celetista__temporario_ou_comissionado_nomeacao_joao_victor_de_sousa_alves_21a48797-7bac-4da0-83cb-8f1ad7958300.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 06
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Exoneração
+</td>
+<td class="text-center">
+<strong>ID: </strong>B479E69777C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="B479E69777C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-06-landri-sales-77457">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Camara_Landri_Sales_Exoneracao_portaria_06_ebbd0331-7e69-4d90-b94f-f7f2a8ec2070.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+01 - ARP - PE 10-2023 - TRANSPORTE ESCOLAR
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E38B131A150B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E38B131A150B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/01-arp-pe-10-2023-transporte-escolar-beneditinos-77464">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Beneditinos_Extrato_01_arp_pe_10_2023_transporte_escolar_260d394d-b631-4da5-b542-c1f24ada8348.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 39-2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>BAFDA24482804
+<br/><br/>
+<a class="fileDoc" data-file-hash="BAFDA24482804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-39-2023-queimada-nova-77419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Queimada_Nova_Decretos_decreto_39_2023_0ade5101-039c-4935-9a7f-5762c09bbad3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº 106/2023
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>244E1D3C77F44
+<br/><br/>
+<a class="fileDoc" data-file-hash="244E1D3C77F44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-106-2023-amarante-77539">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Amarante_Extrato_extrato_do_contrato_n_106_2023_94d8c557-7b26-4ae9-a3f7-62ef5bd606c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=835&amp;q[flag_doc_diario_true]=1">
+575
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETOS SUPLEMENTARES N 18
+</td>
+<td class="text-center">
+03-10-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDDB47D7B8A04
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDDB47D7B8A04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decretos-suplementares-n-18-cajazeiras-do-piaui-77451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/10/3/DOP_EDICAO__3-10-2023_ED_575_Prefeitura_Cajazeiras_do_Piaui_Decretos_decretos_suplementares_n_18_b8537df6-7768-4523-831e-f354bd09e3aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

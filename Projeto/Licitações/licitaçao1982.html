@@ -1,0 +1,1388 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+DESPESA POR FUNCAO E SUB-FUNCAO /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0C604E66A4974
+<br/><br/>
+<a class="fileDoc" data-file-hash="0C604E66A4974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38995/despesa-por-funcao-e-sub-funcao-conceicao-do-caninde-36054">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_despesa_por_funcao_e_sub_funcao_dac15e90-455d-4ef0-bac9-67a51680c3ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+CP16.2022 - RATIFICAÇÃO
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A09E7EBF054B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A09E7EBF054B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp16-2022-ratificacao-sao-jose-do-divino-36016">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sao_Jose_do_Divino_Aviso_de_Ratificacao_cp16_2022_ratificacao_1659872a-8e8a-4030-9e38-3b45f4127f5b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+15 DEMONSTRATIVO SIMPLIFICADO
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+</td>
+<td class="text-center">
+<strong>ID: </strong>21B5F99900344
+<br/><br/>
+<a class="fileDoc" data-file-hash="21B5F99900344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/15-demonstrativo-simplificado-lagoinha-do-piaui-36025">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Lagoinha_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_15_demonstrativo_simplificado_076e5e51-34fb-420e-9137-974bbfcbd2ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO PRIMEIRO TERMO ADITIVO DE CONTRATO Inexigibilidade n° 003 2022
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paquetá
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>581AF3009E354
+<br/><br/>
+<a class="fileDoc" data-file-hash="581AF3009E354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-primeiro-termo-aditivo-de-contrato-inexigibilidade-n-003-2022-paqueta-35962">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Paqueta_Extrato_extrato_do_primeiro_termo_aditivo_de_contrato_inexigibilidade_n_003_2022_a2f28aa0-7c20-446a-a266-75884f88d8f6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Contrato - Gesso
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1CFE771A42464
+<br/><br/>
+<a class="fileDoc" data-file-hash="1CFE771A42464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-gesso-acaua-35944">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Acaua_Extrato_extrato_de_contrato_gesso_17e3a417-33ea-48a6-a42c-74eaa3251c4d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3BE018AC5E124
+<br/><br/>
+<a class="fileDoc" data-file-hash="3BE018AC5E124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38853/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_833cf1e4-48b8-4930-8ceb-982cc6b81d01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADCA634837124
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADCA634837124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38854/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_9ade5573-ca79-4933-91d8-8ae4281f665e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>67DCF99A09FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="67DCF99A09FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38855/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_92a0e96b-4175-4347-a107-28b26aa2fc77.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B4E8CB1C350C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B4E8CB1C350C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38856/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_2280b905-50da-4645-879a-469e413e086f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A9E16BD3A584
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A9E16BD3A584" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38857/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_1fb1d458-328d-4b9c-b280-f39b9391209a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4C28119428C64
+<br/><br/>
+<a class="fileDoc" data-file-hash="4C28119428C64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38858/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_8d3a5d39-35cb-4852-90fd-b9aab2b5380f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC55C8E2E17D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC55C8E2E17D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38859/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_f9b4ab3e-c428-4f81-922d-0e55cf201639.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>360F784E31014
+<br/><br/>
+<a class="fileDoc" data-file-hash="360F784E31014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38860/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_a8f9f1e9-fe10-4c9d-bed6-cc17bb7977e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8A49052E52694
+<br/><br/>
+<a class="fileDoc" data-file-hash="8A49052E52694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38861/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_a5724d5c-feff-41c5-8373-e45a081366a3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7D43187FC0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7D43187FC0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38862/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_acb0c711-bb41-48fb-b518-aaf2187fda47.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D2D44960A05E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D2D44960A05E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38863/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_90ae47e4-ecdc-4c3b-b8e2-bccbab696785.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 5º Bimestre /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EEFA3B7738054
+<br/><br/>
+<a class="fileDoc" data-file-hash="EEFA3B7738054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38864/rreo-5-bimestre-sebastiao-barros-35924">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_5_bimestre_90dcb37f-6cb0-4322-b706-3d0b34b3fa67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jerumenha
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>9FBFE5DA8D634
+<br/><br/>
+<a class="fileDoc" data-file-hash="9FBFE5DA8D634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-jerumenha-35926">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Jerumenha_Portarias_portaria_671f385d-212a-40ac-9e6a-4070d5220706.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE POSSE E COMPROMISSO - CARGO EFETIVO - AGENTE DE PORTARIA
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>92DF3A17F2054
+<br/><br/>
+<a class="fileDoc" data-file-hash="92DF3A17F2054" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-e-compromisso-cargo-efetivo-agente-de-portaria-angical-do-piaui-35932">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Angical_do_Piaui_Outros_termo_de_posse_e_compromisso_cargo_efetivo_agente_de_portaria_b28a7b92-9d5a-42a7-8d02-5fc2e589e902.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE POSSE E COMPROMISSO - CARGO EFETIVO - TESOUREIRO
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3807B5C0F334
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3807B5C0F334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-e-compromisso-cargo-efetivo-tesoureiro-angical-do-piaui-35935">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Angical_do_Piaui_Outros_termo_de_posse_e_compromisso_cargo_efetivo_tesoureiro_49fea462-824a-4d0e-8147-fd5588ab530e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 033/2022
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F97EEAE46A04
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F97EEAE46A04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-033-2022-sao-jose-do-piaui-35950">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sao_Jose_do_Piaui_Portarias_portaria_n_033_2022_c172a538-a5e3-4072-9c90-7afaa9b5fe07.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Convênio 001/2022
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>73FD3596A8934
+<br/><br/>
+<a class="fileDoc" data-file-hash="73FD3596A8934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-convenio-001-2022-nazaria-35966">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Nazaria_Extrato_extrato_de_convenio_001_2022_54c36754-0120-4025-a5ee-15d5abcc9118.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE POSSE E COMPROMISSO - CARGO EFETIVO - SECRETÁRIO
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>50264C09768A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="50264C09768A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-posse-e-compromisso-cargo-efetivo-secretario-angical-do-piaui-35934">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Angical_do_Piaui_Outros_termo_de_posse_e_compromisso_cargo_efetivo_secretario_b588ec4e-4e2a-4570-9731-4d56c0391c03.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+projeto de lei 03
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5C9C5D82F604
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5C9C5D82F604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-03-jatoba-do-piaui-36049">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Jatoba_do_Piaui_Projeto_de_lei_projeto_de_lei_03_76e9965f-42f7-42b1-b116-c43d75300495.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+BALANCO ORCAMENTARIO /
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE34AAC604C34
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE34AAC604C34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/38994/balanco-orcamentario-conceicao-do-caninde-36053">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Conceicao_do_Caninde_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_385f79df-777c-4fda-a6ac-ba71f4b1d1cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+decreto 21
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7BD67730E6614
+<br/><br/>
+<a class="fileDoc" data-file-hash="7BD67730E6614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-21-sebastiao-barros-35923">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Sebastiao_Barros_Decretos_decreto_21_795c2eea-1323-4a2c-b8c2-036d7d85fab3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+atos legislativos 1,2,3,4
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C36C757B92A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C36C757B92A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/atos-legislativos-1-2-3-4-jatoba-do-piaui-36040">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Camara_Jatoba_do_Piaui_Atos_atos_legislativos_1_2_3_4_f9451f31-d80a-409d-8427-a2d705a2317d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO N0 026/2022
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>617094B2E3E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="617094B2E3E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n0-026-2022-coivaras-35984">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Coivaras_Decretos_decreto_n0_026_2022_a2aa2f94-087e-479b-9a35-c67b5ac72dcf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=561&amp;q[flag_doc_diario_true]=1">
+388
+</a>
+-
+2023
+</td>
+<td class="">
+corrig-Extrato-Contrato nº 069-2022-Prest. de serv. de curs. FELIPE L. ARAÚJO LTDA-M
+</td>
+<td class="text-center">
+02-01-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>20BA2DF3746E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="20BA2DF3746E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-extrato-contrato-n-069-2022-prest-de-serv-de-curs-felipe-l-araujo-ltda-m-paes-landim-35915">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/12/30/DOP_EDICAO__2-1-2023_ED_388_Prefeitura_Paes_Landim_Aviso_do_extrato_de_contrato_corrig_extrato_contrato_n_069_2022_prest_de_serv_de_curs_felipe_l_araujo_ltda_m_8374da42-6ccb-404a-a714-42fa2a94b282.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1635 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE8854EC624B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE8854EC624B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25856/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_fc791ce8-f442-4e25-8387-cf4b08e158f0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA057468F0804
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA057468F0804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25857/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_d4f67b2a-38f9-45db-8ab4-4a0857aa96af.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E02773036BB24
+<br/><br/>
+<a class="fileDoc" data-file-hash="E02773036BB24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25858/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_39984e16-f74e-4f89-80f9-3f160f4eb2ba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>78F0A91179E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="78F0A91179E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25859/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_9cb6f59f-d926-4173-9c36-af7e35494d3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F116F0AA73324
+<br/><br/>
+<a class="fileDoc" data-file-hash="F116F0AA73324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25860/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_873b3b99-599e-4efd-be96-cc083bb0bd8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB38F552C41E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB38F552C41E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25861/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_57aa6a6f-8255-4500-9fdf-ec1c697ec5b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7AEB0FB782924
+<br/><br/>
+<a class="fileDoc" data-file-hash="7AEB0FB782924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25862/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_7e32117d-8c00-40cf-b7d0-837371b33b16.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>996DD37D687E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="996DD37D687E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25863/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_27d1d53f-3a0c-49fd-915c-181c056b1528.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7D3E943D8014
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7D3E943D8014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25864/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_84902914-29ec-4a88-a431-c3ff9b5aa852.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ADB099E2EC474
+<br/><br/>
+<a class="fileDoc" data-file-hash="ADB099E2EC474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25865/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_1184b1c5-a374-4cd2-85a4-1634698eaeae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6D5E4CC945B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="6D5E4CC945B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25866/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_32add458-931b-4c84-a461-7478ea3d5c1e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3 BIMESTRE /
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2D7F92DDCA024
+<br/><br/>
+<a class="fileDoc" data-file-hash="2D7F92DDCA024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25867/rreo-3-bimestre-ipiranga-do-piaui-24102">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Ipiranga_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_716b271e-7a7d-413b-81ac-f9759edde558.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO N 003-2022 SAÚDE
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>357BAAF374E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="357BAAF374E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-003-2022-saude-alvorada-do-gurgueia-24138">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Alvorada_do_Gurgueia_Resolucoes_resolucao_n_003_2022_saude_9f86c884-40f0-40b7-ace7-0eaf2fcfeac9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO DE Nº020-2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>56EC54C538884
+<br/><br/>
+<a class="fileDoc" data-file-hash="56EC54C538884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-de-n-020-2022-altos-24135">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Altos_Resolucoes_resolucao_de_n_020_2022_c424fa62-060d-40ce-8e6b-05db921c4585.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 268-2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7818B939BD694
+<br/><br/>
+<a class="fileDoc" data-file-hash="7818B939BD694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-268-2022-buriti-dos-lopes-24186">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_268_2022_89f8d72d-52ab-44b0-8929-5d857da59c3e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO N° 406-2022- EDUCAÇÃO - LAR PARATY
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BBC87E6E2E314
+<br/><br/>
+<a class="fileDoc" data-file-hash="BBC87E6E2E314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-406-2022-educacao-lar-paraty-floriano-24197">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Floriano_Extrato_extrato_de_contrato_n_406_2022_educacao_lar_paraty_624f99fe-6133-43ba-9c1f-5b8c837195b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação TP 002/2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>41EEF45FD1994
+<br/><br/>
+<a class="fileDoc" data-file-hash="41EEF45FD1994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-tp-002-2022-pimenteiras-24164">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Pimenteiras_Aviso_de_licitacao_aviso_de_licitacao_tp_002_2022_7903e13f-b1c5-489f-968b-cc5e28e6ecaf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 525/2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BF5D67E89D64
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BF5D67E89D64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-525-2022-floriano-24178">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Floriano_Portarias_portaria_525_2022_75c50f24-9fcb-409f-a0c1-ae2804e89fb1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+corrig.-6 - Extrato de Distrato-Contrato nº 024-2022-POSITIVA ASSESSORIA PUBLICA
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>495A11652C484
+<br/><br/>
+<a class="fileDoc" data-file-hash="495A11652C484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/corrig-6-extrato-de-distrato-contrato-n-024-2022-positiva-assessoria-publica-paes-landim-24204">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Paes_Landim_Extrato_corrig_6_extrato_de_distrato_contrato_n_024_2022_positiva_assessoria_publica_4e94390f-84c6-458a-b5b2-f91c60b21d81.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 053/2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A09CFBB8E0E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="A09CFBB8E0E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-053-2022-caxingo-24153">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Caxingo_Portarias_portaria_053_2022_fdfd992d-4afd-4c8d-b8f5-a2731d6b2e57.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 29 - JUNHO DE 2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>998DEE7E79484
+<br/><br/>
+<a class="fileDoc" data-file-hash="998DEE7E79484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-29-junho-de-2022-bocaina-24097">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Bocaina_Decretos_decreto_29_junho_de_2022_e3435e99-4f17-4f02-a913-8e039b65ef62.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 527/2022
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>5702F17D9D424
+<br/><br/>
+<a class="fileDoc" data-file-hash="5702F17D9D424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-527-2022-floriano-24180">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Floriano_Portarias_portaria_527_2022_e7f811c4-8511-4622-9a26-5089c63b5a52.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 407-2022 - INFRA - MOTOSSERRA A GASOLINA
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B8EB67B4AF2B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B8EB67B4AF2B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-407-2022-infra-motosserra-a-gasolina-floriano-24198">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Floriano_Extrato_extrato_de_contrato_n_407_2022_infra_motosserra_a_gasolina_54304ea0-7fd3-47b1-b2a5-723874585b7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=416&amp;q[flag_doc_diario_true]=1">
+291
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato adjudicação PE 20
+</td>
+<td class="text-center">
+10-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>46E6B062B59A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="46E6B062B59A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-adjudicacao-pe-20-nazare-do-piaui-24144">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__10-8-2022_ED_291_Prefeitura_Nazare_do_Piaui_Aviso_da_Adjudicacao_extrato_adjudicacao_pe_20_430a17eb-664e-4e96-8512-76a632d8b4d2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 290
+</td>
+<td class="text-center dopcom">
+09-08-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="2F7F5E19D5994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-290-piaui-24106/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_CADERNO_a____diario_oficial_completo_edicao_290_5be24fd9-7c9b-451c-a600-6cc8bbbe2921.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso continuação PREGÃO ELETRÔNICO Nº 025 - 2022 Equipamento e Mat. Permanente Saúde
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Varjota
+</td>
+<td class="text-center">
+Aviso do Julgamento e classificação de propostas
+</td>
+<td class="text-center">
+<strong>ID: </strong>0551824390484
+<br/><br/>
+<a class="fileDoc" data-file-hash="0551824390484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-continuacao-pregao-eletronico-n-025-2022-equipamento-e-mat-permanente-saude-sao-joao-da-varjota-24085">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Sao_Joao_da_Varjota_Aviso_do_Julgamento_e_classificacao_de_propostas_aviso_continuacao_pregao_eletronico_n_025_2022_equipamento_e_mat_permanente_saude_ff5f9023-d1a5-4362-bb17-f6fa6e944b94.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 01 - BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BBBDA89632724
+<br/><br/>
+<a class="fileDoc" data-file-hash="BBBDA89632724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25690/anexo-01-balanco-orcamentario-barra-d-alcantara-23982">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_01_balanco_orcamentario_a6ebbbdd-9337-46c1-97ff-962e5f6604a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 06 - DEMONSTRATIVO DOS RESULTADOS PRIMÁRIO E NOMINAL /
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>092D96AAB39E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="092D96AAB39E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25694/anexo-06-demonstrativo-dos-resultados-primario-e-nominal-barra-d-alcantara-23986">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_06_demonstrativo_dos_resultados_primario_e_nominal_0301dcce-2fe6-4eec-a9fa-02a563009f36.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 09 - DEMONSTRATIVO DAS RECEITAS OP. CRÉDITO E DESPESA DE CAPITAL /
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AA13C9AC518B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AA13C9AC518B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25697/anexo-09-demonstrativo-das-receitas-op-credito-e-despesa-de-capital-barra-d-alcantara-23989">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_09_demonstrativo_das_receitas_op_credito_e_despesa_de_capital_7cfd521f-f016-4144-b0f4-76e686be0bff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Nº 16
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>990EEA418A934
+<br/><br/>
+<a class="fileDoc" data-file-hash="990EEA418A934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-16-barra-d-alcantara-23977">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Barra_DAlcantara_Decretos_decreto_n_16_1615e6ea-6c90-47ac-9924-fa2ee05090fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 101-2022 - Isaac Fonteles
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2E000096DA1D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2E000096DA1D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-101-2022-isaac-fonteles-luis-correia-23995">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Luis_Correia_Portarias_portaria_101_2022_isaac_fonteles_bd2c8e23-efd9-4392-a890-0f1885969d64.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO 14 - DEMONSTRATIVO SIMPLIFICADO DO RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6122B49D46514
+<br/><br/>
+<a class="fileDoc" data-file-hash="6122B49D46514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/25702/anexo-14-demonstrativo-simplificado-do-relatorio-resumido-da-execucao-orcamentaria-barra-d-alcantara-23994">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Barra_DAlcantara_Relatorios_resumidos_da_execucao_orcamentaria_anexo_14_demonstrativo_simplificado_do_relatorio_resumido_da_execucao_orcamentaria_4cc8023a-4a44-4491-9670-3de9e64a0135.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO DE SUPLEMENTAÇÃO N° 35
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>5128D920B0AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5128D920B0AA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-suplementacao-n-35-demerval-lobao-23999">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Demerval_Lobao_Decretos_decreto_de_suplementacao_n_35_f3cb6f03-e56e-4455-af82-c3ab97067640.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+EC CC 002 - Campo futebol
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E4235301A2DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E4235301A2DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-cc-002-campo-futebol-lagoinha-do-piaui-24002">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Contrato_ec_cc_002_campo_futebol_d9937c99-e894-41fb-a933-3a91ff5baceb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=415&amp;q[flag_doc_diario_true]=1">
+290
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 38/2022
+</td>
+<td class="text-center">
+09-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>48C0388CBE104
+<br/><br/>
+<a class="fileDoc" data-file-hash="48C0388CBE104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-38-2022-wall-ferraz-24003">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/9/DOP_EDICAO__9-8-2022_ED_290_Prefeitura_Wall_Ferraz_Decretos_decreto_38_2022_0af5a477-d7ac-42e9-b995-84cc722d052e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

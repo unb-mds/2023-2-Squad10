@@ -1,0 +1,1611 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE CONTRATO - TP 003/2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajueiro da Praia
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>1E57C20710204
+<br/><br/>
+<a class="fileDoc" data-file-hash="1E57C20710204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-tp-003-2023-cajueiro-da-praia-73956">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Cajueiro_da_Praia_Extrato_extrato_de_contrato_tp_003_2023_64c70476-e63b-41b1-b6cc-d37e2e75647d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+PRIMEIRO ADITIVO CONTRATO Nº 01.1208_2022 - GP1
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>879AD497F85F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="879AD497F85F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/primeiro-aditivo-contrato-n-01-1208_2022-gp1-nazaria-73971">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Nazaria_Aviso_do_Termo_Aditivo_primeiro_aditivo_contrato_n_01_1208_2022_gp1_a30537f3-cccc-413a-923a-a1661931f296.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO DE CRÉDITO SUPLEMENTAR Nº 15, JULHO.2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4216B9410F1F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4216B9410F1F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-credito-suplementar-n-15-julho-2023-marcos-parente-73963">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Marcos_Parente_Decretos_decreto_de_credito_suplementar_n_15_julho_2023_ac8c21e7-8a2e-451c-a1d6-5de90773188a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N°88/2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DC51808E1AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DC51808E1AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-88-2023-landri-sales-73959">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Landri_Sales_Portarias_portaria_n_88_2023_29943aa1-d4a5-42fa-8a2d-745505447a83.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria n° 17/2023 - EXONERAÇÃO DIRETOR GERAL - HÉLIO RODRIGUES DO NASCIMENTO
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C532167177754
+<br/><br/>
+<a class="fileDoc" data-file-hash="C532167177754" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-17-2023-exoneracao-diretor-geral-helio-rodrigues-do-nascimento-sao-raimundo-nonato-73957">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Camara_Sao_Raimundo_Nonato_Portarias_portaria_n_17_2023_exoneracao_diretor_geral_helio_rodrigues_do_nascimento_842ccb51-1782-4590-9060-dcd61e00321c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE ADITIVO DE CONTRATO JOSÉ ODAIR
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DA9FFCD4A8014
+<br/><br/>
+<a class="fileDoc" data-file-hash="DA9FFCD4A8014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-de-contrato-jose-odair-barra-d-alcantara-73977">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Barra_DAlcantara_Extrato_extrato_de_aditivo_de_contrato_jose_odair_e1fa7fb2-fec4-43e8-b113-f368a5ee9bf7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+DESPACHO DE SUSPENSÃO DO PREGÃO ELETRÔNICO Nº 26/2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Despachos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A89B09D41E564
+<br/><br/>
+<a class="fileDoc" data-file-hash="A89B09D41E564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/despacho-de-suspensao-do-pregao-eletronico-n-26-2023-sebastiao-barros-73953">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sebastiao_Barros_Despachos_despacho_de_suspensao_do_pregao_eletronico_n_26_2023_61bc90f1-7a91-4e8f-80ec-074f297c0a9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria n° 18/2023-EXONERAÇÃO COORD. EXECUTIVA ESCOLA DO LEGISLATIVO-ALINE BARBOSA SOBREIRA PASSOS
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4EDD52DDB50C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4EDD52DDB50C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-18-2023-exoneracao-coord-executiva-escola-do-legislativo-aline-barbosa-sobreira-passos-sao-raimundo-nonato-73958">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Camara_Sao_Raimundo_Nonato_Portarias_portaria_n_18_2023_exoneracao_coord_executiva_escola_do_legislativo_aline_barbosa_sob_2ae197f1-375b-4e58-8b16-e3ee058ffb80.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+4 ADITIVO DL 034.2022- PROJETO PRAÇA (CAIXA)
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>9E38A397E29C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9E38A397E29C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/4-aditivo-dl-034-2022-projeto-praca-caixa-buriti-dos-lopes-73951">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Buriti_dos_Lopes_Aviso_do_Termo_Aditivo_4_aditivo_dl_034_2022_projeto_praca_caixa_2e0e00ec-d912-4447-97ae-4ffb3c650614.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE ADITIVO DE CONTRATO RENATO VELOSO
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FFBDF54C7234
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FFBDF54C7234" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-de-contrato-renato-veloso-barra-d-alcantara-73978">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Barra_DAlcantara_Extrato_extrato_de_aditivo_de_contrato_renato_veloso_01a7222b-8917-4550-96ee-0140ea938f85.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO nº. 058/2023 - PA N°. 062/2023 INEXIGIBILIDADE DE LICITAÇÃO N°. 013/2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8116EE8AB874
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8116EE8AB874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-n-058-2023-pa-n-062-2023-inexigibilidade-de-licitacao-n-013-2023-rio-grande-do-piaui-73969">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Rio_Grande_do_Piaui_Aviso_do_extrato_de_contrato_contrato_n_058_2023_pa_n_062_2023_inexigibilidade_de_licitacao_7c533b43-02bb-479d-8eb0-3f43b8cea2f0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+TP 003/2023 - HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajueiro da Praia
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3FC42727D13D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3FC42727D13D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-003-2023-homologacao-cajueiro-da-praia-73955">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Cajueiro_da_Praia_Aviso_da_Homologacao_tp_003_2023_homologacao_ae13e88a-7ae3-49ac-8f57-35fa3b51c246.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+Lei 692-2023
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE9F50FA5FDB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE9F50FA5FDB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-692-2023-buriti-dos-lopes-73972">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Buriti_dos_Lopes_Leis_lei_692_2023_0bba7437-ed96-4dd8-83ce-24bfb51f5500.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+homologação Edital 001
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B46A259D58354
+<br/><br/>
+<a class="fileDoc" data-file-hash="B46A259D58354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-edital-001-lagoa-do-barro-do-piaui-73952">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_da_Homologacao_homologacao_edital_001_2a3e7aaa-8f1f-4e5e-9ad8-ad46a4de53ee.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>471B5D644F214
+<br/><br/>
+<a class="fileDoc" data-file-hash="471B5D644F214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79434/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_f10f3f11-6e26-45a3-82b7-5d46c3c27324.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D7B3A4111F544
+<br/><br/>
+<a class="fileDoc" data-file-hash="D7B3A4111F544" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79435/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_75b868b2-1240-4129-83f7-1d7fed69aaf2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>718001014B774
+<br/><br/>
+<a class="fileDoc" data-file-hash="718001014B774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79436/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_b29bc1ae-fd24-4c62-b724-5887976aa13e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5033D041360F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5033D041360F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79437/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_49ccf44e-eded-4f19-b7f6-27219eb18bb6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>37C51B5DDE2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="37C51B5DDE2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79438/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_c45ea136-cb7c-47c1-9396-c7bcafdd881c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>05CB5F61F7E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="05CB5F61F7E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79439/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_d509299e-ab43-4806-bd3a-48fb726f6793.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>01B77E49884F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="01B77E49884F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79440/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_c2488280-1efb-4149-946e-aae51d1cfde3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1BEC51CAC384
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1BEC51CAC384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79441/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_955b62f9-0cfa-4af6-9fd4-08f419f32f7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E7C45541E1674
+<br/><br/>
+<a class="fileDoc" data-file-hash="E7C45541E1674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79442/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_6917a8a1-1f73-4185-89ef-b139f8911ce8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>561E34B26BA64
+<br/><br/>
+<a class="fileDoc" data-file-hash="561E34B26BA64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79443/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_1fa5fde0-3b79-4fd1-ad6e-e7adcf395135.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F9FD88683BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F9FD88683BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79444/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_18a1af50-d71c-4ea7-bb5f-4b433da5bc00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=802&amp;q[flag_doc_diario_true]=1">
+553
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 3º BIM 2023 /
+</td>
+<td class="text-center">
+31-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>ACA065A9F4EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="ACA065A9F4EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/79445/rreo-3-bim-2023-sao-jose-do-peixe-73975">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/30/DOP_EDICAO__31-8-2023_ED_553_Prefeitura_Sao_Jose_do_Peixe_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bim_2023_e644c0e2-5c99-43ae-92a3-0130208c9d32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 552
+</td>
+<td class="text-center dopcom">
+30-08-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="BA5E2921A8524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-552-piaui-73923/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_CADERNO_a____diario_oficial_completo_edicao_552_799c74fb-fec6-4b95-971c-34bffa8cecba.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de homologaçao do Contrato administrativo nº 082-2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E1BE3345BBEC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E1BE3345BBEC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-do-contrato-administrativo-n-082-2023-barra-d-alcantara-73910">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Barra_DAlcantara_Aviso_da_Homologacao_termo_de_homologacao_do_contrato_administrativo_n_082_2023_ecf5c8cb-92cf-481e-96f9-6dc4dda5b32b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+ADJUDICAÇÃO E HOMOLOGAÇÃO CC 03-2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D142A06EEBC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D142A06EEBC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-e-homologacao-cc-03-2023-beneditinos-73895">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Beneditinos_Aviso_da_Homologacao_adjudicacao_e_homologacao_cc_03_2023_3823d718-fd9d-4e0a-9df7-a95fba1fdadc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+LICITANET - TERMO DE ADJUDICAÇÃO PE 45
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFBD6B4CC0174
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFBD6B4CC0174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitanet-termo-de-adjudicacao-pe-45-floriano-73897">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Floriano_Aviso_da_Adjudicacao_licitanet_termo_de_adjudicacao_pe_45_ae2c9494-fb1d-4fc7-b32f-4438e7aab4b0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+CERTIDÃO DE REGULARIZAÇÃO FUNDIARIA-PROCESSO Nº 221-2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>49669DA416974
+<br/><br/>
+<a class="fileDoc" data-file-hash="49669DA416974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/certidao-de-regularizacao-fundiaria-processo-n-221-2023-oeiras-73872">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Oeiras_Outros_certidao_de_regularizacao_fundiaria_processo_n_221_2023_f0a7d654-1326-4290-a498-001025dba300.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 069-2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Colônia do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2DD2FD076FB14
+<br/><br/>
+<a class="fileDoc" data-file-hash="2DD2FD076FB14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-069-2023-colonia-do-gurgueia-73868">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Colonia_do_Gurgueia_Portarias_portaria_069_2023_acdb097f-4cfd-42fe-810f-2fd7b1cf1a22.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+CERTIDÃO DE REGULARIZAÇÃO FUNDIARIA-PROCESSO Nº 361-2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>1DAAB19FA3FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1DAAB19FA3FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/certidao-de-regularizacao-fundiaria-processo-n-361-2023-oeiras-73893">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Oeiras_Outros_certidao_de_regularizacao_fundiaria_processo_n_361_2023_6b42cd6e-771c-4d9b-96b1-8a8798d740fa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 25/2023/GP, DE 03 DE JULHO DE 2023
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>AAF72CE19A824
+<br/><br/>
+<a class="fileDoc" data-file-hash="AAF72CE19A824" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-25-2023-gp-de-03-de-julho-de-2023-francisco-macedo-73869">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Francisco_Macedo_Decretos_decreto_25_2023_gp_de_03_de_julho_de_2023_92fa5d26-28a7-48d7-896b-5cf921e27370.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=801&amp;q[flag_doc_diario_true]=1">
+552
+</a>
+-
+2023
+</td>
+<td class="">
+Errata 001 ao Edital 002/2023 - Sec de Cultura
+</td>
+<td class="text-center">
+30-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>ED4E468268D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="ED4E468268D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-001-ao-edital-002-2023-sec-de-cultura-pimenteiras-73849">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/29/DOP_EDICAO__30-8-2023_ED_552_Prefeitura_Pimenteiras_Errata_errata_001_ao_edital_002_2023_sec_de_cultura_20f2e14b-f8d3-4582-a26f-266f2b9fba3f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

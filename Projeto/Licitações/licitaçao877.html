@@ -1,0 +1,1322 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E5BDD9337024
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E5BDD9337024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67364/rreo-2-bimestre-rio-grande-do-piaui-62821">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_5334f931-e4be-44d3-a231-8360b35f886a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1FB6553380684
+<br/><br/>
+<a class="fileDoc" data-file-hash="1FB6553380684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67365/rreo-2-bimestre-rio-grande-do-piaui-62821">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_6c2b88b8-39df-40b8-8bb6-8c3347adcb4e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4A9E98ADC4CA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4A9E98ADC4CA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67366/rreo-2-bimestre-rio-grande-do-piaui-62821">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_49a16941-1c8d-4ce8-8f16-f52164b58d07.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 2º BIMESTRE /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>11918F698CC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="11918F698CC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67367/rreo-2-bimestre-rio-grande-do-piaui-62821">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Rio_Grande_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_bimestre_eef9a959-ca5d-4dc8-9278-08df93249ac2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+DISTRATO CONTRATO 061-2023
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F295646389B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="F295646389B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/distrato-contrato-061-2023-monsenhor-gil-62793">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Monsenhor_Gil_Extrato_distrato_contrato_061_2023_a1c7a158-b898-4975-a71a-5ff2474fb5d0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução 004 CMDCA
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Prata do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>A57F15A2698E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A57F15A2698E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-004-cmdca-prata-do-piaui-62794">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Prata_do_Piaui_Resolucoes_resolucao_004_cmdca_8f36d50f-8beb-4c91-8137-99f043f7087c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA ADM N°23/2023 LICENÇA PREMIO
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F408E340F804
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F408E340F804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-adm-n-23-2023-licenca-premio-landri-sales-62808">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Landri_Sales_Portarias_portaria_adm_n_23_2023_licenca_premio_0269ebb2-5b95-4962-88c2-65471926872f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA ADM N°22/2023 FERIAS REGULAMENTARES
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1930F1A468904
+<br/><br/>
+<a class="fileDoc" data-file-hash="1930F1A468904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-adm-n-22-2023-ferias-regulamentares-landri-sales-62807">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Landri_Sales_Portarias_portaria_adm_n_22_2023_ferias_regulamentares_75879727-8a4a-4042-a39f-20dbe4b0937a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+JUSTIFICATIVA TRANSFEREGOV TP 002/2023
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>0CE49CD43DBB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0CE49CD43DBB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/justificativa-transferegov-tp-002-2023-pio-ix-62795">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Pio_IX_Outros_justificativa_transferegov_tp_002_2023_c4cd95d0-f7bd-4380-b4ab-46f361d7465a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CB52E24A43344
+<br/><br/>
+<a class="fileDoc" data-file-hash="CB52E24A43344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67320/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_a01bee12-207a-4545-a454-b94ca1552755.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7FA7EEB94D7B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7FA7EEB94D7B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67321/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_17ee7160-cd70-42d6-932e-c2ecadf3417b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDCD5CD814704
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDCD5CD814704" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67322/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_8234ce52-bea5-48d4-b333-4503b097eaec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>381B14C332BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="381B14C332BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67323/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_9587f2a2-f15c-4540-af06-b11add307540.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>863FA43CAA014
+<br/><br/>
+<a class="fileDoc" data-file-hash="863FA43CAA014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67324/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_27ece909-332d-4302-87ea-6a50ebdd8b7f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EF66E5A2FBCE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EF66E5A2FBCE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67325/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_4c79beb3-0d08-4d7f-8f4b-a6792e781ae1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C8F171596AC24
+<br/><br/>
+<a class="fileDoc" data-file-hash="C8F171596AC24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67326/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_c4d8d065-966b-47cd-8558-a2643b8b5b76.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7248EE231D44
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7248EE231D44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67327/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_9c1fb4e9-75a9-4118-ac70-42ec61a2a16b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>955A4DD4AB774
+<br/><br/>
+<a class="fileDoc" data-file-hash="955A4DD4AB774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67328/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_b865fa21-4eec-491c-bb83-420e6b69806e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D0E20D87D5F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D0E20D87D5F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67329/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_9bb1bb0c-281b-4638-99ec-096f696bfb92.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>79997FE67C114
+<br/><br/>
+<a class="fileDoc" data-file-hash="79997FE67C114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67330/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_d30e13be-c1f5-4df0-a340-7e536998be67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 1 BIMESTRE 2023 /
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4721E4F07014
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4721E4F07014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/67331/rreo-1-bimestre-2023-cajazeiras-do-piaui-62788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Cajazeiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_1_bimestre_2023_42fa4273-fae0-45e3-af0c-67e9ca1e414c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RESCISÃO CONTRATUAL UNILATERAL DSP 001-2023
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso da Rescisão de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>514EE10F3CC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="514EE10F3CC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-rescisao-contratual-unilateral-dsp-001-2023-queimada-nova-62790">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Queimada_Nova_Aviso_da_Rescisao_de_contrato_termo_de_rescisao_contratual_unilateral_dsp_001_2023_f1dd8a73-a97c-4b1a-be71-5bf287de96e6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº020/2023 - Regula REGIMENTO INTERNO da APA.COMP
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Brejo do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>44C155212C4A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="44C155212C4A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-020-2023-regula-regimento-interno-da-apa-comp-brejo-do-piaui-62791">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Brejo_do_Piaui_Decretos_decreto_n_020_2023_regula_regimento_interno_da_apa_comp_66289b7a-b1e1-4ef3-bb03-2486baf9d9ce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+aviso P.E 011
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8DB76100768F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8DB76100768F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-p-e-011-lagoa-do-barro-do-piaui-62789">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_de_licitacao_aviso_p_e_011_263a7bec-4153-4279-938a-7f86ad1e4374.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO - REF. PREG. ELET. 005-2023
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+São Raimundo Nonato
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>06FAE9132B064
+<br/><br/>
+<a class="fileDoc" data-file-hash="06FAE9132B064" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-ref-preg-elet-005-2023-sao-raimundo-nonato-62842">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Camara_Sao_Raimundo_Nonato_Aviso_da_Homologacao_termo_de_homologacao_ref_preg_elet_005_2023_0aab5b32-f4e0-4861-8b80-40290b503ea0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+PE019.2023 - EXTRATO DO CONTRATO N° 254.2023
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>638BAD7F48094
+<br/><br/>
+<a class="fileDoc" data-file-hash="638BAD7F48094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe019-2023-extrato-do-contrato-n-254-2023-sao-jose-do-divino-62948">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Sao_Jose_do_Divino_Aviso_do_extrato_de_contrato_pe019_2023_extrato_do_contrato_n_254_2023_05f92a54-dfd0-4df9-ae62-bfff6c10a22e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=712&amp;q[flag_doc_diario_true]=1">
+490
+</a>
+-
+2023
+</td>
+<td class="">
+PE019.2023 - EXTRATO DA ATA SRP
+</td>
+<td class="text-center">
+02-06-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0B4115E18784
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0B4115E18784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe019-2023-extrato-da-ata-srp-sao-jose-do-divino-62947">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/6/1/DOP_EDICAO__2-6-2023_ED_490_Prefeitura_Sao_Jose_do_Divino_Extrato_pe019_2023_extrato_da_ata_srp_47f6dc69-2020-4697-ae70-980f366a211e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

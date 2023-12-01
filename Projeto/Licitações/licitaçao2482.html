@@ -1,0 +1,1444 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato n° 042/2022 - P.E. n° 021/2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>789C4F7000184
+<br/><br/>
+<a class="fileDoc" data-file-hash="789C4F7000184" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-042-2022-p-e-n-021-2022-barreiras-do-piaui-24351">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_042_2022_p_e_n_021_2022_9be8fca4-20ec-4e86-93f5-6dfa11998305.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Ordem do dia 11 sessão ordinária
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Cristino Castro
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>EDEF45DF6A3B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EDEF45DF6A3B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ordem-do-dia-11-sessao-ordinaria-cristino-castro-24349">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Camara_Cristino_Castro_Atos_ordem_do_dia_11_sessao_ordinaria_0229fabd-a3be-4c04-8bc5-6f472e9a79fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 51, CREDITO ADICIONAL SUPLEMENTAR
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9820924EC5B04
+<br/><br/>
+<a class="fileDoc" data-file-hash="9820924EC5B04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-51-credito-adicional-suplementar-barreiras-do-piaui-24334">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Decretos_decreto_51_credito_adicional_suplementar_ec273b33-3f03-45db-9603-9410bde0d78e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+MDE - EDUC /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9818992E5954
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9818992E5954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26107/mde-educ-barreiras-do-piaui-24338">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_mde_educ_3463a5db-0b88-4326-8795-d3316da4e2f3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 127-2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>385EBF4D27344
+<br/><br/>
+<a class="fileDoc" data-file-hash="385EBF4D27344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-127-2022-queimada-nova-24430">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Queimada_Nova_Portarias_portaria_127_2022_f6434303-0814-4b03-9de5-ad050b76e0f8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+decreto
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>8AA6B23D73144
+<br/><br/>
+<a class="fileDoc" data-file-hash="8AA6B23D73144" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-cajazeiras-do-piaui-24424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Cajazeiras_do_Piaui_Decretos_decreto_b2aac35b-8355-43b4-8ca2-3d5d35f121fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+decreto legislaivo julgamento de contas 2018
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Projeto de decreto
+</td>
+<td class="text-center">
+<strong>ID: </strong>483EA179F18A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="483EA179F18A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-legislaivo-julgamento-de-contas-2018-coivaras-24344">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Camara_Coivaras_Projeto_de_decreto__decreto_legislaivo_julgamento_de_contas_2018_5ad2abd2-95d4-4f12-a32c-4848ece296ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+DECRETO 50, CREDITO ADICIONAL ESPECIAL
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6FE8F3A39844
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6FE8F3A39844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-50-credito-adicional-especial-barreiras-do-piaui-24335">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Decretos_decreto_50_credito_adicional_especial_2d9cd54f-acf5-4935-9d89-6e97ce4dadc9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+BALANÇO ORÇAMENTARIO /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7551B42837B94
+<br/><br/>
+<a class="fileDoc" data-file-hash="7551B42837B94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26105/balanco-orcamentario-barreiras-do-piaui-24336">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_balanco_orcamentario_1fe2a3a6-d4de-439d-b588-035f460e5960.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8EDEEDAD9A684
+<br/><br/>
+<a class="fileDoc" data-file-hash="8EDEEDAD9A684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26114/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_90b3c1f6-c43c-492c-94f6-d2ec5e0e1b46.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3D685B9534B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3D685B9534B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26115/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_5f8d4d8b-370a-4f74-bf99-0f744f54283d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E61BE4C0B3244
+<br/><br/>
+<a class="fileDoc" data-file-hash="E61BE4C0B3244" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26116/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_e282e675-2446-4d73-89fc-828140d12c11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1390CFD9A6E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="1390CFD9A6E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26117/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_0c7f2f10-e660-46fd-b35c-488bb7bb7d37.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C46D0C89D4554
+<br/><br/>
+<a class="fileDoc" data-file-hash="C46D0C89D4554" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26118/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_a09c96ab-2a2d-461b-aed7-c2867c1f416e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F83A09E0FCFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F83A09E0FCFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26119/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_c911ece6-368d-4fea-ad61-71836b3768ea.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>56BAF348D0CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="56BAF348D0CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26120/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_6caee7fd-b29a-4481-8c75-22cc9fe750be.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 3. BIMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EEB1A4712A0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EEB1A4712A0A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26121/rreo-3-bimestre-barreiras-do-piaui-24342">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_3_bimestre_1838889f-e3fd-4206-b3ef-f2fb9c639814.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+lei nº 298/2022 - PISO SALARIA DOS ACS E ACE DE FRANCISCO MACEDO
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>3029B07932524
+<br/><br/>
+<a class="fileDoc" data-file-hash="3029B07932524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-298-2022-piso-salaria-dos-acs-e-ace-de-francisco-macedo-francisco-macedo-24347">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Francisco_Macedo_Leis_lei_n_298_2022_piso_salaria_dos_acs_e_ace_de_francisco_macedo_179fa638-b750-4fef-b622-457406f25f6e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 094/2022 Dispensa de Licitação nº 028/2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5E57F0EB3564
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5E57F0EB3564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-094-2022-dispensa-de-licitacao-n-028-2022-nossa-senhora-de-nazare-24420">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_da_Homologacao_contrato_administrativo_n_094_2022_dispensa_de_licitacao_n_028_2022_9bbb5349-cca7-4bdc-aacf-11a2d69ee8b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato do contrato 067_2022 - Dispensa 019_2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3C94CC6C4684
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3C94CC6C4684" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-067_2022-dispensa-019_2022-bocaina-24416">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Bocaina_Aviso_do_extrato_de_contrato_extrato_do_contrato_067_2022_dispensa_019_2022_a47a5e1e-20a7-4a93-bdf4-34704fdad777.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Contrato Administrativo nº 094/2022 Dispensa de Licitação nº 028/2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7CAB467CB3C44
+<br/><br/>
+<a class="fileDoc" data-file-hash="7CAB467CB3C44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-administrativo-n-094-2022-dispensa-de-licitacao-n-028-2022-nossa-senhora-de-nazare-24418">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Nossa_Senhora_de_Nazare_Aviso_do_extrato_de_contrato_contrato_administrativo_n_094_2022_dispensa_de_licitacao_n_028_2022_3e4fd5d7-133d-4fb5-92b7-a716ae7da33e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de ratificação da Dispensa 018_2022
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Bocaina
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>74A19C837BC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="74A19C837BC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-da-dispensa-018_2022-bocaina-24415">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Bocaina_Aviso_de_Ratificacao_termo_de_ratificacao_da_dispensa_018_2022_44e3a28b-1181-4a71-9146-ac73002f85a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+LEI Nº 004/1997 - ESTATUTO DOS SERVIDORES DE FRANCISCO MACEDO
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Lei do estatuto dos servidores municipais e do regime jurídico único
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2C413F71FAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2C413F71FAE4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-004-1997-estatuto-dos-servidores-de-francisco-macedo-francisco-macedo-24346">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Francisco_Macedo_Lei_do_estatuto_dos_servidores_municipais_e_do_regime_juridico_unico_lei_n_004_1997_estatuto_dos_servidores_de_francisco_macedo_514adb76-1bd7-4a8d-bbc6-74f1a6b03f35.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>64A145B9D30B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="64A145B9D30B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26122/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_6eff00d2-c997-44b5-875a-e6d4c5fbace6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A29C1CAA2CFA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A29C1CAA2CFA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26123/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_19c3540f-bc0a-43b1-9a40-6aef191dae1b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6704F43CD7224
+<br/><br/>
+<a class="fileDoc" data-file-hash="6704F43CD7224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26124/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_098ebd8c-760c-4c30-a8be-b8610138dfcb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC204EB17C474
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC204EB17C474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26125/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_62018cdc-1ba9-4ead-8af2-28251a19370d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE92ABB00CD44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE92ABB00CD44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26126/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_2809078a-5b7b-448d-9aba-6149946a34c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+RGF 1º SEMESTRE /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E0F3A7B38F154
+<br/><br/>
+<a class="fileDoc" data-file-hash="E0F3A7B38F154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26127/rgf-1-semestre-barreiras-do-piaui-24343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_de_gestao_fiscal_rgf_1_semestre_576c9c91-5a49-45f6-9c69-9d3bedd0fd86.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=418&amp;q[flag_doc_diario_true]=1">
+293
+</a>
+-
+2022
+</td>
+<td class="">
+PROJEÇAO ATUARIAL /
+</td>
+<td class="text-center">
+12-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B9245320CC94
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B9245320CC94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/26113/projecao-atuarial-barreiras-do-piaui-24341">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/11/DOP_EDICAO__12-8-2022_ED_293_Prefeitura_Barreiras_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_projecao_atuarial_1e64ec08-96e4-41d9-a300-2c7305bdb245.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

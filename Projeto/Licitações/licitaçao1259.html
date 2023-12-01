@@ -1,0 +1,1226 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 152-2023
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4021E90519F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4021E90519F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-152-2023-buriti-dos-lopes-53880">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_152_2023_c0b734c7-ef63-4f65-9851-50960c5ab048.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 151-2023
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D29F0EFD5F694
+<br/><br/>
+<a class="fileDoc" data-file-hash="D29F0EFD5F694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-151-2023-buriti-dos-lopes-53879">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_151_2023_8e6e2d21-bce2-4cd9-b5ef-a2010185a36a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+4º LINK CARD
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>1688F2BE819C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1688F2BE819C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/4-link-card-luis-correia-53808">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Luis_Correia_Aviso_do_Termo_Aditivo_4_link_card_077db087-f937-4b1a-933f-56efd25efbb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+ata da reunião
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC91ACBEDDB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC91ACBEDDB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-da-reuniao-lagoinha-do-piaui-53892">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Lagoinha_do_Piaui_Atas_ata_da_reuniao_9fcf3339-a927-4188-bbce-04eb877e33f9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE8C4B9DC7524
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE8C4B9DC7524" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57645/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_6d9ff61d-afaf-4cf0-8566-a878584d621d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>842794C461D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="842794C461D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57646/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_c8e9553e-39c4-4e98-b21e-841c9768a08b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC3A9E8A9C454
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC3A9E8A9C454" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57647/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_2292aaa7-98af-4448-9c4c-6f975f26cb4a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA52E7B0F5384
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA52E7B0F5384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57648/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_ba255041-a9ad-4ac7-937d-3b80c07633a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BC4EEC95CC354
+<br/><br/>
+<a class="fileDoc" data-file-hash="BC4EEC95CC354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57649/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_881ecb81-99ff-420c-abb0-c0d0b4d95341.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AADE3333DADB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AADE3333DADB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57650/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_50835564-42ce-40cc-8a6e-274dd20a9f6b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>273FBD9F3C764
+<br/><br/>
+<a class="fileDoc" data-file-hash="273FBD9F3C764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57651/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_d546c227-d480-4f20-b025-430039019d60.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9D91AB2DDF44
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9D91AB2DDF44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57652/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_f0d60774-234f-4884-a065-9bd1944d9fd9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>500C903B2E254
+<br/><br/>
+<a class="fileDoc" data-file-hash="500C903B2E254" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57653/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_6cbb5e49-db3c-4e15-a2f2-60ffdedda8bc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AE9872766E2F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AE9872766E2F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57654/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_3ce483dd-45f7-4869-908a-3c82e288e53a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5373C2B38B9D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5373C2B38B9D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57655/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_c7306603-8415-4b3a-9abf-717b912050b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>57344889AACD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="57344889AACD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57656/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_1030cd98-0b4e-4e98-9571-89e255b50f8d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Relatórios resumido da execução orçamentária /
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C1FB59EDC7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C1FB59EDC7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/57657/relatorios-resumido-da-execucao-orcamentaria-altos-53811">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Altos_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumido_da_execucao_orcamentaria_34f875c6-86a8-468a-9f64-71594b5cac49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Contrato 124-2023
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8377E4886FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8377E4886FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-124-2023-buriti-dos-lopes-53850">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Buriti_dos_Lopes_Contratos_e_seus_aditivos_contrato_124_2023_d9b4eb2c-894a-4e90-8770-11346b2fdebb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+3º LINK CARD
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD691E7BEF294
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD691E7BEF294" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/3-link-card-luis-correia-53806">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Luis_Correia_Aviso_do_Termo_Aditivo_3_link_card_360e6154-58e3-4812-a08c-5c8a1ede95e0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO DE REVOGAÇÃO
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>E5AC1C9B599E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E5AC1C9B599E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-de-revogacao-amarante-53807">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Amarante_Decretos_decreto_de_revogacao_27b034d9-a6d2-42cb-b9f5-b0028f67c6ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+ATA - CMMA
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>6213D2DBEFAE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6213D2DBEFAE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-cmma-jardim-do-mulato-53783">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Jardim_do_Mulato_Atas_ata_cmma_249df612-8162-4a42-9a02-e88529d6d3db.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DECLARAÇÃO HABILITAÇÃO TP 01/2023
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso de julgamento e habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>221D36A55BE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="221D36A55BE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-declaracao-habilitacao-tp-01-2023-jardim-do-mulato-53810">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Jardim_do_Mulato_Aviso_de_julgamento_e_habilitacao_de_licitantes_aviso_de_declaracao_habilitacao_tp_01_2023_742737fa-bd84-4d22-8892-e58ad1a145fd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+ATA - CMMA
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>09A330D017A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="09A330D017A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-cmma-jardim-do-mulato-53788">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Jardim_do_Mulato_Atas_ata_cmma_cfcf7e94-41bf-434c-b2d2-6655e7e84878.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Edital Conselho Tutelar
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>D714F1451ACB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D714F1451ACB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-conselho-tutelar-curral-novo-do-piaui-53794">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Curral_Novo_do_Piaui_Edital_de_Chamada_edital_conselho_tutelar_965fc4a5-88c5-469c-b500-c7c59865d05b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=652&amp;q[flag_doc_diario_true]=1">
+450
+</a>
+-
+2023
+</td>
+<td class="">
+Resolução 02
+</td>
+<td class="text-center">
+03-04-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>8B6E029589884
+<br/><br/>
+<a class="fileDoc" data-file-hash="8B6E029589884" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-02-curral-novo-do-piaui-53793">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/4/3/DOP_EDICAO__3-4-2023_ED_450_Prefeitura_Curral_Novo_do_Piaui_Resolucoes_resolucao_02_76ad31cc-12d8-48fb-ba02-e901cacaf961.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

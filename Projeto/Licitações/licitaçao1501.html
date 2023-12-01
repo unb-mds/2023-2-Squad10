@@ -1,0 +1,1232 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Ratificação INEXIGIBILIDADE Nº 019-2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DE438D5539514
+<br/><br/>
+<a class="fileDoc" data-file-hash="DE438D5539514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inexigibilidade-n-019-2023-currais-48047">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Currais_Aviso_de_Ratificacao_ratificacao_inexigibilidade_n_019_2023_55dbcf23-e4ff-468a-9796-235abe24f7cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+CM - M GIL - 2° SEMESTRE - 2022
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDFB62C0FBB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDFB62C0FBB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cm-m-gil-2-semestre-2022-monsenhor-gil-48052">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Camara_Monsenhor_Gil_Outros_cm_m_gil_2_semestre_2022_5965bc66-ba8d-4630-9d60-64812a2fa8ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+revogação da portaria 002 de 2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B87536F97F2A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B87536F97F2A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/revogacao-da-portaria-002-de-2023-agricolandia-48000">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Agricolandia_Portarias_revogacao_da_portaria_002_de_2023_b7070da7-e837-4cef-acdc-cf6bd24b05e4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+correção da portaria 14 que muda de conselheiro e passa a ser chefe de setor de autenticação
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3375DCF2C0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3375DCF2C0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/correcao-da-portaria-14-que-muda-de-conselheiro-e-passa-a-ser-chefe-de-setor-de-autenticacao-agricolandia-47997">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Agricolandia_Portarias_correcao_da_portaria_14_que_muda_de_conselheiro_e_passa_a_ser_chefe_de_setor_de_autentica_60775ce5-4744-4a28-a168-e5bea27329ca.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 151-2023 - NILCE KELLY LIMA DE SOUZA
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>75988B904F014
+<br/><br/>
+<a class="fileDoc" data-file-hash="75988B904F014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-151-2023-nilce-kelly-lima-de-souza-luis-correia-48065">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Luis_Correia_Portarias_portaria_151_2023_nilce_kelly_lima_de_souza_a93dc066-77f7-4da2-9dbf-bb186e8560a4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato do Contrato 1002202301-2023 DISPENSA Nº 017-2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C1FAD3F811FA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C1FAD3F811FA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-1002202301-2023-dispensa-n-017-2023-currais-48009">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Currais_Aviso_do_extrato_de_contrato_extrato_do_contrato_1002202301_2023_dispensa_n_017_2023_b67f3551-5a27-4d62-8fbe-060137fed119.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato contrato - inexigibilidade nº005/2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B81F30232B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B81F30232B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-inexigibilidade-n-005-2023-buriti-dos-montes-48082">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Buriti_dos_Montes_Aviso_do_extrato_de_contrato_extrato_contrato_inexigibilidade_n_005_2023_4ea8b38d-d016-4284-8cbb-daf6b7f44518.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇAO CMAS Nº 003-2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>F6CCC148EC794
+<br/><br/>
+<a class="fileDoc" data-file-hash="F6CCC148EC794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cmas-n-003-2023-sao-joao-da-fronteira-48055">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Joao_da_Fronteira_Resolucoes_resolucao_cmas_n_003_2023_af43abc2-8272-450f-82ab-4e1e5a5b0179.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>23F90386E8AD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="23F90386E8AD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51435/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_4f5464f8-6e93-4796-9cd6-9c25ffb22017.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C6BC583A96D34
+<br/><br/>
+<a class="fileDoc" data-file-hash="C6BC583A96D34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51436/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_5ec7f03d-8e98-4746-8955-25a15e40a1af.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C6E54B5D69AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C6E54B5D69AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51437/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_6e4f9dd6-3262-4567-8e31-4e9e06809c48.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2F449FE362D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="2F449FE362D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51438/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_cea7ef10-3b0c-4b48-9668-6830078f5c7e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0C9325310A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0C9325310A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51439/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_83013ce5-9ca7-4c2c-9935-28c3eff0abb0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7B63C1DDE8C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7B63C1DDE8C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51440/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_d658f37b-1e54-427e-acf7-01eff9c33893.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>81CF726D8B514
+<br/><br/>
+<a class="fileDoc" data-file-hash="81CF726D8B514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51441/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_bd177c26-487c-4740-bc77-4fa28ba3e549.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>179E40D8B79C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="179E40D8B79C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51442/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_cad67467-f454-430e-b766-40e57741c982.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8EC480AE785D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8EC480AE785D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51443/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_de27283a-aa59-4631-a9cb-a52a5861f183.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F99149D555894
+<br/><br/>
+<a class="fileDoc" data-file-hash="F99149D555894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51444/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_d1c98e52-0c74-44c3-ac3b-03336f486abd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C4B928D4023C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C4B928D4023C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51445/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_59e809ee-7f7a-478f-b47e-1ed23a917074.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B37F5A475B274
+<br/><br/>
+<a class="fileDoc" data-file-hash="B37F5A475B274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51446/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_62076130-6d59-4cab-a792-42a9b272c18c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIM /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>21586BA25D624
+<br/><br/>
+<a class="fileDoc" data-file-hash="21586BA25D624" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51447/rreo-6-bim-oeiras-48038">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Oeiras_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bim_ec952309-7f67-40e5-a29e-8ddafe8a720f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Wesley Exoneração
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>2ED0A4F8107E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2ED0A4F8107E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-wesley-exoneracao-demerval-lobao-48014">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Demerval_Lobao_Portarias_portaria_wesley_exoneracao_f089fe00-dea2-4039-8831-70836c5d6a89.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO 01-23
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>89212B75D78D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="89212B75D78D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-01-23-nazaria-48079">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Nazaria_Resolucoes_resolucao_01_23_e5788002-39da-4589-8eb9-7567814d6d24.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EDUCACAO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>263DD18D03EA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="263DD18D03EA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51424/educacao-santa-cruz-dos-milagres-48032">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_educacao_4f898564-987d-4355-a2f3-50cf28b24982.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 36
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A1226DC2F0C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="A1226DC2F0C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-36-cajazeiras-do-piaui-48081">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Cajazeiras_do_Piaui_Portarias_portaria_36_83bb9b74-3726-44f2-ba50-6daaeaf40801.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

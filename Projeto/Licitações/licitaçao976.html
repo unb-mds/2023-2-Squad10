@@ -1,0 +1,1616 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 050-2023 exonerar luis ferreira da silva
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>71EAE6F513E14
+<br/><br/>
+<a class="fileDoc" data-file-hash="71EAE6F513E14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-050-2023-exonerar-luis-ferreira-da-silva-alvorada-do-gurgueia-60682">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_050_2023_exonerar_luis_ferreira_da_silva_c84522ac-7ad5-4f78-939c-834b5b7d30a7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+31 - TRANSMUTAÇÃO DE REGIME - MARILENE MARTINS DE OLIVEIRA
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Rio Grande do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>48AA20753C8F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="48AA20753C8F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/31-transmutacao-de-regime-marilene-martins-de-oliveira-rio-grande-do-piaui-60687">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Rio_Grande_do_Piaui_Portarias_31_transmutacao_de_regime_marilene_martins_de_oliveira_16e100ac-4537-4ee9-9afd-b92af18dade2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Nomear Maria de Jesus da Silva Oliveira
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E8A57E4DAD14
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E8A57E4DAD14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/nomear-maria-de-jesus-da-silva-oliveira-paes-landim-60676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Paes_Landim_Portarias_nomear_maria_de_jesus_da_silva_oliveira_817661a6-1b56-45c6-a941-db7237ec1068.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Designar Maria de Fátima Marques de Sousa
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>75A6FD8B70ED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="75A6FD8B70ED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/designar-maria-de-fatima-marques-de-sousa-paes-landim-60664">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Paes_Landim_Portarias_designar_maria_de_fatima_marques_de_sousa_1f3641f5-3d45-4030-925d-5b868658655b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 72, SÃO DOMINGOS
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE18DC0895304
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE18DC0895304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-72-sao-domingos-demerval-lobao-60673">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_72_sao_domingos_0aceab53-785d-4f20-9940-1d2a53cd62dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 67, LAGOA DANTA
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>A921FD0ECE4B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A921FD0ECE4B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-67-lagoa-danta-demerval-lobao-60661">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_67_lagoa_danta_a01f4a20-f13f-443c-be2a-48f90a8a2b78.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Aviso de Licitação CP 001/2023
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>D01F0F28A2614
+<br/><br/>
+<a class="fileDoc" data-file-hash="D01F0F28A2614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-cp-001-2023-oeiras-60658">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Oeiras_Aviso_de_licitacao_aviso_de_licitacao_cp_001_2023_36247201-38f1-4264-a500-8a4607b5df59.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO PE 152023 - AQUISIÇÃO DE PNEUS, CÂMARAS E PROTETORES E SERVIÇOS DE MANUTENÇÃO VEICULAR.
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>25A6CEFAD2674
+<br/><br/>
+<a class="fileDoc" data-file-hash="25A6CEFAD2674" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pe-152023-aquisicao-de-pneus-camaras-e-protetores-e-servicos-de-manutencao-veicular-francisco-macedo-60579">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Francisco_Macedo_Aviso_de_licitacao_aviso_pe_152023_aquisicao_de_pneus_camaras_e_protetores_e_servicos_de_manut_66dc37f7-d3e3-4f91-b58f-a7436626265b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Termo de Cooperação Técnica - Francisco Macedo
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0612C9507C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0612C9507C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-termo-de-cooperacao-tecnica-francisco-macedo-ipiranga-do-piaui-60639">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_termo_de_cooperacao_tecnica_francisco_macedo_7394b0a5-e80c-4518-bf49-a2e86cd5472e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 63, CARAÍBAS
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>3335066E73DC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3335066E73DC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-63-caraibas-demerval-lobao-60653">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_63_caraibas_4e1da8b9-e9c4-41a5-b319-894c57ff2be8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 61, Cachoeira poço
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>72AE5991AAE44
+<br/><br/>
+<a class="fileDoc" data-file-hash="72AE5991AAE44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-61-cachoeira-poco-demerval-lobao-60651">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_61_cachoeira_poco_d243132e-1d7e-4897-b0c6-85156037a089.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 58, BARREIRO DOS MARIQUINHOS
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>81510EF51ECF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="81510EF51ECF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-58-barreiro-dos-mariquinhos-demerval-lobao-60645">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_58_barreiro_dos_mariquinhos_3fd8eeca-7240-45ef-bc8e-9a65a189c9ab.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO PE SRP Nº 11.2023 - MATERIAL DE LIMPEZA
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>93890E9E2F6A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="93890E9E2F6A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-srp-n-11-2023-material-de-limpeza-coivaras-60592">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Coivaras_Aviso_de_licitacao_aviso_de_licitacao_pe_srp_n_11_2023_material_de_limpeza_00243985-aca6-49c5-888c-f626a44b0144.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+portaria n°78 de 11 de maio de 2023 designação autoridade julgadora
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>CBFE34E041134
+<br/><br/>
+<a class="fileDoc" data-file-hash="CBFE34E041134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-78-de-11-de-maio-de-2023-designacao-autoridade-julgadora-landri-sales-60616">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Portarias_portaria_n_78_de_11_de_maio_de_2023_designacao_autoridade_julgadora_e3347cfb-ef8a-45af-8968-0e03fa8f6b90.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 082.2023
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>FC506FAA5D864
+<br/><br/>
+<a class="fileDoc" data-file-hash="FC506FAA5D864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-082-2023-amarante-60605">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Amarante_Aviso_do_extrato_de_contrato_extrato_contrato_082_2023_0eef5452-b4b5-4899-bc92-b498d5a58ee9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 5 , DE 01 DE FEVEREIRO DE 2023 - Remanejamento
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pio IX
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>C60BE32C775F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C60BE32C775F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-5-de-01-de-fevereiro-de-2023-remanejamento-pio-ix-60573">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Pio_IX_Decretos_decreto_n_5_de_01_de_fevereiro_de_2023_remanejamento_5114aca9-ec53-425b-8032-d4904b544b46.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO CONTRATO
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>5E5BD8F201FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5E5BD8F201FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-sao-joao-da-fronteira-60589">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Sao_Joao_da_Fronteira_Aviso_do_extrato_de_contrato_extrato_do_contrato_1b17b87d-85d0-4a40-9506-584d79d1241c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Convenio da Prefeitura de Pedro Laurentino - 10.05.2023
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pedro Laurentino
+</td>
+<td class="text-center">
+Convênios
+</td>
+<td class="text-center">
+<strong>ID: </strong>4574F235B4E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="4574F235B4E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convenio-da-prefeitura-de-pedro-laurentino-10-05-2023-pedro-laurentino-60638">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Pedro_Laurentino_Convenios_convenio_da_prefeitura_de_pedro_laurentino_10_05_2023_b334467b-bd52-4a54-ab92-487f8468ef3c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato Contrato - PE nº 011-2023 - Fardamentos
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C74671AEEC9A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C74671AEEC9A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-pe-n-011-2023-fardamentos-ipiranga-do-piaui-60624">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Ipiranga_do_Piaui_Aviso_do_extrato_de_contrato_extrato_contrato_pe_n_011_2023_fardamentos_17fce17b-1c55-405b-a1b5-fa752c29b257.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria n° 014.2023
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Acauã
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FD00C250EC734
+<br/><br/>
+<a class="fileDoc" data-file-hash="FD00C250EC734" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-014-2023-acaua-60590">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Acaua_Portarias_portaria_n_014_2023_84c4cbbe-68fe-430f-bfc8-4c1b82121dc3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Decreto N° 73, TABOCA
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Demerval Lobão
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>B9C05245F5E84
+<br/><br/>
+<a class="fileDoc" data-file-hash="B9C05245F5E84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-73-taboca-demerval-lobao-60675">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Demerval_Lobao_Decretos_decreto_n_73_taboca_a7b0853b-46fa-4797-ac64-7904dd6d5964.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+Designar Raimunda Nonata de Sá
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA083C672B7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA083C672B7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/designar-raimunda-nonata-de-sa-paes-landim-60666">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Paes_Landim_Portarias_designar_raimunda_nonata_de_sa_5bf42aef-b0df-4381-8ecd-ad6dc0d822e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42D7F5580B094
+<br/><br/>
+<a class="fileDoc" data-file-hash="42D7F5580B094" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64872/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_2a65859b-a065-4fa7-be50-f484c68435fb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EE6A9C3F99384
+<br/><br/>
+<a class="fileDoc" data-file-hash="EE6A9C3F99384" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64873/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_5b86bbc0-9620-421d-93dc-95fb85f4eb2e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3284F7456B024
+<br/><br/>
+<a class="fileDoc" data-file-hash="3284F7456B024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64874/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_79ab0cb1-03b6-4c0c-ba57-f4e759ef5985.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>00ECC9207EF74
+<br/><br/>
+<a class="fileDoc" data-file-hash="00ECC9207EF74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64875/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_a5c4d7e9-56f0-400d-9380-fd4aec678c3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>800316A7AFC64
+<br/><br/>
+<a class="fileDoc" data-file-hash="800316A7AFC64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64876/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_a8fb8607-3e08-445e-8ac2-95eb112180bf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE96BF15CDBC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE96BF15CDBC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64877/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_325c2270-1219-4921-9687-8a938b48a9a2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FDD73209CFFC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FDD73209CFFC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64878/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_ddf79cc9-6bfd-4608-8400-56afe438c276.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>577E04B3EC994
+<br/><br/>
+<a class="fileDoc" data-file-hash="577E04B3EC994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64879/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_66db9c1c-b613-499b-8d71-8bcb2f9e0b49.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1F25F9DA48B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="1F25F9DA48B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64880/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_01be5c7a-edba-437f-a518-913c84eec04c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E3C4DCC10904
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E3C4DCC10904" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64881/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_196f0e49-44b7-4e31-bb3c-0ac3c3733927.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>28DE60ADCE1C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="28DE60ADCE1C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64882/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_288cda73-113d-445f-93eb-f0b3794bcec5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F4210308FA6D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F4210308FA6D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64883/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_9b29562a-6fec-4777-9e1d-f18a944cf15b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=697&amp;q[flag_doc_diario_true]=1">
+479
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+18-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Balanço orçamentário
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C92D03089DED4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C92D03089DED4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/64884/relatorio-resumido-da-execucao-orcamentaria-landri-sales-60633">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/18/DOP_EDICAO__18-5-2023_ED_479_Prefeitura_Landri_Sales_Balanco_orcamentario_relatorio_resumido_da_execucao_orcamentaria_9f40236b-a995-424b-8501-994396e23cde.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

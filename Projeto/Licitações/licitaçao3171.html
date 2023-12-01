@@ -1,0 +1,1211 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+Adjudicação 002
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6E0931EFD304
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6E0931EFD304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-002-passagem-franca-do-piaui-7996">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Passagem_Franca_do_Piaui_Aviso_da_Adjudicacao_adjudicacao_002_cbee69b5-8f07-4cae-b79e-a57be321eb43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+3 ADITIVO TP 013-2017
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DBB41559464A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DBB41559464A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/3-aditivo-tp-013-2017-conceicao-do-caninde-7947">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Conceicao_do_Caninde_Extrato_3_aditivo_tp_013_2017_74a5c168-5416-44be-8240-6a76bfbbb592.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+4 TERMO DE ADITIVO TP020-2016
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>37B12C8176B74
+<br/><br/>
+<a class="fileDoc" data-file-hash="37B12C8176B74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/4-termo-de-aditivo-tp020-2016-conceicao-do-caninde-7942">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Conceicao_do_Caninde_Extrato_4_termo_de_aditivo_tp020_2016_543c66fa-82f4-4986-9124-f778877aae7c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+extrato assistencia
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>87EC51BEC4084
+<br/><br/>
+<a class="fileDoc" data-file-hash="87EC51BEC4084" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-assistencia-itaueira-8053">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Itaueira_Extrato_extrato_assistencia_8ebd9a5a-d9da-4fd8-868a-5cc93d5d9104.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+licitacao PE 011-2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8F982C33C2944
+<br/><br/>
+<a class="fileDoc" data-file-hash="8F982C33C2944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitacao-pe-011-2022-isaias-coelho-8048">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Isaias_Coelho_Aviso_de_licitacao_licitacao_pe_011_2022_1ed48e0e-2f46-49cc-8004-1225ba4f4d4b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO E HOMOLOGAÇÃO TP Nº 014-2021
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B0D2D4ABBF764
+<br/><br/>
+<a class="fileDoc" data-file-hash="B0D2D4ABBF764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-e-homologacao-tp-n-014-2021-floriano-8037">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Floriano_Aviso_da_adjudicacao_termo_de_adjudicacao_e_homologacao_tp_n_014_2021_058be1d7-8f5d-4b73-8e11-6e080cc4d073.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 006-2022 EQUIPE DE PLANEJAMENTO
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>424B1F3972124
+<br/><br/>
+<a class="fileDoc" data-file-hash="424B1F3972124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-006-2022-equipe-de-planejamento-floriano-8035">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Floriano_Portarias_portaria_006_2022_equipe_de_planejamento_40af9c82-2834-44c1-8394-ae42a6e6cf21.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9810181920944
+<br/><br/>
+<a class="fileDoc" data-file-hash="9810181920944" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-floriano-8034">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Floriano_Aviso_de_Ratificacao_termo_de_ratificacao_0c6e2995-5ce6-4746-9002-7f2fb7affd1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+ADITIVO AO CONTRATO 026-2019
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D4F07C05DB0B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D4F07C05DB0B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aditivo-ao-contrato-026-2019-floriano-8032">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Floriano_Extrato_aditivo_ao_contrato_026_2019_c84b0b73-1709-4bf7-9180-fc0ca3bdf928.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO PP 008 2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>897BE375A2AF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="897BE375A2AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-pp-008-2022-wall-ferraz-8058">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Wall_Ferraz_Aviso_de_licitacao_aviso_pp_008_2022_05517c3b-3d34-45ff-8996-ca43c5fbc467.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+DL 007_Proj Asfalto
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>36C57EDE76464
+<br/><br/>
+<a class="fileDoc" data-file-hash="36C57EDE76464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dl-007_proj-asfalto-buriti-dos-lopes-8057">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Buriti_dos_Lopes_Aviso_da_Dispensa_dl_007_proj_asfalto_7e168f05-ba11-4a7b-ba0b-d9f9bc4ec5c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+extrato do contrato administrativo nº 008-2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B650E20A61164
+<br/><br/>
+<a class="fileDoc" data-file-hash="B650E20A61164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-administrativo-n-008-2022-barra-d-alcantara-8059">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Barra_DAlcantara_Aviso_do_extrato_de_contrato_extrato_do_contrato_administrativo_n_008_2022_b35b69df-4a52-486d-9f4c-2fa3a1d69602.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+3 TERMO DE ADITIVO TP 002-2017
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Conceição do Canindé
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A6A1A1DBED3D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A6A1A1DBED3D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/3-termo-de-aditivo-tp-002-2017-conceicao-do-caninde-7943">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Conceicao_do_Caninde_Extrato_3_termo_de_aditivo_tp_002_2017_f42289ca-9c53-4584-91a6-4ef7cd01251d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+pe 04
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>0E20C9E55DB44
+<br/><br/>
+<a class="fileDoc" data-file-hash="0E20C9E55DB44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-04-passagem-franca-do-piaui-8017">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Passagem_Franca_do_Piaui_Aviso_de_licitacao_pe_04_ef9f6274-fad2-403e-a9bc-1caf2c731135.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria de nomeação de número 017-2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+José de Freitas
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>75D27B78B1444
+<br/><br/>
+<a class="fileDoc" data-file-hash="75D27B78B1444" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-nomeacao-de-numero-017-2022-jose-de-freitas-8013">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Jose_de_Freitas_Portarias_portaria_de_nomeacao_de_numero_017_2022_5dc0509e-4c45-4ad8-be38-4dfb98864589.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+ERRATA AO CONTRATO N° 072-2021
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>067BF72520BD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="067BF72520BD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-ao-contrato-n-072-2021-sao-jose-do-piaui-8020">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Sao_Jose_do_Piaui_Errata_errata_ao_contrato_n_072_2021_9178b2a5-711d-4748-a675-ef134ef16abe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE HOMOLOGAÇÃO PE 004/2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3C02462C84214
+<br/><br/>
+<a class="fileDoc" data-file-hash="3C02462C84214" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-homologacao-pe-004-2022-sao-jose-do-piaui-8014">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Sao_Jose_do_Piaui_Aviso_da_Homologacao_aviso_de_homologacao_pe_004_2022_4be5c0c4-6f58-49f9-925f-3feb9be51950.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>1D316EA148AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1D316EA148AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-itaueira-7982">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Itaueira_Portarias_portaria_c6bfbc96-849f-42b9-8df8-3e599e8f9cd8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO ASSESSORIA JURIDICA
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>C70D97B196BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C70D97B196BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-assessoria-juridica-monsenhor-gil-7980">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Monsenhor_Gil_Extrato_extrato_de_contrato_assessoria_juridica_decbd49f-3f5d-416b-a0cb-030e133a08cd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+RESTOS A PAGAR /
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Miguel Alves
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3FA05B40C634
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3FA05B40C634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/8338/restos-a-pagar-miguel-alves-7952">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Miguel_Alves_Relatorios_de_gestao_fiscal_restos_a_pagar_ffb5380b-0299-49e9-9768-1278cc80fdeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+Licitacao PE 010-2022
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>FA97A85396514
+<br/><br/>
+<a class="fileDoc" data-file-hash="FA97A85396514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/licitacao-pe-010-2022-isaias-coelho-8039">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Isaias_Coelho_Aviso_de_licitacao_licitacao_pe_010_2022_4c486808-6d6d-40f6-ba0c-865e5565762b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+Prefeitura
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9B7645ABC964
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9B7645ABC964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/prefeitura-itaueira-8046">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Itaueira_Extrato_prefeitura_15486477-a5c6-4c8f-aef6-be5b279911e1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>ABF6F60B23F24
+<br/><br/>
+<a class="fileDoc" data-file-hash="ABF6F60B23F24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-caraubas-do-piaui-7976">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_02588431-d73d-45d9-b97e-45abb833bb0a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO I DESPESA COM PESSOAL 3º QUADRIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49B351FB318A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="49B351FB318A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/8323/anexo-i-despesa-com-pessoal-3-quadrimestre-de-2021-buriti-dos-lopes-7939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_anexo_i_despesa_com_pessoal_3_quadrimestre_de_2021_3325c541-ed50-4f75-87f0-c2fbcf73f244.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO I DESPESA COM PESSOAL 3º QUADRIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>404C3F0D8F084
+<br/><br/>
+<a class="fileDoc" data-file-hash="404C3F0D8F084" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/8324/anexo-i-despesa-com-pessoal-3-quadrimestre-de-2021-buriti-dos-lopes-7939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_anexo_i_despesa_com_pessoal_3_quadrimestre_de_2021_e8c4188b-c13d-4078-bb25-b34e39fcd0a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=236&amp;q[flag_doc_diario_true]=1">
+167
+</a>
+-
+2022
+</td>
+<td class="">
+ANEXO I DESPESA COM PESSOAL 3º QUADRIMESTRE DE 2021 /
+</td>
+<td class="text-center">
+11-02-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>98825F1C43494
+<br/><br/>
+<a class="fileDoc" data-file-hash="98825F1C43494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/8325/anexo-i-despesa-com-pessoal-3-quadrimestre-de-2021-buriti-dos-lopes-7939">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/2/10/DOP_EDICAO__11-2-2022_ED_167_Camara_Buriti_dos_Lopes_Relatorios_de_gestao_fiscal_anexo_i_despesa_com_pessoal_3_quadrimestre_de_2021_321b0692-0968-4c03-a4c3-3f10e2d92c67.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

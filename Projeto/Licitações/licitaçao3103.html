@@ -1,0 +1,1640 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+edital 001 2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Edital de concurso público
+</td>
+<td class="text-center">
+<strong>ID: </strong>2CF40176FAF84
+<br/><br/>
+<a class="fileDoc" data-file-hash="2CF40176FAF84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-001-2022-altos-9696">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Altos_Edital_de_concurso_publico_edital_001_2022_a30ca6e3-bac7-43a2-8145-9d370d4ea375.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 181/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0FA633AB3114
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0FA633AB3114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-181-2022-floriano-9594">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_181_2022_05d9fcf2-7c50-4e00-951a-1d278562d2a6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Inex 004_2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>B13C0B2488224
+<br/><br/>
+<a class="fileDoc" data-file-hash="B13C0B2488224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/inex-004_2022-buriti-dos-lopes-9537">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Aviso_da_Homologacao_inex_004_2022_b135794c-6e04-422c-8609-d5e461e42794.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DEM DOS RESULTADOS PRIMÁRIO E NOMINAL /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7C69A1745C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7C69A1745C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10246/dem-dos-resultados-primario-e-nominal-campinas-do-piaui-9641">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_dem_dos_resultados_primario_e_nominal_820b484e-edc1-4d8f-8942-97f4b994b897.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DEM SIMPLIFICADO /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>207D46EB8C564
+<br/><br/>
+<a class="fileDoc" data-file-hash="207D46EB8C564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10292/dem-simplificado-campinas-do-piaui-9670">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_de_gestao_fiscal_dem_simplificado_4e8a6e0a-15e4-449b-b288-553ef4a0e15a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Ata nº 06/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>225A9F06B2CC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="225A9F06B2CC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ata-n-06-2022-floriano-9663">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Atas_ata_n_06_2022_57f1ddb8-e217-4cc5-9eb1-818fd79b7fe2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 033/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F5E908F33BE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="F5E908F33BE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-033-2022-wall-ferraz-9617">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Wall_Ferraz_Portarias_portaria_033_2022_ad92b6a1-f27a-400d-9e4f-c58e020d4d87.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+DEM. DA EXECUÇÃO DAS DESPESAS FUNÇÃO E SUBFUNÇÃO /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>71E6F9E2DFA34
+<br/><br/>
+<a class="fileDoc" data-file-hash="71E6F9E2DFA34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10242/dem-da-execucao-das-despesas-funcao-e-subfuncao-campinas-do-piaui-9637">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_dem_da_execucao_das_despesas_funcao_e_subfuncao_33b92824-20b0-4718-a161-5baffc62cbe5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>57E8BCFD69344
+<br/><br/>
+<a class="fileDoc" data-file-hash="57E8BCFD69344" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10316/execucao-orcamentaria-campinas-do-piaui-9694">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_execucao_orcamentaria_954ed79d-361f-48a9-bcc3-600b3627abe3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 29/2022/GP, DE 03 DE MARÇO DE 2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>EC627317947A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EC627317947A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-29-2022-gp-de-03-de-marco-de-2022-francisco-macedo-9697">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Francisco_Macedo_Portarias_portaria_29_2022_gp_de_03_de_marco_de_2022_b83343f6-5fd2-413d-a15d-372d5774c778.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA 034/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>95E53E6DF1DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="95E53E6DF1DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-034-2022-wall-ferraz-9618">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Wall_Ferraz_Portarias_portaria_034_2022_27f8227e-a618-41a5-9746-e3f1f60e3e56.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 172/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>82DFD6AFE2404
+<br/><br/>
+<a class="fileDoc" data-file-hash="82DFD6AFE2404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-172-2022-floriano-9581">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_172_2022_4a53f18c-31d1-4589-b0ce-2b0040271fac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Inex 004_2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A71CF97B087A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A71CF97B087A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-inex-004_2022-buriti-dos-lopes-9538">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Extrato_extrato_inex_004_2022_a358f0ab-52a2-4482-a3b4-112383f87e93.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+ATO DE CANCELAMENTO
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>73C3465548794
+<br/><br/>
+<a class="fileDoc" data-file-hash="73C3465548794" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ato-de-cancelamento-campinas-do-piaui-9680">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Campinas_do_Piaui_Atos_ato_de_cancelamento_8e6199ed-402d-4e90-9f2f-ccec3b3e4d02.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Resolução nº 05/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>054CAA012D0F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="054CAA012D0F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-n-05-2022-floriano-9671">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Resolucoes_resolucao_n_05_2022_747e8c13-8517-4083-a47e-97553f5b4a2c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA N° 32-2022 EXONERAR RENÁRIA THAISLA ALVES DE AQUINO
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3A49E8EA58B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3A49E8EA58B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-32-2022-exonerar-renaria-thaisla-alves-de-aquino-beneditinos-9626">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Beneditinos_Portarias_portaria_n_32_2022_exonerar_renaria_thaisla_alves_de_aquino_c9f66a68-de8b-4bae-99f5-b314b5faafeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 171/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F22DFA47673F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F22DFA47673F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-171-2022-floriano-9580">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_171_2022_a49c0396-fb6e-47db-ac3c-cc0ca4ebd694.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 169/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F318B6CB5614
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F318B6CB5614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-169-2022-floriano-9577">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_169_2022_72b1792a-3745-4d0e-b7e7-b4af56b5b5e5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 168/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>7950A4FF26A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="7950A4FF26A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-168-2022-floriano-9576">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_168_2022_8bc3bbbf-3a38-4cdf-9d8f-fe6561b8fa96.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 166/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>859BAA23C3AB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="859BAA23C3AB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-166-2022-floriano-9574">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_166_2022_85a4ee11-0ddf-4d97-b377-d5d7c7a8ca27.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria 165/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>319D682B79AC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="319D682B79AC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-165-2022-floriano-9573">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Floriano_Portarias_portaria_165_2022_1ab9f176-d642-4115-af25-023c6f61e354.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+projeto de lei n° 002/2022
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Projeto de lei
+</td>
+<td class="text-center">
+<strong>ID: </strong>4D17E0EBB89E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4D17E0EBB89E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/projeto-de-lei-n-002-2022-agricolandia-9587">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Agricolandia_Projeto_de_lei_projeto_de_lei_n_002_2022_8e3ad6bc-c5d0-4fe9-8b8f-c3bfac712fa4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DFF2D17058D94
+<br/><br/>
+<a class="fileDoc" data-file-hash="DFF2D17058D94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10277/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_8026519a-3444-478d-b8e1-8413d32c9323.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C04938E096EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C04938E096EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10278/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_aeeedd70-152b-4eac-9fad-3e75628cd18c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>26D4A275DA2B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="26D4A275DA2B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10279/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_cce548c1-92cf-4fe9-ae88-f11f140bf185.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>64BF1E003D2F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="64BF1E003D2F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10280/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_2f00b436-d074-4a8a-9fcb-fd4f2c4f09e3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0A3F6B5211A84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0A3F6B5211A84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10281/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_e6789c9b-e99d-457a-bade-202208cea15f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>227108EBC3FE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="227108EBC3FE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10282/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_130f4fc9-b604-4231-8e21-388c4309a55f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>542C77E813C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="542C77E813C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10283/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_716fbac5-8a30-44b2-a2c5-4a2dd33ce377.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BF8835560B654
+<br/><br/>
+<a class="fileDoc" data-file-hash="BF8835560B654" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10284/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_8947ba35-a396-4274-aefe-e81323d9bd2c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B7D942D89E914
+<br/><br/>
+<a class="fileDoc" data-file-hash="B7D942D89E914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10285/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_2f398089-0a88-4d97-a90d-d2a537491bfc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7CCBC887D1354
+<br/><br/>
+<a class="fileDoc" data-file-hash="7CCBC887D1354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10286/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_e2d32ebd-7e21-4502-8f32-a79445440161.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F282B24A5CB54
+<br/><br/>
+<a class="fileDoc" data-file-hash="F282B24A5CB54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10287/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_1c00fb6d-dca5-4a21-b232-4a83164c95b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>986B5FD4F4B14
+<br/><br/>
+<a class="fileDoc" data-file-hash="986B5FD4F4B14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10288/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_fa18a7dc-7612-4c8c-9ca8-cdd3644def9b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=260&amp;q[flag_doc_diario_true]=1">
+183
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 2º Semestre /
+</td>
+<td class="text-center">
+07-03-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A979F17FD0F34
+<br/><br/>
+<a class="fileDoc" data-file-hash="A979F17FD0F34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/10289/rreo-2-semestre-buriti-dos-lopes-9667">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/3/4/DOP_EDICAO__7-3-2022_ED_183_Prefeitura_Buriti_dos_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_rreo_2_semestre_202b0bda-7d1e-48b1-a25c-58611eb8354c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

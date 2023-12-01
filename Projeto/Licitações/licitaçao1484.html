@@ -1,0 +1,1241 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49EA662937574
+<br/><br/>
+<a class="fileDoc" data-file-hash="49EA662937574" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51863/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_9ca368d1-1fb8-4bda-a37d-043dcd06c4d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1805015F01FD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1805015F01FD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51864/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_a89cad39-de72-45f2-98d8-3043f69e558f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8357C6D1ACA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="8357C6D1ACA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51865/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_c32ca00a-37b5-4bd0-a0ff-d813a8b982ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AB7DEE1E5E014
+<br/><br/>
+<a class="fileDoc" data-file-hash="AB7DEE1E5E014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51866/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_aeaab49b-e0ba-40dd-9da2-2c5b8f77277a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>123778B96A6C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="123778B96A6C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51867/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_95b196c5-310e-44f2-a4cb-17822436b976.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2DF89FCC08014
+<br/><br/>
+<a class="fileDoc" data-file-hash="2DF89FCC08014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51868/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_29932cc3-e686-4f0d-ac92-7e3f927e635d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C57A156873924
+<br/><br/>
+<a class="fileDoc" data-file-hash="C57A156873924" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51869/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_1f13f409-aa33-4100-b187-b9d09346790c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>25B2268E16974
+<br/><br/>
+<a class="fileDoc" data-file-hash="25B2268E16974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51870/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_f620fbc6-9eda-4b30-be7b-cdb6b43fe628.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0F4FB99FFBE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="0F4FB99FFBE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51871/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_f93ca564-fee3-43f2-a0b8-2521a98cb919.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE617CA041164
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE617CA041164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51872/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_b3e96f35-2cd7-49a0-9f44-b6763423c772.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F4261878DE224
+<br/><br/>
+<a class="fileDoc" data-file-hash="F4261878DE224" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51873/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_cbc858e0-f834-4a91-a11f-0bf86e53078d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BFE2A5AE07324
+<br/><br/>
+<a class="fileDoc" data-file-hash="BFE2A5AE07324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51874/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_991b9211-639b-48cd-a218-079c905d0eda.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RREO - 6º Bimestre /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nossa Senhora de Nazaré
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3B1BBD0D2464
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3B1BBD0D2464" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51875/rreo-6-bimestre-nossa-senhora-de-nazare-48358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Nossa_Senhora_de_Nazare_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_3be80a1d-584a-48b5-9ada-9a44508a0bce.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 2
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>A9E34525BBEB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A9E34525BBEB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-2-isaias-coelho-48362">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Isaias_Coelho_Portarias_portaria_2_f0135332-a3b1-42da-bb5b-b3c0a90422dd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+TERMO DE RATIFICAÇÃO - INEXIGIBILIDADE Nº 19
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Aviso da Inexigibilidade
+</td>
+<td class="text-center">
+<strong>ID: </strong>C89B51D32CE34
+<br/><br/>
+<a class="fileDoc" data-file-hash="C89B51D32CE34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-ratificacao-inexigibilidade-n-19-amarante-48401">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Amarante_Aviso_da_Inexigibilidade_termo_de_ratificacao_inexigibilidade_n_19_0d5b61a2-051b-4b9f-a2f5-e4ebea4af316.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2022 - Demonstrativos Consolidados e Demonstrativo Simplificado do Relatório de Gestão Fiscal /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>006C745FC1FC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="006C745FC1FC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51961/rgf-2022-demonstrativos-consolidados-e-demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-nazare-do-piaui-48419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_2022_demonstrativos_consolidados_e_demonstrativo_simplificado_do_rel_b81f7b00-42e7-43d2-9117-8d77129820fc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2022 - Demonstrativos Consolidados e Demonstrativo Simplificado do Relatório de Gestão Fiscal /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C2013E5021E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C2013E5021E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51962/rgf-2022-demonstrativos-consolidados-e-demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-nazare-do-piaui-48419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_2022_demonstrativos_consolidados_e_demonstrativo_simplificado_do_rel_c762aa8c-3797-4665-aba9-1378640b478f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+RGF 2022 - Demonstrativos Consolidados e Demonstrativo Simplificado do Relatório de Gestão Fiscal /
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0B51E94850F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0B51E94850F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51963/rgf-2022-demonstrativos-consolidados-e-demonstrativo-simplificado-do-relatorio-de-gestao-fiscal-nazare-do-piaui-48419">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Camara_Nazare_do_Piaui_Relatorios_de_gestao_fiscal_rgf_2022_demonstrativos_consolidados_e_demonstrativo_simplificado_do_rel_737272ee-c972-4f96-bc1f-77fa4fb22626.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+02.1. EXTRATO DE CONTRATO N° 01.0902.2023 - Transporte Escolar
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>8E3E12D7AC954
+<br/><br/>
+<a class="fileDoc" data-file-hash="8E3E12D7AC954" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/02-1-extrato-de-contrato-n-01-0902-2023-transporte-escolar-beneditinos-48410">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Beneditinos_Aviso_do_extrato_de_contrato_02_1_extrato_de_contrato_n_01_0902_2023_transporte_escolar_0aa0debf-e569-4c86-8365-447d580df07d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 040/2023, DE 01 DE MARÇO DE 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Alvorada do Gurguéia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D5CB124F0C474
+<br/><br/>
+<a class="fileDoc" data-file-hash="D5CB124F0C474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-040-2023-de-01-de-marco-de-2023-alvorada-do-gurgueia-48319">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Alvorada_do_Gurgueia_Portarias_portaria_n_040_2023_de_01_de_marco_de_2023_6a46ba73-ead9-4429-b33d-948cd2b26c34.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+extrato de contrato
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>CA8C1234E0CD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CA8C1234E0CD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-ipiranga-do-piaui-48308">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Ipiranga_do_Piaui_Extrato_extrato_de_contrato_d98acfab-1b3c-49d5-8e39-402068c3de72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Nº 066 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>581C7284516F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="581C7284516F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-066-2023-passagem-franca-do-piaui-48336">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_066_2023_e2bec18d-b19c-410b-9564-8d2013b72345.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>E6305C1958644
+<br/><br/>
+<a class="fileDoc" data-file-hash="E6305C1958644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-sao-pedro-do-piaui-48339">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Sao_Pedro_do_Piaui_Portarias_portaria_f1b360b3-e424-4a79-b4f8-94f19c9c048d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+ratificação da portaria 018 de 2023
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1A9A99FC7604
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1A9A99FC7604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-da-portaria-018-de-2023-agricolandia-48343">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Agricolandia_Portarias_ratificacao_da_portaria_018_de_2023_72c81bf8-a4a9-4f75-9193-13bbe877b730.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=624&amp;q[flag_doc_diario_true]=1">
+430
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIAS22
+</td>
+<td class="text-center">
+06-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>756491C88D7A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="756491C88D7A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portarias22-lagoinha-do-piaui-48350">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/4/DOP_EDICAO__6-3-2023_ED_430_Prefeitura_Lagoinha_do_Piaui_Portarias_portarias22_387afe71-a747-4442-9988-9a29a44112b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1383 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO 260
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>3E4C3646EDC94
+<br/><br/>
+<a class="fileDoc" data-file-hash="3E4C3646EDC94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-260-monsenhor-gil-58378">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Monsenhor_Gil_Extrato_extrato_contrato_260_20104cb0-0a76-472a-94dc-bf8f696f35d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO SEXTO TERMO ADITIVO DO CONTRATO Nº 026/2023
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D6B8874849D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D6B8874849D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-sexto-termo-aditivo-do-contrato-n-026-2023-jardim-do-mulato-58374">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Jardim_do_Mulato_Aviso_do_Termo_Aditivo_extrato_do_sexto_termo_aditivo_do_contrato_n_026_2023_4f81c283-e759-473b-ab1d-a41302340289.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO QUINTO TERMO ADITIVO DO CONTRATO Nº 027/2023
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>6E3378F1EE534
+<br/><br/>
+<a class="fileDoc" data-file-hash="6E3378F1EE534" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-quinto-termo-aditivo-do-contrato-n-027-2023-jardim-do-mulato-58373">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Jardim_do_Mulato_Aviso_do_Termo_Aditivo_extrato_do_quinto_termo_aditivo_do_contrato_n_027_2023_a798e38c-62b3-461e-8f46-07891252188a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO QUINTO TERMO ADITIVO DO CONTRATO Nº 028/2021
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>785F6D5531874
+<br/><br/>
+<a class="fileDoc" data-file-hash="785F6D5531874" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-quinto-termo-aditivo-do-contrato-n-028-2021-jardim-do-mulato-58372">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Jardim_do_Mulato_Aviso_do_Termo_Aditivo_extrato_do_quinto_termo_aditivo_do_contrato_n_028_2021_1d6816df-cba2-49b8-98e7-bd2470a7b78e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO QUINTO TERMO ADITIVO DO CONTRATO Nº 025/2021
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>A758D4C5E7804
+<br/><br/>
+<a class="fileDoc" data-file-hash="A758D4C5E7804" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-quinto-termo-aditivo-do-contrato-n-025-2021-jardim-do-mulato-58371">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Jardim_do_Mulato_Aviso_do_Termo_Aditivo_extrato_do_quinto_termo_aditivo_do_contrato_n_025_2021_2cee2044-c0f4-4f96-ad63-8a4e9c23a0ac.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+RE-1.023/2022 - PARECER ADM - MARIA DO ESPIRITO SANTO TORRES ARAUJO
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Rosa do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>9EC72C2D68BA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9EC72C2D68BA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/re-1-023-2022-parecer-adm-maria-do-espirito-santo-torres-araujo-santa-rosa-do-piaui-58383">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Santa_Rosa_do_Piaui_Atos_re_1_023_2022_parecer_adm_maria_do_espirito_santo_torres_araujo_c48a1cf4-78af-4abf-86d7-80047159bdb8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+Lei Nº 1115/2023
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Amarante
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>95366F57A98F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="95366F57A98F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-n-1115-2023-amarante-58381">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Amarante_Leis_lei_n_1115_2023_3da7c5b5-fbda-4299-b61b-4a7ee99e71d2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+PARECER OPINATIVA
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caxingó
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>A0EB514A398A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A0EB514A398A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/parecer-opinativa-caxingo-58382">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Caxingo_Outros_parecer_opinativa_24abbb48-f1e3-4d33-966d-a9cf8dd4940f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+1º Aditivo-Prazo-Dispensa 005-2022.pdf
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>A09AC232E01C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A09AC232E01C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/1-aditivo-prazo-dispensa-005-2022-pdf-isaias-coelho-58359">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Isaias_Coelho_Extrato_1_aditivo_prazo_dispensa_005_2022_pdf_6a05e6c8-298f-45b1-afa7-654e4a51fb0d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+Homologação TP 006/2022
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>51450EDB0EE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="51450EDB0EE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-tp-006-2022-oeiras-58361">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Oeiras_Aviso_da_Homologacao_homologacao_tp_006_2022_3e7835f8-7a98-490a-89de-970b069b15eb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=683&amp;q[flag_doc_diario_true]=1">
+469
+</a>
+-
+2023
+</td>
+<td class="">
+Extrato de Aditivo ao Contrato 021/2022
+</td>
+<td class="text-center">
+04-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Peixe
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>447AF28183C14
+<br/><br/>
+<a class="fileDoc" data-file-hash="447AF28183C14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-aditivo-ao-contrato-021-2022-sao-jose-do-peixe-58370">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/3/DOP_EDICAO__4-5-2023_ED_469_Prefeitura_Sao_Jose_do_Peixe_Aviso_do_Termo_Aditivo_extrato_de_aditivo_ao_contrato_021_2022_950b1771-7422-4204-aa8e-3fd34e148811.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 468
+</td>
+<td class="text-center dopcom">
+03-05-2023
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="EB6E0897E5164" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-468-piaui-58368/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_CADERNO_a____diario_oficial_completo_edicao_468_23e46638-bf11-4096-b428-8938dd24267d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO CONTRATO ORIUNDO DE ADESÃO Nº 001-2023 - QN X PETROLINA
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>84727370FDD34
+<br/><br/>
+<a class="fileDoc" data-file-hash="84727370FDD34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-contrato-oriundo-de-adesao-n-001-2023-qn-x-petrolina-queimada-nova-58307">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Queimada_Nova_Extrato_extrato_contrato_oriundo_de_adesao_n_001_2023_qn_x_petrolina_baf7fbec-2783-4f4b-8170-ce0a19d3ed3b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0BC828E374204
+<br/><br/>
+<a class="fileDoc" data-file-hash="0BC828E374204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62310/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_d4e63d0f-1e7a-420b-b9b9-3dd01d947b29.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CDC33D9C31714
+<br/><br/>
+<a class="fileDoc" data-file-hash="CDC33D9C31714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62311/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_788c1b5c-f593-4e9d-b6ca-a8e25f866493.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>393191290F354
+<br/><br/>
+<a class="fileDoc" data-file-hash="393191290F354" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62312/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_7cb69575-1083-47f3-8453-7429bd96909f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3956A7C1C6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3956A7C1C6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62313/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_1877a89c-ff45-439c-8fe9-a71d84dfa37a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>18BE9D56E5024
+<br/><br/>
+<a class="fileDoc" data-file-hash="18BE9D56E5024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62314/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_3deab29b-843d-445f-a945-879ab8fd2426.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D97217251DB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D97217251DB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62315/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_d7a21c21-697b-4e58-a221-1e05e74dac86.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>35DDCA6E4D484
+<br/><br/>
+<a class="fileDoc" data-file-hash="35DDCA6E4D484" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62316/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_12dd657c-0d2c-43ab-ac65-d17a40de9341.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9996961BA23A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9996961BA23A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62317/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_e9afd869-47d8-481a-adcc-534aa87670ad.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6936F3A48B9A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6936F3A48B9A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62318/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_ae6035fe-e486-4c41-9e07-36489c687ad2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC9BEF4B136B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC9BEF4B136B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62319/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_d3a56b34-6c4b-4b64-9030-5c3498c50385.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB53DF69A4BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB53DF69A4BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62320/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_69a7a4cd-c140-4825-b6e9-e53b5414a4a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>12C26AE0E7724
+<br/><br/>
+<a class="fileDoc" data-file-hash="12C26AE0E7724" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62321/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_52bb3756-64a3-421d-9602-277eea1bd05c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+LEI DE RESPONSABILIDADE FISCAL /
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Félix do Piauí
+</td>
+<td class="text-center">
+Leis Orçamentárias
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F22EAA0E8BB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F22EAA0E8BB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/62322/lei-de-responsabilidade-fiscal-sao-felix-do-piaui-58305">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Sao_Felix_do_Piaui_Leis_Orcamentarias_lei_de_responsabilidade_fiscal_be90724c-2ade-4663-942f-6ff377faaa2a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+errata
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Errata
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B55975CC4844
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B55975CC4844" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/errata-cajazeiras-do-piaui-58341">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Cajazeiras_do_Piaui_Errata_errata_112dee20-426f-45da-96d7-f86b8075f620.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+edital
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Edital de Chamada
+</td>
+<td class="text-center">
+<strong>ID: </strong>FB48FA90B6A54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FB48FA90B6A54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/edital-cajazeiras-do-piaui-58340">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Cajazeiras_do_Piaui_Edital_de_Chamada_edital_e2db0db4-9af2-4ac0-842a-81e4d19501cc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=682&amp;q[flag_doc_diario_true]=1">
+468
+</a>
+-
+2023
+</td>
+<td class="">
+PE 005/2023 - HOMOLOGAÇÃO
+</td>
+<td class="text-center">
+03-05-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CE6E1FD07084
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CE6E1FD07084" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-005-2023-homologacao-nazaria-58210">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/5/2/DOP_EDICAO__3-5-2023_ED_468_Prefeitura_Nazaria_Aviso_da_Homologacao_pe_005_2023_homologacao_73873359-659b-43a9-a893-acba7dcb5b89.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

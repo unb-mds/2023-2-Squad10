@@ -1,0 +1,1500 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+ratificação inex 004/2022
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A476D342A5F74
+<br/><br/>
+<a class="fileDoc" data-file-hash="A476D342A5F74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-inex-004-2022-oeiras-14698">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Oeiras_Aviso_de_Ratificacao_ratificacao_inex_004_2022_24cfe3ff-61ea-455e-8384-4358ce95ac40.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PRIMEIRO ADITIVO VALOR- CONTRATO 201-2021-SUTRAN-CJFLASH
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>BB3611D9A9F64
+<br/><br/>
+<a class="fileDoc" data-file-hash="BB3611D9A9F64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-primeiro-aditivo-valor-contrato-201-2021-sutran-cjflash-floriano-14712">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Floriano_Extrato_extrato_primeiro_aditivo_valor_contrato_201_2021_sutran_cjflash_e1b32027-f0ee-4aef-a6f5-870c656fc823.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso de Licitação PE 017/2022- Transporte Escolar
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Ipiranga do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8AFB14C3DA9A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8AFB14C3DA9A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-017-2022-transporte-escolar-ipiranga-do-piaui-14714">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Ipiranga_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_pe_017_2022_transporte_escolar_f3ede0bc-0100-4767-a0c3-68d88701a1ed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso Teresina
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4F7FE5021EA64
+<br/><br/>
+<a class="fileDoc" data-file-hash="4F7FE5021EA64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-teresina-itaueira-14705">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Itaueira_Aviso_de_licitacao_aviso_teresina_330cc3d1-8a2b-4d09-bc2a-3ecd2d821081.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Ratificação dispensa 016-22
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4BF63AB6EDD24
+<br/><br/>
+<a class="fileDoc" data-file-hash="4BF63AB6EDD24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-dispensa-016-22-tanque-do-piaui-14687">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Tanque_do_Piaui_Aviso_de_Ratificacao_ratificacao_dispensa_016_22_08706f1c-7788-4e72-a6e6-fa1ae448a035.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de contrato dsipensa 016-22
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>36F43F9B80C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="36F43F9B80C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-dsipensa-016-22-tanque-do-piaui-14686">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Tanque_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_dsipensa_016_22_b923a49d-9638-457d-9f26-9fa9635f503b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Aviso Marmita
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>889FE5D380B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="889FE5D380B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-marmita-itaueira-14706">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Itaueira_Aviso_de_licitacao_aviso_marmita_d1984b94-f69e-47a2-94a1-fc91eb095dcd.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+RESOLUÇÃO CACS FUNDEB Nº 001, DE 23 DE ABRIL DE 2021. Regimento Interno do Conselho do FUNDEB
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Tanque do Piauí
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>1B92B9E60C974
+<br/><br/>
+<a class="fileDoc" data-file-hash="1B92B9E60C974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-cacs-fundeb-n-001-de-23-de-abril-de-2021-regimento-interno-do-conselho-do-fundeb-tanque-do-piaui-14699">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Tanque_do_Piaui_Resolucoes_resolucao_cacs_fundeb_n_001_de_23_de_abril_de_2021_regimento_interno_do_conselho_do_fundeb_0cb935a5-589d-410d-8af0-820972c92da8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato Homologação PE 10
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazaré do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>251A75E972914
+<br/><br/>
+<a class="fileDoc" data-file-hash="251A75E972914" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-homologacao-pe-10-nazare-do-piaui-14730">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Nazare_do_Piaui_Aviso_da_Homologacao_extrato_homologacao_pe_10_3385e65f-c8f7-480b-bed9-57db0779379b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=318&amp;q[flag_doc_diario_true]=1">
+222
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato n 023-2022 Joseano de Moura Ferreira
+</td>
+<td class="text-center">
+04-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>07859F4C19174
+<br/><br/>
+<a class="fileDoc" data-file-hash="07859F4C19174" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-023-2022-joseano-de-moura-ferreira-sao-jose-do-piaui-14676">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/3/DOP_EDICAO__4-5-2022_ED_222_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_023_2022_joseano_de_moura_ferreira_96357f37-f372-40e1-b09e-184283b39fa3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 221
+</td>
+<td class="text-center dopcom">
+03-05-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="CDEFDC8040314" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-221-piaui-14644/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_CADERNO_a____diario_oficial_completo_edicao_221_b95e53ef-8aaa-44cf-aef6-35e1c0e90420.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 042-2022
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A177489B0A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A177489B0A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-042-2022-oeiras-14565">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Oeiras_Portarias_portaria_n_042_2022_19d8282f-bfc8-4904-b911-9edca7921cc6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 043-2022
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>D07D957A36134
+<br/><br/>
+<a class="fileDoc" data-file-hash="D07D957A36134" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-043-2022-oeiras-14566">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Oeiras_Portarias_portaria_n_043_2022_dd000cb4-8a37-4355-9c01-0c0d42191ef7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA Nº 044-2022
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Oeiras
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>01247866E7194
+<br/><br/>
+<a class="fileDoc" data-file-hash="01247866E7194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-044-2022-oeiras-14567">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Oeiras_Portarias_portaria_n_044_2022_bf91cd35-b2e4-4b91-9e58-1b7e8df77b0e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA DE Nº075-2022 PARA PROMOVER MARIA DAS DORES E SILVA II
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8818A7E6D4994
+<br/><br/>
+<a class="fileDoc" data-file-hash="8818A7E6D4994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-n-075-2022-para-promover-maria-das-dores-e-silva-ii-altos-14577">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Altos_Portarias_portaria_de_n_075_2022_para_promover_maria_das_dores_e_silva_ii_d1406ef0-800d-47fc-a1af-9b0523e96ab6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+Portaria n° 41/2022/GP, de 02 de Maio de 2022
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>20E0642197A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="20E0642197A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-41-2022-gp-de-02-de-maio-de-2022-francisco-macedo-14571">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Francisco_Macedo_Portarias_portaria_n_41_2022_gp_de_02_de_maio_de_2022_8e300699-9662-46b7-b39d-8d7f444c837d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA DE Nº077-2022 PARA PROMOVER MARIA DO CARMO
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F093EAF1AF7D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F093EAF1AF7D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-n-077-2022-para-promover-maria-do-carmo-altos-14581">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Altos_Portarias_portaria_de_n_077_2022_para_promover_maria_do_carmo_f69a9194-f1c7-4049-9ae7-14601e6142ec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+PORTARIA DE Nº068-2022 PARA PROMOVER MARIA DE FATIMA DA SILVA
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>8CD434DAEAD74
+<br/><br/>
+<a class="fileDoc" data-file-hash="8CD434DAEAD74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-de-n-068-2022-para-promover-maria-de-fatima-da-silva-altos-14569">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Altos_Portarias_portaria_de_n_068_2022_para_promover_maria_de_fatima_da_silva_47bd8af6-7469-468d-ab3e-b774c4176d1f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+ORDEM DE SERVIÇO
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Atos
+</td>
+<td class="text-center">
+<strong>ID: </strong>DCBE5CA2E3C24
+<br/><br/>
+<a class="fileDoc" data-file-hash="DCBE5CA2E3C24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ordem-de-servico-caraubas-do-piaui-14561">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Caraubas_do_Piaui_Atos_ordem_de_servico_a963a605-9df4-4a6e-bd63-09419d4c3a50.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7458E967433E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="7458E967433E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15450/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_11fd5a34-bf28-434b-a365-4bacd6931024.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6F2D066870284
+<br/><br/>
+<a class="fileDoc" data-file-hash="6F2D066870284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15451/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_f6e247a3-4e93-414d-a65e-ae94f6dc7307.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>39D34A1C52D04
+<br/><br/>
+<a class="fileDoc" data-file-hash="39D34A1C52D04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15452/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_636a6da3-c17d-4e6d-bca0-80e5da2f4c5d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0DAB47320D0E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0DAB47320D0E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15453/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_69fabd43-517c-4383-ae01-4044139fbfeb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E43E6A9CC0514
+<br/><br/>
+<a class="fileDoc" data-file-hash="E43E6A9CC0514" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15454/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_8e168f41-35d1-4bd4-9081-d4a2ae8ccb91.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B62AFB0DD08D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B62AFB0DD08D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15455/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_fd78465f-d4c4-4a3c-9c86-ee64f88f1f1a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>57C25069DB614
+<br/><br/>
+<a class="fileDoc" data-file-hash="57C25069DB614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15456/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_f549cd68-cb23-4bda-a7cb-e5291c2750aa.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9196149BC4B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="9196149BC4B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15457/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_6a38071f-935d-45d8-9b41-e270188768df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3B90946207E64
+<br/><br/>
+<a class="fileDoc" data-file-hash="3B90946207E64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15458/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_9cbe05e7-86cf-4024-b333-34d2b0682beb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D6C89413850E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D6C89413850E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15459/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_9f5b9727-7854-492a-a920-34f10d06d999.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>EA6B6397142D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="EA6B6397142D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15460/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_f9549008-3bb2-428f-9689-a078451883de.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0DE84289EAE84
+<br/><br/>
+<a class="fileDoc" data-file-hash="0DE84289EAE84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15461/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_2e00b410-a82b-4ee6-a918-99d874677973.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=317&amp;q[flag_doc_diario_true]=1">
+221
+</a>
+-
+2022
+</td>
+<td class="">
+1-BALANÇO ORÇAMENTÁRIO /
+</td>
+<td class="text-center">
+03-05-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2071757004DF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2071757004DF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/15462/1-balanco-orcamentario-beneditinos-14575">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/5/2/DOP_EDICAO__3-5-2022_ED_221_Prefeitura_Beneditinos_Relatorios_resumidos_da_execucao_orcamentaria_1_balanco_orcamentario_27dfcb69-b032-4686-92ca-3b4a638684d7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

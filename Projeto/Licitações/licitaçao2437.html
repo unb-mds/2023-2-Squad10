@@ -1,0 +1,1566 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B1EDDDD62FC94
+<br/><br/>
+<a class="fileDoc" data-file-hash="B1EDDDD62FC94" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27297/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_587b6e14-6b3e-45ed-9fe2-6b3ec3817aa6.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E780FFA9AF8D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E780FFA9AF8D4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27298/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_771170e0-9900-4ce8-b850-797df50f56e3.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A933DF73D04A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A933DF73D04A4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27299/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_47d9f073-1ac2-41f8-a552-e46ed93db3ad.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>22103902FC1B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="22103902FC1B4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27300/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_9857c0f6-e8b4-4502-aa49-e552e4709326.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3D3755FA9AA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3D3755FA9AA4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27301/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_b0f2476a-c3d0-44be-b1c1-95013a057b18.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>85E8EDACBA204
+<br/><br/>
+<a class="fileDoc" data-file-hash="85E8EDACBA204" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27302/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_b79392a5-d587-441d-a670-47f11dac821b.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0D4689C423654
+<br/><br/>
+<a class="fileDoc" data-file-hash="0D4689C423654" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27303/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_f822fb13-7331-48c3-b617-750a04c3d2ff.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2F05AEC2D9B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2F05AEC2D9B4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27304/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_f2763e64-c87f-4fe6-9e42-fd0ec8c244b8.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6C5D536EFDBF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="6C5D536EFDBF4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27305/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_cedb0953-9ea0-4cdb-809c-41f0f6223047.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>94AA8D9B924B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="94AA8D9B924B4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27306/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_af2d73fb-32fb-4863-ab3b-0de69566cff6.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A84E878DB48F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="A84E878DB48F4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27307/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_5fd5af72-3db1-45a9-a0b8-3002560ae2ca.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>66BDA6CA3C194
+<br/><br/>
+<a class="fileDoc" data-file-hash="66BDA6CA3C194" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27308/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_7fb8faba-689e-41ed-9058-e8bbf9e0ef18.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DE EXECUÇÃO ORÇAMENTÁRIA - 3º BIMESTRE 2022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sigefredo Pacheco
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>49500618D11D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="49500618D11D4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27309/relatorios-resumidos-de-execucao-orcamentaria-3-bimestre-2022-sigefredo-pacheco-25442">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sigefredo_Pacheco_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_de_execucao_orcamentaria_3_bimestre_2022_5442d7d9-5aec-4117-8508-eb184643e778.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJUDICAÇÃO PE 026/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E26617CBA764
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E26617CBA764" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pe-026-2022-sao-pedro-do-piaui-25480">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sao_Pedro_do_Piaui_Aviso_da_Adjudicacao_termo_de_adjudicacao_pe_026_2022_e7b5a6ae-4b88-4cff-a092-0b68217f5f34.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DO CONTRATO Nº 0156/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>AC4A4E4DE1B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AC4A4E4DE1B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-contrato-n-0156-2022-sao-pedro-do-piaui-25478">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sao_Pedro_do_Piaui_Extrato_extrato_do_contrato_n_0156_2022_ceefaf86-cef7-4e00-bea0-c6434b4355b7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto suplementar nº 60
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>6FAE49F6F7474
+<br/><br/>
+<a class="fileDoc" data-file-hash="6FAE49F6F7474" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementar-n-60-altos-25453">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Altos_Decretos_decreto_suplementar_n_60_0afbc264-332c-40f3-9cdc-299096010ae1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+1.5. Demonstrativo Simplificado RGF /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>90FFAEA643504
+<br/><br/>
+<a class="fileDoc" data-file-hash="90FFAEA643504" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27266/1-5-demonstrativo-simplificado-rgf-wall-ferraz-25413">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_de_gestao_fiscal_1_5_demonstrativo_simplificado_rgf_2fc0b3e1-bdd0-4d4f-a3f9-47c74a6e9fd6.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+1.4. Demonstrativo de operações de crédito /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9D82D5F43E0A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9D82D5F43E0A4" href="/Projeto/assets/pdf.png">
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27265/1-4-demonstrativo-de-operacoes-de-credito-wall-ferraz-25412">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Wall_Ferraz_Relatorios_de_gestao_fiscal_1_4_demonstrativo_de_operacoes_de_credito_d30fbedd-2c6a-487c-b946-dbfcfa334e02.PDF" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Termo Aditivo
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Aviso do Termo Aditivo
+</td>
+<td class="text-center">
+<strong>ID: </strong>C247BA3861694
+<br/><br/>
+<a class="fileDoc" data-file-hash="C247BA3861694" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-aditivo-dom-expedito-lopes-25448">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Dom_Expedito_Lopes_Aviso_do_Termo_Aditivo_termo_aditivo_c3b44736-1b5b-4d96-869d-5e2765ffea2d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE DESISTENCIA
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>B389803797C84
+<br/><br/>
+<a class="fileDoc" data-file-hash="B389803797C84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-desistencia-angical-do-piaui-25452">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Angical_do_Piaui_Outros_termo_de_desistencia_2ff8ee03-9002-4816-bab5-53aa8a4d0b21.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato da sec. municipal de administração - MANOEL RIBEIRO
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>026B9A204B9F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="026B9A204B9F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-administracao-manoel-ribeiro-barreiras-do-piaui-25454">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_administracao_manoel_ribeiro_37a86216-2202-45e8-b80b-88038771a168.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+extrato de contrato da sec. municipal de administração - JOSIVAN SIRQUEIRA
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barreiras do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>93D0ADEAB5204
+<br/><br/>
+<a class="fileDoc" data-file-hash="93D0ADEAB5204" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-da-sec-municipal-de-administracao-josivan-sirqueira-barreiras-do-piaui-25449">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Barreiras_do_Piaui_Extrato_extrato_de_contrato_da_sec_municipal_de_administracao_josivan_sirqueira_58598106-0036-45de-ab68-c56940753997.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Homologação PE 015/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>4E20A9459CEF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4E20A9459CEF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/homologacao-pe-015-2022-currais-25451">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Currais_Aviso_da_Homologacao_homologacao_pe_015_2022_c36e1093-92cd-4fd8-b5eb-23d052cb4630.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE ADJ.
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>A688E95455024
+<br/><br/>
+<a class="fileDoc" data-file-hash="A688E95455024" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adj-queimada-nova-25457">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Queimada_Nova_Aviso_da_Adjudicacao_termo_de_adj_d90dc1fc-c7ea-44d9-9fe2-a2f63eb793d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO FUNDO MUNICIPAL DE SAUDE
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD5824EB3EFD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD5824EB3EFD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-fundo-municipal-de-saude-barra-d-alcantara-25479">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Barra_DAlcantara_Extrato_extrato_de_contrato_fundo_municipal_de_saude_7ccc6b34-71a8-427b-8256-2d44edb887c7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+LEI 228-2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Queimada Nova
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>AD68AE18C4B44
+<br/><br/>
+<a class="fileDoc" data-file-hash="AD68AE18C4B44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lei-228-2022-queimada-nova-25477">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Queimada_Nova_Leis_lei_228_2022_65c03f64-4003-4c66-9cc0-b56ebe4e9633.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+Adjudicação PE 015/2022
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Currais
+</td>
+<td class="text-center">
+Aviso da adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>BE4BCBF88A104
+<br/><br/>
+<a class="fileDoc" data-file-hash="BE4BCBF88A104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/adjudicacao-pe-015-2022-currais-25450">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Currais_Aviso_da_adjudicacao_adjudicacao_pe_015_2022_ed7cff91-5d1f-4738-9d76-875ef5a50199.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 062022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>BA67FB70A1304
+<br/><br/>
+<a class="fileDoc" data-file-hash="BA67FB70A1304" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27281/rreo-062022-sebastiao-barros-25428">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_062022_ef07668f-ee43-411e-9ac0-c1cd13611134.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 062022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>87F36AD216AF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87F36AD216AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27282/rreo-062022-sebastiao-barros-25429">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_062022_6dc2477d-be6d-4e20-8933-16f0d3af6ff6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 062022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD5380E21BE34
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD5380E21BE34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27275/rreo-062022-sebastiao-barros-25422">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_062022_8645c461-b236-4b65-87d1-eb57b6844b43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 062022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FCD3F5F4E9594
+<br/><br/>
+<a class="fileDoc" data-file-hash="FCD3F5F4E9594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27274/rreo-062022-sebastiao-barros-25421">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_062022_a5ad9978-2baa-4528-915b-4c676af63eb9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=431&amp;q[flag_doc_diario_true]=1">
+302
+</a>
+-
+2022
+</td>
+<td class="">
+RREO 062022 /
+</td>
+<td class="text-center">
+25-08-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C7FA1DD6E9324
+<br/><br/>
+<a class="fileDoc" data-file-hash="C7FA1DD6E9324" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/27277/rreo-062022-sebastiao-barros-25424">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/24/DOP_EDICAO__25-8-2022_ED_302_Prefeitura_Sebastiao_Barros_Relatorios_resumidos_da_execucao_orcamentaria_rreo_062022_4c8c3914-0ce4-4fd9-bc63-abb00d071274.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center dopcom">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=430&amp;q[flag_doc_diario_true]=1">
+301
+</a>
+-
+2022
+</td>
+<td class="dopcom">
+Diário Oficial Completo - Edição 301
+</td>
+<td class="text-center dopcom">
+24-08-2022
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO<br/>
+(Piauí)
+</td>
+<td class="text-center dopcom">
+DIÁRIO OFICIAL COMPLETO
+</td>
+<td class="text-center dopcom">
+<small><strong>CADERNO A</strong></small>
+<br/>
+<a class="fileDoc" data-file-hash="AE3A093E69614" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/diario-oficial-completo-edicao-301-piaui-25394/caderno/a">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/8/23/DOP_EDICAO__24-8-2022_ED_301_CADERNO_a____diario_oficial_completo_edicao_301_2f2a4082-f315-4607-a298-954255b0715f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1427 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+CONTRATO 005-2023 SAUDE
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E39FB66938C74
+<br/><br/>
+<a class="fileDoc" data-file-hash="E39FB66938C74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/contrato-005-2023-saude-sao-joao-da-fronteira-48166">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Sao_Joao_da_Fronteira_Aviso_do_Contrato_contrato_005_2023_saude_2a631017-646a-4a05-a7d7-ea8498b619d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+</td>
+<td class="text-center">
+<strong>ID: </strong>F21B1331EB4C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F21B1331EB4C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-buriti-dos-montes-48134">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Camara_Buriti_dos_Montes_Demonstrativo_de_receitas_e_despesas_demonstrativo_48ac22bd-969f-42d0-bf42-87b9fea2f6f2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+demonstrativo
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Buriti dos Montes
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+</td>
+<td class="text-center">
+<strong>ID: </strong>F1034598C08C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F1034598C08C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/demonstrativo-buriti-dos-montes-48132">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Camara_Buriti_dos_Montes_Demonstrativo_de_receitas_e_despesas_demonstrativo_5be6f8f3-523a-44ab-b184-fb51f79af0cb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO N° 59 , DE 07 DE DEZEMBRO DE 2022
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>4DBB52F124C54
+<br/><br/>
+<a class="fileDoc" data-file-hash="4DBB52F124C54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-59-de-07-de-dezembro-de-2022-monsenhor-gil-48157">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Monsenhor_Gil_Decretos_decreto_n_59_de_07_de_dezembro_de_2022_2671fb52-dde9-4c9e-b1da-a1fc76c17b32.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DISP 01A/2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E273AD851EA94
+<br/><br/>
+<a class="fileDoc" data-file-hash="E273AD851EA94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-disp-01a-2023-campinas-do-piaui-48120">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Campinas_do_Piaui_Extrato_extrato_disp_01a_2023_e52b0718-dbc6-4be3-a0a4-2b03c65fd2b5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+julgamento de habilitação P.A 011
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Aviso de Julgamento de Habilitação de licitantes
+</td>
+<td class="text-center">
+<strong>ID: </strong>59336BEE81564
+<br/><br/>
+<a class="fileDoc" data-file-hash="59336BEE81564" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/julgamento-de-habilitacao-p-a-011-lagoa-do-barro-do-piaui-48170">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Lagoa_do_Barro_do_Piaui_Aviso_de_Julgamento_de_Habilitacao_de_licitantes_julgamento_de_habilitacao_p_a_011_fdd876fd-adc4-4f6e-9e82-3be1c9945e69.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Anexo 4 /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoa do Barro do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>0039324345DC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0039324345DC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51568/anexo-4-lagoa-do-barro-do-piaui-48149">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Lagoa_do_Barro_do_Piaui_Relatorios_de_gestao_fiscal_anexo_4_fcef0e58-2523-4947-862b-def2914f0ddf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RESTO A PAGAR /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>195A2E5FBDB74
+<br/><br/>
+<a class="fileDoc" data-file-hash="195A2E5FBDB74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51408/resto-a-pagar-santa-cruz-dos-milagres-48029">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_resto_a_pagar_8d812d63-0a77-4e63-b648-a51aed49d86c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE LICITAÇÃO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>65D833E80FE24
+<br/><br/>
+<a class="fileDoc" data-file-hash="65D833E80FE24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-curral-novo-do-piaui-48057">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_2615acd5-cc40-414e-9cf3-b0b491e25eed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO 02-1 PE 2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>7635C24B56F14
+<br/><br/>
+<a class="fileDoc" data-file-hash="7635C24B56F14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-02-1-pe-2023-campinas-do-piaui-48118">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Campinas_do_Piaui_Extrato_extrato_02_1_pe_2023_e4a06881-616c-453d-aeb9-c2cfd805d3f0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO PE 01 2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D17AFA4AF61D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D17AFA4AF61D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-01-2023-campinas-do-piaui-48117">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Campinas_do_Piaui_Extrato_extrato_pe_01_2023_e52f3b03-76b4-45af-83c5-de9687cbf254.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Dispõe sobre convocação da 2° Plenária Municipal de Saúde do Município
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>7DD72CF3A3494
+<br/><br/>
+<a class="fileDoc" data-file-hash="7DD72CF3A3494" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispoe-sobre-convocacao-da-2-plenaria-municipal-de-saude-do-municipio-paes-landim-48093">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Paes_Landim_Decretos_dispoe_sobre_convocacao_da_2_plenaria_municipal_de_saude_do_municipio_bc3963c0-20b6-470c-ad0d-938cb4b9f76b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIMESTRE /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>DFEBB7FF624A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DFEBB7FF624A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51525/rreo-6-bimestre-curral-novo-do-piaui-48109">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_c21fc4a5-b7c1-4602-afcf-f5960732866c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIMESTRE /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8316E033C4FB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8316E033C4FB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51523/rreo-6-bimestre-curral-novo-do-piaui-48107">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_6c53e7e9-4daf-482e-9698-0cfff26b45ff.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIMESTRE /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C51F59B50DC54
+<br/><br/>
+<a class="fileDoc" data-file-hash="C51F59B50DC54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51515/rreo-6-bimestre-curral-novo-do-piaui-48099">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_f74518eb-33e5-4fc4-b6fc-988e40e59192.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Aprova regimento interno da 2° plenário municipal de Saúde.
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Paes Landim
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>BBDED3C24AC14
+<br/><br/>
+<a class="fileDoc" data-file-hash="BBDED3C24AC14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aprova-regimento-interno-da-2-plenario-municipal-de-saude-paes-landim-48101">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Paes_Landim_Decretos_aprova_regimento_interno_da_2_plenario_municipal_de_saude_744707a2-74ec-4232-af94-049690080231.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+OPERACAO /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8FBA20005E864
+<br/><br/>
+<a class="fileDoc" data-file-hash="8FBA20005E864" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51472/operacao-santa-cruz-dos-milagres-48063">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_operacao_c903afdd-f1fc-4b7a-9643-22e1595694ae.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 152-2023 - WALDIOMAR DE MORAES ALVES
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Luís Correia
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>736E13B5C3EE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="736E13B5C3EE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-152-2023-waldiomar-de-moraes-alves-luis-correia-48069">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Luis_Correia_Portarias_portaria_152_2023_waldiomar_de_moraes_alves_8c5c7209-397d-4634-b3aa-d4b3ccedc29c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Extrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>E93A7AA83F274
+<br/><br/>
+<a class="fileDoc" data-file-hash="E93A7AA83F274" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-caraubas-do-piaui-48058">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Caraubas_do_Piaui_Extrato_extrato_53e3ee91-6e84-4034-8f76-fc1550501636.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RREO 6 BIMESTRE /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Curral Novo do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A012E5CCED34
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A012E5CCED34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51512/rreo-6-bimestre-curral-novo-do-piaui-48096">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Curral_Novo_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_rreo_6_bimestre_8fc81e0a-a065-4be2-9f74-d910deb6e14d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 38
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Cajazeiras do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>23046E902E5D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="23046E902E5D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-38-cajazeiras-do-piaui-48089">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Cajazeiras_do_Piaui_Portarias_portaria_38_0467a3b8-ca1d-40ea-87b7-c803cff0e90d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria Nº 066 2023
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>543A534884A14
+<br/><br/>
+<a class="fileDoc" data-file-hash="543A534884A14" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-066-2023-passagem-franca-do-piaui-48061">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Passagem_Franca_do_Piaui_Portarias_portaria_n_066_2023_164b734b-3d85-453a-9517-e8d114e3d8a1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RESOLUÇÃO 02-23
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Nazária
+</td>
+<td class="text-center">
+Resoluções
+</td>
+<td class="text-center">
+<strong>ID: </strong>FF3D37A892D54
+<br/><br/>
+<a class="fileDoc" data-file-hash="FF3D37A892D54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/resolucao-02-23-nazaria-48083">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Nazaria_Resolucoes_resolucao_02_23_5d58f54c-3013-4fc3-adf6-7290e88d9c00.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+REC. DESP. PREVIDENCIARIA /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Santa Cruz dos Milagres
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5D6732A0A7D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="5D6732A0A7D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51399/rec-desp-previdenciaria-santa-cruz-dos-milagres-48025">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Santa_Cruz_dos_Milagres_Relatorios_de_gestao_fiscal_rec_desp_previdenciaria_908ee3a8-486c-4c19-83ed-47e34aa48ad3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E09739A826284
+<br/><br/>
+<a class="fileDoc" data-file-hash="E09739A826284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51473/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_63099e70-5675-44bc-ae89-30ab6670452e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4FCDC47244814
+<br/><br/>
+<a class="fileDoc" data-file-hash="4FCDC47244814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51474/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_c17a85d5-f0a8-41e4-86ba-24759569de43.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CAA30BD351D84
+<br/><br/>
+<a class="fileDoc" data-file-hash="CAA30BD351D84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51475/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_3ccabd94-ac87-4e81-8ac6-204a91a00ecf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>519D3B1951634
+<br/><br/>
+<a class="fileDoc" data-file-hash="519D3B1951634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51476/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_ab25e088-5192-4b15-9bf7-372a53008887.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>FED5C7D328CE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FED5C7D328CE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51477/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_95c269ac-b08b-4d72-a9ef-06c2a2cfdaed.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=621&amp;q[flag_doc_diario_true]=1">
+429
+</a>
+-
+2023
+</td>
+<td class="">
+RGF - Relatório de Gestão Fiscal Consolidadada /
+</td>
+<td class="text-center">
+03-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Coivaras
+</td>
+<td class="text-center">
+Demonstrativo de receitas e despesas
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO V: Disponibilidade De Caixa E Dos Restos A Pagar
+<br/><br/>
+Quadrimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7EBB32BD02594
+<br/><br/>
+<a class="fileDoc" data-file-hash="7EBB32BD02594" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/51478/rgf-relatorio-de-gestao-fiscal-consolidadada-coivaras-48064">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/3/3/DOP_EDICAO__3-3-2023_ED_429_Prefeitura_Coivaras_Demonstrativo_de_receitas_e_despesas_rgf_relatorio_de_gestao_fiscal_consolidadada_b730f963-019b-47f5-b17d-cdc6008c1622.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

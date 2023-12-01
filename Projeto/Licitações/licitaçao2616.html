@@ -1,0 +1,1301 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Termo de Adjudicação PP 030 2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>8ACD59EA4BDA4
+<br/><br/>
+<a class="fileDoc" data-file-hash="8ACD59EA4BDA4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-adjudicacao-pp-030-2022-wall-ferraz-21265">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Wall_Ferraz_Aviso_da_Adjudicacao_termo_de_adjudicacao_pp_030_2022_132687f7-4e2a-41d4-8485-0428a10e917c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>47123449E85E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="47123449E85E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22704/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_d108e250-7d11-43db-a011-f7342f454746.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>293798CC364B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="293798CC364B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22705/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_126f3ca5-b160-4e95-8e75-78c30507e8b2.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>924C961755284
+<br/><br/>
+<a class="fileDoc" data-file-hash="924C961755284" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22706/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_b21ecc60-3b2c-4655-8dde-707c77a80605.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5AC0583A73DD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="5AC0583A73DD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22707/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_c36161fe-ca8e-414f-b26f-2bc3dc2aed9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9CBA3429E3B24
+<br/><br/>
+<a class="fileDoc" data-file-hash="9CBA3429E3B24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22708/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_2a354e6a-cd0a-4cce-b71c-32eb407765d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+RELATÓRIOS RESUMIDOS DA EXECUÇÃO ORÇAMENTÁRIA /
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>4996D3F40EB34
+<br/><br/>
+<a class="fileDoc" data-file-hash="4996D3F40EB34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/22709/relatorios-resumidos-da-execucao-orcamentaria-sao-jose-do-piaui-21237">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_resumidos_da_execucao_orcamentaria_c47eaf6e-b40e-4ac5-9493-112249b4129b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato PP 030 2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>2D23BCF923414
+<br/><br/>
+<a class="fileDoc" data-file-hash="2D23BCF923414" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pp-030-2022-wall-ferraz-21264">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Wall_Ferraz_Aviso_do_extrato_de_contrato_extrato_de_contrato_pp_030_2022_e17a9267-415c-4f61-b5da-56a926e83cde.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+LEIS
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Itaueira
+</td>
+<td class="text-center">
+Leis
+</td>
+<td class="text-center">
+<strong>ID: </strong>631A4CBD83714
+<br/><br/>
+<a class="fileDoc" data-file-hash="631A4CBD83714" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/leis-itaueira-21244">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Itaueira_Leis_leis_5d9a9609-5c46-4a09-b478-6b0b8739482e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE RETIFICAÇÃO EXTRATO CONTRATO DISPENSA
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Contratos e seus aditivos
+</td>
+<td class="text-center">
+<strong>ID: </strong>81A9BB2DFC2C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="81A9BB2DFC2C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-retificacao-extrato-contrato-dispensa-floriano-21299">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Contratos_e_seus_aditivos_termo_de_retificacao_extrato_contrato_dispensa_d3e2054c-5a09-4711-bb69-aa6c249e29b8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Chapas de votação contas exercício 2018
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Morro Cabeça no Tempo
+</td>
+<td class="text-center">
+Ato Regimental
+</td>
+<td class="text-center">
+<strong>ID: </strong>DD37F7ABF25E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="DD37F7ABF25E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/chapas-de-votacao-contas-exercicio-2018-morro-cabeca-no-tempo-21208">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Camara_Morro_Cabeca_no_Tempo_Ato_Regimental_chapas_de_votacao_contas_exercicio_2018_56c5a32d-71ba-491f-841e-b93ee18a6eec.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+processo seletivo
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>42AF81B5C8124
+<br/><br/>
+<a class="fileDoc" data-file-hash="42AF81B5C8124" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/processo-seletivo-isaias-coelho-21206">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Isaias_Coelho_Outros_processo_seletivo_92e128a8-6557-4f00-ab4a-0f3fe00e4162.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+tp 015
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>65506EF22B114
+<br/><br/>
+<a class="fileDoc" data-file-hash="65506EF22B114" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/tp-015-buriti-dos-lopes-21202">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Buriti_dos_Lopes_Atas_tp_015_91e5da5a-baee-4fc3-851d-77d0a36a763d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 193-2022 SMS -AQUISIÇÃO DE MATERIAIS - MERCADINHO
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>92CBBC39646B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="92CBBC39646B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-193-2022-sms-aquisicao-de-materiais-mercadinho-floriano-21286">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_193_2022_sms_aquisicao_de_materiais_mercadinho_eb2d17d5-2b2a-44ad-808b-6175f26fe9df.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE EXTRATO DE CONTRATO N° 061/2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Piauí
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>4134112058BC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="4134112058BC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-extrato-de-contrato-n-061-2022-sao-jose-do-piaui-21278">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Sao_Jose_do_Piaui_Aviso_do_extrato_de_contrato_aviso_de_extrato_de_contrato_n_061_2022_ba19d4a6-eda4-4663-bbd6-b5a4f3d19e2a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE RETIFICAÇÃO DE EDITAL TP 003 - 2022 - CONSTRUÇÃO DE 3 QUADRAS.
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Angical do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>E117D6FF7DF54
+<br/><br/>
+<a class="fileDoc" data-file-hash="E117D6FF7DF54" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-retificacao-de-edital-tp-003-2022-construcao-de-3-quadras-angical-do-piaui-21252">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Angical_do_Piaui_Aviso_de_licitacao_aviso_de_retificacao_de_edital_tp_003_2022_construcao_de_3_quadras_8af925a3-d855-4a7b-9717-5470cf166ea4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Cópia das publicações dos decretos de abertura de créditos adicionais
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>0238ED26739A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="0238ED26739A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/copia-das-publicacoes-dos-decretos-de-abertura-de-creditos-adicionais-barra-d-alcantara-21195">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Barra_DAlcantara_Decretos_copia_das_publicacoes_dos_decretos_de_abertura_de_creditos_adicionais_ef4fd084-603d-4d2f-ac35-807b25e500d1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 192-2022 GEÓRGIA
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>EAF42D5209E94
+<br/><br/>
+<a class="fileDoc" data-file-hash="EAF42D5209E94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-192-2022-georgia-floriano-21285">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_192_2022_georgia_fe4ee96d-87bf-4bf6-84da-9e0181815b01.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+PP 006 - Exames
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Agricolândia
+</td>
+<td class="text-center">
+Edital do pregão
+</td>
+<td class="text-center">
+<strong>ID: </strong>1D6431B50DCD4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1D6431B50DCD4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pp-006-exames-agricolandia-21200">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Agricolandia_Edital_do_pregao_pp_006_exames_3d2bfaa9-c65b-4b64-a75f-21c945fe2232.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Decreto Suplementar nº 47
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Altos
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>D0E3E283E11E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D0E3E283E11E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-suplementar-n-47-altos-21194">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Altos_Decretos_decreto_suplementar_n_47_a21827a1-6e5c-49b4-b3a8-0a48b4d95718.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO PE 42 – 2022 FELICIANO DE CARVALHO ALENCAR - ME (CNPJ nº. 19.069.0670001-00).
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Francisco Macedo
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>46B988581D154
+<br/><br/>
+<a class="fileDoc" data-file-hash="46B988581D154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-pe-42-2022-feliciano-de-carvalho-alencar-me-cnpj-n-19-069-0670001-00-francisco-macedo-21199">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Francisco_Macedo_Aviso_do_extrato_de_contrato_extrato_pe_42_2022_feliciano_de_carvalho_alencar_me_cnpj_n_19_069_0670001_00_5b2693ad-43a0-4cd2-9133-b5fc8d8e7285.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+AVISO DE LICITAÇÃO - PE 25/2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Outros
+</td>
+<td class="text-center">
+<strong>ID: </strong>274E5ABC969F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="274E5ABC969F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-pe-25-2022-monsenhor-gil-21228">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Monsenhor_Gil_Outros_aviso_de_licitacao_pe_25_2022_ba342577-84ea-47b5-b4f2-4bda75e1b235.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO-386-2022- EDUCAÇÃO
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>6A7216A29F104
+<br/><br/>
+<a class="fileDoc" data-file-hash="6A7216A29F104" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-386-2022-educacao-floriano-21294">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_386_2022_educacao_72c0e872-8282-4f1f-b12a-6c73bba04dbf.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO 191-2022 ERICKA
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>D9D488FEC65F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D9D488FEC65F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-191-2022-ericka-floriano-21284">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_191_2022_ericka_b21b240a-d181-4281-a9f5-dd07bcd02ebe.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+EXTRATO DE CONTRATO Nº 387-2022-EDUCAÇÃO-HOTEL GAROTO
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>857920B0DF9F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="857920B0DF9F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-n-387-2022-educacao-hotel-garoto-floriano-21293">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_do_extrato_de_contrato_extrato_de_contrato_n_387_2022_educacao_hotel_garoto_b576ed43-d92e-4dfe-aec0-a50d0248874b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+00. homologação PE n° 08-2022 - Extrato Parcial
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C0CC3F1208934
+<br/><br/>
+<a class="fileDoc" data-file-hash="C0CC3F1208934" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/00-homologacao-pe-n-08-2022-extrato-parcial-beneditinos-21291">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Beneditinos_Aviso_da_Homologacao_00_homologacao_pe_n_08_2022_extrato_parcial_0bfe28b9-49c6-4208-b35c-f65df9da1cf6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+Extrato de Contrato PP 005-A/2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Pimenteiras
+</td>
+<td class="text-center">
+Aviso do extrato de contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>9F76CFC3BAA84
+<br/><br/>
+<a class="fileDoc" data-file-hash="9F76CFC3BAA84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-contrato-pp-005-a-2022-pimenteiras-21292">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Pimenteiras_Aviso_do_extrato_de_contrato_extrato_de_contrato_pp_005_a_2022_ae0e23ab-a910-4ebb-bc5b-afab29af2b72.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=381&amp;q[flag_doc_diario_true]=1">
+266
+</a>
+-
+2022
+</td>
+<td class="">
+TERMO DE HOMOLOGAÇÃO PE SRP 044-2022
+</td>
+<td class="text-center">
+06-07-2022
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Floriano
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>446F133FD0C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="446F133FD0C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-pe-srp-044-2022-floriano-21289">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2022/7/5/DOP_EDICAO__6-7-2022_ED_266_Prefeitura_Floriano_Aviso_da_Homologacao_termo_de_homologacao_pe_srp_044_2022_123e7fc5-7d43-4a3b-b2d5-18f51428b3d6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

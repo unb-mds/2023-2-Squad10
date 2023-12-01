@@ -1,0 +1,1226 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA LOTAÇÃO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Monsenhor Gil
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>FE26CC5AE52D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="FE26CC5AE52D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-lotacao-monsenhor-gil-47393">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Monsenhor_Gil_Portarias_portaria_lotacao_bb552698-7a5e-4fe7-8609-24060e7e1b9d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+DISPENSA DE LICITAÇÃO N° 016/2023
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São Pedro do Piauí
+</td>
+<td class="text-center">
+Aviso da Dispensa
+</td>
+<td class="text-center">
+<strong>ID: </strong>7347F73CB4C94
+<br/><br/>
+<a class="fileDoc" data-file-hash="7347F73CB4C94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/dispensa-de-licitacao-n-016-2023-sao-pedro-do-piaui-47391">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Pedro_do_Piaui_Aviso_da_Dispensa_dispensa_de_licitacao_n_016_2023_b743799b-d4d1-428d-ac2c-5bdaddc6387e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9911ACC656EC4
+<br/><br/>
+<a class="fileDoc" data-file-hash="9911ACC656EC4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50728/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_a20a9140-2a0a-4e44-b81e-d24d8733abd7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>348D30C2C9034
+<br/><br/>
+<a class="fileDoc" data-file-hash="348D30C2C9034" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50729/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_68a4b72c-58ad-4c82-98b8-7358e7ab1f08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>7F07EEBC05634
+<br/><br/>
+<a class="fileDoc" data-file-hash="7F07EEBC05634" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50730/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_841c716e-4a27-4164-a8ed-3367ff4261c8.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Receitas E Despesas Previdenciárias
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3D1F411B59CB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3D1F411B59CB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50731/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_822a6021-ead5-4fe9-b8e8-24d9a5b2ed11.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CF90F58E8E644
+<br/><br/>
+<a class="fileDoc" data-file-hash="CF90F58E8E644" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50732/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_0e77e044-2fe9-4010-ba42-8fc826302b8c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>25D448E5F86D4
+<br/><br/>
+<a class="fileDoc" data-file-hash="25D448E5F86D4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50733/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_58dfae60-3c4e-40fd-9f02-ba964122127a.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>1AAB15CD808B4
+<br/><br/>
+<a class="fileDoc" data-file-hash="1AAB15CD808B4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50734/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_61d1f990-e7af-47ea-b9e5-35df532d1347.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IX: Demonstrativo Das Receitas Op. Crédito E Despesas De Capital
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F54EEED1046A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="F54EEED1046A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50735/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_ac40a015-401f-4c8d-8ca0-f7b6dceb60e7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>74F7344A6DCE4
+<br/><br/>
+<a class="fileDoc" data-file-hash="74F7344A6DCE4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50736/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_8c997978-454a-4889-aaf8-cc3af8417105.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XI: Demonstrativo Da Receita De Alienação De Ativos E Aplicações De Recursos
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C68D60A8A7E44
+<br/><br/>
+<a class="fileDoc" data-file-hash="C68D60A8A7E44" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50737/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_d3371029-4bfd-443a-9096-715cd266f952.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>8C199EC885974
+<br/><br/>
+<a class="fileDoc" data-file-hash="8C199EC885974" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50738/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_095cde97-d9cd-44aa-96cc-4c85b4334b65.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>3685AB79F2014
+<br/><br/>
+<a class="fileDoc" data-file-hash="3685AB79F2014" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50739/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_cc166bd2-233f-4a23-83ad-ac4f1067692d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+rreo relatorio /
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Landri Sales
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>007618FD27B34
+<br/><br/>
+<a class="fileDoc" data-file-hash="007618FD27B34" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/50740/rreo-relatorio-landri-sales-47414">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Landri_Sales_Relatorios_de_gestao_fiscal_rreo_relatorio_96bdf778-2364-45b2-8688-e048316a26c5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Ratificação 011
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Passagem Franca do Piauí
+</td>
+<td class="text-center">
+Aviso de Ratificação
+</td>
+<td class="text-center">
+<strong>ID: </strong>57EE1B808DD64
+<br/><br/>
+<a class="fileDoc" data-file-hash="57EE1B808DD64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ratificacao-011-passagem-franca-do-piaui-47432">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Passagem_Franca_do_Piaui_Aviso_de_Ratificacao_ratificacao_011_46700228-cbd8-42a3-bb5b-6eda97a2345f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+portaria valdeci 2023.pdf
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C9CF7744D7774
+<br/><br/>
+<a class="fileDoc" data-file-hash="C9CF7744D7774" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-valdeci-2023-pdf-isaias-coelho-47398">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Isaias_Coelho_Portarias_portaria_valdeci_2023_pdf_b21ad2e1-1d54-44a2-869c-d007b234998f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DO 1º ADITIVO AO CONTRATO Nº 024/2022
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Sebastião Barros
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>C30A43CF275E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="C30A43CF275E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-do-1-aditivo-ao-contrato-n-024-2022-sebastiao-barros-47431">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sebastiao_Barros_Aviso_de_licitacao_extrato_do_1_aditivo_ao_contrato_n_024_2022_72dfc35b-9c0a-42a4-92c9-07aaf537c2dc.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+Termo de Homologação
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Palmeira do Piauí
+</td>
+<td class="text-center">
+Aviso da Homologação
+</td>
+<td class="text-center">
+<strong>ID: </strong>60AB712134F84
+<br/><br/>
+<a class="fileDoc" data-file-hash="60AB712134F84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/termo-de-homologacao-palmeira-do-piaui-47472">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Camara_Palmeira_do_Piaui_Aviso_da_Homologacao_termo_de_homologacao_1af8b58e-e8a6-40e0-ae9c-08d9d53b4832.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO Nº 008/2023 HOMOLOGA RESULTADO DE SELETIVO PARA DIRETORES ESCOLAR
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Barra D'Alcântara
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>193ACE2997D74
+<br/><br/>
+<a class="fileDoc" data-file-hash="193ACE2997D74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-n-008-2023-homologa-resultado-de-seletivo-para-diretores-escolar-barra-d-alcantara-47386">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Barra_DAlcantara_Decretos_decreto_n_008_2023_homologa_resultado_de_seletivo_para_diretores_escolar_67853d1a-a0e9-4d4d-8ea8-0d65c2164ea7.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+CP007.2023 - ADJUDICAÇÃO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São José do Divino
+</td>
+<td class="text-center">
+Aviso da Adjudicação
+</td>
+<td class="text-center">
+<strong>ID: </strong>DAC76EDC7CD94
+<br/><br/>
+<a class="fileDoc" data-file-hash="DAC76EDC7CD94" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cp007-2023-adjudicacao-sao-jose-do-divino-47481">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Jose_do_Divino_Aviso_da_Adjudicacao_cp007_2023_adjudicacao_156730cf-ef16-4edf-b048-b081eba04016.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+portaria maria aparecida 2023.pdf
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Isaías Coelho
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2D06AD0894E4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2D06AD0894E4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-maria-aparecida-2023-pdf-isaias-coelho-47397">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Isaias_Coelho_Portarias_portaria_maria_aparecida_2023_pdf_f1b46447-7192-46a5-8b1b-065466b0390f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+EXTRATO DE TERMO ADITIVO
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+A programação financeira
+</td>
+<td class="text-center">
+<strong>ID: </strong>D482ACF046894
+<br/><br/>
+<a class="fileDoc" data-file-hash="D482ACF046894" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/extrato-de-termo-aditivo-sao-joao-da-fronteira-47388">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Joao_da_Fronteira_A_programacao_financeira_extrato_de_termo_aditivo_c3366136-e608-40ab-a5c0-aaae5da4963d.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA 073-2023 - CMS-SJF
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+São João da Fronteira
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>48AC4F8B54194
+<br/><br/>
+<a class="fileDoc" data-file-hash="48AC4F8B54194" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-073-2023-cms-sjf-sao-joao-da-fronteira-47387">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Sao_Joao_da_Fronteira_Portarias_portaria_073_2023_cms_sjf_d2d1a983-d945-427f-aad5-4ba98d4d276e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=619&amp;q[flag_doc_diario_true]=1">
+427
+</a>
+-
+2023
+</td>
+<td class="">
+DECRETO 005-2023 PLENÁRIO SAÚDE
+</td>
+<td class="text-center">
+01-03-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Marcos Parente
+</td>
+<td class="text-center">
+Decretos
+</td>
+<td class="text-center">
+<strong>ID: </strong>42EB23485B044
+<br/><br/>
+<a class="fileDoc" data-file-hash="42EB23485B044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/decreto-005-2023-plenario-saude-marcos-parente-47425">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/2/28/DOP_EDICAO__1-3-2023_ED_427_Prefeitura_Marcos_Parente_Decretos_decreto_005_2023_plenario_saude_4f076704-b21d-4dc6-b0dc-f513b60b8bc0.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>

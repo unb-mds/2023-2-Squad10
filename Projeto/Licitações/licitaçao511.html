@@ -1,0 +1,1238 @@
+
+
+    
+    
+        
+    
+        <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <link href="licitaçao.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+    <title>Diario Oficial - Licitações</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Acesse Diario</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    
+    <table class="table mt-4">
+        <thead>
+
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela com dados vão aqui -->
+        </tbody>
+    </table>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação de Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<nav aria-label="Navegação de página exemplo" class="pagination">
+    <ul class="pagination justify-content-center" id="pageList">
+        <li class="page-item disabled" id="previousPage">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var totalPages = 1987;  // Número total de páginas
+        var pagesPerPage = 5;  // Número de páginas exibidas por vez
+        var currentPage = parseInt(localStorage.getItem('currentPage')) || 1;   // Página inicial
+
+        function generatePageLinks() {
+            $("#pageList").empty();
+
+            // Calcula o ponto médio para manter as páginas centralizadas
+            var midPoint = Math.floor(pagesPerPage / 2);
+            var startPage = currentPage - midPoint > 0 ? currentPage - midPoint : 1;
+            var endPage = startPage + pagesPerPage - 1 <= totalPages ? startPage + pagesPerPage - 1 : totalPages;
+
+            // Adiciona link para a página anterior
+            $("#pageList").append('<li class="page-item disabled" id="previousPage"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>');
+
+            // Adiciona links para as páginas
+            for (var i = startPage; i <= endPage; i++) {
+                var pageLink = '<li class="page-item"><a class="page-link' + (i === currentPage ? ' active' : '') + '" href="licitaçao' + i + '.html">' + i + '</a></li>';
+                $("#pageList").append(pageLink);
+            }
+
+            // Adiciona link para a próxima página
+            $("#pageList").append('<li class="page-item" id="nextPage"><a class="page-link" href="#">Próximo</a></li>');
+        }
+
+        // Inicializa a navegação
+        generatePageLinks();
+
+        // Destaca a página selecionada
+        $("#pageList").on("click", ".page-item:not(:first-child, :last-child) a", function() {
+            var selectedPage = parseInt($(this).text());
+            if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Função para destacar a página selecionada
+        function highlightSelectedPage() {
+            $("#pageList .page-item a").removeClass("active");
+            $("#pageList .page-item a:contains('" + currentPage + "')").addClass("active");
+        }
+
+        // Manipula o clique no link "Próximo"
+        $("#pageList").on("click", "#nextPage", function() {
+            if (currentPage + pagesPerPage <= totalPages) {
+                currentPage += pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+
+        // Manipula o clique no link "Anterior"
+        $("#pageList").on("click", "#previousPage", function() {
+            if (currentPage - pagesPerPage > 0) {
+                currentPage -= pagesPerPage;
+                localStorage.setItem('currentPage', currentPage);
+                generatePageLinks();
+                highlightSelectedPage();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </script>
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
+
+
+    
+
+
+    <table class="table table-hover mb-0">
+<thead class="thead-dark">
+<tr>
+<th class="text-center" scope="col">Nº Edição</th>
+<th class="text-center" scope="col">Documento</th>
+<th class="text-center" scope="col">Publicação</th>
+<th class="text-center" scope="col">Entidade</th>
+<th class="text-center" scope="col">Unidade Gestora</th>
+<th class="text-center" scope="col">Classificação do Ato</th>
+<th class="text-center" scope="col">Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+PESSOAL
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Campinas do Piauí
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+</td>
+<td class="text-center">
+<strong>ID: </strong>87FC13093F7F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="87FC13093F7F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pessoal-campinas-do-piaui-71376">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Campinas_do_Piaui_Relatorios_de_gestao_fiscal_pessoal_5d9f0104-f78a-4f94-a790-733050f4cd28.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA N° 124-2023 NOMEIA E EMPOSSA A COMISSÃO DO CONSELHO MUNICIPAL DE SAÚDE 2023-2024
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Beneditinos
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>F3D0FE71B6404
+<br/><br/>
+<a class="fileDoc" data-file-hash="F3D0FE71B6404" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-124-2023-nomeia-e-empossa-a-comissao-do-conselho-municipal-de-saude-2023-2024-beneditinos-71358">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Beneditinos_Portarias_portaria_n_124_2023_nomeia_e_empossa_a_comissao_do_conselho_municipal_de_saude_2023_2024_8f128c90-8283-4dc1-aca6-3dee33fa5d13.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+Portaria 314-2023
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>0082B99E2BE64
+<br/><br/>
+<a class="fileDoc" data-file-hash="0082B99E2BE64" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-314-2023-buriti-dos-lopes-71450">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Buriti_dos_Lopes_Portarias_portaria_314_2023_86eeac93-83e1-40b4-b491-55a0f4a86971.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+CC 001.2023
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Buriti dos Lopes
+</td>
+<td class="text-center">
+Atas
+</td>
+<td class="text-center">
+<strong>ID: </strong>8978A88CAD784
+<br/><br/>
+<a class="fileDoc" data-file-hash="8978A88CAD784" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40">
+</img></a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/cc-001-2023-buriti-dos-lopes-71345">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Buriti_dos_Lopes_Atas_cc_001_2023_12221d9a-e86e-405a-9ac6-95371ec6b986.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+CONVOCAÇÃO - ORIANNA DOS SANTOS
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Wall Ferraz
+</td>
+<td class="text-center">
+Ato Convocatório
+</td>
+<td class="text-center">
+<strong>ID: </strong>CE516C17D6334
+<br/><br/>
+<a class="fileDoc" data-file-hash="CE516C17D6334" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/convocacao-orianna-dos-santos-wall-ferraz-71353">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Wall_Ferraz_Ato_Convocatorio_convocacao_orianna_dos_santos_756c6000-2683-4d90-9f04-215098817581.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+AVISO DE DECLARAÇÃO DAS PROPOSTAS LOTE I TP 02/2023
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Jardim do Mulato
+</td>
+<td class="text-center">
+Aviso do Julgamento e classificação de propostas
+</td>
+<td class="text-center">
+<strong>ID: </strong>EB00CBEAF1044
+<br/><br/>
+<a class="fileDoc" data-file-hash="EB00CBEAF1044" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-declaracao-das-propostas-lote-i-tp-02-2023-jardim-do-mulato-71347">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Jardim_do_Mulato_Aviso_do_Julgamento_e_classificacao_de_propostas_aviso_de_declaracao_das_propostas_lote_i_tp_02_6fec01af-f44e-4f8a-a017-bb4db7708143.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+PE 002 - Loc. Máquinas - Ata Registro
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Hugo Napoleão
+</td>
+<td class="text-center">
+Aviso do Registro de preço
+</td>
+<td class="text-center">
+<strong>ID: </strong>580B53611F814
+<br/><br/>
+<a class="fileDoc" data-file-hash="580B53611F814" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/pe-002-loc-maquinas-ata-registro-hugo-napoleao-71320">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Hugo_Napoleao_Aviso_do_Registro_de_preco_pe_002_loc_maquinas_ata_registro_d33bea3b-20ce-475b-a322-32a11e419030.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+EC DPL 007-A - Diário Oficial
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Lagoinha do Piauí
+</td>
+<td class="text-center">
+Aviso do Contrato
+</td>
+<td class="text-center">
+<strong>ID: </strong>B3A26E46C4DB4
+<br/><br/>
+<a class="fileDoc" data-file-hash="B3A26E46C4DB4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/ec-dpl-007-a-diario-oficial-lagoinha-do-piaui-71346">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Lagoinha_do_Piaui_Aviso_do_Contrato_ec_dpl_007_a_diario_oficial_70e4ef92-c820-4990-8a20-54a641227b5f.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Balaço Orçamentário
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>2B9E484B07AF4
+<br/><br/>
+<a class="fileDoc" data-file-hash="2B9E484B07AF4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76739/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_ff6b64cd-a5ca-4611-916b-5776dd3b526b.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Execução Das Despesas Por Função E Subfunção
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>248D1205BC004
+<br/><br/>
+<a class="fileDoc" data-file-hash="248D1205BC004" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76740/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_1de1ba2a-a2c5-44c7-ae99-4137869efce6.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III: Demonstrativo Da Receita Corrente Liquida
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>E2D16380849F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="E2D16380849F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76741/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_32e27ede-0383-4d19-9768-a82a9b14fc86.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Dos Resultados Primários E Nominal
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>C3D64DC56BF84
+<br/><br/>
+<a class="fileDoc" data-file-hash="C3D64DC56BF84" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76742/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_203406b9-1c1b-496c-a3c3-2d739f8f1a09.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VII: Demonstrativo Dos Restos A Pagar Por Poder E ÓRgão
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D890547770A74
+<br/><br/>
+<a class="fileDoc" data-file-hash="D890547770A74" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76743/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_b4c401e6-4485-4e14-ab5d-53bbc9deb4f4.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VIII: Demonstrativo Das Receitas E Despesas – Mde – Município
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>B2F8DE8989994
+<br/><br/>
+<a class="fileDoc" data-file-hash="B2F8DE8989994" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76744/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_6a470ba8-c5b8-4e2b-bb75-54fb2712d5d3.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO X: Demonstrativo Da Projeção Atuarial Do Rpps
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5C532992B5964
+<br/><br/>
+<a class="fileDoc" data-file-hash="5C532992B5964" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76745/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_ff7bcd20-edcc-47a6-81f1-e8d7e76263b9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XII: Demonstrativo Da Receita De Impostos E Das Despesas Próprias Com Saúde
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>5BE3603F8EA24
+<br/><br/>
+<a class="fileDoc" data-file-hash="5BE3603F8EA24" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76746/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_09729f5b-87a8-4f8e-b90d-48da8e92a38c.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIV: Demonstrativo Simplificado Do Relatório Resumido Da Execução Orçamentaria
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>F8E3CF012B424
+<br/><br/>
+<a class="fileDoc" data-file-hash="F8E3CF012B424" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76747/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_fa040938-c493-4978-8fc9-efdf4a2b5db9.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATÓRIOS BIMESTRAIS-RREO 3º BIMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios resumidos da execução orçamentária
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO XIII: Demonstrativo Das Parcerias Público-privadas
+<br/><br/>
+Bimestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>CBA095B7846C4
+<br/><br/>
+<a class="fileDoc" data-file-hash="CBA095B7846C4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76748/relatorios-bimestrais-rreo-3-bimestre-2023-dom-expedito-lopes-71315">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_resumidos_da_execucao_orcamentaria_relatorios_bimestrais_rreo_3_bimestre_2023_95afcea9-3591-4234-9a80-31ec81a19bd1.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIOS GESTAO FISCAL-RGF 1º SEMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO II: Demonstrativo Da Dívida Consolidada
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>88CFBD83BB6F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="88CFBD83BB6F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76730/relatorios-gestao-fiscal-rgf-1-semestre-2023-dom-expedito-lopes-71310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_rgf_1_semestre_2023_fd2d2344-4649-43d6-991d-d563a6073636.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIOS GESTAO FISCAL-RGF 1º SEMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO III:Demonstrativo Das Garantias E Contragarantias De Valores
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>9BB1D29C29C04
+<br/><br/>
+<a class="fileDoc" data-file-hash="9BB1D29C29C04" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76731/relatorios-gestao-fiscal-rgf-1-semestre-2023-dom-expedito-lopes-71310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_rgf_1_semestre_2023_d0dd3362-fff2-4f4d-845f-567a2d503bc5.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIOS GESTAO FISCAL-RGF 1º SEMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO IV: Demonstrativo Das Operações De Credito
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>D3B146DDEF4A4
+<br/><br/>
+<a class="fileDoc" data-file-hash="D3B146DDEF4A4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76732/relatorios-gestao-fiscal-rgf-1-semestre-2023-dom-expedito-lopes-71310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_rgf_1_semestre_2023_7fe414b2-fcaa-484a-8852-640e91215c9e.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIOS GESTAO FISCAL-RGF 1º SEMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO I: Demonstrativo Da Despesa Com Pessoal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>A3F71D3052604
+<br/><br/>
+<a class="fileDoc" data-file-hash="A3F71D3052604" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76733/relatorios-gestao-fiscal-rgf-1-semestre-2023-dom-expedito-lopes-71310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_rgf_1_semestre_2023_f3c7deb6-a7bd-4b30-95f3-08ade4671747.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+RELATORIOS GESTAO FISCAL-RGF 1º SEMESTRE-2023 /
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Dom Expedito Lopes
+</td>
+<td class="text-center">
+Relatórios de gestão fiscal
+<br/><br/>
+<strong>LRF - LEI DE RESPONSABILIDADE FISCAL</strong>
+<br/><br/>
+ANEXO VI: Demonstrativo Simplificado Do Relatório De Gestão Fiscal
+<br/><br/>
+Semestral
+</td>
+<td class="text-center">
+<strong>ID: </strong>42E3A66534154
+<br/><br/>
+<a class="fileDoc" data-file-hash="42E3A66534154" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/lrf/76734/relatorios-gestao-fiscal-rgf-1-semestre-2023-dom-expedito-lopes-71310">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Dom_Expedito_Lopes_Relatorios_de_gestao_fiscal_relatorios_gestao_fiscal_rgf_1_semestre_2023_8c1d43cf-b966-4cfb-8a3c-7ca8aaa682bb.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+aviso de licitação
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Prefeitura
+</td>
+<td class="text-center">
+Caraúbas do Piauí
+</td>
+<td class="text-center">
+Aviso de licitação
+</td>
+<td class="text-center">
+<strong>ID: </strong>3A08B242D47F4
+<br/><br/>
+<a class="fileDoc" data-file-hash="3A08B242D47F4" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/aviso-de-licitacao-caraubas-do-piaui-71446">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Prefeitura_Caraubas_do_Piaui_Aviso_de_licitacao_aviso_de_licitacao_7dcc5619-e1c0-4718-ae52-593d4d080776.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+<tr>
+<td class="text-center">
+<a href="/piaui/buscas/search?utf8=✓&amp;q[edicao_id_eq]=779&amp;q[flag_doc_diario_true]=1">
+536
+</a>
+-
+2023
+</td>
+<td class="">
+PORTARIA Nº 004.2004
+</td>
+<td class="text-center">
+08-08-2023
+</td>
+<td class="text-center">
+Câmara
+</td>
+<td class="text-center">
+Jatobá do Piauí
+</td>
+<td class="text-center">
+Portarias
+</td>
+<td class="text-center">
+<strong>ID: </strong>C5B20A9F1A074
+<br/><br/>
+<a class="fileDoc" data-file-hash="C5B20A9F1A074" href="/Projeto/assets/pdf.png">
+<img height="40" src="/Projeto/assets/pdf.png" width="40"/>
+</a>
+<br/><br/>
+<a class="lnkDetail" href="/piaui/doc/portaria-n-004-2004-jatoba-do-piaui-71324">
+Detalhe
+</a>
+<br/><br/>
+<a class="fileLink" data-href="/uploads/files/2023/8/7/DOP_EDICAO__8-8-2023_ED_536_Camara_Jatoba_do_Piaui_Portarias_portaria_n_004_2004_0f55cbc1-8975-48c8-b56d-090326be6a08.pdf" href="javascript:void(0)">
+baixar
+</a>
+</td>
+</tr>
+</tbody>
+</table>
