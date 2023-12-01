@@ -3,7 +3,7 @@ from collections import defaultdict
 import os
 
 # Caminho do arquivo JSON
-caminho_arquivo = "C:/Users/Carlos/2023-2-Squad10/Projeto/ConversorPDF-JSON/Dados JSON/Dados Gerais 2021 a 2023 JSON/2022 dados.json"
+caminho_arquivo = "C:/Users/Carlos/2023-2-Squad10/Projeto/ConversorPDF-JSON/Dados JSON/Dados Gerais 2021 a 2023 JSON/2023 dados.json"
 
 # Dicionário padrão para armazenar dados por município
 dados_por_municipio = defaultdict(list)
