@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico Interativo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chart-container {
+            text-align: center;
+        }
+
+        #myChart {
+            width: 800px;
+            max-width: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+</head>
+<body>
+
+<div>
+    <label for="cidade">Selecione a Cidade:</label>
+    <select id="cidade" class="js-example-basic-single" style="width: 200px;">
+        <!-- Inclua todas as cidades no menu suspenso -->
+        <option value="Buriti">Buriti</option>
+        <option value="Acauã">Acauã</option>
+        <!-- Adicione todas as outras cidades aqui -->
+    </select>
+
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>
+    const jsonData = {
+        'Buriti': [
+            {"Mes": "10", "TotalLicitacoes": 1},
+            {"Mes": "11", "TotalLicitacoes": 5},
+            // Adicione mais dados para Buriti aqui
+        ],
+        'Acauã': [
+            {"Mes": "10", "TotalLicitacoes": 3},
+            {"Mes": "11", "TotalLicitacoes": 6},
+            // Adicione mais dados para Acauã aqui
+        ],
+        // Adicione mais cidades com seus respectivos dados
+    };
+
+    $(document).ready(function() {
+        $('#cidade').select2().change(function() {
+            const cidadeSelecionada = $(this).val();
+            const dadosCidade = jsonData[cidadeSelecionada];
+            atualizarGrafico(dadosCidade);
+        });
+
+        // Inicializa o gráfico com os dados da primeira cidade
+        const cidadePadrao = $('#cidade').val();
+        const dadosCidadePadrao = jsonData[cidadePadrao];
+        atualizarGrafico(dadosCidadePadrao);
+    });
+
+    function atualizarGrafico(dados) {
+        // Limpar o gráfico existente se houver
+        $('#myChart').remove();
+        $('#chart-container').append('<canvas id="myChart"></canvas>');
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dados.map(item => item.Mes),
+                datasets: [{
+                    label: 'Total de Licitações',
+                    data: dados.map(item => item.TotalLicitacoes),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
