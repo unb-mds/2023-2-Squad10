@@ -139,16 +139,24 @@
     });
 
     const jsonData = {
-      'Buriti': [
-        { "Mes": "10", "TotalLicitacoes": 1 },
-        { "Mes": "11", "TotalLicitacoes": 5 },
-        // Adicione mais dados para Buriti aqui
-      ],
+
       'Acauã': [
-        { "Mes": "10", "TotalLicitacoes": 3 },
-        { "Mes": "11", "TotalLicitacoes": 6 },
+        {
+          "Municipio": "ACAUÃ",
+          "Mes": "08",
+          "TotalLicitacoes": 1,
+          "Ano": "2022"
+        },
+        {
+          "Municipio": "ACAUÃ",
+          "Mes": "08",
+          "TotalLicitacoes": 1,
+          "Ano": "2023"
+        },
         // Adicione mais dados para Acauã aqui
       ],
+
+
       // Adicione mais cidades com seus respectivos dados
     };
 
@@ -189,30 +197,30 @@
       };
 
       // Converte o número do mês para o nome do mês
-      const labelsBonitos = dados.map(item => `Mês ${nomesMeses[item.Mes]}`);
+      const labelsBonitos = dados.map(item => `Mês ${nomesMeses[parseInt(item.Mes)]} ${item.Ano}`);
 
       const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
+      const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: labelsBonitos,
-            datasets: [{
-                label: 'Total de Licitações',
-                data: dados.map(item => item.TotalLicitacoes),
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
+          labels: labelsBonitos,
+          datasets: [{
+            label: 'Total de Licitações',
+            data: dados.map(item => item.TotalLicitacoes),
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+          scales: {
+            y: {
+              beginAtZero: true
             }
+          }
         }
-    });
-}
+      });
+    }
   </script>
 
 </body>
