@@ -12,7 +12,7 @@
 <!-- Mais um cabeçalho centralizado -->
 <div align="center">
   <!-- Título de nível 2 com um emoji representando a remoção de duplicatas -->
-  <h2>🕊 Remove Duplicados </h2>
+  <h2>🕊 Separador de Licitações </h2>
 </div> 
 
 # Conversor de Dados JSON por Município
