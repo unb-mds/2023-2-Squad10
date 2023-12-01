@@ -1,3 +1,20 @@
+<div align="center">
+  <!-- Título de nível 2 para dar boas-vindas ao repositório -->
+  <h2>Bem vindo ao nosso repositório! </h2>
+</div> 
+
+<!-- Outro cabeçalho centralizado -->
+<div align="center">
+  <!-- Título de nível 2 indicando o Diário Oficial do Piauí da Universidade de Brasília -->
+  <h2>Diario Oficial do Piaui UnB </h2>
+</div> 
+
+<!-- Mais um cabeçalho centralizado -->
+<div align="center">
+  <!-- Título de nível 2 com um emoji representando a remoção de duplicatas -->
+  <h2>🕊 Remove Duplicados </h2>
+</div> 
+
 # Conversor de Dados JSON por Município
 
 Este script Python lê um arquivo JSON contendo dados gerais para o ano de 2023 e organiza esses dados por município, criando arquivos JSON separados para cada município.
