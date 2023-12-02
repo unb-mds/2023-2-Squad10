@@ -1,7 +1,7 @@
 <!-- Cabeçalho centralizado -->
 <div align="center">
   <!-- Título de nível 2 para dar boas-vindas ao repositório -->
-  <h2>Bem vindo ao nosso repositório! </h2>
+  <h2>Bem-vindo ao nosso repositório! </h2>
 </div> 
 
 <!-- Outro cabeçalho centralizado -->
@@ -17,6 +17,9 @@
 </div> 
 
  <!-- Instruções gerais -->
+ 
+ • Este código remove os dados duplicados 
+ 
  • Para executar o código fornecido, você precisará seguir as instruções abaixo.
 
 <!-- Cabeçalho centralizado para os requisitos -->
@@ -26,9 +29,17 @@
 </div> 
 
 <!-- Comandos para clonar o repositório e instalar dependências -->
-      git clone https://github.com/unb-mds/2023-2-Squad10.git   
-      pip install virtualenv
-      pip install -r requirements.txt
+
+```
+git clone https://github.com/unb-mds/2023-2-Squad10.git
+```
+```  
+pip install virtualenv
+```
+```
+pip install -r requirements.txt
+```
+
 
 <!-- Cabeçalho centralizado para a execução do script -->
 <div align="center">
@@ -37,15 +48,23 @@
 </div> 
 
 <!-- Comando para executar o script de remoção de duplicatas -->
-         python Remove Duplicados.py
+```
+python Remove Duplicados.py
+```
+
          
  <!-- Instruções após a execução do script -->
+ <div align="center">
+   <h2>📑 Instruções após a execução do script </h2>
+</div>
+
  • Após a execução bem-sucedida, verifique o arquivo de saída especificado ('saida.json') para garantir que as duplicatas foram removidas corretamente.
  
  • Lembre-se de ajustar caminhos e nomes de arquivos conforme necessário com base na sua estrutura de diretórios específica.
     
-<!-- Bloco de citação -->
-<blockquote>
-   <!-- Parágrafo dentro do bloco de citação indicando a licença do software -->
-   <p>Este software está sob licença:</p>
-</blockquote>
+<!-- Criador e licença -->
+### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
+
+## ©️ Licença 
+
+Este software está sob licença [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
