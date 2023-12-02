@@ -1,58 +1,77 @@
+<!-- Centraliza o cabeçalho com o título "Bem vindo ao nosso repositório!" -->
 <div align="center">
-  <!-- Título de nível 2 para dar boas-vindas ao repositório -->
-  <h2>Bem vindo ao nosso repositório! </h2>
-</div> 
+  <h2>Bem-vindo ao nosso repositório! </h2>
+</div>
 
-<!-- Outro cabeçalho centralizado -->
+<!-- Centraliza o cabeçalho com o título "Diario Oficial do Piaui UnB" -->
 <div align="center">
-  <!-- Título de nível 2 indicando o Diário Oficial do Piauí da Universidade de Brasília -->
   <h2>Diario Oficial do Piaui UnB </h2>
-</div> 
+</div>
 
-<!-- Mais um cabeçalho centralizado -->
+<!-- Centraliza o cabeçalho com o título "🕊 Conversor de PDF" -->
 <div align="center">
-  <!-- Título de nível 2 com um emoji representando a remoção de duplicatas -->
-  <h2>🕊 Somador de Licitações </h2>
-</div> 
+  <h2>🕊 Somador de Licitaçoes </h2>
+</div>
 
-import json
-from collections import defaultdict
+<!-- Informa sobre o projeto -->
+• Este projeto é um script Python que soma as licitaçoes dos dados extraidos dos diários oficiais de prefeituras do Piauí.
 
-# Caminho para o arquivo JSON
-caminho_arquivo = "C:/Users/Carlos/2023-2-Squad10/Projeto/ConversorPDF-JSON/Dados JSON/2023 dados.json"
+<!-- Centraliza o cabeçalho com o título "👩🏾‍💻 Requisitos" -->
+<div align="center">
+  <h2>👩🏾‍💻 Requisitos </h2>
+</div>
 
-# Lê os dados do arquivo JSON com a codificação 'utf-8'
-with open(caminho_arquivo, "r", encoding="utf-8") as file:
-    dados_json = json.load(file)
+<!-- Comandos para clonar o repositório e instalar as bibliotecas necessárias -->
 
-# Dicionário para armazenar contagem de licitações por mês e por município
-contagem_licitacoes = defaultdict(lambda: defaultdict(int))
+[Python3](https://www.python.org/downloads/) : Json e collections são bibliotecas padrão do Python, então você não precisa instalá-las separadamente.
 
-# Processa os dados do JSON
-for item in dados_json:
-    nome_municipio = item["nomeMunicipio"]
-    data_post = item["dataPost"]
-    numero_licitacoes = item["numeroLicitacoes"]
+• Se você já tem o Python instalado, você pode verificar se as bibliotecas estão instaladas utilizando o comando:
+```
+pip show json collections 
+```
+• Se alguma delas não estiver instalada, você pode instalá-las usando:
+```
+pip install json collections 
+```
 
-    # Extrai o mês da data
-    mes = data_post.split("-")[1]
 
-    # Atualiza a contagem de licitações
-    contagem_licitacoes[mes][nome_municipio] += numero_licitacoes
 
-# Cria uma lista de resultados no formato desejado
-resultados = []
-for mes, municipios in contagem_licitacoes.items():
-    for municipio, total_licitacoes in municipios.items():
-        resultado = {
-            "Municipio": municipio,
-            "Mes": mes,
-            "TotalLicitacoes": total_licitacoes
-        }
-        resultados.append(resultado)
 
-# Gera um novo JSON com os resultados
-with open("resultados.json", "w", encoding="utf-8") as file:
-    json.dump(resultados, file, indent=2, ensure_ascii=False)
+<!-- Centraliza o cabeçalho com o título "👩🏾‍💻 Execute o script" -->
+<div align="center">
+  <h2>👩🏾‍💻 Execute o script </h2>
+</div>
 
-print("Resultados salvos no arquivo 'resultados.json'.")
+<!-- Comando para executar o script Python -->
+```
+python Somador de Licitaçoes.py
+```
+
+<!-- Instruções adicionais sobre a execução do script -->
+
+• O código lê dados de um arquivo JSON que contém informações sobre licitações por município e mês. Os dados são armazenados em um dicionário para posterior processamento.
+
+
+• Os dados processados são utilizados para calcular a contagem total de licitações por mês e por município, armazenando os resultados em um formato mais conveniente em um dicionário aninhado.
+
+
+• O código cria um novo arquivo JSON chamado "resultados.json" que contém uma lista de resultados, incluindo informações como o nome do município, o mês e o total de licitações para cada combinação mês-município.
+
+<!-- Centraliza o cabeçalho com o título "🕊 Linguagens e Tecnologias utilizadas" -->
+<div align="center">
+  <h2>🕊 Informações adicionais sobre o script </h2>
+</div>
+
+<!-- Informações adicionais sobre personalização do script -->
+ • Verifique se o caminho do arquivo está correto e se você tem permissões para ler e gravar no diretório especificado.
+ 
+ • O código imprime uma mensagem indicando que os arquivos JSON foram criados com sucesso. Certifique-se de observar essa mensagem para verificar se o código foi executado sem erros.
+ 
+ • Certifique-se de ter o Python instalado e configurado corretamente, pois o script depende das bibliotecas para funcionar.
+
+<!-- Criador e licença -->
+### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
+
+## ©️ Licença 
+
+Este software está sob licença [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
