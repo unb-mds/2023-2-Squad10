@@ -93,13 +93,7 @@ pip install PyPDF2
 pip install beautifulsoup4
 ```
 ```
-pip install requests
-```
-```
 pip install virtualenv 
-```
-```
-pip install pytest
 ```
 <!-- Adiciona a funçao de copiar o link do repositorio -->
 ### 3. 📍 Clonar o Repositório
