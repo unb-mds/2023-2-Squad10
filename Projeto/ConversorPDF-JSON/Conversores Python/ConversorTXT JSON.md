@@ -154,6 +154,4 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 ## ©️ Licença 
 
 Este software está sob licença [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
-## ©️ Licença 
 
-Este software está sob licença [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
