@@ -1,29 +1,85 @@
-<!-- Centraliza o cabeçalho com o título "Bem vindo ao nosso repositório!" -->
+<!--
+
+S
+A
+I
+
+D
+A
+Q
+U
+I
+
+S
+E
+U
+
+C
+U
+R
+I
+O
+S
+O
+
+ASS: xGabrielCv 
+
+-->
+
+
+<!-- Adiciona distintivos (shields) do GitHub -->
+![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/unb-mds/2023-2-Squad10?style=for-the-badge)
+![GitHub views](https://komarev.com/ghpvc/?username=unb-mds&repo=2023-2-Squad10&color=blueviolet&style=for-the-badge&label=Views)
+
+<!-- Título centralizado -->
 <div align="center">
   <h2>Bem-vindo ao nosso repositório! </h2>
-</div>
+</div> 
 
-<!-- Centraliza o cabeçalho com o título "Diario Oficial do Piaui UnB" -->
+<!-- Título centralizado -->
 <div align="center">
   <h2>Diario Oficial do Piaui UnB </h2>
-</div>
+</div> 
 
-<!-- Centraliza o cabeçalho com o título "🕊 Conversor de PDF" -->
+<!-- Título centralizado -->
 <div align="center">
-  <h2>🕊 Separador de Dados </h2>
-</div>
+  <h2>🎯 Separador de Dados </h2>
+</div> 
 
-<!-- Informa sobre o projeto -->
-• Este projeto é um script Python separar os dados extraidos dos diários oficiais de prefeituras do Piauí.
+• Este projeto é um script Python que separa os dados extraidos dos diários oficiais de prefeituras do Piauí.
 
-<!-- Centraliza o cabeçalho com o título "👩🏾‍💻 Requisitos" -->
+<!-- Título centralizado -->
 <div align="center">
-  <h2>👩🏾‍💻 Requisitos </h2>
-</div>
+  <h2>👩🏾‍💻 Funcionalidades </h2>
+</div> 
 
-<!-- Comandos para clonar o repositório e instalar as bibliotecas necessárias -->
+Este script oferece as seguintes funcionalidades:
 
-[Python3](https://www.python.org/downloads/) : Json e collections são bibliotecas padrão do Python, então você não precisa instalá-las separadamente.
+• O código lê um arquivo JSON contendo dados relacionados a municípios, especificamente os dados armazenados no caminho fornecido.
+
+• Adiciona a chave "Ano" com o valor "2023" a cada item nos dados lidos do arquivo JSON.
+
+• Cria um dicionário padrão (dados_por_municipio) utilizando defaultdict para armazenar os dados organizados por município,
+itera sobre os dados lidos e agrupa-os no dicionário com base no município associado a cada dado.
+
+•Para cada município no dicionário, cria um arquivo JSON separado contendo os dados específicos daquele município,
+os arquivos JSON resultantes são nomeados de acordo com o nome do município e são salvos no mesmo diretório do script.
+
+<!-- Título centralizado -->
+<div align="center">
+  <h2>🤞 Como executar o script </h2>
+</div> 
+
+### 1. 🔑 Pré-requisitos
+Esses são os nossos pré-requisitos:
+- [Python3](https://www.python.org/downloads/)
+
+
+
+<!-- Adiciona a lista de bibliotecas para copiar -->
+### 2. 📑 Instalação das bibliotecas do Python
+• Json e collections são bibliotecas padrão do Python, então você não precisa instalá-las separadamente.
 
 • Se você já tem o Python instalado, você pode verificar se as bibliotecas estão instaladas utilizando o comando:
 ```
@@ -35,39 +91,71 @@ pip install json collections os
 ```
 
 
-
-
-<!-- Centraliza o cabeçalho com o título "👩🏾‍💻 Execute o script" -->
+<!-- Adiciona a funçao de copiar o link do repositorio -->
+### 3. 📍 Clonar o Repositório
+Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
+```
+git clone https://github.com/unb-mds/2023-2-Squad10.git
+```
+  	
+  
 <div align="center">
-  <h2>👩🏾‍💻 Execute o script </h2>
+  <h2>⚙️ Configurações do script </h2>
 </div>
 
-<!-- Comando para executar o script Python -->
-```
-python Separador de Dados.py
-```
-
-<!-- Instruções adicionais sobre a execução do script -->
-
-• O código lê dados de um arquivo JSON que contém informações por município, representados como dicionários.
+• Verifique se o caminho do arquivo está correto e se você tem permissões para ler e gravar no diretório especificado.
+ 
+• O código imprime uma mensagem indicando que os arquivos JSON foram criados com sucesso. Certifique-se de observar essa mensagem para verificar se o código foi executado sem erros.
+ 
+• Certifique-se de ter o Python instalado e configurado corretamente, pois o script depende das bibliotecas para funcionar.
 
 
-• Os dados são organizados por município, e a chave "Ano" é adicionada com o valor "2023" em cada dicionário
-
-
-• Para cada município, é criado um arquivo JSON separado contendo os dados associados, facilitando a manipulação de informações específicas por localidade.
-
-<!-- Centraliza o cabeçalho com o título "🕊 Linguagens e Tecnologias utilizadas" -->
 <div align="center">
-  <h2>🕊 Informações adicionais sobre personalização do script </h2>
+  <h2>👩‍💻 Contribuidores </h2>
+</div> 
+<!-- Foto dos participantes do grupo -->
+<div align="center"> 
+ <img src="https://avatars.githubusercontent.com/u/119907827?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/87997616?v=4" width="100" />
+ <img src="https://avatars.githubusercontent.com/u/90454615?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/124631520?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/98980548?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/101183266?v=4" width="100"/>
+ <img src="https://avatars.githubusercontent.com/u/109704535?v=4" width="100"/>
 </div>
 
-<!-- Informações adicionais sobre personalização do script -->
- • Verifique se o caminho do arquivo está correto e se você tem permissões para ler e gravar no diretório especificado.
- 
- • O código imprime uma mensagem indicando que os arquivos JSON foram criados com sucesso. Certifique-se de observar essa mensagem para verificar se o código foi executado sem erros.
- 
- • Certifique-se de ter o Python instalado e configurado corretamente, pois o script depende das bibliotecas para funcionar.
+<div align="center">
+  <h2>📄 Documentação </h2>
+</div>
+
+• A documentação do projeto pode ser encontrada clicando [AQUI](https://unb-mds.github.io/2023-2-Squad10/).
+
+
+
+
+<!-- Icons das ferramentas e linguagens ultilizadas -->
+<p align="left">
+    <a href="https://www.python.org" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="30" height="30"/>
+    </a>
+    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="30" height="30"/>
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="30" height="30"/>
+    </a>
+    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="30" height="30"/>
+    </a>
+    <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="30" height="30"/>
+    </a>
+    <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
+        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="30" height="30"/>
+    </a>
+</p>
+
+
 
 <!-- Criador e licença -->
 ### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
