@@ -119,11 +119,20 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
   <h2>📄 Documentação </h2>
 </div>
 
-• A documentação do projeto pode ser encontrada clicando [AQUI](https://unb-mds.github.io/2023-2-Squad10/).
+### • A documentação do projeto pode ser encontrada clicando [AQUI](https://unb-mds.github.io/2023-2-Squad10/).
 
 
 
 
+<div align="center">
+  <h2>©️ Licença </h2>
+</div>
+
+
+
+<!-- Criador e licença -->
+### ESTE SOFTWARE ESTÁ SOB LICENÇA: [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
+### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
 <!-- Icons das ferramentas e linguagens ultilizadas -->
 <p align="left">
     <a href="https://www.python.org" target="_blank" rel="noreferrer">
@@ -145,13 +154,4 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
         <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="30" height="30"/>
     </a>
 </p>
-
-
-
-<!-- Criador e licença -->
-### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
-
-## ©️ Licença 
-
-Este software está sob licença [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
 
