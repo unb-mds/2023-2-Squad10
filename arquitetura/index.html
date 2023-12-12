@@ -20,7 +20,7 @@
 
 
 
-  <title>Requisitos</title>
+  <title>Documentação de Arquitetura</title>
 
 
 
@@ -114,7 +114,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
 
-              Requisitos
+              Documentação de Arquitetura
 
             </span>
           </div>
@@ -219,6 +219,12 @@
             Documentação de Requisitos
           </a>
         </li>
+        <li class="md-tabs__item">
+            <a href="./index.html" class="md-tabs__link">
+              Documentação de Arquitetura
+            </a>
+          </li>
+        
         </ul>
       </div>
     </nav>
@@ -368,96 +374,98 @@
           <article class="md-content__inner md-typeset">
 
             <div align="center">
-              <h1 id="sprintinicial">Requisitos do Projeto</h1>
-              <h2 id="descricao">📄 Descrição</h2>
+              <h1 id="sprintinicial">Arquitetura</h1>
+              <h2 id="descricao">Objetivo</h2>
             </div>
 
-            <p>Baseando-se na proposta do projeto <a href="https://queridodiario.ok.org.br/">Querido Diário</a> da Open Knowledge Brasil, nosso site tem o objetivo de tornar as informações sobre processos administrativos de municípios, geralmente publicados em documentos chamados de "Diários Oficiais", que por muitas vezes são difíceis de entender, acessíveis, para que qualquer pessoa com acesso à plataforma, consiga entender e saber como o dinheiro público está sendo utilizado.</p>
-            <p>Para tal, decidimos trabalhar com <b>licitações</b>. De acordo com o <a href="https://portaldatransparencia.gov.br/entenda-a-gestao-publica/licitacoes-e-contratacoes">Portal da Transparência</a>, "Licitação é o processo por meio do qual a Administração Pública contrata obras, serviços, compras e alienações. Em outras palavras, licitação é a forma como a Administração Pública pode comprar e vender."
+            <p>A presente documentação de arquitetura oferece uma visão abrangente da estrutura e design do sistema, proporcionando um entendimento profundo dos princípios e decisões que norteiam seu desenvolvimento. Ao explorar desde as decisões arquiteturais fundamentais até os detalhes dos componentes e suas interações, esta documentação visa orientar desenvolvedores, engenheiros e demais stakeholders no entendimento e manutenção eficiente do sistema. Com enfoque na clareza e na justificação das escolhas técnicas, este documento é um recurso essencial para garantir a compreensão holística da arquitetura e facilitar futuras evoluções do sistema.</p>
 
-              <h3 id="declaracao-do-problema-metodologia-tecnologias-e-atividades">Declaração do problema, metodologia, tecnologias e atividades</h3>
+            <p>Nosso projeto, até o momento, consiste em um site em que selecionamos a parte de licitações, selecionamos a cidade, e é gerado um gráfico com diversos dados da licitação, e um link para download de um arquivo PDF do Diário Oficial de onde aquele dado foi extraído.</p>
+            <img src="images/grafico.png">
 
-              <p>A dificuldade de acesso aos dados de licitação nos Diários Oficiais do Estado do Piauí é um desafio significativo que impacta negativamente na transparência e eficiência dos processos públicos. A dispersão dessas informações em documentos extensos e muitas vezes complexos torna a busca e a análise um trabalho árduo, desestimulando a participação de empresas e cidadãos interessados.</p>
+              <h2 id="declaracao-do-problema-metodologia-tecnologias-e-atividades">Representação Arquiteturial</h2>
 
-              <p>Nosso projeto visa superar essa barreira por meio da criação de uma plataforma digital centralizada e de fácil acesso. Essa plataforma consolidará os dados de licitação de forma organizada e intuitiva, oferecendo recursos de pesquisa avançada, categorização eficiente e notificações automáticas. Ao simplificar o acesso, nossa solução promoverá a transparência, permitindo que empresas e cidadãos interessados encontrem rapidamente as informações relevantes para participação em processos licitatórios.</p>
+              <p>Basicamente, o site foi desenvolvido usando as ferramentas básicas de desenvolvimento web, porém, baseado na arquitetura do Querido Diário, utilizamos raspadores Python para extrair nossos dados.</p>
 
-              <p>Além disso, a plataforma integrará ferramentas de análise de dados, facilitando a interpretação de tendências, padrões e estatísticas relacionadas às licitações. Isso não apenas economizará tempo, mas também contribuirá para a tomada de decisões informadas por parte dos stakeholders envolvidos, melhorando a eficiência e a competitividade nos processos licitatórios do Estado do Piauí.</p>
+            <figure>
+                <img src="images/arch.png">
+                <figcaption>Arquitetura do Querido Diário.</figcaption>
+            </figure>
               
-              <p>Acreditamos que ao eliminar as barreiras de acesso aos dados de licitação, nosso projeto será um catalisador para aprimorar a participação, promover a concorrência justa e fortalecer a integridade no âmbito das contratações públicas. A transparência gerada por nossa solução contribuirá para o fortalecimento da democracia e para o desenvolvimento socioeconômico sustentável no Estado do Piauí.</p>
+            <p>Raspadores, ou "web scrapers", são programas de computador desenvolvidos para extrair informações de sites da web. Eles automatizam o processo de coleta de dados ao percorrer páginas da web, identificar padrões e extrair as informações desejadas. Essa técnica é frequentemente utilizada para reunir dados de diversas fontes online de maneira eficiente. Para essa função, utilizamos a biblioteca Beautiful Soup 4.</p> 
+            <figure>
+                <img src="images/arquitetura.png" alt="">
+                <figcaption>Arquitetura de interação com o usuário.</figcaption>
+            </figure>  
+              
+            <p>Depois disso, os dados são enviados para nosso banco de dados MySQL, enviados para a API RESTful e enviados para nosso código frontend.</p>
 
+            <figure>
+                <img src="images/diariosofc.png" alt="">
+                <figcaption>Diários extraídos.</figcaption>
+            </figure> 
+
+            <br>
+            
               <div align="center">
-                <h2 id="objetivos">🎯 Objetivos</h2>
+                <h1 id="ferramentas">⚙️Ferramentas</h2>
               </div>
-      <h2>1. Facilitar a Navegação:</h2>
-      <ul>
-          <li>Garantir uma interface intuitiva que permita aos usuários navegar pelo site de maneira fácil e eficiente.</li>
-          <li>Implementar um sistema de categorias e tags claras para organizar as licitações, facilitando a localização de oportunidades específicas.</li>
-      </ul>
-  
-      <h2>2. Fornecer Informações Detalhadas:</h2>
-      <ul>
-          <li>Apresentar informações completas sobre cada licitação, incluindo requisitos, prazos, valores estimados e documentos necessários.</li>
-          <li>Garantir que as especificações técnicas e jurídicas estejam claramente descritas para permitir que os usuários compreendam os detalhes essenciais.</li>
-      </ul>
-  
-      <h2>3. Recursos Avançados de Filtragem:</h2>
-      <ul>
-          <li>Desenvolver opções avançadas de filtragem para que os usuários possam refinar suas buscas com base em setores específicos, valores estimados, regiões geográficas e outros critérios relevantes.</li>
-          <li>Permitir a configuração de alertas personalizados para notificar os usuários sobre licitações que correspondam aos seus interesses.</li>
-      </ul>
-  
-      <h2>4. Acessibilidade Móvel:</h2>
-      <ul>
-          <li>Garantir que o portal seja totalmente responsivo, proporcionando uma experiência de usuário consistente em dispositivos móveis.</li>
-          <li>Otimizar a interface para dispositivos móveis, facilitando o acesso rápido às informações mesmo quando os usuários estão em trânsito.</li>
-      </ul>
-  
-      <h2>5. Atualizações em Tempo Real:</h2>
-      <ul>
-          <li>Implementar um sistema que forneça atualizações em tempo real sobre novas licitações, modificações nos prazos e outras informações relevantes.</li>
-          <li>Assegurar que a plataforma esteja sempre sincronizada com as fontes oficiais de dados para fornecer informações precisas e atualizadas.</li>
-      </ul>
-  
-      <h2>6. Segurança e Confidencialidade:</h2>
-      <ul>
-          <li>Adotar medidas robustas de segurança para proteger informações sensíveis e dados confidenciais.</li>
-          <li>Garantir conformidade com regulamentações de privacidade e segurança de dados para promover a confiança dos usuários na plataforma.</li>
-      </ul>
-  
-      <h2>7. Feedback do Usuário:</h2>
-      <ul>
-          <li>Implementar ferramentas de feedback para que os usuários possam relatar problemas, sugerir melhorias e expressar suas necessidades.</li>
-          <li>Utilizar dados de feedback para realizar melhorias contínuas na plataforma, garantindo que ela esteja alinhada às expectativas e demandas dos usuários.</li>
-      </ul>
+              <ul>
 
-      <div align="center">
-        <h2 id="rfuncionais">💻 Requisitos Funcionais</h2>
-      </div>
+              <li>
+                No desenvolvimento deste projeto, optamos por uma combinação estratégica de tecnologias, destacando a versão <b>Python 3.11</b> 🐍 como a base sólida para implementação. O Python 3.11 traz consigo a mais recente inovação na linguagem, oferecendo melhorias de desempenho, novos recursos e correções.
+              </li>
 
-      <p>Os requisitos funcionais detalham as diversas funcionalidades que o sistema deve oferecer. Eles definem as interações específicas do usuário com o sistema e descrevem as operações que o sistema deve realizar. Abaixo estão os principais requisitos funcionais identificados para este projeto:</p>
-      <ul>
-        <li><b>Coleta de Diários Oficiais</b>: O sistema deve realizar a coleta e acessar todos os Diários Oficiais de todos os municípios do Piauí de forma eficiente e automatizada.</li>
-        <li><b>Extração de Informações de Licitações</b>: O sistema deve efetuar a extração precisa de dados relacionados a licitações em todos os municípios do Piauí, garantindo a integridade das informações.</li>
-        <li><b>Análise de Dados</b>: O sistema deve processar os dados extraídos, organizando-os individualmente para cada município durante a análise. Além disso, gera gráficos que destacam tendências e insights valiosos.</li>
-        <li><b>Interface de Usuário Intuitiva</b>: O sistema deve incluir uma interface de usuário amigável que permite aos usuários encontrar de maneira transparente as informações das licitações realizadas pelos municípios do Piauí, tornando a pesquisa e análise mais acessíveis.</li>
-      </ul>
+              <li>O <b>Apache Tika</b> 🪶, na versão 2.9.1, foi escolhido para potencializar a extração de dados de documentos heterogêneos, oferecendo suporte a uma ampla variedade de formatos. Essa capacidade é particularmente valiosa em projetos que envolvem a análise de diferentes tipos de documentos.
+              </li>
 
-      <div align="center">
-        <h2 id="rnfuncionais">🔧 Requisitos Não-funcionais</h2>
-      </div>
-      
-      <p>Os requisitos não-funcionais estabelecem critérios que não estão diretamente relacionados às funcionalidades específicas do sistema, mas que são essenciais para garantir o desempenho, a segurança, a usabilidade e outros aspectos globais do sistema. Aqui estão os principais requisitos não-funcionais para este projeto:</p>
-      <ul>
-        <li><b>Tempo de Resposta</b>: O sistema deve fornecer tempos de resposta para todas as interações do usuário dentro de 2 segundos, em condições normais de carga.</li>
-        <li><b>Usabilidade</b>: A interface do usuário deve ser intuitiva e amigável, garantindo uma curva de aprendizado mínima para os usuários novos.</li>
-        <li><b>Acessibilidade</b>: O sistema deve ser acessível para usuários com deficiências, seguindo as diretrizes de acessibilidade, como o padrão WCAG.</li>
-        <li><b>Autenticação Segura</b>: Todas as transmissões de dados sensíveis devem ser criptografadas usando protocolos de segurança robustos, como HTTPS.</li>
-        <li><b>Controle de Acesso</b>: O sistema deve implementar um controle de acesso rigoroso para garantir que os usuários acessem apenas as funcionalidades e dados para os quais têm permissão.</li>
-        <li><b>Autenticação Segura</b>: Todas as transmissões de dados sensíveis devem ser criptografadas usando protocolos de segurança robustos, como HTTPS.</li>
-        <li><b>Documentação</b>: Todo o código-fonte deve ser devidamente documentado, e uma documentação abrangente do sistema deve estar disponível para facilitar a manutenção futura.</li>
-        <p>Esses requisitos não-funcionais são fundamentais para garantir o sucesso do sistema, proporcionando uma base sólida para desempenho, segurança, usabilidade e manutenção. Detalhes adicionais podem ser adicionados conforme necessário durante o desenvolvimento do projeto.</p>
-      </ul>
-  
+              <li><b>Beautiful Soup 4</b> 🍲, uma biblioteca Python de web scraping, desempenha um papel crucial na análise e extração de dados a partir de documentos HTML e XML, garantindo uma manipulação eficiente e intuitiva.</li>
+              <li> A utilização de <b>Virtualenv</b> ⚙️ permite a criação de ambientes virtuais isolados, garantindo uma gestão eficaz de dependências e ambientes de desenvolvimento. O Pytest foi escolhido para facilitar a execução de testes automatizados, promovendo a robustez e confiabilidade do código.</li>
+
+              <li>A biblioteca <b>Requests</b> ⚕️ é fundamental para realizar solicitações HTTP de maneira simplificada e eficiente, facilitando a comunicação com APIs e a obtenção de dados de fontes externas.</li>
+
+              <li>A interface do usuário foi construída com tecnologias modernas, incluindo <b>HTML5</b> 5️⃣, <b>CSS3</b> 3️⃣ e <b>JavaScript</b> 🇯🇸, proporcionando uma experiência de usuário agradável e responsiva.</li>
+
+              <li>O sistema utilizará o banco de dados MySQL 🐬 para armazenar e gerenciar de forma eficiente os dados relacionados ao projeto. O MySQL, um sistema de gerenciamento de banco de dados relacional de código aberto, oferece alta confiabilidade e desempenho, tornando-se uma escolha robusta para a persistência de dados.</li>
+
+              <li>Além disso, a implementação incluirá uma API RESTful 💻 para facilitar a comunicação entre o frontend e o backend. A API seguirá os princípios REST, permitindo operações CRUD (Create, Read, Update, Delete) para interação simplificada com os recursos do sistema. Essa abordagem oferece flexibilidade e escalabilidade, facilitando a integração de novos recursos e a interoperabilidade com outras aplicações.</li>
+
+              <h2 id="#Casos de Uso">Casos de Uso ✈️</h2>
+            <h2>Licitações por Critérios</h2>
+            <li> <strong> Breve Descrição:</strong>  
+              <p></p>
+            <li>Este caso de uso delineia a maneira como um usuário pode efetuar pesquisas de licitações no sistema, utilizando diversos critérios, como data, município, tipo de licitação e valor estimado.</li> 
+            <p></p>
+            <li><strong>Pré-condições:</strong> 
+              <p></p>
+            <li> O usuário está autenticado no sistema e possui acesso à funcionalidade de pesquisa de licitações.</li>
+            <p></p>
+        
+           <li> <strong>Fluxo Básico:</strong></li>
+            <p></p>
+            <li>O usuário acessa a funcionalidade de pesquisa de licitações no sistema.</li>
+            <li>O sistema exibe uma interface de pesquisa que permite ao usuário especificar critérios de busca.</li>
+            <li>O usuário pode selecionar um intervalo de datas e municípios específicos do estado do Piauí para limitar
+              a pesquisa.</li>
+            <li>O usuário pode selecionar o tipo de licitação desejado (por exemplo, finalizada, não finalizada,
+              cancelada, divulgada, etc.).</li>
+            <li>O usuário inicia a pesquisa, desencadeando a busca com base nos critérios fornecidos.</li>
+            <li>O sistema exibe os resultados da pesquisa em uma lista e gráficos, apresentando informações resumidas
+              sobre as licitações encontradas, como número do edital, descrição, data de abertura, valor estimado, etc.
+            </li>
+            <li>O usuário pode selecionar uma licitação na lista para obter informações mais detalhadas.</li>
+            </ul>
+
+            <h2>Diagrama de Pacotes</h2>
+            <br>
+            <p>O diagrama de pacotes abaixo oferece uma representação visual da estrutura modular do projeto, destacando a organização lógica dos componentes e suas interdependências. Esta visão facilita a compreensão global do sistema e fornece insights sobre a modularidade e a coesão das diferentes partes.</p>
+            <br>
+                <img src="images/diagpac.png">
+
+
+        <h2>Visão de implementação</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo cursus erat, ut imperdiet felis consectetur ac. Praesent eu sem quis arcu pharetra varius. Maecenas consectetur ultricies purus, non congue lacus lacinia non. Fusce a purus eu massa fermentum efficitur eu vel tortor. Nullam quis velit in massa varius rhoncus ut in elit. Fusce pulvinar, sapien vitae euismod aliquet, elit orci consectetur elit, in scelerisque purus libero vel tortor. Curabitur aliquet tristique orci, ut bibendum lacus venenatis ut. Sed auctor, odio eu iaculis hendrerit, dolor urna tincidunt mauris, ut aliquet lectus arcu vel enim.</p>
+
             </article>
           </div>
             </div>
