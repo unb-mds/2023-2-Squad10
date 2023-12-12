@@ -1,7 +1,31 @@
+<!--
 
+S
+A
+I
 
-<!-- Adiciona uma imagem à direita com uma largura de 400 pixels -->
-<img align="right" alt="Coding" width="400" src='https://dl.openseauserdata.com/cache/originImage/files/527a9783c28c70962773a73db797ea4d.gif'>
+D
+A
+Q
+U
+I
+
+S
+E
+U
+
+C
+U
+R
+I
+O
+S
+O
+
+ASS: xGabrielCv 
+
+-->
+
 
 <!-- Adiciona distintivos (shields) do GitHub -->
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/2023-2-Squad10?style=for-the-badge)
@@ -18,22 +42,42 @@
   <h2>Diario Oficial do Piaui UnB </h2>
 </div> 
 
+<!-- Título centralizado -->
+<div align="center">
+  <h2>🎯 Testes unitários Python </h2>
+</div> 
+
+• Estes são scripts Python que fazem testes unitários em todos os nossos codigos 
+
+
 
 <!-- Título centralizado -->
 <div align="center">
-  <h2>🤞 Como executar o projeto </h2>
+  <h2>🤞 Como executar o script </h2>
 </div> 
+
+### 1. 🔑 Pré-requisitos
+Esses são os nossos pré-requisitos:
+- [Python3](https://www.python.org/downloads/)
+
 
 
 <!-- Adiciona a lista de bibliotecas para copiar -->
-### 1. 📑 Instalação das bibliotecas do Python
-Aqui estão as bibliotecas do Teste usado que são conjuntos de recursos pré-desenvolvidos que simplificam o desenvolvimento de testes do nosso codigo em geral.
-```
-npm install jasmine --save-dev
+### 2. 📑 Instalação das bibliotecas do Python
 
 ```
+pip install PyMuPDF
+``` 
+```
+pip install unittest
+```
+```
+npm install jasmine --save-dev
+```
+
+
 <!-- Adiciona a funçao de copiar o link do repositorio -->
-### 2. 📍 Clonar o Repositório
+### 3. 📍 Clonar o Repositório
 Vamos começar clonando um repositório do GitHub em um diretório local através do terminal, conforme indicado a seguir:
 ```
 git clone https://github.com/unb-mds/2023-2-Squad10.git
@@ -41,14 +85,14 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
   	
   
 <div align="center">
-  <h2>⚙️ Configurações do projeto Teste </h2>
+  <h2>⚙️ Configurações dos scripts </h2>
 </div>
 
 • Certifique-se de ter o Jasmine instalado em seu projeto. Você pode instalá-lo usando npm (Node Package Manager) se estiver usando Nodejs.
   
-• Crie um arquivo jasmine.json na raiz do seu projeto para configurar o Jasmine. Aqui está um exemplo simples:
+• Crie um arquivo jasmine.json na raiz do seu projeto para configurar o Jasmine.
 
-• Crie arquivos de teste com nomes terminados em spec.js (por exemplo, atualizarGrafico.spec.js). Coloque esses arquivos no diretório de especificações (especificado em "spec_dir" no arquivo jasmine.json).
+• Crie arquivos de teste com nomes terminados em spec.js. Coloque esses arquivos no diretório especificado.
 
 • No arquivo de teste, escreva seus casos de teste usando as funções do Jasmine (describe, it, beforeEach, expect, etc).
 
@@ -56,10 +100,11 @@ git clone https://github.com/unb-mds/2023-2-Squad10.git
 
 ```
 npx jasmine
-
 ```
 
-• Após a execução dos testes, o Jasmine fornecerá uma saída no console indicando se os testes passaram ou falharam. Você também pode configurar relatórios mais detalhados, se necessário.
+• Após a execução dos testes, o Jasmine fornecerá uma saída no console indicando se os testes passaram ou falharam.
+
+
 
 <div align="center">
   <h2>👩‍💻 Contribuidores </h2>
@@ -92,6 +137,7 @@ npx jasmine
 
 <!-- Criador e licença -->
 ### ESTE SOFTWARE ESTÁ SOB LICENÇA: [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) ©
+### FEITO POR: [xGabrielCv](https://github.com/xGabrielCv)
 <!-- Icons das ferramentas e linguagens ultilizadas -->
 <p align="left">
     <a href="https://www.python.org" target="_blank" rel="noreferrer">
@@ -113,4 +159,3 @@ npx jasmine
         <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="30" height="30"/>
     </a>
 </p>
-
